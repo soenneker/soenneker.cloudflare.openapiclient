@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bugs") is { } nullNodeBugs && nullNodeBugs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bugs = null;
-            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
-            if (parseNode.GetChildNode("kex") is { } nullNodeKex && nullNodeKex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kex = null;
-            if (parseNode.GetChildNode("kexName") is { } nullNodeKexName && nullNodeKexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KexName = null;
-            if (parseNode.GetChildNode("pq") is { } nullNodePq && nullNodePq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pq = null;
+            if (parseNode.GetChildNode("bugs") is null) { _explicitNullValueBugs = default!; _explicitNullProperties?.Remove("bugs"); }
+            else if (parseNode.GetChildNode("bugs") is { } nullNodeBugs && nullNodeBugs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bugs = null;
+            if (parseNode.GetChildNode("host") is null) { _explicitNullValueHost = default!; _explicitNullProperties?.Remove("host"); }
+            else if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("kex") is null) { _explicitNullValueKex = default!; _explicitNullProperties?.Remove("kex"); }
+            else if (parseNode.GetChildNode("kex") is { } nullNodeKex && nullNodeKex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kex = null;
+            if (parseNode.GetChildNode("kexName") is null) { _explicitNullValueKexName = default!; _explicitNullProperties?.Remove("kexName"); }
+            else if (parseNode.GetChildNode("kexName") is { } nullNodeKexName && nullNodeKexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KexName = null;
+            if (parseNode.GetChildNode("pq") is null) { _explicitNullValuePq = default!; _explicitNullProperties?.Remove("pq"); }
+            else if (parseNode.GetChildNode("pq") is { } nullNodePq && nullNodePq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pq = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The bugs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs? Bugs { get => _explicitNullValueBugs; set { _explicitNullValueBugs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bugs"); else _explicitNullProperties?.Remove("bugs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs? Bugs { get => _explicitNullValueBugs; set { _explicitNullValueBugs = value; AdditionalData?.Remove("bugs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bugs"); else _explicitNullProperties?.Remove("bugs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs? _explicitNullValueBugs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs Bugs { get => _explicitNullValueBugs; set { _explicitNullValueBugs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bugs"); else _explicitNullProperties?.Remove("bugs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs Bugs { get => _explicitNullValueBugs; set { _explicitNullValueBugs = value; AdditionalData?.Remove("bugs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bugs"); else _explicitNullProperties?.Remove("bugs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResultBugs _explicitNullValueBugs = default!;
 #endif
         /// <summary>The host that was tested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string _explicitNullValueHost = default!;
 #endif
         /// <summary>TLS CurveID of the negotiated key exchange</summary>
-        public double? Kex { get => _explicitNullValueKex; set { _explicitNullValueKex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kex"); else _explicitNullProperties?.Remove("kex"); } }
+        public double? Kex { get => _explicitNullValueKex; set { _explicitNullValueKex = value; AdditionalData?.Remove("kex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kex"); else _explicitNullProperties?.Remove("kex"); } }
         private double? _explicitNullValueKex = default!;
         /// <summary>Human-readable name of the key exchange algorithm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KexName { get => _explicitNullValueKexName; set { _explicitNullValueKexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kexName"); else _explicitNullProperties?.Remove("kexName"); } }
+        public string? KexName { get => _explicitNullValueKexName; set { _explicitNullValueKexName = value; AdditionalData?.Remove("kexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kexName"); else _explicitNullProperties?.Remove("kexName"); } }
         private string? _explicitNullValueKexName = default!;
 #nullable restore
 #else
-        public string KexName { get => _explicitNullValueKexName; set { _explicitNullValueKexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kexName"); else _explicitNullProperties?.Remove("kexName"); } }
+        public string KexName { get => _explicitNullValueKexName; set { _explicitNullValueKexName = value; AdditionalData?.Remove("kexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kexName"); else _explicitNullProperties?.Remove("kexName"); } }
         private string _explicitNullValueKexName = default!;
 #endif
         /// <summary>Whether the negotiated key exchange uses Post-Quantum cryptography (specifically X25519MLKEM768)</summary>
-        public bool? Pq { get => _explicitNullValuePq; set { _explicitNullValuePq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pq"); else _explicitNullProperties?.Remove("pq"); } }
+        public bool? Pq { get => _explicitNullValuePq; set { _explicitNullValuePq = value; AdditionalData?.Remove("pq"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pq"); else _explicitNullProperties?.Remove("pq"); } }
         private bool? _explicitNullValuePq = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetPostQuantumTlsSupport200ResponseResult"/> and sets the default values.

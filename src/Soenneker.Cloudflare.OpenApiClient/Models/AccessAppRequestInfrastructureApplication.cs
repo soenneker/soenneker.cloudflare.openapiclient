@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mfa_config") is { } nullNodeMfaConfig && nullNodeMfaConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaConfig = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("policies") is { } nullNodePolicies && nullNodePolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policies = null;
-            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
-            if (parseNode.GetChildNode("target_criteria") is { } nullNodeTargetCriteria && nullNodeTargetCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetCriteria = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("mfa_config") is null) { _explicitNullValueMfaConfig = default!; _explicitNullProperties?.Remove("mfa_config"); }
+            else if (parseNode.GetChildNode("mfa_config") is { } nullNodeMfaConfig && nullNodeMfaConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaConfig = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("policies") is null) { _explicitNullValuePolicies = default!; _explicitNullProperties?.Remove("policies"); }
+            else if (parseNode.GetChildNode("policies") is { } nullNodePolicies && nullNodePolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policies = null;
+            if (parseNode.GetChildNode("session_duration") is null) { _explicitNullValueSessionDuration = default!; _explicitNullProperties?.Remove("session_duration"); }
+            else if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+            if (parseNode.GetChildNode("target_criteria") is null) { _explicitNullValueTargetCriteria = default!; _explicitNullProperties?.Remove("target_criteria"); }
+            else if (parseNode.GetChildNode("target_criteria") is { } nullNodeTargetCriteria && nullNodeTargetCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetCriteria = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,55 +36,55 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configures multi-factor authentication (MFA) settings for infrastructure applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig? MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig? MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; AdditionalData?.Remove("mfa_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig? _explicitNullValueMfaConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; AdditionalData?.Remove("mfa_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraMfaConfig _explicitNullValueMfaConfig = default!;
 #endif
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The policies that Access applies to the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq>? Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq>? Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; AdditionalData?.Remove("policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq>? _explicitNullValuePolicies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq> Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq> Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; AdditionalData?.Remove("policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq> _explicitNullValuePolicies = default!;
 #endif
         /// <summary>The maximum duration of a connection to this application&apos;s targets. Connections are terminated once it elapses. Must be in the format `30m` or `2h45m`, in whole seconds. Valid time units are: s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; AdditionalData?.Remove("session_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
         private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; AdditionalData?.Remove("session_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
         private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>The target_criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp>? TargetCriteria { get => _explicitNullValueTargetCriteria; set { _explicitNullValueTargetCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_criteria"); else _explicitNullProperties?.Remove("target_criteria"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp>? TargetCriteria { get => _explicitNullValueTargetCriteria; set { _explicitNullValueTargetCriteria = value; AdditionalData?.Remove("target_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_criteria"); else _explicitNullProperties?.Remove("target_criteria"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp>? _explicitNullValueTargetCriteria = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp> TargetCriteria { get => _explicitNullValueTargetCriteria; set { _explicitNullValueTargetCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_criteria"); else _explicitNullProperties?.Remove("target_criteria"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp> TargetCriteria { get => _explicitNullValueTargetCriteria; set { _explicitNullValueTargetCriteria = value; AdditionalData?.Remove("target_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_criteria"); else _explicitNullProperties?.Remove("target_criteria"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp> _explicitNullValueTargetCriteria = default!;
 #endif
         /// <summary>The application type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPropsAllOf1Type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPropsAllOf1Type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPropsAllOf1Type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppRequestInfrastructureApplication"/> and sets the default values.
@@ -111,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPolicyReq.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
                 { "target_criteria", n => { TargetCriteria = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessTargetCriteriaInfraApp.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPropsAllOf1Type>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessInfraPropsAllOf1Type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("static_prefix") is { } nullNodeStaticPrefix && nullNodeStaticPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticPrefix = null;
+            if (parseNode.GetChildNode("static_prefix") is null) { _explicitNullValueStaticPrefix = default!; _explicitNullProperties?.Remove("static_prefix"); }
+            else if (parseNode.GetChildNode("static_prefix") is { } nullNodeStaticPrefix && nullNodeStaticPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticPrefix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StaticPrefix { get => _explicitNullValueStaticPrefix; set { _explicitNullValueStaticPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_prefix"); else _explicitNullProperties?.Remove("static_prefix"); } }
+        public string? StaticPrefix { get => _explicitNullValueStaticPrefix; set { _explicitNullValueStaticPrefix = value; AdditionalData?.Remove("static_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_prefix"); else _explicitNullProperties?.Remove("static_prefix"); } }
         private string? _explicitNullValueStaticPrefix = default!;
 #nullable restore
 #else
-        public string StaticPrefix { get => _explicitNullValueStaticPrefix; set { _explicitNullValueStaticPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_prefix"); else _explicitNullProperties?.Remove("static_prefix"); } }
+        public string StaticPrefix { get => _explicitNullValueStaticPrefix; set { _explicitNullValueStaticPrefix = value; AdditionalData?.Remove("static_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_prefix"); else _explicitNullProperties?.Remove("static_prefix"); } }
         private string _explicitNullValueStaticPrefix = default!;
 #endif
         /// <summary>

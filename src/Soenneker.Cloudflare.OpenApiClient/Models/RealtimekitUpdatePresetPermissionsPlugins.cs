@@ -18,31 +18,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("can_close") is { } nullNodeCanClose && nullNodeCanClose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanClose = null;
-            if (parseNode.GetChildNode("can_edit_config") is { } nullNodeCanEditConfig && nullNodeCanEditConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanEditConfig = null;
-            if (parseNode.GetChildNode("can_start") is { } nullNodeCanStart && nullNodeCanStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanStart = null;
-            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("can_close") is null) { _explicitNullValueCanClose = default!; _explicitNullProperties?.Remove("can_close"); }
+            else if (parseNode.GetChildNode("can_close") is { } nullNodeCanClose && nullNodeCanClose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanClose = null;
+            if (parseNode.GetChildNode("can_edit_config") is null) { _explicitNullValueCanEditConfig = default!; _explicitNullProperties?.Remove("can_edit_config"); }
+            else if (parseNode.GetChildNode("can_edit_config") is { } nullNodeCanEditConfig && nullNodeCanEditConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanEditConfig = null;
+            if (parseNode.GetChildNode("can_start") is null) { _explicitNullValueCanStart = default!; _explicitNullProperties?.Remove("can_start"); }
+            else if (parseNode.GetChildNode("can_start") is { } nullNodeCanStart && nullNodeCanStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanStart = null;
+            if (parseNode.GetChildNode("config") is null) { _explicitNullValueConfig = default!; _explicitNullProperties?.Remove("config"); }
+            else if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Can close plugins that are already open</summary>
-        public bool? CanClose { get => _explicitNullValueCanClose; set { _explicitNullValueCanClose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_close"); else _explicitNullProperties?.Remove("can_close"); } }
+        public bool? CanClose { get => _explicitNullValueCanClose; set { _explicitNullValueCanClose = value; AdditionalData?.Remove("can_close"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_close"); else _explicitNullProperties?.Remove("can_close"); } }
         private bool? _explicitNullValueCanClose = default!;
         /// <summary>Can edit plugin config</summary>
-        public bool? CanEditConfig { get => _explicitNullValueCanEditConfig; set { _explicitNullValueCanEditConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_edit_config"); else _explicitNullProperties?.Remove("can_edit_config"); } }
+        public bool? CanEditConfig { get => _explicitNullValueCanEditConfig; set { _explicitNullValueCanEditConfig = value; AdditionalData?.Remove("can_edit_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_edit_config"); else _explicitNullProperties?.Remove("can_edit_config"); } }
         private bool? _explicitNullValueCanEditConfig = default!;
         /// <summary>Can start plugins</summary>
-        public bool? CanStart { get => _explicitNullValueCanStart; set { _explicitNullValueCanStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_start"); else _explicitNullProperties?.Remove("can_start"); } }
+        public bool? CanStart { get => _explicitNullValueCanStart; set { _explicitNullValueCanStart = value; AdditionalData?.Remove("can_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_start"); else _explicitNullProperties?.Remove("can_start"); } }
         private bool? _explicitNullValueCanStart = default!;
         /// <summary>Plugin configuration keyed by plugin UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>

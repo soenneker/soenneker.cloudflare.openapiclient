@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cloudflare_branding") is { } nullNodeCloudflareBranding && nullNodeCloudflareBranding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareBranding = null;
+            if (parseNode.GetChildNode("cloudflare_branding") is null) { _explicitNullValueCloudflareBranding = default!; _explicitNullProperties?.Remove("cloudflare_branding"); }
+            else if (parseNode.GetChildNode("cloudflare_branding") is { } nullNodeCloudflareBranding && nullNodeCloudflareBranding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareBranding = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.</summary>
-        public bool? CloudflareBranding { get => _explicitNullValueCloudflareBranding; set { _explicitNullValueCloudflareBranding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_branding"); else _explicitNullProperties?.Remove("cloudflare_branding"); } }
+        public bool? CloudflareBranding { get => _explicitNullValueCloudflareBranding; set { _explicitNullValueCloudflareBranding = value; AdditionalData?.Remove("cloudflare_branding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_branding"); else _explicitNullProperties?.Remove("cloudflare_branding"); } }
         private bool? _explicitNullValueCloudflareBranding = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest"/> and sets the default values.

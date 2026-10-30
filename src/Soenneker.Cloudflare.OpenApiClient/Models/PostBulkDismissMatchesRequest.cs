@@ -17,34 +17,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("matches") is { } nullNodeMatches && nullNodeMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Matches = null;
-            if (parseNode.GetChildNode("match_ids") is { } nullNodeMatchIds && nullNodeMatchIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchIds = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("matches") is null) { _explicitNullValueMatches = default!; _explicitNullProperties?.Remove("matches"); }
+            else if (parseNode.GetChildNode("matches") is { } nullNodeMatches && nullNodeMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Matches = null;
+            if (parseNode.GetChildNode("match_ids") is null) { _explicitNullValueMatchIds = default!; _explicitNullProperties?.Remove("match_ids"); }
+            else if (parseNode.GetChildNode("match_ids") is { } nullNodeMatchIds && nullNodeMatchIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchIds = null;
         }
 
         /// <summary>The action property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem>? Matches { get => _explicitNullValueMatches; set { _explicitNullValueMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matches"); else _explicitNullProperties?.Remove("matches"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem>? Matches { get => _explicitNullValueMatches; set { _explicitNullValueMatches = value; AdditionalData?.Remove("matches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matches"); else _explicitNullProperties?.Remove("matches"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem>? _explicitNullValueMatches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem> Matches { get => _explicitNullValueMatches; set { _explicitNullValueMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matches"); else _explicitNullProperties?.Remove("matches"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem> Matches { get => _explicitNullValueMatches; set { _explicitNullValueMatches = value; AdditionalData?.Remove("matches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matches"); else _explicitNullProperties?.Remove("matches"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem> _explicitNullValueMatches = default!;
 #endif
         /// <summary>The match_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? MatchIds { get => _explicitNullValueMatchIds; set { _explicitNullValueMatchIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_ids"); else _explicitNullProperties?.Remove("match_ids"); } }
+        public List<int?>? MatchIds { get => _explicitNullValueMatchIds; set { _explicitNullValueMatchIds = value; AdditionalData?.Remove("match_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_ids"); else _explicitNullProperties?.Remove("match_ids"); } }
         private List<int?>? _explicitNullValueMatchIds = default!;
 #nullable restore
 #else
-        public List<int?> MatchIds { get => _explicitNullValueMatchIds; set { _explicitNullValueMatchIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_ids"); else _explicitNullProperties?.Remove("match_ids"); } }
+        public List<int?> MatchIds { get => _explicitNullValueMatchIds; set { _explicitNullValueMatchIds = value; AdditionalData?.Remove("match_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_ids"); else _explicitNullProperties?.Remove("match_ids"); } }
         private List<int?> _explicitNullValueMatchIds = default!;
 #endif
         /// <summary>
@@ -72,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "match_ids", n => { MatchIds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "matches", n => { Matches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostBulkDismissMatchesRequestMatchesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };

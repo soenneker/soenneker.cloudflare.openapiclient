@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("non_identity_enabled") is { } nullNodeNonIdentityEnabled && nullNodeNonIdentityEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonIdentityEnabled = null;
-            if (parseNode.GetChildNode("url_browser_isolation_enabled") is { } nullNodeUrlBrowserIsolationEnabled && nullNodeUrlBrowserIsolationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlBrowserIsolationEnabled = null;
+            if (parseNode.GetChildNode("non_identity_enabled") is null) { _explicitNullValueNonIdentityEnabled = default!; _explicitNullProperties?.Remove("non_identity_enabled"); }
+            else if (parseNode.GetChildNode("non_identity_enabled") is { } nullNodeNonIdentityEnabled && nullNodeNonIdentityEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonIdentityEnabled = null;
+            if (parseNode.GetChildNode("url_browser_isolation_enabled") is null) { _explicitNullValueUrlBrowserIsolationEnabled = default!; _explicitNullProperties?.Remove("url_browser_isolation_enabled"); }
+            else if (parseNode.GetChildNode("url_browser_isolation_enabled") is { } nullNodeUrlBrowserIsolationEnabled && nullNodeUrlBrowserIsolationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlBrowserIsolationEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to enable non-identity onramp support for Browser Isolation.</summary>
-        public bool? NonIdentityEnabled { get => _explicitNullValueNonIdentityEnabled; set { _explicitNullValueNonIdentityEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_identity_enabled"); else _explicitNullProperties?.Remove("non_identity_enabled"); } }
+        public bool? NonIdentityEnabled { get => _explicitNullValueNonIdentityEnabled; set { _explicitNullValueNonIdentityEnabled = value; AdditionalData?.Remove("non_identity_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_identity_enabled"); else _explicitNullProperties?.Remove("non_identity_enabled"); } }
         private bool? _explicitNullValueNonIdentityEnabled = default!;
         /// <summary>Specify whether to enable Clientless Browser Isolation.</summary>
-        public bool? UrlBrowserIsolationEnabled { get => _explicitNullValueUrlBrowserIsolationEnabled; set { _explicitNullValueUrlBrowserIsolationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_browser_isolation_enabled"); else _explicitNullProperties?.Remove("url_browser_isolation_enabled"); } }
+        public bool? UrlBrowserIsolationEnabled { get => _explicitNullValueUrlBrowserIsolationEnabled; set { _explicitNullValueUrlBrowserIsolationEnabled = value; AdditionalData?.Remove("url_browser_isolation_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_browser_isolation_enabled"); else _explicitNullProperties?.Remove("url_browser_isolation_enabled"); } }
         private bool? _explicitNullValueUrlBrowserIsolationEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings"/> and sets the default values.

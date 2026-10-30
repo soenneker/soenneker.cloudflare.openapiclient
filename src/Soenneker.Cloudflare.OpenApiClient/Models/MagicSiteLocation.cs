@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lat") is { } nullNodeLat && nullNodeLat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lat = null;
-            if (parseNode.GetChildNode("lon") is { } nullNodeLon && nullNodeLon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lon = null;
+            if (parseNode.GetChildNode("lat") is null) { _explicitNullValueLat = default!; _explicitNullProperties?.Remove("lat"); }
+            else if (parseNode.GetChildNode("lat") is { } nullNodeLat && nullNodeLat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lat = null;
+            if (parseNode.GetChildNode("lon") is null) { _explicitNullValueLon = default!; _explicitNullProperties?.Remove("lon"); }
+            else if (parseNode.GetChildNode("lon") is { } nullNodeLon && nullNodeLon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lon = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Latitude</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Lat { get => _explicitNullValueLat; set { _explicitNullValueLat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat"); else _explicitNullProperties?.Remove("lat"); } }
+        public string? Lat { get => _explicitNullValueLat; set { _explicitNullValueLat = value; AdditionalData?.Remove("lat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat"); else _explicitNullProperties?.Remove("lat"); } }
         private string? _explicitNullValueLat = default!;
 #nullable restore
 #else
-        public string Lat { get => _explicitNullValueLat; set { _explicitNullValueLat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat"); else _explicitNullProperties?.Remove("lat"); } }
+        public string Lat { get => _explicitNullValueLat; set { _explicitNullValueLat = value; AdditionalData?.Remove("lat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lat"); else _explicitNullProperties?.Remove("lat"); } }
         private string _explicitNullValueLat = default!;
 #endif
         /// <summary>Longitude</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Lon { get => _explicitNullValueLon; set { _explicitNullValueLon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lon"); else _explicitNullProperties?.Remove("lon"); } }
+        public string? Lon { get => _explicitNullValueLon; set { _explicitNullValueLon = value; AdditionalData?.Remove("lon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lon"); else _explicitNullProperties?.Remove("lon"); } }
         private string? _explicitNullValueLon = default!;
 #nullable restore
 #else
-        public string Lon { get => _explicitNullValueLon; set { _explicitNullValueLon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lon"); else _explicitNullProperties?.Remove("lon"); } }
+        public string Lon { get => _explicitNullValueLon; set { _explicitNullValueLon = value; AdditionalData?.Remove("lon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lon"); else _explicitNullProperties?.Remove("lon"); } }
         private string _explicitNullValueLon = default!;
 #endif
         /// <summary>

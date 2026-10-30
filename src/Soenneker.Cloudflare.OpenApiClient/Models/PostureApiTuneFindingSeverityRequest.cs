@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_severity") is { } nullNodeNewSeverity && nullNodeNewSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewSeverity = null;
+            if (parseNode.GetChildNode("new_severity") is null) { _explicitNullValueNewSeverity = default!; _explicitNullProperties?.Remove("new_severity"); }
+            else if (parseNode.GetChildNode("new_severity") is { } nullNodeNewSeverity && nullNodeNewSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewSeverity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The numeric severity value to apply to the finding.</summary>
-        public int? NewSeverity { get => _explicitNullValueNewSeverity; set { _explicitNullValueNewSeverity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_severity"); else _explicitNullProperties?.Remove("new_severity"); } }
+        public int? NewSeverity { get => _explicitNullValueNewSeverity; set { _explicitNullValueNewSeverity = value; AdditionalData?.Remove("new_severity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_severity"); else _explicitNullProperties?.Remove("new_severity"); } }
         private int? _explicitNullValueNewSeverity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiTuneFindingSeverityRequest"/> and sets the default values.

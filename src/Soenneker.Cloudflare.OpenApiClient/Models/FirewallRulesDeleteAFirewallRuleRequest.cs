@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delete_filter_if_unused") is { } nullNodeDeleteFilterIfUnused && nullNodeDeleteFilterIfUnused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteFilterIfUnused = null;
+            if (parseNode.GetChildNode("delete_filter_if_unused") is null) { _explicitNullValueDeleteFilterIfUnused = default!; _explicitNullProperties?.Remove("delete_filter_if_unused"); }
+            else if (parseNode.GetChildNode("delete_filter_if_unused") is { } nullNodeDeleteFilterIfUnused && nullNodeDeleteFilterIfUnused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteFilterIfUnused = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.</summary>
-        public bool? DeleteFilterIfUnused { get => _explicitNullValueDeleteFilterIfUnused; set { _explicitNullValueDeleteFilterIfUnused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_filter_if_unused"); else _explicitNullProperties?.Remove("delete_filter_if_unused"); } }
+        public bool? DeleteFilterIfUnused { get => _explicitNullValueDeleteFilterIfUnused; set { _explicitNullValueDeleteFilterIfUnused = value; AdditionalData?.Remove("delete_filter_if_unused"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_filter_if_unused"); else _explicitNullProperties?.Remove("delete_filter_if_unused"); } }
         private bool? _explicitNullValueDeleteFilterIfUnused = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRulesDeleteAFirewallRuleRequest"/> and sets the default values.

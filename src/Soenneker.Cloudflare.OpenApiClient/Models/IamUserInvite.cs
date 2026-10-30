@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("invited_by") is { } nullNodeInvitedBy && nullNodeInvitedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedBy = null;
-            if (parseNode.GetChildNode("invited_member_email") is { } nullNodeInvitedMemberEmail && nullNodeInvitedMemberEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedMemberEmail = null;
-            if (parseNode.GetChildNode("organization_is_enforcing_twofactor") is { } nullNodeOrganizationIsEnforcingTwofactor && nullNodeOrganizationIsEnforcingTwofactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationIsEnforcingTwofactor = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("invited_by") is null) { _explicitNullValueInvitedBy = default!; _explicitNullProperties?.Remove("invited_by"); }
+            else if (parseNode.GetChildNode("invited_by") is { } nullNodeInvitedBy && nullNodeInvitedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedBy = null;
+            if (parseNode.GetChildNode("invited_member_email") is null) { _explicitNullValueInvitedMemberEmail = default!; _explicitNullProperties?.Remove("invited_member_email"); }
+            else if (parseNode.GetChildNode("invited_member_email") is { } nullNodeInvitedMemberEmail && nullNodeInvitedMemberEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedMemberEmail = null;
+            if (parseNode.GetChildNode("organization_is_enforcing_twofactor") is null) { _explicitNullValueOrganizationIsEnforcingTwofactor = default!; _explicitNullProperties?.Remove("organization_is_enforcing_twofactor"); }
+            else if (parseNode.GetChildNode("organization_is_enforcing_twofactor") is { } nullNodeOrganizationIsEnforcingTwofactor && nullNodeOrganizationIsEnforcingTwofactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationIsEnforcingTwofactor = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +42,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The email address of the user who created the invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvitedBy { get => _explicitNullValueInvitedBy; set { _explicitNullValueInvitedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_by"); else _explicitNullProperties?.Remove("invited_by"); } }
+        public string? InvitedBy { get => _explicitNullValueInvitedBy; set { _explicitNullValueInvitedBy = value; AdditionalData?.Remove("invited_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_by"); else _explicitNullProperties?.Remove("invited_by"); } }
         private string? _explicitNullValueInvitedBy = default!;
 #nullable restore
 #else
-        public string InvitedBy { get => _explicitNullValueInvitedBy; set { _explicitNullValueInvitedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_by"); else _explicitNullProperties?.Remove("invited_by"); } }
+        public string InvitedBy { get => _explicitNullValueInvitedBy; set { _explicitNullValueInvitedBy = value; AdditionalData?.Remove("invited_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_by"); else _explicitNullProperties?.Remove("invited_by"); } }
         private string _explicitNullValueInvitedBy = default!;
 #endif
         /// <summary>Email address of the user to add to the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvitedMemberEmail { get => _explicitNullValueInvitedMemberEmail; set { _explicitNullValueInvitedMemberEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_member_email"); else _explicitNullProperties?.Remove("invited_member_email"); } }
+        public string? InvitedMemberEmail { get => _explicitNullValueInvitedMemberEmail; set { _explicitNullValueInvitedMemberEmail = value; AdditionalData?.Remove("invited_member_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_member_email"); else _explicitNullProperties?.Remove("invited_member_email"); } }
         private string? _explicitNullValueInvitedMemberEmail = default!;
 #nullable restore
 #else
-        public string InvitedMemberEmail { get => _explicitNullValueInvitedMemberEmail; set { _explicitNullValueInvitedMemberEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_member_email"); else _explicitNullProperties?.Remove("invited_member_email"); } }
+        public string InvitedMemberEmail { get => _explicitNullValueInvitedMemberEmail; set { _explicitNullValueInvitedMemberEmail = value; AdditionalData?.Remove("invited_member_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_member_email"); else _explicitNullProperties?.Remove("invited_member_email"); } }
         private string _explicitNullValueInvitedMemberEmail = default!;
 #endif
         /// <summary>ID of the user to add to the organization.</summary>
@@ -74,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string OrganizationId { get; private set; }
 #endif
         /// <summary>The organization_is_enforcing_twofactor property</summary>
-        public bool? OrganizationIsEnforcingTwofactor { get => _explicitNullValueOrganizationIsEnforcingTwofactor; set { _explicitNullValueOrganizationIsEnforcingTwofactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_is_enforcing_twofactor"); else _explicitNullProperties?.Remove("organization_is_enforcing_twofactor"); } }
+        public bool? OrganizationIsEnforcingTwofactor { get => _explicitNullValueOrganizationIsEnforcingTwofactor; set { _explicitNullValueOrganizationIsEnforcingTwofactor = value; AdditionalData?.Remove("organization_is_enforcing_twofactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_is_enforcing_twofactor"); else _explicitNullProperties?.Remove("organization_is_enforcing_twofactor"); } }
         private bool? _explicitNullValueOrganizationIsEnforcingTwofactor = default!;
         /// <summary>Organization name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Roles { get; private set; }
 #endif
         /// <summary>Current status of the invitation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInvite"/> and sets the default values.
@@ -130,7 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "organization_is_enforcing_twofactor", n => { OrganizationIsEnforcingTwofactor = n.GetBoolValue(); } },
                 { "organization_name", n => { OrganizationName = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

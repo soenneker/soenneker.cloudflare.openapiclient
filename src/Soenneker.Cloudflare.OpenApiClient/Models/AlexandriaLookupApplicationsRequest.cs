@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lookup") is { } nullNodeLookup && nullNodeLookup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lookup = null;
+            if (parseNode.GetChildNode("lookup") is null) { _explicitNullValueLookup = default!; _explicitNullProperties?.Remove("lookup"); }
+            else if (parseNode.GetChildNode("lookup") is { } nullNodeLookup && nullNodeLookup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lookup = null;
         }
 
         /// <summary>Rule sentence to search for complete application names. Leading and trailingwhitespace is trimmed before the length is checked. Control characters otherthan tab and line breaks return `400`.</summary>

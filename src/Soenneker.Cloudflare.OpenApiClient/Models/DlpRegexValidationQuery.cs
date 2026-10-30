@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_match_bytes") is { } nullNodeMaxMatchBytes && nullNodeMaxMatchBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMatchBytes = null;
-            if (parseNode.GetChildNode("regex") is { } nullNodeRegex && nullNodeRegex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regex = null;
+            if (parseNode.GetChildNode("max_match_bytes") is null) { _explicitNullValueMaxMatchBytes = default!; _explicitNullProperties?.Remove("max_match_bytes"); }
+            else if (parseNode.GetChildNode("max_match_bytes") is { } nullNodeMaxMatchBytes && nullNodeMaxMatchBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMatchBytes = null;
+            if (parseNode.GetChildNode("regex") is null) { _explicitNullValueRegex = default!; _explicitNullProperties?.Remove("regex"); }
+            else if (parseNode.GetChildNode("regex") is { } nullNodeRegex && nullNodeRegex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regex = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum number of bytes that the regular expression can match.If this is `null` then there is no limit on the length. Patterns can use`*` and `+`. Otherwise repeats should use a range `{m,n}` to restrictpatterns to the length. If this field is missing, then a default lengthlimit is used.Note that the length is specified in bytes. Since regular expressionsuse UTF-8 the pattern `.` can match up to 4 bytes. Hence `.{1,256}`has a maximum length of 1024 bytes.</summary>
-        public int? MaxMatchBytes { get => _explicitNullValueMaxMatchBytes; set { _explicitNullValueMaxMatchBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_match_bytes"); else _explicitNullProperties?.Remove("max_match_bytes"); } }
+        public int? MaxMatchBytes { get => _explicitNullValueMaxMatchBytes; set { _explicitNullValueMaxMatchBytes = value; AdditionalData?.Remove("max_match_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_match_bytes"); else _explicitNullProperties?.Remove("max_match_bytes"); } }
         private int? _explicitNullValueMaxMatchBytes = default!;
         /// <summary>The regex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Regex { get => _explicitNullValueRegex; set { _explicitNullValueRegex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regex"); else _explicitNullProperties?.Remove("regex"); } }
+        public string? Regex { get => _explicitNullValueRegex; set { _explicitNullValueRegex = value; AdditionalData?.Remove("regex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regex"); else _explicitNullProperties?.Remove("regex"); } }
         private string? _explicitNullValueRegex = default!;
 #nullable restore
 #else
-        public string Regex { get => _explicitNullValueRegex; set { _explicitNullValueRegex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regex"); else _explicitNullProperties?.Remove("regex"); } }
+        public string Regex { get => _explicitNullValueRegex; set { _explicitNullValueRegex = value; AdditionalData?.Remove("regex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regex"); else _explicitNullProperties?.Remove("regex"); } }
         private string _explicitNullValueRegex = default!;
 #endif
         /// <summary>

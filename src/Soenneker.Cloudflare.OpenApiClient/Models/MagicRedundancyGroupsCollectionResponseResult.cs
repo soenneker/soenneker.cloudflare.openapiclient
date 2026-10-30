@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("redundancy_groups") is { } nullNodeRedundancyGroups && nullNodeRedundancyGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedundancyGroups = null;
+            if (parseNode.GetChildNode("redundancy_groups") is null) { _explicitNullValueRedundancyGroups = default!; _explicitNullProperties?.Remove("redundancy_groups"); }
+            else if (parseNode.GetChildNode("redundancy_groups") is { } nullNodeRedundancyGroups && nullNodeRedundancyGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedundancyGroups = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The redundancy_groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyGroupWithMembers>? RedundancyGroups { get => _explicitNullValueRedundancyGroups; set { _explicitNullValueRedundancyGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redundancy_groups"); else _explicitNullProperties?.Remove("redundancy_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyGroupWithMembers>? RedundancyGroups { get => _explicitNullValueRedundancyGroups; set { _explicitNullValueRedundancyGroups = value; AdditionalData?.Remove("redundancy_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redundancy_groups"); else _explicitNullProperties?.Remove("redundancy_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyGroupWithMembers>? _explicitNullValueRedundancyGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyGroupWithMembers> RedundancyGroups { get => _explicitNullValueRedundancyGroups; set { _explicitNullValueRedundancyGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redundancy_groups"); else _explicitNullProperties?.Remove("redundancy_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyGroupWithMembers> RedundancyGroups { get => _explicitNullValueRedundancyGroups; set { _explicitNullValueRedundancyGroups = value; AdditionalData?.Remove("redundancy_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redundancy_groups"); else _explicitNullProperties?.Remove("redundancy_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyGroupWithMembers> _explicitNullValueRedundancyGroups = default!;
 #endif
         /// <summary>

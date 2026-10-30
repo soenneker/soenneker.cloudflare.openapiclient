@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("histogram_0") is { } nullNodeHistogram0 && nullNodeHistogram0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Histogram0 = null;
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("histogram_0") is null) { _explicitNullValueHistogram0 = default!; _explicitNullProperties?.Remove("histogram_0"); }
+            else if (parseNode.GetChildNode("histogram_0") is { } nullNodeHistogram0 && nullNodeHistogram0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Histogram0 = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The histogram_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0? Histogram0 { get => _explicitNullValueHistogram0; set { _explicitNullValueHistogram0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("histogram_0"); else _explicitNullProperties?.Remove("histogram_0"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0? Histogram0 { get => _explicitNullValueHistogram0; set { _explicitNullValueHistogram0 = value; AdditionalData?.Remove("histogram_0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("histogram_0"); else _explicitNullProperties?.Remove("histogram_0"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0? _explicitNullValueHistogram0 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0 Histogram0 { get => _explicitNullValueHistogram0; set { _explicitNullValueHistogram0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("histogram_0"); else _explicitNullProperties?.Remove("histogram_0"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0 Histogram0 { get => _explicitNullValueHistogram0; set { _explicitNullValueHistogram0 = value; AdditionalData?.Remove("histogram_0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("histogram_0"); else _explicitNullProperties?.Remove("histogram_0"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultHistogram0 _explicitNullValueHistogram0 = default!;
 #endif
         /// <summary>Metadata for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedHistogram200ResponseResultMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>

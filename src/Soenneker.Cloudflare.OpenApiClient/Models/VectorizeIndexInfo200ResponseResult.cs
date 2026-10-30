@@ -17,23 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
-            if (parseNode.GetChildNode("processedUpToMutation") is { } nullNodeProcessedUpToMutation && nullNodeProcessedUpToMutation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedUpToMutation = null;
-            if (parseNode.GetChildNode("vectorCount") is { } nullNodeVectorCount && nullNodeVectorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorCount = null;
+            if (parseNode.GetChildNode("dimensions") is null) { _explicitNullValueDimensions = default!; _explicitNullProperties?.Remove("dimensions"); }
+            else if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("processedUpToMutation") is null) { _explicitNullValueProcessedUpToMutation = default!; _explicitNullProperties?.Remove("processedUpToMutation"); }
+            else if (parseNode.GetChildNode("processedUpToMutation") is { } nullNodeProcessedUpToMutation && nullNodeProcessedUpToMutation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedUpToMutation = null;
+            if (parseNode.GetChildNode("vectorCount") is null) { _explicitNullValueVectorCount = default!; _explicitNullProperties?.Remove("vectorCount"); }
+            else if (parseNode.GetChildNode("vectorCount") is { } nullNodeVectorCount && nullNodeVectorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the number of dimensions for the index</summary>
-        public int? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public int? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private int? _explicitNullValueDimensions = default!;
         /// <summary>Specifies the timestamp the last mutation batch was processed as an ISO8601 string.</summary>
         public DateTimeOffset? ProcessedUpToDatetime { get; private set; }
         /// <summary>The unique identifier for the async mutation operation containing the changeset.</summary>
-        public Guid? ProcessedUpToMutation { get => _explicitNullValueProcessedUpToMutation; set { _explicitNullValueProcessedUpToMutation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedUpToMutation"); else _explicitNullProperties?.Remove("processedUpToMutation"); } }
+        public Guid? ProcessedUpToMutation { get => _explicitNullValueProcessedUpToMutation; set { _explicitNullValueProcessedUpToMutation = value; AdditionalData?.Remove("processedUpToMutation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedUpToMutation"); else _explicitNullProperties?.Remove("processedUpToMutation"); } }
         private Guid? _explicitNullValueProcessedUpToMutation = default!;
         /// <summary>Specifies the number of vectors present in the index</summary>
-        public int? VectorCount { get => _explicitNullValueVectorCount; set { _explicitNullValueVectorCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorCount"); else _explicitNullProperties?.Remove("vectorCount"); } }
+        public int? VectorCount { get => _explicitNullValueVectorCount; set { _explicitNullValueVectorCount = value; AdditionalData?.Remove("vectorCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorCount"); else _explicitNullProperties?.Remove("vectorCount"); } }
         private int? _explicitNullValueVectorCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexInfo200ResponseResult"/> and sets the default values.

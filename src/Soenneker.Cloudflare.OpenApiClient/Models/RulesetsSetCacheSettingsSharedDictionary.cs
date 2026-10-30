@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("match_pattern") is { } nullNodeMatchPattern && nullNodeMatchPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchPattern = null;
+            if (parseNode.GetChildNode("match_pattern") is null) { _explicitNullValueMatchPattern = default!; _explicitNullProperties?.Remove("match_pattern"); }
+            else if (parseNode.GetChildNode("match_pattern") is { } nullNodeMatchPattern && nullNodeMatchPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchPattern = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>URL pattern for the Use-As-Dictionary match field. This pattern specifies which URLs can use this response as a dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MatchPattern { get => _explicitNullValueMatchPattern; set { _explicitNullValueMatchPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_pattern"); else _explicitNullProperties?.Remove("match_pattern"); } }
+        public string? MatchPattern { get => _explicitNullValueMatchPattern; set { _explicitNullValueMatchPattern = value; AdditionalData?.Remove("match_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_pattern"); else _explicitNullProperties?.Remove("match_pattern"); } }
         private string? _explicitNullValueMatchPattern = default!;
 #nullable restore
 #else
-        public string MatchPattern { get => _explicitNullValueMatchPattern; set { _explicitNullValueMatchPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_pattern"); else _explicitNullProperties?.Remove("match_pattern"); } }
+        public string MatchPattern { get => _explicitNullValueMatchPattern; set { _explicitNullValueMatchPattern = value; AdditionalData?.Remove("match_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_pattern"); else _explicitNullProperties?.Remove("match_pattern"); } }
         private string _explicitNullValueMatchPattern = default!;
 #endif
         /// <summary>

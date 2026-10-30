@@ -7,6 +7,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MagicTransitError
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "Could not gather traceroute data: Code 1")]
         #pragma warning disable CS1591
         CouldNotGatherTracerouteDataColonCode1,

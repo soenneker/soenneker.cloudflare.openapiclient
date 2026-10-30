@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("skip_wizard") is { } nullNodeSkipWizard && nullNodeSkipWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipWizard = null;
-            if (parseNode.GetChildNode("support_subaddress") is { } nullNodeSupportSubaddress && nullNodeSupportSubaddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportSubaddress = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("skip_wizard") is null) { _explicitNullValueSkipWizard = default!; _explicitNullProperties?.Remove("skip_wizard"); }
+            else if (parseNode.GetChildNode("skip_wizard") is { } nullNodeSkipWizard && nullNodeSkipWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipWizard = null;
+            if (parseNode.GetChildNode("support_subaddress") is null) { _explicitNullValueSupportSubaddress = default!; _explicitNullProperties?.Remove("support_subaddress"); }
+            else if (parseNode.GetChildNode("support_subaddress") is { } nullNodeSupportSubaddress && nullNodeSupportSubaddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportSubaddress = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>State of your zone Email Routing settings. No-op on this endpoint - use `POST`/`DELETE /zones/{zone_id}/email/routing/dns`.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Flag to check if the user skipped the configuration wizard.</summary>
-        public bool? SkipWizard { get => _explicitNullValueSkipWizard; set { _explicitNullValueSkipWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_wizard"); else _explicitNullProperties?.Remove("skip_wizard"); } }
+        public bool? SkipWizard { get => _explicitNullValueSkipWizard; set { _explicitNullValueSkipWizard = value; AdditionalData?.Remove("skip_wizard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_wizard"); else _explicitNullProperties?.Remove("skip_wizard"); } }
         private bool? _explicitNullValueSkipWizard = default!;
         /// <summary>Whether subaddressing (plus-addressing) is honored when matching incoming mail against routing rules.</summary>
-        public bool? SupportSubaddress { get => _explicitNullValueSupportSubaddress; set { _explicitNullValueSupportSubaddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_subaddress"); else _explicitNullProperties?.Remove("support_subaddress"); } }
+        public bool? SupportSubaddress { get => _explicitNullValueSupportSubaddress; set { _explicitNullValueSupportSubaddress = value; AdditionalData?.Remove("support_subaddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_subaddress"); else _explicitNullProperties?.Remove("support_subaddress"); } }
         private bool? _explicitNullValueSupportSubaddress = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties"/> and sets the default values.

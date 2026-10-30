@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("project_type") is { } nullNodeProjectType && nullNodeProjectType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectType = null;
-            if (parseNode.GetChildNode("request_types") is { } nullNodeRequestTypes && nullNodeRequestTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestTypes = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("project_type") is null) { _explicitNullValueProjectType = default!; _explicitNullProperties?.Remove("project_type"); }
+            else if (parseNode.GetChildNode("project_type") is { } nullNodeProjectType && nullNodeProjectType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectType = null;
+            if (parseNode.GetChildNode("request_types") is null) { _explicitNullValueRequestTypes = default!; _explicitNullProperties?.Remove("request_types"); }
+            else if (parseNode.GetChildNode("request_types") is { } nullNodeRequestTypes && nullNodeRequestTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestTypes = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The project_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectType { get => _explicitNullValueProjectType; set { _explicitNullValueProjectType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_type"); else _explicitNullProperties?.Remove("project_type"); } }
+        public string? ProjectType { get => _explicitNullValueProjectType; set { _explicitNullValueProjectType = value; AdditionalData?.Remove("project_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_type"); else _explicitNullProperties?.Remove("project_type"); } }
         private string? _explicitNullValueProjectType = default!;
 #nullable restore
 #else
-        public string ProjectType { get => _explicitNullValueProjectType; set { _explicitNullValueProjectType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_type"); else _explicitNullProperties?.Remove("project_type"); } }
+        public string ProjectType { get => _explicitNullValueProjectType; set { _explicitNullValueProjectType = value; AdditionalData?.Remove("project_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_type"); else _explicitNullProperties?.Remove("project_type"); } }
         private string _explicitNullValueProjectType = default!;
 #endif
         /// <summary>The request_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem>? RequestTypes { get => _explicitNullValueRequestTypes; set { _explicitNullValueRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_types"); else _explicitNullProperties?.Remove("request_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem>? RequestTypes { get => _explicitNullValueRequestTypes; set { _explicitNullValueRequestTypes = value; AdditionalData?.Remove("request_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_types"); else _explicitNullProperties?.Remove("request_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem>? _explicitNullValueRequestTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem> RequestTypes { get => _explicitNullValueRequestTypes; set { _explicitNullValueRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_types"); else _explicitNullProperties?.Remove("request_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem> RequestTypes { get => _explicitNullValueRequestTypes; set { _explicitNullValueRequestTypes = value; AdditionalData?.Remove("request_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_types"); else _explicitNullProperties?.Remove("request_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResultRequestTypesItem> _explicitNullValueRequestTypes = default!;
 #endif
         /// <summary>The total property</summary>
-        public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private double? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetDashboardRequestTypesList200ResponseResult"/> and sets the default values.

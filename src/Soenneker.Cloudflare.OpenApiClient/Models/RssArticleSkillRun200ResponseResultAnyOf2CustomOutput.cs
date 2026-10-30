@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item&gt;
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RssArticleSkillRun200ResponseResultAnyOf2CustomOutput : IComposedTypeWrapper, IParsable
@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Boolean { get; set; }
         /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? Double { get; set; }
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item&gt;</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item>? RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item>? RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item> RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item> RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,16 +67,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item> rssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => ((((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal))) || (((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean))) || (((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString) || ((item == null || item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)))) || (((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject))))) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item> rssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6ItemValue)
             {
-                result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item = rssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6ItemValue;
+                result.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item = rssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6ItemValue;
             }
             else {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.Boolean == null && result.Double == null && result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item == null && result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 == null && result.String == null) result.UnrecognizedValue = unionPayload;
+            if (result.Boolean == null && result.Double == null && result.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item == null && result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -85,6 +85,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1);
@@ -98,8 +100,14 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (Boolean == null && Double == null && RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item == null && RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 != null && Boolean == null && Double == null && RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item == null && String == null) { if (RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1); return; }
+            if (Boolean == null && Double == null && RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item == null && RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (Boolean != null) selectedUnionBranches++;
+            if (Double != null) selectedUnionBranches++;
+            if (RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item != null) selectedUnionBranches++;
+            if (RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 != null) selectedUnionBranches++;
+            if (String != null) selectedUnionBranches++;
+            if (RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 != null && selectedUnionBranches == 1) { if (RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Boolean != null)
@@ -114,9 +122,9 @@ return result;
             {
                 writer.WriteStringValue(null, String);
             }
-            else if(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item != null)
+            else if(RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item>(null, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item>(null, RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item);
             }
             else {
                 if (RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;

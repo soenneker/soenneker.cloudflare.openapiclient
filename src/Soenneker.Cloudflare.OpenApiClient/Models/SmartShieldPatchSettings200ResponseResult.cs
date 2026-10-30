@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cache_reserve") is { } nullNodeCacheReserve && nullNodeCacheReserve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheReserve = null;
-            if (parseNode.GetChildNode("regional_tiered_cache") is { } nullNodeRegionalTieredCache && nullNodeRegionalTieredCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionalTieredCache = null;
-            if (parseNode.GetChildNode("smart_routing") is { } nullNodeSmartRouting && nullNodeSmartRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmartRouting = null;
-            if (parseNode.GetChildNode("smart_tiered_cache") is { } nullNodeSmartTieredCache && nullNodeSmartTieredCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmartTieredCache = null;
+            if (parseNode.GetChildNode("cache_reserve") is null) { _explicitNullValueCacheReserve = default!; _explicitNullProperties?.Remove("cache_reserve"); }
+            else if (parseNode.GetChildNode("cache_reserve") is { } nullNodeCacheReserve && nullNodeCacheReserve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheReserve = null;
+            if (parseNode.GetChildNode("regional_tiered_cache") is null) { _explicitNullValueRegionalTieredCache = default!; _explicitNullProperties?.Remove("regional_tiered_cache"); }
+            else if (parseNode.GetChildNode("regional_tiered_cache") is { } nullNodeRegionalTieredCache && nullNodeRegionalTieredCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionalTieredCache = null;
+            if (parseNode.GetChildNode("smart_routing") is null) { _explicitNullValueSmartRouting = default!; _explicitNullProperties?.Remove("smart_routing"); }
+            else if (parseNode.GetChildNode("smart_routing") is { } nullNodeSmartRouting && nullNodeSmartRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmartRouting = null;
+            if (parseNode.GetChildNode("smart_tiered_cache") is null) { _explicitNullValueSmartTieredCache = default!; _explicitNullProperties?.Remove("smart_tiered_cache"); }
+            else if (parseNode.GetChildNode("smart_tiered_cache") is { } nullNodeSmartTieredCache && nullNodeSmartTieredCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmartTieredCache = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cache_reserve property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve? CacheReserve { get => _explicitNullValueCacheReserve; set { _explicitNullValueCacheReserve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_reserve"); else _explicitNullProperties?.Remove("cache_reserve"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve? CacheReserve { get => _explicitNullValueCacheReserve; set { _explicitNullValueCacheReserve = value; AdditionalData?.Remove("cache_reserve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_reserve"); else _explicitNullProperties?.Remove("cache_reserve"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve? _explicitNullValueCacheReserve = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve CacheReserve { get => _explicitNullValueCacheReserve; set { _explicitNullValueCacheReserve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_reserve"); else _explicitNullProperties?.Remove("cache_reserve"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve CacheReserve { get => _explicitNullValueCacheReserve; set { _explicitNullValueCacheReserve = value; AdditionalData?.Remove("cache_reserve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_reserve"); else _explicitNullProperties?.Remove("cache_reserve"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseCacheReserve _explicitNullValueCacheReserve = default!;
 #endif
         /// <summary>The regional_tiered_cache property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache? RegionalTieredCache { get => _explicitNullValueRegionalTieredCache; set { _explicitNullValueRegionalTieredCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regional_tiered_cache"); else _explicitNullProperties?.Remove("regional_tiered_cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache? RegionalTieredCache { get => _explicitNullValueRegionalTieredCache; set { _explicitNullValueRegionalTieredCache = value; AdditionalData?.Remove("regional_tiered_cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regional_tiered_cache"); else _explicitNullProperties?.Remove("regional_tiered_cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache? _explicitNullValueRegionalTieredCache = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache RegionalTieredCache { get => _explicitNullValueRegionalTieredCache; set { _explicitNullValueRegionalTieredCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regional_tiered_cache"); else _explicitNullProperties?.Remove("regional_tiered_cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache RegionalTieredCache { get => _explicitNullValueRegionalTieredCache; set { _explicitNullValueRegionalTieredCache = value; AdditionalData?.Remove("regional_tiered_cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regional_tiered_cache"); else _explicitNullProperties?.Remove("regional_tiered_cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseRegionalTieredCache _explicitNullValueRegionalTieredCache = default!;
 #endif
         /// <summary>The smart_routing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartRouting? SmartRouting { get => _explicitNullValueSmartRouting; set { _explicitNullValueSmartRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_routing"); else _explicitNullProperties?.Remove("smart_routing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartRouting? SmartRouting { get => _explicitNullValueSmartRouting; set { _explicitNullValueSmartRouting = value; AdditionalData?.Remove("smart_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_routing"); else _explicitNullProperties?.Remove("smart_routing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartRouting? _explicitNullValueSmartRouting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartRouting SmartRouting { get => _explicitNullValueSmartRouting; set { _explicitNullValueSmartRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_routing"); else _explicitNullProperties?.Remove("smart_routing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartRouting SmartRouting { get => _explicitNullValueSmartRouting; set { _explicitNullValueSmartRouting = value; AdditionalData?.Remove("smart_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_routing"); else _explicitNullProperties?.Remove("smart_routing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartRouting _explicitNullValueSmartRouting = default!;
 #endif
         /// <summary>The smart_tiered_cache property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache? SmartTieredCache { get => _explicitNullValueSmartTieredCache; set { _explicitNullValueSmartTieredCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_tiered_cache"); else _explicitNullProperties?.Remove("smart_tiered_cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache? SmartTieredCache { get => _explicitNullValueSmartTieredCache; set { _explicitNullValueSmartTieredCache = value; AdditionalData?.Remove("smart_tiered_cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_tiered_cache"); else _explicitNullProperties?.Remove("smart_tiered_cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache? _explicitNullValueSmartTieredCache = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache SmartTieredCache { get => _explicitNullValueSmartTieredCache; set { _explicitNullValueSmartTieredCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_tiered_cache"); else _explicitNullProperties?.Remove("smart_tiered_cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache SmartTieredCache { get => _explicitNullValueSmartTieredCache; set { _explicitNullValueSmartTieredCache = value; AdditionalData?.Remove("smart_tiered_cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smart_tiered_cache"); else _explicitNullProperties?.Remove("smart_tiered_cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache _explicitNullValueSmartTieredCache = default!;
 #endif
         /// <summary>

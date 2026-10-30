@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
-            if (parseNode.GetChildNode("priority_token_surcharge") is { } nullNodePriorityTokenSurcharge && nullNodePriorityTokenSurcharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriorityTokenSurcharge = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
+            if (parseNode.GetChildNode("priority") is null) { _explicitNullValuePriority = default!; _explicitNullProperties?.Remove("priority"); }
+            else if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("priority_token_surcharge") is null) { _explicitNullValuePriorityTokenSurcharge = default!; _explicitNullProperties?.Remove("priority_token_surcharge"); }
+            else if (parseNode.GetChildNode("priority_token_surcharge") is { } nullNodePriorityTokenSurcharge && nullNodePriorityTokenSurcharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriorityTokenSurcharge = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("tlp") is null) { _explicitNullValueTlp = default!; _explicitNullProperties?.Remove("tlp"); }
+            else if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority? _explicitNullValuePriority = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriority _explicitNullValuePriority = default!;
 #endif
         /// <summary>The priority_token_surcharge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge? PriorityTokenSurcharge { get => _explicitNullValuePriorityTokenSurcharge; set { _explicitNullValuePriorityTokenSurcharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority_token_surcharge"); else _explicitNullProperties?.Remove("priority_token_surcharge"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge? PriorityTokenSurcharge { get => _explicitNullValuePriorityTokenSurcharge; set { _explicitNullValuePriorityTokenSurcharge = value; AdditionalData?.Remove("priority_token_surcharge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority_token_surcharge"); else _explicitNullProperties?.Remove("priority_token_surcharge"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge? _explicitNullValuePriorityTokenSurcharge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge PriorityTokenSurcharge { get => _explicitNullValuePriorityTokenSurcharge; set { _explicitNullValuePriorityTokenSurcharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority_token_surcharge"); else _explicitNullProperties?.Remove("priority_token_surcharge"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge PriorityTokenSurcharge { get => _explicitNullValuePriorityTokenSurcharge; set { _explicitNullValuePriorityTokenSurcharge = value; AdditionalData?.Remove("priority_token_surcharge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority_token_surcharge"); else _explicitNullProperties?.Remove("priority_token_surcharge"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesPriorityTokenSurcharge _explicitNullValuePriorityTokenSurcharge = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesStatus? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesStatus _explicitNullValueStatus = default!;
 #endif
         /// <summary>The tlp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesTlp? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesTlp? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; AdditionalData?.Remove("tlp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesTlp? _explicitNullValueTlp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesTlp Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesTlp Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; AdditionalData?.Remove("tlp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetRequestConstants200ResponsePropertiesResultPropertiesTlp _explicitNullValueTlp = default!;
 #endif
         /// <summary>

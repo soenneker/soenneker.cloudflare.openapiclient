@@ -17,14 +17,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
-            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("targeted") is { } nullNodeTargeted && nullNodeTargeted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Targeted = null;
-            if (parseNode.GetChildNode("target_policies") is { } nullNodeTargetPolicies && nullNodeTargetPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetPolicies = null;
-            if (parseNode.GetChildNode("tracerouteStats") is { } nullNodeTracerouteStats && nullNodeTracerouteStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TracerouteStats = null;
-            if (parseNode.GetChildNode("tracerouteStatsByColo") is { } nullNodeTracerouteStatsByColo && nullNodeTracerouteStatsByColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TracerouteStatsByColo = null;
+            if (parseNode.GetChildNode("host") is null) { _explicitNullValueHost = default!; _explicitNullProperties?.Remove("host"); }
+            else if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("interval") is null) { _explicitNullValueInterval = default!; _explicitNullProperties?.Remove("interval"); }
+            else if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("targeted") is null) { _explicitNullValueTargeted = default!; _explicitNullProperties?.Remove("targeted"); }
+            else if (parseNode.GetChildNode("targeted") is { } nullNodeTargeted && nullNodeTargeted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Targeted = null;
+            if (parseNode.GetChildNode("target_policies") is null) { _explicitNullValueTargetPolicies = default!; _explicitNullProperties?.Remove("target_policies"); }
+            else if (parseNode.GetChildNode("target_policies") is { } nullNodeTargetPolicies && nullNodeTargetPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetPolicies = null;
+            if (parseNode.GetChildNode("tracerouteStats") is null) { _explicitNullValueTracerouteStats = default!; _explicitNullProperties?.Remove("tracerouteStats"); }
+            else if (parseNode.GetChildNode("tracerouteStats") is { } nullNodeTracerouteStats && nullNodeTracerouteStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TracerouteStats = null;
+            if (parseNode.GetChildNode("tracerouteStatsByColo") is null) { _explicitNullValueTracerouteStatsByColo = default!; _explicitNullProperties?.Remove("tracerouteStatsByColo"); }
+            else if (parseNode.GetChildNode("tracerouteStatsByColo") is { } nullNodeTracerouteStatsByColo && nullNodeTracerouteStatsByColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TracerouteStatsByColo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,67 +40,67 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The host of the Traceroute synthetic application test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string _explicitNullValueHost = default!;
 #endif
         /// <summary>The interval at which the Traceroute synthetic application test is set to run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        public string? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private string? _explicitNullValueInterval = default!;
 #nullable restore
 #else
-        public string Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        public string Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private string _explicitNullValueInterval = default!;
 #endif
         /// <summary>The kind property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind? _explicitNullValueKind = default!;
         /// <summary>The name of the Traceroute synthetic application test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The targeted property</summary>
-        public bool? Targeted { get => _explicitNullValueTargeted; set { _explicitNullValueTargeted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeted"); else _explicitNullProperties?.Remove("targeted"); } }
+        public bool? Targeted { get => _explicitNullValueTargeted; set { _explicitNullValueTargeted = value; AdditionalData?.Remove("targeted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeted"); else _explicitNullProperties?.Remove("targeted"); } }
         private bool? _explicitNullValueTargeted = default!;
         /// <summary>The target_policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem>? TargetPolicies { get => _explicitNullValueTargetPolicies; set { _explicitNullValueTargetPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_policies"); else _explicitNullProperties?.Remove("target_policies"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem>? TargetPolicies { get => _explicitNullValueTargetPolicies; set { _explicitNullValueTargetPolicies = value; AdditionalData?.Remove("target_policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_policies"); else _explicitNullProperties?.Remove("target_policies"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem>? _explicitNullValueTargetPolicies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem> TargetPolicies { get => _explicitNullValueTargetPolicies; set { _explicitNullValueTargetPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_policies"); else _explicitNullProperties?.Remove("target_policies"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem> TargetPolicies { get => _explicitNullValueTargetPolicies; set { _explicitNullValueTargetPolicies = value; AdditionalData?.Remove("target_policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_policies"); else _explicitNullProperties?.Remove("target_policies"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem> _explicitNullValueTargetPolicies = default!;
 #endif
         /// <summary>The tracerouteStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? TracerouteStats { get => _explicitNullValueTracerouteStats; set { _explicitNullValueTracerouteStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStats"); else _explicitNullProperties?.Remove("tracerouteStats"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? TracerouteStats { get => _explicitNullValueTracerouteStats; set { _explicitNullValueTracerouteStats = value; AdditionalData?.Remove("tracerouteStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStats"); else _explicitNullProperties?.Remove("tracerouteStats"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? _explicitNullValueTracerouteStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats TracerouteStats { get => _explicitNullValueTracerouteStats; set { _explicitNullValueTracerouteStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStats"); else _explicitNullProperties?.Remove("tracerouteStats"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats TracerouteStats { get => _explicitNullValueTracerouteStats; set { _explicitNullValueTracerouteStats = value; AdditionalData?.Remove("tracerouteStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStats"); else _explicitNullProperties?.Remove("tracerouteStats"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats _explicitNullValueTracerouteStats = default!;
 #endif
         /// <summary>The tracerouteStatsByColo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem>? TracerouteStatsByColo { get => _explicitNullValueTracerouteStatsByColo; set { _explicitNullValueTracerouteStatsByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStatsByColo"); else _explicitNullProperties?.Remove("tracerouteStatsByColo"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem>? TracerouteStatsByColo { get => _explicitNullValueTracerouteStatsByColo; set { _explicitNullValueTracerouteStatsByColo = value; AdditionalData?.Remove("tracerouteStatsByColo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStatsByColo"); else _explicitNullProperties?.Remove("tracerouteStatsByColo"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem>? _explicitNullValueTracerouteStatsByColo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem> TracerouteStatsByColo { get => _explicitNullValueTracerouteStatsByColo; set { _explicitNullValueTracerouteStatsByColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStatsByColo"); else _explicitNullProperties?.Remove("tracerouteStatsByColo"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem> TracerouteStatsByColo { get => _explicitNullValueTracerouteStatsByColo; set { _explicitNullValueTracerouteStatsByColo = value; AdditionalData?.Remove("tracerouteStatsByColo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracerouteStatsByColo"); else _explicitNullProperties?.Remove("tracerouteStatsByColo"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem> _explicitNullValueTracerouteStatsByColo = default!;
 #endif
         /// <summary>
@@ -122,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targeted", n => { Targeted = n.GetBoolValue(); } },

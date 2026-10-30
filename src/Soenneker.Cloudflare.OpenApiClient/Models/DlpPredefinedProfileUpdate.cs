@@ -17,56 +17,62 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ai_context_enabled") is { } nullNodeAiContextEnabled && nullNodeAiContextEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiContextEnabled = null;
-            if (parseNode.GetChildNode("allowed_match_count") is { } nullNodeAllowedMatchCount && nullNodeAllowedMatchCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedMatchCount = null;
-            if (parseNode.GetChildNode("confidence_threshold") is { } nullNodeConfidenceThreshold && nullNodeConfidenceThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceThreshold = null;
-            if (parseNode.GetChildNode("context_awareness") is { } nullNodeContextAwareness && nullNodeContextAwareness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextAwareness = null;
-            if (parseNode.GetChildNode("entries") is { } nullNodeEntries && nullNodeEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entries = null;
-            if (parseNode.GetChildNode("ocr_enabled") is { } nullNodeOcrEnabled && nullNodeOcrEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OcrEnabled = null;
+            if (parseNode.GetChildNode("ai_context_enabled") is null) { _explicitNullValueAiContextEnabled = default!; _explicitNullProperties?.Remove("ai_context_enabled"); }
+            else if (parseNode.GetChildNode("ai_context_enabled") is { } nullNodeAiContextEnabled && nullNodeAiContextEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiContextEnabled = null;
+            if (parseNode.GetChildNode("allowed_match_count") is null) { _explicitNullValueAllowedMatchCount = default!; _explicitNullProperties?.Remove("allowed_match_count"); }
+            else if (parseNode.GetChildNode("allowed_match_count") is { } nullNodeAllowedMatchCount && nullNodeAllowedMatchCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedMatchCount = null;
+            if (parseNode.GetChildNode("confidence_threshold") is null) { _explicitNullValueConfidenceThreshold = default!; _explicitNullProperties?.Remove("confidence_threshold"); }
+            else if (parseNode.GetChildNode("confidence_threshold") is { } nullNodeConfidenceThreshold && nullNodeConfidenceThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceThreshold = null;
+            if (parseNode.GetChildNode("context_awareness") is null) { _explicitNullValueContextAwareness = default!; _explicitNullProperties?.Remove("context_awareness"); }
+            else if (parseNode.GetChildNode("context_awareness") is { } nullNodeContextAwareness && nullNodeContextAwareness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextAwareness = null;
+            if (parseNode.GetChildNode("entries") is null) { _explicitNullValueEntries = default!; _explicitNullProperties?.Remove("entries"); }
+            else if (parseNode.GetChildNode("entries") is { } nullNodeEntries && nullNodeEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entries = null;
+            if (parseNode.GetChildNode("ocr_enabled") is null) { _explicitNullValueOcrEnabled = default!; _explicitNullProperties?.Remove("ocr_enabled"); }
+            else if (parseNode.GetChildNode("ocr_enabled") is { } nullNodeOcrEnabled && nullNodeOcrEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OcrEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ai_context_enabled property</summary>
-        public bool? AiContextEnabled { get => _explicitNullValueAiContextEnabled; set { _explicitNullValueAiContextEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_context_enabled"); else _explicitNullProperties?.Remove("ai_context_enabled"); } }
+        public bool? AiContextEnabled { get => _explicitNullValueAiContextEnabled; set { _explicitNullValueAiContextEnabled = value; AdditionalData?.Remove("ai_context_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_context_enabled"); else _explicitNullProperties?.Remove("ai_context_enabled"); } }
         private bool? _explicitNullValueAiContextEnabled = default!;
         /// <summary>The allowed_match_count property</summary>
-        public int? AllowedMatchCount { get => _explicitNullValueAllowedMatchCount; set { _explicitNullValueAllowedMatchCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_match_count"); else _explicitNullProperties?.Remove("allowed_match_count"); } }
+        public int? AllowedMatchCount { get => _explicitNullValueAllowedMatchCount; set { _explicitNullValueAllowedMatchCount = value; AdditionalData?.Remove("allowed_match_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_match_count"); else _explicitNullProperties?.Remove("allowed_match_count"); } }
         private int? _explicitNullValueAllowedMatchCount = default!;
         /// <summary>The confidence_threshold property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfidenceThreshold { get => _explicitNullValueConfidenceThreshold; set { _explicitNullValueConfidenceThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_threshold"); else _explicitNullProperties?.Remove("confidence_threshold"); } }
+        public string? ConfidenceThreshold { get => _explicitNullValueConfidenceThreshold; set { _explicitNullValueConfidenceThreshold = value; AdditionalData?.Remove("confidence_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_threshold"); else _explicitNullProperties?.Remove("confidence_threshold"); } }
         private string? _explicitNullValueConfidenceThreshold = default!;
 #nullable restore
 #else
-        public string ConfidenceThreshold { get => _explicitNullValueConfidenceThreshold; set { _explicitNullValueConfidenceThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_threshold"); else _explicitNullProperties?.Remove("confidence_threshold"); } }
+        public string ConfidenceThreshold { get => _explicitNullValueConfidenceThreshold; set { _explicitNullValueConfidenceThreshold = value; AdditionalData?.Remove("confidence_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_threshold"); else _explicitNullProperties?.Remove("confidence_threshold"); } }
         private string _explicitNullValueConfidenceThreshold = default!;
 #endif
         /// <summary>The context_awareness property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness? ContextAwareness { get => _explicitNullValueContextAwareness; set { _explicitNullValueContextAwareness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_awareness"); else _explicitNullProperties?.Remove("context_awareness"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness? ContextAwareness { get => _explicitNullValueContextAwareness; set { _explicitNullValueContextAwareness = value; AdditionalData?.Remove("context_awareness"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_awareness"); else _explicitNullProperties?.Remove("context_awareness"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness? _explicitNullValueContextAwareness = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness ContextAwareness { get => _explicitNullValueContextAwareness; set { _explicitNullValueContextAwareness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_awareness"); else _explicitNullProperties?.Remove("context_awareness"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness ContextAwareness { get => _explicitNullValueContextAwareness; set { _explicitNullValueContextAwareness = value; AdditionalData?.Remove("context_awareness"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_awareness"); else _explicitNullProperties?.Remove("context_awareness"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness _explicitNullValueContextAwareness = default!;
 #endif
         /// <summary>The entries property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate>? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate>? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; AdditionalData?.Remove("entries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate>? _explicitNullValueEntries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate> Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate> Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; AdditionalData?.Remove("entries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate> _explicitNullValueEntries = default!;
 #endif
         /// <summary>The ocr_enabled property</summary>
-        public bool? OcrEnabled { get => _explicitNullValueOcrEnabled; set { _explicitNullValueOcrEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr_enabled"); else _explicitNullProperties?.Remove("ocr_enabled"); } }
+        public bool? OcrEnabled { get => _explicitNullValueOcrEnabled; set { _explicitNullValueOcrEnabled = value; AdditionalData?.Remove("ocr_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr_enabled"); else _explicitNullProperties?.Remove("ocr_enabled"); } }
         private bool? _explicitNullValueOcrEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdate"/> and sets the default values.

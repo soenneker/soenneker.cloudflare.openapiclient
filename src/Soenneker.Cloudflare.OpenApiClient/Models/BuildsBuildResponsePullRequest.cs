@@ -17,27 +17,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("closed_on") is { } nullNodeClosedOn && nullNodeClosedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosedOn = null;
-            if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
-            if (parseNode.GetChildNode("pull_request_url") is { } nullNodePullRequestUrl && nullNodePullRequestUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestUrl = null;
+            if (parseNode.GetChildNode("closed_on") is null) { _explicitNullValueClosedOn = default!; _explicitNullProperties?.Remove("closed_on"); }
+            else if (parseNode.GetChildNode("closed_on") is { } nullNodeClosedOn && nullNodeClosedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosedOn = null;
+            if (parseNode.GetChildNode("created_on") is null) { _explicitNullValueCreatedOn = default!; _explicitNullProperties?.Remove("created_on"); }
+            else if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
+            if (parseNode.GetChildNode("pull_request_url") is null) { _explicitNullValuePullRequestUrl = default!; _explicitNullProperties?.Remove("pull_request_url"); }
+            else if (parseNode.GetChildNode("pull_request_url") is { } nullNodePullRequestUrl && nullNodePullRequestUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The closed_on property</summary>
-        public DateTimeOffset? ClosedOn { get => _explicitNullValueClosedOn; set { _explicitNullValueClosedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_on"); else _explicitNullProperties?.Remove("closed_on"); } }
+        public DateTimeOffset? ClosedOn { get => _explicitNullValueClosedOn; set { _explicitNullValueClosedOn = value; AdditionalData?.Remove("closed_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_on"); else _explicitNullProperties?.Remove("closed_on"); } }
         private DateTimeOffset? _explicitNullValueClosedOn = default!;
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
+        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; AdditionalData?.Remove("created_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
         private DateTimeOffset? _explicitNullValueCreatedOn = default!;
         /// <summary>The pull_request_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PullRequestUrl { get => _explicitNullValuePullRequestUrl; set { _explicitNullValuePullRequestUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request_url"); else _explicitNullProperties?.Remove("pull_request_url"); } }
+        public string? PullRequestUrl { get => _explicitNullValuePullRequestUrl; set { _explicitNullValuePullRequestUrl = value; AdditionalData?.Remove("pull_request_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request_url"); else _explicitNullProperties?.Remove("pull_request_url"); } }
         private string? _explicitNullValuePullRequestUrl = default!;
 #nullable restore
 #else
-        public string PullRequestUrl { get => _explicitNullValuePullRequestUrl; set { _explicitNullValuePullRequestUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request_url"); else _explicitNullProperties?.Remove("pull_request_url"); } }
+        public string PullRequestUrl { get => _explicitNullValuePullRequestUrl; set { _explicitNullValuePullRequestUrl = value; AdditionalData?.Remove("pull_request_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request_url"); else _explicitNullProperties?.Remove("pull_request_url"); } }
         private string _explicitNullValuePullRequestUrl = default!;
 #endif
         /// <summary>

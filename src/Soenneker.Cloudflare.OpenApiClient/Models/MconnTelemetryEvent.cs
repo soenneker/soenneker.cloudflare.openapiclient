@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("k") is { } nullNodeK && nullNodeK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K = null;
+            if (parseNode.GetChildNode("k") is null) { _explicitNullValueK = default!; _explicitNullProperties?.Remove("k"); }
+            else if (parseNode.GetChildNode("k") is { } nullNodeK && nullNodeK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event kind</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventK? K { get => _explicitNullValueK; set { _explicitNullValueK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventK? K { get => _explicitNullValueK; set { _explicitNullValueK = value; AdditionalData?.Remove("k"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventK? _explicitNullValueK = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "k", n => { K = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventK>(); } },
+                { "k", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEventK>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueK = default; _explicitNullProperties?.Remove("k"); AdditionalData["k"] = unknown; } else { K = parsed; AdditionalData.Remove("k"); } } },
             };
         }
         /// <summary>

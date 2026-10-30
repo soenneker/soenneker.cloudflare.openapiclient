@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("drop_suppressed_recipients") is { } nullNodeDropSuppressedRecipients && nullNodeDropSuppressedRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DropSuppressedRecipients = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("preview_enabled") is { } nullNodePreviewEnabled && nullNodePreviewEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewEnabled = null;
+            if (parseNode.GetChildNode("drop_suppressed_recipients") is null) { _explicitNullValueDropSuppressedRecipients = default!; _explicitNullProperties?.Remove("drop_suppressed_recipients"); }
+            else if (parseNode.GetChildNode("drop_suppressed_recipients") is { } nullNodeDropSuppressedRecipients && nullNodeDropSuppressedRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DropSuppressedRecipients = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("preview_enabled") is null) { _explicitNullValuePreviewEnabled = default!; _explicitNullProperties?.Remove("preview_enabled"); }
+            else if (parseNode.GetChildNode("preview_enabled") is { } nullNodePreviewEnabled && nullNodePreviewEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DkimSelector { get; private set; }
 #endif
         /// <summary>Whether a send request that includes a recipient suppressed onthis subdomain drops that recipient and still delivers to therest, instead of failing the entire request.</summary>
-        public bool? DropSuppressedRecipients { get => _explicitNullValueDropSuppressedRecipients; set { _explicitNullValueDropSuppressedRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drop_suppressed_recipients"); else _explicitNullProperties?.Remove("drop_suppressed_recipients"); } }
+        public bool? DropSuppressedRecipients { get => _explicitNullValueDropSuppressedRecipients; set { _explicitNullValueDropSuppressedRecipients = value; AdditionalData?.Remove("drop_suppressed_recipients"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drop_suppressed_recipients"); else _explicitNullProperties?.Remove("drop_suppressed_recipients"); } }
         private bool? _explicitNullValueDropSuppressedRecipients = default!;
         /// <summary>Whether Email Sending is enabled on this subdomain.</summary>
         public bool? Enabled { get; private set; }
@@ -44,15 +47,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The exact domain name or a leftmost wildcard such as `*.example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether sent messages from this subdomain can be previewed in the activity log.</summary>
-        public bool? PreviewEnabled { get => _explicitNullValuePreviewEnabled; set { _explicitNullValuePreviewEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_enabled"); else _explicitNullProperties?.Remove("preview_enabled"); } }
+        public bool? PreviewEnabled { get => _explicitNullValuePreviewEnabled; set { _explicitNullValuePreviewEnabled = value; AdditionalData?.Remove("preview_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_enabled"); else _explicitNullProperties?.Remove("preview_enabled"); } }
         private bool? _explicitNullValuePreviewEnabled = default!;
         /// <summary>The return-path domain used for bounce handling. Wildcard rows use `cf-bounce.&lt;base&gt;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

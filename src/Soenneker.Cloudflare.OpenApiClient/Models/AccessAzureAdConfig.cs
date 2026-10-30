@@ -18,14 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("claims") is { } nullNodeClaims && nullNodeClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Claims = null;
-            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("client_secret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
-            if (parseNode.GetChildNode("conditional_access_enabled") is { } nullNodeConditionalAccessEnabled && nullNodeConditionalAccessEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionalAccessEnabled = null;
-            if (parseNode.GetChildNode("directory_id") is { } nullNodeDirectoryId && nullNodeDirectoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryId = null;
-            if (parseNode.GetChildNode("email_claim_name") is { } nullNodeEmailClaimName && nullNodeEmailClaimName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailClaimName = null;
-            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
-            if (parseNode.GetChildNode("support_groups") is { } nullNodeSupportGroups && nullNodeSupportGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportGroups = null;
+            if (parseNode.GetChildNode("claims") is null) { _explicitNullValueClaims = default!; _explicitNullProperties?.Remove("claims"); }
+            else if (parseNode.GetChildNode("claims") is { } nullNodeClaims && nullNodeClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Claims = null;
+            if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
+            else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_secret") is null) { _explicitNullValueClientSecret = default!; _explicitNullProperties?.Remove("client_secret"); }
+            else if (parseNode.GetChildNode("client_secret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("conditional_access_enabled") is null) { _explicitNullValueConditionalAccessEnabled = default!; _explicitNullProperties?.Remove("conditional_access_enabled"); }
+            else if (parseNode.GetChildNode("conditional_access_enabled") is { } nullNodeConditionalAccessEnabled && nullNodeConditionalAccessEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionalAccessEnabled = null;
+            if (parseNode.GetChildNode("directory_id") is null) { _explicitNullValueDirectoryId = default!; _explicitNullProperties?.Remove("directory_id"); }
+            else if (parseNode.GetChildNode("directory_id") is { } nullNodeDirectoryId && nullNodeDirectoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryId = null;
+            if (parseNode.GetChildNode("email_claim_name") is null) { _explicitNullValueEmailClaimName = default!; _explicitNullProperties?.Remove("email_claim_name"); }
+            else if (parseNode.GetChildNode("email_claim_name") is { } nullNodeEmailClaimName && nullNodeEmailClaimName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailClaimName = null;
+            if (parseNode.GetChildNode("prompt") is null) { _explicitNullValuePrompt = default!; _explicitNullProperties?.Remove("prompt"); }
+            else if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("support_groups") is null) { _explicitNullValueSupportGroups = default!; _explicitNullProperties?.Remove("support_groups"); }
+            else if (parseNode.GetChildNode("support_groups") is { } nullNodeSupportGroups && nullNodeSupportGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportGroups = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,61 +41,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Custom claims</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Claims { get => _explicitNullValueClaims; set { _explicitNullValueClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claims"); else _explicitNullProperties?.Remove("claims"); } }
+        public List<string>? Claims { get => _explicitNullValueClaims; set { _explicitNullValueClaims = value; AdditionalData?.Remove("claims"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claims"); else _explicitNullProperties?.Remove("claims"); } }
         private List<string>? _explicitNullValueClaims = default!;
 #nullable restore
 #else
-        public List<string> Claims { get => _explicitNullValueClaims; set { _explicitNullValueClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claims"); else _explicitNullProperties?.Remove("claims"); } }
+        public List<string> Claims { get => _explicitNullValueClaims; set { _explicitNullValueClaims = value; AdditionalData?.Remove("claims"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claims"); else _explicitNullProperties?.Remove("claims"); } }
         private List<string> _explicitNullValueClaims = default!;
 #endif
         /// <summary>Your OAuth Client ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Your OAuth Client Secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
         private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
         private string _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>Should Cloudflare try to load authentication contexts from your account</summary>
-        public bool? ConditionalAccessEnabled { get => _explicitNullValueConditionalAccessEnabled; set { _explicitNullValueConditionalAccessEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditional_access_enabled"); else _explicitNullProperties?.Remove("conditional_access_enabled"); } }
+        public bool? ConditionalAccessEnabled { get => _explicitNullValueConditionalAccessEnabled; set { _explicitNullValueConditionalAccessEnabled = value; AdditionalData?.Remove("conditional_access_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditional_access_enabled"); else _explicitNullProperties?.Remove("conditional_access_enabled"); } }
         private bool? _explicitNullValueConditionalAccessEnabled = default!;
         /// <summary>Your Azure directory uuid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryId { get => _explicitNullValueDirectoryId; set { _explicitNullValueDirectoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_id"); else _explicitNullProperties?.Remove("directory_id"); } }
+        public string? DirectoryId { get => _explicitNullValueDirectoryId; set { _explicitNullValueDirectoryId = value; AdditionalData?.Remove("directory_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_id"); else _explicitNullProperties?.Remove("directory_id"); } }
         private string? _explicitNullValueDirectoryId = default!;
 #nullable restore
 #else
-        public string DirectoryId { get => _explicitNullValueDirectoryId; set { _explicitNullValueDirectoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_id"); else _explicitNullProperties?.Remove("directory_id"); } }
+        public string DirectoryId { get => _explicitNullValueDirectoryId; set { _explicitNullValueDirectoryId = value; AdditionalData?.Remove("directory_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_id"); else _explicitNullProperties?.Remove("directory_id"); } }
         private string _explicitNullValueDirectoryId = default!;
 #endif
         /// <summary>The claim name for email in the id_token response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailClaimName { get => _explicitNullValueEmailClaimName; set { _explicitNullValueEmailClaimName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_claim_name"); else _explicitNullProperties?.Remove("email_claim_name"); } }
+        public string? EmailClaimName { get => _explicitNullValueEmailClaimName; set { _explicitNullValueEmailClaimName = value; AdditionalData?.Remove("email_claim_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_claim_name"); else _explicitNullProperties?.Remove("email_claim_name"); } }
         private string? _explicitNullValueEmailClaimName = default!;
 #nullable restore
 #else
-        public string EmailClaimName { get => _explicitNullValueEmailClaimName; set { _explicitNullValueEmailClaimName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_claim_name"); else _explicitNullProperties?.Remove("email_claim_name"); } }
+        public string EmailClaimName { get => _explicitNullValueEmailClaimName; set { _explicitNullValueEmailClaimName = value; AdditionalData?.Remove("email_claim_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_claim_name"); else _explicitNullProperties?.Remove("email_claim_name"); } }
         private string _explicitNullValueEmailClaimName = default!;
 #endif
         /// <summary>Indicates the type of user interaction that is required. prompt=login forces the user to enter their credentials on that request, negating single-sign on. prompt=none is the opposite. It ensures that the user isn&apos;t presented with any interactive prompt. If the request can&apos;t be completed silently by using single-sign on, the Microsoft identity platform returns an interaction_required error. prompt=select_account interrupts single sign-on providing account selection experience listing all the accounts either in session or any remembered account or an option to choose to use a different account altogether.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdAllOf2ConfigPrompt? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdAllOf2ConfigPrompt? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; AdditionalData?.Remove("prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdAllOf2ConfigPrompt? _explicitNullValuePrompt = default!;
         /// <summary>Should Cloudflare try to load groups from your account</summary>
-        public bool? SupportGroups { get => _explicitNullValueSupportGroups; set { _explicitNullValueSupportGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_groups"); else _explicitNullProperties?.Remove("support_groups"); } }
+        public bool? SupportGroups { get => _explicitNullValueSupportGroups; set { _explicitNullValueSupportGroups = value; AdditionalData?.Remove("support_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_groups"); else _explicitNullProperties?.Remove("support_groups"); } }
         private bool? _explicitNullValueSupportGroups = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdConfig"/> and sets the default values.
@@ -120,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "conditional_access_enabled", n => { ConditionalAccessEnabled = n.GetBoolValue(); } },
                 { "directory_id", n => { DirectoryId = n.GetStringValue(); } },
                 { "email_claim_name", n => { EmailClaimName = n.GetStringValue(); } },
-                { "prompt", n => { Prompt = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdAllOf2ConfigPrompt>(); } },
+                { "prompt", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdAllOf2ConfigPrompt>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePrompt = default; _explicitNullProperties?.Remove("prompt"); AdditionalData["prompt"] = unknown; } else { Prompt = parsed; AdditionalData.Remove("prompt"); } } },
                 { "support_groups", n => { SupportGroups = n.GetBoolValue(); } },
             };
         }

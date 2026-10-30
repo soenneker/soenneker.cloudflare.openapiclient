@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("design_tokens") is { } nullNodeDesignTokens && nullNodeDesignTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesignTokens = null;
+            if (parseNode.GetChildNode("design_tokens") is null) { _explicitNullValueDesignTokens = default!; _explicitNullProperties?.Remove("design_tokens"); }
+            else if (parseNode.GetChildNode("design_tokens") is { } nullNodeDesignTokens && nullNodeDesignTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesignTokens = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The design_tokens property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens? DesignTokens { get => _explicitNullValueDesignTokens; set { _explicitNullValueDesignTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("design_tokens"); else _explicitNullProperties?.Remove("design_tokens"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens? DesignTokens { get => _explicitNullValueDesignTokens; set { _explicitNullValueDesignTokens = value; AdditionalData?.Remove("design_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("design_tokens"); else _explicitNullProperties?.Remove("design_tokens"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens? _explicitNullValueDesignTokens = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens DesignTokens { get => _explicitNullValueDesignTokens; set { _explicitNullValueDesignTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("design_tokens"); else _explicitNullProperties?.Remove("design_tokens"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens DesignTokens { get => _explicitNullValueDesignTokens; set { _explicitNullValueDesignTokens = value; AdditionalData?.Remove("design_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("design_tokens"); else _explicitNullProperties?.Remove("design_tokens"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens _explicitNullValueDesignTokens = default!;
 #endif
         /// <summary>

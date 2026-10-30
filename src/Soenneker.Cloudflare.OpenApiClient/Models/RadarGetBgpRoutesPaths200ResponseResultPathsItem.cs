@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("collectors") is { } nullNodeCollectors && nullNodeCollectors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collectors = null;
-            if (parseNode.GetChildNode("pathsCount") is { } nullNodePathsCount && nullNodePathsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathsCount = null;
-            if (parseNode.GetChildNode("peersCount") is { } nullNodePeersCount && nullNodePeersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersCount = null;
-            if (parseNode.GetChildNode("segment") is { } nullNodeSegment && nullNodeSegment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segment = null;
+            if (parseNode.GetChildNode("collectors") is null) { _explicitNullValueCollectors = default!; _explicitNullProperties?.Remove("collectors"); }
+            else if (parseNode.GetChildNode("collectors") is { } nullNodeCollectors && nullNodeCollectors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collectors = null;
+            if (parseNode.GetChildNode("pathsCount") is null) { _explicitNullValuePathsCount = default!; _explicitNullProperties?.Remove("pathsCount"); }
+            else if (parseNode.GetChildNode("pathsCount") is { } nullNodePathsCount && nullNodePathsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathsCount = null;
+            if (parseNode.GetChildNode("peersCount") is null) { _explicitNullValuePeersCount = default!; _explicitNullProperties?.Remove("peersCount"); }
+            else if (parseNode.GetChildNode("peersCount") is { } nullNodePeersCount && nullNodePeersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersCount = null;
+            if (parseNode.GetChildNode("segment") is null) { _explicitNullValueSegment = default!; _explicitNullProperties?.Remove("segment"); }
+            else if (parseNode.GetChildNode("segment") is { } nullNodeSegment && nullNodeSegment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,27 +32,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The collectors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Collectors { get => _explicitNullValueCollectors; set { _explicitNullValueCollectors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collectors"); else _explicitNullProperties?.Remove("collectors"); } }
+        public List<string>? Collectors { get => _explicitNullValueCollectors; set { _explicitNullValueCollectors = value; AdditionalData?.Remove("collectors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collectors"); else _explicitNullProperties?.Remove("collectors"); } }
         private List<string>? _explicitNullValueCollectors = default!;
 #nullable restore
 #else
-        public List<string> Collectors { get => _explicitNullValueCollectors; set { _explicitNullValueCollectors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collectors"); else _explicitNullProperties?.Remove("collectors"); } }
+        public List<string> Collectors { get => _explicitNullValueCollectors; set { _explicitNullValueCollectors = value; AdditionalData?.Remove("collectors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collectors"); else _explicitNullProperties?.Remove("collectors"); } }
         private List<string> _explicitNullValueCollectors = default!;
 #endif
         /// <summary>The pathsCount property</summary>
-        public int? PathsCount { get => _explicitNullValuePathsCount; set { _explicitNullValuePathsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathsCount"); else _explicitNullProperties?.Remove("pathsCount"); } }
+        public int? PathsCount { get => _explicitNullValuePathsCount; set { _explicitNullValuePathsCount = value; AdditionalData?.Remove("pathsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathsCount"); else _explicitNullProperties?.Remove("pathsCount"); } }
         private int? _explicitNullValuePathsCount = default!;
         /// <summary>The peersCount property</summary>
-        public int? PeersCount { get => _explicitNullValuePeersCount; set { _explicitNullValuePeersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peersCount"); else _explicitNullProperties?.Remove("peersCount"); } }
+        public int? PeersCount { get => _explicitNullValuePeersCount; set { _explicitNullValuePeersCount = value; AdditionalData?.Remove("peersCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peersCount"); else _explicitNullProperties?.Remove("peersCount"); } }
         private int? _explicitNullValuePeersCount = default!;
         /// <summary>The segment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
+        public List<int?>? Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; AdditionalData?.Remove("segment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
         private List<int?>? _explicitNullValueSegment = default!;
 #nullable restore
 #else
-        public List<int?> Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
+        public List<int?> Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; AdditionalData?.Remove("segment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
         private List<int?> _explicitNullValueSegment = default!;
 #endif
         /// <summary>

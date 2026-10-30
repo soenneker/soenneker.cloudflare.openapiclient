@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
-            if (parseNode.GetChildNode("prefix_id") is { } nullNodePrefixId && nullNodePrefixId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixId = null;
-            if (parseNode.GetChildNode("region_key") is { } nullNodeRegionKey && nullNodeRegionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionKey = null;
+            if (parseNode.GetChildNode("cidr") is null) { _explicitNullValueCidr = default!; _explicitNullProperties?.Remove("cidr"); }
+            else if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
+            if (parseNode.GetChildNode("prefix_id") is null) { _explicitNullValuePrefixId = default!; _explicitNullProperties?.Remove("prefix_id"); }
+            else if (parseNode.GetChildNode("prefix_id") is { } nullNodePrefixId && nullNodePrefixId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixId = null;
+            if (parseNode.GetChildNode("region_key") is null) { _explicitNullValueRegionKey = default!; _explicitNullProperties?.Remove("region_key"); }
+            else if (parseNode.GetChildNode("region_key") is { } nullNodeRegionKey && nullNodeRegionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IP prefix in CIDR notation to bind.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        public string? Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; AdditionalData?.Remove("cidr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
         private string? _explicitNullValueCidr = default!;
 #nullable restore
 #else
-        public string Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        public string Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; AdditionalData?.Remove("cidr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
         private string _explicitNullValueCidr = default!;
 #endif
         /// <summary>The ID of the parent IP prefix that contains the CIDR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrefixId { get => _explicitNullValuePrefixId; set { _explicitNullValuePrefixId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_id"); else _explicitNullProperties?.Remove("prefix_id"); } }
+        public string? PrefixId { get => _explicitNullValuePrefixId; set { _explicitNullValuePrefixId = value; AdditionalData?.Remove("prefix_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_id"); else _explicitNullProperties?.Remove("prefix_id"); } }
         private string? _explicitNullValuePrefixId = default!;
 #nullable restore
 #else
-        public string PrefixId { get => _explicitNullValuePrefixId; set { _explicitNullValuePrefixId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_id"); else _explicitNullProperties?.Remove("prefix_id"); } }
+        public string PrefixId { get => _explicitNullValuePrefixId; set { _explicitNullValuePrefixId = value; AdditionalData?.Remove("prefix_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_id"); else _explicitNullProperties?.Remove("prefix_id"); } }
         private string _explicitNullValuePrefixId = default!;
 #endif
         /// <summary>Region key from managed regions (e.g., &quot;us&quot;, &quot;eu&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
+        public string? RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; AdditionalData?.Remove("region_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
         private string? _explicitNullValueRegionKey = default!;
 #nullable restore
 #else
-        public string RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
+        public string RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; AdditionalData?.Remove("region_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
         private string _explicitNullValueRegionKey = default!;
 #endif
         /// <summary>

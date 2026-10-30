@@ -18,12 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allocation") is { } nullNodeAllocation && nullNodeAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocation = null;
-            if (parseNode.GetChildNode("created_date") is { } nullNodeCreatedDate && nullNodeCreatedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedDate = null;
-            if (parseNode.GetChildNode("deleted_date") is { } nullNodeDeletedDate && nullNodeDeletedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedDate = null;
-            if (parseNode.GetChildNode("edited_date") is { } nullNodeEditedDate && nullNodeEditedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditedDate = null;
-            if (parseNode.GetChildNode("feature") is { } nullNodeFeature && nullNodeFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feature = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("allocation") is null) { _explicitNullValueAllocation = default!; _explicitNullProperties?.Remove("allocation"); }
+            else if (parseNode.GetChildNode("allocation") is { } nullNodeAllocation && nullNodeAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocation = null;
+            if (parseNode.GetChildNode("created_date") is null) { _explicitNullValueCreatedDate = default!; _explicitNullProperties?.Remove("created_date"); }
+            else if (parseNode.GetChildNode("created_date") is { } nullNodeCreatedDate && nullNodeCreatedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedDate = null;
+            if (parseNode.GetChildNode("deleted_date") is null) { _explicitNullValueDeletedDate = default!; _explicitNullProperties?.Remove("deleted_date"); }
+            else if (parseNode.GetChildNode("deleted_date") is { } nullNodeDeletedDate && nullNodeDeletedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedDate = null;
+            if (parseNode.GetChildNode("edited_date") is null) { _explicitNullValueEditedDate = default!; _explicitNullProperties?.Remove("edited_date"); }
+            else if (parseNode.GetChildNode("edited_date") is { } nullNodeEditedDate && nullNodeEditedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditedDate = null;
+            if (parseNode.GetChildNode("feature") is null) { _explicitNullValueFeature = default!; _explicitNullProperties?.Remove("feature"); }
+            else if (parseNode.GetChildNode("feature") is { } nullNodeFeature && nullNodeFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feature = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Represents the allocation value for an entitlement. The shape of `value` depends on `type`: `bool` uses a boolean, `max_count` uses an integer, `enum_number` uses an array of numbers, `range` uses an object with `min` and `max` integer fields, and `string` uses a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation? Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation? Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; AdditionalData?.Remove("allocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation? _explicitNullValueAllocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; AdditionalData?.Remove("allocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocation _explicitNullValueAllocation = default!;
 #endif
         /// <summary>ISO 8601 timestamp (microsecond precision, no timezone offset) when the entitlement was created. Format: `YYYY-MM-DDTHH:MM:SS.ffffff`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_date"); else _explicitNullProperties?.Remove("created_date"); } }
+        public string? CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; AdditionalData?.Remove("created_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_date"); else _explicitNullProperties?.Remove("created_date"); } }
         private string? _explicitNullValueCreatedDate = default!;
 #nullable restore
 #else
-        public string CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_date"); else _explicitNullProperties?.Remove("created_date"); } }
+        public string CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; AdditionalData?.Remove("created_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_date"); else _explicitNullProperties?.Remove("created_date"); } }
         private string _explicitNullValueCreatedDate = default!;
 #endif
         /// <summary>ISO 8601 timestamp when the entitlement was deleted, or empty string if not deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedDate { get => _explicitNullValueDeletedDate; set { _explicitNullValueDeletedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_date"); else _explicitNullProperties?.Remove("deleted_date"); } }
+        public string? DeletedDate { get => _explicitNullValueDeletedDate; set { _explicitNullValueDeletedDate = value; AdditionalData?.Remove("deleted_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_date"); else _explicitNullProperties?.Remove("deleted_date"); } }
         private string? _explicitNullValueDeletedDate = default!;
 #nullable restore
 #else
-        public string DeletedDate { get => _explicitNullValueDeletedDate; set { _explicitNullValueDeletedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_date"); else _explicitNullProperties?.Remove("deleted_date"); } }
+        public string DeletedDate { get => _explicitNullValueDeletedDate; set { _explicitNullValueDeletedDate = value; AdditionalData?.Remove("deleted_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_date"); else _explicitNullProperties?.Remove("deleted_date"); } }
         private string _explicitNullValueDeletedDate = default!;
 #endif
         /// <summary>ISO 8601 timestamp (microsecond precision, no timezone offset) when the entitlement was last edited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EditedDate { get => _explicitNullValueEditedDate; set { _explicitNullValueEditedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edited_date"); else _explicitNullProperties?.Remove("edited_date"); } }
+        public string? EditedDate { get => _explicitNullValueEditedDate; set { _explicitNullValueEditedDate = value; AdditionalData?.Remove("edited_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edited_date"); else _explicitNullProperties?.Remove("edited_date"); } }
         private string? _explicitNullValueEditedDate = default!;
 #nullable restore
 #else
-        public string EditedDate { get => _explicitNullValueEditedDate; set { _explicitNullValueEditedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edited_date"); else _explicitNullProperties?.Remove("edited_date"); } }
+        public string EditedDate { get => _explicitNullValueEditedDate; set { _explicitNullValueEditedDate = value; AdditionalData?.Remove("edited_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edited_date"); else _explicitNullProperties?.Remove("edited_date"); } }
         private string _explicitNullValueEditedDate = default!;
 #endif
         /// <summary>Describes a product feature associated with an entitlement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature? Feature { get => _explicitNullValueFeature; set { _explicitNullValueFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature"); else _explicitNullProperties?.Remove("feature"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature? Feature { get => _explicitNullValueFeature; set { _explicitNullValueFeature = value; AdditionalData?.Remove("feature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature"); else _explicitNullProperties?.Remove("feature"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature? _explicitNullValueFeature = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature Feature { get => _explicitNullValueFeature; set { _explicitNullValueFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature"); else _explicitNullProperties?.Remove("feature"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature Feature { get => _explicitNullValueFeature; set { _explicitNullValueFeature = value; AdditionalData?.Remove("feature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature"); else _explicitNullProperties?.Remove("feature"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsFeature _explicitNullValueFeature = default!;
 #endif
         /// <summary>Entitlement identifier — equal to the feature key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>

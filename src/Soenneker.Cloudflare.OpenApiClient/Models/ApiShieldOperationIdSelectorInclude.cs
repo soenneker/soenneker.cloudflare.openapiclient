@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("operation_ids") is { } nullNodeOperationIds && nullNodeOperationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationIds = null;
+            if (parseNode.GetChildNode("operation_ids") is null) { _explicitNullValueOperationIds = default!; _explicitNullProperties?.Remove("operation_ids"); }
+            else if (parseNode.GetChildNode("operation_ids") is { } nullNodeOperationIds && nullNodeOperationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The operation_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>? OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>? OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; AdditionalData?.Remove("operation_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>? _explicitNullValueOperationIds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2> OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2> OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; AdditionalData?.Remove("operation_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2> _explicitNullValueOperationIds = default!;
 #endif
         /// <summary>

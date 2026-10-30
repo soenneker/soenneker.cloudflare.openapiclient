@@ -17,13 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bandwidthDownload") is { } nullNodeBandwidthDownload && nullNodeBandwidthDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthDownload = null;
-            if (parseNode.GetChildNode("bandwidthUpload") is { } nullNodeBandwidthUpload && nullNodeBandwidthUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthUpload = null;
-            if (parseNode.GetChildNode("jitterIdle") is { } nullNodeJitterIdle && nullNodeJitterIdle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterIdle = null;
-            if (parseNode.GetChildNode("jitterLoaded") is { } nullNodeJitterLoaded && nullNodeJitterLoaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterLoaded = null;
-            if (parseNode.GetChildNode("latencyIdle") is { } nullNodeLatencyIdle && nullNodeLatencyIdle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyIdle = null;
-            if (parseNode.GetChildNode("latencyLoaded") is { } nullNodeLatencyLoaded && nullNodeLatencyLoaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyLoaded = null;
-            if (parseNode.GetChildNode("packetLoss") is { } nullNodePacketLoss && nullNodePacketLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLoss = null;
+            if (parseNode.GetChildNode("bandwidthDownload") is null) { _explicitNullValueBandwidthDownload = default!; _explicitNullProperties?.Remove("bandwidthDownload"); }
+            else if (parseNode.GetChildNode("bandwidthDownload") is { } nullNodeBandwidthDownload && nullNodeBandwidthDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthDownload = null;
+            if (parseNode.GetChildNode("bandwidthUpload") is null) { _explicitNullValueBandwidthUpload = default!; _explicitNullProperties?.Remove("bandwidthUpload"); }
+            else if (parseNode.GetChildNode("bandwidthUpload") is { } nullNodeBandwidthUpload && nullNodeBandwidthUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthUpload = null;
+            if (parseNode.GetChildNode("jitterIdle") is null) { _explicitNullValueJitterIdle = default!; _explicitNullProperties?.Remove("jitterIdle"); }
+            else if (parseNode.GetChildNode("jitterIdle") is { } nullNodeJitterIdle && nullNodeJitterIdle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterIdle = null;
+            if (parseNode.GetChildNode("jitterLoaded") is null) { _explicitNullValueJitterLoaded = default!; _explicitNullProperties?.Remove("jitterLoaded"); }
+            else if (parseNode.GetChildNode("jitterLoaded") is { } nullNodeJitterLoaded && nullNodeJitterLoaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterLoaded = null;
+            if (parseNode.GetChildNode("latencyIdle") is null) { _explicitNullValueLatencyIdle = default!; _explicitNullProperties?.Remove("latencyIdle"); }
+            else if (parseNode.GetChildNode("latencyIdle") is { } nullNodeLatencyIdle && nullNodeLatencyIdle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyIdle = null;
+            if (parseNode.GetChildNode("latencyLoaded") is null) { _explicitNullValueLatencyLoaded = default!; _explicitNullProperties?.Remove("latencyLoaded"); }
+            else if (parseNode.GetChildNode("latencyLoaded") is { } nullNodeLatencyLoaded && nullNodeLatencyLoaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyLoaded = null;
+            if (parseNode.GetChildNode("packetLoss") is null) { _explicitNullValuePacketLoss = default!; _explicitNullProperties?.Remove("packetLoss"); }
+            else if (parseNode.GetChildNode("packetLoss") is { } nullNodePacketLoss && nullNodePacketLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLoss = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
+        public string? BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; AdditionalData?.Remove("bandwidthDownload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
         private string? _explicitNullValueBandwidthDownload = default!;
 #nullable restore
 #else
-        public string BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
+        public string BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; AdditionalData?.Remove("bandwidthDownload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
         private string _explicitNullValueBandwidthDownload = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
+        public string? BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; AdditionalData?.Remove("bandwidthUpload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
         private string? _explicitNullValueBandwidthUpload = default!;
 #nullable restore
 #else
-        public string BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
+        public string BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; AdditionalData?.Remove("bandwidthUpload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
         private string _explicitNullValueBandwidthUpload = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JitterIdle { get => _explicitNullValueJitterIdle; set { _explicitNullValueJitterIdle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterIdle"); else _explicitNullProperties?.Remove("jitterIdle"); } }
+        public string? JitterIdle { get => _explicitNullValueJitterIdle; set { _explicitNullValueJitterIdle = value; AdditionalData?.Remove("jitterIdle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterIdle"); else _explicitNullProperties?.Remove("jitterIdle"); } }
         private string? _explicitNullValueJitterIdle = default!;
 #nullable restore
 #else
-        public string JitterIdle { get => _explicitNullValueJitterIdle; set { _explicitNullValueJitterIdle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterIdle"); else _explicitNullProperties?.Remove("jitterIdle"); } }
+        public string JitterIdle { get => _explicitNullValueJitterIdle; set { _explicitNullValueJitterIdle = value; AdditionalData?.Remove("jitterIdle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterIdle"); else _explicitNullProperties?.Remove("jitterIdle"); } }
         private string _explicitNullValueJitterIdle = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JitterLoaded { get => _explicitNullValueJitterLoaded; set { _explicitNullValueJitterLoaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterLoaded"); else _explicitNullProperties?.Remove("jitterLoaded"); } }
+        public string? JitterLoaded { get => _explicitNullValueJitterLoaded; set { _explicitNullValueJitterLoaded = value; AdditionalData?.Remove("jitterLoaded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterLoaded"); else _explicitNullProperties?.Remove("jitterLoaded"); } }
         private string? _explicitNullValueJitterLoaded = default!;
 #nullable restore
 #else
-        public string JitterLoaded { get => _explicitNullValueJitterLoaded; set { _explicitNullValueJitterLoaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterLoaded"); else _explicitNullProperties?.Remove("jitterLoaded"); } }
+        public string JitterLoaded { get => _explicitNullValueJitterLoaded; set { _explicitNullValueJitterLoaded = value; AdditionalData?.Remove("jitterLoaded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitterLoaded"); else _explicitNullProperties?.Remove("jitterLoaded"); } }
         private string _explicitNullValueJitterLoaded = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LatencyIdle { get => _explicitNullValueLatencyIdle; set { _explicitNullValueLatencyIdle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyIdle"); else _explicitNullProperties?.Remove("latencyIdle"); } }
+        public string? LatencyIdle { get => _explicitNullValueLatencyIdle; set { _explicitNullValueLatencyIdle = value; AdditionalData?.Remove("latencyIdle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyIdle"); else _explicitNullProperties?.Remove("latencyIdle"); } }
         private string? _explicitNullValueLatencyIdle = default!;
 #nullable restore
 #else
-        public string LatencyIdle { get => _explicitNullValueLatencyIdle; set { _explicitNullValueLatencyIdle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyIdle"); else _explicitNullProperties?.Remove("latencyIdle"); } }
+        public string LatencyIdle { get => _explicitNullValueLatencyIdle; set { _explicitNullValueLatencyIdle = value; AdditionalData?.Remove("latencyIdle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyIdle"); else _explicitNullProperties?.Remove("latencyIdle"); } }
         private string _explicitNullValueLatencyIdle = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LatencyLoaded { get => _explicitNullValueLatencyLoaded; set { _explicitNullValueLatencyLoaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyLoaded"); else _explicitNullProperties?.Remove("latencyLoaded"); } }
+        public string? LatencyLoaded { get => _explicitNullValueLatencyLoaded; set { _explicitNullValueLatencyLoaded = value; AdditionalData?.Remove("latencyLoaded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyLoaded"); else _explicitNullProperties?.Remove("latencyLoaded"); } }
         private string? _explicitNullValueLatencyLoaded = default!;
 #nullable restore
 #else
-        public string LatencyLoaded { get => _explicitNullValueLatencyLoaded; set { _explicitNullValueLatencyLoaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyLoaded"); else _explicitNullProperties?.Remove("latencyLoaded"); } }
+        public string LatencyLoaded { get => _explicitNullValueLatencyLoaded; set { _explicitNullValueLatencyLoaded = value; AdditionalData?.Remove("latencyLoaded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latencyLoaded"); else _explicitNullProperties?.Remove("latencyLoaded"); } }
         private string _explicitNullValueLatencyLoaded = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetLoss"); else _explicitNullProperties?.Remove("packetLoss"); } }
+        public string? PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; AdditionalData?.Remove("packetLoss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetLoss"); else _explicitNullProperties?.Remove("packetLoss"); } }
         private string? _explicitNullValuePacketLoss = default!;
 #nullable restore
 #else
-        public string PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetLoss"); else _explicitNullProperties?.Remove("packetLoss"); } }
+        public string PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; AdditionalData?.Remove("packetLoss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packetLoss"); else _explicitNullProperties?.Remove("packetLoss"); } }
         private string _explicitNullValuePacketLoss = default!;
 #endif
         /// <summary>

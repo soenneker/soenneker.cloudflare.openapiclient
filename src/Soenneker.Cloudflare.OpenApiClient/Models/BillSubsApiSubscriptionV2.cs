@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app") is { } nullNodeApp && nullNodeApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) App = null;
-            if (parseNode.GetChildNode("component_values") is { } nullNodeComponentValues && nullNodeComponentValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComponentValues = null;
-            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
-            if (parseNode.GetChildNode("rate_plan") is { } nullNodeRatePlan && nullNodeRatePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatePlan = null;
-            if (parseNode.GetChildNode("zone") is { } nullNodeZone && nullNodeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zone = null;
+            if (parseNode.GetChildNode("app") is null) { _explicitNullValueApp = default!; _explicitNullProperties?.Remove("app"); }
+            else if (parseNode.GetChildNode("app") is { } nullNodeApp && nullNodeApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) App = null;
+            if (parseNode.GetChildNode("component_values") is null) { _explicitNullValueComponentValues = default!; _explicitNullProperties?.Remove("component_values"); }
+            else if (parseNode.GetChildNode("component_values") is { } nullNodeComponentValues && nullNodeComponentValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComponentValues = null;
+            if (parseNode.GetChildNode("frequency") is null) { _explicitNullValueFrequency = default!; _explicitNullProperties?.Remove("frequency"); }
+            else if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("rate_plan") is null) { _explicitNullValueRatePlan = default!; _explicitNullProperties?.Remove("rate_plan"); }
+            else if (parseNode.GetChildNode("rate_plan") is { } nullNodeRatePlan && nullNodeRatePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatePlan = null;
+            if (parseNode.GetChildNode("zone") is null) { _explicitNullValueZone = default!; _explicitNullProperties?.Remove("zone"); }
+            else if (parseNode.GetChildNode("zone") is { } nullNodeZone && nullNodeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,21 +35,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App? App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App? App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; AdditionalData?.Remove("app"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App? _explicitNullValueApp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; AdditionalData?.Remove("app"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App _explicitNullValueApp = default!;
 #endif
         /// <summary>Configurable component values for the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>? ComponentValues { get => _explicitNullValueComponentValues; set { _explicitNullValueComponentValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_values"); else _explicitNullProperties?.Remove("component_values"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>? ComponentValues { get => _explicitNullValueComponentValues; set { _explicitNullValueComponentValues = value; AdditionalData?.Remove("component_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_values"); else _explicitNullProperties?.Remove("component_values"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>? _explicitNullValueComponentValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue> ComponentValues { get => _explicitNullValueComponentValues; set { _explicitNullValueComponentValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_values"); else _explicitNullProperties?.Remove("component_values"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue> ComponentValues { get => _explicitNullValueComponentValues; set { _explicitNullValueComponentValues = value; AdditionalData?.Remove("component_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_values"); else _explicitNullProperties?.Remove("component_values"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue> _explicitNullValueComponentValues = default!;
 #endif
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
@@ -60,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the current billing period started. May match initial_period_start if this is the first period.</summary>
         public DateTimeOffset? CurrentPeriodStart { get; private set; }
         /// <summary>How often the subscription is renewed automatically.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency? _explicitNullValueFrequency = default!;
         /// <summary>Subscription identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,11 +80,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rate plan applied to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan? RatePlan { get => _explicitNullValueRatePlan; set { _explicitNullValueRatePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_plan"); else _explicitNullProperties?.Remove("rate_plan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan? RatePlan { get => _explicitNullValueRatePlan; set { _explicitNullValueRatePlan = value; AdditionalData?.Remove("rate_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_plan"); else _explicitNullProperties?.Remove("rate_plan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan? _explicitNullValueRatePlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan RatePlan { get => _explicitNullValueRatePlan; set { _explicitNullValueRatePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_plan"); else _explicitNullProperties?.Remove("rate_plan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan RatePlan { get => _explicitNullValueRatePlan; set { _explicitNullValueRatePlan = value; AdditionalData?.Remove("rate_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_plan"); else _explicitNullProperties?.Remove("rate_plan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan _explicitNullValueRatePlan = default!;
 #endif
         /// <summary>The state that the subscription is in.</summary>
@@ -87,11 +92,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The zone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone? Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone? Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; AdditionalData?.Remove("zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone? _explicitNullValueZone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; AdditionalData?.Remove("zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2Zone _explicitNullValueZone = default!;
 #endif
         /// <summary>
@@ -124,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "current_period_end", n => { CurrentPeriodEnd = n.GetDateTimeOffsetValue(); } },
                 { "current_period_start", n => { CurrentPeriodStart = n.GetDateTimeOffsetValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency>(); } },
+                { "frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFrequency = default; _explicitNullProperties?.Remove("frequency"); AdditionalData["frequency"] = unknown; } else { Frequency = parsed; AdditionalData.Remove("frequency"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "rate_plan", n => { RatePlan = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan.CreateFromDiscriminatorValue); } },

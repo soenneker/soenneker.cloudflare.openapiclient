@@ -17,30 +17,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accepts") is { } nullNodeAccepts && nullNodeAccepts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accepts = null;
-            if (parseNode.GetChildNode("rejects") is { } nullNodeRejects && nullNodeRejects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rejects = null;
+            if (parseNode.GetChildNode("accepts") is null) { _explicitNullValueAccepts = default!; _explicitNullProperties?.Remove("accepts"); }
+            else if (parseNode.GetChildNode("accepts") is { } nullNodeAccepts && nullNodeAccepts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accepts = null;
+            if (parseNode.GetChildNode("rejects") is null) { _explicitNullValueRejects = default!; _explicitNullProperties?.Remove("rejects"); }
+            else if (parseNode.GetChildNode("rejects") is { } nullNodeRejects && nullNodeRejects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rejects = null;
         }
 
         /// <summary>The accepts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchAccept>? Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchAccept>? _explicitNullValueAccepts = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost>? Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; AdditionalData?.Remove("accepts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost>? _explicitNullValueAccepts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchAccept> Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchAccept> _explicitNullValueAccepts = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost> Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; AdditionalData?.Remove("accepts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost> _explicitNullValueAccepts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The rejects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject>? Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject>? Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; AdditionalData?.Remove("rejects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject>? _explicitNullValueRejects = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject> Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject> Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; AdditionalData?.Remove("rejects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject> _explicitNullValueRejects = default!;
 #endif
         /// <summary>
@@ -68,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accepts", n => { Accepts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchAccept>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchAccept.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "accepts", n => { Accepts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rejects", n => { Rejects = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -79,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchAccept>("accepts", Accepts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost>("accepts", Accepts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordScanBatchReject>("rejects", Rejects);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

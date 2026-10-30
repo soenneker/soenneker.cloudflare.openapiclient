@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("worker_id") is { } nullNodeWorkerId && nullNodeWorkerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerId = null;
+            if (parseNode.GetChildNode("worker_id") is null) { _explicitNullValueWorkerId = default!; _explicitNullProperties?.Remove("worker_id"); }
+            else if (parseNode.GetChildNode("worker_id") is { } nullNodeWorkerId && nullNodeWorkerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerId = null;
         }
 
         /// <summary>Identifies the consumer process. Each worker holds at most one batch at a time.</summary>

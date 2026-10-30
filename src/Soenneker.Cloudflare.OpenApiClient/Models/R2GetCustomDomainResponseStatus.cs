@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ownership") is { } nullNodeOwnership && nullNodeOwnership.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ownership = null;
-            if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
+            if (parseNode.GetChildNode("ownership") is null) { _explicitNullValueOwnership = default!; _explicitNullProperties?.Remove("ownership"); }
+            else if (parseNode.GetChildNode("ownership") is { } nullNodeOwnership && nullNodeOwnership.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ownership = null;
+            if (parseNode.GetChildNode("ssl") is null) { _explicitNullValueSsl = default!; _explicitNullProperties?.Remove("ssl"); }
+            else if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Ownership status of the domain.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusOwnership? Ownership { get => _explicitNullValueOwnership; set { _explicitNullValueOwnership = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership"); else _explicitNullProperties?.Remove("ownership"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusOwnership? Ownership { get => _explicitNullValueOwnership; set { _explicitNullValueOwnership = value; AdditionalData?.Remove("ownership"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership"); else _explicitNullProperties?.Remove("ownership"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusOwnership? _explicitNullValueOwnership = default!;
         /// <summary>SSL certificate status.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusSsl? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusSsl? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; AdditionalData?.Remove("ssl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusSsl? _explicitNullValueSsl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatus"/> and sets the default values.
@@ -54,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ownership", n => { Ownership = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusOwnership>(); } },
-                { "ssl", n => { Ssl = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusSsl>(); } },
+                { "ownership", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusOwnership>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOwnership = default; _explicitNullProperties?.Remove("ownership"); AdditionalData["ownership"] = unknown; } else { Ownership = parsed; AdditionalData.Remove("ownership"); } } },
+                { "ssl", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetCustomDomainResponseStatusSsl>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSsl = default; _explicitNullProperties?.Remove("ssl"); AdditionalData["ssl"] = unknown; } else { Ssl = parsed; AdditionalData.Remove("ssl"); } } },
             };
         }
         /// <summary>

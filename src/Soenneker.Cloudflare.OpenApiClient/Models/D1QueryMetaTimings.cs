@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sql_duration_ms") is { } nullNodeSqlDurationMs && nullNodeSqlDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SqlDurationMs = null;
+            if (parseNode.GetChildNode("sql_duration_ms") is null) { _explicitNullValueSqlDurationMs = default!; _explicitNullProperties?.Remove("sql_duration_ms"); }
+            else if (parseNode.GetChildNode("sql_duration_ms") is { } nullNodeSqlDurationMs && nullNodeSqlDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SqlDurationMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the SQL query execution inside the database. Does not include any network communication.</summary>
-        public double? SqlDurationMs { get => _explicitNullValueSqlDurationMs; set { _explicitNullValueSqlDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sql_duration_ms"); else _explicitNullProperties?.Remove("sql_duration_ms"); } }
+        public double? SqlDurationMs { get => _explicitNullValueSqlDurationMs; set { _explicitNullValueSqlDurationMs = value; AdditionalData?.Remove("sql_duration_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sql_duration_ms"); else _explicitNullProperties?.Remove("sql_duration_ms"); } }
         private double? _explicitNullValueSqlDurationMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMetaTimings"/> and sets the default values.

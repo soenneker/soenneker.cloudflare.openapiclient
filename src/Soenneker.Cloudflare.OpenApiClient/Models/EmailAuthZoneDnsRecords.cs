@@ -18,14 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bimi_records") is { } nullNodeBimiRecords && nullNodeBimiRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BimiRecords = null;
-            if (parseNode.GetChildNode("cname_dkim_records") is { } nullNodeCnameDkimRecords && nullNodeCnameDkimRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameDkimRecords = null;
-            if (parseNode.GetChildNode("cname_dmarc_records") is { } nullNodeCnameDmarcRecords && nullNodeCnameDmarcRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameDmarcRecords = null;
-            if (parseNode.GetChildNode("cname_spf_records") is { } nullNodeCnameSpfRecords && nullNodeCnameSpfRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameSpfRecords = null;
-            if (parseNode.GetChildNode("dkim_records") is { } nullNodeDkimRecords && nullNodeDkimRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DkimRecords = null;
-            if (parseNode.GetChildNode("dmarc_records") is { } nullNodeDmarcRecords && nullNodeDmarcRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmarcRecords = null;
-            if (parseNode.GetChildNode("resolved_dmarc_records") is { } nullNodeResolvedDmarcRecords && nullNodeResolvedDmarcRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvedDmarcRecords = null;
-            if (parseNode.GetChildNode("spf_records") is { } nullNodeSpfRecords && nullNodeSpfRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpfRecords = null;
+            if (parseNode.GetChildNode("bimi_records") is null) { _explicitNullValueBimiRecords = default!; _explicitNullProperties?.Remove("bimi_records"); }
+            else if (parseNode.GetChildNode("bimi_records") is { } nullNodeBimiRecords && nullNodeBimiRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BimiRecords = null;
+            if (parseNode.GetChildNode("cname_dkim_records") is null) { _explicitNullValueCnameDkimRecords = default!; _explicitNullProperties?.Remove("cname_dkim_records"); }
+            else if (parseNode.GetChildNode("cname_dkim_records") is { } nullNodeCnameDkimRecords && nullNodeCnameDkimRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameDkimRecords = null;
+            if (parseNode.GetChildNode("cname_dmarc_records") is null) { _explicitNullValueCnameDmarcRecords = default!; _explicitNullProperties?.Remove("cname_dmarc_records"); }
+            else if (parseNode.GetChildNode("cname_dmarc_records") is { } nullNodeCnameDmarcRecords && nullNodeCnameDmarcRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameDmarcRecords = null;
+            if (parseNode.GetChildNode("cname_spf_records") is null) { _explicitNullValueCnameSpfRecords = default!; _explicitNullProperties?.Remove("cname_spf_records"); }
+            else if (parseNode.GetChildNode("cname_spf_records") is { } nullNodeCnameSpfRecords && nullNodeCnameSpfRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameSpfRecords = null;
+            if (parseNode.GetChildNode("dkim_records") is null) { _explicitNullValueDkimRecords = default!; _explicitNullProperties?.Remove("dkim_records"); }
+            else if (parseNode.GetChildNode("dkim_records") is { } nullNodeDkimRecords && nullNodeDkimRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DkimRecords = null;
+            if (parseNode.GetChildNode("dmarc_records") is null) { _explicitNullValueDmarcRecords = default!; _explicitNullProperties?.Remove("dmarc_records"); }
+            else if (parseNode.GetChildNode("dmarc_records") is { } nullNodeDmarcRecords && nullNodeDmarcRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmarcRecords = null;
+            if (parseNode.GetChildNode("resolved_dmarc_records") is null) { _explicitNullValueResolvedDmarcRecords = default!; _explicitNullProperties?.Remove("resolved_dmarc_records"); }
+            else if (parseNode.GetChildNode("resolved_dmarc_records") is { } nullNodeResolvedDmarcRecords && nullNodeResolvedDmarcRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvedDmarcRecords = null;
+            if (parseNode.GetChildNode("spf_records") is null) { _explicitNullValueSpfRecords = default!; _explicitNullProperties?.Remove("spf_records"); }
+            else if (parseNode.GetChildNode("spf_records") is { } nullNodeSpfRecords && nullNodeSpfRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpfRecords = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,82 +41,82 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>BIMI TXT records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? BimiRecords { get => _explicitNullValueBimiRecords; set { _explicitNullValueBimiRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bimi_records"); else _explicitNullProperties?.Remove("bimi_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? BimiRecords { get => _explicitNullValueBimiRecords; set { _explicitNullValueBimiRecords = value; AdditionalData?.Remove("bimi_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bimi_records"); else _explicitNullProperties?.Remove("bimi_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? _explicitNullValueBimiRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> BimiRecords { get => _explicitNullValueBimiRecords; set { _explicitNullValueBimiRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bimi_records"); else _explicitNullProperties?.Remove("bimi_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> BimiRecords { get => _explicitNullValueBimiRecords; set { _explicitNullValueBimiRecords = value; AdditionalData?.Remove("bimi_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bimi_records"); else _explicitNullProperties?.Remove("bimi_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> _explicitNullValueBimiRecords = default!;
 #endif
         /// <summary>CNAME records for DKIM selectors. Each selector is resolved independently; when a selector&apos;s CNAME resolves to a DKIM TXT record, the API returns that record&apos;s content in the `resolved` field of the corresponding entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameDkimRecords { get => _explicitNullValueCnameDkimRecords; set { _explicitNullValueCnameDkimRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dkim_records"); else _explicitNullProperties?.Remove("cname_dkim_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameDkimRecords { get => _explicitNullValueCnameDkimRecords; set { _explicitNullValueCnameDkimRecords = value; AdditionalData?.Remove("cname_dkim_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dkim_records"); else _explicitNullProperties?.Remove("cname_dkim_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? _explicitNullValueCnameDkimRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameDkimRecords { get => _explicitNullValueCnameDkimRecords; set { _explicitNullValueCnameDkimRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dkim_records"); else _explicitNullProperties?.Remove("cname_dkim_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameDkimRecords { get => _explicitNullValueCnameDkimRecords; set { _explicitNullValueCnameDkimRecords = value; AdditionalData?.Remove("cname_dkim_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dkim_records"); else _explicitNullProperties?.Remove("cname_dkim_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> _explicitNullValueCnameDkimRecords = default!;
 #endif
         /// <summary>CNAME records at _dmarc. When such a CNAME resolves to a DMARC TXT record, the API returns that record&apos;s content in the `resolved` field of the corresponding entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameDmarcRecords { get => _explicitNullValueCnameDmarcRecords; set { _explicitNullValueCnameDmarcRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dmarc_records"); else _explicitNullProperties?.Remove("cname_dmarc_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameDmarcRecords { get => _explicitNullValueCnameDmarcRecords; set { _explicitNullValueCnameDmarcRecords = value; AdditionalData?.Remove("cname_dmarc_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dmarc_records"); else _explicitNullProperties?.Remove("cname_dmarc_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? _explicitNullValueCnameDmarcRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameDmarcRecords { get => _explicitNullValueCnameDmarcRecords; set { _explicitNullValueCnameDmarcRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dmarc_records"); else _explicitNullProperties?.Remove("cname_dmarc_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameDmarcRecords { get => _explicitNullValueCnameDmarcRecords; set { _explicitNullValueCnameDmarcRecords = value; AdditionalData?.Remove("cname_dmarc_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_dmarc_records"); else _explicitNullProperties?.Remove("cname_dmarc_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> _explicitNullValueCnameDmarcRecords = default!;
 #endif
         /// <summary>CNAME records at the zone apex. When such a CNAME resolves to an SPF TXT record, the API returns that record&apos;s content in the `resolved` field of the corresponding entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameSpfRecords { get => _explicitNullValueCnameSpfRecords; set { _explicitNullValueCnameSpfRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_spf_records"); else _explicitNullProperties?.Remove("cname_spf_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameSpfRecords { get => _explicitNullValueCnameSpfRecords; set { _explicitNullValueCnameSpfRecords = value; AdditionalData?.Remove("cname_spf_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_spf_records"); else _explicitNullProperties?.Remove("cname_spf_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? _explicitNullValueCnameSpfRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameSpfRecords { get => _explicitNullValueCnameSpfRecords; set { _explicitNullValueCnameSpfRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_spf_records"); else _explicitNullProperties?.Remove("cname_spf_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameSpfRecords { get => _explicitNullValueCnameSpfRecords; set { _explicitNullValueCnameSpfRecords = value; AdditionalData?.Remove("cname_spf_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_spf_records"); else _explicitNullProperties?.Remove("cname_spf_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> _explicitNullValueCnameSpfRecords = default!;
 #endif
         /// <summary>DKIM TXT records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? DkimRecords { get => _explicitNullValueDkimRecords; set { _explicitNullValueDkimRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim_records"); else _explicitNullProperties?.Remove("dkim_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? DkimRecords { get => _explicitNullValueDkimRecords; set { _explicitNullValueDkimRecords = value; AdditionalData?.Remove("dkim_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim_records"); else _explicitNullProperties?.Remove("dkim_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? _explicitNullValueDkimRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> DkimRecords { get => _explicitNullValueDkimRecords; set { _explicitNullValueDkimRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim_records"); else _explicitNullProperties?.Remove("dkim_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> DkimRecords { get => _explicitNullValueDkimRecords; set { _explicitNullValueDkimRecords = value; AdditionalData?.Remove("dkim_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim_records"); else _explicitNullProperties?.Remove("dkim_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> _explicitNullValueDkimRecords = default!;
 #endif
         /// <summary>DMARC TXT records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? DmarcRecords { get => _explicitNullValueDmarcRecords; set { _explicitNullValueDmarcRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc_records"); else _explicitNullProperties?.Remove("dmarc_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? DmarcRecords { get => _explicitNullValueDmarcRecords; set { _explicitNullValueDmarcRecords = value; AdditionalData?.Remove("dmarc_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc_records"); else _explicitNullProperties?.Remove("dmarc_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? _explicitNullValueDmarcRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> DmarcRecords { get => _explicitNullValueDmarcRecords; set { _explicitNullValueDmarcRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc_records"); else _explicitNullProperties?.Remove("dmarc_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> DmarcRecords { get => _explicitNullValueDmarcRecords; set { _explicitNullValueDmarcRecords = value; AdditionalData?.Remove("dmarc_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc_records"); else _explicitNullProperties?.Remove("dmarc_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> _explicitNullValueDmarcRecords = default!;
 #endif
         /// <summary>DMARC records that a recursive lookup of _dmarc.{zone} returned. The API populates this only when the zone lacks a DMARC TXT record of its own, which usually means a CNAME delegates DMARC to another zone.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord>? ResolvedDmarcRecords { get => _explicitNullValueResolvedDmarcRecords; set { _explicitNullValueResolvedDmarcRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_dmarc_records"); else _explicitNullProperties?.Remove("resolved_dmarc_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord>? ResolvedDmarcRecords { get => _explicitNullValueResolvedDmarcRecords; set { _explicitNullValueResolvedDmarcRecords = value; AdditionalData?.Remove("resolved_dmarc_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_dmarc_records"); else _explicitNullProperties?.Remove("resolved_dmarc_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord>? _explicitNullValueResolvedDmarcRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord> ResolvedDmarcRecords { get => _explicitNullValueResolvedDmarcRecords; set { _explicitNullValueResolvedDmarcRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_dmarc_records"); else _explicitNullProperties?.Remove("resolved_dmarc_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord> ResolvedDmarcRecords { get => _explicitNullValueResolvedDmarcRecords; set { _explicitNullValueResolvedDmarcRecords = value; AdditionalData?.Remove("resolved_dmarc_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_dmarc_records"); else _explicitNullProperties?.Remove("resolved_dmarc_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord> _explicitNullValueResolvedDmarcRecords = default!;
 #endif
         /// <summary>SPF TXT records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? SpfRecords { get => _explicitNullValueSpfRecords; set { _explicitNullValueSpfRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf_records"); else _explicitNullProperties?.Remove("spf_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? SpfRecords { get => _explicitNullValueSpfRecords; set { _explicitNullValueSpfRecords = value; AdditionalData?.Remove("spf_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf_records"); else _explicitNullProperties?.Remove("spf_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? _explicitNullValueSpfRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> SpfRecords { get => _explicitNullValueSpfRecords; set { _explicitNullValueSpfRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf_records"); else _explicitNullProperties?.Remove("spf_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> SpfRecords { get => _explicitNullValueSpfRecords; set { _explicitNullValueSpfRecords = value; AdditionalData?.Remove("spf_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf_records"); else _explicitNullProperties?.Remove("spf_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> _explicitNullValueSpfRecords = default!;
 #endif
         /// <summary>

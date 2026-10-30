@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enable_high_bitrate") is { } nullNodeEnableHighBitrate && nullNodeEnableHighBitrate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableHighBitrate = null;
-            if (parseNode.GetChildNode("enable_stereo") is { } nullNodeEnableStereo && nullNodeEnableStereo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStereo = null;
+            if (parseNode.GetChildNode("enable_high_bitrate") is null) { _explicitNullValueEnableHighBitrate = default!; _explicitNullProperties?.Remove("enable_high_bitrate"); }
+            else if (parseNode.GetChildNode("enable_high_bitrate") is { } nullNodeEnableHighBitrate && nullNodeEnableHighBitrate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableHighBitrate = null;
+            if (parseNode.GetChildNode("enable_stereo") is null) { _explicitNullValueEnableStereo = default!; _explicitNullProperties?.Remove("enable_stereo"); }
+            else if (parseNode.GetChildNode("enable_stereo") is { } nullNodeEnableStereo && nullNodeEnableStereo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStereo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable High Quality Audio for your meetings</summary>
-        public bool? EnableHighBitrate { get => _explicitNullValueEnableHighBitrate; set { _explicitNullValueEnableHighBitrate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_high_bitrate"); else _explicitNullProperties?.Remove("enable_high_bitrate"); } }
+        public bool? EnableHighBitrate { get => _explicitNullValueEnableHighBitrate; set { _explicitNullValueEnableHighBitrate = value; AdditionalData?.Remove("enable_high_bitrate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_high_bitrate"); else _explicitNullProperties?.Remove("enable_high_bitrate"); } }
         private bool? _explicitNullValueEnableHighBitrate = default!;
         /// <summary>Enable Stereo for your meetings</summary>
-        public bool? EnableStereo { get => _explicitNullValueEnableStereo; set { _explicitNullValueEnableStereo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_stereo"); else _explicitNullProperties?.Remove("enable_stereo"); } }
+        public bool? EnableStereo { get => _explicitNullValueEnableStereo; set { _explicitNullValueEnableStereo = value; AdditionalData?.Remove("enable_stereo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_stereo"); else _explicitNullProperties?.Remove("enable_stereo"); } }
         private bool? _explicitNullValueEnableStereo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaAudio"/> and sets the default values.

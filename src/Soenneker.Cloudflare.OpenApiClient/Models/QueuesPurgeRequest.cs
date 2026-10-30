@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delete_messages_permanently") is { } nullNodeDeleteMessagesPermanently && nullNodeDeleteMessagesPermanently.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteMessagesPermanently = null;
+            if (parseNode.GetChildNode("delete_messages_permanently") is null) { _explicitNullValueDeleteMessagesPermanently = default!; _explicitNullProperties?.Remove("delete_messages_permanently"); }
+            else if (parseNode.GetChildNode("delete_messages_permanently") is { } nullNodeDeleteMessagesPermanently && nullNodeDeleteMessagesPermanently.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteMessagesPermanently = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Confirms that all messages will be permanently deleted.</summary>
-        public bool? DeleteMessagesPermanently { get => _explicitNullValueDeleteMessagesPermanently; set { _explicitNullValueDeleteMessagesPermanently = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_messages_permanently"); else _explicitNullProperties?.Remove("delete_messages_permanently"); } }
+        public bool? DeleteMessagesPermanently { get => _explicitNullValueDeleteMessagesPermanently; set { _explicitNullValueDeleteMessagesPermanently = value; AdditionalData?.Remove("delete_messages_permanently"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_messages_permanently"); else _explicitNullProperties?.Remove("delete_messages_permanently"); } }
         private bool? _explicitNullValueDeleteMessagesPermanently = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPurgeRequest"/> and sets the default values.

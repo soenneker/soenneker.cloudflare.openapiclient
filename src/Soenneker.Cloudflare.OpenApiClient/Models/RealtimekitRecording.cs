@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("invoked_time") is { } nullNodeInvokedTime && nullNodeInvokedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvokedTime = null;
-            if (parseNode.GetChildNode("output_file_name") is { } nullNodeOutputFileName && nullNodeOutputFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFileName = null;
-            if (parseNode.GetChildNode("recording_duration") is { } nullNodeRecordingDuration && nullNodeRecordingDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingDuration = null;
-            if (parseNode.GetChildNode("started_time") is { } nullNodeStartedTime && nullNodeStartedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedTime = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("stopped_time") is { } nullNodeStoppedTime && nullNodeStoppedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppedTime = null;
+            if (parseNode.GetChildNode("invoked_time") is null) { _explicitNullValueInvokedTime = default!; _explicitNullProperties?.Remove("invoked_time"); }
+            else if (parseNode.GetChildNode("invoked_time") is { } nullNodeInvokedTime && nullNodeInvokedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvokedTime = null;
+            if (parseNode.GetChildNode("output_file_name") is null) { _explicitNullValueOutputFileName = default!; _explicitNullProperties?.Remove("output_file_name"); }
+            else if (parseNode.GetChildNode("output_file_name") is { } nullNodeOutputFileName && nullNodeOutputFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFileName = null;
+            if (parseNode.GetChildNode("recording_duration") is null) { _explicitNullValueRecordingDuration = default!; _explicitNullProperties?.Remove("recording_duration"); }
+            else if (parseNode.GetChildNode("recording_duration") is { } nullNodeRecordingDuration && nullNodeRecordingDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingDuration = null;
+            if (parseNode.GetChildNode("started_time") is null) { _explicitNullValueStartedTime = default!; _explicitNullProperties?.Remove("started_time"); }
+            else if (parseNode.GetChildNode("started_time") is { } nullNodeStartedTime && nullNodeStartedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedTime = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("stopped_time") is null) { _explicitNullValueStoppedTime = default!; _explicitNullProperties?.Remove("stopped_time"); }
+            else if (parseNode.GetChildNode("stopped_time") is { } nullNodeStoppedTime && nullNodeStoppedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppedTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -50,31 +56,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>ID of the recording</summary>
         public Guid? Id { get; private set; }
         /// <summary>Timestamp when this recording was invoked.</summary>
-        public DateTimeOffset? InvokedTime { get => _explicitNullValueInvokedTime; set { _explicitNullValueInvokedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoked_time"); else _explicitNullProperties?.Remove("invoked_time"); } }
+        public DateTimeOffset? InvokedTime { get => _explicitNullValueInvokedTime; set { _explicitNullValueInvokedTime = value; AdditionalData?.Remove("invoked_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoked_time"); else _explicitNullProperties?.Remove("invoked_time"); } }
         private DateTimeOffset? _explicitNullValueInvokedTime = default!;
         /// <summary>File name of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputFileName { get => _explicitNullValueOutputFileName; set { _explicitNullValueOutputFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_file_name"); else _explicitNullProperties?.Remove("output_file_name"); } }
+        public string? OutputFileName { get => _explicitNullValueOutputFileName; set { _explicitNullValueOutputFileName = value; AdditionalData?.Remove("output_file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_file_name"); else _explicitNullProperties?.Remove("output_file_name"); } }
         private string? _explicitNullValueOutputFileName = default!;
 #nullable restore
 #else
-        public string OutputFileName { get => _explicitNullValueOutputFileName; set { _explicitNullValueOutputFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_file_name"); else _explicitNullProperties?.Remove("output_file_name"); } }
+        public string OutputFileName { get => _explicitNullValueOutputFileName; set { _explicitNullValueOutputFileName = value; AdditionalData?.Remove("output_file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_file_name"); else _explicitNullProperties?.Remove("output_file_name"); } }
         private string _explicitNullValueOutputFileName = default!;
 #endif
         /// <summary>Total recording time in seconds.</summary>
-        public int? RecordingDuration { get => _explicitNullValueRecordingDuration; set { _explicitNullValueRecordingDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_duration"); else _explicitNullProperties?.Remove("recording_duration"); } }
+        public int? RecordingDuration { get => _explicitNullValueRecordingDuration; set { _explicitNullValueRecordingDuration = value; AdditionalData?.Remove("recording_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_duration"); else _explicitNullProperties?.Remove("recording_duration"); } }
         private int? _explicitNullValueRecordingDuration = default!;
         /// <summary>ID of the meeting session this recording is for.</summary>
         public Guid? SessionId { get; private set; }
         /// <summary>Timestamp when this recording actually started after being invoked. Usually a few seconds after `invoked_time`.</summary>
-        public DateTimeOffset? StartedTime { get => _explicitNullValueStartedTime; set { _explicitNullValueStartedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_time"); else _explicitNullProperties?.Remove("started_time"); } }
+        public DateTimeOffset? StartedTime { get => _explicitNullValueStartedTime; set { _explicitNullValueStartedTime = value; AdditionalData?.Remove("started_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_time"); else _explicitNullProperties?.Remove("started_time"); } }
         private DateTimeOffset? _explicitNullValueStartedTime = default!;
         /// <summary>Current status of the recording.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus? _explicitNullValueStatus = default!;
         /// <summary>Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.</summary>
-        public DateTimeOffset? StoppedTime { get => _explicitNullValueStoppedTime; set { _explicitNullValueStoppedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped_time"); else _explicitNullProperties?.Remove("stopped_time"); } }
+        public DateTimeOffset? StoppedTime { get => _explicitNullValueStoppedTime; set { _explicitNullValueStoppedTime = value; AdditionalData?.Remove("stopped_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped_time"); else _explicitNullProperties?.Remove("stopped_time"); } }
         private DateTimeOffset? _explicitNullValueStoppedTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecording"/> and sets the default values.
@@ -111,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "recording_duration", n => { RecordingDuration = n.GetIntValue(); } },
                 { "session_id", n => { SessionId = n.GetGuidValue(); } },
                 { "started_time", n => { StartedTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "stopped_time", n => { StoppedTime = n.GetDateTimeOffsetValue(); } },
             };
         }

@@ -18,11 +18,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("dhcp_relay") is { } nullNodeDhcpRelay && nullNodeDhcpRelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpRelay = null;
-            if (parseNode.GetChildNode("dhcp_server") is { } nullNodeDhcpServer && nullNodeDhcpServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpServer = null;
-            if (parseNode.GetChildNode("secondary_address") is { } nullNodeSecondaryAddress && nullNodeSecondaryAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryAddress = null;
-            if (parseNode.GetChildNode("virtual_address") is { } nullNodeVirtualAddress && nullNodeVirtualAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualAddress = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("dhcp_relay") is null) { _explicitNullValueDhcpRelay = default!; _explicitNullProperties?.Remove("dhcp_relay"); }
+            else if (parseNode.GetChildNode("dhcp_relay") is { } nullNodeDhcpRelay && nullNodeDhcpRelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpRelay = null;
+            if (parseNode.GetChildNode("dhcp_server") is null) { _explicitNullValueDhcpServer = default!; _explicitNullProperties?.Remove("dhcp_server"); }
+            else if (parseNode.GetChildNode("dhcp_server") is { } nullNodeDhcpServer && nullNodeDhcpServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DhcpServer = null;
+            if (parseNode.GetChildNode("secondary_address") is null) { _explicitNullValueSecondaryAddress = default!; _explicitNullProperties?.Remove("secondary_address"); }
+            else if (parseNode.GetChildNode("secondary_address") is { } nullNodeSecondaryAddress && nullNodeSecondaryAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryAddress = null;
+            if (parseNode.GetChildNode("virtual_address") is null) { _explicitNullValueVirtualAddress = default!; _explicitNullProperties?.Remove("virtual_address"); }
+            else if (parseNode.GetChildNode("virtual_address") is { } nullNodeVirtualAddress && nullNodeVirtualAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualAddress = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private string? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private string _explicitNullValueAddress = default!;
 #endif
         /// <summary>The dhcp_relay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpRelay? DhcpRelay { get => _explicitNullValueDhcpRelay; set { _explicitNullValueDhcpRelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_relay"); else _explicitNullProperties?.Remove("dhcp_relay"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpRelay? DhcpRelay { get => _explicitNullValueDhcpRelay; set { _explicitNullValueDhcpRelay = value; AdditionalData?.Remove("dhcp_relay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_relay"); else _explicitNullProperties?.Remove("dhcp_relay"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpRelay? _explicitNullValueDhcpRelay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpRelay DhcpRelay { get => _explicitNullValueDhcpRelay; set { _explicitNullValueDhcpRelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_relay"); else _explicitNullProperties?.Remove("dhcp_relay"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpRelay DhcpRelay { get => _explicitNullValueDhcpRelay; set { _explicitNullValueDhcpRelay = value; AdditionalData?.Remove("dhcp_relay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_relay"); else _explicitNullProperties?.Remove("dhcp_relay"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpRelay _explicitNullValueDhcpRelay = default!;
 #endif
         /// <summary>The dhcp_server property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer? DhcpServer { get => _explicitNullValueDhcpServer; set { _explicitNullValueDhcpServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_server"); else _explicitNullProperties?.Remove("dhcp_server"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer? DhcpServer { get => _explicitNullValueDhcpServer; set { _explicitNullValueDhcpServer = value; AdditionalData?.Remove("dhcp_server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_server"); else _explicitNullProperties?.Remove("dhcp_server"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer? _explicitNullValueDhcpServer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer DhcpServer { get => _explicitNullValueDhcpServer; set { _explicitNullValueDhcpServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_server"); else _explicitNullProperties?.Remove("dhcp_server"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer DhcpServer { get => _explicitNullValueDhcpServer; set { _explicitNullValueDhcpServer = value; AdditionalData?.Remove("dhcp_server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhcp_server"); else _explicitNullProperties?.Remove("dhcp_server"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer _explicitNullValueDhcpServer = default!;
 #endif
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
+        public string? SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; AdditionalData?.Remove("secondary_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
         private string? _explicitNullValueSecondaryAddress = default!;
 #nullable restore
 #else
-        public string SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
+        public string SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; AdditionalData?.Remove("secondary_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
         private string _explicitNullValueSecondaryAddress = default!;
 #endif
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VirtualAddress { get => _explicitNullValueVirtualAddress; set { _explicitNullValueVirtualAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_address"); else _explicitNullProperties?.Remove("virtual_address"); } }
+        public string? VirtualAddress { get => _explicitNullValueVirtualAddress; set { _explicitNullValueVirtualAddress = value; AdditionalData?.Remove("virtual_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_address"); else _explicitNullProperties?.Remove("virtual_address"); } }
         private string? _explicitNullValueVirtualAddress = default!;
 #nullable restore
 #else
-        public string VirtualAddress { get => _explicitNullValueVirtualAddress; set { _explicitNullValueVirtualAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_address"); else _explicitNullProperties?.Remove("virtual_address"); } }
+        public string VirtualAddress { get => _explicitNullValueVirtualAddress; set { _explicitNullValueVirtualAddress = value; AdditionalData?.Remove("virtual_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_address"); else _explicitNullProperties?.Remove("virtual_address"); } }
         private string _explicitNullValueVirtualAddress = default!;
 #endif
         /// <summary>

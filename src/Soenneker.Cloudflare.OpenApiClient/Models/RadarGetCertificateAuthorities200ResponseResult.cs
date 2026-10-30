@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificateAuthorities") is { } nullNodeCertificateAuthorities && nullNodeCertificateAuthorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthorities = null;
+            if (parseNode.GetChildNode("certificateAuthorities") is null) { _explicitNullValueCertificateAuthorities = default!; _explicitNullProperties?.Remove("certificateAuthorities"); }
+            else if (parseNode.GetChildNode("certificateAuthorities") is { } nullNodeCertificateAuthorities && nullNodeCertificateAuthorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthorities = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The certificateAuthorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItem>? CertificateAuthorities { get => _explicitNullValueCertificateAuthorities; set { _explicitNullValueCertificateAuthorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthorities"); else _explicitNullProperties?.Remove("certificateAuthorities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItem>? CertificateAuthorities { get => _explicitNullValueCertificateAuthorities; set { _explicitNullValueCertificateAuthorities = value; AdditionalData?.Remove("certificateAuthorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthorities"); else _explicitNullProperties?.Remove("certificateAuthorities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItem>? _explicitNullValueCertificateAuthorities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItem> CertificateAuthorities { get => _explicitNullValueCertificateAuthorities; set { _explicitNullValueCertificateAuthorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthorities"); else _explicitNullProperties?.Remove("certificateAuthorities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItem> CertificateAuthorities { get => _explicitNullValueCertificateAuthorities; set { _explicitNullValueCertificateAuthorities = value; AdditionalData?.Remove("certificateAuthorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthorities"); else _explicitNullProperties?.Remove("certificateAuthorities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItem> _explicitNullValueCertificateAuthorities = default!;
 #endif
         /// <summary>

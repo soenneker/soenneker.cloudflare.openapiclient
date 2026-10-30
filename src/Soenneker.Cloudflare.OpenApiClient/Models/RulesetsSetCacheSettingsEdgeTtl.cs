@@ -18,27 +18,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
-            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("status_code_ttl") is { } nullNodeStatusCodeTtl && nullNodeStatusCodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusCodeTtl = null;
+            if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
+            else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("status_code_ttl") is null) { _explicitNullValueStatusCodeTtl = default!; _explicitNullProperties?.Remove("status_code_ttl"); }
+            else if (parseNode.GetChildNode("status_code_ttl") is { } nullNodeStatusCodeTtl && nullNodeStatusCodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusCodeTtl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The edge TTL (in seconds) if you choose the &quot;override_origin&quot; mode.</summary>
-        public int? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        public int? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private int? _explicitNullValueDefault = default!;
         /// <summary>The edge TTL mode.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsEdgeTtlMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsEdgeTtlMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsEdgeTtlMode? _explicitNullValueMode = default!;
         /// <summary>A list of TTLs to apply to specific status codes or status code ranges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem>? StatusCodeTtl { get => _explicitNullValueStatusCodeTtl; set { _explicitNullValueStatusCodeTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code_ttl"); else _explicitNullProperties?.Remove("status_code_ttl"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem>? StatusCodeTtl { get => _explicitNullValueStatusCodeTtl; set { _explicitNullValueStatusCodeTtl = value; AdditionalData?.Remove("status_code_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code_ttl"); else _explicitNullProperties?.Remove("status_code_ttl"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem>? _explicitNullValueStatusCodeTtl = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem> StatusCodeTtl { get => _explicitNullValueStatusCodeTtl; set { _explicitNullValueStatusCodeTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code_ttl"); else _explicitNullProperties?.Remove("status_code_ttl"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem> StatusCodeTtl { get => _explicitNullValueStatusCodeTtl; set { _explicitNullValueStatusCodeTtl = value; AdditionalData?.Remove("status_code_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code_ttl"); else _explicitNullProperties?.Remove("status_code_ttl"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem> _explicitNullValueStatusCodeTtl = default!;
 #endif
         /// <summary>
@@ -67,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "default", n => { Default = n.GetIntValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsEdgeTtlMode>(); } },
+                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsEdgeTtlMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
                 { "status_code_ttl", n => { StatusCodeTtl = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsStatusCodeTtlItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

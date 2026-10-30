@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("language-locale") is { } nullNodeLanguageLocale && nullNodeLanguageLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageLocale = null;
-            if (parseNode.GetChildNode("preferences") is { } nullNodePreferences && nullNodePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preferences = null;
+            if (parseNode.GetChildNode("language-locale") is null) { _explicitNullValueLanguageLocale = default!; _explicitNullProperties?.Remove("language-locale"); }
+            else if (parseNode.GetChildNode("language-locale") is { } nullNodeLanguageLocale && nullNodeLanguageLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageLocale = null;
+            if (parseNode.GetChildNode("preferences") is null) { _explicitNullValuePreferences = default!; _explicitNullProperties?.Remove("preferences"); }
+            else if (parseNode.GetChildNode("preferences") is { } nullNodePreferences && nullNodePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preferences = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user&apos;s preferred language locale for communications. If omitted, the language locale does not change.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestLanguageLocale? LanguageLocale { get => _explicitNullValueLanguageLocale; set { _explicitNullValueLanguageLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language-locale"); else _explicitNullProperties?.Remove("language-locale"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestLanguageLocale? LanguageLocale { get => _explicitNullValueLanguageLocale; set { _explicitNullValueLanguageLocale = value; AdditionalData?.Remove("language-locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language-locale"); else _explicitNullProperties?.Remove("language-locale"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestLanguageLocale? _explicitNullValueLanguageLocale = default!;
         /// <summary>Preference keys mapped to subscription states to update. Only the preferences in this map change; others remain unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty? Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty? Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; AdditionalData?.Remove("preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty? _explicitNullValuePreferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; AdditionalData?.Remove("preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty _explicitNullValuePreferences = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "language-locale", n => { LanguageLocale = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestLanguageLocale>(); } },
+                { "language-locale", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestLanguageLocale>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLanguageLocale = default; _explicitNullProperties?.Remove("language-locale"); AdditionalData["language-locale"] = unknown; } else { LanguageLocale = parsed; AdditionalData.Remove("language-locale"); } } },
                 { "preferences", n => { Preferences = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CpsUpdateCommunicationPreferencesRequestPreferencesProperty.CreateFromDiscriminatorValue); } },
             };
         }

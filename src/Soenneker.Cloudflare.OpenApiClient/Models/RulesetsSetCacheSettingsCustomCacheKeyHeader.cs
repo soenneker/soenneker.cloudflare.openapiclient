@@ -18,10 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("check_presence") is { } nullNodeCheckPresence && nullNodeCheckPresence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckPresence = null;
-            if (parseNode.GetChildNode("contains") is { } nullNodeContains && nullNodeContains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contains = null;
-            if (parseNode.GetChildNode("exclude_origin") is { } nullNodeExcludeOrigin && nullNodeExcludeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeOrigin = null;
-            if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
+            if (parseNode.GetChildNode("check_presence") is null) { _explicitNullValueCheckPresence = default!; _explicitNullProperties?.Remove("check_presence"); }
+            else if (parseNode.GetChildNode("check_presence") is { } nullNodeCheckPresence && nullNodeCheckPresence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckPresence = null;
+            if (parseNode.GetChildNode("contains") is null) { _explicitNullValueContains = default!; _explicitNullProperties?.Remove("contains"); }
+            else if (parseNode.GetChildNode("contains") is { } nullNodeContains && nullNodeContains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contains = null;
+            if (parseNode.GetChildNode("exclude_origin") is null) { _explicitNullValueExcludeOrigin = default!; _explicitNullProperties?.Remove("exclude_origin"); }
+            else if (parseNode.GetChildNode("exclude_origin") is { } nullNodeExcludeOrigin && nullNodeExcludeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeOrigin = null;
+            if (parseNode.GetChildNode("include") is null) { _explicitNullValueInclude = default!; _explicitNullProperties?.Remove("include"); }
+            else if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of headers to check for the presence of. The presence of these headers is included in the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CheckPresence { get => _explicitNullValueCheckPresence; set { _explicitNullValueCheckPresence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_presence"); else _explicitNullProperties?.Remove("check_presence"); } }
+        public List<string>? CheckPresence { get => _explicitNullValueCheckPresence; set { _explicitNullValueCheckPresence = value; AdditionalData?.Remove("check_presence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_presence"); else _explicitNullProperties?.Remove("check_presence"); } }
         private List<string>? _explicitNullValueCheckPresence = default!;
 #nullable restore
 #else
-        public List<string> CheckPresence { get => _explicitNullValueCheckPresence; set { _explicitNullValueCheckPresence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_presence"); else _explicitNullProperties?.Remove("check_presence"); } }
+        public List<string> CheckPresence { get => _explicitNullValueCheckPresence; set { _explicitNullValueCheckPresence = value; AdditionalData?.Remove("check_presence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_presence"); else _explicitNullProperties?.Remove("check_presence"); } }
         private List<string> _explicitNullValueCheckPresence = default!;
 #endif
         /// <summary>A mapping of header names to a list of values. If a header is present in the request and contains any of the values provided, its value is included in the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeaderContainsProperty? Contains { get => _explicitNullValueContains; set { _explicitNullValueContains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contains"); else _explicitNullProperties?.Remove("contains"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeaderContainsProperty? Contains { get => _explicitNullValueContains; set { _explicitNullValueContains = value; AdditionalData?.Remove("contains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contains"); else _explicitNullProperties?.Remove("contains"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeaderContainsProperty? _explicitNullValueContains = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeaderContainsProperty Contains { get => _explicitNullValueContains; set { _explicitNullValueContains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contains"); else _explicitNullProperties?.Remove("contains"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeaderContainsProperty Contains { get => _explicitNullValueContains; set { _explicitNullValueContains = value; AdditionalData?.Remove("contains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contains"); else _explicitNullProperties?.Remove("contains"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsCustomCacheKeyHeaderContainsProperty _explicitNullValueContains = default!;
 #endif
         /// <summary>Whether to exclude the origin header in the cache key.</summary>
-        public bool? ExcludeOrigin { get => _explicitNullValueExcludeOrigin; set { _explicitNullValueExcludeOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_origin"); else _explicitNullProperties?.Remove("exclude_origin"); } }
+        public bool? ExcludeOrigin { get => _explicitNullValueExcludeOrigin; set { _explicitNullValueExcludeOrigin = value; AdditionalData?.Remove("exclude_origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_origin"); else _explicitNullProperties?.Remove("exclude_origin"); } }
         private bool? _explicitNullValueExcludeOrigin = default!;
         /// <summary>A list of headers to include in the cache key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        public List<string>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
         private List<string>? _explicitNullValueInclude = default!;
 #nullable restore
 #else
-        public List<string> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        public List<string> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
         private List<string> _explicitNullValueInclude = default!;
 #endif
         /// <summary>

@@ -18,29 +18,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("none") is { } nullNodeNone && nullNodeNone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) None = null;
-            if (parseNode.GetChildNode("TLSv1") is { } nullNodeTLSv1 && nullNodeTLSv1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv1 = null;
-            if (parseNode.GetChildNode("TLSv1.1") is { } nullNodeTLSv11 && nullNodeTLSv11.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv11 = null;
-            if (parseNode.GetChildNode("TLSv1.2") is { } nullNodeTLSv12 && nullNodeTLSv12.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv12 = null;
-            if (parseNode.GetChildNode("TLSv1.3") is { } nullNodeTLSv13 && nullNodeTLSv13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv13 = null;
+            if (parseNode.GetChildNode("none") is null) { _explicitNullValueNone = default!; _explicitNullProperties?.Remove("none"); }
+            else if (parseNode.GetChildNode("none") is { } nullNodeNone && nullNodeNone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) None = null;
+            if (parseNode.GetChildNode("TLSv1") is null) { _explicitNullValueTLSv1 = default!; _explicitNullProperties?.Remove("TLSv1"); }
+            else if (parseNode.GetChildNode("TLSv1") is { } nullNodeTLSv1 && nullNodeTLSv1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv1 = null;
+            if (parseNode.GetChildNode("TLSv1.1") is null) { _explicitNullValueTLSv11 = default!; _explicitNullProperties?.Remove("TLSv1.1"); }
+            else if (parseNode.GetChildNode("TLSv1.1") is { } nullNodeTLSv11 && nullNodeTLSv11.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv11 = null;
+            if (parseNode.GetChildNode("TLSv1.2") is null) { _explicitNullValueTLSv12 = default!; _explicitNullProperties?.Remove("TLSv1.2"); }
+            else if (parseNode.GetChildNode("TLSv1.2") is { } nullNodeTLSv12 && nullNodeTLSv12.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv12 = null;
+            if (parseNode.GetChildNode("TLSv1.3") is null) { _explicitNullValueTLSv13 = default!; _explicitNullProperties?.Remove("TLSv1.3"); }
+            else if (parseNode.GetChildNode("TLSv1.3") is { } nullNodeTLSv13 && nullNodeTLSv13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSv13 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of requests served over HTTP.</summary>
-        public int? None { get => _explicitNullValueNone; set { _explicitNullValueNone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("none"); else _explicitNullProperties?.Remove("none"); } }
+        public int? None { get => _explicitNullValueNone; set { _explicitNullValueNone = value; AdditionalData?.Remove("none"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("none"); else _explicitNullProperties?.Remove("none"); } }
         private int? _explicitNullValueNone = default!;
         /// <summary>The number of requests served over TLS v1.0.</summary>
-        public int? TLSv1 { get => _explicitNullValueTLSv1; set { _explicitNullValueTLSv1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1"); else _explicitNullProperties?.Remove("TLSv1"); } }
+        public int? TLSv1 { get => _explicitNullValueTLSv1; set { _explicitNullValueTLSv1 = value; AdditionalData?.Remove("TLSv1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1"); else _explicitNullProperties?.Remove("TLSv1"); } }
         private int? _explicitNullValueTLSv1 = default!;
         /// <summary>The number of requests served over TLS v1.1.</summary>
-        public int? TLSv11 { get => _explicitNullValueTLSv11; set { _explicitNullValueTLSv11 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1.1"); else _explicitNullProperties?.Remove("TLSv1.1"); } }
+        public int? TLSv11 { get => _explicitNullValueTLSv11; set { _explicitNullValueTLSv11 = value; AdditionalData?.Remove("TLSv1.1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1.1"); else _explicitNullProperties?.Remove("TLSv1.1"); } }
         private int? _explicitNullValueTLSv11 = default!;
         /// <summary>The number of requests served over TLS v1.2.</summary>
-        public int? TLSv12 { get => _explicitNullValueTLSv12; set { _explicitNullValueTLSv12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1.2"); else _explicitNullProperties?.Remove("TLSv1.2"); } }
+        public int? TLSv12 { get => _explicitNullValueTLSv12; set { _explicitNullValueTLSv12 = value; AdditionalData?.Remove("TLSv1.2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1.2"); else _explicitNullProperties?.Remove("TLSv1.2"); } }
         private int? _explicitNullValueTLSv12 = default!;
         /// <summary>The number of requests served over TLS v1.3.</summary>
-        public int? TLSv13 { get => _explicitNullValueTLSv13; set { _explicitNullValueTLSv13 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1.3"); else _explicitNullProperties?.Remove("TLSv1.3"); } }
+        public int? TLSv13 { get => _explicitNullValueTLSv13; set { _explicitNullValueTLSv13 = value; AdditionalData?.Remove("TLSv1.3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLSv1.3"); else _explicitNullProperties?.Remove("TLSv1.3"); } }
         private int? _explicitNullValueTLSv13 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSslProtocols"/> and sets the default values.

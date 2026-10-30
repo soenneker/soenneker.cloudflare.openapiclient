@@ -17,107 +17,124 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customer_status") is { } nullNodeCustomerStatus && nullNodeCustomerStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerStatus = null;
-            if (parseNode.GetChildNode("escalated_as") is { } nullNodeEscalatedAs && nullNodeEscalatedAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedAs = null;
-            if (parseNode.GetChildNode("escalated_at") is { } nullNodeEscalatedAt && nullNodeEscalatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedAt = null;
-            if (parseNode.GetChildNode("escalated_by") is { } nullNodeEscalatedBy && nullNodeEscalatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedBy = null;
-            if (parseNode.GetChildNode("escalated_submission_id") is { } nullNodeEscalatedSubmissionId && nullNodeEscalatedSubmissionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedSubmissionId = null;
-            if (parseNode.GetChildNode("original_disposition") is { } nullNodeOriginalDisposition && nullNodeOriginalDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalDisposition = null;
-            if (parseNode.GetChildNode("original_edf_hash") is { } nullNodeOriginalEdfHash && nullNodeOriginalEdfHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalEdfHash = null;
-            if (parseNode.GetChildNode("original_postfix_id") is { } nullNodeOriginalPostfixId && nullNodeOriginalPostfixId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPostfixId = null;
-            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
-            if (parseNode.GetChildNode("outcome_disposition") is { } nullNodeOutcomeDisposition && nullNodeOutcomeDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeDisposition = null;
-            if (parseNode.GetChildNode("requested_at") is { } nullNodeRequestedAt && nullNodeRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAt = null;
-            if (parseNode.GetChildNode("requested_by") is { } nullNodeRequestedBy && nullNodeRequestedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedBy = null;
-            if (parseNode.GetChildNode("requested_disposition") is { } nullNodeRequestedDisposition && nullNodeRequestedDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedDisposition = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
-            if (parseNode.GetChildNode("submission_id") is { } nullNodeSubmissionId && nullNodeSubmissionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionId = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("customer_status") is null) { _explicitNullValueCustomerStatus = default!; _explicitNullProperties?.Remove("customer_status"); }
+            else if (parseNode.GetChildNode("customer_status") is { } nullNodeCustomerStatus && nullNodeCustomerStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerStatus = null;
+            if (parseNode.GetChildNode("escalated_as") is null) { _explicitNullValueEscalatedAs = default!; _explicitNullProperties?.Remove("escalated_as"); }
+            else if (parseNode.GetChildNode("escalated_as") is { } nullNodeEscalatedAs && nullNodeEscalatedAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedAs = null;
+            if (parseNode.GetChildNode("escalated_at") is null) { _explicitNullValueEscalatedAt = default!; _explicitNullProperties?.Remove("escalated_at"); }
+            else if (parseNode.GetChildNode("escalated_at") is { } nullNodeEscalatedAt && nullNodeEscalatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedAt = null;
+            if (parseNode.GetChildNode("escalated_by") is null) { _explicitNullValueEscalatedBy = default!; _explicitNullProperties?.Remove("escalated_by"); }
+            else if (parseNode.GetChildNode("escalated_by") is { } nullNodeEscalatedBy && nullNodeEscalatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedBy = null;
+            if (parseNode.GetChildNode("escalated_submission_id") is null) { _explicitNullValueEscalatedSubmissionId = default!; _explicitNullProperties?.Remove("escalated_submission_id"); }
+            else if (parseNode.GetChildNode("escalated_submission_id") is { } nullNodeEscalatedSubmissionId && nullNodeEscalatedSubmissionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscalatedSubmissionId = null;
+            if (parseNode.GetChildNode("original_disposition") is null) { _explicitNullValueOriginalDisposition = default!; _explicitNullProperties?.Remove("original_disposition"); }
+            else if (parseNode.GetChildNode("original_disposition") is { } nullNodeOriginalDisposition && nullNodeOriginalDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalDisposition = null;
+            if (parseNode.GetChildNode("original_edf_hash") is null) { _explicitNullValueOriginalEdfHash = default!; _explicitNullProperties?.Remove("original_edf_hash"); }
+            else if (parseNode.GetChildNode("original_edf_hash") is { } nullNodeOriginalEdfHash && nullNodeOriginalEdfHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalEdfHash = null;
+            if (parseNode.GetChildNode("original_postfix_id") is null) { _explicitNullValueOriginalPostfixId = default!; _explicitNullProperties?.Remove("original_postfix_id"); }
+            else if (parseNode.GetChildNode("original_postfix_id") is { } nullNodeOriginalPostfixId && nullNodeOriginalPostfixId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPostfixId = null;
+            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
+            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("outcome_disposition") is null) { _explicitNullValueOutcomeDisposition = default!; _explicitNullProperties?.Remove("outcome_disposition"); }
+            else if (parseNode.GetChildNode("outcome_disposition") is { } nullNodeOutcomeDisposition && nullNodeOutcomeDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeDisposition = null;
+            if (parseNode.GetChildNode("requested_at") is null) { _explicitNullValueRequestedAt = default!; _explicitNullProperties?.Remove("requested_at"); }
+            else if (parseNode.GetChildNode("requested_at") is { } nullNodeRequestedAt && nullNodeRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAt = null;
+            if (parseNode.GetChildNode("requested_by") is null) { _explicitNullValueRequestedBy = default!; _explicitNullProperties?.Remove("requested_by"); }
+            else if (parseNode.GetChildNode("requested_by") is { } nullNodeRequestedBy && nullNodeRequestedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedBy = null;
+            if (parseNode.GetChildNode("requested_disposition") is null) { _explicitNullValueRequestedDisposition = default!; _explicitNullProperties?.Remove("requested_disposition"); }
+            else if (parseNode.GetChildNode("requested_disposition") is { } nullNodeRequestedDisposition && nullNodeRequestedDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedDisposition = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("submission_id") is null) { _explicitNullValueSubmissionId = default!; _explicitNullProperties?.Remove("submission_id"); }
+            else if (parseNode.GetChildNode("submission_id") is { } nullNodeSubmissionId && nullNodeSubmissionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionId = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customer_status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCustomerStatus? CustomerStatus { get => _explicitNullValueCustomerStatus; set { _explicitNullValueCustomerStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_status"); else _explicitNullProperties?.Remove("customer_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCustomerStatus? CustomerStatus { get => _explicitNullValueCustomerStatus; set { _explicitNullValueCustomerStatus = value; AdditionalData?.Remove("customer_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_status"); else _explicitNullProperties?.Remove("customer_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCustomerStatus? _explicitNullValueCustomerStatus = default!;
         /// <summary>The disposition a message is submitted to have.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? EscalatedAs { get => _explicitNullValueEscalatedAs; set { _explicitNullValueEscalatedAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_as"); else _explicitNullProperties?.Remove("escalated_as"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? EscalatedAs { get => _explicitNullValueEscalatedAs; set { _explicitNullValueEscalatedAs = value; AdditionalData?.Remove("escalated_as"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_as"); else _explicitNullProperties?.Remove("escalated_as"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? _explicitNullValueEscalatedAs = default!;
         /// <summary>When the submission was escalated to the security team.</summary>
-        public DateTimeOffset? EscalatedAt { get => _explicitNullValueEscalatedAt; set { _explicitNullValueEscalatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_at"); else _explicitNullProperties?.Remove("escalated_at"); } }
+        public DateTimeOffset? EscalatedAt { get => _explicitNullValueEscalatedAt; set { _explicitNullValueEscalatedAt = value; AdditionalData?.Remove("escalated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_at"); else _explicitNullProperties?.Remove("escalated_at"); } }
         private DateTimeOffset? _explicitNullValueEscalatedAt = default!;
         /// <summary>Email address of the user who escalated the submission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EscalatedBy { get => _explicitNullValueEscalatedBy; set { _explicitNullValueEscalatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_by"); else _explicitNullProperties?.Remove("escalated_by"); } }
+        public string? EscalatedBy { get => _explicitNullValueEscalatedBy; set { _explicitNullValueEscalatedBy = value; AdditionalData?.Remove("escalated_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_by"); else _explicitNullProperties?.Remove("escalated_by"); } }
         private string? _explicitNullValueEscalatedBy = default!;
 #nullable restore
 #else
-        public string EscalatedBy { get => _explicitNullValueEscalatedBy; set { _explicitNullValueEscalatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_by"); else _explicitNullProperties?.Remove("escalated_by"); } }
+        public string EscalatedBy { get => _explicitNullValueEscalatedBy; set { _explicitNullValueEscalatedBy = value; AdditionalData?.Remove("escalated_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_by"); else _explicitNullProperties?.Remove("escalated_by"); } }
         private string _explicitNullValueEscalatedBy = default!;
 #endif
         /// <summary>Submission ID of the escalated team submission, when this user submission was escalated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EscalatedSubmissionId { get => _explicitNullValueEscalatedSubmissionId; set { _explicitNullValueEscalatedSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_submission_id"); else _explicitNullProperties?.Remove("escalated_submission_id"); } }
+        public string? EscalatedSubmissionId { get => _explicitNullValueEscalatedSubmissionId; set { _explicitNullValueEscalatedSubmissionId = value; AdditionalData?.Remove("escalated_submission_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_submission_id"); else _explicitNullProperties?.Remove("escalated_submission_id"); } }
         private string? _explicitNullValueEscalatedSubmissionId = default!;
 #nullable restore
 #else
-        public string EscalatedSubmissionId { get => _explicitNullValueEscalatedSubmissionId; set { _explicitNullValueEscalatedSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_submission_id"); else _explicitNullProperties?.Remove("escalated_submission_id"); } }
+        public string EscalatedSubmissionId { get => _explicitNullValueEscalatedSubmissionId; set { _explicitNullValueEscalatedSubmissionId = value; AdditionalData?.Remove("escalated_submission_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escalated_submission_id"); else _explicitNullProperties?.Remove("escalated_submission_id"); } }
         private string _explicitNullValueEscalatedSubmissionId = default!;
 #endif
         /// <summary>The disposition a message is submitted to have.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? OriginalDisposition { get => _explicitNullValueOriginalDisposition; set { _explicitNullValueOriginalDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_disposition"); else _explicitNullProperties?.Remove("original_disposition"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? OriginalDisposition { get => _explicitNullValueOriginalDisposition; set { _explicitNullValueOriginalDisposition = value; AdditionalData?.Remove("original_disposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_disposition"); else _explicitNullProperties?.Remove("original_disposition"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? _explicitNullValueOriginalDisposition = default!;
         /// <summary>EDF hash of the original message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalEdfHash { get => _explicitNullValueOriginalEdfHash; set { _explicitNullValueOriginalEdfHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_edf_hash"); else _explicitNullProperties?.Remove("original_edf_hash"); } }
+        public string? OriginalEdfHash { get => _explicitNullValueOriginalEdfHash; set { _explicitNullValueOriginalEdfHash = value; AdditionalData?.Remove("original_edf_hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_edf_hash"); else _explicitNullProperties?.Remove("original_edf_hash"); } }
         private string? _explicitNullValueOriginalEdfHash = default!;
 #nullable restore
 #else
-        public string OriginalEdfHash { get => _explicitNullValueOriginalEdfHash; set { _explicitNullValueOriginalEdfHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_edf_hash"); else _explicitNullProperties?.Remove("original_edf_hash"); } }
+        public string OriginalEdfHash { get => _explicitNullValueOriginalEdfHash; set { _explicitNullValueOriginalEdfHash = value; AdditionalData?.Remove("original_edf_hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_edf_hash"); else _explicitNullProperties?.Remove("original_edf_hash"); } }
         private string _explicitNullValueOriginalEdfHash = default!;
 #endif
         /// <summary>The postfix ID of the original message that was submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalPostfixId { get => _explicitNullValueOriginalPostfixId; set { _explicitNullValueOriginalPostfixId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_postfix_id"); else _explicitNullProperties?.Remove("original_postfix_id"); } }
+        public string? OriginalPostfixId { get => _explicitNullValueOriginalPostfixId; set { _explicitNullValueOriginalPostfixId = value; AdditionalData?.Remove("original_postfix_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_postfix_id"); else _explicitNullProperties?.Remove("original_postfix_id"); } }
         private string? _explicitNullValueOriginalPostfixId = default!;
 #nullable restore
 #else
-        public string OriginalPostfixId { get => _explicitNullValueOriginalPostfixId; set { _explicitNullValueOriginalPostfixId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_postfix_id"); else _explicitNullProperties?.Remove("original_postfix_id"); } }
+        public string OriginalPostfixId { get => _explicitNullValueOriginalPostfixId; set { _explicitNullValueOriginalPostfixId = value; AdditionalData?.Remove("original_postfix_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_postfix_id"); else _explicitNullProperties?.Remove("original_postfix_id"); } }
         private string _explicitNullValueOriginalPostfixId = default!;
 #endif
         /// <summary>Processing outcome of the submission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        public string? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
         private string? _explicitNullValueOutcome = default!;
 #nullable restore
 #else
-        public string Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        public string Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
         private string _explicitNullValueOutcome = default!;
 #endif
         /// <summary>The disposition a message is submitted to have.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? OutcomeDisposition { get => _explicitNullValueOutcomeDisposition; set { _explicitNullValueOutcomeDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_disposition"); else _explicitNullProperties?.Remove("outcome_disposition"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? OutcomeDisposition { get => _explicitNullValueOutcomeDisposition; set { _explicitNullValueOutcomeDisposition = value; AdditionalData?.Remove("outcome_disposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_disposition"); else _explicitNullProperties?.Remove("outcome_disposition"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? _explicitNullValueOutcomeDisposition = default!;
         /// <summary>When the submission was requested (UTC).</summary>
-        public DateTimeOffset? RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_at"); else _explicitNullProperties?.Remove("requested_at"); } }
+        public DateTimeOffset? RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; AdditionalData?.Remove("requested_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_at"); else _explicitNullProperties?.Remove("requested_at"); } }
         private DateTimeOffset? _explicitNullValueRequestedAt = default!;
         /// <summary>Email address of the user who requested the submission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
+        public string? RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; AdditionalData?.Remove("requested_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
         private string? _explicitNullValueRequestedBy = default!;
 #nullable restore
 #else
-        public string RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
+        public string RequestedBy { get => _explicitNullValueRequestedBy; set { _explicitNullValueRequestedBy = value; AdditionalData?.Remove("requested_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_by"); else _explicitNullProperties?.Remove("requested_by"); } }
         private string _explicitNullValueRequestedBy = default!;
 #endif
         /// <summary>The disposition a message is submitted to have.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? RequestedDisposition { get => _explicitNullValueRequestedDisposition; set { _explicitNullValueRequestedDisposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_disposition"); else _explicitNullProperties?.Remove("requested_disposition"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? RequestedDisposition { get => _explicitNullValueRequestedDisposition; set { _explicitNullValueRequestedDisposition = value; AdditionalData?.Remove("requested_disposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_disposition"); else _explicitNullProperties?.Remove("requested_disposition"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition? _explicitNullValueRequestedDisposition = default!;
         /// <summary>Deprecated, use `requested_at` instead.</summary>
         [Obsolete("")]
@@ -131,35 +148,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Processing status of the submission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>Subject line of the submitted message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>The submission_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmissionId { get => _explicitNullValueSubmissionId; set { _explicitNullValueSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_id"); else _explicitNullProperties?.Remove("submission_id"); } }
+        public string? SubmissionId { get => _explicitNullValueSubmissionId; set { _explicitNullValueSubmissionId = value; AdditionalData?.Remove("submission_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_id"); else _explicitNullProperties?.Remove("submission_id"); } }
         private string? _explicitNullValueSubmissionId = default!;
 #nullable restore
 #else
-        public string SubmissionId { get => _explicitNullValueSubmissionId; set { _explicitNullValueSubmissionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_id"); else _explicitNullProperties?.Remove("submission_id"); } }
+        public string SubmissionId { get => _explicitNullValueSubmissionId; set { _explicitNullValueSubmissionId = value; AdditionalData?.Remove("submission_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_id"); else _explicitNullProperties?.Remove("submission_id"); } }
         private string _explicitNullValueSubmissionId = default!;
 #endif
         /// <summary>Indicates whether a team member or an end user created the submission.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmission"/> and sets the default values.
@@ -186,24 +203,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customer_status", n => { CustomerStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCustomerStatus>(); } },
-                { "escalated_as", n => { EscalatedAs = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); } },
+                { "customer_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCustomerStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCustomerStatus = default; _explicitNullProperties?.Remove("customer_status"); AdditionalData["customer_status"] = unknown; } else { CustomerStatus = parsed; AdditionalData.Remove("customer_status"); } } },
+                { "escalated_as", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEscalatedAs = default; _explicitNullProperties?.Remove("escalated_as"); AdditionalData["escalated_as"] = unknown; } else { EscalatedAs = parsed; AdditionalData.Remove("escalated_as"); } } },
                 { "escalated_at", n => { EscalatedAt = n.GetDateTimeOffsetValue(); } },
                 { "escalated_by", n => { EscalatedBy = n.GetStringValue(); } },
                 { "escalated_submission_id", n => { EscalatedSubmissionId = n.GetStringValue(); } },
-                { "original_disposition", n => { OriginalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); } },
+                { "original_disposition", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOriginalDisposition = default; _explicitNullProperties?.Remove("original_disposition"); AdditionalData["original_disposition"] = unknown; } else { OriginalDisposition = parsed; AdditionalData.Remove("original_disposition"); } } },
                 { "original_edf_hash", n => { OriginalEdfHash = n.GetStringValue(); } },
                 { "original_postfix_id", n => { OriginalPostfixId = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
-                { "outcome_disposition", n => { OutcomeDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); } },
+                { "outcome_disposition", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutcomeDisposition = default; _explicitNullProperties?.Remove("outcome_disposition"); AdditionalData["outcome_disposition"] = unknown; } else { OutcomeDisposition = parsed; AdditionalData.Remove("outcome_disposition"); } } },
                 { "requested_at", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "requested_by", n => { RequestedBy = n.GetStringValue(); } },
-                { "requested_disposition", n => { RequestedDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); } },
+                { "requested_disposition", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityOptionalSubmissionDisposition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequestedDisposition = default; _explicitNullProperties?.Remove("requested_disposition"); AdditionalData["requested_disposition"] = unknown; } else { RequestedDisposition = parsed; AdditionalData.Remove("requested_disposition"); } } },
                 { "requested_ts", n => { RequestedTs = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "submission_id", n => { SubmissionId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

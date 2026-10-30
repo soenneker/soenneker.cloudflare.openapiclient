@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("credential_status") is { } nullNodeCredentialStatus && nullNodeCredentialStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialStatus = null;
-            if (parseNode.GetChildNode("maintenance_config") is { } nullNodeMaintenanceConfig && nullNodeMaintenanceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceConfig = null;
+            if (parseNode.GetChildNode("credential_status") is null) { _explicitNullValueCredentialStatus = default!; _explicitNullProperties?.Remove("credential_status"); }
+            else if (parseNode.GetChildNode("credential_status") is { } nullNodeCredentialStatus && nullNodeCredentialStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialStatus = null;
+            if (parseNode.GetChildNode("maintenance_config") is null) { _explicitNullValueMaintenanceConfig = default!; _explicitNullProperties?.Remove("maintenance_config"); }
+            else if (parseNode.GetChildNode("maintenance_config") is { } nullNodeMaintenanceConfig && nullNodeMaintenanceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceConfig = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Shows the credential configuration status.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCredentialStatus? CredentialStatus { get => _explicitNullValueCredentialStatus; set { _explicitNullValueCredentialStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_status"); else _explicitNullProperties?.Remove("credential_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCredentialStatus? CredentialStatus { get => _explicitNullValueCredentialStatus; set { _explicitNullValueCredentialStatus = value; AdditionalData?.Remove("credential_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_status"); else _explicitNullProperties?.Remove("credential_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCredentialStatus? _explicitNullValueCredentialStatus = default!;
         /// <summary>Configures maintenance for the catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig? MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig? MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; AdditionalData?.Remove("maintenance_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig? _explicitNullValueMaintenanceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; AdditionalData?.Remove("maintenance_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig _explicitNullValueMaintenanceConfig = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credential_status", n => { CredentialStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCredentialStatus>(); } },
+                { "credential_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCredentialStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCredentialStatus = default; _explicitNullProperties?.Remove("credential_status"); AdditionalData["credential_status"] = unknown; } else { CredentialStatus = parsed; AdditionalData.Remove("credential_status"); } } },
                 { "maintenance_config", n => { MaintenanceConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfig.CreateFromDiscriminatorValue); } },
             };
         }

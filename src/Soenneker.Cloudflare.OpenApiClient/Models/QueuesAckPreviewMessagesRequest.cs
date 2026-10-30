@@ -17,18 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acks") is { } nullNodeAcks && nullNodeAcks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Acks = null;
-            if (parseNode.GetChildNode("retries") is { } nullNodeRetries && nullNodeRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retries = null;
+            if (parseNode.GetChildNode("acks") is null) { _explicitNullValueAcks = default!; _explicitNullProperties?.Remove("acks"); }
+            else if (parseNode.GetChildNode("acks") is { } nullNodeAcks && nullNodeAcks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Acks = null;
+            if (parseNode.GetChildNode("retries") is null) { _explicitNullValueRetries = default!; _explicitNullProperties?.Remove("retries"); }
+            else if (parseNode.GetChildNode("retries") is { } nullNodeRetries && nullNodeRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retries = null;
         }
 
         /// <summary>The acks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestAcksItem>? Acks { get => _explicitNullValueAcks; set { _explicitNullValueAcks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acks"); else _explicitNullProperties?.Remove("acks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestAcksItem>? Acks { get => _explicitNullValueAcks; set { _explicitNullValueAcks = value; AdditionalData?.Remove("acks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acks"); else _explicitNullProperties?.Remove("acks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestAcksItem>? _explicitNullValueAcks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestAcksItem> Acks { get => _explicitNullValueAcks; set { _explicitNullValueAcks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acks"); else _explicitNullProperties?.Remove("acks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestAcksItem> Acks { get => _explicitNullValueAcks; set { _explicitNullValueAcks = value; AdditionalData?.Remove("acks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acks"); else _explicitNullProperties?.Remove("acks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestAcksItem> _explicitNullValueAcks = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The retries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestRetriesItem>? Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestRetriesItem>? Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; AdditionalData?.Remove("retries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestRetriesItem>? _explicitNullValueRetries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestRetriesItem> Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestRetriesItem> Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; AdditionalData?.Remove("retries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequestRetriesItem> _explicitNullValueRetries = default!;
 #endif
         /// <summary>

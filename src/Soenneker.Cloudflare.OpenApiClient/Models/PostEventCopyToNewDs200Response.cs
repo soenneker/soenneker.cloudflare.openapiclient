@@ -17,32 +17,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("copied") is { } nullNodeCopied && nullNodeCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Copied = null;
-            if (parseNode.GetChildNode("indicatorsCopied") is { } nullNodeIndicatorsCopied && nullNodeIndicatorsCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorsCopied = null;
-            if (parseNode.GetChildNode("insertFailures") is { } nullNodeInsertFailures && nullNodeInsertFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsertFailures = null;
-            if (parseNode.GetChildNode("relationshipsCopied") is { } nullNodeRelationshipsCopied && nullNodeRelationshipsCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationshipsCopied = null;
+            if (parseNode.GetChildNode("copied") is null) { _explicitNullValueCopied = default!; _explicitNullProperties?.Remove("copied"); }
+            else if (parseNode.GetChildNode("copied") is { } nullNodeCopied && nullNodeCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Copied = null;
+            if (parseNode.GetChildNode("indicatorsCopied") is null) { _explicitNullValueIndicatorsCopied = default!; _explicitNullProperties?.Remove("indicatorsCopied"); }
+            else if (parseNode.GetChildNode("indicatorsCopied") is { } nullNodeIndicatorsCopied && nullNodeIndicatorsCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorsCopied = null;
+            if (parseNode.GetChildNode("insertFailures") is null) { _explicitNullValueInsertFailures = default!; _explicitNullProperties?.Remove("insertFailures"); }
+            else if (parseNode.GetChildNode("insertFailures") is { } nullNodeInsertFailures && nullNodeInsertFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsertFailures = null;
+            if (parseNode.GetChildNode("relationshipsCopied") is null) { _explicitNullValueRelationshipsCopied = default!; _explicitNullProperties?.Remove("relationshipsCopied"); }
+            else if (parseNode.GetChildNode("relationshipsCopied") is { } nullNodeRelationshipsCopied && nullNodeRelationshipsCopied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationshipsCopied = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of events successfully copied</summary>
-        public double? Copied { get => _explicitNullValueCopied; set { _explicitNullValueCopied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copied"); else _explicitNullProperties?.Remove("copied"); } }
+        public double? Copied { get => _explicitNullValueCopied; set { _explicitNullValueCopied = value; AdditionalData?.Remove("copied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copied"); else _explicitNullProperties?.Remove("copied"); } }
         private double? _explicitNullValueCopied = default!;
         /// <summary>Number of indicators successfully copied</summary>
-        public double? IndicatorsCopied { get => _explicitNullValueIndicatorsCopied; set { _explicitNullValueIndicatorsCopied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorsCopied"); else _explicitNullProperties?.Remove("indicatorsCopied"); } }
+        public double? IndicatorsCopied { get => _explicitNullValueIndicatorsCopied; set { _explicitNullValueIndicatorsCopied = value; AdditionalData?.Remove("indicatorsCopied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorsCopied"); else _explicitNullProperties?.Remove("indicatorsCopied"); } }
         private double? _explicitNullValueIndicatorsCopied = default!;
         /// <summary>Array of events that failed to insert into destination</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200ResponseInsertFailuresItem>? InsertFailures { get => _explicitNullValueInsertFailures; set { _explicitNullValueInsertFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insertFailures"); else _explicitNullProperties?.Remove("insertFailures"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200ResponseInsertFailuresItem>? InsertFailures { get => _explicitNullValueInsertFailures; set { _explicitNullValueInsertFailures = value; AdditionalData?.Remove("insertFailures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insertFailures"); else _explicitNullProperties?.Remove("insertFailures"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200ResponseInsertFailuresItem>? _explicitNullValueInsertFailures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200ResponseInsertFailuresItem> InsertFailures { get => _explicitNullValueInsertFailures; set { _explicitNullValueInsertFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insertFailures"); else _explicitNullProperties?.Remove("insertFailures"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200ResponseInsertFailuresItem> InsertFailures { get => _explicitNullValueInsertFailures; set { _explicitNullValueInsertFailures = value; AdditionalData?.Remove("insertFailures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insertFailures"); else _explicitNullProperties?.Remove("insertFailures"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200ResponseInsertFailuresItem> _explicitNullValueInsertFailures = default!;
 #endif
         /// <summary>Number of relationships successfully copied</summary>
-        public double? RelationshipsCopied { get => _explicitNullValueRelationshipsCopied; set { _explicitNullValueRelationshipsCopied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationshipsCopied"); else _explicitNullProperties?.Remove("relationshipsCopied"); } }
+        public double? RelationshipsCopied { get => _explicitNullValueRelationshipsCopied; set { _explicitNullValueRelationshipsCopied = value; AdditionalData?.Remove("relationshipsCopied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationshipsCopied"); else _explicitNullProperties?.Remove("relationshipsCopied"); } }
         private double? _explicitNullValueRelationshipsCopied = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200Response"/> and sets the default values.

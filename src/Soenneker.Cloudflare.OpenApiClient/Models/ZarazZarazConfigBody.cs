@@ -17,16 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("analytics") is { } nullNodeAnalytics && nullNodeAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analytics = null;
-            if (parseNode.GetChildNode("consent") is { } nullNodeConsent && nullNodeConsent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Consent = null;
-            if (parseNode.GetChildNode("dataLayer") is { } nullNodeDataLayer && nullNodeDataLayer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataLayer = null;
-            if (parseNode.GetChildNode("debugKey") is { } nullNodeDebugKey && nullNodeDebugKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugKey = null;
-            if (parseNode.GetChildNode("historyChange") is { } nullNodeHistoryChange && nullNodeHistoryChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoryChange = null;
-            if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
-            if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
-            if (parseNode.GetChildNode("triggers") is { } nullNodeTriggers && nullNodeTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggers = null;
-            if (parseNode.GetChildNode("variables") is { } nullNodeVariables && nullNodeVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variables = null;
-            if (parseNode.GetChildNode("zarazVersion") is { } nullNodeZarazVersion && nullNodeZarazVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZarazVersion = null;
+            if (parseNode.GetChildNode("analytics") is null) { _explicitNullValueAnalytics = default!; _explicitNullProperties?.Remove("analytics"); }
+            else if (parseNode.GetChildNode("analytics") is { } nullNodeAnalytics && nullNodeAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analytics = null;
+            if (parseNode.GetChildNode("consent") is null) { _explicitNullValueConsent = default!; _explicitNullProperties?.Remove("consent"); }
+            else if (parseNode.GetChildNode("consent") is { } nullNodeConsent && nullNodeConsent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Consent = null;
+            if (parseNode.GetChildNode("dataLayer") is null) { _explicitNullValueDataLayer = default!; _explicitNullProperties?.Remove("dataLayer"); }
+            else if (parseNode.GetChildNode("dataLayer") is { } nullNodeDataLayer && nullNodeDataLayer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataLayer = null;
+            if (parseNode.GetChildNode("debugKey") is null) { _explicitNullValueDebugKey = default!; _explicitNullProperties?.Remove("debugKey"); }
+            else if (parseNode.GetChildNode("debugKey") is { } nullNodeDebugKey && nullNodeDebugKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugKey = null;
+            if (parseNode.GetChildNode("historyChange") is null) { _explicitNullValueHistoryChange = default!; _explicitNullProperties?.Remove("historyChange"); }
+            else if (parseNode.GetChildNode("historyChange") is { } nullNodeHistoryChange && nullNodeHistoryChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoryChange = null;
+            if (parseNode.GetChildNode("settings") is null) { _explicitNullValueSettings = default!; _explicitNullProperties?.Remove("settings"); }
+            else if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
+            if (parseNode.GetChildNode("tools") is null) { _explicitNullValueTools = default!; _explicitNullProperties?.Remove("tools"); }
+            else if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+            if (parseNode.GetChildNode("triggers") is null) { _explicitNullValueTriggers = default!; _explicitNullProperties?.Remove("triggers"); }
+            else if (parseNode.GetChildNode("triggers") is { } nullNodeTriggers && nullNodeTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggers = null;
+            if (parseNode.GetChildNode("variables") is null) { _explicitNullValueVariables = default!; _explicitNullProperties?.Remove("variables"); }
+            else if (parseNode.GetChildNode("variables") is { } nullNodeVariables && nullNodeVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variables = null;
+            if (parseNode.GetChildNode("zarazVersion") is null) { _explicitNullValueZarazVersion = default!; _explicitNullProperties?.Remove("zarazVersion"); }
+            else if (parseNode.GetChildNode("zarazVersion") is { } nullNodeZarazVersion && nullNodeZarazVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZarazVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,81 +44,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare Monitoring settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseAnalytics? Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseAnalytics? Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; AdditionalData?.Remove("analytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseAnalytics? _explicitNullValueAnalytics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseAnalytics Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseAnalytics Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; AdditionalData?.Remove("analytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseAnalytics _explicitNullValueAnalytics = default!;
 #endif
         /// <summary>Consent management configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent? Consent { get => _explicitNullValueConsent; set { _explicitNullValueConsent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent"); else _explicitNullProperties?.Remove("consent"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent? Consent { get => _explicitNullValueConsent; set { _explicitNullValueConsent = value; AdditionalData?.Remove("consent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent"); else _explicitNullProperties?.Remove("consent"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent? _explicitNullValueConsent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent Consent { get => _explicitNullValueConsent; set { _explicitNullValueConsent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent"); else _explicitNullProperties?.Remove("consent"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent Consent { get => _explicitNullValueConsent; set { _explicitNullValueConsent = value; AdditionalData?.Remove("consent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent"); else _explicitNullProperties?.Remove("consent"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent _explicitNullValueConsent = default!;
 #endif
         /// <summary>Data layer compatibility mode enabled.</summary>
-        public bool? DataLayer { get => _explicitNullValueDataLayer; set { _explicitNullValueDataLayer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataLayer"); else _explicitNullProperties?.Remove("dataLayer"); } }
+        public bool? DataLayer { get => _explicitNullValueDataLayer; set { _explicitNullValueDataLayer = value; AdditionalData?.Remove("dataLayer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataLayer"); else _explicitNullProperties?.Remove("dataLayer"); } }
         private bool? _explicitNullValueDataLayer = default!;
         /// <summary>The key for Zaraz debug mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DebugKey { get => _explicitNullValueDebugKey; set { _explicitNullValueDebugKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugKey"); else _explicitNullProperties?.Remove("debugKey"); } }
+        public string? DebugKey { get => _explicitNullValueDebugKey; set { _explicitNullValueDebugKey = value; AdditionalData?.Remove("debugKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugKey"); else _explicitNullProperties?.Remove("debugKey"); } }
         private string? _explicitNullValueDebugKey = default!;
 #nullable restore
 #else
-        public string DebugKey { get => _explicitNullValueDebugKey; set { _explicitNullValueDebugKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugKey"); else _explicitNullProperties?.Remove("debugKey"); } }
+        public string DebugKey { get => _explicitNullValueDebugKey; set { _explicitNullValueDebugKey = value; AdditionalData?.Remove("debugKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugKey"); else _explicitNullProperties?.Remove("debugKey"); } }
         private string _explicitNullValueDebugKey = default!;
 #endif
         /// <summary>Single Page Application support enabled.</summary>
-        public bool? HistoryChange { get => _explicitNullValueHistoryChange; set { _explicitNullValueHistoryChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historyChange"); else _explicitNullProperties?.Remove("historyChange"); } }
+        public bool? HistoryChange { get => _explicitNullValueHistoryChange; set { _explicitNullValueHistoryChange = value; AdditionalData?.Remove("historyChange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historyChange"); else _explicitNullProperties?.Remove("historyChange"); } }
         private bool? _explicitNullValueHistoryChange = default!;
         /// <summary>General Zaraz settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings? _explicitNullValueSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings _explicitNullValueSettings = default!;
 #endif
         /// <summary>Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; AdditionalData?.Remove("tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; AdditionalData?.Remove("tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools _explicitNullValueTools = default!;
 #endif
         /// <summary>Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers? Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers? Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; AdditionalData?.Remove("triggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers? _explicitNullValueTriggers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; AdditionalData?.Remove("triggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers _explicitNullValueTriggers = default!;
 #endif
         /// <summary>Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables? Variables { get => _explicitNullValueVariables; set { _explicitNullValueVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables"); else _explicitNullProperties?.Remove("variables"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables? Variables { get => _explicitNullValueVariables; set { _explicitNullValueVariables = value; AdditionalData?.Remove("variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables"); else _explicitNullProperties?.Remove("variables"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables? _explicitNullValueVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables Variables { get => _explicitNullValueVariables; set { _explicitNullValueVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables"); else _explicitNullProperties?.Remove("variables"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables Variables { get => _explicitNullValueVariables; set { _explicitNullValueVariables = value; AdditionalData?.Remove("variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables"); else _explicitNullProperties?.Remove("variables"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables _explicitNullValueVariables = default!;
 #endif
         /// <summary>Zaraz internal version of the config.</summary>
-        public int? ZarazVersion { get => _explicitNullValueZarazVersion; set { _explicitNullValueZarazVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zarazVersion"); else _explicitNullProperties?.Remove("zarazVersion"); } }
+        public int? ZarazVersion { get => _explicitNullValueZarazVersion; set { _explicitNullValueZarazVersion = value; AdditionalData?.Remove("zarazVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zarazVersion"); else _explicitNullProperties?.Remove("zarazVersion"); } }
         private int? _explicitNullValueZarazVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody"/> and sets the default values.

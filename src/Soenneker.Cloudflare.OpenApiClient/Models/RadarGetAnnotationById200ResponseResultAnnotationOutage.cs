@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("outageCause") is { } nullNodeOutageCause && nullNodeOutageCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutageCause = null;
-            if (parseNode.GetChildNode("outageType") is { } nullNodeOutageType && nullNodeOutageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutageType = null;
+            if (parseNode.GetChildNode("outageCause") is null) { _explicitNullValueOutageCause = default!; _explicitNullProperties?.Remove("outageCause"); }
+            else if (parseNode.GetChildNode("outageCause") is { } nullNodeOutageCause && nullNodeOutageCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutageCause = null;
+            if (parseNode.GetChildNode("outageType") is null) { _explicitNullValueOutageType = default!; _explicitNullProperties?.Remove("outageType"); }
+            else if (parseNode.GetChildNode("outageType") is { } nullNodeOutageType && nullNodeOutageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutageType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The outageCause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutageCause { get => _explicitNullValueOutageCause; set { _explicitNullValueOutageCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageCause"); else _explicitNullProperties?.Remove("outageCause"); } }
+        public string? OutageCause { get => _explicitNullValueOutageCause; set { _explicitNullValueOutageCause = value; AdditionalData?.Remove("outageCause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageCause"); else _explicitNullProperties?.Remove("outageCause"); } }
         private string? _explicitNullValueOutageCause = default!;
 #nullable restore
 #else
-        public string OutageCause { get => _explicitNullValueOutageCause; set { _explicitNullValueOutageCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageCause"); else _explicitNullProperties?.Remove("outageCause"); } }
+        public string OutageCause { get => _explicitNullValueOutageCause; set { _explicitNullValueOutageCause = value; AdditionalData?.Remove("outageCause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageCause"); else _explicitNullProperties?.Remove("outageCause"); } }
         private string _explicitNullValueOutageCause = default!;
 #endif
         /// <summary>The outageType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutageType { get => _explicitNullValueOutageType; set { _explicitNullValueOutageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageType"); else _explicitNullProperties?.Remove("outageType"); } }
+        public string? OutageType { get => _explicitNullValueOutageType; set { _explicitNullValueOutageType = value; AdditionalData?.Remove("outageType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageType"); else _explicitNullProperties?.Remove("outageType"); } }
         private string? _explicitNullValueOutageType = default!;
 #nullable restore
 #else
-        public string OutageType { get => _explicitNullValueOutageType; set { _explicitNullValueOutageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageType"); else _explicitNullProperties?.Remove("outageType"); } }
+        public string OutageType { get => _explicitNullValueOutageType; set { _explicitNullValueOutageType = value; AdditionalData?.Remove("outageType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outageType"); else _explicitNullProperties?.Remove("outageType"); } }
         private string _explicitNullValueOutageType = default!;
 #endif
         /// <summary>

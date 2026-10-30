@@ -17,34 +17,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_from_aisearch_wizard") is { } nullNodeCreatedFromAisearchWizard && nullNodeCreatedFromAisearchWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFromAisearchWizard = null;
-            if (parseNode.GetChildNode("created_from_emdash_plugin") is { } nullNodeCreatedFromEmdashPlugin && nullNodeCreatedFromEmdashPlugin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFromEmdashPlugin = null;
-            if (parseNode.GetChildNode("worker_domain") is { } nullNodeWorkerDomain && nullNodeWorkerDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerDomain = null;
+            if (parseNode.GetChildNode("created_from_aisearch_wizard") is null) { _explicitNullValueCreatedFromAisearchWizard = default!; _explicitNullProperties?.Remove("created_from_aisearch_wizard"); }
+            else if (parseNode.GetChildNode("created_from_aisearch_wizard") is { } nullNodeCreatedFromAisearchWizard && nullNodeCreatedFromAisearchWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFromAisearchWizard = null;
+            if (parseNode.GetChildNode("created_from_emdash_plugin") is null) { _explicitNullValueCreatedFromEmdashPlugin = default!; _explicitNullProperties?.Remove("created_from_emdash_plugin"); }
+            else if (parseNode.GetChildNode("created_from_emdash_plugin") is { } nullNodeCreatedFromEmdashPlugin && nullNodeCreatedFromEmdashPlugin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFromEmdashPlugin = null;
+            if (parseNode.GetChildNode("worker_domain") is null) { _explicitNullValueWorkerDomain = default!; _explicitNullProperties?.Remove("worker_domain"); }
+            else if (parseNode.GetChildNode("worker_domain") is { } nullNodeWorkerDomain && nullNodeWorkerDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerDomain = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_from_aisearch_wizard property</summary>
-        public bool? CreatedFromAisearchWizard { get => _explicitNullValueCreatedFromAisearchWizard; set { _explicitNullValueCreatedFromAisearchWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_aisearch_wizard"); else _explicitNullProperties?.Remove("created_from_aisearch_wizard"); } }
+        public bool? CreatedFromAisearchWizard { get => _explicitNullValueCreatedFromAisearchWizard; set { _explicitNullValueCreatedFromAisearchWizard = value; AdditionalData?.Remove("created_from_aisearch_wizard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_aisearch_wizard"); else _explicitNullProperties?.Remove("created_from_aisearch_wizard"); } }
         private bool? _explicitNullValueCreatedFromAisearchWizard = default!;
         /// <summary>The created_from_emdash_plugin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultMetadataCreatedFromEmdashPlugin? CreatedFromEmdashPlugin { get => _explicitNullValueCreatedFromEmdashPlugin; set { _explicitNullValueCreatedFromEmdashPlugin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_emdash_plugin"); else _explicitNullProperties?.Remove("created_from_emdash_plugin"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultMetadataCreatedFromEmdashPlugin? CreatedFromEmdashPlugin { get => _explicitNullValueCreatedFromEmdashPlugin; set { _explicitNullValueCreatedFromEmdashPlugin = value; AdditionalData?.Remove("created_from_emdash_plugin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_emdash_plugin"); else _explicitNullProperties?.Remove("created_from_emdash_plugin"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultMetadataCreatedFromEmdashPlugin? _explicitNullValueCreatedFromEmdashPlugin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultMetadataCreatedFromEmdashPlugin CreatedFromEmdashPlugin { get => _explicitNullValueCreatedFromEmdashPlugin; set { _explicitNullValueCreatedFromEmdashPlugin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_emdash_plugin"); else _explicitNullProperties?.Remove("created_from_emdash_plugin"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultMetadataCreatedFromEmdashPlugin CreatedFromEmdashPlugin { get => _explicitNullValueCreatedFromEmdashPlugin; set { _explicitNullValueCreatedFromEmdashPlugin = value; AdditionalData?.Remove("created_from_emdash_plugin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from_emdash_plugin"); else _explicitNullProperties?.Remove("created_from_emdash_plugin"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchFetchInstance200ResponseResultMetadataCreatedFromEmdashPlugin _explicitNullValueCreatedFromEmdashPlugin = default!;
 #endif
         /// <summary>The worker_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkerDomain { get => _explicitNullValueWorkerDomain; set { _explicitNullValueWorkerDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_domain"); else _explicitNullProperties?.Remove("worker_domain"); } }
+        public string? WorkerDomain { get => _explicitNullValueWorkerDomain; set { _explicitNullValueWorkerDomain = value; AdditionalData?.Remove("worker_domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_domain"); else _explicitNullProperties?.Remove("worker_domain"); } }
         private string? _explicitNullValueWorkerDomain = default!;
 #nullable restore
 #else
-        public string WorkerDomain { get => _explicitNullValueWorkerDomain; set { _explicitNullValueWorkerDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_domain"); else _explicitNullProperties?.Remove("worker_domain"); } }
+        public string WorkerDomain { get => _explicitNullValueWorkerDomain; set { _explicitNullValueWorkerDomain = value; AdditionalData?.Remove("worker_domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_domain"); else _explicitNullProperties?.Remove("worker_domain"); } }
         private string _explicitNullValueWorkerDomain = default!;
 #endif
         /// <summary>

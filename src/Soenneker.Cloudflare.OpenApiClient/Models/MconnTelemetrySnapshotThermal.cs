@@ -18,32 +18,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("critical_celcius") is { } nullNodeCriticalCelcius && nullNodeCriticalCelcius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriticalCelcius = null;
-            if (parseNode.GetChildNode("current_celcius") is { } nullNodeCurrentCelcius && nullNodeCurrentCelcius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCelcius = null;
-            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
-            if (parseNode.GetChildNode("max_celcius") is { } nullNodeMaxCelcius && nullNodeMaxCelcius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCelcius = null;
+            if (parseNode.GetChildNode("critical_celcius") is null) { _explicitNullValueCriticalCelcius = default!; _explicitNullProperties?.Remove("critical_celcius"); }
+            else if (parseNode.GetChildNode("critical_celcius") is { } nullNodeCriticalCelcius && nullNodeCriticalCelcius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriticalCelcius = null;
+            if (parseNode.GetChildNode("current_celcius") is null) { _explicitNullValueCurrentCelcius = default!; _explicitNullProperties?.Remove("current_celcius"); }
+            else if (parseNode.GetChildNode("current_celcius") is { } nullNodeCurrentCelcius && nullNodeCurrentCelcius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCelcius = null;
+            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
+            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("max_celcius") is null) { _explicitNullValueMaxCelcius = default!; _explicitNullProperties?.Remove("max_celcius"); }
+            else if (parseNode.GetChildNode("max_celcius") is { } nullNodeMaxCelcius && nullNodeMaxCelcius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCelcius = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Critical failure temperature of the component (degrees Celsius)</summary>
-        public double? CriticalCelcius { get => _explicitNullValueCriticalCelcius; set { _explicitNullValueCriticalCelcius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical_celcius"); else _explicitNullProperties?.Remove("critical_celcius"); } }
+        public double? CriticalCelcius { get => _explicitNullValueCriticalCelcius; set { _explicitNullValueCriticalCelcius = value; AdditionalData?.Remove("critical_celcius"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical_celcius"); else _explicitNullProperties?.Remove("critical_celcius"); } }
         private double? _explicitNullValueCriticalCelcius = default!;
         /// <summary>Current temperature of the component (degrees Celsius)</summary>
-        public double? CurrentCelcius { get => _explicitNullValueCurrentCelcius; set { _explicitNullValueCurrentCelcius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_celcius"); else _explicitNullProperties?.Remove("current_celcius"); } }
+        public double? CurrentCelcius { get => _explicitNullValueCurrentCelcius; set { _explicitNullValueCurrentCelcius = value; AdditionalData?.Remove("current_celcius"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_celcius"); else _explicitNullProperties?.Remove("current_celcius"); } }
         private double? _explicitNullValueCurrentCelcius = default!;
         /// <summary>Sensor identifier for the component</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>Maximum temperature of the component (degrees Celsius)</summary>
-        public double? MaxCelcius { get => _explicitNullValueMaxCelcius; set { _explicitNullValueMaxCelcius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_celcius"); else _explicitNullProperties?.Remove("max_celcius"); } }
+        public double? MaxCelcius { get => _explicitNullValueMaxCelcius; set { _explicitNullValueMaxCelcius = value; AdditionalData?.Remove("max_celcius"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_celcius"); else _explicitNullProperties?.Remove("max_celcius"); } }
         private double? _explicitNullValueMaxCelcius = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotThermal"/> and sets the default values.

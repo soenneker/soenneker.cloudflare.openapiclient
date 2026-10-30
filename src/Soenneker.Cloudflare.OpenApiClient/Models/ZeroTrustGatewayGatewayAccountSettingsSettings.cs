@@ -18,31 +18,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activity_log") is { } nullNodeActivityLog && nullNodeActivityLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivityLog = null;
-            if (parseNode.GetChildNode("antivirus") is { } nullNodeAntivirus && nullNodeAntivirus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Antivirus = null;
-            if (parseNode.GetChildNode("block_page") is { } nullNodeBlockPage && nullNodeBlockPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockPage = null;
-            if (parseNode.GetChildNode("body_scanning") is { } nullNodeBodyScanning && nullNodeBodyScanning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodyScanning = null;
-            if (parseNode.GetChildNode("browser_isolation") is { } nullNodeBrowserIsolation && nullNodeBrowserIsolation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserIsolation = null;
-            if (parseNode.GetChildNode("certificate") is { } nullNodeCertificate && nullNodeCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Certificate = null;
-            if (parseNode.GetChildNode("custom_certificate") is { } nullNodeCustomCertificate && nullNodeCustomCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomCertificate = null;
-            if (parseNode.GetChildNode("extended_email_matching") is { } nullNodeExtendedEmailMatching && nullNodeExtendedEmailMatching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedEmailMatching = null;
-            if (parseNode.GetChildNode("fips") is { } nullNodeFips && nullNodeFips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fips = null;
-            if (parseNode.GetChildNode("host_selector") is { } nullNodeHostSelector && nullNodeHostSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostSelector = null;
-            if (parseNode.GetChildNode("inspection") is { } nullNodeInspection && nullNodeInspection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inspection = null;
-            if (parseNode.GetChildNode("max_ttl_secs") is { } nullNodeMaxTtlSecs && nullNodeMaxTtlSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtlSecs = null;
-            if (parseNode.GetChildNode("protocol_detection") is { } nullNodeProtocolDetection && nullNodeProtocolDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolDetection = null;
-            if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
-            if (parseNode.GetChildNode("tls_decrypt") is { } nullNodeTlsDecrypt && nullNodeTlsDecrypt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsDecrypt = null;
+            if (parseNode.GetChildNode("activity_log") is null) { _explicitNullValueActivityLog = default!; _explicitNullProperties?.Remove("activity_log"); }
+            else if (parseNode.GetChildNode("activity_log") is { } nullNodeActivityLog && nullNodeActivityLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivityLog = null;
+            if (parseNode.GetChildNode("antivirus") is null) { _explicitNullValueAntivirus = default!; _explicitNullProperties?.Remove("antivirus"); }
+            else if (parseNode.GetChildNode("antivirus") is { } nullNodeAntivirus && nullNodeAntivirus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Antivirus = null;
+            if (parseNode.GetChildNode("block_page") is null) { _explicitNullValueBlockPage = default!; _explicitNullProperties?.Remove("block_page"); }
+            else if (parseNode.GetChildNode("block_page") is { } nullNodeBlockPage && nullNodeBlockPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockPage = null;
+            if (parseNode.GetChildNode("body_scanning") is null) { _explicitNullValueBodyScanning = default!; _explicitNullProperties?.Remove("body_scanning"); }
+            else if (parseNode.GetChildNode("body_scanning") is { } nullNodeBodyScanning && nullNodeBodyScanning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodyScanning = null;
+            if (parseNode.GetChildNode("browser_isolation") is null) { _explicitNullValueBrowserIsolation = default!; _explicitNullProperties?.Remove("browser_isolation"); }
+            else if (parseNode.GetChildNode("browser_isolation") is { } nullNodeBrowserIsolation && nullNodeBrowserIsolation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserIsolation = null;
+            if (parseNode.GetChildNode("certificate") is null) { _explicitNullValueCertificate = default!; _explicitNullProperties?.Remove("certificate"); }
+            else if (parseNode.GetChildNode("certificate") is { } nullNodeCertificate && nullNodeCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Certificate = null;
+            if (parseNode.GetChildNode("custom_certificate") is null) { _explicitNullValueCustomCertificate = default!; _explicitNullProperties?.Remove("custom_certificate"); }
+            else if (parseNode.GetChildNode("custom_certificate") is { } nullNodeCustomCertificate && nullNodeCustomCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomCertificate = null;
+            if (parseNode.GetChildNode("extended_email_matching") is null) { _explicitNullValueExtendedEmailMatching = default!; _explicitNullProperties?.Remove("extended_email_matching"); }
+            else if (parseNode.GetChildNode("extended_email_matching") is { } nullNodeExtendedEmailMatching && nullNodeExtendedEmailMatching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedEmailMatching = null;
+            if (parseNode.GetChildNode("fips") is null) { _explicitNullValueFips = default!; _explicitNullProperties?.Remove("fips"); }
+            else if (parseNode.GetChildNode("fips") is { } nullNodeFips && nullNodeFips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fips = null;
+            if (parseNode.GetChildNode("host_selector") is null) { _explicitNullValueHostSelector = default!; _explicitNullProperties?.Remove("host_selector"); }
+            else if (parseNode.GetChildNode("host_selector") is { } nullNodeHostSelector && nullNodeHostSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostSelector = null;
+            if (parseNode.GetChildNode("inspection") is null) { _explicitNullValueInspection = default!; _explicitNullProperties?.Remove("inspection"); }
+            else if (parseNode.GetChildNode("inspection") is { } nullNodeInspection && nullNodeInspection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inspection = null;
+            if (parseNode.GetChildNode("max_ttl_secs") is null) { _explicitNullValueMaxTtlSecs = default!; _explicitNullProperties?.Remove("max_ttl_secs"); }
+            else if (parseNode.GetChildNode("max_ttl_secs") is { } nullNodeMaxTtlSecs && nullNodeMaxTtlSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtlSecs = null;
+            if (parseNode.GetChildNode("protocol_detection") is null) { _explicitNullValueProtocolDetection = default!; _explicitNullProperties?.Remove("protocol_detection"); }
+            else if (parseNode.GetChildNode("protocol_detection") is { } nullNodeProtocolDetection && nullNodeProtocolDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolDetection = null;
+            if (parseNode.GetChildNode("sandbox") is null) { _explicitNullValueSandbox = default!; _explicitNullProperties?.Remove("sandbox"); }
+            else if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
+            if (parseNode.GetChildNode("tls_decrypt") is null) { _explicitNullValueTlsDecrypt = default!; _explicitNullProperties?.Remove("tls_decrypt"); }
+            else if (parseNode.GetChildNode("tls_decrypt") is { } nullNodeTlsDecrypt && nullNodeTlsDecrypt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsDecrypt = null;
         }
 
         /// <summary>Specify activity log settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayActivityLogSettings? ActivityLog { get => _explicitNullValueActivityLog; set { _explicitNullValueActivityLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_log"); else _explicitNullProperties?.Remove("activity_log"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayActivityLogSettings? ActivityLog { get => _explicitNullValueActivityLog; set { _explicitNullValueActivityLog = value; AdditionalData?.Remove("activity_log"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_log"); else _explicitNullProperties?.Remove("activity_log"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayActivityLogSettings? _explicitNullValueActivityLog = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayActivityLogSettings ActivityLog { get => _explicitNullValueActivityLog; set { _explicitNullValueActivityLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_log"); else _explicitNullProperties?.Remove("activity_log"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayActivityLogSettings ActivityLog { get => _explicitNullValueActivityLog; set { _explicitNullValueActivityLog = value; AdditionalData?.Remove("activity_log"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_log"); else _explicitNullProperties?.Remove("activity_log"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayActivityLogSettings _explicitNullValueActivityLog = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -50,135 +65,135 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify anti-virus settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayAntiVirusSettings? Antivirus { get => _explicitNullValueAntivirus; set { _explicitNullValueAntivirus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("antivirus"); else _explicitNullProperties?.Remove("antivirus"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayAntiVirusSettings? Antivirus { get => _explicitNullValueAntivirus; set { _explicitNullValueAntivirus = value; AdditionalData?.Remove("antivirus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("antivirus"); else _explicitNullProperties?.Remove("antivirus"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayAntiVirusSettings? _explicitNullValueAntivirus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayAntiVirusSettings Antivirus { get => _explicitNullValueAntivirus; set { _explicitNullValueAntivirus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("antivirus"); else _explicitNullProperties?.Remove("antivirus"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayAntiVirusSettings Antivirus { get => _explicitNullValueAntivirus; set { _explicitNullValueAntivirus = value; AdditionalData?.Remove("antivirus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("antivirus"); else _explicitNullProperties?.Remove("antivirus"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayAntiVirusSettings _explicitNullValueAntivirus = default!;
 #endif
         /// <summary>Specify block page layout settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings? BlockPage { get => _explicitNullValueBlockPage; set { _explicitNullValueBlockPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_page"); else _explicitNullProperties?.Remove("block_page"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings? BlockPage { get => _explicitNullValueBlockPage; set { _explicitNullValueBlockPage = value; AdditionalData?.Remove("block_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_page"); else _explicitNullProperties?.Remove("block_page"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings? _explicitNullValueBlockPage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings BlockPage { get => _explicitNullValueBlockPage; set { _explicitNullValueBlockPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_page"); else _explicitNullProperties?.Remove("block_page"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings BlockPage { get => _explicitNullValueBlockPage; set { _explicitNullValueBlockPage = value; AdditionalData?.Remove("block_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_page"); else _explicitNullProperties?.Remove("block_page"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings _explicitNullValueBlockPage = default!;
 #endif
         /// <summary>Specify the DLP inspection mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettings? BodyScanning { get => _explicitNullValueBodyScanning; set { _explicitNullValueBodyScanning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_scanning"); else _explicitNullProperties?.Remove("body_scanning"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettings? BodyScanning { get => _explicitNullValueBodyScanning; set { _explicitNullValueBodyScanning = value; AdditionalData?.Remove("body_scanning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_scanning"); else _explicitNullProperties?.Remove("body_scanning"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettings? _explicitNullValueBodyScanning = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettings BodyScanning { get => _explicitNullValueBodyScanning; set { _explicitNullValueBodyScanning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_scanning"); else _explicitNullProperties?.Remove("body_scanning"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettings BodyScanning { get => _explicitNullValueBodyScanning; set { _explicitNullValueBodyScanning = value; AdditionalData?.Remove("body_scanning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_scanning"); else _explicitNullProperties?.Remove("body_scanning"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettings _explicitNullValueBodyScanning = default!;
 #endif
         /// <summary>Specify Clientless Browser Isolation settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings? BrowserIsolation { get => _explicitNullValueBrowserIsolation; set { _explicitNullValueBrowserIsolation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_isolation"); else _explicitNullProperties?.Remove("browser_isolation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings? BrowserIsolation { get => _explicitNullValueBrowserIsolation; set { _explicitNullValueBrowserIsolation = value; AdditionalData?.Remove("browser_isolation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_isolation"); else _explicitNullProperties?.Remove("browser_isolation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings? _explicitNullValueBrowserIsolation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings BrowserIsolation { get => _explicitNullValueBrowserIsolation; set { _explicitNullValueBrowserIsolation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_isolation"); else _explicitNullProperties?.Remove("browser_isolation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings BrowserIsolation { get => _explicitNullValueBrowserIsolation; set { _explicitNullValueBrowserIsolation = value; AdditionalData?.Remove("browser_isolation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_isolation"); else _explicitNullProperties?.Remove("browser_isolation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBrowserIsolationSettings _explicitNullValueBrowserIsolation = default!;
 #endif
         /// <summary>Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCertificateSettings? Certificate { get => _explicitNullValueCertificate; set { _explicitNullValueCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate"); else _explicitNullProperties?.Remove("certificate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCertificateSettings? Certificate { get => _explicitNullValueCertificate; set { _explicitNullValueCertificate = value; AdditionalData?.Remove("certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate"); else _explicitNullProperties?.Remove("certificate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCertificateSettings? _explicitNullValueCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCertificateSettings Certificate { get => _explicitNullValueCertificate; set { _explicitNullValueCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate"); else _explicitNullProperties?.Remove("certificate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCertificateSettings Certificate { get => _explicitNullValueCertificate; set { _explicitNullValueCertificate = value; AdditionalData?.Remove("certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate"); else _explicitNullProperties?.Remove("certificate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCertificateSettings _explicitNullValueCertificate = default!;
 #endif
         /// <summary>Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCustomCertificateSettings? CustomCertificate { get => _explicitNullValueCustomCertificate; set { _explicitNullValueCustomCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_certificate"); else _explicitNullProperties?.Remove("custom_certificate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCustomCertificateSettings? CustomCertificate { get => _explicitNullValueCustomCertificate; set { _explicitNullValueCustomCertificate = value; AdditionalData?.Remove("custom_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_certificate"); else _explicitNullProperties?.Remove("custom_certificate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCustomCertificateSettings? _explicitNullValueCustomCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCustomCertificateSettings CustomCertificate { get => _explicitNullValueCustomCertificate; set { _explicitNullValueCustomCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_certificate"); else _explicitNullProperties?.Remove("custom_certificate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCustomCertificateSettings CustomCertificate { get => _explicitNullValueCustomCertificate; set { _explicitNullValueCustomCertificate = value; AdditionalData?.Remove("custom_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_certificate"); else _explicitNullProperties?.Remove("custom_certificate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCustomCertificateSettings _explicitNullValueCustomCertificate = default!;
 #endif
         /// <summary>Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses `.` or `+` modifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExtendedEmailMatching? ExtendedEmailMatching { get => _explicitNullValueExtendedEmailMatching; set { _explicitNullValueExtendedEmailMatching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_email_matching"); else _explicitNullProperties?.Remove("extended_email_matching"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExtendedEmailMatching? ExtendedEmailMatching { get => _explicitNullValueExtendedEmailMatching; set { _explicitNullValueExtendedEmailMatching = value; AdditionalData?.Remove("extended_email_matching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_email_matching"); else _explicitNullProperties?.Remove("extended_email_matching"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExtendedEmailMatching? _explicitNullValueExtendedEmailMatching = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExtendedEmailMatching ExtendedEmailMatching { get => _explicitNullValueExtendedEmailMatching; set { _explicitNullValueExtendedEmailMatching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_email_matching"); else _explicitNullProperties?.Remove("extended_email_matching"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExtendedEmailMatching ExtendedEmailMatching { get => _explicitNullValueExtendedEmailMatching; set { _explicitNullValueExtendedEmailMatching = value; AdditionalData?.Remove("extended_email_matching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_email_matching"); else _explicitNullProperties?.Remove("extended_email_matching"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExtendedEmailMatching _explicitNullValueExtendedEmailMatching = default!;
 #endif
         /// <summary>Specify FIPS settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFipsSettings? Fips { get => _explicitNullValueFips; set { _explicitNullValueFips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fips"); else _explicitNullProperties?.Remove("fips"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFipsSettings? Fips { get => _explicitNullValueFips; set { _explicitNullValueFips = value; AdditionalData?.Remove("fips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fips"); else _explicitNullProperties?.Remove("fips"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFipsSettings? _explicitNullValueFips = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFipsSettings Fips { get => _explicitNullValueFips; set { _explicitNullValueFips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fips"); else _explicitNullProperties?.Remove("fips"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFipsSettings Fips { get => _explicitNullValueFips; set { _explicitNullValueFips = value; AdditionalData?.Remove("fips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fips"); else _explicitNullProperties?.Remove("fips"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFipsSettings _explicitNullValueFips = default!;
 #endif
         /// <summary>Enable host selection in egress policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayHostSelectorSettings? HostSelector { get => _explicitNullValueHostSelector; set { _explicitNullValueHostSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_selector"); else _explicitNullProperties?.Remove("host_selector"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayHostSelectorSettings? HostSelector { get => _explicitNullValueHostSelector; set { _explicitNullValueHostSelector = value; AdditionalData?.Remove("host_selector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_selector"); else _explicitNullProperties?.Remove("host_selector"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayHostSelectorSettings? _explicitNullValueHostSelector = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayHostSelectorSettings HostSelector { get => _explicitNullValueHostSelector; set { _explicitNullValueHostSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_selector"); else _explicitNullProperties?.Remove("host_selector"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayHostSelectorSettings HostSelector { get => _explicitNullValueHostSelector; set { _explicitNullValueHostSelector = value; AdditionalData?.Remove("host_selector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_selector"); else _explicitNullProperties?.Remove("host_selector"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayHostSelectorSettings _explicitNullValueHostSelector = default!;
 #endif
         /// <summary>Define the proxy inspection mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings? Inspection { get => _explicitNullValueInspection; set { _explicitNullValueInspection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inspection"); else _explicitNullProperties?.Remove("inspection"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings? Inspection { get => _explicitNullValueInspection; set { _explicitNullValueInspection = value; AdditionalData?.Remove("inspection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inspection"); else _explicitNullProperties?.Remove("inspection"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings? _explicitNullValueInspection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings Inspection { get => _explicitNullValueInspection; set { _explicitNullValueInspection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inspection"); else _explicitNullProperties?.Remove("inspection"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings Inspection { get => _explicitNullValueInspection; set { _explicitNullValueInspection = value; AdditionalData?.Remove("inspection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inspection"); else _explicitNullProperties?.Remove("inspection"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayInspectionSettings _explicitNullValueInspection = default!;
 #endif
         /// <summary>Account-level cap on DNS response TTLs, in seconds. Gateway rewrites DNS responses so returned record TTLs do not exceed this value. Null means no cap. Each DNS location can inherit, override, or disable it through the location `max_ttl` setting.</summary>
-        public int? MaxTtlSecs { get => _explicitNullValueMaxTtlSecs; set { _explicitNullValueMaxTtlSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl_secs"); else _explicitNullProperties?.Remove("max_ttl_secs"); } }
+        public int? MaxTtlSecs { get => _explicitNullValueMaxTtlSecs; set { _explicitNullValueMaxTtlSecs = value; AdditionalData?.Remove("max_ttl_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl_secs"); else _explicitNullProperties?.Remove("max_ttl_secs"); } }
         private int? _explicitNullValueMaxTtlSecs = default!;
         /// <summary>Specify whether to detect protocols from the initial bytes of client traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection? ProtocolDetection { get => _explicitNullValueProtocolDetection; set { _explicitNullValueProtocolDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_detection"); else _explicitNullProperties?.Remove("protocol_detection"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection? ProtocolDetection { get => _explicitNullValueProtocolDetection; set { _explicitNullValueProtocolDetection = value; AdditionalData?.Remove("protocol_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_detection"); else _explicitNullProperties?.Remove("protocol_detection"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection? _explicitNullValueProtocolDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection ProtocolDetection { get => _explicitNullValueProtocolDetection; set { _explicitNullValueProtocolDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_detection"); else _explicitNullProperties?.Remove("protocol_detection"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection ProtocolDetection { get => _explicitNullValueProtocolDetection; set { _explicitNullValueProtocolDetection = value; AdditionalData?.Remove("protocol_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_detection"); else _explicitNullProperties?.Remove("protocol_detection"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProtocolDetection _explicitNullValueProtocolDetection = default!;
 #endif
         /// <summary>Specify whether to enable the sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; AdditionalData?.Remove("sandbox"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox? _explicitNullValueSandbox = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; AdditionalData?.Remove("sandbox"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySandbox _explicitNullValueSandbox = default!;
 #endif
         /// <summary>Specify whether to inspect encrypted HTTP traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings? TlsDecrypt { get => _explicitNullValueTlsDecrypt; set { _explicitNullValueTlsDecrypt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_decrypt"); else _explicitNullProperties?.Remove("tls_decrypt"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings? TlsDecrypt { get => _explicitNullValueTlsDecrypt; set { _explicitNullValueTlsDecrypt = value; AdditionalData?.Remove("tls_decrypt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_decrypt"); else _explicitNullProperties?.Remove("tls_decrypt"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings? _explicitNullValueTlsDecrypt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings TlsDecrypt { get => _explicitNullValueTlsDecrypt; set { _explicitNullValueTlsDecrypt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_decrypt"); else _explicitNullProperties?.Remove("tls_decrypt"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings TlsDecrypt { get => _explicitNullValueTlsDecrypt; set { _explicitNullValueTlsDecrypt = value; AdditionalData?.Remove("tls_decrypt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_decrypt"); else _explicitNullProperties?.Remove("tls_decrypt"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayTlsSettings _explicitNullValueTlsDecrypt = default!;
 #endif
         /// <summary>

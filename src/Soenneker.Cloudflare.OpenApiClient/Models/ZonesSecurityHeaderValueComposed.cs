@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("strict_transport_security") is { } nullNodeStrictTransportSecurity && nullNodeStrictTransportSecurity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrictTransportSecurity = null;
+            if (parseNode.GetChildNode("strict_transport_security") is null) { _explicitNullValueStrictTransportSecurity = default!; _explicitNullProperties?.Remove("strict_transport_security"); }
+            else if (parseNode.GetChildNode("strict_transport_security") is { } nullNodeStrictTransportSecurity && nullNodeStrictTransportSecurity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrictTransportSecurity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Strict Transport Security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSecurityHeaderValueStrictTransportSecurity? StrictTransportSecurity { get => _explicitNullValueStrictTransportSecurity; set { _explicitNullValueStrictTransportSecurity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strict_transport_security"); else _explicitNullProperties?.Remove("strict_transport_security"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSecurityHeaderValueStrictTransportSecurity? StrictTransportSecurity { get => _explicitNullValueStrictTransportSecurity; set { _explicitNullValueStrictTransportSecurity = value; AdditionalData?.Remove("strict_transport_security"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strict_transport_security"); else _explicitNullProperties?.Remove("strict_transport_security"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSecurityHeaderValueStrictTransportSecurity? _explicitNullValueStrictTransportSecurity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSecurityHeaderValueStrictTransportSecurity StrictTransportSecurity { get => _explicitNullValueStrictTransportSecurity; set { _explicitNullValueStrictTransportSecurity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strict_transport_security"); else _explicitNullProperties?.Remove("strict_transport_security"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSecurityHeaderValueStrictTransportSecurity StrictTransportSecurity { get => _explicitNullValueStrictTransportSecurity; set { _explicitNullValueStrictTransportSecurity = value; AdditionalData?.Remove("strict_transport_security"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strict_transport_security"); else _explicitNullProperties?.Remove("strict_transport_security"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSecurityHeaderValueStrictTransportSecurity _explicitNullValueStrictTransportSecurity = default!;
 #endif
         /// <summary>

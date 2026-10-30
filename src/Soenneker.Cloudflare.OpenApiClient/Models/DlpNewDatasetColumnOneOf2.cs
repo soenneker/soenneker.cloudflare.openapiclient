@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entry_name") is { } nullNodeEntryName && nullNodeEntryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryName = null;
-            if (parseNode.GetChildNode("header_name") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
-            if (parseNode.GetChildNode("num_cells") is { } nullNodeNumCells && nullNodeNumCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumCells = null;
+            if (parseNode.GetChildNode("entry_name") is null) { _explicitNullValueEntryName = default!; _explicitNullProperties?.Remove("entry_name"); }
+            else if (parseNode.GetChildNode("entry_name") is { } nullNodeEntryName && nullNodeEntryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryName = null;
+            if (parseNode.GetChildNode("header_name") is null) { _explicitNullValueHeaderName = default!; _explicitNullProperties?.Remove("header_name"); }
+            else if (parseNode.GetChildNode("header_name") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
+            if (parseNode.GetChildNode("num_cells") is null) { _explicitNullValueNumCells = default!; _explicitNullProperties?.Remove("num_cells"); }
+            else if (parseNode.GetChildNode("num_cells") is { } nullNodeNumCells && nullNodeNumCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumCells = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The entry_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntryName { get => _explicitNullValueEntryName; set { _explicitNullValueEntryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_name"); else _explicitNullProperties?.Remove("entry_name"); } }
+        public string? EntryName { get => _explicitNullValueEntryName; set { _explicitNullValueEntryName = value; AdditionalData?.Remove("entry_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_name"); else _explicitNullProperties?.Remove("entry_name"); } }
         private string? _explicitNullValueEntryName = default!;
 #nullable restore
 #else
-        public string EntryName { get => _explicitNullValueEntryName; set { _explicitNullValueEntryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_name"); else _explicitNullProperties?.Remove("entry_name"); } }
+        public string EntryName { get => _explicitNullValueEntryName; set { _explicitNullValueEntryName = value; AdditionalData?.Remove("entry_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_name"); else _explicitNullProperties?.Remove("entry_name"); } }
         private string _explicitNullValueEntryName = default!;
 #endif
         /// <summary>The header_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
+        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("header_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
         private string? _explicitNullValueHeaderName = default!;
 #nullable restore
 #else
-        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
+        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("header_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
         private string _explicitNullValueHeaderName = default!;
 #endif
         /// <summary>The num_cells property</summary>
-        public long? NumCells { get => _explicitNullValueNumCells; set { _explicitNullValueNumCells = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_cells"); else _explicitNullProperties?.Remove("num_cells"); } }
+        public long? NumCells { get => _explicitNullValueNumCells; set { _explicitNullValueNumCells = value; AdditionalData?.Remove("num_cells"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_cells"); else _explicitNullProperties?.Remove("num_cells"); } }
         private long? _explicitNullValueNumCells = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpNewDatasetColumnOneOf2"/> and sets the default values.

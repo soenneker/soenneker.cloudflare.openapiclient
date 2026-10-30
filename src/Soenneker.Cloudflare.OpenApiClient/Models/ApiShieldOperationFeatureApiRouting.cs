@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_routing") is { } nullNodeApiRouting && nullNodeApiRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiRouting = null;
+            if (parseNode.GetChildNode("api_routing") is null) { _explicitNullValueApiRouting = default!; _explicitNullProperties?.Remove("api_routing"); }
+            else if (parseNode.GetChildNode("api_routing") is { } nullNodeApiRouting && nullNodeApiRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiRouting = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>API Routing settings on endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureApiRoutingApiRouting? ApiRouting { get => _explicitNullValueApiRouting; set { _explicitNullValueApiRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_routing"); else _explicitNullProperties?.Remove("api_routing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureApiRoutingApiRouting? ApiRouting { get => _explicitNullValueApiRouting; set { _explicitNullValueApiRouting = value; AdditionalData?.Remove("api_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_routing"); else _explicitNullProperties?.Remove("api_routing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureApiRoutingApiRouting? _explicitNullValueApiRouting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureApiRoutingApiRouting ApiRouting { get => _explicitNullValueApiRouting; set { _explicitNullValueApiRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_routing"); else _explicitNullProperties?.Remove("api_routing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureApiRoutingApiRouting ApiRouting { get => _explicitNullValueApiRouting; set { _explicitNullValueApiRouting = value; AdditionalData?.Remove("api_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_routing"); else _explicitNullProperties?.Remove("api_routing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureApiRoutingApiRouting _explicitNullValueApiRouting = default!;
 #endif
         /// <summary>

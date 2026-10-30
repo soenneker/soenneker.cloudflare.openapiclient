@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lower") is { } nullNodeLower && nullNodeLower.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lower = null;
-            if (parseNode.GetChildNode("upper") is { } nullNodeUpper && nullNodeUpper.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upper = null;
+            if (parseNode.GetChildNode("lower") is null) { _explicitNullValueLower = default!; _explicitNullProperties?.Remove("lower"); }
+            else if (parseNode.GetChildNode("lower") is { } nullNodeLower && nullNodeLower.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lower = null;
+            if (parseNode.GetChildNode("upper") is null) { _explicitNullValueUpper = default!; _explicitNullProperties?.Remove("upper"); }
+            else if (parseNode.GetChildNode("upper") is { } nullNodeUpper && nullNodeUpper.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upper = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lower bound for percentile estimate</summary>
-        public double? Lower { get => _explicitNullValueLower; set { _explicitNullValueLower = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lower"); else _explicitNullProperties?.Remove("lower"); } }
+        public double? Lower { get => _explicitNullValueLower; set { _explicitNullValueLower = value; AdditionalData?.Remove("lower"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lower"); else _explicitNullProperties?.Remove("lower"); } }
         private double? _explicitNullValueLower = default!;
         /// <summary>Upper bound for percentile estimate</summary>
-        public double? Upper { get => _explicitNullValueUpper; set { _explicitNullValueUpper = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upper"); else _explicitNullProperties?.Remove("upper"); } }
+        public double? Upper { get => _explicitNullValueUpper; set { _explicitNullValueUpper = value; AdditionalData?.Remove("upper"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upper"); else _explicitNullProperties?.Remove("upper"); } }
         private double? _explicitNullValueUpper = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldConfidenceIntervalsBounds"/> and sets the default values.

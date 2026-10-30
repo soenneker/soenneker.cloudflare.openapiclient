@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("coupon_code") is { } nullNodeCouponCode && nullNodeCouponCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CouponCode = null;
-            if (parseNode.GetChildNode("payment_hold_id") is { } nullNodePaymentHoldId && nullNodePaymentHoldId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentHoldId = null;
-            if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
-            if (parseNode.GetChildNode("user_is_on_session") is { } nullNodeUserIsOnSession && nullNodeUserIsOnSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIsOnSession = null;
+            if (parseNode.GetChildNode("coupon_code") is null) { _explicitNullValueCouponCode = default!; _explicitNullProperties?.Remove("coupon_code"); }
+            else if (parseNode.GetChildNode("coupon_code") is { } nullNodeCouponCode && nullNodeCouponCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CouponCode = null;
+            if (parseNode.GetChildNode("payment_hold_id") is null) { _explicitNullValuePaymentHoldId = default!; _explicitNullProperties?.Remove("payment_hold_id"); }
+            else if (parseNode.GetChildNode("payment_hold_id") is { } nullNodePaymentHoldId && nullNodePaymentHoldId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentHoldId = null;
+            if (parseNode.GetChildNode("subscriptions") is null) { _explicitNullValueSubscriptions = default!; _explicitNullProperties?.Remove("subscriptions"); }
+            else if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
+            if (parseNode.GetChildNode("user_is_on_session") is null) { _explicitNullValueUserIsOnSession = default!; _explicitNullProperties?.Remove("user_is_on_session"); }
+            else if (parseNode.GetChildNode("user_is_on_session") is { } nullNodeUserIsOnSession && nullNodeUserIsOnSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIsOnSession = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The coupon_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CouponCode { get => _explicitNullValueCouponCode; set { _explicitNullValueCouponCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coupon_code"); else _explicitNullProperties?.Remove("coupon_code"); } }
+        public string? CouponCode { get => _explicitNullValueCouponCode; set { _explicitNullValueCouponCode = value; AdditionalData?.Remove("coupon_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coupon_code"); else _explicitNullProperties?.Remove("coupon_code"); } }
         private string? _explicitNullValueCouponCode = default!;
 #nullable restore
 #else
-        public string CouponCode { get => _explicitNullValueCouponCode; set { _explicitNullValueCouponCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coupon_code"); else _explicitNullProperties?.Remove("coupon_code"); } }
+        public string CouponCode { get => _explicitNullValueCouponCode; set { _explicitNullValueCouponCode = value; AdditionalData?.Remove("coupon_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coupon_code"); else _explicitNullProperties?.Remove("coupon_code"); } }
         private string _explicitNullValueCouponCode = default!;
 #endif
         /// <summary>The payment_hold_id property</summary>
-        public long? PaymentHoldId { get => _explicitNullValuePaymentHoldId; set { _explicitNullValuePaymentHoldId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_hold_id"); else _explicitNullProperties?.Remove("payment_hold_id"); } }
+        public long? PaymentHoldId { get => _explicitNullValuePaymentHoldId; set { _explicitNullValuePaymentHoldId = value; AdditionalData?.Remove("payment_hold_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_hold_id"); else _explicitNullProperties?.Remove("payment_hold_id"); } }
         private long? _explicitNullValuePaymentHoldId = default!;
         /// <summary>The subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2>? _explicitNullValueSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2> _explicitNullValueSubscriptions = default!;
 #endif
         /// <summary>The user_is_on_session property</summary>
-        public bool? UserIsOnSession { get => _explicitNullValueUserIsOnSession; set { _explicitNullValueUserIsOnSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_is_on_session"); else _explicitNullProperties?.Remove("user_is_on_session"); } }
+        public bool? UserIsOnSession { get => _explicitNullValueUserIsOnSession; set { _explicitNullValueUserIsOnSession = value; AdditionalData?.Remove("user_is_on_session"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_is_on_session"); else _explicitNullProperties?.Remove("user_is_on_session"); } }
         private bool? _explicitNullValueUserIsOnSession = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountSubscriptionsBulkCreateSubscriptionRequest"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mitigations") is { } nullNodeMitigations && nullNodeMitigations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigations = null;
+            if (parseNode.GetChildNode("mitigations") is null) { _explicitNullValueMitigations = default!; _explicitNullProperties?.Remove("mitigations"); }
+            else if (parseNode.GetChildNode("mitigations") is { } nullNodeMitigations && nullNodeMitigations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The mitigations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationListItem>? Mitigations { get => _explicitNullValueMitigations; set { _explicitNullValueMitigations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigations"); else _explicitNullProperties?.Remove("mitigations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationListItem>? Mitigations { get => _explicitNullValueMitigations; set { _explicitNullValueMitigations = value; AdditionalData?.Remove("mitigations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigations"); else _explicitNullProperties?.Remove("mitigations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationListItem>? _explicitNullValueMitigations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationListItem> Mitigations { get => _explicitNullValueMitigations; set { _explicitNullValueMitigations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigations"); else _explicitNullProperties?.Remove("mitigations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationListItem> Mitigations { get => _explicitNullValueMitigations; set { _explicitNullValueMitigations = value; AdditionalData?.Remove("mitigations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigations"); else _explicitNullProperties?.Remove("mitigations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationListItem> _explicitNullValueMitigations = default!;
 #endif
         /// <summary>

@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("show_orgs_ui") is { } nullNodeShowOrgsUi && nullNodeShowOrgsUi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowOrgsUi = null;
-            if (parseNode.GetChildNode("show_tenants_ui") is { } nullNodeShowTenantsUi && nullNodeShowTenantsUi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowTenantsUi = null;
+            if (parseNode.GetChildNode("show_orgs_ui") is null) { _explicitNullValueShowOrgsUi = default!; _explicitNullProperties?.Remove("show_orgs_ui"); }
+            else if (parseNode.GetChildNode("show_orgs_ui") is { } nullNodeShowOrgsUi && nullNodeShowOrgsUi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowOrgsUi = null;
+            if (parseNode.GetChildNode("show_tenants_ui") is null) { _explicitNullValueShowTenantsUi = default!; _explicitNullProperties?.Remove("show_tenants_ui"); }
+            else if (parseNode.GetChildNode("show_tenants_ui") is { } nullNodeShowTenantsUi && nullNodeShowTenantsUi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowTenantsUi = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Render the Organizations experience for this tenant.</summary>
-        public bool? ShowOrgsUi { get => _explicitNullValueShowOrgsUi; set { _explicitNullValueShowOrgsUi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_orgs_ui"); else _explicitNullProperties?.Remove("show_orgs_ui"); } }
+        public bool? ShowOrgsUi { get => _explicitNullValueShowOrgsUi; set { _explicitNullValueShowOrgsUi = value; AdditionalData?.Remove("show_orgs_ui"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_orgs_ui"); else _explicitNullProperties?.Remove("show_orgs_ui"); } }
         private bool? _explicitNullValueShowOrgsUi = default!;
         /// <summary>Render the legacy Tenants experience for this tenant.</summary>
-        public bool? ShowTenantsUi { get => _explicitNullValueShowTenantsUi; set { _explicitNullValueShowTenantsUi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_tenants_ui"); else _explicitNullProperties?.Remove("show_tenants_ui"); } }
+        public bool? ShowTenantsUi { get => _explicitNullValueShowTenantsUi; set { _explicitNullValueShowTenantsUi = value; AdditionalData?.Remove("show_tenants_ui"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_tenants_ui"); else _explicitNullProperties?.Remove("show_tenants_ui"); } }
         private bool? _explicitNullValueShowTenantsUi = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantUiFlags"/> and sets the default values.

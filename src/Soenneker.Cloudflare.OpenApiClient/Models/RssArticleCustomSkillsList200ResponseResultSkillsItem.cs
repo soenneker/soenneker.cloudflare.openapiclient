@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("output_saved_at") is { } nullNodeOutputSavedAt && nullNodeOutputSavedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputSavedAt = null;
-            if (parseNode.GetChildNode("output_status") is { } nullNodeOutputStatus && nullNodeOutputStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputStatus = null;
-            if (parseNode.GetChildNode("output_validation_status") is { } nullNodeOutputValidationStatus && nullNodeOutputValidationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputValidationStatus = null;
-            if (parseNode.GetChildNode("skill_id") is { } nullNodeSkillId && nullNodeSkillId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkillId = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("output_saved_at") is null) { _explicitNullValueOutputSavedAt = default!; _explicitNullProperties?.Remove("output_saved_at"); }
+            else if (parseNode.GetChildNode("output_saved_at") is { } nullNodeOutputSavedAt && nullNodeOutputSavedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputSavedAt = null;
+            if (parseNode.GetChildNode("output_status") is null) { _explicitNullValueOutputStatus = default!; _explicitNullProperties?.Remove("output_status"); }
+            else if (parseNode.GetChildNode("output_status") is { } nullNodeOutputStatus && nullNodeOutputStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputStatus = null;
+            if (parseNode.GetChildNode("output_validation_status") is null) { _explicitNullValueOutputValidationStatus = default!; _explicitNullProperties?.Remove("output_validation_status"); }
+            else if (parseNode.GetChildNode("output_validation_status") is { } nullNodeOutputValidationStatus && nullNodeOutputValidationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputValidationStatus = null;
+            if (parseNode.GetChildNode("skill_id") is null) { _explicitNullValueSkillId = default!; _explicitNullProperties?.Remove("skill_id"); }
+            else if (parseNode.GetChildNode("skill_id") is { } nullNodeSkillId && nullNodeSkillId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkillId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,24 +34,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Current custom skill name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>RFC3339 time at which the stored output row was last written; null when no output is stored.</summary>
-        public DateTimeOffset? OutputSavedAt { get => _explicitNullValueOutputSavedAt; set { _explicitNullValueOutputSavedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_saved_at"); else _explicitNullProperties?.Remove("output_saved_at"); } }
+        public DateTimeOffset? OutputSavedAt { get => _explicitNullValueOutputSavedAt; set { _explicitNullValueOutputSavedAt = value; AdditionalData?.Remove("output_saved_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_saved_at"); else _explicitNullProperties?.Remove("output_saved_at"); } }
         private DateTimeOffset? _explicitNullValueOutputSavedAt = default!;
         /// <summary>Whether a stored output is available for this article and custom skill.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputStatus? OutputStatus { get => _explicitNullValueOutputStatus; set { _explicitNullValueOutputStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_status"); else _explicitNullProperties?.Remove("output_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputStatus? OutputStatus { get => _explicitNullValueOutputStatus; set { _explicitNullValueOutputStatus = value; AdditionalData?.Remove("output_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_status"); else _explicitNullProperties?.Remove("output_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputStatus? _explicitNullValueOutputStatus = default!;
         /// <summary>Validation classification for the stored output. `unknown` denotes a legacy historical validation state; null when no output is stored.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputValidationStatus? OutputValidationStatus { get => _explicitNullValueOutputValidationStatus; set { _explicitNullValueOutputValidationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_validation_status"); else _explicitNullProperties?.Remove("output_validation_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputValidationStatus? OutputValidationStatus { get => _explicitNullValueOutputValidationStatus; set { _explicitNullValueOutputValidationStatus = value; AdditionalData?.Remove("output_validation_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_validation_status"); else _explicitNullProperties?.Remove("output_validation_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputValidationStatus? _explicitNullValueOutputValidationStatus = default!;
         /// <summary>UUID of the active custom skill.</summary>
-        public Guid? SkillId { get => _explicitNullValueSkillId; set { _explicitNullValueSkillId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skill_id"); else _explicitNullProperties?.Remove("skill_id"); } }
+        public Guid? SkillId { get => _explicitNullValueSkillId; set { _explicitNullValueSkillId = value; AdditionalData?.Remove("skill_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skill_id"); else _explicitNullProperties?.Remove("skill_id"); } }
         private Guid? _explicitNullValueSkillId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItem"/> and sets the default values.
@@ -75,8 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "output_saved_at", n => { OutputSavedAt = n.GetDateTimeOffsetValue(); } },
-                { "output_status", n => { OutputStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputStatus>(); } },
-                { "output_validation_status", n => { OutputValidationStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputValidationStatus>(); } },
+                { "output_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutputStatus = default; _explicitNullProperties?.Remove("output_status"); AdditionalData["output_status"] = unknown; } else { OutputStatus = parsed; AdditionalData.Remove("output_status"); } } },
+                { "output_validation_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleCustomSkillsList200ResponseResultSkillsItemOutputValidationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutputValidationStatus = default; _explicitNullProperties?.Remove("output_validation_status"); AdditionalData["output_validation_status"] = unknown; } else { OutputValidationStatus = parsed; AdditionalData.Remove("output_validation_status"); } } },
                 { "skill_id", n => { SkillId = n.GetGuidValue(); } },
             };
         }

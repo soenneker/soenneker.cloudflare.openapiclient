@@ -17,45 +17,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_sampling") is { } nullNodeDefaultSampling && nullNodeDefaultSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSampling = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("router_ips") is { } nullNodeRouterIps && nullNodeRouterIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouterIps = null;
-            if (parseNode.GetChildNode("warp_devices") is { } nullNodeWarpDevices && nullNodeWarpDevices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarpDevices = null;
+            if (parseNode.GetChildNode("default_sampling") is null) { _explicitNullValueDefaultSampling = default!; _explicitNullProperties?.Remove("default_sampling"); }
+            else if (parseNode.GetChildNode("default_sampling") is { } nullNodeDefaultSampling && nullNodeDefaultSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSampling = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("router_ips") is null) { _explicitNullValueRouterIps = default!; _explicitNullProperties?.Remove("router_ips"); }
+            else if (parseNode.GetChildNode("router_ips") is { } nullNodeRouterIps && nullNodeRouterIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouterIps = null;
+            if (parseNode.GetChildNode("warp_devices") is null) { _explicitNullValueWarpDevices = default!; _explicitNullProperties?.Remove("warp_devices"); }
+            else if (parseNode.GetChildNode("warp_devices") is { } nullNodeWarpDevices && nullNodeWarpDevices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarpDevices = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Fallback sampling rate of flow messages being sent in packets per second. This should match the packet sampling rate configured on the router.</summary>
-        public double? DefaultSampling { get => _explicitNullValueDefaultSampling; set { _explicitNullValueDefaultSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sampling"); else _explicitNullProperties?.Remove("default_sampling"); } }
+        public double? DefaultSampling { get => _explicitNullValueDefaultSampling; set { _explicitNullValueDefaultSampling = value; AdditionalData?.Remove("default_sampling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sampling"); else _explicitNullProperties?.Remove("default_sampling"); } }
         private double? _explicitNullValueDefaultSampling = default!;
         /// <summary>The account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The router_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RouterIps { get => _explicitNullValueRouterIps; set { _explicitNullValueRouterIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_ips"); else _explicitNullProperties?.Remove("router_ips"); } }
+        public List<string>? RouterIps { get => _explicitNullValueRouterIps; set { _explicitNullValueRouterIps = value; AdditionalData?.Remove("router_ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_ips"); else _explicitNullProperties?.Remove("router_ips"); } }
         private List<string>? _explicitNullValueRouterIps = default!;
 #nullable restore
 #else
-        public List<string> RouterIps { get => _explicitNullValueRouterIps; set { _explicitNullValueRouterIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_ips"); else _explicitNullProperties?.Remove("router_ips"); } }
+        public List<string> RouterIps { get => _explicitNullValueRouterIps; set { _explicitNullValueRouterIps = value; AdditionalData?.Remove("router_ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_ips"); else _explicitNullProperties?.Remove("router_ips"); } }
         private List<string> _explicitNullValueRouterIps = default!;
 #endif
         /// <summary>The warp_devices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigWarpDevice>? WarpDevices { get => _explicitNullValueWarpDevices; set { _explicitNullValueWarpDevices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warp_devices"); else _explicitNullProperties?.Remove("warp_devices"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigWarpDevice>? WarpDevices { get => _explicitNullValueWarpDevices; set { _explicitNullValueWarpDevices = value; AdditionalData?.Remove("warp_devices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warp_devices"); else _explicitNullProperties?.Remove("warp_devices"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigWarpDevice>? _explicitNullValueWarpDevices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigWarpDevice> WarpDevices { get => _explicitNullValueWarpDevices; set { _explicitNullValueWarpDevices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warp_devices"); else _explicitNullProperties?.Remove("warp_devices"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigWarpDevice> WarpDevices { get => _explicitNullValueWarpDevices; set { _explicitNullValueWarpDevices = value; AdditionalData?.Remove("warp_devices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warp_devices"); else _explicitNullProperties?.Remove("warp_devices"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmConfigWarpDevice> _explicitNullValueWarpDevices = default!;
 #endif
         /// <summary>

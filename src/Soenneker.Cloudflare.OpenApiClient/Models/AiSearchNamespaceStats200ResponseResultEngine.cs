@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("r2") is { } nullNodeR2 && nullNodeR2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2 = null;
-            if (parseNode.GetChildNode("vectorize") is { } nullNodeVectorize && nullNodeVectorize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vectorize = null;
+            if (parseNode.GetChildNode("r2") is null) { _explicitNullValueR2 = default!; _explicitNullProperties?.Remove("r2"); }
+            else if (parseNode.GetChildNode("r2") is { } nullNodeR2 && nullNodeR2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2 = null;
+            if (parseNode.GetChildNode("vectorize") is null) { _explicitNullValueVectorize = default!; _explicitNullProperties?.Remove("vectorize"); }
+            else if (parseNode.GetChildNode("vectorize") is { } nullNodeVectorize && nullNodeVectorize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vectorize = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>R2 bucket storage usage in bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2? R2 { get => _explicitNullValueR2; set { _explicitNullValueR2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2"); else _explicitNullProperties?.Remove("r2"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2? R2 { get => _explicitNullValueR2; set { _explicitNullValueR2 = value; AdditionalData?.Remove("r2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2"); else _explicitNullProperties?.Remove("r2"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2? _explicitNullValueR2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2 R2 { get => _explicitNullValueR2; set { _explicitNullValueR2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2"); else _explicitNullProperties?.Remove("r2"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2 R2 { get => _explicitNullValueR2; set { _explicitNullValueR2 = value; AdditionalData?.Remove("r2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2"); else _explicitNullProperties?.Remove("r2"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineR2 _explicitNullValueR2 = default!;
 #endif
         /// <summary>Vectorize index metadata (dimensions, vector count).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineVectorize? Vectorize { get => _explicitNullValueVectorize; set { _explicitNullValueVectorize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorize"); else _explicitNullProperties?.Remove("vectorize"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineVectorize? Vectorize { get => _explicitNullValueVectorize; set { _explicitNullValueVectorize = value; AdditionalData?.Remove("vectorize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorize"); else _explicitNullProperties?.Remove("vectorize"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineVectorize? _explicitNullValueVectorize = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineVectorize Vectorize { get => _explicitNullValueVectorize; set { _explicitNullValueVectorize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorize"); else _explicitNullProperties?.Remove("vectorize"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineVectorize Vectorize { get => _explicitNullValueVectorize; set { _explicitNullValueVectorize = value; AdditionalData?.Remove("vectorize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vectorize"); else _explicitNullProperties?.Remove("vectorize"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceStats200ResponseResultEngineVectorize _explicitNullValueVectorize = default!;
 #endif
         /// <summary>

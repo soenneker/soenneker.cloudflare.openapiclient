@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tld") is { } nullNodeTld && nullNodeTld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tld = null;
+            if (parseNode.GetChildNode("tld") is null) { _explicitNullValueTld = default!; _explicitNullProperties?.Remove("tld"); }
+            else if (parseNode.GetChildNode("tld") is { } nullNodeTld && nullNodeTld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tld = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tld property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTldDetails200ResponseResultTld? Tld { get => _explicitNullValueTld; set { _explicitNullValueTld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tld"); else _explicitNullProperties?.Remove("tld"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTldDetails200ResponseResultTld? Tld { get => _explicitNullValueTld; set { _explicitNullValueTld = value; AdditionalData?.Remove("tld"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tld"); else _explicitNullProperties?.Remove("tld"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTldDetails200ResponseResultTld? _explicitNullValueTld = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTldDetails200ResponseResultTld Tld { get => _explicitNullValueTld; set { _explicitNullValueTld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tld"); else _explicitNullProperties?.Remove("tld"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTldDetails200ResponseResultTld Tld { get => _explicitNullValueTld; set { _explicitNullValueTld = value; AdditionalData?.Remove("tld"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tld"); else _explicitNullProperties?.Remove("tld"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTldDetails200ResponseResultTld _explicitNullValueTld = default!;
 #endif
         /// <summary>

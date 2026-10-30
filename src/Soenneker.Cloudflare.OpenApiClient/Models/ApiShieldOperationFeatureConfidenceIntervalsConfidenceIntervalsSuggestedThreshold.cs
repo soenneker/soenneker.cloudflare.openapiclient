@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("confidence_intervals") is { } nullNodeConfidenceIntervals && nullNodeConfidenceIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceIntervals = null;
-            if (parseNode.GetChildNode("mean") is { } nullNodeMean && nullNodeMean.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mean = null;
+            if (parseNode.GetChildNode("confidence_intervals") is null) { _explicitNullValueConfidenceIntervals = default!; _explicitNullProperties?.Remove("confidence_intervals"); }
+            else if (parseNode.GetChildNode("confidence_intervals") is { } nullNodeConfidenceIntervals && nullNodeConfidenceIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceIntervals = null;
+            if (parseNode.GetChildNode("mean") is null) { _explicitNullValueMean = default!; _explicitNullProperties?.Remove("mean"); }
+            else if (parseNode.GetChildNode("mean") is { } nullNodeMean && nullNodeMean.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mean = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The confidence_intervals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals? ConfidenceIntervals { get => _explicitNullValueConfidenceIntervals; set { _explicitNullValueConfidenceIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_intervals"); else _explicitNullProperties?.Remove("confidence_intervals"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals? ConfidenceIntervals { get => _explicitNullValueConfidenceIntervals; set { _explicitNullValueConfidenceIntervals = value; AdditionalData?.Remove("confidence_intervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_intervals"); else _explicitNullProperties?.Remove("confidence_intervals"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals? _explicitNullValueConfidenceIntervals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals ConfidenceIntervals { get => _explicitNullValueConfidenceIntervals; set { _explicitNullValueConfidenceIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_intervals"); else _explicitNullProperties?.Remove("confidence_intervals"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals ConfidenceIntervals { get => _explicitNullValueConfidenceIntervals; set { _explicitNullValueConfidenceIntervals = value; AdditionalData?.Remove("confidence_intervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_intervals"); else _explicitNullProperties?.Remove("confidence_intervals"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThresholdConfidenceIntervals _explicitNullValueConfidenceIntervals = default!;
 #endif
         /// <summary>Suggested threshold.</summary>
-        public double? Mean { get => _explicitNullValueMean; set { _explicitNullValueMean = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mean"); else _explicitNullProperties?.Remove("mean"); } }
+        public double? Mean { get => _explicitNullValueMean; set { _explicitNullValueMean = value; AdditionalData?.Remove("mean"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mean"); else _explicitNullProperties?.Remove("mean"); } }
         private double? _explicitNullValueMean = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThreshold"/> and sets the default values.

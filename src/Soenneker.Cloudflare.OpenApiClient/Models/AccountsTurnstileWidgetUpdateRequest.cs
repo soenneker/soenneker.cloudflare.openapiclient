@@ -17,55 +17,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bot_fight_mode") is { } nullNodeBotFightMode && nullNodeBotFightMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotFightMode = null;
-            if (parseNode.GetChildNode("clearance_level") is { } nullNodeClearanceLevel && nullNodeClearanceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearanceLevel = null;
-            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
-            if (parseNode.GetChildNode("ephemeral_id") is { } nullNodeEphemeralId && nullNodeEphemeralId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EphemeralId = null;
-            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("offlabel") is { } nullNodeOfflabel && nullNodeOfflabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offlabel = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("bot_fight_mode") is null) { _explicitNullValueBotFightMode = default!; _explicitNullProperties?.Remove("bot_fight_mode"); }
+            else if (parseNode.GetChildNode("bot_fight_mode") is { } nullNodeBotFightMode && nullNodeBotFightMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotFightMode = null;
+            if (parseNode.GetChildNode("clearance_level") is null) { _explicitNullValueClearanceLevel = default!; _explicitNullProperties?.Remove("clearance_level"); }
+            else if (parseNode.GetChildNode("clearance_level") is { } nullNodeClearanceLevel && nullNodeClearanceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearanceLevel = null;
+            if (parseNode.GetChildNode("domains") is null) { _explicitNullValueDomains = default!; _explicitNullProperties?.Remove("domains"); }
+            else if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("ephemeral_id") is null) { _explicitNullValueEphemeralId = default!; _explicitNullProperties?.Remove("ephemeral_id"); }
+            else if (parseNode.GetChildNode("ephemeral_id") is { } nullNodeEphemeralId && nullNodeEphemeralId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EphemeralId = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("offlabel") is null) { _explicitNullValueOfflabel = default!; _explicitNullProperties?.Remove("offlabel"); }
+            else if (parseNode.GetChildNode("offlabel") is { } nullNodeOfflabel && nullNodeOfflabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offlabel = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If bot_fight_mode is set to `true`, Cloudflare issues computationallyexpensive challenges in response to malicious bots (ENT only).</summary>
-        public bool? BotFightMode { get => _explicitNullValueBotFightMode; set { _explicitNullValueBotFightMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_fight_mode"); else _explicitNullProperties?.Remove("bot_fight_mode"); } }
+        public bool? BotFightMode { get => _explicitNullValueBotFightMode; set { _explicitNullValueBotFightMode = value; AdditionalData?.Remove("bot_fight_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_fight_mode"); else _explicitNullProperties?.Remove("bot_fight_mode"); } }
         private bool? _explicitNullValueBotFightMode = default!;
         /// <summary>If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,this setting can determine the clearance level to be set</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel? ClearanceLevel { get => _explicitNullValueClearanceLevel; set { _explicitNullValueClearanceLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearance_level"); else _explicitNullProperties?.Remove("clearance_level"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel? ClearanceLevel { get => _explicitNullValueClearanceLevel; set { _explicitNullValueClearanceLevel = value; AdditionalData?.Remove("clearance_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearance_level"); else _explicitNullProperties?.Remove("clearance_level"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel? _explicitNullValueClearanceLevel = default!;
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string> _explicitNullValueDomains = default!;
 #endif
         /// <summary>Return the Ephemeral ID in /siteverify (ENT only).</summary>
-        public bool? EphemeralId { get => _explicitNullValueEphemeralId; set { _explicitNullValueEphemeralId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ephemeral_id"); else _explicitNullProperties?.Remove("ephemeral_id"); } }
+        public bool? EphemeralId { get => _explicitNullValueEphemeralId; set { _explicitNullValueEphemeralId = value; AdditionalData?.Remove("ephemeral_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ephemeral_id"); else _explicitNullProperties?.Remove("ephemeral_id"); } }
         private bool? _explicitNullValueEphemeralId = default!;
         /// <summary>Widget Mode</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode? _explicitNullValueMode = default!;
         /// <summary>Human readable widget name. Not unique. Cloudflare suggests that youset this to a meaningful string to make it easier to identify yourwidget, and where it is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Do not show any Cloudflare branding on the widget (ENT only).</summary>
-        public bool? Offlabel { get => _explicitNullValueOfflabel; set { _explicitNullValueOfflabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offlabel"); else _explicitNullProperties?.Remove("offlabel"); } }
+        public bool? Offlabel { get => _explicitNullValueOfflabel; set { _explicitNullValueOfflabel = value; AdditionalData?.Remove("offlabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offlabel"); else _explicitNullProperties?.Remove("offlabel"); } }
         private bool? _explicitNullValueOfflabel = default!;
         /// <summary>Region where this widget can be used. This cannot be changed after creation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion? _explicitNullValueRegion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequest"/> and sets the default values.
@@ -93,13 +101,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bot_fight_mode", n => { BotFightMode = n.GetBoolValue(); } },
-                { "clearance_level", n => { ClearanceLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel>(); } },
+                { "clearance_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClearanceLevel = default; _explicitNullProperties?.Remove("clearance_level"); AdditionalData["clearance_level"] = unknown; } else { ClearanceLevel = parsed; AdditionalData.Remove("clearance_level"); } } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ephemeral_id", n => { EphemeralId = n.GetBoolValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode>(); } },
+                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "offlabel", n => { Offlabel = n.GetBoolValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
             };
         }
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("constraint") is { } nullNodeConstraint && nullNodeConstraint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Constraint = null;
-            if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+            if (parseNode.GetChildNode("constraint") is null) { _explicitNullValueConstraint = default!; _explicitNullProperties?.Remove("constraint"); }
+            else if (parseNode.GetChildNode("constraint") is { } nullNodeConstraint && nullNodeConstraint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Constraint = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The constraint of a target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint? Constraint { get => _explicitNullValueConstraint; set { _explicitNullValueConstraint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraint"); else _explicitNullProperties?.Remove("constraint"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint? Constraint { get => _explicitNullValueConstraint; set { _explicitNullValueConstraint = value; AdditionalData?.Remove("constraint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraint"); else _explicitNullProperties?.Remove("constraint"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint? _explicitNullValueConstraint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint Constraint { get => _explicitNullValueConstraint; set { _explicitNullValueConstraint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraint"); else _explicitNullProperties?.Remove("constraint"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint Constraint { get => _explicitNullValueConstraint; set { _explicitNullValueConstraint = value; AdditionalData?.Remove("constraint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraint"); else _explicitNullProperties?.Remove("constraint"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint _explicitNullValueConstraint = default!;
 #endif
         /// <summary>A target based on the URL of the request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget? _explicitNullValueTarget = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "constraint", n => { Constraint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget>(); } },
+                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
             };
         }
         /// <summary>

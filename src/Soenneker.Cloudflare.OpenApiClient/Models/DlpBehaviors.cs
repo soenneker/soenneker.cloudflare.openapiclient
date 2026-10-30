@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("behaviors") is { } nullNodeBehaviors && nullNodeBehaviors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behaviors = null;
+            if (parseNode.GetChildNode("behaviors") is null) { _explicitNullValueBehaviors = default!; _explicitNullProperties?.Remove("behaviors"); }
+            else if (parseNode.GetChildNode("behaviors") is { } nullNodeBehaviors && nullNodeBehaviors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behaviors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The behaviors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty? Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty? Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; AdditionalData?.Remove("behaviors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty? _explicitNullValueBehaviors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; AdditionalData?.Remove("behaviors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty _explicitNullValueBehaviors = default!;
 #endif
         /// <summary>

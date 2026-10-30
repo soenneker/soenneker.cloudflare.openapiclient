@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Hdr") is { } nullNodeHdr && nullNodeHdr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hdr = null;
+            if (parseNode.GetChildNode("Hdr") is null) { _explicitNullValueHdr = default!; _explicitNullProperties?.Remove("Hdr"); }
+            else if (parseNode.GetChildNode("Hdr") is { } nullNodeHdr && nullNodeHdr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hdr = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Hdr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecordHeader? Hdr { get => _explicitNullValueHdr; set { _explicitNullValueHdr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Hdr"); else _explicitNullProperties?.Remove("Hdr"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecordHeader? Hdr { get => _explicitNullValueHdr; set { _explicitNullValueHdr = value; AdditionalData?.Remove("Hdr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Hdr"); else _explicitNullProperties?.Remove("Hdr"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecordHeader? _explicitNullValueHdr = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecordHeader Hdr { get => _explicitNullValueHdr; set { _explicitNullValueHdr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Hdr"); else _explicitNullProperties?.Remove("Hdr"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecordHeader Hdr { get => _explicitNullValueHdr; set { _explicitNullValueHdr = value; AdditionalData?.Remove("Hdr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Hdr"); else _explicitNullProperties?.Remove("Hdr"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DnssecDnskeyRecordHeader _explicitNullValueHdr = default!;
 #endif
         /// <summary>The Protocol property</summary>

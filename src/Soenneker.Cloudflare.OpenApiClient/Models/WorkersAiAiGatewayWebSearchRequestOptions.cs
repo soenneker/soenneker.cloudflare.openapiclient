@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gateway") is { } nullNodeGateway && nullNodeGateway.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gateway = null;
+            if (parseNode.GetChildNode("gateway") is null) { _explicitNullValueGateway = default!; _explicitNullProperties?.Remove("gateway"); }
+            else if (parseNode.GetChildNode("gateway") is { } nullNodeGateway && nullNodeGateway.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gateway = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The gateway property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiAiGatewayWebSearchRequestOptionsGateway? Gateway { get => _explicitNullValueGateway; set { _explicitNullValueGateway = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway"); else _explicitNullProperties?.Remove("gateway"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiAiGatewayWebSearchRequestOptionsGateway? Gateway { get => _explicitNullValueGateway; set { _explicitNullValueGateway = value; AdditionalData?.Remove("gateway"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway"); else _explicitNullProperties?.Remove("gateway"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiAiGatewayWebSearchRequestOptionsGateway? _explicitNullValueGateway = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiAiGatewayWebSearchRequestOptionsGateway Gateway { get => _explicitNullValueGateway; set { _explicitNullValueGateway = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway"); else _explicitNullProperties?.Remove("gateway"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiAiGatewayWebSearchRequestOptionsGateway Gateway { get => _explicitNullValueGateway; set { _explicitNullValueGateway = value; AdditionalData?.Remove("gateway"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway"); else _explicitNullProperties?.Remove("gateway"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiAiGatewayWebSearchRequestOptionsGateway _explicitNullValueGateway = default!;
 #endif
         /// <summary>

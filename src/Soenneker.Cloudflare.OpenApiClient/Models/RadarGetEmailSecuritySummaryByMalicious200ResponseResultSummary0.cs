@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("MALICIOUS") is { } nullNodeMALICIOUS && nullNodeMALICIOUS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MALICIOUS = null;
-            if (parseNode.GetChildNode("NOT_MALICIOUS") is { } nullNodeNOTMALICIOUS && nullNodeNOTMALICIOUS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTMALICIOUS = null;
+            if (parseNode.GetChildNode("MALICIOUS") is null) { _explicitNullValueMALICIOUS = default!; _explicitNullProperties?.Remove("MALICIOUS"); }
+            else if (parseNode.GetChildNode("MALICIOUS") is { } nullNodeMALICIOUS && nullNodeMALICIOUS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MALICIOUS = null;
+            if (parseNode.GetChildNode("NOT_MALICIOUS") is null) { _explicitNullValueNOTMALICIOUS = default!; _explicitNullProperties?.Remove("NOT_MALICIOUS"); }
+            else if (parseNode.GetChildNode("NOT_MALICIOUS") is { } nullNodeNOTMALICIOUS && nullNodeNOTMALICIOUS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTMALICIOUS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MALICIOUS { get => _explicitNullValueMALICIOUS; set { _explicitNullValueMALICIOUS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MALICIOUS"); else _explicitNullProperties?.Remove("MALICIOUS"); } }
+        public string? MALICIOUS { get => _explicitNullValueMALICIOUS; set { _explicitNullValueMALICIOUS = value; AdditionalData?.Remove("MALICIOUS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MALICIOUS"); else _explicitNullProperties?.Remove("MALICIOUS"); } }
         private string? _explicitNullValueMALICIOUS = default!;
 #nullable restore
 #else
-        public string MALICIOUS { get => _explicitNullValueMALICIOUS; set { _explicitNullValueMALICIOUS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MALICIOUS"); else _explicitNullProperties?.Remove("MALICIOUS"); } }
+        public string MALICIOUS { get => _explicitNullValueMALICIOUS; set { _explicitNullValueMALICIOUS = value; AdditionalData?.Remove("MALICIOUS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MALICIOUS"); else _explicitNullProperties?.Remove("MALICIOUS"); } }
         private string _explicitNullValueMALICIOUS = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NOTMALICIOUS { get => _explicitNullValueNOTMALICIOUS; set { _explicitNullValueNOTMALICIOUS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_MALICIOUS"); else _explicitNullProperties?.Remove("NOT_MALICIOUS"); } }
+        public string? NOTMALICIOUS { get => _explicitNullValueNOTMALICIOUS; set { _explicitNullValueNOTMALICIOUS = value; AdditionalData?.Remove("NOT_MALICIOUS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_MALICIOUS"); else _explicitNullProperties?.Remove("NOT_MALICIOUS"); } }
         private string? _explicitNullValueNOTMALICIOUS = default!;
 #nullable restore
 #else
-        public string NOTMALICIOUS { get => _explicitNullValueNOTMALICIOUS; set { _explicitNullValueNOTMALICIOUS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_MALICIOUS"); else _explicitNullProperties?.Remove("NOT_MALICIOUS"); } }
+        public string NOTMALICIOUS { get => _explicitNullValueNOTMALICIOUS; set { _explicitNullValueNOTMALICIOUS = value; AdditionalData?.Remove("NOT_MALICIOUS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_MALICIOUS"); else _explicitNullProperties?.Remove("NOT_MALICIOUS"); } }
         private string _explicitNullValueNOTMALICIOUS = default!;
 #endif
         /// <summary>

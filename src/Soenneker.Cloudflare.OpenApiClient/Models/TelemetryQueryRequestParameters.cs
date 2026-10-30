@@ -18,15 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("calculations") is { } nullNodeCalculations && nullNodeCalculations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calculations = null;
-            if (parseNode.GetChildNode("datasets") is { } nullNodeDatasets && nullNodeDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datasets = null;
-            if (parseNode.GetChildNode("filterCombination") is { } nullNodeFilterCombination && nullNodeFilterCombination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterCombination = null;
-            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
-            if (parseNode.GetChildNode("groupBys") is { } nullNodeGroupBys && nullNodeGroupBys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBys = null;
-            if (parseNode.GetChildNode("havings") is { } nullNodeHavings && nullNodeHavings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Havings = null;
-            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
-            if (parseNode.GetChildNode("needle") is { } nullNodeNeedle && nullNodeNeedle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Needle = null;
-            if (parseNode.GetChildNode("orderBy") is { } nullNodeOrderBy && nullNodeOrderBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrderBy = null;
+            if (parseNode.GetChildNode("calculations") is null) { _explicitNullValueCalculations = default!; _explicitNullProperties?.Remove("calculations"); }
+            else if (parseNode.GetChildNode("calculations") is { } nullNodeCalculations && nullNodeCalculations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calculations = null;
+            if (parseNode.GetChildNode("datasets") is null) { _explicitNullValueDatasets = default!; _explicitNullProperties?.Remove("datasets"); }
+            else if (parseNode.GetChildNode("datasets") is { } nullNodeDatasets && nullNodeDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datasets = null;
+            if (parseNode.GetChildNode("filterCombination") is null) { _explicitNullValueFilterCombination = default!; _explicitNullProperties?.Remove("filterCombination"); }
+            else if (parseNode.GetChildNode("filterCombination") is { } nullNodeFilterCombination && nullNodeFilterCombination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterCombination = null;
+            if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
+            else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("groupBys") is null) { _explicitNullValueGroupBys = default!; _explicitNullProperties?.Remove("groupBys"); }
+            else if (parseNode.GetChildNode("groupBys") is { } nullNodeGroupBys && nullNodeGroupBys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBys = null;
+            if (parseNode.GetChildNode("havings") is null) { _explicitNullValueHavings = default!; _explicitNullProperties?.Remove("havings"); }
+            else if (parseNode.GetChildNode("havings") is { } nullNodeHavings && nullNodeHavings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Havings = null;
+            if (parseNode.GetChildNode("limit") is null) { _explicitNullValueLimit = default!; _explicitNullProperties?.Remove("limit"); }
+            else if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("needle") is null) { _explicitNullValueNeedle = default!; _explicitNullProperties?.Remove("needle"); }
+            else if (parseNode.GetChildNode("needle") is { } nullNodeNeedle && nullNodeNeedle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Needle = null;
+            if (parseNode.GetChildNode("orderBy") is null) { _explicitNullValueOrderBy = default!; _explicitNullProperties?.Remove("orderBy"); }
+            else if (parseNode.GetChildNode("orderBy") is { } nullNodeOrderBy && nullNodeOrderBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrderBy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,79 +43,79 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Aggregation calculations to compute (e.g. count, avg, p99). Each calculation produces aggregate values and optional time-series data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem>? Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem>? Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; AdditionalData?.Remove("calculations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem>? _explicitNullValueCalculations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem> Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem> Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; AdditionalData?.Remove("calculations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersCalculationsItem> _explicitNullValueCalculations = default!;
 #endif
         /// <summary>Datasets to query. Leave empty to query all available datasets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Datasets { get => _explicitNullValueDatasets; set { _explicitNullValueDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasets"); else _explicitNullProperties?.Remove("datasets"); } }
+        public List<string>? Datasets { get => _explicitNullValueDatasets; set { _explicitNullValueDatasets = value; AdditionalData?.Remove("datasets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasets"); else _explicitNullProperties?.Remove("datasets"); } }
         private List<string>? _explicitNullValueDatasets = default!;
 #nullable restore
 #else
-        public List<string> Datasets { get => _explicitNullValueDatasets; set { _explicitNullValueDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasets"); else _explicitNullProperties?.Remove("datasets"); } }
+        public List<string> Datasets { get => _explicitNullValueDatasets; set { _explicitNullValueDatasets = value; AdditionalData?.Remove("datasets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasets"); else _explicitNullProperties?.Remove("datasets"); } }
         private List<string> _explicitNullValueDatasets = default!;
 #endif
         /// <summary>Logical operator for combining top-level filters: &apos;and&apos; (all must match) or &apos;or&apos; (any must match). Defaults to &apos;and&apos;.</summary>
 #nullable enable
-        public string? FilterCombination { get => _explicitNullValueFilterCombination; set { _explicitNullValueFilterCombination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterCombination"); else _explicitNullProperties?.Remove("filterCombination"); } }
+        public string? FilterCombination { get => _explicitNullValueFilterCombination; set { _explicitNullValueFilterCombination = value; AdditionalData?.Remove("filterCombination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterCombination"); else _explicitNullProperties?.Remove("filterCombination"); } }
         private string? _explicitNullValueFilterCombination = default!;
 #nullable restore
         /// <summary>Filters to narrow query results. Use the keys and values endpoints to discover available fields before building filters. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private List<UntypedNode>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private List<UntypedNode> _explicitNullValueFilters = default!;
 #endif
         /// <summary>Fields to group calculation results by. Only applicable when the query view is &apos;calculations&apos;. Produces per-group aggregate values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem>? GroupBys { get => _explicitNullValueGroupBys; set { _explicitNullValueGroupBys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupBys"); else _explicitNullProperties?.Remove("groupBys"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem>? GroupBys { get => _explicitNullValueGroupBys; set { _explicitNullValueGroupBys = value; AdditionalData?.Remove("groupBys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupBys"); else _explicitNullProperties?.Remove("groupBys"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem>? _explicitNullValueGroupBys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem> GroupBys { get => _explicitNullValueGroupBys; set { _explicitNullValueGroupBys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupBys"); else _explicitNullProperties?.Remove("groupBys"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem> GroupBys { get => _explicitNullValueGroupBys; set { _explicitNullValueGroupBys = value; AdditionalData?.Remove("groupBys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupBys"); else _explicitNullProperties?.Remove("groupBys"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersGroupBysItem> _explicitNullValueGroupBys = default!;
 #endif
         /// <summary>Post-aggregation filters applied to calculation results. Use to filter groups after aggregation (e.g. only groups where count &gt; 100).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem>? Havings { get => _explicitNullValueHavings; set { _explicitNullValueHavings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("havings"); else _explicitNullProperties?.Remove("havings"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem>? Havings { get => _explicitNullValueHavings; set { _explicitNullValueHavings = value; AdditionalData?.Remove("havings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("havings"); else _explicitNullProperties?.Remove("havings"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem>? _explicitNullValueHavings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem> Havings { get => _explicitNullValueHavings; set { _explicitNullValueHavings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("havings"); else _explicitNullProperties?.Remove("havings"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem> Havings { get => _explicitNullValueHavings; set { _explicitNullValueHavings = value; AdditionalData?.Remove("havings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("havings"); else _explicitNullProperties?.Remove("havings"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersHavingsItem> _explicitNullValueHavings = default!;
 #endif
         /// <summary>Maximum number of group-by rows to return in calculation results. A value of 10 is a sensible default for most use cases.</summary>
-        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private int? _explicitNullValueLimit = default!;
         /// <summary>Full-text search expression applied across all event fields. Matches events containing the specified text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersNeedle? Needle { get => _explicitNullValueNeedle; set { _explicitNullValueNeedle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needle"); else _explicitNullProperties?.Remove("needle"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersNeedle? Needle { get => _explicitNullValueNeedle; set { _explicitNullValueNeedle = value; AdditionalData?.Remove("needle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needle"); else _explicitNullProperties?.Remove("needle"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersNeedle? _explicitNullValueNeedle = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersNeedle Needle { get => _explicitNullValueNeedle; set { _explicitNullValueNeedle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needle"); else _explicitNullProperties?.Remove("needle"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersNeedle Needle { get => _explicitNullValueNeedle; set { _explicitNullValueNeedle = value; AdditionalData?.Remove("needle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needle"); else _explicitNullProperties?.Remove("needle"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersNeedle _explicitNullValueNeedle = default!;
 #endif
         /// <summary>Ordering for grouped calculation results. Only effective when a group-by is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersOrderBy? OrderBy { get => _explicitNullValueOrderBy; set { _explicitNullValueOrderBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderBy"); else _explicitNullProperties?.Remove("orderBy"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersOrderBy? OrderBy { get => _explicitNullValueOrderBy; set { _explicitNullValueOrderBy = value; AdditionalData?.Remove("orderBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderBy"); else _explicitNullProperties?.Remove("orderBy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersOrderBy? _explicitNullValueOrderBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersOrderBy OrderBy { get => _explicitNullValueOrderBy; set { _explicitNullValueOrderBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderBy"); else _explicitNullProperties?.Remove("orderBy"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersOrderBy OrderBy { get => _explicitNullValueOrderBy; set { _explicitNullValueOrderBy = value; AdditionalData?.Remove("orderBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderBy"); else _explicitNullProperties?.Remove("orderBy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequestParametersOrderBy _explicitNullValueOrderBy = default!;
 #endif
         /// <summary>

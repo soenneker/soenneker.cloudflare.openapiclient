@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("infrequentAccess") is { } nullNodeInfrequentAccess && nullNodeInfrequentAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InfrequentAccess = null;
-            if (parseNode.GetChildNode("standard") is { } nullNodeStandard && nullNodeStandard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Standard = null;
+            if (parseNode.GetChildNode("infrequentAccess") is null) { _explicitNullValueInfrequentAccess = default!; _explicitNullProperties?.Remove("infrequentAccess"); }
+            else if (parseNode.GetChildNode("infrequentAccess") is { } nullNodeInfrequentAccess && nullNodeInfrequentAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InfrequentAccess = null;
+            if (parseNode.GetChildNode("standard") is null) { _explicitNullValueStandard = default!; _explicitNullProperties?.Remove("standard"); }
+            else if (parseNode.GetChildNode("standard") is { } nullNodeStandard && nullNodeStandard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Standard = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Metrics based on what state they are in(uploaded or published).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? InfrequentAccess { get => _explicitNullValueInfrequentAccess; set { _explicitNullValueInfrequentAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infrequentAccess"); else _explicitNullProperties?.Remove("infrequentAccess"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? InfrequentAccess { get => _explicitNullValueInfrequentAccess; set { _explicitNullValueInfrequentAccess = value; AdditionalData?.Remove("infrequentAccess"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infrequentAccess"); else _explicitNullProperties?.Remove("infrequentAccess"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? _explicitNullValueInfrequentAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics InfrequentAccess { get => _explicitNullValueInfrequentAccess; set { _explicitNullValueInfrequentAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infrequentAccess"); else _explicitNullProperties?.Remove("infrequentAccess"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics InfrequentAccess { get => _explicitNullValueInfrequentAccess; set { _explicitNullValueInfrequentAccess = value; AdditionalData?.Remove("infrequentAccess"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infrequentAccess"); else _explicitNullProperties?.Remove("infrequentAccess"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics _explicitNullValueInfrequentAccess = default!;
 #endif
         /// <summary>Metrics based on what state they are in(uploaded or published).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? Standard { get => _explicitNullValueStandard; set { _explicitNullValueStandard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standard"); else _explicitNullProperties?.Remove("standard"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? Standard { get => _explicitNullValueStandard; set { _explicitNullValueStandard = value; AdditionalData?.Remove("standard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standard"); else _explicitNullProperties?.Remove("standard"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? _explicitNullValueStandard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics Standard { get => _explicitNullValueStandard; set { _explicitNullValueStandard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standard"); else _explicitNullProperties?.Remove("standard"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics Standard { get => _explicitNullValueStandard; set { _explicitNullValueStandard = value; AdditionalData?.Remove("standard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standard"); else _explicitNullProperties?.Remove("standard"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics _explicitNullValueStandard = default!;
 #endif
         /// <summary>

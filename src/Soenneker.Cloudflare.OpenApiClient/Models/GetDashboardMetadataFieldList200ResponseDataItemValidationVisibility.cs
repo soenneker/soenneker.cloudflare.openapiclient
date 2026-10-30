@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("exclude_countries") is { } nullNodeExcludeCountries && nullNodeExcludeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeCountries = null;
-            if (parseNode.GetChildNode("include_request_types") is { } nullNodeIncludeRequestTypes && nullNodeIncludeRequestTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRequestTypes = null;
+            if (parseNode.GetChildNode("exclude_countries") is null) { _explicitNullValueExcludeCountries = default!; _explicitNullProperties?.Remove("exclude_countries"); }
+            else if (parseNode.GetChildNode("exclude_countries") is { } nullNodeExcludeCountries && nullNodeExcludeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeCountries = null;
+            if (parseNode.GetChildNode("include_request_types") is null) { _explicitNullValueIncludeRequestTypes = default!; _explicitNullProperties?.Remove("include_request_types"); }
+            else if (parseNode.GetChildNode("include_request_types") is { } nullNodeIncludeRequestTypes && nullNodeIncludeRequestTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeRequestTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Hide this field for these alpha-2 country codes. If absent or empty, applies to all countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeCountries { get => _explicitNullValueExcludeCountries; set { _explicitNullValueExcludeCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_countries"); else _explicitNullProperties?.Remove("exclude_countries"); } }
+        public List<string>? ExcludeCountries { get => _explicitNullValueExcludeCountries; set { _explicitNullValueExcludeCountries = value; AdditionalData?.Remove("exclude_countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_countries"); else _explicitNullProperties?.Remove("exclude_countries"); } }
         private List<string>? _explicitNullValueExcludeCountries = default!;
 #nullable restore
 #else
-        public List<string> ExcludeCountries { get => _explicitNullValueExcludeCountries; set { _explicitNullValueExcludeCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_countries"); else _explicitNullProperties?.Remove("exclude_countries"); } }
+        public List<string> ExcludeCountries { get => _explicitNullValueExcludeCountries; set { _explicitNullValueExcludeCountries = value; AdditionalData?.Remove("exclude_countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_countries"); else _explicitNullProperties?.Remove("exclude_countries"); } }
         private List<string> _explicitNullValueExcludeCountries = default!;
 #endif
         /// <summary>Show this field only for these request types. If absent or empty, applies to all request types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeRequestTypes { get => _explicitNullValueIncludeRequestTypes; set { _explicitNullValueIncludeRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_request_types"); else _explicitNullProperties?.Remove("include_request_types"); } }
+        public List<string>? IncludeRequestTypes { get => _explicitNullValueIncludeRequestTypes; set { _explicitNullValueIncludeRequestTypes = value; AdditionalData?.Remove("include_request_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_request_types"); else _explicitNullProperties?.Remove("include_request_types"); } }
         private List<string>? _explicitNullValueIncludeRequestTypes = default!;
 #nullable restore
 #else
-        public List<string> IncludeRequestTypes { get => _explicitNullValueIncludeRequestTypes; set { _explicitNullValueIncludeRequestTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_request_types"); else _explicitNullProperties?.Remove("include_request_types"); } }
+        public List<string> IncludeRequestTypes { get => _explicitNullValueIncludeRequestTypes; set { _explicitNullValueIncludeRequestTypes = value; AdditionalData?.Remove("include_request_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_request_types"); else _explicitNullProperties?.Remove("include_request_types"); } }
         private List<string> _explicitNullValueIncludeRequestTypes = default!;
 #endif
         /// <summary>

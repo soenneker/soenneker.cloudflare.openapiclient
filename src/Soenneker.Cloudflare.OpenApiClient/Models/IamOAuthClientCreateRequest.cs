@@ -17,19 +17,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_cors_origins") is { } nullNodeAllowedCorsOrigins && nullNodeAllowedCorsOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCorsOrigins = null;
-            if (parseNode.GetChildNode("client_name") is { } nullNodeClientName && nullNodeClientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientName = null;
-            if (parseNode.GetChildNode("client_uri") is { } nullNodeClientUri && nullNodeClientUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUri = null;
-            if (parseNode.GetChildNode("grant_types") is { } nullNodeGrantTypes && nullNodeGrantTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantTypes = null;
-            if (parseNode.GetChildNode("logo_uri") is { } nullNodeLogoUri && nullNodeLogoUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUri = null;
-            if (parseNode.GetChildNode("optional_scopes") is { } nullNodeOptionalScopes && nullNodeOptionalScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalScopes = null;
-            if (parseNode.GetChildNode("policy_uri") is { } nullNodePolicyUri && nullNodePolicyUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyUri = null;
-            if (parseNode.GetChildNode("post_logout_redirect_uris") is { } nullNodePostLogoutRedirectUris && nullNodePostLogoutRedirectUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostLogoutRedirectUris = null;
-            if (parseNode.GetChildNode("redirect_uris") is { } nullNodeRedirectUris && nullNodeRedirectUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUris = null;
-            if (parseNode.GetChildNode("response_types") is { } nullNodeResponseTypes && nullNodeResponseTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTypes = null;
-            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
-            if (parseNode.GetChildNode("token_endpoint_auth_method") is { } nullNodeTokenEndpointAuthMethod && nullNodeTokenEndpointAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenEndpointAuthMethod = null;
-            if (parseNode.GetChildNode("tos_uri") is { } nullNodeTosUri && nullNodeTosUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TosUri = null;
+            if (parseNode.GetChildNode("allowed_cors_origins") is null) { _explicitNullValueAllowedCorsOrigins = default!; _explicitNullProperties?.Remove("allowed_cors_origins"); }
+            else if (parseNode.GetChildNode("allowed_cors_origins") is { } nullNodeAllowedCorsOrigins && nullNodeAllowedCorsOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCorsOrigins = null;
+            if (parseNode.GetChildNode("client_name") is null) { _explicitNullValueClientName = default!; _explicitNullProperties?.Remove("client_name"); }
+            else if (parseNode.GetChildNode("client_name") is { } nullNodeClientName && nullNodeClientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientName = null;
+            if (parseNode.GetChildNode("client_uri") is null) { _explicitNullValueClientUri = default!; _explicitNullProperties?.Remove("client_uri"); }
+            else if (parseNode.GetChildNode("client_uri") is { } nullNodeClientUri && nullNodeClientUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUri = null;
+            if (parseNode.GetChildNode("grant_types") is null) { _explicitNullValueGrantTypes = default!; _explicitNullProperties?.Remove("grant_types"); }
+            else if (parseNode.GetChildNode("grant_types") is { } nullNodeGrantTypes && nullNodeGrantTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantTypes = null;
+            if (parseNode.GetChildNode("logo_uri") is null) { _explicitNullValueLogoUri = default!; _explicitNullProperties?.Remove("logo_uri"); }
+            else if (parseNode.GetChildNode("logo_uri") is { } nullNodeLogoUri && nullNodeLogoUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUri = null;
+            if (parseNode.GetChildNode("optional_scopes") is null) { _explicitNullValueOptionalScopes = default!; _explicitNullProperties?.Remove("optional_scopes"); }
+            else if (parseNode.GetChildNode("optional_scopes") is { } nullNodeOptionalScopes && nullNodeOptionalScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalScopes = null;
+            if (parseNode.GetChildNode("policy_uri") is null) { _explicitNullValuePolicyUri = default!; _explicitNullProperties?.Remove("policy_uri"); }
+            else if (parseNode.GetChildNode("policy_uri") is { } nullNodePolicyUri && nullNodePolicyUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyUri = null;
+            if (parseNode.GetChildNode("post_logout_redirect_uris") is null) { _explicitNullValuePostLogoutRedirectUris = default!; _explicitNullProperties?.Remove("post_logout_redirect_uris"); }
+            else if (parseNode.GetChildNode("post_logout_redirect_uris") is { } nullNodePostLogoutRedirectUris && nullNodePostLogoutRedirectUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostLogoutRedirectUris = null;
+            if (parseNode.GetChildNode("redirect_uris") is null) { _explicitNullValueRedirectUris = default!; _explicitNullProperties?.Remove("redirect_uris"); }
+            else if (parseNode.GetChildNode("redirect_uris") is { } nullNodeRedirectUris && nullNodeRedirectUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUris = null;
+            if (parseNode.GetChildNode("response_types") is null) { _explicitNullValueResponseTypes = default!; _explicitNullProperties?.Remove("response_types"); }
+            else if (parseNode.GetChildNode("response_types") is { } nullNodeResponseTypes && nullNodeResponseTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTypes = null;
+            if (parseNode.GetChildNode("scopes") is null) { _explicitNullValueScopes = default!; _explicitNullProperties?.Remove("scopes"); }
+            else if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("token_endpoint_auth_method") is null) { _explicitNullValueTokenEndpointAuthMethod = default!; _explicitNullProperties?.Remove("token_endpoint_auth_method"); }
+            else if (parseNode.GetChildNode("token_endpoint_auth_method") is { } nullNodeTokenEndpointAuthMethod && nullNodeTokenEndpointAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenEndpointAuthMethod = null;
+            if (parseNode.GetChildNode("tos_uri") is null) { _explicitNullValueTosUri = default!; _explicitNullProperties?.Remove("tos_uri"); }
+            else if (parseNode.GetChildNode("tos_uri") is { } nullNodeTosUri && nullNodeTosUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TosUri = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,124 +50,124 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of allowed CORS origins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedCorsOrigins { get => _explicitNullValueAllowedCorsOrigins; set { _explicitNullValueAllowedCorsOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_cors_origins"); else _explicitNullProperties?.Remove("allowed_cors_origins"); } }
+        public List<string>? AllowedCorsOrigins { get => _explicitNullValueAllowedCorsOrigins; set { _explicitNullValueAllowedCorsOrigins = value; AdditionalData?.Remove("allowed_cors_origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_cors_origins"); else _explicitNullProperties?.Remove("allowed_cors_origins"); } }
         private List<string>? _explicitNullValueAllowedCorsOrigins = default!;
 #nullable restore
 #else
-        public List<string> AllowedCorsOrigins { get => _explicitNullValueAllowedCorsOrigins; set { _explicitNullValueAllowedCorsOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_cors_origins"); else _explicitNullProperties?.Remove("allowed_cors_origins"); } }
+        public List<string> AllowedCorsOrigins { get => _explicitNullValueAllowedCorsOrigins; set { _explicitNullValueAllowedCorsOrigins = value; AdditionalData?.Remove("allowed_cors_origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_cors_origins"); else _explicitNullProperties?.Remove("allowed_cors_origins"); } }
         private List<string> _explicitNullValueAllowedCorsOrigins = default!;
 #endif
         /// <summary>Human-readable name of the OAuth client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        public string? ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; AdditionalData?.Remove("client_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
         private string? _explicitNullValueClientName = default!;
 #nullable restore
 #else
-        public string ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        public string ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; AdditionalData?.Remove("client_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
         private string _explicitNullValueClientName = default!;
 #endif
         /// <summary>URL of the home page of the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientUri { get => _explicitNullValueClientUri; set { _explicitNullValueClientUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_uri"); else _explicitNullProperties?.Remove("client_uri"); } }
+        public string? ClientUri { get => _explicitNullValueClientUri; set { _explicitNullValueClientUri = value; AdditionalData?.Remove("client_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_uri"); else _explicitNullProperties?.Remove("client_uri"); } }
         private string? _explicitNullValueClientUri = default!;
 #nullable restore
 #else
-        public string ClientUri { get => _explicitNullValueClientUri; set { _explicitNullValueClientUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_uri"); else _explicitNullProperties?.Remove("client_uri"); } }
+        public string ClientUri { get => _explicitNullValueClientUri; set { _explicitNullValueClientUri = value; AdditionalData?.Remove("client_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_uri"); else _explicitNullProperties?.Remove("client_uri"); } }
         private string _explicitNullValueClientUri = default!;
 #endif
         /// <summary>Array of OAuth grant types the client is allowed to use. `authorization_code` is required; `refresh_token` may be included optionally.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestGrantTypesItem?>? GrantTypes { get => _explicitNullValueGrantTypes; set { _explicitNullValueGrantTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types"); else _explicitNullProperties?.Remove("grant_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestGrantTypesItem?>? GrantTypes { get => _explicitNullValueGrantTypes; set { _explicitNullValueGrantTypes = value; AdditionalData?.Remove("grant_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types"); else _explicitNullProperties?.Remove("grant_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestGrantTypesItem?>? _explicitNullValueGrantTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestGrantTypesItem?> GrantTypes { get => _explicitNullValueGrantTypes; set { _explicitNullValueGrantTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types"); else _explicitNullProperties?.Remove("grant_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestGrantTypesItem?> GrantTypes { get => _explicitNullValueGrantTypes; set { _explicitNullValueGrantTypes = value; AdditionalData?.Remove("grant_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types"); else _explicitNullProperties?.Remove("grant_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestGrantTypesItem?> _explicitNullValueGrantTypes = default!;
 #endif
         /// <summary>URL of the client&apos;s logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_uri"); else _explicitNullProperties?.Remove("logo_uri"); } }
+        public string? LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; AdditionalData?.Remove("logo_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_uri"); else _explicitNullProperties?.Remove("logo_uri"); } }
         private string? _explicitNullValueLogoUri = default!;
 #nullable restore
 #else
-        public string LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_uri"); else _explicitNullProperties?.Remove("logo_uri"); } }
+        public string LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; AdditionalData?.Remove("logo_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_uri"); else _explicitNullProperties?.Remove("logo_uri"); } }
         private string _explicitNullValueLogoUri = default!;
 #endif
         /// <summary>Scopes that the authorizing user may decline during consent. Each value must also appear in `scopes`. The scopes `openid`, `offline`, and `offline_access` cannot be optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OptionalScopes { get => _explicitNullValueOptionalScopes; set { _explicitNullValueOptionalScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional_scopes"); else _explicitNullProperties?.Remove("optional_scopes"); } }
+        public List<string>? OptionalScopes { get => _explicitNullValueOptionalScopes; set { _explicitNullValueOptionalScopes = value; AdditionalData?.Remove("optional_scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional_scopes"); else _explicitNullProperties?.Remove("optional_scopes"); } }
         private List<string>? _explicitNullValueOptionalScopes = default!;
 #nullable restore
 #else
-        public List<string> OptionalScopes { get => _explicitNullValueOptionalScopes; set { _explicitNullValueOptionalScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional_scopes"); else _explicitNullProperties?.Remove("optional_scopes"); } }
+        public List<string> OptionalScopes { get => _explicitNullValueOptionalScopes; set { _explicitNullValueOptionalScopes = value; AdditionalData?.Remove("optional_scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional_scopes"); else _explicitNullProperties?.Remove("optional_scopes"); } }
         private List<string> _explicitNullValueOptionalScopes = default!;
 #endif
         /// <summary>URL that points to a privacy policy document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyUri { get => _explicitNullValuePolicyUri; set { _explicitNullValuePolicyUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_uri"); else _explicitNullProperties?.Remove("policy_uri"); } }
+        public string? PolicyUri { get => _explicitNullValuePolicyUri; set { _explicitNullValuePolicyUri = value; AdditionalData?.Remove("policy_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_uri"); else _explicitNullProperties?.Remove("policy_uri"); } }
         private string? _explicitNullValuePolicyUri = default!;
 #nullable restore
 #else
-        public string PolicyUri { get => _explicitNullValuePolicyUri; set { _explicitNullValuePolicyUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_uri"); else _explicitNullProperties?.Remove("policy_uri"); } }
+        public string PolicyUri { get => _explicitNullValuePolicyUri; set { _explicitNullValuePolicyUri = value; AdditionalData?.Remove("policy_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_uri"); else _explicitNullProperties?.Remove("policy_uri"); } }
         private string _explicitNullValuePolicyUri = default!;
 #endif
         /// <summary>Array of allowed post-logout redirect URIs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PostLogoutRedirectUris { get => _explicitNullValuePostLogoutRedirectUris; set { _explicitNullValuePostLogoutRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_logout_redirect_uris"); else _explicitNullProperties?.Remove("post_logout_redirect_uris"); } }
+        public List<string>? PostLogoutRedirectUris { get => _explicitNullValuePostLogoutRedirectUris; set { _explicitNullValuePostLogoutRedirectUris = value; AdditionalData?.Remove("post_logout_redirect_uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_logout_redirect_uris"); else _explicitNullProperties?.Remove("post_logout_redirect_uris"); } }
         private List<string>? _explicitNullValuePostLogoutRedirectUris = default!;
 #nullable restore
 #else
-        public List<string> PostLogoutRedirectUris { get => _explicitNullValuePostLogoutRedirectUris; set { _explicitNullValuePostLogoutRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_logout_redirect_uris"); else _explicitNullProperties?.Remove("post_logout_redirect_uris"); } }
+        public List<string> PostLogoutRedirectUris { get => _explicitNullValuePostLogoutRedirectUris; set { _explicitNullValuePostLogoutRedirectUris = value; AdditionalData?.Remove("post_logout_redirect_uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_logout_redirect_uris"); else _explicitNullProperties?.Remove("post_logout_redirect_uris"); } }
         private List<string> _explicitNullValuePostLogoutRedirectUris = default!;
 #endif
         /// <summary>Array of allowed redirect URIs for the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
+        public List<string>? RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; AdditionalData?.Remove("redirect_uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
         private List<string>? _explicitNullValueRedirectUris = default!;
 #nullable restore
 #else
-        public List<string> RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
+        public List<string> RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; AdditionalData?.Remove("redirect_uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
         private List<string> _explicitNullValueRedirectUris = default!;
 #endif
         /// <summary>Array of OAuth response types the client is allowed to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestResponseTypesItem?>? ResponseTypes { get => _explicitNullValueResponseTypes; set { _explicitNullValueResponseTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_types"); else _explicitNullProperties?.Remove("response_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestResponseTypesItem?>? ResponseTypes { get => _explicitNullValueResponseTypes; set { _explicitNullValueResponseTypes = value; AdditionalData?.Remove("response_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_types"); else _explicitNullProperties?.Remove("response_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestResponseTypesItem?>? _explicitNullValueResponseTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestResponseTypesItem?> ResponseTypes { get => _explicitNullValueResponseTypes; set { _explicitNullValueResponseTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_types"); else _explicitNullProperties?.Remove("response_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestResponseTypesItem?> ResponseTypes { get => _explicitNullValueResponseTypes; set { _explicitNullValueResponseTypes = value; AdditionalData?.Remove("response_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_types"); else _explicitNullProperties?.Remove("response_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestResponseTypesItem?> _explicitNullValueResponseTypes = default!;
 #endif
         /// <summary>Array of OAuth scopes the client is allowed to request. Colon-delimited scopes are not accepted. Dot-delimited scopes are validated against available OAuth API scopes; simple identity scopes are allowed. Protocol scopes `offline_access` and `openid` are added or removed automatically based on `grant_types` and `response_types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>The authentication method the client uses at the token endpoint.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientTokenEndpointAuthMethod? TokenEndpointAuthMethod { get => _explicitNullValueTokenEndpointAuthMethod; set { _explicitNullValueTokenEndpointAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint_auth_method"); else _explicitNullProperties?.Remove("token_endpoint_auth_method"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientTokenEndpointAuthMethod? TokenEndpointAuthMethod { get => _explicitNullValueTokenEndpointAuthMethod; set { _explicitNullValueTokenEndpointAuthMethod = value; AdditionalData?.Remove("token_endpoint_auth_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint_auth_method"); else _explicitNullProperties?.Remove("token_endpoint_auth_method"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientTokenEndpointAuthMethod? _explicitNullValueTokenEndpointAuthMethod = default!;
         /// <summary>URL that points to a terms of service document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TosUri { get => _explicitNullValueTosUri; set { _explicitNullValueTosUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tos_uri"); else _explicitNullProperties?.Remove("tos_uri"); } }
+        public string? TosUri { get => _explicitNullValueTosUri; set { _explicitNullValueTosUri = value; AdditionalData?.Remove("tos_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tos_uri"); else _explicitNullProperties?.Remove("tos_uri"); } }
         private string? _explicitNullValueTosUri = default!;
 #nullable restore
 #else
-        public string TosUri { get => _explicitNullValueTosUri; set { _explicitNullValueTosUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tos_uri"); else _explicitNullProperties?.Remove("tos_uri"); } }
+        public string TosUri { get => _explicitNullValueTosUri; set { _explicitNullValueTosUri = value; AdditionalData?.Remove("tos_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tos_uri"); else _explicitNullProperties?.Remove("tos_uri"); } }
         private string _explicitNullValueTosUri = default!;
 #endif
         /// <summary>
@@ -193,7 +206,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "redirect_uris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "response_types", n => { ResponseTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientCreateRequestResponseTypesItem>()?.AsList(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "token_endpoint_auth_method", n => { TokenEndpointAuthMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientTokenEndpointAuthMethod>(); } },
+                { "token_endpoint_auth_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientTokenEndpointAuthMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTokenEndpointAuthMethod = default; _explicitNullProperties?.Remove("token_endpoint_auth_method"); AdditionalData["token_endpoint_auth_method"] = unknown; } else { TokenEndpointAuthMethod = parsed; AdditionalData.Remove("token_endpoint_auth_method"); } } },
                 { "tos_uri", n => { TosUri = n.GetStringValue(); } },
             };
         }

@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("boolean") is { } nullNodeBoolean && nullNodeBoolean.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Boolean = null;
-            if (parseNode.GetChildNode("float") is { } nullNodeFloat && nullNodeFloat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Float = null;
-            if (parseNode.GetChildNode("integer") is { } nullNodeInteger && nullNodeInteger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integer = null;
-            if (parseNode.GetChildNode("string") is { } nullNodeString && nullNodeString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) String = null;
+            if (parseNode.GetChildNode("boolean") is null) { _explicitNullValueBoolean = default!; _explicitNullProperties?.Remove("boolean"); }
+            else if (parseNode.GetChildNode("boolean") is { } nullNodeBoolean && nullNodeBoolean.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Boolean = null;
+            if (parseNode.GetChildNode("float") is null) { _explicitNullValueFloat = default!; _explicitNullProperties?.Remove("float"); }
+            else if (parseNode.GetChildNode("float") is { } nullNodeFloat && nullNodeFloat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Float = null;
+            if (parseNode.GetChildNode("integer") is null) { _explicitNullValueInteger = default!; _explicitNullProperties?.Remove("integer"); }
+            else if (parseNode.GetChildNode("integer") is { } nullNodeInteger && nullNodeInteger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integer = null;
+            if (parseNode.GetChildNode("string") is null) { _explicitNullValueString = default!; _explicitNullProperties?.Remove("string"); }
+            else if (parseNode.GetChildNode("string") is { } nullNodeString && nullNodeString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) String = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The boolean property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Boolean { get => _explicitNullValueBoolean; set { _explicitNullValueBoolean = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boolean"); else _explicitNullProperties?.Remove("boolean"); } }
+        public List<string>? Boolean { get => _explicitNullValueBoolean; set { _explicitNullValueBoolean = value; AdditionalData?.Remove("boolean"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boolean"); else _explicitNullProperties?.Remove("boolean"); } }
         private List<string>? _explicitNullValueBoolean = default!;
 #nullable restore
 #else
-        public List<string> Boolean { get => _explicitNullValueBoolean; set { _explicitNullValueBoolean = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boolean"); else _explicitNullProperties?.Remove("boolean"); } }
+        public List<string> Boolean { get => _explicitNullValueBoolean; set { _explicitNullValueBoolean = value; AdditionalData?.Remove("boolean"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boolean"); else _explicitNullProperties?.Remove("boolean"); } }
         private List<string> _explicitNullValueBoolean = default!;
 #endif
         /// <summary>The float property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Float { get => _explicitNullValueFloat; set { _explicitNullValueFloat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("float"); else _explicitNullProperties?.Remove("float"); } }
+        public List<string>? Float { get => _explicitNullValueFloat; set { _explicitNullValueFloat = value; AdditionalData?.Remove("float"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("float"); else _explicitNullProperties?.Remove("float"); } }
         private List<string>? _explicitNullValueFloat = default!;
 #nullable restore
 #else
-        public List<string> Float { get => _explicitNullValueFloat; set { _explicitNullValueFloat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("float"); else _explicitNullProperties?.Remove("float"); } }
+        public List<string> Float { get => _explicitNullValueFloat; set { _explicitNullValueFloat = value; AdditionalData?.Remove("float"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("float"); else _explicitNullProperties?.Remove("float"); } }
         private List<string> _explicitNullValueFloat = default!;
 #endif
         /// <summary>The integer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Integer { get => _explicitNullValueInteger; set { _explicitNullValueInteger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integer"); else _explicitNullProperties?.Remove("integer"); } }
+        public List<string>? Integer { get => _explicitNullValueInteger; set { _explicitNullValueInteger = value; AdditionalData?.Remove("integer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integer"); else _explicitNullProperties?.Remove("integer"); } }
         private List<string>? _explicitNullValueInteger = default!;
 #nullable restore
 #else
-        public List<string> Integer { get => _explicitNullValueInteger; set { _explicitNullValueInteger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integer"); else _explicitNullProperties?.Remove("integer"); } }
+        public List<string> Integer { get => _explicitNullValueInteger; set { _explicitNullValueInteger = value; AdditionalData?.Remove("integer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integer"); else _explicitNullProperties?.Remove("integer"); } }
         private List<string> _explicitNullValueInteger = default!;
 #endif
         /// <summary>The string property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? String { get => _explicitNullValueString; set { _explicitNullValueString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string"); else _explicitNullProperties?.Remove("string"); } }
+        public List<string>? String { get => _explicitNullValueString; set { _explicitNullValueString = value; AdditionalData?.Remove("string"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string"); else _explicitNullProperties?.Remove("string"); } }
         private List<string>? _explicitNullValueString = default!;
 #nullable restore
 #else
-        public List<string> String { get => _explicitNullValueString; set { _explicitNullValueString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string"); else _explicitNullProperties?.Remove("string"); } }
+        public List<string> String { get => _explicitNullValueString; set { _explicitNullValueString = value; AdditionalData?.Remove("string"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string"); else _explicitNullProperties?.Remove("string"); } }
         private List<string> _explicitNullValueString = default!;
 #endif
         /// <summary>

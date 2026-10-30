@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
-            if (parseNode.GetChildNode("packets_lost") is { } nullNodePacketsLost && nullNodePacketsLost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsLost = null;
-            if (parseNode.GetChildNode("packets_sent") is { } nullNodePacketsSent && nullNodePacketsSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsSent = null;
-            if (parseNode.GetChildNode("packets_ttl") is { } nullNodePacketsTtl && nullNodePacketsTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsTtl = null;
+            if (parseNode.GetChildNode("nodes") is null) { _explicitNullValueNodes = default!; _explicitNullProperties?.Remove("nodes"); }
+            else if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
+            if (parseNode.GetChildNode("packets_lost") is null) { _explicitNullValuePacketsLost = default!; _explicitNullProperties?.Remove("packets_lost"); }
+            else if (parseNode.GetChildNode("packets_lost") is { } nullNodePacketsLost && nullNodePacketsLost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsLost = null;
+            if (parseNode.GetChildNode("packets_sent") is null) { _explicitNullValuePacketsSent = default!; _explicitNullProperties?.Remove("packets_sent"); }
+            else if (parseNode.GetChildNode("packets_sent") is { } nullNodePacketsSent && nullNodePacketsSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsSent = null;
+            if (parseNode.GetChildNode("packets_ttl") is null) { _explicitNullValuePacketsTtl = default!; _explicitNullProperties?.Remove("packets_ttl"); }
+            else if (parseNode.GetChildNode("packets_ttl") is { } nullNodePacketsTtl && nullNodePacketsTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsTtl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +32,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An array of node objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult>? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult>? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; AdditionalData?.Remove("nodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult>? _explicitNullValueNodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult> Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult> Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; AdditionalData?.Remove("nodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitNodeResult> _explicitNullValueNodes = default!;
 #endif
         /// <summary>Number of packets where no response was received.</summary>
-        public int? PacketsLost { get => _explicitNullValuePacketsLost; set { _explicitNullValuePacketsLost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_lost"); else _explicitNullProperties?.Remove("packets_lost"); } }
+        public int? PacketsLost { get => _explicitNullValuePacketsLost; set { _explicitNullValuePacketsLost = value; AdditionalData?.Remove("packets_lost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_lost"); else _explicitNullProperties?.Remove("packets_lost"); } }
         private int? _explicitNullValuePacketsLost = default!;
         /// <summary>Number of packets sent with specified TTL.</summary>
-        public int? PacketsSent { get => _explicitNullValuePacketsSent; set { _explicitNullValuePacketsSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_sent"); else _explicitNullProperties?.Remove("packets_sent"); } }
+        public int? PacketsSent { get => _explicitNullValuePacketsSent; set { _explicitNullValuePacketsSent = value; AdditionalData?.Remove("packets_sent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_sent"); else _explicitNullProperties?.Remove("packets_sent"); } }
         private int? _explicitNullValuePacketsSent = default!;
         /// <summary>The time to live (TTL).</summary>
-        public int? PacketsTtl { get => _explicitNullValuePacketsTtl; set { _explicitNullValuePacketsTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_ttl"); else _explicitNullProperties?.Remove("packets_ttl"); } }
+        public int? PacketsTtl { get => _explicitNullValuePacketsTtl; set { _explicitNullValuePacketsTtl = value; AdditionalData?.Remove("packets_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_ttl"); else _explicitNullProperties?.Remove("packets_ttl"); } }
         private int? _explicitNullValuePacketsTtl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitHopResult"/> and sets the default values.

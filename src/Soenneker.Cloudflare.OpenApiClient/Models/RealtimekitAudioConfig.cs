@@ -18,21 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("channel") is { } nullNodeChannel && nullNodeChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Channel = null;
-            if (parseNode.GetChildNode("codec") is { } nullNodeCodec && nullNodeCodec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Codec = null;
-            if (parseNode.GetChildNode("export_file") is { } nullNodeExportFile && nullNodeExportFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExportFile = null;
+            if (parseNode.GetChildNode("channel") is null) { _explicitNullValueChannel = default!; _explicitNullProperties?.Remove("channel"); }
+            else if (parseNode.GetChildNode("channel") is { } nullNodeChannel && nullNodeChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Channel = null;
+            if (parseNode.GetChildNode("codec") is null) { _explicitNullValueCodec = default!; _explicitNullProperties?.Remove("codec"); }
+            else if (parseNode.GetChildNode("codec") is { } nullNodeCodec && nullNodeCodec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Codec = null;
+            if (parseNode.GetChildNode("export_file") is null) { _explicitNullValueExportFile = default!; _explicitNullProperties?.Remove("export_file"); }
+            else if (parseNode.GetChildNode("export_file") is { } nullNodeExportFile && nullNodeExportFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExportFile = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Audio signal pathway within an audio file that carries a specific sound source.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel? Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel? Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; AdditionalData?.Remove("channel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel? _explicitNullValueChannel = default!;
         /// <summary>Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec? Codec { get => _explicitNullValueCodec; set { _explicitNullValueCodec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codec"); else _explicitNullProperties?.Remove("codec"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec? Codec { get => _explicitNullValueCodec; set { _explicitNullValueCodec = value; AdditionalData?.Remove("codec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codec"); else _explicitNullProperties?.Remove("codec"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec? _explicitNullValueCodec = default!;
         /// <summary>Controls whether to export audio file seperately</summary>
-        public bool? ExportFile { get => _explicitNullValueExportFile; set { _explicitNullValueExportFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("export_file"); else _explicitNullProperties?.Remove("export_file"); } }
+        public bool? ExportFile { get => _explicitNullValueExportFile; set { _explicitNullValueExportFile = value; AdditionalData?.Remove("export_file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("export_file"); else _explicitNullProperties?.Remove("export_file"); } }
         private bool? _explicitNullValueExportFile = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig"/> and sets the default values.
@@ -60,8 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "channel", n => { Channel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel>(); } },
-                { "codec", n => { Codec = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec>(); } },
+                { "channel", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChannel = default; _explicitNullProperties?.Remove("channel"); AdditionalData["channel"] = unknown; } else { Channel = parsed; AdditionalData.Remove("channel"); } } },
+                { "codec", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCodec = default; _explicitNullProperties?.Remove("codec"); AdditionalData["codec"] = unknown; } else { Codec = parsed; AdditionalData.Remove("codec"); } } },
                 { "export_file", n => { ExportFile = n.GetBoolValue(); } },
             };
         }

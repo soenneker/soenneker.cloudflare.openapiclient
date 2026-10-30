@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_requirements") is { } nullNodeAuthRequirements && nullNodeAuthRequirements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthRequirements = null;
+            if (parseNode.GetChildNode("auth_requirements") is null) { _explicitNullValueAuthRequirements = default!; _explicitNullProperties?.Remove("auth_requirements"); }
+            else if (parseNode.GetChildNode("auth_requirements") is { } nullNodeAuthRequirements && nullNodeAuthRequirements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthRequirements = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The auth_requirements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth? AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth? AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; AdditionalData?.Remove("auth_requirements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth? _explicitNullValueAuthRequirements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; AdditionalData?.Remove("auth_requirements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth _explicitNullValueAuthRequirements = default!;
 #endif
         /// <summary>

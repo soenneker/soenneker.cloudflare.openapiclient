@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
-            if (parseNode.GetChildNode("summaryDownloadUrl") is { } nullNodeSummaryDownloadUrl && nullNodeSummaryDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryDownloadUrl = null;
-            if (parseNode.GetChildNode("summaryDownloadUrlExpiry") is { } nullNodeSummaryDownloadUrlExpiry && nullNodeSummaryDownloadUrlExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryDownloadUrlExpiry = null;
+            if (parseNode.GetChildNode("sessionId") is null) { _explicitNullValueSessionId = default!; _explicitNullProperties?.Remove("sessionId"); }
+            else if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
+            if (parseNode.GetChildNode("summaryDownloadUrl") is null) { _explicitNullValueSummaryDownloadUrl = default!; _explicitNullProperties?.Remove("summaryDownloadUrl"); }
+            else if (parseNode.GetChildNode("summaryDownloadUrl") is { } nullNodeSummaryDownloadUrl && nullNodeSummaryDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryDownloadUrl = null;
+            if (parseNode.GetChildNode("summaryDownloadUrlExpiry") is null) { _explicitNullValueSummaryDownloadUrlExpiry = default!; _explicitNullProperties?.Remove("summaryDownloadUrlExpiry"); }
+            else if (parseNode.GetChildNode("summaryDownloadUrlExpiry") is { } nullNodeSummaryDownloadUrlExpiry && nullNodeSummaryDownloadUrlExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryDownloadUrlExpiry = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("sessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
         private string? _explicitNullValueSessionId = default!;
 #nullable restore
 #else
-        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("sessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
         private string _explicitNullValueSessionId = default!;
 #endif
         /// <summary>URL where the summary of transcripts can be downloaded</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SummaryDownloadUrl { get => _explicitNullValueSummaryDownloadUrl; set { _explicitNullValueSummaryDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrl"); else _explicitNullProperties?.Remove("summaryDownloadUrl"); } }
+        public string? SummaryDownloadUrl { get => _explicitNullValueSummaryDownloadUrl; set { _explicitNullValueSummaryDownloadUrl = value; AdditionalData?.Remove("summaryDownloadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrl"); else _explicitNullProperties?.Remove("summaryDownloadUrl"); } }
         private string? _explicitNullValueSummaryDownloadUrl = default!;
 #nullable restore
 #else
-        public string SummaryDownloadUrl { get => _explicitNullValueSummaryDownloadUrl; set { _explicitNullValueSummaryDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrl"); else _explicitNullProperties?.Remove("summaryDownloadUrl"); } }
+        public string SummaryDownloadUrl { get => _explicitNullValueSummaryDownloadUrl; set { _explicitNullValueSummaryDownloadUrl = value; AdditionalData?.Remove("summaryDownloadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrl"); else _explicitNullProperties?.Remove("summaryDownloadUrl"); } }
         private string _explicitNullValueSummaryDownloadUrl = default!;
 #endif
         /// <summary>Time of Expiry before when you need to download the csv file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SummaryDownloadUrlExpiry { get => _explicitNullValueSummaryDownloadUrlExpiry; set { _explicitNullValueSummaryDownloadUrlExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrlExpiry"); else _explicitNullProperties?.Remove("summaryDownloadUrlExpiry"); } }
+        public string? SummaryDownloadUrlExpiry { get => _explicitNullValueSummaryDownloadUrlExpiry; set { _explicitNullValueSummaryDownloadUrlExpiry = value; AdditionalData?.Remove("summaryDownloadUrlExpiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrlExpiry"); else _explicitNullProperties?.Remove("summaryDownloadUrlExpiry"); } }
         private string? _explicitNullValueSummaryDownloadUrlExpiry = default!;
 #nullable restore
 #else
-        public string SummaryDownloadUrlExpiry { get => _explicitNullValueSummaryDownloadUrlExpiry; set { _explicitNullValueSummaryDownloadUrlExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrlExpiry"); else _explicitNullProperties?.Remove("summaryDownloadUrlExpiry"); } }
+        public string SummaryDownloadUrlExpiry { get => _explicitNullValueSummaryDownloadUrlExpiry; set { _explicitNullValueSummaryDownloadUrlExpiry = value; AdditionalData?.Remove("summaryDownloadUrlExpiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summaryDownloadUrlExpiry"); else _explicitNullProperties?.Remove("summaryDownloadUrlExpiry"); } }
         private string _explicitNullValueSummaryDownloadUrlExpiry = default!;
 #endif
         /// <summary>

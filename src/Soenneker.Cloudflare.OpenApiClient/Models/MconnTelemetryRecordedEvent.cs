@@ -18,10 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("e") is { } nullNodeE && nullNodeE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) E = null;
-            if (parseNode.GetChildNode("n") is { } nullNodeN && nullNodeN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) N = null;
-            if (parseNode.GetChildNode("t") is { } nullNodeT && nullNodeT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) T = null;
-            if (parseNode.GetChildNode("v") is { } nullNodeV && nullNodeV.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V = null;
+            if (parseNode.GetChildNode("e") is null) { _explicitNullValueE = default!; _explicitNullProperties?.Remove("e"); }
+            else if (parseNode.GetChildNode("e") is { } nullNodeE && nullNodeE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) E = null;
+            if (parseNode.GetChildNode("n") is null) { _explicitNullValueN = default!; _explicitNullProperties?.Remove("n"); }
+            else if (parseNode.GetChildNode("n") is { } nullNodeN && nullNodeN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) N = null;
+            if (parseNode.GetChildNode("t") is null) { _explicitNullValueT = default!; _explicitNullProperties?.Remove("t"); }
+            else if (parseNode.GetChildNode("t") is { } nullNodeT && nullNodeT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) T = null;
+            if (parseNode.GetChildNode("v") is null) { _explicitNullValueV = default!; _explicitNullProperties?.Remove("v"); }
+            else if (parseNode.GetChildNode("v") is { } nullNodeV && nullNodeV.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,27 +33,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Event kind plus event-specific payload fields.Event kinds:- `Init`: Initialized process- `Leave`: Stopped process- `StartAttestation`: Started attestation- `FinishAttestationSuccess`: Finished attestation- `FinishAttestationFailure`: Failed attestation- `StartRotateCryptKey`: Started crypt key rotation- `FinishRotateCryptKeySuccess`: Finished crypt key rotation- `FinishRotateCryptKeyFailure`: Failed crypt key rotation- `StartRotatePki`: Started PKI rotation- `FinishRotatePkiSuccess`: Finished PKI rotation- `FinishRotatePkiFailure`: Failed PKI rotation- `StartUpgrade`: Started upgrade- `FinishUpgradeSuccess`: Finished upgrade- `FinishUpgradeFailure`: Failed upgrade- `BlessSlotSuccess`: Blessed boot entry slot- `BlessSlotPending`: Boot entry slot is not yet blessed- `BlessSlotFailure`: Failed to bless boot entry slot- `Reconcile`: Reconciled- `ConfigureCloudflaredTunnel`: Configured Cloudflared tunnel- `RekeyInstallBoth`: Installed initial inbound and outbound keys- `RekeyStart`: Installed new inbound key, kept old outbound- `RekeyRestart`: Restarted in-progress rekey with newer key material- `RekeyAdvance`: Confirmed traffic on new inbound key, swapped outbound to new- `RekeyComplete`: Deleted old keys- `RekeyReset`: Deleted all keys after receiving an unexpected key- `HaTransition`: Completed HA state transition- `HaError`: Received unexpected HA error- `HaInit`: Initialized HA subsystem- `HaLeave`: Stopped HA subsystem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent? E { get => _explicitNullValueE; set { _explicitNullValueE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("e"); else _explicitNullProperties?.Remove("e"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent? E { get => _explicitNullValueE; set { _explicitNullValueE = value; AdditionalData?.Remove("e"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("e"); else _explicitNullProperties?.Remove("e"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent? _explicitNullValueE = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent E { get => _explicitNullValueE; set { _explicitNullValueE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("e"); else _explicitNullProperties?.Remove("e"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent E { get => _explicitNullValueE; set { _explicitNullValueE = value; AdditionalData?.Remove("e"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("e"); else _explicitNullProperties?.Remove("e"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEvent _explicitNullValueE = default!;
 #endif
         /// <summary>Sequence number, used to order events with the same timestamp</summary>
-        public double? N { get => _explicitNullValueN; set { _explicitNullValueN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("n"); else _explicitNullProperties?.Remove("n"); } }
+        public double? N { get => _explicitNullValueN; set { _explicitNullValueN = value; AdditionalData?.Remove("n"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("n"); else _explicitNullProperties?.Remove("n"); } }
         private double? _explicitNullValueN = default!;
         /// <summary>Time the Event was recorded (seconds since the Unix epoch)</summary>
-        public double? T { get => _explicitNullValueT; set { _explicitNullValueT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("t"); else _explicitNullProperties?.Remove("t"); } }
+        public double? T { get => _explicitNullValueT; set { _explicitNullValueT = value; AdditionalData?.Remove("t"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("t"); else _explicitNullProperties?.Remove("t"); } }
         private double? _explicitNullValueT = default!;
         /// <summary>Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? V { get => _explicitNullValueV; set { _explicitNullValueV = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
+        public string? V { get => _explicitNullValueV; set { _explicitNullValueV = value; AdditionalData?.Remove("v"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
         private string? _explicitNullValueV = default!;
 #nullable restore
 #else
-        public string V { get => _explicitNullValueV; set { _explicitNullValueV = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
+        public string V { get => _explicitNullValueV; set { _explicitNullValueV = value; AdditionalData?.Remove("v"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v"); else _explicitNullProperties?.Remove("v"); } }
         private string _explicitNullValueV = default!;
 #endif
         /// <summary>

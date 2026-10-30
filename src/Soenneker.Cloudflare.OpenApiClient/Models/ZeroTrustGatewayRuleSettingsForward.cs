@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("worker_id") is { } nullNodeWorkerId && nullNodeWorkerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerId = null;
+            if (parseNode.GetChildNode("worker_id") is null) { _explicitNullValueWorkerId = default!; _explicitNullProperties?.Remove("worker_id"); }
+            else if (parseNode.GetChildNode("worker_id") is { } nullNodeWorkerId && nullNodeWorkerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the public Worker ID of the target Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
+        public string? WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; AdditionalData?.Remove("worker_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
         private string? _explicitNullValueWorkerId = default!;
 #nullable restore
 #else
-        public string WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
+        public string WorkerId { get => _explicitNullValueWorkerId; set { _explicitNullValueWorkerId = value; AdditionalData?.Remove("worker_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_id"); else _explicitNullProperties?.Remove("worker_id"); } }
         private string _explicitNullValueWorkerId = default!;
 #endif
         /// <summary>

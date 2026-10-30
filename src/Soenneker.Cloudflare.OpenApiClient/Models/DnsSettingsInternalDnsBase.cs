@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("reference_zone_id") is { } nullNodeReferenceZoneId && nullNodeReferenceZoneId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceZoneId = null;
+            if (parseNode.GetChildNode("reference_zone_id") is null) { _explicitNullValueReferenceZoneId = default!; _explicitNullProperties?.Remove("reference_zone_id"); }
+            else if (parseNode.GetChildNode("reference_zone_id") is { } nullNodeReferenceZoneId && nullNodeReferenceZoneId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceZoneId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ID of the zone to fallback to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceZoneId { get => _explicitNullValueReferenceZoneId; set { _explicitNullValueReferenceZoneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_zone_id"); else _explicitNullProperties?.Remove("reference_zone_id"); } }
+        public string? ReferenceZoneId { get => _explicitNullValueReferenceZoneId; set { _explicitNullValueReferenceZoneId = value; AdditionalData?.Remove("reference_zone_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_zone_id"); else _explicitNullProperties?.Remove("reference_zone_id"); } }
         private string? _explicitNullValueReferenceZoneId = default!;
 #nullable restore
 #else
-        public string ReferenceZoneId { get => _explicitNullValueReferenceZoneId; set { _explicitNullValueReferenceZoneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_zone_id"); else _explicitNullProperties?.Remove("reference_zone_id"); } }
+        public string ReferenceZoneId { get => _explicitNullValueReferenceZoneId; set { _explicitNullValueReferenceZoneId = value; AdditionalData?.Remove("reference_zone_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_zone_id"); else _explicitNullProperties?.Remove("reference_zone_id"); } }
         private string _explicitNullValueReferenceZoneId = default!;
 #endif
         /// <summary>

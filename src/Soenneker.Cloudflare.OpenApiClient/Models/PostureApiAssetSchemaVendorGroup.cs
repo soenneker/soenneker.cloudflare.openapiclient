@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asset_classes") is { } nullNodeAssetClasses && nullNodeAssetClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetClasses = null;
-            if (parseNode.GetChildNode("vendor") is { } nullNodeVendor && nullNodeVendor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendor = null;
+            if (parseNode.GetChildNode("asset_classes") is null) { _explicitNullValueAssetClasses = default!; _explicitNullProperties?.Remove("asset_classes"); }
+            else if (parseNode.GetChildNode("asset_classes") is { } nullNodeAssetClasses && nullNodeAssetClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetClasses = null;
+            if (parseNode.GetChildNode("vendor") is null) { _explicitNullValueVendor = default!; _explicitNullProperties?.Remove("vendor"); }
+            else if (parseNode.GetChildNode("vendor") is { } nullNodeVendor && nullNodeVendor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Asset classes belonging to this vendor, sorted by asset_class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaSummary>? AssetClasses { get => _explicitNullValueAssetClasses; set { _explicitNullValueAssetClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_classes"); else _explicitNullProperties?.Remove("asset_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaSummary>? AssetClasses { get => _explicitNullValueAssetClasses; set { _explicitNullValueAssetClasses = value; AdditionalData?.Remove("asset_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_classes"); else _explicitNullProperties?.Remove("asset_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaSummary>? _explicitNullValueAssetClasses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaSummary> AssetClasses { get => _explicitNullValueAssetClasses; set { _explicitNullValueAssetClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_classes"); else _explicitNullProperties?.Remove("asset_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaSummary> AssetClasses { get => _explicitNullValueAssetClasses; set { _explicitNullValueAssetClasses = value; AdditionalData?.Remove("asset_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_classes"); else _explicitNullProperties?.Remove("asset_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiAssetSchemaSummary> _explicitNullValueAssetClasses = default!;
 #endif
         /// <summary>Canonical vendor enum value, e.g. GOOGLE_WORKSPACE.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
+        public string? Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; AdditionalData?.Remove("vendor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
         private string? _explicitNullValueVendor = default!;
 #nullable restore
 #else
-        public string Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
+        public string Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; AdditionalData?.Remove("vendor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
         private string _explicitNullValueVendor = default!;
 #endif
         /// <summary>

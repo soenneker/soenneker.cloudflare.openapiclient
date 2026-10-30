@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("articles") is { } nullNodeArticles && nullNodeArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Articles = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("articles") is null) { _explicitNullValueArticles = default!; _explicitNullProperties?.Remove("articles"); }
+            else if (parseNode.GetChildNode("articles") is { } nullNodeArticles && nullNodeArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Articles = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Beta. Number of articles in each band of their score against this PIR. Articles not scored against it are not counted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultPrioritiesItemArticles? Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultPrioritiesItemArticles? Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; AdditionalData?.Remove("articles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultPrioritiesItemArticles? _explicitNullValueArticles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultPrioritiesItemArticles Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultPrioritiesItemArticles Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; AdditionalData?.Remove("articles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultPrioritiesItemArticles _explicitNullValueArticles = default!;
 #endif
         /// <summary>Active Priority Intelligence Requirement ID.</summary>
-        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultPrioritiesItem"/> and sets the default values.

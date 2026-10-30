@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("combined") is { } nullNodeCombined && nullNodeCombined.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Combined = null;
-            if (parseNode.GetChildNode("priorities") is { } nullNodePriorities && nullNodePriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priorities = null;
+            if (parseNode.GetChildNode("combined") is null) { _explicitNullValueCombined = default!; _explicitNullProperties?.Remove("combined"); }
+            else if (parseNode.GetChildNode("combined") is { } nullNodeCombined && nullNodeCombined.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Combined = null;
+            if (parseNode.GetChildNode("priorities") is null) { _explicitNullValuePriorities = default!; _explicitNullProperties?.Remove("priorities"); }
+            else if (parseNode.GetChildNode("priorities") is { } nullNodePriorities && nullNodePriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priorities = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The combined property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombined? Combined { get => _explicitNullValueCombined; set { _explicitNullValueCombined = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combined"); else _explicitNullProperties?.Remove("combined"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombined? Combined { get => _explicitNullValueCombined; set { _explicitNullValueCombined = value; AdditionalData?.Remove("combined"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combined"); else _explicitNullProperties?.Remove("combined"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombined? _explicitNullValueCombined = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombined Combined { get => _explicitNullValueCombined; set { _explicitNullValueCombined = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combined"); else _explicitNullProperties?.Remove("combined"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombined Combined { get => _explicitNullValueCombined; set { _explicitNullValueCombined = value; AdditionalData?.Remove("combined"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combined"); else _explicitNullProperties?.Remove("combined"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombined _explicitNullValueCombined = default!;
 #endif
         /// <summary>Each active priority&apos;s own counts, newest priority first. Counts are never summed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItem>? Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItem>? Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; AdditionalData?.Remove("priorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItem>? _explicitNullValuePriorities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItem> Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItem> Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; AdditionalData?.Remove("priorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponsePrioritiesItem> _explicitNullValuePriorities = default!;
 #endif
         /// <summary>

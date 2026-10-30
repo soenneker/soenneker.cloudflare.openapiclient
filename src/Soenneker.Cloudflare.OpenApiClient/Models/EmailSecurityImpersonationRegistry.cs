@@ -18,14 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
-            if (parseNode.GetChildNode("directory_id") is { } nullNodeDirectoryId && nullNodeDirectoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryId = null;
-            if (parseNode.GetChildNode("directory_node_id") is { } nullNodeDirectoryNodeId && nullNodeDirectoryNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryNodeId = null;
-            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("external_directory_node_id") is { } nullNodeExternalDirectoryNodeId && nullNodeExternalDirectoryNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalDirectoryNodeId = null;
-            if (parseNode.GetChildNode("is_email_regex") is { } nullNodeIsEmailRegex && nullNodeIsEmailRegex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEmailRegex = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("provenance") is { } nullNodeProvenance && nullNodeProvenance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provenance = null;
+            if (parseNode.GetChildNode("comments") is null) { _explicitNullValueComments = default!; _explicitNullProperties?.Remove("comments"); }
+            else if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
+            if (parseNode.GetChildNode("directory_id") is null) { _explicitNullValueDirectoryId = default!; _explicitNullProperties?.Remove("directory_id"); }
+            else if (parseNode.GetChildNode("directory_id") is { } nullNodeDirectoryId && nullNodeDirectoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryId = null;
+            if (parseNode.GetChildNode("directory_node_id") is null) { _explicitNullValueDirectoryNodeId = default!; _explicitNullProperties?.Remove("directory_node_id"); }
+            else if (parseNode.GetChildNode("directory_node_id") is { } nullNodeDirectoryNodeId && nullNodeDirectoryNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryNodeId = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("external_directory_node_id") is null) { _explicitNullValueExternalDirectoryNodeId = default!; _explicitNullProperties?.Remove("external_directory_node_id"); }
+            else if (parseNode.GetChildNode("external_directory_node_id") is { } nullNodeExternalDirectoryNodeId && nullNodeExternalDirectoryNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalDirectoryNodeId = null;
+            if (parseNode.GetChildNode("is_email_regex") is null) { _explicitNullValueIsEmailRegex = default!; _explicitNullProperties?.Remove("is_email_regex"); }
+            else if (parseNode.GetChildNode("is_email_regex") is { } nullNodeIsEmailRegex && nullNodeIsEmailRegex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEmailRegex = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("provenance") is null) { _explicitNullValueProvenance = default!; _explicitNullProperties?.Remove("provenance"); }
+            else if (parseNode.GetChildNode("provenance") is { } nullNodeProvenance && nullNodeProvenance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provenance = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,46 +41,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Optional note describing the entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; AdditionalData?.Remove("comments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
         private string? _explicitNullValueComments = default!;
 #nullable restore
 #else
-        public string Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        public string Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; AdditionalData?.Remove("comments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
         private string _explicitNullValueComments = default!;
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Identifier of the directory the entry was synced from, when directory-synced.</summary>
-        public int? DirectoryId { get => _explicitNullValueDirectoryId; set { _explicitNullValueDirectoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_id"); else _explicitNullProperties?.Remove("directory_id"); } }
+        public int? DirectoryId { get => _explicitNullValueDirectoryId; set { _explicitNullValueDirectoryId = value; AdditionalData?.Remove("directory_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_id"); else _explicitNullProperties?.Remove("directory_id"); } }
         private int? _explicitNullValueDirectoryId = default!;
         /// <summary>Identifier of the directory node the entry was synced from, when directory-synced.</summary>
-        public int? DirectoryNodeId { get => _explicitNullValueDirectoryNodeId; set { _explicitNullValueDirectoryNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_node_id"); else _explicitNullProperties?.Remove("directory_node_id"); } }
+        public int? DirectoryNodeId { get => _explicitNullValueDirectoryNodeId; set { _explicitNullValueDirectoryNodeId = value; AdditionalData?.Remove("directory_node_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory_node_id"); else _explicitNullProperties?.Remove("directory_node_id"); } }
         private int? _explicitNullValueDirectoryNodeId = default!;
         /// <summary>Email address (or pattern) of the protected identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Deprecated. External identifier of the directory node.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalDirectoryNodeId { get => _explicitNullValueExternalDirectoryNodeId; set { _explicitNullValueExternalDirectoryNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_directory_node_id"); else _explicitNullProperties?.Remove("external_directory_node_id"); } }
+        public string? ExternalDirectoryNodeId { get => _explicitNullValueExternalDirectoryNodeId; set { _explicitNullValueExternalDirectoryNodeId = value; AdditionalData?.Remove("external_directory_node_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_directory_node_id"); else _explicitNullProperties?.Remove("external_directory_node_id"); } }
         private string? _explicitNullValueExternalDirectoryNodeId = default!;
 #nullable restore
 #else
-        public string ExternalDirectoryNodeId { get => _explicitNullValueExternalDirectoryNodeId; set { _explicitNullValueExternalDirectoryNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_directory_node_id"); else _explicitNullProperties?.Remove("external_directory_node_id"); } }
+        public string ExternalDirectoryNodeId { get => _explicitNullValueExternalDirectoryNodeId; set { _explicitNullValueExternalDirectoryNodeId = value; AdditionalData?.Remove("external_directory_node_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_directory_node_id"); else _explicitNullProperties?.Remove("external_directory_node_id"); } }
         private string _explicitNullValueExternalDirectoryNodeId = default!;
 #endif
         /// <summary>Impersonation registry entry identifier.</summary>
         public Guid? Id { get; private set; }
         /// <summary>Whether `email` is a regular expression instead of a literal address.</summary>
-        public bool? IsEmailRegex { get => _explicitNullValueIsEmailRegex; set { _explicitNullValueIsEmailRegex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_email_regex"); else _explicitNullProperties?.Remove("is_email_regex"); } }
+        public bool? IsEmailRegex { get => _explicitNullValueIsEmailRegex; set { _explicitNullValueIsEmailRegex = value; AdditionalData?.Remove("is_email_regex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_email_regex"); else _explicitNullProperties?.Remove("is_email_regex"); } }
         private bool? _explicitNullValueIsEmailRegex = default!;
         /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
@@ -82,15 +90,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Display name of the protected identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Source the entry was created from.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance? Provenance { get => _explicitNullValueProvenance; set { _explicitNullValueProvenance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provenance"); else _explicitNullProperties?.Remove("provenance"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance? Provenance { get => _explicitNullValueProvenance; set { _explicitNullValueProvenance = value; AdditionalData?.Remove("provenance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provenance"); else _explicitNullProperties?.Remove("provenance"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance? _explicitNullValueProvenance = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry"/> and sets the default values.
@@ -128,7 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "provenance", n => { Provenance = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance>(); } },
+                { "provenance", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvenance = default; _explicitNullProperties?.Remove("provenance"); AdditionalData["provenance"] = unknown; } else { Provenance = parsed; AdditionalData.Remove("provenance"); } } },
             };
         }
         /// <summary>

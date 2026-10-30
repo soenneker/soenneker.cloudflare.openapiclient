@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
-            if (parseNode.GetChildNode("quotasPerPlan") is { } nullNodeQuotasPerPlan && nullNodeQuotasPerPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuotasPerPlan = null;
-            if (parseNode.GetChildNode("remainingSchedules") is { } nullNodeRemainingSchedules && nullNodeRemainingSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemainingSchedules = null;
-            if (parseNode.GetChildNode("remainingTests") is { } nullNodeRemainingTests && nullNodeRemainingTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemainingTests = null;
-            if (parseNode.GetChildNode("scheduleQuotasPerPlan") is { } nullNodeScheduleQuotasPerPlan && nullNodeScheduleQuotasPerPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleQuotasPerPlan = null;
+            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
+            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("quotasPerPlan") is null) { _explicitNullValueQuotasPerPlan = default!; _explicitNullProperties?.Remove("quotasPerPlan"); }
+            else if (parseNode.GetChildNode("quotasPerPlan") is { } nullNodeQuotasPerPlan && nullNodeQuotasPerPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuotasPerPlan = null;
+            if (parseNode.GetChildNode("remainingSchedules") is null) { _explicitNullValueRemainingSchedules = default!; _explicitNullProperties?.Remove("remainingSchedules"); }
+            else if (parseNode.GetChildNode("remainingSchedules") is { } nullNodeRemainingSchedules && nullNodeRemainingSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemainingSchedules = null;
+            if (parseNode.GetChildNode("remainingTests") is null) { _explicitNullValueRemainingTests = default!; _explicitNullProperties?.Remove("remainingTests"); }
+            else if (parseNode.GetChildNode("remainingTests") is { } nullNodeRemainingTests && nullNodeRemainingTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemainingTests = null;
+            if (parseNode.GetChildNode("scheduleQuotasPerPlan") is null) { _explicitNullValueScheduleQuotasPerPlan = default!; _explicitNullProperties?.Remove("scheduleQuotasPerPlan"); }
+            else if (parseNode.GetChildNode("scheduleQuotasPerPlan") is { } nullNodeScheduleQuotasPerPlan && nullNodeScheduleQuotasPerPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleQuotasPerPlan = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,37 +34,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        public string? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private string? _explicitNullValuePlan = default!;
 #nullable restore
 #else
-        public string Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        public string Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private string _explicitNullValuePlan = default!;
 #endif
         /// <summary>The number of tests available per plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaQuotasPerPlan? QuotasPerPlan { get => _explicitNullValueQuotasPerPlan; set { _explicitNullValueQuotasPerPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quotasPerPlan"); else _explicitNullProperties?.Remove("quotasPerPlan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaQuotasPerPlan? QuotasPerPlan { get => _explicitNullValueQuotasPerPlan; set { _explicitNullValueQuotasPerPlan = value; AdditionalData?.Remove("quotasPerPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quotasPerPlan"); else _explicitNullProperties?.Remove("quotasPerPlan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaQuotasPerPlan? _explicitNullValueQuotasPerPlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaQuotasPerPlan QuotasPerPlan { get => _explicitNullValueQuotasPerPlan; set { _explicitNullValueQuotasPerPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quotasPerPlan"); else _explicitNullProperties?.Remove("quotasPerPlan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaQuotasPerPlan QuotasPerPlan { get => _explicitNullValueQuotasPerPlan; set { _explicitNullValueQuotasPerPlan = value; AdditionalData?.Remove("quotasPerPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quotasPerPlan"); else _explicitNullProperties?.Remove("quotasPerPlan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaQuotasPerPlan _explicitNullValueQuotasPerPlan = default!;
 #endif
         /// <summary>The number of remaining schedules available.</summary>
-        public double? RemainingSchedules { get => _explicitNullValueRemainingSchedules; set { _explicitNullValueRemainingSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remainingSchedules"); else _explicitNullProperties?.Remove("remainingSchedules"); } }
+        public double? RemainingSchedules { get => _explicitNullValueRemainingSchedules; set { _explicitNullValueRemainingSchedules = value; AdditionalData?.Remove("remainingSchedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remainingSchedules"); else _explicitNullProperties?.Remove("remainingSchedules"); } }
         private double? _explicitNullValueRemainingSchedules = default!;
         /// <summary>The number of remaining tests available.</summary>
-        public double? RemainingTests { get => _explicitNullValueRemainingTests; set { _explicitNullValueRemainingTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remainingTests"); else _explicitNullProperties?.Remove("remainingTests"); } }
+        public double? RemainingTests { get => _explicitNullValueRemainingTests; set { _explicitNullValueRemainingTests = value; AdditionalData?.Remove("remainingTests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remainingTests"); else _explicitNullProperties?.Remove("remainingTests"); } }
         private double? _explicitNullValueRemainingTests = default!;
         /// <summary>The number of schedules available per plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan? ScheduleQuotasPerPlan { get => _explicitNullValueScheduleQuotasPerPlan; set { _explicitNullValueScheduleQuotasPerPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleQuotasPerPlan"); else _explicitNullProperties?.Remove("scheduleQuotasPerPlan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan? ScheduleQuotasPerPlan { get => _explicitNullValueScheduleQuotasPerPlan; set { _explicitNullValueScheduleQuotasPerPlan = value; AdditionalData?.Remove("scheduleQuotasPerPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleQuotasPerPlan"); else _explicitNullProperties?.Remove("scheduleQuotasPerPlan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan? _explicitNullValueScheduleQuotasPerPlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan ScheduleQuotasPerPlan { get => _explicitNullValueScheduleQuotasPerPlan; set { _explicitNullValueScheduleQuotasPerPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleQuotasPerPlan"); else _explicitNullProperties?.Remove("scheduleQuotasPerPlan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan ScheduleQuotasPerPlan { get => _explicitNullValueScheduleQuotasPerPlan; set { _explicitNullValueScheduleQuotasPerPlan = value; AdditionalData?.Remove("scheduleQuotasPerPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleQuotasPerPlan"); else _explicitNullProperties?.Remove("scheduleQuotasPerPlan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan _explicitNullValueScheduleQuotasPerPlan = default!;
 #endif
         /// <summary>

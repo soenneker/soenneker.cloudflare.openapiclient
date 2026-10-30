@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source_lang") is { } nullNodeSourceLang && nullNodeSourceLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLang = null;
-            if (parseNode.GetChildNode("target_lang") is { } nullNodeTargetLang && nullNodeTargetLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLang = null;
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("source_lang") is null) { _explicitNullValueSourceLang = default!; _explicitNullProperties?.Remove("source_lang"); }
+            else if (parseNode.GetChildNode("source_lang") is { } nullNodeSourceLang && nullNodeSourceLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLang = null;
+            if (parseNode.GetChildNode("target_lang") is null) { _explicitNullValueTargetLang = default!; _explicitNullProperties?.Remove("target_lang"); }
+            else if (parseNode.GetChildNode("target_lang") is { } nullNodeTargetLang && nullNodeTargetLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLang = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The language code of the source text (e.g., &apos;en&apos; for English). Defaults to &apos;en&apos; if not specified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
+        public string? SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; AdditionalData?.Remove("source_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
         private string? _explicitNullValueSourceLang = default!;
 #nullable restore
 #else
-        public string SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
+        public string SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; AdditionalData?.Remove("source_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
         private string _explicitNullValueSourceLang = default!;
 #endif
         /// <summary>The language code to translate the text into (e.g., &apos;es&apos; for Spanish)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
+        public string? TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; AdditionalData?.Remove("target_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
         private string? _explicitNullValueTargetLang = default!;
 #nullable restore
 #else
-        public string TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
+        public string TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; AdditionalData?.Remove("target_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
         private string _explicitNullValueTargetLang = default!;
 #endif
         /// <summary>The text to be translated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>

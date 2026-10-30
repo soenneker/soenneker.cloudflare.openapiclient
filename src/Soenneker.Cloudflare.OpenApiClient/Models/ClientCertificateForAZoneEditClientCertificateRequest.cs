@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("reactivate") is { } nullNodeReactivate && nullNodeReactivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reactivate = null;
+            if (parseNode.GetChildNode("reactivate") is null) { _explicitNullValueReactivate = default!; _explicitNullProperties?.Remove("reactivate"); }
+            else if (parseNode.GetChildNode("reactivate") is { } nullNodeReactivate && nullNodeReactivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reactivate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The reactivate property</summary>
-        public bool? Reactivate { get => _explicitNullValueReactivate; set { _explicitNullValueReactivate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reactivate"); else _explicitNullProperties?.Remove("reactivate"); } }
+        public bool? Reactivate { get => _explicitNullValueReactivate; set { _explicitNullValueReactivate = value; AdditionalData?.Remove("reactivate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reactivate"); else _explicitNullProperties?.Remove("reactivate"); } }
         private bool? _explicitNullValueReactivate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneEditClientCertificateRequest"/> and sets the default values.

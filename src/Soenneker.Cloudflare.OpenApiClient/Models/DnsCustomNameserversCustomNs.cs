@@ -18,11 +18,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dns_records") is { } nullNodeDnsRecords && nullNodeDnsRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsRecords = null;
-            if (parseNode.GetChildNode("ns_name") is { } nullNodeNsName && nullNodeNsName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsName = null;
-            if (parseNode.GetChildNode("ns_set") is { } nullNodeNsSet && nullNodeNsSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsSet = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("zone_tag") is { } nullNodeZoneTag && nullNodeZoneTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneTag = null;
+            if (parseNode.GetChildNode("dns_records") is null) { _explicitNullValueDnsRecords = default!; _explicitNullProperties?.Remove("dns_records"); }
+            else if (parseNode.GetChildNode("dns_records") is { } nullNodeDnsRecords && nullNodeDnsRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsRecords = null;
+            if (parseNode.GetChildNode("ns_name") is null) { _explicitNullValueNsName = default!; _explicitNullProperties?.Remove("ns_name"); }
+            else if (parseNode.GetChildNode("ns_name") is { } nullNodeNsName && nullNodeNsName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsName = null;
+            if (parseNode.GetChildNode("ns_set") is null) { _explicitNullValueNsSet = default!; _explicitNullProperties?.Remove("ns_set"); }
+            else if (parseNode.GetChildNode("ns_set") is { } nullNodeNsSet && nullNodeNsSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsSet = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("zone_tag") is null) { _explicitNullValueZoneTag = default!; _explicitNullProperties?.Remove("zone_tag"); }
+            else if (parseNode.GetChildNode("zone_tag") is { } nullNodeZoneTag && nullNodeZoneTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoneTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,38 +35,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A and AAAA records associated with the nameserver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem>? DnsRecords { get => _explicitNullValueDnsRecords; set { _explicitNullValueDnsRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_records"); else _explicitNullProperties?.Remove("dns_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem>? DnsRecords { get => _explicitNullValueDnsRecords; set { _explicitNullValueDnsRecords = value; AdditionalData?.Remove("dns_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_records"); else _explicitNullProperties?.Remove("dns_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem>? _explicitNullValueDnsRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem> DnsRecords { get => _explicitNullValueDnsRecords; set { _explicitNullValueDnsRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_records"); else _explicitNullProperties?.Remove("dns_records"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem> DnsRecords { get => _explicitNullValueDnsRecords; set { _explicitNullValueDnsRecords = value; AdditionalData?.Remove("dns_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_records"); else _explicitNullProperties?.Remove("dns_records"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem> _explicitNullValueDnsRecords = default!;
 #endif
         /// <summary>The FQDN of the name server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NsName { get => _explicitNullValueNsName; set { _explicitNullValueNsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_name"); else _explicitNullProperties?.Remove("ns_name"); } }
+        public string? NsName { get => _explicitNullValueNsName; set { _explicitNullValueNsName = value; AdditionalData?.Remove("ns_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_name"); else _explicitNullProperties?.Remove("ns_name"); } }
         private string? _explicitNullValueNsName = default!;
 #nullable restore
 #else
-        public string NsName { get => _explicitNullValueNsName; set { _explicitNullValueNsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_name"); else _explicitNullProperties?.Remove("ns_name"); } }
+        public string NsName { get => _explicitNullValueNsName; set { _explicitNullValueNsName = value; AdditionalData?.Remove("ns_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_name"); else _explicitNullProperties?.Remove("ns_name"); } }
         private string _explicitNullValueNsName = default!;
 #endif
         /// <summary>The number of the set that this name server belongs to.</summary>
-        public double? NsSet { get => _explicitNullValueNsSet; set { _explicitNullValueNsSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_set"); else _explicitNullProperties?.Remove("ns_set"); } }
+        public double? NsSet { get => _explicitNullValueNsSet; set { _explicitNullValueNsSet = value; AdditionalData?.Remove("ns_set"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_set"); else _explicitNullProperties?.Remove("ns_set"); } }
         private double? _explicitNullValueNsSet = default!;
         /// <summary>Verification status of the nameserver.</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsStatus? _explicitNullValueStatus = default!;
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneTag { get => _explicitNullValueZoneTag; set { _explicitNullValueZoneTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_tag"); else _explicitNullProperties?.Remove("zone_tag"); } }
+        public string? ZoneTag { get => _explicitNullValueZoneTag; set { _explicitNullValueZoneTag = value; AdditionalData?.Remove("zone_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_tag"); else _explicitNullProperties?.Remove("zone_tag"); } }
         private string? _explicitNullValueZoneTag = default!;
 #nullable restore
 #else
-        public string ZoneTag { get => _explicitNullValueZoneTag; set { _explicitNullValueZoneTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_tag"); else _explicitNullProperties?.Remove("zone_tag"); } }
+        public string ZoneTag { get => _explicitNullValueZoneTag; set { _explicitNullValueZoneTag = value; AdditionalData?.Remove("zone_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone_tag"); else _explicitNullProperties?.Remove("zone_tag"); } }
         private string _explicitNullValueZoneTag = default!;
 #endif
         /// <summary>
@@ -93,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dns_records", n => { DnsRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsDnsRecordsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ns_name", n => { NsName = n.GetStringValue(); } },
                 { "ns_set", n => { NsSet = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "zone_tag", n => { ZoneTag = n.GetStringValue(); } },
             };
         }

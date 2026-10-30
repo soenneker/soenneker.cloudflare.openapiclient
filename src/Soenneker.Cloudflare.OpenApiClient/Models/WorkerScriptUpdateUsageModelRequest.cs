@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("usage_model") is { } nullNodeUsageModel && nullNodeUsageModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageModel = null;
-            if (parseNode.GetChildNode("user_limits") is { } nullNodeUserLimits && nullNodeUserLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserLimits = null;
+            if (parseNode.GetChildNode("usage_model") is null) { _explicitNullValueUsageModel = default!; _explicitNullProperties?.Remove("usage_model"); }
+            else if (parseNode.GetChildNode("usage_model") is { } nullNodeUsageModel && nullNodeUsageModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageModel = null;
+            if (parseNode.GetChildNode("user_limits") is null) { _explicitNullValueUserLimits = default!; _explicitNullProperties?.Remove("user_limits"); }
+            else if (parseNode.GetChildNode("user_limits") is { } nullNodeUserLimits && nullNodeUserLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserLimits = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Usage model for the Worker invocations.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? UsageModel { get => _explicitNullValueUsageModel; set { _explicitNullValueUsageModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_model"); else _explicitNullProperties?.Remove("usage_model"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? UsageModel { get => _explicitNullValueUsageModel; set { _explicitNullValueUsageModel = value; AdditionalData?.Remove("usage_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_model"); else _explicitNullProperties?.Remove("usage_model"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? _explicitNullValueUsageModel = default!;
         /// <summary>User-defined resource limits for Workers with standard usage model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits? UserLimits { get => _explicitNullValueUserLimits; set { _explicitNullValueUserLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_limits"); else _explicitNullProperties?.Remove("user_limits"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits? UserLimits { get => _explicitNullValueUserLimits; set { _explicitNullValueUserLimits = value; AdditionalData?.Remove("user_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_limits"); else _explicitNullProperties?.Remove("user_limits"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits? _explicitNullValueUserLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits UserLimits { get => _explicitNullValueUserLimits; set { _explicitNullValueUserLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_limits"); else _explicitNullProperties?.Remove("user_limits"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits UserLimits { get => _explicitNullValueUserLimits; set { _explicitNullValueUserLimits = value; AdditionalData?.Remove("user_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_limits"); else _explicitNullProperties?.Remove("user_limits"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits _explicitNullValueUserLimits = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>(); } },
+                { "usage_model", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUsageModel = default; _explicitNullProperties?.Remove("usage_model"); AdditionalData["usage_model"] = unknown; } else { UsageModel = parsed; AdditionalData.Remove("usage_model"); } } },
                 { "user_limits", n => { UserLimits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUserLimits.CreateFromDiscriminatorValue); } },
             };
         }

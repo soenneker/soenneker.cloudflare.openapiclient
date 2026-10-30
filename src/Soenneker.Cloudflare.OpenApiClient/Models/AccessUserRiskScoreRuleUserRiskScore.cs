@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_risk_score") is { } nullNodeUserRiskScore && nullNodeUserRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserRiskScore = null;
+            if (parseNode.GetChildNode("user_risk_score") is null) { _explicitNullValueUserRiskScore = default!; _explicitNullProperties?.Remove("user_risk_score"); }
+            else if (parseNode.GetChildNode("user_risk_score") is { } nullNodeUserRiskScore && nullNodeUserRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserRiskScore = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of risk score levels to match. Values can be low, medium, high, or unscored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?>? UserRiskScore { get => _explicitNullValueUserRiskScore; set { _explicitNullValueUserRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_risk_score"); else _explicitNullProperties?.Remove("user_risk_score"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?>? UserRiskScore { get => _explicitNullValueUserRiskScore; set { _explicitNullValueUserRiskScore = value; AdditionalData?.Remove("user_risk_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_risk_score"); else _explicitNullProperties?.Remove("user_risk_score"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?>? _explicitNullValueUserRiskScore = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?> UserRiskScore { get => _explicitNullValueUserRiskScore; set { _explicitNullValueUserRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_risk_score"); else _explicitNullProperties?.Remove("user_risk_score"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?> UserRiskScore { get => _explicitNullValueUserRiskScore; set { _explicitNullValueUserRiskScore = value; AdditionalData?.Remove("user_risk_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_risk_score"); else _explicitNullProperties?.Remove("user_risk_score"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?> _explicitNullValueUserRiskScore = default!;
 #endif
         /// <summary>

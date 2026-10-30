@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("articles") is { } nullNodeArticles && nullNodeArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Articles = null;
+            if (parseNode.GetChildNode("articles") is null) { _explicitNullValueArticles = default!; _explicitNullProperties?.Remove("articles"); }
+            else if (parseNode.GetChildNode("articles") is { } nullNodeArticles && nullNodeArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Articles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Beta. Number of articles in each band, each counted once, in the band of its best score across the active PIRs. Not the sum of the per-PIR counts: an article can be relevant to several PIRs. Articles not scored against any active PIR are not counted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultCombinedArticles? Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultCombinedArticles? Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; AdditionalData?.Remove("articles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultCombinedArticles? _explicitNullValueArticles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultCombinedArticles Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultCombinedArticles Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; AdditionalData?.Remove("articles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleRelevanceAggregate200ResponseResultCombinedArticles _explicitNullValueArticles = default!;
 #endif
         /// <summary>

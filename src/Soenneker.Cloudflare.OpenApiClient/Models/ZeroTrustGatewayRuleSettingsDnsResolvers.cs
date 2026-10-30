@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ipv4") is { } nullNodeIpv4 && nullNodeIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4 = null;
-            if (parseNode.GetChildNode("ipv6") is { } nullNodeIpv6 && nullNodeIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6 = null;
+            if (parseNode.GetChildNode("ipv4") is null) { _explicitNullValueIpv4 = default!; _explicitNullProperties?.Remove("ipv4"); }
+            else if (parseNode.GetChildNode("ipv4") is { } nullNodeIpv4 && nullNodeIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4 = null;
+            if (parseNode.GetChildNode("ipv6") is null) { _explicitNullValueIpv6 = default!; _explicitNullProperties?.Remove("ipv6"); }
+            else if (parseNode.GetChildNode("ipv6") is { } nullNodeIpv6 && nullNodeIpv6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ipv4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV4>? Ipv4 { get => _explicitNullValueIpv4; set { _explicitNullValueIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4"); else _explicitNullProperties?.Remove("ipv4"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV4>? Ipv4 { get => _explicitNullValueIpv4; set { _explicitNullValueIpv4 = value; AdditionalData?.Remove("ipv4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4"); else _explicitNullProperties?.Remove("ipv4"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV4>? _explicitNullValueIpv4 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV4> Ipv4 { get => _explicitNullValueIpv4; set { _explicitNullValueIpv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4"); else _explicitNullProperties?.Remove("ipv4"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV4> Ipv4 { get => _explicitNullValueIpv4; set { _explicitNullValueIpv4 = value; AdditionalData?.Remove("ipv4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4"); else _explicitNullProperties?.Remove("ipv4"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV4> _explicitNullValueIpv4 = default!;
 #endif
         /// <summary>The ipv6 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV6>? Ipv6 { get => _explicitNullValueIpv6; set { _explicitNullValueIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6"); else _explicitNullProperties?.Remove("ipv6"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV6>? Ipv6 { get => _explicitNullValueIpv6; set { _explicitNullValueIpv6 = value; AdditionalData?.Remove("ipv6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6"); else _explicitNullProperties?.Remove("ipv6"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV6>? _explicitNullValueIpv6 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV6> Ipv6 { get => _explicitNullValueIpv6; set { _explicitNullValueIpv6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6"); else _explicitNullProperties?.Remove("ipv6"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV6> Ipv6 { get => _explicitNullValueIpv6; set { _explicitNullValueIpv6 = value; AdditionalData?.Remove("ipv6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6"); else _explicitNullProperties?.Remove("ipv6"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsResolverSettingsV6> _explicitNullValueIpv6 = default!;
 #endif
         /// <summary>

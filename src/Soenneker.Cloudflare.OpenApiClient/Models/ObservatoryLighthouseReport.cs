@@ -18,71 +18,83 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cls") is { } nullNodeCls && nullNodeCls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cls = null;
-            if (parseNode.GetChildNode("deviceType") is { } nullNodeDeviceType && nullNodeDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceType = null;
-            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
-            if (parseNode.GetChildNode("fcp") is { } nullNodeFcp && nullNodeFcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fcp = null;
-            if (parseNode.GetChildNode("jsonReportUrl") is { } nullNodeJsonReportUrl && nullNodeJsonReportUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonReportUrl = null;
-            if (parseNode.GetChildNode("lcp") is { } nullNodeLcp && nullNodeLcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lcp = null;
-            if (parseNode.GetChildNode("performanceScore") is { } nullNodePerformanceScore && nullNodePerformanceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceScore = null;
-            if (parseNode.GetChildNode("si") is { } nullNodeSi && nullNodeSi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Si = null;
-            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
-            if (parseNode.GetChildNode("tbt") is { } nullNodeTbt && nullNodeTbt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tbt = null;
-            if (parseNode.GetChildNode("ttfb") is { } nullNodeTtfb && nullNodeTtfb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttfb = null;
-            if (parseNode.GetChildNode("tti") is { } nullNodeTti && nullNodeTti.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tti = null;
+            if (parseNode.GetChildNode("cls") is null) { _explicitNullValueCls = default!; _explicitNullProperties?.Remove("cls"); }
+            else if (parseNode.GetChildNode("cls") is { } nullNodeCls && nullNodeCls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cls = null;
+            if (parseNode.GetChildNode("deviceType") is null) { _explicitNullValueDeviceType = default!; _explicitNullProperties?.Remove("deviceType"); }
+            else if (parseNode.GetChildNode("deviceType") is { } nullNodeDeviceType && nullNodeDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceType = null;
+            if (parseNode.GetChildNode("error") is null) { _explicitNullValueError = default!; _explicitNullProperties?.Remove("error"); }
+            else if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("fcp") is null) { _explicitNullValueFcp = default!; _explicitNullProperties?.Remove("fcp"); }
+            else if (parseNode.GetChildNode("fcp") is { } nullNodeFcp && nullNodeFcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fcp = null;
+            if (parseNode.GetChildNode("jsonReportUrl") is null) { _explicitNullValueJsonReportUrl = default!; _explicitNullProperties?.Remove("jsonReportUrl"); }
+            else if (parseNode.GetChildNode("jsonReportUrl") is { } nullNodeJsonReportUrl && nullNodeJsonReportUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonReportUrl = null;
+            if (parseNode.GetChildNode("lcp") is null) { _explicitNullValueLcp = default!; _explicitNullProperties?.Remove("lcp"); }
+            else if (parseNode.GetChildNode("lcp") is { } nullNodeLcp && nullNodeLcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lcp = null;
+            if (parseNode.GetChildNode("performanceScore") is null) { _explicitNullValuePerformanceScore = default!; _explicitNullProperties?.Remove("performanceScore"); }
+            else if (parseNode.GetChildNode("performanceScore") is { } nullNodePerformanceScore && nullNodePerformanceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceScore = null;
+            if (parseNode.GetChildNode("si") is null) { _explicitNullValueSi = default!; _explicitNullProperties?.Remove("si"); }
+            else if (parseNode.GetChildNode("si") is { } nullNodeSi && nullNodeSi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Si = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("tbt") is null) { _explicitNullValueTbt = default!; _explicitNullProperties?.Remove("tbt"); }
+            else if (parseNode.GetChildNode("tbt") is { } nullNodeTbt && nullNodeTbt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tbt = null;
+            if (parseNode.GetChildNode("ttfb") is null) { _explicitNullValueTtfb = default!; _explicitNullProperties?.Remove("ttfb"); }
+            else if (parseNode.GetChildNode("ttfb") is { } nullNodeTtfb && nullNodeTtfb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttfb = null;
+            if (parseNode.GetChildNode("tti") is null) { _explicitNullValueTti = default!; _explicitNullProperties?.Remove("tti"); }
+            else if (parseNode.GetChildNode("tti") is { } nullNodeTti && nullNodeTti.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tti = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cumulative Layout Shift.</summary>
-        public double? Cls { get => _explicitNullValueCls; set { _explicitNullValueCls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cls"); else _explicitNullProperties?.Remove("cls"); } }
+        public double? Cls { get => _explicitNullValueCls; set { _explicitNullValueCls = value; AdditionalData?.Remove("cls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cls"); else _explicitNullProperties?.Remove("cls"); } }
         private double? _explicitNullValueCls = default!;
         /// <summary>The type of device.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryDeviceType? DeviceType { get => _explicitNullValueDeviceType; set { _explicitNullValueDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceType"); else _explicitNullProperties?.Remove("deviceType"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryDeviceType? DeviceType { get => _explicitNullValueDeviceType; set { _explicitNullValueDeviceType = value; AdditionalData?.Remove("deviceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceType"); else _explicitNullProperties?.Remove("deviceType"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryDeviceType? _explicitNullValueDeviceType = default!;
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError _explicitNullValueError = default!;
 #endif
         /// <summary>First Contentful Paint.</summary>
-        public double? Fcp { get => _explicitNullValueFcp; set { _explicitNullValueFcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fcp"); else _explicitNullProperties?.Remove("fcp"); } }
+        public double? Fcp { get => _explicitNullValueFcp; set { _explicitNullValueFcp = value; AdditionalData?.Remove("fcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fcp"); else _explicitNullProperties?.Remove("fcp"); } }
         private double? _explicitNullValueFcp = default!;
         /// <summary>The URL to the full Lighthouse JSON report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonReportUrl { get => _explicitNullValueJsonReportUrl; set { _explicitNullValueJsonReportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonReportUrl"); else _explicitNullProperties?.Remove("jsonReportUrl"); } }
+        public string? JsonReportUrl { get => _explicitNullValueJsonReportUrl; set { _explicitNullValueJsonReportUrl = value; AdditionalData?.Remove("jsonReportUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonReportUrl"); else _explicitNullProperties?.Remove("jsonReportUrl"); } }
         private string? _explicitNullValueJsonReportUrl = default!;
 #nullable restore
 #else
-        public string JsonReportUrl { get => _explicitNullValueJsonReportUrl; set { _explicitNullValueJsonReportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonReportUrl"); else _explicitNullProperties?.Remove("jsonReportUrl"); } }
+        public string JsonReportUrl { get => _explicitNullValueJsonReportUrl; set { _explicitNullValueJsonReportUrl = value; AdditionalData?.Remove("jsonReportUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonReportUrl"); else _explicitNullProperties?.Remove("jsonReportUrl"); } }
         private string _explicitNullValueJsonReportUrl = default!;
 #endif
         /// <summary>Largest Contentful Paint.</summary>
-        public double? Lcp { get => _explicitNullValueLcp; set { _explicitNullValueLcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lcp"); else _explicitNullProperties?.Remove("lcp"); } }
+        public double? Lcp { get => _explicitNullValueLcp; set { _explicitNullValueLcp = value; AdditionalData?.Remove("lcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lcp"); else _explicitNullProperties?.Remove("lcp"); } }
         private double? _explicitNullValueLcp = default!;
         /// <summary>The Lighthouse performance score.</summary>
-        public double? PerformanceScore { get => _explicitNullValuePerformanceScore; set { _explicitNullValuePerformanceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceScore"); else _explicitNullProperties?.Remove("performanceScore"); } }
+        public double? PerformanceScore { get => _explicitNullValuePerformanceScore; set { _explicitNullValuePerformanceScore = value; AdditionalData?.Remove("performanceScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceScore"); else _explicitNullProperties?.Remove("performanceScore"); } }
         private double? _explicitNullValuePerformanceScore = default!;
         /// <summary>Speed Index.</summary>
-        public double? Si { get => _explicitNullValueSi; set { _explicitNullValueSi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("si"); else _explicitNullProperties?.Remove("si"); } }
+        public double? Si { get => _explicitNullValueSi; set { _explicitNullValueSi = value; AdditionalData?.Remove("si"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("si"); else _explicitNullProperties?.Remove("si"); } }
         private double? _explicitNullValueSi = default!;
         /// <summary>The state of the Lighthouse report.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseState? _explicitNullValueState = default!;
         /// <summary>Total Blocking Time.</summary>
-        public double? Tbt { get => _explicitNullValueTbt; set { _explicitNullValueTbt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tbt"); else _explicitNullProperties?.Remove("tbt"); } }
+        public double? Tbt { get => _explicitNullValueTbt; set { _explicitNullValueTbt = value; AdditionalData?.Remove("tbt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tbt"); else _explicitNullProperties?.Remove("tbt"); } }
         private double? _explicitNullValueTbt = default!;
         /// <summary>Time To First Byte.</summary>
-        public double? Ttfb { get => _explicitNullValueTtfb; set { _explicitNullValueTtfb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttfb"); else _explicitNullProperties?.Remove("ttfb"); } }
+        public double? Ttfb { get => _explicitNullValueTtfb; set { _explicitNullValueTtfb = value; AdditionalData?.Remove("ttfb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttfb"); else _explicitNullProperties?.Remove("ttfb"); } }
         private double? _explicitNullValueTtfb = default!;
         /// <summary>Time To Interactive.</summary>
-        public double? Tti { get => _explicitNullValueTti; set { _explicitNullValueTti = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tti"); else _explicitNullProperties?.Remove("tti"); } }
+        public double? Tti { get => _explicitNullValueTti; set { _explicitNullValueTti = value; AdditionalData?.Remove("tti"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tti"); else _explicitNullProperties?.Remove("tti"); } }
         private double? _explicitNullValueTti = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport"/> and sets the default values.
@@ -110,14 +122,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cls", n => { Cls = n.GetDoubleValue(); } },
-                { "deviceType", n => { DeviceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryDeviceType>(); } },
+                { "deviceType", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryDeviceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeviceType = default; _explicitNullProperties?.Remove("deviceType"); AdditionalData["deviceType"] = unknown; } else { DeviceType = parsed; AdditionalData.Remove("deviceType"); } } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError>(global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReportError.CreateFromDiscriminatorValue); } },
                 { "fcp", n => { Fcp = n.GetDoubleValue(); } },
                 { "jsonReportUrl", n => { JsonReportUrl = n.GetStringValue(); } },
                 { "lcp", n => { Lcp = n.GetDoubleValue(); } },
                 { "performanceScore", n => { PerformanceScore = n.GetDoubleValue(); } },
                 { "si", n => { Si = n.GetDoubleValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "tbt", n => { Tbt = n.GetDoubleValue(); } },
                 { "ttfb", n => { Ttfb = n.GetDoubleValue(); } },
                 { "tti", n => { Tti = n.GetDoubleValue(); } },

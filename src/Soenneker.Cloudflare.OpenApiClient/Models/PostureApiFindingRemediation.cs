@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("guide") is { } nullNodeGuide && nullNodeGuide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guide = null;
-            if (parseNode.GetChildNode("impact") is { } nullNodeImpact && nullNodeImpact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impact = null;
-            if (parseNode.GetChildNode("threat") is { } nullNodeThreat && nullNodeThreat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threat = null;
+            if (parseNode.GetChildNode("guide") is null) { _explicitNullValueGuide = default!; _explicitNullProperties?.Remove("guide"); }
+            else if (parseNode.GetChildNode("guide") is { } nullNodeGuide && nullNodeGuide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guide = null;
+            if (parseNode.GetChildNode("impact") is null) { _explicitNullValueImpact = default!; _explicitNullProperties?.Remove("impact"); }
+            else if (parseNode.GetChildNode("impact") is { } nullNodeImpact && nullNodeImpact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impact = null;
+            if (parseNode.GetChildNode("threat") is null) { _explicitNullValueThreat = default!; _explicitNullProperties?.Remove("threat"); }
+            else if (parseNode.GetChildNode("threat") is { } nullNodeThreat && nullNodeThreat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threat = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +39,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Remediation guide text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Guide { get => _explicitNullValueGuide; set { _explicitNullValueGuide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guide"); else _explicitNullProperties?.Remove("guide"); } }
+        public string? Guide { get => _explicitNullValueGuide; set { _explicitNullValueGuide = value; AdditionalData?.Remove("guide"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guide"); else _explicitNullProperties?.Remove("guide"); } }
         private string? _explicitNullValueGuide = default!;
 #nullable restore
 #else
-        public string Guide { get => _explicitNullValueGuide; set { _explicitNullValueGuide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guide"); else _explicitNullProperties?.Remove("guide"); } }
+        public string Guide { get => _explicitNullValueGuide; set { _explicitNullValueGuide = value; AdditionalData?.Remove("guide"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guide"); else _explicitNullProperties?.Remove("guide"); } }
         private string _explicitNullValueGuide = default!;
 #endif
         /// <summary>Remediation Id.</summary>
@@ -48,11 +51,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Description of the potential impact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        public string? Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; AdditionalData?.Remove("impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
         private string? _explicitNullValueImpact = default!;
 #nullable restore
 #else
-        public string Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        public string Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; AdditionalData?.Remove("impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
         private string _explicitNullValueImpact = default!;
 #endif
         /// <summary>I18N Locale.</summary>
@@ -66,11 +69,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Description of the threat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Threat { get => _explicitNullValueThreat; set { _explicitNullValueThreat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threat"); else _explicitNullProperties?.Remove("threat"); } }
+        public string? Threat { get => _explicitNullValueThreat; set { _explicitNullValueThreat = value; AdditionalData?.Remove("threat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threat"); else _explicitNullProperties?.Remove("threat"); } }
         private string? _explicitNullValueThreat = default!;
 #nullable restore
 #else
-        public string Threat { get => _explicitNullValueThreat; set { _explicitNullValueThreat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threat"); else _explicitNullProperties?.Remove("threat"); } }
+        public string Threat { get => _explicitNullValueThreat; set { _explicitNullValueThreat = value; AdditionalData?.Remove("threat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threat"); else _explicitNullProperties?.Remove("threat"); } }
         private string _explicitNullValueThreat = default!;
 #endif
         /// <summary>

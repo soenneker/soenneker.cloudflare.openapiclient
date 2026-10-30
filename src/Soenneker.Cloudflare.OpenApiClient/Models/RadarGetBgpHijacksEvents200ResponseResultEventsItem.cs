@@ -17,143 +17,161 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("confidence_score") is { } nullNodeConfidenceScore && nullNodeConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceScore = null;
-            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
-            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("hijacker_asn") is { } nullNodeHijackerAsn && nullNodeHijackerAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HijackerAsn = null;
-            if (parseNode.GetChildNode("hijacker_country") is { } nullNodeHijackerCountry && nullNodeHijackerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HijackerCountry = null;
-            if (parseNode.GetChildNode("hijack_msgs_count") is { } nullNodeHijackMsgsCount && nullNodeHijackMsgsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HijackMsgsCount = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("is_stale") is { } nullNodeIsStale && nullNodeIsStale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsStale = null;
-            if (parseNode.GetChildNode("max_hijack_ts") is { } nullNodeMaxHijackTs && nullNodeMaxHijackTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxHijackTs = null;
-            if (parseNode.GetChildNode("max_msg_ts") is { } nullNodeMaxMsgTs && nullNodeMaxMsgTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMsgTs = null;
-            if (parseNode.GetChildNode("min_hijack_ts") is { } nullNodeMinHijackTs && nullNodeMinHijackTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinHijackTs = null;
-            if (parseNode.GetChildNode("on_going_count") is { } nullNodeOnGoingCount && nullNodeOnGoingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnGoingCount = null;
-            if (parseNode.GetChildNode("peer_asns") is { } nullNodePeerAsns && nullNodePeerAsns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeerAsns = null;
-            if (parseNode.GetChildNode("peer_ip_count") is { } nullNodePeerIpCount && nullNodePeerIpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeerIpCount = null;
-            if (parseNode.GetChildNode("prefixes") is { } nullNodePrefixes && nullNodePrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefixes = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
-            if (parseNode.GetChildNode("victim_asns") is { } nullNodeVictimAsns && nullNodeVictimAsns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VictimAsns = null;
-            if (parseNode.GetChildNode("victim_countries") is { } nullNodeVictimCountries && nullNodeVictimCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VictimCountries = null;
+            if (parseNode.GetChildNode("confidence_score") is null) { _explicitNullValueConfidenceScore = default!; _explicitNullProperties?.Remove("confidence_score"); }
+            else if (parseNode.GetChildNode("confidence_score") is { } nullNodeConfidenceScore && nullNodeConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceScore = null;
+            if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
+            else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("hijacker_asn") is null) { _explicitNullValueHijackerAsn = default!; _explicitNullProperties?.Remove("hijacker_asn"); }
+            else if (parseNode.GetChildNode("hijacker_asn") is { } nullNodeHijackerAsn && nullNodeHijackerAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HijackerAsn = null;
+            if (parseNode.GetChildNode("hijacker_country") is null) { _explicitNullValueHijackerCountry = default!; _explicitNullProperties?.Remove("hijacker_country"); }
+            else if (parseNode.GetChildNode("hijacker_country") is { } nullNodeHijackerCountry && nullNodeHijackerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HijackerCountry = null;
+            if (parseNode.GetChildNode("hijack_msgs_count") is null) { _explicitNullValueHijackMsgsCount = default!; _explicitNullProperties?.Remove("hijack_msgs_count"); }
+            else if (parseNode.GetChildNode("hijack_msgs_count") is { } nullNodeHijackMsgsCount && nullNodeHijackMsgsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HijackMsgsCount = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_stale") is null) { _explicitNullValueIsStale = default!; _explicitNullProperties?.Remove("is_stale"); }
+            else if (parseNode.GetChildNode("is_stale") is { } nullNodeIsStale && nullNodeIsStale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsStale = null;
+            if (parseNode.GetChildNode("max_hijack_ts") is null) { _explicitNullValueMaxHijackTs = default!; _explicitNullProperties?.Remove("max_hijack_ts"); }
+            else if (parseNode.GetChildNode("max_hijack_ts") is { } nullNodeMaxHijackTs && nullNodeMaxHijackTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxHijackTs = null;
+            if (parseNode.GetChildNode("max_msg_ts") is null) { _explicitNullValueMaxMsgTs = default!; _explicitNullProperties?.Remove("max_msg_ts"); }
+            else if (parseNode.GetChildNode("max_msg_ts") is { } nullNodeMaxMsgTs && nullNodeMaxMsgTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMsgTs = null;
+            if (parseNode.GetChildNode("min_hijack_ts") is null) { _explicitNullValueMinHijackTs = default!; _explicitNullProperties?.Remove("min_hijack_ts"); }
+            else if (parseNode.GetChildNode("min_hijack_ts") is { } nullNodeMinHijackTs && nullNodeMinHijackTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinHijackTs = null;
+            if (parseNode.GetChildNode("on_going_count") is null) { _explicitNullValueOnGoingCount = default!; _explicitNullProperties?.Remove("on_going_count"); }
+            else if (parseNode.GetChildNode("on_going_count") is { } nullNodeOnGoingCount && nullNodeOnGoingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnGoingCount = null;
+            if (parseNode.GetChildNode("peer_asns") is null) { _explicitNullValuePeerAsns = default!; _explicitNullProperties?.Remove("peer_asns"); }
+            else if (parseNode.GetChildNode("peer_asns") is { } nullNodePeerAsns && nullNodePeerAsns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeerAsns = null;
+            if (parseNode.GetChildNode("peer_ip_count") is null) { _explicitNullValuePeerIpCount = default!; _explicitNullProperties?.Remove("peer_ip_count"); }
+            else if (parseNode.GetChildNode("peer_ip_count") is { } nullNodePeerIpCount && nullNodePeerIpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeerIpCount = null;
+            if (parseNode.GetChildNode("prefixes") is null) { _explicitNullValuePrefixes = default!; _explicitNullProperties?.Remove("prefixes"); }
+            else if (parseNode.GetChildNode("prefixes") is { } nullNodePrefixes && nullNodePrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefixes = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("victim_asns") is null) { _explicitNullValueVictimAsns = default!; _explicitNullProperties?.Remove("victim_asns"); }
+            else if (parseNode.GetChildNode("victim_asns") is { } nullNodeVictimAsns && nullNodeVictimAsns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VictimAsns = null;
+            if (parseNode.GetChildNode("victim_countries") is null) { _explicitNullValueVictimCountries = default!; _explicitNullProperties?.Remove("victim_countries"); }
+            else if (parseNode.GetChildNode("victim_countries") is { } nullNodeVictimCountries && nullNodeVictimCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VictimCountries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The confidence_score property</summary>
-        public int? ConfidenceScore { get => _explicitNullValueConfidenceScore; set { _explicitNullValueConfidenceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_score"); else _explicitNullProperties?.Remove("confidence_score"); } }
+        public int? ConfidenceScore { get => _explicitNullValueConfidenceScore; set { _explicitNullValueConfidenceScore = value; AdditionalData?.Remove("confidence_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_score"); else _explicitNullProperties?.Remove("confidence_score"); } }
         private int? _explicitNullValueConfidenceScore = default!;
         /// <summary>The duration property</summary>
-        public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
         private int? _explicitNullValueDuration = default!;
         /// <summary>The event_type property</summary>
-        public int? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        public int? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
         private int? _explicitNullValueEventType = default!;
         /// <summary>The hijacker_asn property</summary>
-        public int? HijackerAsn { get => _explicitNullValueHijackerAsn; set { _explicitNullValueHijackerAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijacker_asn"); else _explicitNullProperties?.Remove("hijacker_asn"); } }
+        public int? HijackerAsn { get => _explicitNullValueHijackerAsn; set { _explicitNullValueHijackerAsn = value; AdditionalData?.Remove("hijacker_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijacker_asn"); else _explicitNullProperties?.Remove("hijacker_asn"); } }
         private int? _explicitNullValueHijackerAsn = default!;
         /// <summary>The hijacker_country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HijackerCountry { get => _explicitNullValueHijackerCountry; set { _explicitNullValueHijackerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijacker_country"); else _explicitNullProperties?.Remove("hijacker_country"); } }
+        public string? HijackerCountry { get => _explicitNullValueHijackerCountry; set { _explicitNullValueHijackerCountry = value; AdditionalData?.Remove("hijacker_country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijacker_country"); else _explicitNullProperties?.Remove("hijacker_country"); } }
         private string? _explicitNullValueHijackerCountry = default!;
 #nullable restore
 #else
-        public string HijackerCountry { get => _explicitNullValueHijackerCountry; set { _explicitNullValueHijackerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijacker_country"); else _explicitNullProperties?.Remove("hijacker_country"); } }
+        public string HijackerCountry { get => _explicitNullValueHijackerCountry; set { _explicitNullValueHijackerCountry = value; AdditionalData?.Remove("hijacker_country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijacker_country"); else _explicitNullProperties?.Remove("hijacker_country"); } }
         private string _explicitNullValueHijackerCountry = default!;
 #endif
         /// <summary>The hijack_msgs_count property</summary>
-        public int? HijackMsgsCount { get => _explicitNullValueHijackMsgsCount; set { _explicitNullValueHijackMsgsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijack_msgs_count"); else _explicitNullProperties?.Remove("hijack_msgs_count"); } }
+        public int? HijackMsgsCount { get => _explicitNullValueHijackMsgsCount; set { _explicitNullValueHijackMsgsCount = value; AdditionalData?.Remove("hijack_msgs_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hijack_msgs_count"); else _explicitNullProperties?.Remove("hijack_msgs_count"); } }
         private int? _explicitNullValueHijackMsgsCount = default!;
         /// <summary>The id property</summary>
-        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>The is_stale property</summary>
-        public bool? IsStale { get => _explicitNullValueIsStale; set { _explicitNullValueIsStale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_stale"); else _explicitNullProperties?.Remove("is_stale"); } }
+        public bool? IsStale { get => _explicitNullValueIsStale; set { _explicitNullValueIsStale = value; AdditionalData?.Remove("is_stale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_stale"); else _explicitNullProperties?.Remove("is_stale"); } }
         private bool? _explicitNullValueIsStale = default!;
         /// <summary>The max_hijack_ts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxHijackTs { get => _explicitNullValueMaxHijackTs; set { _explicitNullValueMaxHijackTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_hijack_ts"); else _explicitNullProperties?.Remove("max_hijack_ts"); } }
+        public string? MaxHijackTs { get => _explicitNullValueMaxHijackTs; set { _explicitNullValueMaxHijackTs = value; AdditionalData?.Remove("max_hijack_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_hijack_ts"); else _explicitNullProperties?.Remove("max_hijack_ts"); } }
         private string? _explicitNullValueMaxHijackTs = default!;
 #nullable restore
 #else
-        public string MaxHijackTs { get => _explicitNullValueMaxHijackTs; set { _explicitNullValueMaxHijackTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_hijack_ts"); else _explicitNullProperties?.Remove("max_hijack_ts"); } }
+        public string MaxHijackTs { get => _explicitNullValueMaxHijackTs; set { _explicitNullValueMaxHijackTs = value; AdditionalData?.Remove("max_hijack_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_hijack_ts"); else _explicitNullProperties?.Remove("max_hijack_ts"); } }
         private string _explicitNullValueMaxHijackTs = default!;
 #endif
         /// <summary>The max_msg_ts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxMsgTs { get => _explicitNullValueMaxMsgTs; set { _explicitNullValueMaxMsgTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_msg_ts"); else _explicitNullProperties?.Remove("max_msg_ts"); } }
+        public string? MaxMsgTs { get => _explicitNullValueMaxMsgTs; set { _explicitNullValueMaxMsgTs = value; AdditionalData?.Remove("max_msg_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_msg_ts"); else _explicitNullProperties?.Remove("max_msg_ts"); } }
         private string? _explicitNullValueMaxMsgTs = default!;
 #nullable restore
 #else
-        public string MaxMsgTs { get => _explicitNullValueMaxMsgTs; set { _explicitNullValueMaxMsgTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_msg_ts"); else _explicitNullProperties?.Remove("max_msg_ts"); } }
+        public string MaxMsgTs { get => _explicitNullValueMaxMsgTs; set { _explicitNullValueMaxMsgTs = value; AdditionalData?.Remove("max_msg_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_msg_ts"); else _explicitNullProperties?.Remove("max_msg_ts"); } }
         private string _explicitNullValueMaxMsgTs = default!;
 #endif
         /// <summary>The min_hijack_ts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinHijackTs { get => _explicitNullValueMinHijackTs; set { _explicitNullValueMinHijackTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_hijack_ts"); else _explicitNullProperties?.Remove("min_hijack_ts"); } }
+        public string? MinHijackTs { get => _explicitNullValueMinHijackTs; set { _explicitNullValueMinHijackTs = value; AdditionalData?.Remove("min_hijack_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_hijack_ts"); else _explicitNullProperties?.Remove("min_hijack_ts"); } }
         private string? _explicitNullValueMinHijackTs = default!;
 #nullable restore
 #else
-        public string MinHijackTs { get => _explicitNullValueMinHijackTs; set { _explicitNullValueMinHijackTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_hijack_ts"); else _explicitNullProperties?.Remove("min_hijack_ts"); } }
+        public string MinHijackTs { get => _explicitNullValueMinHijackTs; set { _explicitNullValueMinHijackTs = value; AdditionalData?.Remove("min_hijack_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_hijack_ts"); else _explicitNullProperties?.Remove("min_hijack_ts"); } }
         private string _explicitNullValueMinHijackTs = default!;
 #endif
         /// <summary>The on_going_count property</summary>
-        public int? OnGoingCount { get => _explicitNullValueOnGoingCount; set { _explicitNullValueOnGoingCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_going_count"); else _explicitNullProperties?.Remove("on_going_count"); } }
+        public int? OnGoingCount { get => _explicitNullValueOnGoingCount; set { _explicitNullValueOnGoingCount = value; AdditionalData?.Remove("on_going_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_going_count"); else _explicitNullProperties?.Remove("on_going_count"); } }
         private int? _explicitNullValueOnGoingCount = default!;
         /// <summary>The peer_asns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? PeerAsns { get => _explicitNullValuePeerAsns; set { _explicitNullValuePeerAsns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_asns"); else _explicitNullProperties?.Remove("peer_asns"); } }
+        public List<int?>? PeerAsns { get => _explicitNullValuePeerAsns; set { _explicitNullValuePeerAsns = value; AdditionalData?.Remove("peer_asns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_asns"); else _explicitNullProperties?.Remove("peer_asns"); } }
         private List<int?>? _explicitNullValuePeerAsns = default!;
 #nullable restore
 #else
-        public List<int?> PeerAsns { get => _explicitNullValuePeerAsns; set { _explicitNullValuePeerAsns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_asns"); else _explicitNullProperties?.Remove("peer_asns"); } }
+        public List<int?> PeerAsns { get => _explicitNullValuePeerAsns; set { _explicitNullValuePeerAsns = value; AdditionalData?.Remove("peer_asns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_asns"); else _explicitNullProperties?.Remove("peer_asns"); } }
         private List<int?> _explicitNullValuePeerAsns = default!;
 #endif
         /// <summary>The peer_ip_count property</summary>
-        public int? PeerIpCount { get => _explicitNullValuePeerIpCount; set { _explicitNullValuePeerIpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_ip_count"); else _explicitNullProperties?.Remove("peer_ip_count"); } }
+        public int? PeerIpCount { get => _explicitNullValuePeerIpCount; set { _explicitNullValuePeerIpCount = value; AdditionalData?.Remove("peer_ip_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_ip_count"); else _explicitNullProperties?.Remove("peer_ip_count"); } }
         private int? _explicitNullValuePeerIpCount = default!;
         /// <summary>The prefixes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        public List<string>? Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; AdditionalData?.Remove("prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
         private List<string>? _explicitNullValuePrefixes = default!;
 #nullable restore
 #else
-        public List<string> Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        public List<string> Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; AdditionalData?.Remove("prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
         private List<string> _explicitNullValuePrefixes = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItemTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItemTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItemTagsItem>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItemTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItemTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItemTagsItem> _explicitNullValueTags = default!;
 #endif
         /// <summary>The victim_asns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? VictimAsns { get => _explicitNullValueVictimAsns; set { _explicitNullValueVictimAsns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_asns"); else _explicitNullProperties?.Remove("victim_asns"); } }
+        public List<int?>? VictimAsns { get => _explicitNullValueVictimAsns; set { _explicitNullValueVictimAsns = value; AdditionalData?.Remove("victim_asns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_asns"); else _explicitNullProperties?.Remove("victim_asns"); } }
         private List<int?>? _explicitNullValueVictimAsns = default!;
 #nullable restore
 #else
-        public List<int?> VictimAsns { get => _explicitNullValueVictimAsns; set { _explicitNullValueVictimAsns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_asns"); else _explicitNullProperties?.Remove("victim_asns"); } }
+        public List<int?> VictimAsns { get => _explicitNullValueVictimAsns; set { _explicitNullValueVictimAsns = value; AdditionalData?.Remove("victim_asns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_asns"); else _explicitNullProperties?.Remove("victim_asns"); } }
         private List<int?> _explicitNullValueVictimAsns = default!;
 #endif
         /// <summary>The victim_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VictimCountries { get => _explicitNullValueVictimCountries; set { _explicitNullValueVictimCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_countries"); else _explicitNullProperties?.Remove("victim_countries"); } }
+        public List<string>? VictimCountries { get => _explicitNullValueVictimCountries; set { _explicitNullValueVictimCountries = value; AdditionalData?.Remove("victim_countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_countries"); else _explicitNullProperties?.Remove("victim_countries"); } }
         private List<string>? _explicitNullValueVictimCountries = default!;
 #nullable restore
 #else
-        public List<string> VictimCountries { get => _explicitNullValueVictimCountries; set { _explicitNullValueVictimCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_countries"); else _explicitNullProperties?.Remove("victim_countries"); } }
+        public List<string> VictimCountries { get => _explicitNullValueVictimCountries; set { _explicitNullValueVictimCountries = value; AdditionalData?.Remove("victim_countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("victim_countries"); else _explicitNullProperties?.Remove("victim_countries"); } }
         private List<string> _explicitNullValueVictimCountries = default!;
 #endif
         /// <summary>

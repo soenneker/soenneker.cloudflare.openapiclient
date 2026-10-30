@@ -17,62 +17,68 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("operating_system") is { } nullNodeOperatingSystem && nullNodeOperatingSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatingSystem = null;
-            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
-            if (parseNode.GetChildNode("os_distro_name") is { } nullNodeOsDistroName && nullNodeOsDistroName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsDistroName = null;
-            if (parseNode.GetChildNode("os_distro_revision") is { } nullNodeOsDistroRevision && nullNodeOsDistroRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsDistroRevision = null;
-            if (parseNode.GetChildNode("os_version_extra") is { } nullNodeOsVersionExtra && nullNodeOsVersionExtra.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsVersionExtra = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("operating_system") is null) { _explicitNullValueOperatingSystem = default!; _explicitNullProperties?.Remove("operating_system"); }
+            else if (parseNode.GetChildNode("operating_system") is { } nullNodeOperatingSystem && nullNodeOperatingSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatingSystem = null;
+            if (parseNode.GetChildNode("operator") is null) { _explicitNullValueOperator = default!; _explicitNullProperties?.Remove("operator"); }
+            else if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("os_distro_name") is null) { _explicitNullValueOsDistroName = default!; _explicitNullProperties?.Remove("os_distro_name"); }
+            else if (parseNode.GetChildNode("os_distro_name") is { } nullNodeOsDistroName && nullNodeOsDistroName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsDistroName = null;
+            if (parseNode.GetChildNode("os_distro_revision") is null) { _explicitNullValueOsDistroRevision = default!; _explicitNullProperties?.Remove("os_distro_revision"); }
+            else if (parseNode.GetChildNode("os_distro_revision") is { } nullNodeOsDistroRevision && nullNodeOsDistroRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsDistroRevision = null;
+            if (parseNode.GetChildNode("os_version_extra") is null) { _explicitNullValueOsVersionExtra = default!; _explicitNullProperties?.Remove("os_version_extra"); }
+            else if (parseNode.GetChildNode("os_version_extra") is { } nullNodeOsVersionExtra && nullNodeOsVersionExtra.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsVersionExtra = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Operating System.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem? OperatingSystem { get => _explicitNullValueOperatingSystem; set { _explicitNullValueOperatingSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_system"); else _explicitNullProperties?.Remove("operating_system"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem? OperatingSystem { get => _explicitNullValueOperatingSystem; set { _explicitNullValueOperatingSystem = value; AdditionalData?.Remove("operating_system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_system"); else _explicitNullProperties?.Remove("operating_system"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem? _explicitNullValueOperatingSystem = default!;
         /// <summary>Operator.</summary>
 #nullable enable
-        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
         private string? _explicitNullValueOperator = default!;
 #nullable restore
         /// <summary>Operating System Distribution Name (linux only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDistroName { get => _explicitNullValueOsDistroName; set { _explicitNullValueOsDistroName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_name"); else _explicitNullProperties?.Remove("os_distro_name"); } }
+        public string? OsDistroName { get => _explicitNullValueOsDistroName; set { _explicitNullValueOsDistroName = value; AdditionalData?.Remove("os_distro_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_name"); else _explicitNullProperties?.Remove("os_distro_name"); } }
         private string? _explicitNullValueOsDistroName = default!;
 #nullable restore
 #else
-        public string OsDistroName { get => _explicitNullValueOsDistroName; set { _explicitNullValueOsDistroName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_name"); else _explicitNullProperties?.Remove("os_distro_name"); } }
+        public string OsDistroName { get => _explicitNullValueOsDistroName; set { _explicitNullValueOsDistroName = value; AdditionalData?.Remove("os_distro_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_name"); else _explicitNullProperties?.Remove("os_distro_name"); } }
         private string _explicitNullValueOsDistroName = default!;
 #endif
         /// <summary>Version of OS Distribution (linux only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDistroRevision { get => _explicitNullValueOsDistroRevision; set { _explicitNullValueOsDistroRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_revision"); else _explicitNullProperties?.Remove("os_distro_revision"); } }
+        public string? OsDistroRevision { get => _explicitNullValueOsDistroRevision; set { _explicitNullValueOsDistroRevision = value; AdditionalData?.Remove("os_distro_revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_revision"); else _explicitNullProperties?.Remove("os_distro_revision"); } }
         private string? _explicitNullValueOsDistroRevision = default!;
 #nullable restore
 #else
-        public string OsDistroRevision { get => _explicitNullValueOsDistroRevision; set { _explicitNullValueOsDistroRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_revision"); else _explicitNullProperties?.Remove("os_distro_revision"); } }
+        public string OsDistroRevision { get => _explicitNullValueOsDistroRevision; set { _explicitNullValueOsDistroRevision = value; AdditionalData?.Remove("os_distro_revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_distro_revision"); else _explicitNullProperties?.Remove("os_distro_revision"); } }
         private string _explicitNullValueOsDistroRevision = default!;
 #endif
         /// <summary>Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersionExtra { get => _explicitNullValueOsVersionExtra; set { _explicitNullValueOsVersionExtra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_version_extra"); else _explicitNullProperties?.Remove("os_version_extra"); } }
+        public string? OsVersionExtra { get => _explicitNullValueOsVersionExtra; set { _explicitNullValueOsVersionExtra = value; AdditionalData?.Remove("os_version_extra"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_version_extra"); else _explicitNullProperties?.Remove("os_version_extra"); } }
         private string? _explicitNullValueOsVersionExtra = default!;
 #nullable restore
 #else
-        public string OsVersionExtra { get => _explicitNullValueOsVersionExtra; set { _explicitNullValueOsVersionExtra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_version_extra"); else _explicitNullProperties?.Remove("os_version_extra"); } }
+        public string OsVersionExtra { get => _explicitNullValueOsVersionExtra; set { _explicitNullValueOsVersionExtra = value; AdditionalData?.Remove("os_version_extra"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_version_extra"); else _explicitNullProperties?.Remove("os_version_extra"); } }
         private string _explicitNullValueOsVersionExtra = default!;
 #endif
         /// <summary>Version of OS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
@@ -100,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem>(); } },
+                { "operating_system", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperatingSystem = default; _explicitNullProperties?.Remove("operating_system"); AdditionalData["operating_system"] = unknown; } else { OperatingSystem = parsed; AdditionalData.Remove("operating_system"); } } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
                 { "os_distro_name", n => { OsDistroName = n.GetStringValue(); } },
                 { "os_distro_revision", n => { OsDistroRevision = n.GetStringValue(); } },

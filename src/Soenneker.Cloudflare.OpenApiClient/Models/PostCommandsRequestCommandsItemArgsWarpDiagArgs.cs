@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("test-all-routes") is { } nullNodeTestAllRoutes && nullNodeTestAllRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestAllRoutes = null;
+            if (parseNode.GetChildNode("test-all-routes") is null) { _explicitNullValueTestAllRoutes = default!; _explicitNullProperties?.Remove("test-all-routes"); }
+            else if (parseNode.GetChildNode("test-all-routes") is { } nullNodeTestAllRoutes && nullNodeTestAllRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestAllRoutes = null;
         }
 
         /// <summary>Test an IP address from all included or excluded ranges. Essentially the same as running &apos;route get &lt;ip&gt;&apos; and collecting the results. This option may increase the time taken to collect the warp-diag.</summary>

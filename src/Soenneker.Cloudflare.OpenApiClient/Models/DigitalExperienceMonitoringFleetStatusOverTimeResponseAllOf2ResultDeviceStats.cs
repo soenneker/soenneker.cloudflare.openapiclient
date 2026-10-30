@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("byMode") is { } nullNodeByMode && nullNodeByMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByMode = null;
-            if (parseNode.GetChildNode("byStatus") is { } nullNodeByStatus && nullNodeByStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByStatus = null;
-            if (parseNode.GetChildNode("uniqueDevicesTotal") is { } nullNodeUniqueDevicesTotal && nullNodeUniqueDevicesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueDevicesTotal = null;
+            if (parseNode.GetChildNode("byMode") is null) { _explicitNullValueByMode = default!; _explicitNullProperties?.Remove("byMode"); }
+            else if (parseNode.GetChildNode("byMode") is { } nullNodeByMode && nullNodeByMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByMode = null;
+            if (parseNode.GetChildNode("byStatus") is null) { _explicitNullValueByStatus = default!; _explicitNullProperties?.Remove("byStatus"); }
+            else if (parseNode.GetChildNode("byStatus") is { } nullNodeByStatus && nullNodeByStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByStatus = null;
+            if (parseNode.GetChildNode("uniqueDevicesTotal") is null) { _explicitNullValueUniqueDevicesTotal = default!; _explicitNullProperties?.Remove("uniqueDevicesTotal"); }
+            else if (parseNode.GetChildNode("uniqueDevicesTotal") is { } nullNodeUniqueDevicesTotal && nullNodeUniqueDevicesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueDevicesTotal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The byMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat>? ByMode { get => _explicitNullValueByMode; set { _explicitNullValueByMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byMode"); else _explicitNullProperties?.Remove("byMode"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat>? ByMode { get => _explicitNullValueByMode; set { _explicitNullValueByMode = value; AdditionalData?.Remove("byMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byMode"); else _explicitNullProperties?.Remove("byMode"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat>? _explicitNullValueByMode = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat> ByMode { get => _explicitNullValueByMode; set { _explicitNullValueByMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byMode"); else _explicitNullProperties?.Remove("byMode"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat> ByMode { get => _explicitNullValueByMode; set { _explicitNullValueByMode = value; AdditionalData?.Remove("byMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byMode"); else _explicitNullProperties?.Remove("byMode"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat> _explicitNullValueByMode = default!;
 #endif
         /// <summary>The byStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat>? ByStatus { get => _explicitNullValueByStatus; set { _explicitNullValueByStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byStatus"); else _explicitNullProperties?.Remove("byStatus"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat>? ByStatus { get => _explicitNullValueByStatus; set { _explicitNullValueByStatus = value; AdditionalData?.Remove("byStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byStatus"); else _explicitNullProperties?.Remove("byStatus"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat>? _explicitNullValueByStatus = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat> ByStatus { get => _explicitNullValueByStatus; set { _explicitNullValueByStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byStatus"); else _explicitNullProperties?.Remove("byStatus"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat> ByStatus { get => _explicitNullValueByStatus; set { _explicitNullValueByStatus = value; AdditionalData?.Remove("byStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byStatus"); else _explicitNullProperties?.Remove("byStatus"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSchemasAggregateStat> _explicitNullValueByStatus = default!;
 #endif
         /// <summary>Number of unique devices</summary>
-        public double? UniqueDevicesTotal { get => _explicitNullValueUniqueDevicesTotal; set { _explicitNullValueUniqueDevicesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueDevicesTotal"); else _explicitNullProperties?.Remove("uniqueDevicesTotal"); } }
+        public double? UniqueDevicesTotal { get => _explicitNullValueUniqueDevicesTotal; set { _explicitNullValueUniqueDevicesTotal = value; AdditionalData?.Remove("uniqueDevicesTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueDevicesTotal"); else _explicitNullProperties?.Remove("uniqueDevicesTotal"); } }
         private double? _explicitNullValueUniqueDevicesTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringFleetStatusOverTimeResponseAllOf2ResultDeviceStats"/> and sets the default values.

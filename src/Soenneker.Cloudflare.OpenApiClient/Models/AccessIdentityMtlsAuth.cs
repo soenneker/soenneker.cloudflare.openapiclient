@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_status") is { } nullNodeAuthStatus && nullNodeAuthStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthStatus = null;
-            if (parseNode.GetChildNode("cert_issuer_dn") is { } nullNodeCertIssuerDn && nullNodeCertIssuerDn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertIssuerDn = null;
-            if (parseNode.GetChildNode("cert_issuer_ski") is { } nullNodeCertIssuerSki && nullNodeCertIssuerSki.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertIssuerSki = null;
-            if (parseNode.GetChildNode("cert_presented") is { } nullNodeCertPresented && nullNodeCertPresented.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertPresented = null;
-            if (parseNode.GetChildNode("cert_serial") is { } nullNodeCertSerial && nullNodeCertSerial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertSerial = null;
+            if (parseNode.GetChildNode("auth_status") is null) { _explicitNullValueAuthStatus = default!; _explicitNullProperties?.Remove("auth_status"); }
+            else if (parseNode.GetChildNode("auth_status") is { } nullNodeAuthStatus && nullNodeAuthStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthStatus = null;
+            if (parseNode.GetChildNode("cert_issuer_dn") is null) { _explicitNullValueCertIssuerDn = default!; _explicitNullProperties?.Remove("cert_issuer_dn"); }
+            else if (parseNode.GetChildNode("cert_issuer_dn") is { } nullNodeCertIssuerDn && nullNodeCertIssuerDn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertIssuerDn = null;
+            if (parseNode.GetChildNode("cert_issuer_ski") is null) { _explicitNullValueCertIssuerSki = default!; _explicitNullProperties?.Remove("cert_issuer_ski"); }
+            else if (parseNode.GetChildNode("cert_issuer_ski") is { } nullNodeCertIssuerSki && nullNodeCertIssuerSki.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertIssuerSki = null;
+            if (parseNode.GetChildNode("cert_presented") is null) { _explicitNullValueCertPresented = default!; _explicitNullProperties?.Remove("cert_presented"); }
+            else if (parseNode.GetChildNode("cert_presented") is { } nullNodeCertPresented && nullNodeCertPresented.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertPresented = null;
+            if (parseNode.GetChildNode("cert_serial") is null) { _explicitNullValueCertSerial = default!; _explicitNullProperties?.Remove("cert_serial"); }
+            else if (parseNode.GetChildNode("cert_serial") is { } nullNodeCertSerial && nullNodeCertSerial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertSerial = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The auth_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthStatus { get => _explicitNullValueAuthStatus; set { _explicitNullValueAuthStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_status"); else _explicitNullProperties?.Remove("auth_status"); } }
+        public string? AuthStatus { get => _explicitNullValueAuthStatus; set { _explicitNullValueAuthStatus = value; AdditionalData?.Remove("auth_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_status"); else _explicitNullProperties?.Remove("auth_status"); } }
         private string? _explicitNullValueAuthStatus = default!;
 #nullable restore
 #else
-        public string AuthStatus { get => _explicitNullValueAuthStatus; set { _explicitNullValueAuthStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_status"); else _explicitNullProperties?.Remove("auth_status"); } }
+        public string AuthStatus { get => _explicitNullValueAuthStatus; set { _explicitNullValueAuthStatus = value; AdditionalData?.Remove("auth_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_status"); else _explicitNullProperties?.Remove("auth_status"); } }
         private string _explicitNullValueAuthStatus = default!;
 #endif
         /// <summary>The cert_issuer_dn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertIssuerDn { get => _explicitNullValueCertIssuerDn; set { _explicitNullValueCertIssuerDn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_dn"); else _explicitNullProperties?.Remove("cert_issuer_dn"); } }
+        public string? CertIssuerDn { get => _explicitNullValueCertIssuerDn; set { _explicitNullValueCertIssuerDn = value; AdditionalData?.Remove("cert_issuer_dn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_dn"); else _explicitNullProperties?.Remove("cert_issuer_dn"); } }
         private string? _explicitNullValueCertIssuerDn = default!;
 #nullable restore
 #else
-        public string CertIssuerDn { get => _explicitNullValueCertIssuerDn; set { _explicitNullValueCertIssuerDn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_dn"); else _explicitNullProperties?.Remove("cert_issuer_dn"); } }
+        public string CertIssuerDn { get => _explicitNullValueCertIssuerDn; set { _explicitNullValueCertIssuerDn = value; AdditionalData?.Remove("cert_issuer_dn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_dn"); else _explicitNullProperties?.Remove("cert_issuer_dn"); } }
         private string _explicitNullValueCertIssuerDn = default!;
 #endif
         /// <summary>The cert_issuer_ski property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertIssuerSki { get => _explicitNullValueCertIssuerSki; set { _explicitNullValueCertIssuerSki = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_ski"); else _explicitNullProperties?.Remove("cert_issuer_ski"); } }
+        public string? CertIssuerSki { get => _explicitNullValueCertIssuerSki; set { _explicitNullValueCertIssuerSki = value; AdditionalData?.Remove("cert_issuer_ski"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_ski"); else _explicitNullProperties?.Remove("cert_issuer_ski"); } }
         private string? _explicitNullValueCertIssuerSki = default!;
 #nullable restore
 #else
-        public string CertIssuerSki { get => _explicitNullValueCertIssuerSki; set { _explicitNullValueCertIssuerSki = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_ski"); else _explicitNullProperties?.Remove("cert_issuer_ski"); } }
+        public string CertIssuerSki { get => _explicitNullValueCertIssuerSki; set { _explicitNullValueCertIssuerSki = value; AdditionalData?.Remove("cert_issuer_ski"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_issuer_ski"); else _explicitNullProperties?.Remove("cert_issuer_ski"); } }
         private string _explicitNullValueCertIssuerSki = default!;
 #endif
         /// <summary>The cert_presented property</summary>
-        public bool? CertPresented { get => _explicitNullValueCertPresented; set { _explicitNullValueCertPresented = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_presented"); else _explicitNullProperties?.Remove("cert_presented"); } }
+        public bool? CertPresented { get => _explicitNullValueCertPresented; set { _explicitNullValueCertPresented = value; AdditionalData?.Remove("cert_presented"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_presented"); else _explicitNullProperties?.Remove("cert_presented"); } }
         private bool? _explicitNullValueCertPresented = default!;
         /// <summary>The cert_serial property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertSerial { get => _explicitNullValueCertSerial; set { _explicitNullValueCertSerial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_serial"); else _explicitNullProperties?.Remove("cert_serial"); } }
+        public string? CertSerial { get => _explicitNullValueCertSerial; set { _explicitNullValueCertSerial = value; AdditionalData?.Remove("cert_serial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_serial"); else _explicitNullProperties?.Remove("cert_serial"); } }
         private string? _explicitNullValueCertSerial = default!;
 #nullable restore
 #else
-        public string CertSerial { get => _explicitNullValueCertSerial; set { _explicitNullValueCertSerial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_serial"); else _explicitNullProperties?.Remove("cert_serial"); } }
+        public string CertSerial { get => _explicitNullValueCertSerial; set { _explicitNullValueCertSerial = value; AdditionalData?.Remove("cert_serial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_serial"); else _explicitNullProperties?.Remove("cert_serial"); } }
         private string _explicitNullValueCertSerial = default!;
 #endif
         /// <summary>

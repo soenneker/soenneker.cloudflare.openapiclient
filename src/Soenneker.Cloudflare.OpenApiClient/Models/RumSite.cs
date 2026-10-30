@@ -17,69 +17,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auto_install") is { } nullNodeAutoInstall && nullNodeAutoInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoInstall = null;
-            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
-            if (parseNode.GetChildNode("ruleset") is { } nullNodeRuleset && nullNodeRuleset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ruleset = null;
-            if (parseNode.GetChildNode("site_tag") is { } nullNodeSiteTag && nullNodeSiteTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteTag = null;
-            if (parseNode.GetChildNode("site_token") is { } nullNodeSiteToken && nullNodeSiteToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteToken = null;
-            if (parseNode.GetChildNode("snippet") is { } nullNodeSnippet && nullNodeSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Snippet = null;
+            if (parseNode.GetChildNode("auto_install") is null) { _explicitNullValueAutoInstall = default!; _explicitNullProperties?.Remove("auto_install"); }
+            else if (parseNode.GetChildNode("auto_install") is { } nullNodeAutoInstall && nullNodeAutoInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoInstall = null;
+            if (parseNode.GetChildNode("rules") is null) { _explicitNullValueRules = default!; _explicitNullProperties?.Remove("rules"); }
+            else if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("ruleset") is null) { _explicitNullValueRuleset = default!; _explicitNullProperties?.Remove("ruleset"); }
+            else if (parseNode.GetChildNode("ruleset") is { } nullNodeRuleset && nullNodeRuleset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ruleset = null;
+            if (parseNode.GetChildNode("site_tag") is null) { _explicitNullValueSiteTag = default!; _explicitNullProperties?.Remove("site_tag"); }
+            else if (parseNode.GetChildNode("site_tag") is { } nullNodeSiteTag && nullNodeSiteTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteTag = null;
+            if (parseNode.GetChildNode("site_token") is null) { _explicitNullValueSiteToken = default!; _explicitNullProperties?.Remove("site_token"); }
+            else if (parseNode.GetChildNode("site_token") is { } nullNodeSiteToken && nullNodeSiteToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteToken = null;
+            if (parseNode.GetChildNode("snippet") is null) { _explicitNullValueSnippet = default!; _explicitNullProperties?.Remove("snippet"); }
+            else if (parseNode.GetChildNode("snippet") is { } nullNodeSnippet && nullNodeSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Snippet = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.</summary>
-        public bool? AutoInstall { get => _explicitNullValueAutoInstall; set { _explicitNullValueAutoInstall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_install"); else _explicitNullProperties?.Remove("auto_install"); } }
+        public bool? AutoInstall { get => _explicitNullValueAutoInstall; set { _explicitNullValueAutoInstall = value; AdditionalData?.Remove("auto_install"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_install"); else _explicitNullProperties?.Remove("auto_install"); } }
         private bool? _explicitNullValueAutoInstall = default!;
         /// <summary>The created property</summary>
         public DateTimeOffset? Created { get; private set; }
         /// <summary>A list of rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRule>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRule>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRule>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRule> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRule> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRule> _explicitNullValueRules = default!;
 #endif
         /// <summary>The ruleset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RumRuleset? Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RumRuleset? Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; AdditionalData?.Remove("ruleset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RumRuleset? _explicitNullValueRuleset = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RumRuleset Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RumRuleset Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; AdditionalData?.Remove("ruleset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RumRuleset _explicitNullValueRuleset = default!;
 #endif
         /// <summary>The Web Analytics site identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
+        public string? SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; AdditionalData?.Remove("site_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
         private string? _explicitNullValueSiteTag = default!;
 #nullable restore
 #else
-        public string SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
+        public string SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; AdditionalData?.Remove("site_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
         private string _explicitNullValueSiteTag = default!;
 #endif
         /// <summary>The Web Analytics site token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteToken { get => _explicitNullValueSiteToken; set { _explicitNullValueSiteToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_token"); else _explicitNullProperties?.Remove("site_token"); } }
+        public string? SiteToken { get => _explicitNullValueSiteToken; set { _explicitNullValueSiteToken = value; AdditionalData?.Remove("site_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_token"); else _explicitNullProperties?.Remove("site_token"); } }
         private string? _explicitNullValueSiteToken = default!;
 #nullable restore
 #else
-        public string SiteToken { get => _explicitNullValueSiteToken; set { _explicitNullValueSiteToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_token"); else _explicitNullProperties?.Remove("site_token"); } }
+        public string SiteToken { get => _explicitNullValueSiteToken; set { _explicitNullValueSiteToken = value; AdditionalData?.Remove("site_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_token"); else _explicitNullProperties?.Remove("site_token"); } }
         private string _explicitNullValueSiteToken = default!;
 #endif
         /// <summary>Encoded JavaScript snippet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
+        public string? Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; AdditionalData?.Remove("snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
         private string? _explicitNullValueSnippet = default!;
 #nullable restore
 #else
-        public string Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
+        public string Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; AdditionalData?.Remove("snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
         private string _explicitNullValueSnippet = default!;
 #endif
         /// <summary>

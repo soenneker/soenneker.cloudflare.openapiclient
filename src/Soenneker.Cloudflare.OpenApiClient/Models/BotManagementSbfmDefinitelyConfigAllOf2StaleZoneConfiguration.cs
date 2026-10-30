@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fight_mode") is { } nullNodeFightMode && nullNodeFightMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FightMode = null;
-            if (parseNode.GetChildNode("sbfm_likely_automated") is { } nullNodeSbfmLikelyAutomated && nullNodeSbfmLikelyAutomated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SbfmLikelyAutomated = null;
+            if (parseNode.GetChildNode("fight_mode") is null) { _explicitNullValueFightMode = default!; _explicitNullProperties?.Remove("fight_mode"); }
+            else if (parseNode.GetChildNode("fight_mode") is { } nullNodeFightMode && nullNodeFightMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FightMode = null;
+            if (parseNode.GetChildNode("sbfm_likely_automated") is null) { _explicitNullValueSbfmLikelyAutomated = default!; _explicitNullProperties?.Remove("sbfm_likely_automated"); }
+            else if (parseNode.GetChildNode("sbfm_likely_automated") is { } nullNodeSbfmLikelyAutomated && nullNodeSbfmLikelyAutomated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SbfmLikelyAutomated = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that the zone&apos;s Bot Fight Mode is turned on.</summary>
-        public bool? FightMode { get => _explicitNullValueFightMode; set { _explicitNullValueFightMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fight_mode"); else _explicitNullProperties?.Remove("fight_mode"); } }
+        public bool? FightMode { get => _explicitNullValueFightMode; set { _explicitNullValueFightMode = value; AdditionalData?.Remove("fight_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fight_mode"); else _explicitNullProperties?.Remove("fight_mode"); } }
         private bool? _explicitNullValueFightMode = default!;
         /// <summary>Indicates that the zone&apos;s likely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
+        public string? SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; AdditionalData?.Remove("sbfm_likely_automated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
         private string? _explicitNullValueSbfmLikelyAutomated = default!;
 #nullable restore
 #else
-        public string SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
+        public string SbfmLikelyAutomated { get => _explicitNullValueSbfmLikelyAutomated; set { _explicitNullValueSbfmLikelyAutomated = value; AdditionalData?.Remove("sbfm_likely_automated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sbfm_likely_automated"); else _explicitNullProperties?.Remove("sbfm_likely_automated"); } }
         private string _explicitNullValueSbfmLikelyAutomated = default!;
 #endif
         /// <summary>

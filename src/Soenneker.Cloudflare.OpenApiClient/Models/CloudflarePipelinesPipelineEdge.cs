@@ -17,49 +17,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dest_id") is { } nullNodeDestId && nullNodeDestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestId = null;
-            if (parseNode.GetChildNode("edge_type") is { } nullNodeEdgeType && nullNodeEdgeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeType = null;
-            if (parseNode.GetChildNode("key_type") is { } nullNodeKeyType && nullNodeKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyType = null;
-            if (parseNode.GetChildNode("src_id") is { } nullNodeSrcId && nullNodeSrcId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcId = null;
-            if (parseNode.GetChildNode("value_type") is { } nullNodeValueType && nullNodeValueType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueType = null;
+            if (parseNode.GetChildNode("dest_id") is null) { _explicitNullValueDestId = default!; _explicitNullProperties?.Remove("dest_id"); }
+            else if (parseNode.GetChildNode("dest_id") is { } nullNodeDestId && nullNodeDestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestId = null;
+            if (parseNode.GetChildNode("edge_type") is null) { _explicitNullValueEdgeType = default!; _explicitNullProperties?.Remove("edge_type"); }
+            else if (parseNode.GetChildNode("edge_type") is { } nullNodeEdgeType && nullNodeEdgeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeType = null;
+            if (parseNode.GetChildNode("key_type") is null) { _explicitNullValueKeyType = default!; _explicitNullProperties?.Remove("key_type"); }
+            else if (parseNode.GetChildNode("key_type") is { } nullNodeKeyType && nullNodeKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyType = null;
+            if (parseNode.GetChildNode("src_id") is null) { _explicitNullValueSrcId = default!; _explicitNullProperties?.Remove("src_id"); }
+            else if (parseNode.GetChildNode("src_id") is { } nullNodeSrcId && nullNodeSrcId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcId = null;
+            if (parseNode.GetChildNode("value_type") is null) { _explicitNullValueValueType = default!; _explicitNullProperties?.Remove("value_type"); }
+            else if (parseNode.GetChildNode("value_type") is { } nullNodeValueType && nullNodeValueType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dest_id property</summary>
-        public int? DestId { get => _explicitNullValueDestId; set { _explicitNullValueDestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest_id"); else _explicitNullProperties?.Remove("dest_id"); } }
+        public int? DestId { get => _explicitNullValueDestId; set { _explicitNullValueDestId = value; AdditionalData?.Remove("dest_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest_id"); else _explicitNullProperties?.Remove("dest_id"); } }
         private int? _explicitNullValueDestId = default!;
         /// <summary>The edge_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeType { get => _explicitNullValueEdgeType; set { _explicitNullValueEdgeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_type"); else _explicitNullProperties?.Remove("edge_type"); } }
+        public string? EdgeType { get => _explicitNullValueEdgeType; set { _explicitNullValueEdgeType = value; AdditionalData?.Remove("edge_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_type"); else _explicitNullProperties?.Remove("edge_type"); } }
         private string? _explicitNullValueEdgeType = default!;
 #nullable restore
 #else
-        public string EdgeType { get => _explicitNullValueEdgeType; set { _explicitNullValueEdgeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_type"); else _explicitNullProperties?.Remove("edge_type"); } }
+        public string EdgeType { get => _explicitNullValueEdgeType; set { _explicitNullValueEdgeType = value; AdditionalData?.Remove("edge_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_type"); else _explicitNullProperties?.Remove("edge_type"); } }
         private string _explicitNullValueEdgeType = default!;
 #endif
         /// <summary>The key_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
+        public string? KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; AdditionalData?.Remove("key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
         private string? _explicitNullValueKeyType = default!;
 #nullable restore
 #else
-        public string KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
+        public string KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; AdditionalData?.Remove("key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
         private string _explicitNullValueKeyType = default!;
 #endif
         /// <summary>The src_id property</summary>
-        public int? SrcId { get => _explicitNullValueSrcId; set { _explicitNullValueSrcId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src_id"); else _explicitNullProperties?.Remove("src_id"); } }
+        public int? SrcId { get => _explicitNullValueSrcId; set { _explicitNullValueSrcId = value; AdditionalData?.Remove("src_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src_id"); else _explicitNullProperties?.Remove("src_id"); } }
         private int? _explicitNullValueSrcId = default!;
         /// <summary>The value_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_type"); else _explicitNullProperties?.Remove("value_type"); } }
+        public string? ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; AdditionalData?.Remove("value_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_type"); else _explicitNullProperties?.Remove("value_type"); } }
         private string? _explicitNullValueValueType = default!;
 #nullable restore
 #else
-        public string ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_type"); else _explicitNullProperties?.Remove("value_type"); } }
+        public string ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; AdditionalData?.Remove("value_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_type"); else _explicitNullProperties?.Remove("value_type"); } }
         private string _explicitNullValueValueType = default!;
 #endif
         /// <summary>

@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_weight") is { } nullNodeDefaultWeight && nullNodeDefaultWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultWeight = null;
-            if (parseNode.GetChildNode("pool_weights") is { } nullNodePoolWeights && nullNodePoolWeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolWeights = null;
+            if (parseNode.GetChildNode("default_weight") is null) { _explicitNullValueDefaultWeight = default!; _explicitNullProperties?.Remove("default_weight"); }
+            else if (parseNode.GetChildNode("default_weight") is { } nullNodeDefaultWeight && nullNodeDefaultWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultWeight = null;
+            if (parseNode.GetChildNode("pool_weights") is null) { _explicitNullValuePoolWeights = default!; _explicitNullProperties?.Remove("pool_weights"); }
+            else if (parseNode.GetChildNode("pool_weights") is { } nullNodePoolWeights && nullNodePoolWeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolWeights = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default weight for pools in the load balancer that are not specified in the pool_weights map.</summary>
-        public double? DefaultWeight { get => _explicitNullValueDefaultWeight; set { _explicitNullValueDefaultWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_weight"); else _explicitNullProperties?.Remove("default_weight"); } }
+        public double? DefaultWeight { get => _explicitNullValueDefaultWeight; set { _explicitNullValueDefaultWeight = value; AdditionalData?.Remove("default_weight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_weight"); else _explicitNullProperties?.Remove("default_weight"); } }
         private double? _explicitNullValueDefaultWeight = default!;
         /// <summary>A mapping of pool IDs to custom weights. The weight is relative to other pools in the load balancer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty? PoolWeights { get => _explicitNullValuePoolWeights; set { _explicitNullValuePoolWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_weights"); else _explicitNullProperties?.Remove("pool_weights"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty? PoolWeights { get => _explicitNullValuePoolWeights; set { _explicitNullValuePoolWeights = value; AdditionalData?.Remove("pool_weights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_weights"); else _explicitNullProperties?.Remove("pool_weights"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty? _explicitNullValuePoolWeights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty PoolWeights { get => _explicitNullValuePoolWeights; set { _explicitNullValuePoolWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_weights"); else _explicitNullProperties?.Remove("pool_weights"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty PoolWeights { get => _explicitNullValuePoolWeights; set { _explicitNullValuePoolWeights = value; AdditionalData?.Remove("pool_weights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_weights"); else _explicitNullProperties?.Remove("pool_weights"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty _explicitNullValuePoolWeights = default!;
 #endif
         /// <summary>

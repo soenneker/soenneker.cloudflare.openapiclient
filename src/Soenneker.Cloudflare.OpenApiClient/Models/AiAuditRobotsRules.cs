@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sitemaps") is { } nullNodeSitemaps && nullNodeSitemaps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sitemaps = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("userAgents") is { } nullNodeUserAgents && nullNodeUserAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgents = null;
+            if (parseNode.GetChildNode("sitemaps") is null) { _explicitNullValueSitemaps = default!; _explicitNullProperties?.Remove("sitemaps"); }
+            else if (parseNode.GetChildNode("sitemaps") is { } nullNodeSitemaps && nullNodeSitemaps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sitemaps = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("userAgents") is null) { _explicitNullValueUserAgents = default!; _explicitNullProperties?.Remove("userAgents"); }
+            else if (parseNode.GetChildNode("userAgents") is { } nullNodeUserAgents && nullNodeUserAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgents = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of sitemap URLs found in robots.txt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Sitemaps { get => _explicitNullValueSitemaps; set { _explicitNullValueSitemaps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sitemaps"); else _explicitNullProperties?.Remove("sitemaps"); } }
+        public List<string>? Sitemaps { get => _explicitNullValueSitemaps; set { _explicitNullValueSitemaps = value; AdditionalData?.Remove("sitemaps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sitemaps"); else _explicitNullProperties?.Remove("sitemaps"); } }
         private List<string>? _explicitNullValueSitemaps = default!;
 #nullable restore
 #else
-        public List<string> Sitemaps { get => _explicitNullValueSitemaps; set { _explicitNullValueSitemaps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sitemaps"); else _explicitNullProperties?.Remove("sitemaps"); } }
+        public List<string> Sitemaps { get => _explicitNullValueSitemaps; set { _explicitNullValueSitemaps = value; AdditionalData?.Remove("sitemaps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sitemaps"); else _explicitNullProperties?.Remove("sitemaps"); } }
         private List<string> _explicitNullValueSitemaps = default!;
 #endif
         /// <summary>HTTP status code from fetching the robots.txt file.</summary>
-        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private int? _explicitNullValueStatus = default!;
         /// <summary>Map of user-agent string to its parsed rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty? UserAgents { get => _explicitNullValueUserAgents; set { _explicitNullValueUserAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgents"); else _explicitNullProperties?.Remove("userAgents"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty? UserAgents { get => _explicitNullValueUserAgents; set { _explicitNullValueUserAgents = value; AdditionalData?.Remove("userAgents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgents"); else _explicitNullProperties?.Remove("userAgents"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty? _explicitNullValueUserAgents = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty UserAgents { get => _explicitNullValueUserAgents; set { _explicitNullValueUserAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgents"); else _explicitNullProperties?.Remove("userAgents"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty UserAgents { get => _explicitNullValueUserAgents; set { _explicitNullValueUserAgents = value; AdditionalData?.Remove("userAgents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgents"); else _explicitNullProperties?.Remove("userAgents"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiAuditRobotsRulesUserAgentsProperty _explicitNullValueUserAgents = default!;
 #endif
         /// <summary>

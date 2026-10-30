@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content_categories") is { } nullNodeContentCategories && nullNodeContentCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentCategories = null;
-            if (parseNode.GetChildNode("full_url") is { } nullNodeFullUrl && nullNodeFullUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullUrl = null;
-            if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
-            if (parseNode.GetChildNode("risk_type") is { } nullNodeRiskType && nullNodeRiskType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskType = null;
-            if (parseNode.GetChildNode("url_path") is { } nullNodeUrlPath && nullNodeUrlPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlPath = null;
+            if (parseNode.GetChildNode("content_categories") is null) { _explicitNullValueContentCategories = default!; _explicitNullProperties?.Remove("content_categories"); }
+            else if (parseNode.GetChildNode("content_categories") is { } nullNodeContentCategories && nullNodeContentCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentCategories = null;
+            if (parseNode.GetChildNode("full_url") is null) { _explicitNullValueFullUrl = default!; _explicitNullProperties?.Remove("full_url"); }
+            else if (parseNode.GetChildNode("full_url") is { } nullNodeFullUrl && nullNodeFullUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullUrl = null;
+            if (parseNode.GetChildNode("hostname") is null) { _explicitNullValueHostname = default!; _explicitNullProperties?.Remove("hostname"); }
+            else if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("risk_type") is null) { _explicitNullValueRiskType = default!; _explicitNullProperties?.Remove("risk_type"); }
+            else if (parseNode.GetChildNode("risk_type") is { } nullNodeRiskType && nullNodeRiskType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskType = null;
+            if (parseNode.GetChildNode("url_path") is null) { _explicitNullValueUrlPath = default!; _explicitNullProperties?.Remove("url_path"); }
+            else if (parseNode.GetChildNode("url_path") is { } nullNodeUrlPath && nullNodeUrlPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlPath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Content categories associated with this URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource>? ContentCategories { get => _explicitNullValueContentCategories; set { _explicitNullValueContentCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_categories"); else _explicitNullProperties?.Remove("content_categories"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource>? ContentCategories { get => _explicitNullValueContentCategories; set { _explicitNullValueContentCategories = value; AdditionalData?.Remove("content_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_categories"); else _explicitNullProperties?.Remove("content_categories"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource>? _explicitNullValueContentCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource> ContentCategories { get => _explicitNullValueContentCategories; set { _explicitNullValueContentCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_categories"); else _explicitNullProperties?.Remove("content_categories"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource> ContentCategories { get => _explicitNullValueContentCategories; set { _explicitNullValueContentCategories = value; AdditionalData?.Remove("content_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_categories"); else _explicitNullProperties?.Remove("content_categories"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource> _explicitNullValueContentCategories = default!;
 #endif
         /// <summary>The full URL that was looked up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullUrl { get => _explicitNullValueFullUrl; set { _explicitNullValueFullUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full_url"); else _explicitNullProperties?.Remove("full_url"); } }
+        public string? FullUrl { get => _explicitNullValueFullUrl; set { _explicitNullValueFullUrl = value; AdditionalData?.Remove("full_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full_url"); else _explicitNullProperties?.Remove("full_url"); } }
         private string? _explicitNullValueFullUrl = default!;
 #nullable restore
 #else
-        public string FullUrl { get => _explicitNullValueFullUrl; set { _explicitNullValueFullUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full_url"); else _explicitNullProperties?.Remove("full_url"); } }
+        public string FullUrl { get => _explicitNullValueFullUrl; set { _explicitNullValueFullUrl = value; AdditionalData?.Remove("full_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full_url"); else _explicitNullProperties?.Remove("full_url"); } }
         private string _explicitNullValueFullUrl = default!;
 #endif
         /// <summary>The hostname of the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string? _explicitNullValueHostname = default!;
 #nullable restore
 #else
-        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>Security risk types associated with this URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource>? RiskType { get => _explicitNullValueRiskType; set { _explicitNullValueRiskType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_type"); else _explicitNullProperties?.Remove("risk_type"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource>? RiskType { get => _explicitNullValueRiskType; set { _explicitNullValueRiskType = value; AdditionalData?.Remove("risk_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_type"); else _explicitNullProperties?.Remove("risk_type"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource>? _explicitNullValueRiskType = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource> RiskType { get => _explicitNullValueRiskType; set { _explicitNullValueRiskType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_type"); else _explicitNullProperties?.Remove("risk_type"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource> RiskType { get => _explicitNullValueRiskType; set { _explicitNullValueRiskType = value; AdditionalData?.Remove("risk_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_type"); else _explicitNullProperties?.Remove("risk_type"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligenceCategoryWithSource> _explicitNullValueRiskType = default!;
 #endif
         /// <summary>The path component of the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UrlPath { get => _explicitNullValueUrlPath; set { _explicitNullValueUrlPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_path"); else _explicitNullProperties?.Remove("url_path"); } }
+        public string? UrlPath { get => _explicitNullValueUrlPath; set { _explicitNullValueUrlPath = value; AdditionalData?.Remove("url_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_path"); else _explicitNullProperties?.Remove("url_path"); } }
         private string? _explicitNullValueUrlPath = default!;
 #nullable restore
 #else
-        public string UrlPath { get => _explicitNullValueUrlPath; set { _explicitNullValueUrlPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_path"); else _explicitNullProperties?.Remove("url_path"); } }
+        public string UrlPath { get => _explicitNullValueUrlPath; set { _explicitNullValueUrlPath = value; AdditionalData?.Remove("url_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_path"); else _explicitNullProperties?.Remove("url_path"); } }
         private string _explicitNullValueUrlPath = default!;
 #endif
         /// <summary>

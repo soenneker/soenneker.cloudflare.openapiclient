@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attachment_asset_ids") is { } nullNodeAttachmentAssetIds && nullNodeAttachmentAssetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachmentAssetIds = null;
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("publish") is { } nullNodePublish && nullNodePublish.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Publish = null;
-            if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
+            if (parseNode.GetChildNode("attachment_asset_ids") is null) { _explicitNullValueAttachmentAssetIds = default!; _explicitNullProperties?.Remove("attachment_asset_ids"); }
+            else if (parseNode.GetChildNode("attachment_asset_ids") is { } nullNodeAttachmentAssetIds && nullNodeAttachmentAssetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachmentAssetIds = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("publish") is null) { _explicitNullValuePublish = default!; _explicitNullProperties?.Remove("publish"); }
+            else if (parseNode.GetChildNode("publish") is { } nullNodePublish && nullNodePublish.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Publish = null;
+            if (parseNode.GetChildNode("tlp") is null) { _explicitNullValueTlp = default!; _explicitNullProperties?.Remove("tlp"); }
+            else if (parseNode.GetChildNode("tlp") is { } nullNodeTlp && nullNodeTlp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tlp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The attachment_asset_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttachmentAssetIds { get => _explicitNullValueAttachmentAssetIds; set { _explicitNullValueAttachmentAssetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_asset_ids"); else _explicitNullProperties?.Remove("attachment_asset_ids"); } }
+        public List<string>? AttachmentAssetIds { get => _explicitNullValueAttachmentAssetIds; set { _explicitNullValueAttachmentAssetIds = value; AdditionalData?.Remove("attachment_asset_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_asset_ids"); else _explicitNullProperties?.Remove("attachment_asset_ids"); } }
         private List<string>? _explicitNullValueAttachmentAssetIds = default!;
 #nullable restore
 #else
-        public List<string> AttachmentAssetIds { get => _explicitNullValueAttachmentAssetIds; set { _explicitNullValueAttachmentAssetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_asset_ids"); else _explicitNullProperties?.Remove("attachment_asset_ids"); } }
+        public List<string> AttachmentAssetIds { get => _explicitNullValueAttachmentAssetIds; set { _explicitNullValueAttachmentAssetIds = value; AdditionalData?.Remove("attachment_asset_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_asset_ids"); else _explicitNullProperties?.Remove("attachment_asset_ids"); } }
         private List<string> _explicitNullValueAttachmentAssetIds = default!;
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string _explicitNullValueContent = default!;
 #endif
         /// <summary>The publish property</summary>
-        public bool? Publish { get => _explicitNullValuePublish; set { _explicitNullValuePublish = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish"); else _explicitNullProperties?.Remove("publish"); } }
+        public bool? Publish { get => _explicitNullValuePublish; set { _explicitNullValuePublish = value; AdditionalData?.Remove("publish"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish"); else _explicitNullProperties?.Remove("publish"); } }
         private bool? _explicitNullValuePublish = default!;
         /// <summary>The tlp property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutMessageUpdateRequestTlp? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutMessageUpdateRequestTlp? Tlp { get => _explicitNullValueTlp; set { _explicitNullValueTlp = value; AdditionalData?.Remove("tlp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tlp"); else _explicitNullProperties?.Remove("tlp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PutMessageUpdateRequestTlp? _explicitNullValueTlp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutMessageUpdateRequest"/> and sets the default values.
@@ -79,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "attachment_asset_ids", n => { AttachmentAssetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "publish", n => { Publish = n.GetBoolValue(); } },
-                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutMessageUpdateRequestTlp>(); } },
+                { "tlp", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutMessageUpdateRequestTlp>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTlp = default; _explicitNullProperties?.Remove("tlp"); AdditionalData["tlp"] = unknown; } else { Tlp = parsed; AdditionalData.Remove("tlp"); } } },
             };
         }
         /// <summary>

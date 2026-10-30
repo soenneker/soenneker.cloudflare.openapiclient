@@ -17,93 +17,102 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificateRecordType") is { } nullNodeCertificateRecordType && nullNodeCertificateRecordType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateRecordType = null;
-            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
-            if (parseNode.GetChildNode("countryName") is { } nullNodeCountryName && nullNodeCountryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryName = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
-            if (parseNode.GetChildNode("parentName") is { } nullNodeParentName && nullNodeParentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentName = null;
-            if (parseNode.GetChildNode("parentSha256Fingerprint") is { } nullNodeParentSha256Fingerprint && nullNodeParentSha256Fingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentSha256Fingerprint = null;
-            if (parseNode.GetChildNode("revocationStatus") is { } nullNodeRevocationStatus && nullNodeRevocationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevocationStatus = null;
-            if (parseNode.GetChildNode("sha256Fingerprint") is { } nullNodeSha256Fingerprint && nullNodeSha256Fingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha256Fingerprint = null;
+            if (parseNode.GetChildNode("certificateRecordType") is null) { _explicitNullValueCertificateRecordType = default!; _explicitNullProperties?.Remove("certificateRecordType"); }
+            else if (parseNode.GetChildNode("certificateRecordType") is { } nullNodeCertificateRecordType && nullNodeCertificateRecordType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateRecordType = null;
+            if (parseNode.GetChildNode("country") is null) { _explicitNullValueCountry = default!; _explicitNullProperties?.Remove("country"); }
+            else if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("countryName") is null) { _explicitNullValueCountryName = default!; _explicitNullProperties?.Remove("countryName"); }
+            else if (parseNode.GetChildNode("countryName") is { } nullNodeCountryName && nullNodeCountryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryName = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("parentName") is null) { _explicitNullValueParentName = default!; _explicitNullProperties?.Remove("parentName"); }
+            else if (parseNode.GetChildNode("parentName") is { } nullNodeParentName && nullNodeParentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentName = null;
+            if (parseNode.GetChildNode("parentSha256Fingerprint") is null) { _explicitNullValueParentSha256Fingerprint = default!; _explicitNullProperties?.Remove("parentSha256Fingerprint"); }
+            else if (parseNode.GetChildNode("parentSha256Fingerprint") is { } nullNodeParentSha256Fingerprint && nullNodeParentSha256Fingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentSha256Fingerprint = null;
+            if (parseNode.GetChildNode("revocationStatus") is null) { _explicitNullValueRevocationStatus = default!; _explicitNullProperties?.Remove("revocationStatus"); }
+            else if (parseNode.GetChildNode("revocationStatus") is { } nullNodeRevocationStatus && nullNodeRevocationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevocationStatus = null;
+            if (parseNode.GetChildNode("sha256Fingerprint") is null) { _explicitNullValueSha256Fingerprint = default!; _explicitNullProperties?.Remove("sha256Fingerprint"); }
+            else if (parseNode.GetChildNode("sha256Fingerprint") is { } nullNodeSha256Fingerprint && nullNodeSha256Fingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha256Fingerprint = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the type of certificate in the trust chain.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemCertificateRecordType? CertificateRecordType { get => _explicitNullValueCertificateRecordType; set { _explicitNullValueCertificateRecordType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateRecordType"); else _explicitNullProperties?.Remove("certificateRecordType"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemCertificateRecordType? CertificateRecordType { get => _explicitNullValueCertificateRecordType; set { _explicitNullValueCertificateRecordType = value; AdditionalData?.Remove("certificateRecordType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateRecordType"); else _explicitNullProperties?.Remove("certificateRecordType"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemCertificateRecordType? _explicitNullValueCertificateRecordType = default!;
         /// <summary>The two-letter ISO country code where the CA organization is based.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; AdditionalData?.Remove("country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
         private string? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; AdditionalData?.Remove("country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
         private string _explicitNullValueCountry = default!;
 #endif
         /// <summary>The full country name corresponding to the country code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryName { get => _explicitNullValueCountryName; set { _explicitNullValueCountryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryName"); else _explicitNullProperties?.Remove("countryName"); } }
+        public string? CountryName { get => _explicitNullValueCountryName; set { _explicitNullValueCountryName = value; AdditionalData?.Remove("countryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryName"); else _explicitNullProperties?.Remove("countryName"); } }
         private string? _explicitNullValueCountryName = default!;
 #nullable restore
 #else
-        public string CountryName { get => _explicitNullValueCountryName; set { _explicitNullValueCountryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryName"); else _explicitNullProperties?.Remove("countryName"); } }
+        public string CountryName { get => _explicitNullValueCountryName; set { _explicitNullValueCountryName = value; AdditionalData?.Remove("countryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryName"); else _explicitNullProperties?.Remove("countryName"); } }
         private string _explicitNullValueCountryName = default!;
 #endif
         /// <summary>The full name of the certificate authority (CA).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The organization that owns and operates the CA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private string? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>The name of the parent/root certificate authority that issued this intermediate certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentName { get => _explicitNullValueParentName; set { _explicitNullValueParentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentName"); else _explicitNullProperties?.Remove("parentName"); } }
+        public string? ParentName { get => _explicitNullValueParentName; set { _explicitNullValueParentName = value; AdditionalData?.Remove("parentName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentName"); else _explicitNullProperties?.Remove("parentName"); } }
         private string? _explicitNullValueParentName = default!;
 #nullable restore
 #else
-        public string ParentName { get => _explicitNullValueParentName; set { _explicitNullValueParentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentName"); else _explicitNullProperties?.Remove("parentName"); } }
+        public string ParentName { get => _explicitNullValueParentName; set { _explicitNullValueParentName = value; AdditionalData?.Remove("parentName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentName"); else _explicitNullProperties?.Remove("parentName"); } }
         private string _explicitNullValueParentName = default!;
 #endif
         /// <summary>The SHA-256 fingerprint of the parent certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentSha256Fingerprint { get => _explicitNullValueParentSha256Fingerprint; set { _explicitNullValueParentSha256Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentSha256Fingerprint"); else _explicitNullProperties?.Remove("parentSha256Fingerprint"); } }
+        public string? ParentSha256Fingerprint { get => _explicitNullValueParentSha256Fingerprint; set { _explicitNullValueParentSha256Fingerprint = value; AdditionalData?.Remove("parentSha256Fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentSha256Fingerprint"); else _explicitNullProperties?.Remove("parentSha256Fingerprint"); } }
         private string? _explicitNullValueParentSha256Fingerprint = default!;
 #nullable restore
 #else
-        public string ParentSha256Fingerprint { get => _explicitNullValueParentSha256Fingerprint; set { _explicitNullValueParentSha256Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentSha256Fingerprint"); else _explicitNullProperties?.Remove("parentSha256Fingerprint"); } }
+        public string ParentSha256Fingerprint { get => _explicitNullValueParentSha256Fingerprint; set { _explicitNullValueParentSha256Fingerprint = value; AdditionalData?.Remove("parentSha256Fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentSha256Fingerprint"); else _explicitNullProperties?.Remove("parentSha256Fingerprint"); } }
         private string _explicitNullValueParentSha256Fingerprint = default!;
 #endif
         /// <summary>The current revocation status of a Certificate Authority (CA) certificate.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemRevocationStatus? RevocationStatus { get => _explicitNullValueRevocationStatus; set { _explicitNullValueRevocationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocationStatus"); else _explicitNullProperties?.Remove("revocationStatus"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemRevocationStatus? RevocationStatus { get => _explicitNullValueRevocationStatus; set { _explicitNullValueRevocationStatus = value; AdditionalData?.Remove("revocationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocationStatus"); else _explicitNullProperties?.Remove("revocationStatus"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemRevocationStatus? _explicitNullValueRevocationStatus = default!;
         /// <summary>The SHA-256 fingerprint of the intermediate certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha256Fingerprint { get => _explicitNullValueSha256Fingerprint; set { _explicitNullValueSha256Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256Fingerprint"); else _explicitNullProperties?.Remove("sha256Fingerprint"); } }
+        public string? Sha256Fingerprint { get => _explicitNullValueSha256Fingerprint; set { _explicitNullValueSha256Fingerprint = value; AdditionalData?.Remove("sha256Fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256Fingerprint"); else _explicitNullProperties?.Remove("sha256Fingerprint"); } }
         private string? _explicitNullValueSha256Fingerprint = default!;
 #nullable restore
 #else
-        public string Sha256Fingerprint { get => _explicitNullValueSha256Fingerprint; set { _explicitNullValueSha256Fingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256Fingerprint"); else _explicitNullProperties?.Remove("sha256Fingerprint"); } }
+        public string Sha256Fingerprint { get => _explicitNullValueSha256Fingerprint; set { _explicitNullValueSha256Fingerprint = value; AdditionalData?.Remove("sha256Fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha256Fingerprint"); else _explicitNullProperties?.Remove("sha256Fingerprint"); } }
         private string _explicitNullValueSha256Fingerprint = default!;
 #endif
         /// <summary>
@@ -131,14 +140,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "certificateRecordType", n => { CertificateRecordType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemCertificateRecordType>(); } },
+                { "certificateRecordType", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemCertificateRecordType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCertificateRecordType = default; _explicitNullProperties?.Remove("certificateRecordType"); AdditionalData["certificateRecordType"] = unknown; } else { CertificateRecordType = parsed; AdditionalData.Remove("certificateRecordType"); } } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "countryName", n => { CountryName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "parentName", n => { ParentName = n.GetStringValue(); } },
                 { "parentSha256Fingerprint", n => { ParentSha256Fingerprint = n.GetStringValue(); } },
-                { "revocationStatus", n => { RevocationStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemRevocationStatus>(); } },
+                { "revocationStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200ResponseResultCertificateAuthoritiesItemRevocationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRevocationStatus = default; _explicitNullProperties?.Remove("revocationStatus"); AdditionalData["revocationStatus"] = unknown; } else { RevocationStatus = parsed; AdditionalData.Remove("revocationStatus"); } } },
                 { "sha256Fingerprint", n => { Sha256Fingerprint = n.GetStringValue(); } },
             };
         }

@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_state") is { } nullNodeAuthState && nullNodeAuthState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthState = null;
-            if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
-            if (parseNode.GetChildNode("countOperator") is { } nullNodeCountOperator && nullNodeCountOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountOperator = null;
-            if (parseNode.GetChildNode("issue_count") is { } nullNodeIssueCount && nullNodeIssueCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueCount = null;
+            if (parseNode.GetChildNode("auth_state") is null) { _explicitNullValueAuthState = default!; _explicitNullProperties?.Remove("auth_state"); }
+            else if (parseNode.GetChildNode("auth_state") is { } nullNodeAuthState && nullNodeAuthState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthState = null;
+            if (parseNode.GetChildNode("connection_id") is null) { _explicitNullValueConnectionId = default!; _explicitNullProperties?.Remove("connection_id"); }
+            else if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("countOperator") is null) { _explicitNullValueCountOperator = default!; _explicitNullProperties?.Remove("countOperator"); }
+            else if (parseNode.GetChildNode("countOperator") is { } nullNodeCountOperator && nullNodeCountOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountOperator = null;
+            if (parseNode.GetChildNode("issue_count") is null) { _explicitNullValueIssueCount = default!; _explicitNullProperties?.Remove("issue_count"); }
+            else if (parseNode.GetChildNode("issue_count") is { } nullNodeIssueCount && nullNodeIssueCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,36 +32,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The set of Kolide device authentication states that pass the posture check. Device must match one of the specified states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?>? AuthState { get => _explicitNullValueAuthState; set { _explicitNullValueAuthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_state"); else _explicitNullProperties?.Remove("auth_state"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?>? AuthState { get => _explicitNullValueAuthState; set { _explicitNullValueAuthState = value; AdditionalData?.Remove("auth_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_state"); else _explicitNullProperties?.Remove("auth_state"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?>? _explicitNullValueAuthState = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?> AuthState { get => _explicitNullValueAuthState; set { _explicitNullValueAuthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_state"); else _explicitNullProperties?.Remove("auth_state"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?> AuthState { get => _explicitNullValueAuthState; set { _explicitNullValueAuthState = value; AdditionalData?.Remove("auth_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_state"); else _explicitNullProperties?.Remove("auth_state"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?> _explicitNullValueAuthState = default!;
 #endif
         /// <summary>Posture Integration ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
         private string? _explicitNullValueConnectionId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
         private string _explicitNullValueConnectionId = default!;
 #endif
         /// <summary>Count Operator.</summary>
 #nullable enable
-        public string? CountOperator { get => _explicitNullValueCountOperator; set { _explicitNullValueCountOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countOperator"); else _explicitNullProperties?.Remove("countOperator"); } }
+        public string? CountOperator { get => _explicitNullValueCountOperator; set { _explicitNullValueCountOperator = value; AdditionalData?.Remove("countOperator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countOperator"); else _explicitNullProperties?.Remove("countOperator"); } }
         private string? _explicitNullValueCountOperator = default!;
 #nullable restore
         /// <summary>The Number of Issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueCount { get => _explicitNullValueIssueCount; set { _explicitNullValueIssueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_count"); else _explicitNullProperties?.Remove("issue_count"); } }
+        public string? IssueCount { get => _explicitNullValueIssueCount; set { _explicitNullValueIssueCount = value; AdditionalData?.Remove("issue_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_count"); else _explicitNullProperties?.Remove("issue_count"); } }
         private string? _explicitNullValueIssueCount = default!;
 #nullable restore
 #else
-        public string IssueCount { get => _explicitNullValueIssueCount; set { _explicitNullValueIssueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_count"); else _explicitNullProperties?.Remove("issue_count"); } }
+        public string IssueCount { get => _explicitNullValueIssueCount; set { _explicitNullValueIssueCount = value; AdditionalData?.Remove("issue_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_count"); else _explicitNullProperties?.Remove("issue_count"); } }
         private string _explicitNullValueIssueCount = default!;
 #endif
         /// <summary>

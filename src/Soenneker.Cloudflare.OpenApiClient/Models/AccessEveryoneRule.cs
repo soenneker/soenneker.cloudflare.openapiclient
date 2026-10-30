@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("everyone") is { } nullNodeEveryone && nullNodeEveryone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Everyone = null;
+            if (parseNode.GetChildNode("everyone") is null) { _explicitNullValueEveryone = default!; _explicitNullProperties?.Remove("everyone"); }
+            else if (parseNode.GetChildNode("everyone") is { } nullNodeEveryone && nullNodeEveryone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Everyone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An empty object which matches on all users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty? Everyone { get => _explicitNullValueEveryone; set { _explicitNullValueEveryone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("everyone"); else _explicitNullProperties?.Remove("everyone"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty? Everyone { get => _explicitNullValueEveryone; set { _explicitNullValueEveryone = value; AdditionalData?.Remove("everyone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("everyone"); else _explicitNullProperties?.Remove("everyone"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty? _explicitNullValueEveryone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty Everyone { get => _explicitNullValueEveryone; set { _explicitNullValueEveryone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("everyone"); else _explicitNullProperties?.Remove("everyone"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty Everyone { get => _explicitNullValueEveryone; set { _explicitNullValueEveryone = value; AdditionalData?.Remove("everyone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("everyone"); else _explicitNullProperties?.Remove("everyone"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty _explicitNullValueEveryone = default!;
 #endif
         /// <summary>

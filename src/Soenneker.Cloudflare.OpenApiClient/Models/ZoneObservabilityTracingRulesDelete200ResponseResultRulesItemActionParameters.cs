@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sampling_ratio") is { } nullNodeSamplingRatio && nullNodeSamplingRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamplingRatio = null;
+            if (parseNode.GetChildNode("sampling_ratio") is null) { _explicitNullValueSamplingRatio = default!; _explicitNullProperties?.Remove("sampling_ratio"); }
+            else if (parseNode.GetChildNode("sampling_ratio") is { } nullNodeSamplingRatio && nullNodeSamplingRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamplingRatio = null;
         }
 
         /// <summary>The ratio of requests sampled for tracing, from 0 to 1.</summary>

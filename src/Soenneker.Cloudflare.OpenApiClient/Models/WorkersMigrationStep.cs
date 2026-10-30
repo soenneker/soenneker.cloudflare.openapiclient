@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deleted_classes") is { } nullNodeDeletedClasses && nullNodeDeletedClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedClasses = null;
-            if (parseNode.GetChildNode("new_classes") is { } nullNodeNewClasses && nullNodeNewClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewClasses = null;
-            if (parseNode.GetChildNode("new_sqlite_classes") is { } nullNodeNewSqliteClasses && nullNodeNewSqliteClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewSqliteClasses = null;
-            if (parseNode.GetChildNode("renamed_classes") is { } nullNodeRenamedClasses && nullNodeRenamedClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenamedClasses = null;
-            if (parseNode.GetChildNode("transferred_classes") is { } nullNodeTransferredClasses && nullNodeTransferredClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferredClasses = null;
+            if (parseNode.GetChildNode("deleted_classes") is null) { _explicitNullValueDeletedClasses = default!; _explicitNullProperties?.Remove("deleted_classes"); }
+            else if (parseNode.GetChildNode("deleted_classes") is { } nullNodeDeletedClasses && nullNodeDeletedClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedClasses = null;
+            if (parseNode.GetChildNode("new_classes") is null) { _explicitNullValueNewClasses = default!; _explicitNullProperties?.Remove("new_classes"); }
+            else if (parseNode.GetChildNode("new_classes") is { } nullNodeNewClasses && nullNodeNewClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewClasses = null;
+            if (parseNode.GetChildNode("new_sqlite_classes") is null) { _explicitNullValueNewSqliteClasses = default!; _explicitNullProperties?.Remove("new_sqlite_classes"); }
+            else if (parseNode.GetChildNode("new_sqlite_classes") is { } nullNodeNewSqliteClasses && nullNodeNewSqliteClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewSqliteClasses = null;
+            if (parseNode.GetChildNode("renamed_classes") is null) { _explicitNullValueRenamedClasses = default!; _explicitNullProperties?.Remove("renamed_classes"); }
+            else if (parseNode.GetChildNode("renamed_classes") is { } nullNodeRenamedClasses && nullNodeRenamedClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenamedClasses = null;
+            if (parseNode.GetChildNode("transferred_classes") is null) { _explicitNullValueTransferredClasses = default!; _explicitNullProperties?.Remove("transferred_classes"); }
+            else if (parseNode.GetChildNode("transferred_classes") is { } nullNodeTransferredClasses && nullNodeTransferredClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferredClasses = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of classes to delete Durable Object namespaces from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeletedClasses { get => _explicitNullValueDeletedClasses; set { _explicitNullValueDeletedClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_classes"); else _explicitNullProperties?.Remove("deleted_classes"); } }
+        public List<string>? DeletedClasses { get => _explicitNullValueDeletedClasses; set { _explicitNullValueDeletedClasses = value; AdditionalData?.Remove("deleted_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_classes"); else _explicitNullProperties?.Remove("deleted_classes"); } }
         private List<string>? _explicitNullValueDeletedClasses = default!;
 #nullable restore
 #else
-        public List<string> DeletedClasses { get => _explicitNullValueDeletedClasses; set { _explicitNullValueDeletedClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_classes"); else _explicitNullProperties?.Remove("deleted_classes"); } }
+        public List<string> DeletedClasses { get => _explicitNullValueDeletedClasses; set { _explicitNullValueDeletedClasses = value; AdditionalData?.Remove("deleted_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_classes"); else _explicitNullProperties?.Remove("deleted_classes"); } }
         private List<string> _explicitNullValueDeletedClasses = default!;
 #endif
         /// <summary>A list of classes to create Durable Object namespaces from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NewClasses { get => _explicitNullValueNewClasses; set { _explicitNullValueNewClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_classes"); else _explicitNullProperties?.Remove("new_classes"); } }
+        public List<string>? NewClasses { get => _explicitNullValueNewClasses; set { _explicitNullValueNewClasses = value; AdditionalData?.Remove("new_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_classes"); else _explicitNullProperties?.Remove("new_classes"); } }
         private List<string>? _explicitNullValueNewClasses = default!;
 #nullable restore
 #else
-        public List<string> NewClasses { get => _explicitNullValueNewClasses; set { _explicitNullValueNewClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_classes"); else _explicitNullProperties?.Remove("new_classes"); } }
+        public List<string> NewClasses { get => _explicitNullValueNewClasses; set { _explicitNullValueNewClasses = value; AdditionalData?.Remove("new_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_classes"); else _explicitNullProperties?.Remove("new_classes"); } }
         private List<string> _explicitNullValueNewClasses = default!;
 #endif
         /// <summary>A list of classes to create Durable Object namespaces with SQLite from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NewSqliteClasses { get => _explicitNullValueNewSqliteClasses; set { _explicitNullValueNewSqliteClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_sqlite_classes"); else _explicitNullProperties?.Remove("new_sqlite_classes"); } }
+        public List<string>? NewSqliteClasses { get => _explicitNullValueNewSqliteClasses; set { _explicitNullValueNewSqliteClasses = value; AdditionalData?.Remove("new_sqlite_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_sqlite_classes"); else _explicitNullProperties?.Remove("new_sqlite_classes"); } }
         private List<string>? _explicitNullValueNewSqliteClasses = default!;
 #nullable restore
 #else
-        public List<string> NewSqliteClasses { get => _explicitNullValueNewSqliteClasses; set { _explicitNullValueNewSqliteClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_sqlite_classes"); else _explicitNullProperties?.Remove("new_sqlite_classes"); } }
+        public List<string> NewSqliteClasses { get => _explicitNullValueNewSqliteClasses; set { _explicitNullValueNewSqliteClasses = value; AdditionalData?.Remove("new_sqlite_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_sqlite_classes"); else _explicitNullProperties?.Remove("new_sqlite_classes"); } }
         private List<string> _explicitNullValueNewSqliteClasses = default!;
 #endif
         /// <summary>A list of classes with Durable Object namespaces that were renamed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepRenamedClassesItem>? RenamedClasses { get => _explicitNullValueRenamedClasses; set { _explicitNullValueRenamedClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed_classes"); else _explicitNullProperties?.Remove("renamed_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepRenamedClassesItem>? RenamedClasses { get => _explicitNullValueRenamedClasses; set { _explicitNullValueRenamedClasses = value; AdditionalData?.Remove("renamed_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed_classes"); else _explicitNullProperties?.Remove("renamed_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepRenamedClassesItem>? _explicitNullValueRenamedClasses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepRenamedClassesItem> RenamedClasses { get => _explicitNullValueRenamedClasses; set { _explicitNullValueRenamedClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed_classes"); else _explicitNullProperties?.Remove("renamed_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepRenamedClassesItem> RenamedClasses { get => _explicitNullValueRenamedClasses; set { _explicitNullValueRenamedClasses = value; AdditionalData?.Remove("renamed_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed_classes"); else _explicitNullProperties?.Remove("renamed_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepRenamedClassesItem> _explicitNullValueRenamedClasses = default!;
 #endif
         /// <summary>A list of transfers for Durable Object namespaces from a different Worker and class to a class defined in this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepTransferredClassesItem>? TransferredClasses { get => _explicitNullValueTransferredClasses; set { _explicitNullValueTransferredClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferred_classes"); else _explicitNullProperties?.Remove("transferred_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepTransferredClassesItem>? TransferredClasses { get => _explicitNullValueTransferredClasses; set { _explicitNullValueTransferredClasses = value; AdditionalData?.Remove("transferred_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferred_classes"); else _explicitNullProperties?.Remove("transferred_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepTransferredClassesItem>? _explicitNullValueTransferredClasses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepTransferredClassesItem> TransferredClasses { get => _explicitNullValueTransferredClasses; set { _explicitNullValueTransferredClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferred_classes"); else _explicitNullProperties?.Remove("transferred_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepTransferredClassesItem> TransferredClasses { get => _explicitNullValueTransferredClasses; set { _explicitNullValueTransferredClasses = value; AdditionalData?.Remove("transferred_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferred_classes"); else _explicitNullProperties?.Remove("transferred_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStepTransferredClassesItem> _explicitNullValueTransferredClasses = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hold_after") is { } nullNodeHoldAfter && nullNodeHoldAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoldAfter = null;
-            if (parseNode.GetChildNode("include_subdomains") is { } nullNodeIncludeSubdomains && nullNodeIncludeSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSubdomains = null;
+            if (parseNode.GetChildNode("hold_after") is null) { _explicitNullValueHoldAfter = default!; _explicitNullProperties?.Remove("hold_after"); }
+            else if (parseNode.GetChildNode("hold_after") is { } nullNodeHoldAfter && nullNodeHoldAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoldAfter = null;
+            if (parseNode.GetChildNode("include_subdomains") is null) { _explicitNullValueIncludeSubdomains = default!; _explicitNullProperties?.Remove("include_subdomains"); }
+            else if (parseNode.GetChildNode("include_subdomains") is { } nullNodeIncludeSubdomains && nullNodeIncludeSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSubdomains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If `hold_after` is provided and future-dated, the hold will be temporarily disabled,then automatically re-enabled by the system at the time specifiedin this RFC3339-formatted timestamp. A past-dated `hold_after` value will haveno effect on an existing, enabled hold. Providing an empty string will set its valueto the current time. Providing `null` will disable the hold indefinitely.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
+        public string? HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; AdditionalData?.Remove("hold_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
         private string? _explicitNullValueHoldAfter = default!;
 #nullable restore
 #else
-        public string HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
+        public string HoldAfter { get => _explicitNullValueHoldAfter; set { _explicitNullValueHoldAfter = value; AdditionalData?.Remove("hold_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_after"); else _explicitNullProperties?.Remove("hold_after"); } }
         private string _explicitNullValueHoldAfter = default!;
 #endif
         /// <summary>If `true`, the zone hold will extend to block any subdomain of the given zone, as wellas SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname&apos;example.com&apos; and include_subdomains=true will block &apos;example.com&apos;,&apos;staging.example.com&apos;, &apos;api.staging.example.com&apos;, etc.</summary>
-        public bool? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
+        public bool? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; AdditionalData?.Remove("include_subdomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_subdomains"); else _explicitNullProperties?.Remove("include_subdomains"); } }
         private bool? _explicitNullValueIncludeSubdomains = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest"/> and sets the default values.

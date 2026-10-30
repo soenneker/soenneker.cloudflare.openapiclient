@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_id_characteristics") is { } nullNodeAuthIdCharacteristics && nullNodeAuthIdCharacteristics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthIdCharacteristics = null;
+            if (parseNode.GetChildNode("auth_id_characteristics") is null) { _explicitNullValueAuthIdCharacteristics = default!; _explicitNullProperties?.Remove("auth_id_characteristics"); }
+            else if (parseNode.GetChildNode("auth_id_characteristics") is { } nullNodeAuthIdCharacteristics && nullNodeAuthIdCharacteristics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthIdCharacteristics = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The auth_id_characteristics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAuthIdCharacteristicsItem>? AuthIdCharacteristics { get => _explicitNullValueAuthIdCharacteristics; set { _explicitNullValueAuthIdCharacteristics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_id_characteristics"); else _explicitNullProperties?.Remove("auth_id_characteristics"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAuthIdCharacteristicsItem>? AuthIdCharacteristics { get => _explicitNullValueAuthIdCharacteristics; set { _explicitNullValueAuthIdCharacteristics = value; AdditionalData?.Remove("auth_id_characteristics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_id_characteristics"); else _explicitNullProperties?.Remove("auth_id_characteristics"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAuthIdCharacteristicsItem>? _explicitNullValueAuthIdCharacteristics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAuthIdCharacteristicsItem> AuthIdCharacteristics { get => _explicitNullValueAuthIdCharacteristics; set { _explicitNullValueAuthIdCharacteristics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_id_characteristics"); else _explicitNullProperties?.Remove("auth_id_characteristics"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAuthIdCharacteristicsItem> AuthIdCharacteristics { get => _explicitNullValueAuthIdCharacteristics; set { _explicitNullValueAuthIdCharacteristics = value; AdditionalData?.Remove("auth_id_characteristics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_id_characteristics"); else _explicitNullProperties?.Remove("auth_id_characteristics"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAuthIdCharacteristicsItem> _explicitNullValueAuthIdCharacteristics = default!;
 #endif
         /// <summary>

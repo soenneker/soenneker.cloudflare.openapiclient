@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clauses") is { } nullNodeClauses && nullNodeClauses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clauses = null;
-            if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
-            if (parseNode.GetChildNode("unsupported_terms") is { } nullNodeUnsupportedTerms && nullNodeUnsupportedTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsupportedTerms = null;
+            if (parseNode.GetChildNode("clauses") is null) { _explicitNullValueClauses = default!; _explicitNullProperties?.Remove("clauses"); }
+            else if (parseNode.GetChildNode("clauses") is { } nullNodeClauses && nullNodeClauses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clauses = null;
+            if (parseNode.GetChildNode("indicators") is null) { _explicitNullValueIndicators = default!; _explicitNullProperties?.Remove("indicators"); }
+            else if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
+            if (parseNode.GetChildNode("unsupported_terms") is null) { _explicitNullValueUnsupportedTerms = default!; _explicitNullProperties?.Remove("unsupported_terms"); }
+            else if (parseNode.GetChildNode("unsupported_terms") is { } nullNodeUnsupportedTerms && nullNodeUnsupportedTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsupportedTerms = null;
         }
 
         /// <summary>The clauses property</summary>

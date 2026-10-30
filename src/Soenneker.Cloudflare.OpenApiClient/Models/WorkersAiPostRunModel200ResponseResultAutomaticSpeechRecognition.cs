@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
-            if (parseNode.GetChildNode("vtt") is { } nullNodeVtt && nullNodeVtt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vtt = null;
-            if (parseNode.GetChildNode("word_count") is { } nullNodeWordCount && nullNodeWordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordCount = null;
-            if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("vtt") is null) { _explicitNullValueVtt = default!; _explicitNullProperties?.Remove("vtt"); }
+            else if (parseNode.GetChildNode("vtt") is { } nullNodeVtt && nullNodeVtt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vtt = null;
+            if (parseNode.GetChildNode("word_count") is null) { _explicitNullValueWordCount = default!; _explicitNullProperties?.Remove("word_count"); }
+            else if (parseNode.GetChildNode("word_count") is { } nullNodeWordCount && nullNodeWordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordCount = null;
+            if (parseNode.GetChildNode("words") is null) { _explicitNullValueWords = default!; _explicitNullProperties?.Remove("words"); }
+            else if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The transcription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>The vtt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vtt { get => _explicitNullValueVtt; set { _explicitNullValueVtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtt"); else _explicitNullProperties?.Remove("vtt"); } }
+        public string? Vtt { get => _explicitNullValueVtt; set { _explicitNullValueVtt = value; AdditionalData?.Remove("vtt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtt"); else _explicitNullProperties?.Remove("vtt"); } }
         private string? _explicitNullValueVtt = default!;
 #nullable restore
 #else
-        public string Vtt { get => _explicitNullValueVtt; set { _explicitNullValueVtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtt"); else _explicitNullProperties?.Remove("vtt"); } }
+        public string Vtt { get => _explicitNullValueVtt; set { _explicitNullValueVtt = value; AdditionalData?.Remove("vtt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtt"); else _explicitNullProperties?.Remove("vtt"); } }
         private string _explicitNullValueVtt = default!;
 #endif
         /// <summary>The word_count property</summary>
-        public double? WordCount { get => _explicitNullValueWordCount; set { _explicitNullValueWordCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_count"); else _explicitNullProperties?.Remove("word_count"); } }
+        public double? WordCount { get => _explicitNullValueWordCount; set { _explicitNullValueWordCount = value; AdditionalData?.Remove("word_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_count"); else _explicitNullProperties?.Remove("word_count"); } }
         private double? _explicitNullValueWordCount = default!;
         /// <summary>The words property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognitionWordsItem>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognitionWordsItem>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; AdditionalData?.Remove("words"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognitionWordsItem>? _explicitNullValueWords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognitionWordsItem> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognitionWordsItem> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; AdditionalData?.Remove("words"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModel200ResponseResultAutomaticSpeechRecognitionWordsItem> _explicitNullValueWords = default!;
 #endif
         /// <summary>

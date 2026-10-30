@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("build_token_name") is { } nullNodeBuildTokenName && nullNodeBuildTokenName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenName = null;
-            if (parseNode.GetChildNode("build_token_secret") is { } nullNodeBuildTokenSecret && nullNodeBuildTokenSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenSecret = null;
-            if (parseNode.GetChildNode("cloudflare_token_id") is { } nullNodeCloudflareTokenId && nullNodeCloudflareTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareTokenId = null;
+            if (parseNode.GetChildNode("build_token_name") is null) { _explicitNullValueBuildTokenName = default!; _explicitNullProperties?.Remove("build_token_name"); }
+            else if (parseNode.GetChildNode("build_token_name") is { } nullNodeBuildTokenName && nullNodeBuildTokenName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenName = null;
+            if (parseNode.GetChildNode("build_token_secret") is null) { _explicitNullValueBuildTokenSecret = default!; _explicitNullProperties?.Remove("build_token_secret"); }
+            else if (parseNode.GetChildNode("build_token_secret") is { } nullNodeBuildTokenSecret && nullNodeBuildTokenSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenSecret = null;
+            if (parseNode.GetChildNode("cloudflare_token_id") is null) { _explicitNullValueCloudflareTokenId = default!; _explicitNullProperties?.Remove("cloudflare_token_id"); }
+            else if (parseNode.GetChildNode("cloudflare_token_id") is { } nullNodeCloudflareTokenId && nullNodeCloudflareTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareTokenId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The build_token_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
+        public string? BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; AdditionalData?.Remove("build_token_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
         private string? _explicitNullValueBuildTokenName = default!;
 #nullable restore
 #else
-        public string BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
+        public string BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; AdditionalData?.Remove("build_token_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
         private string _explicitNullValueBuildTokenName = default!;
 #endif
         /// <summary>The build_token_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildTokenSecret { get => _explicitNullValueBuildTokenSecret; set { _explicitNullValueBuildTokenSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_secret"); else _explicitNullProperties?.Remove("build_token_secret"); } }
+        public string? BuildTokenSecret { get => _explicitNullValueBuildTokenSecret; set { _explicitNullValueBuildTokenSecret = value; AdditionalData?.Remove("build_token_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_secret"); else _explicitNullProperties?.Remove("build_token_secret"); } }
         private string? _explicitNullValueBuildTokenSecret = default!;
 #nullable restore
 #else
-        public string BuildTokenSecret { get => _explicitNullValueBuildTokenSecret; set { _explicitNullValueBuildTokenSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_secret"); else _explicitNullProperties?.Remove("build_token_secret"); } }
+        public string BuildTokenSecret { get => _explicitNullValueBuildTokenSecret; set { _explicitNullValueBuildTokenSecret = value; AdditionalData?.Remove("build_token_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_secret"); else _explicitNullProperties?.Remove("build_token_secret"); } }
         private string _explicitNullValueBuildTokenSecret = default!;
 #endif
         /// <summary>The cloudflare_token_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudflareTokenId { get => _explicitNullValueCloudflareTokenId; set { _explicitNullValueCloudflareTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_token_id"); else _explicitNullProperties?.Remove("cloudflare_token_id"); } }
+        public string? CloudflareTokenId { get => _explicitNullValueCloudflareTokenId; set { _explicitNullValueCloudflareTokenId = value; AdditionalData?.Remove("cloudflare_token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_token_id"); else _explicitNullProperties?.Remove("cloudflare_token_id"); } }
         private string? _explicitNullValueCloudflareTokenId = default!;
 #nullable restore
 #else
-        public string CloudflareTokenId { get => _explicitNullValueCloudflareTokenId; set { _explicitNullValueCloudflareTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_token_id"); else _explicitNullProperties?.Remove("cloudflare_token_id"); } }
+        public string CloudflareTokenId { get => _explicitNullValueCloudflareTokenId; set { _explicitNullValueCloudflareTokenId = value; AdditionalData?.Remove("cloudflare_token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_token_id"); else _explicitNullProperties?.Remove("cloudflare_token_id"); } }
         private string _explicitNullValueCloudflareTokenId = default!;
 #endif
         /// <summary>

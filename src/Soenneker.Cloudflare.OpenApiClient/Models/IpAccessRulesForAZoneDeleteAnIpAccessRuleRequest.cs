@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cascade") is { } nullNodeCascade && nullNodeCascade.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cascade = null;
+            if (parseNode.GetChildNode("cascade") is null) { _explicitNullValueCascade = default!; _explicitNullProperties?.Remove("cascade"); }
+            else if (parseNode.GetChildNode("cascade") is { } nullNodeCascade && nullNodeCascade.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cascade = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The level to attempt to delete similar rules defined for other zones with the same owner. The default value is `none`, which will only delete the current rule. Using `basic` will delete rules that match the same action (mode) and configuration, while using `aggressive` will delete rules that match the same configuration.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade? Cascade { get => _explicitNullValueCascade; set { _explicitNullValueCascade = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cascade"); else _explicitNullProperties?.Remove("cascade"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade? Cascade { get => _explicitNullValueCascade; set { _explicitNullValueCascade = value; AdditionalData?.Remove("cascade"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cascade"); else _explicitNullProperties?.Remove("cascade"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade? _explicitNullValueCascade = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cascade", n => { Cascade = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade>(); } },
+                { "cascade", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCascade = default; _explicitNullProperties?.Remove("cascade"); AdditionalData["cascade"] = unknown; } else { Cascade = parsed; AdditionalData.Remove("cascade"); } } },
             };
         }
         /// <summary>

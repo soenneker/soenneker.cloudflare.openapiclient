@@ -17,14 +17,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cls") is { } nullNodeCls && nullNodeCls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cls = null;
-            if (parseNode.GetChildNode("fcp") is { } nullNodeFcp && nullNodeFcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fcp = null;
-            if (parseNode.GetChildNode("lcp") is { } nullNodeLcp && nullNodeLcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lcp = null;
-            if (parseNode.GetChildNode("performanceScore") is { } nullNodePerformanceScore && nullNodePerformanceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceScore = null;
-            if (parseNode.GetChildNode("si") is { } nullNodeSi && nullNodeSi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Si = null;
-            if (parseNode.GetChildNode("tbt") is { } nullNodeTbt && nullNodeTbt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tbt = null;
-            if (parseNode.GetChildNode("ttfb") is { } nullNodeTtfb && nullNodeTtfb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttfb = null;
-            if (parseNode.GetChildNode("tti") is { } nullNodeTti && nullNodeTti.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tti = null;
+            if (parseNode.GetChildNode("cls") is null) { _explicitNullValueCls = default!; _explicitNullProperties?.Remove("cls"); }
+            else if (parseNode.GetChildNode("cls") is { } nullNodeCls && nullNodeCls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cls = null;
+            if (parseNode.GetChildNode("fcp") is null) { _explicitNullValueFcp = default!; _explicitNullProperties?.Remove("fcp"); }
+            else if (parseNode.GetChildNode("fcp") is { } nullNodeFcp && nullNodeFcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fcp = null;
+            if (parseNode.GetChildNode("lcp") is null) { _explicitNullValueLcp = default!; _explicitNullProperties?.Remove("lcp"); }
+            else if (parseNode.GetChildNode("lcp") is { } nullNodeLcp && nullNodeLcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lcp = null;
+            if (parseNode.GetChildNode("performanceScore") is null) { _explicitNullValuePerformanceScore = default!; _explicitNullProperties?.Remove("performanceScore"); }
+            else if (parseNode.GetChildNode("performanceScore") is { } nullNodePerformanceScore && nullNodePerformanceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceScore = null;
+            if (parseNode.GetChildNode("si") is null) { _explicitNullValueSi = default!; _explicitNullProperties?.Remove("si"); }
+            else if (parseNode.GetChildNode("si") is { } nullNodeSi && nullNodeSi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Si = null;
+            if (parseNode.GetChildNode("tbt") is null) { _explicitNullValueTbt = default!; _explicitNullProperties?.Remove("tbt"); }
+            else if (parseNode.GetChildNode("tbt") is { } nullNodeTbt && nullNodeTbt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tbt = null;
+            if (parseNode.GetChildNode("ttfb") is null) { _explicitNullValueTtfb = default!; _explicitNullProperties?.Remove("ttfb"); }
+            else if (parseNode.GetChildNode("ttfb") is { } nullNodeTtfb && nullNodeTtfb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttfb = null;
+            if (parseNode.GetChildNode("tti") is null) { _explicitNullValueTti = default!; _explicitNullProperties?.Remove("tti"); }
+            else if (parseNode.GetChildNode("tti") is { } nullNodeTti && nullNodeTti.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tti = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,81 +40,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cumulative Layout Shift trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Cls { get => _explicitNullValueCls; set { _explicitNullValueCls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cls"); else _explicitNullProperties?.Remove("cls"); } }
+        public List<double?>? Cls { get => _explicitNullValueCls; set { _explicitNullValueCls = value; AdditionalData?.Remove("cls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cls"); else _explicitNullProperties?.Remove("cls"); } }
         private List<double?>? _explicitNullValueCls = default!;
 #nullable restore
 #else
-        public List<double?> Cls { get => _explicitNullValueCls; set { _explicitNullValueCls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cls"); else _explicitNullProperties?.Remove("cls"); } }
+        public List<double?> Cls { get => _explicitNullValueCls; set { _explicitNullValueCls = value; AdditionalData?.Remove("cls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cls"); else _explicitNullProperties?.Remove("cls"); } }
         private List<double?> _explicitNullValueCls = default!;
 #endif
         /// <summary>First Contentful Paint trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Fcp { get => _explicitNullValueFcp; set { _explicitNullValueFcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fcp"); else _explicitNullProperties?.Remove("fcp"); } }
+        public List<double?>? Fcp { get => _explicitNullValueFcp; set { _explicitNullValueFcp = value; AdditionalData?.Remove("fcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fcp"); else _explicitNullProperties?.Remove("fcp"); } }
         private List<double?>? _explicitNullValueFcp = default!;
 #nullable restore
 #else
-        public List<double?> Fcp { get => _explicitNullValueFcp; set { _explicitNullValueFcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fcp"); else _explicitNullProperties?.Remove("fcp"); } }
+        public List<double?> Fcp { get => _explicitNullValueFcp; set { _explicitNullValueFcp = value; AdditionalData?.Remove("fcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fcp"); else _explicitNullProperties?.Remove("fcp"); } }
         private List<double?> _explicitNullValueFcp = default!;
 #endif
         /// <summary>Largest Contentful Paint trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Lcp { get => _explicitNullValueLcp; set { _explicitNullValueLcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lcp"); else _explicitNullProperties?.Remove("lcp"); } }
+        public List<double?>? Lcp { get => _explicitNullValueLcp; set { _explicitNullValueLcp = value; AdditionalData?.Remove("lcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lcp"); else _explicitNullProperties?.Remove("lcp"); } }
         private List<double?>? _explicitNullValueLcp = default!;
 #nullable restore
 #else
-        public List<double?> Lcp { get => _explicitNullValueLcp; set { _explicitNullValueLcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lcp"); else _explicitNullProperties?.Remove("lcp"); } }
+        public List<double?> Lcp { get => _explicitNullValueLcp; set { _explicitNullValueLcp = value; AdditionalData?.Remove("lcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lcp"); else _explicitNullProperties?.Remove("lcp"); } }
         private List<double?> _explicitNullValueLcp = default!;
 #endif
         /// <summary>The Lighthouse score trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? PerformanceScore { get => _explicitNullValuePerformanceScore; set { _explicitNullValuePerformanceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceScore"); else _explicitNullProperties?.Remove("performanceScore"); } }
+        public List<double?>? PerformanceScore { get => _explicitNullValuePerformanceScore; set { _explicitNullValuePerformanceScore = value; AdditionalData?.Remove("performanceScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceScore"); else _explicitNullProperties?.Remove("performanceScore"); } }
         private List<double?>? _explicitNullValuePerformanceScore = default!;
 #nullable restore
 #else
-        public List<double?> PerformanceScore { get => _explicitNullValuePerformanceScore; set { _explicitNullValuePerformanceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceScore"); else _explicitNullProperties?.Remove("performanceScore"); } }
+        public List<double?> PerformanceScore { get => _explicitNullValuePerformanceScore; set { _explicitNullValuePerformanceScore = value; AdditionalData?.Remove("performanceScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceScore"); else _explicitNullProperties?.Remove("performanceScore"); } }
         private List<double?> _explicitNullValuePerformanceScore = default!;
 #endif
         /// <summary>Speed Index trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Si { get => _explicitNullValueSi; set { _explicitNullValueSi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("si"); else _explicitNullProperties?.Remove("si"); } }
+        public List<double?>? Si { get => _explicitNullValueSi; set { _explicitNullValueSi = value; AdditionalData?.Remove("si"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("si"); else _explicitNullProperties?.Remove("si"); } }
         private List<double?>? _explicitNullValueSi = default!;
 #nullable restore
 #else
-        public List<double?> Si { get => _explicitNullValueSi; set { _explicitNullValueSi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("si"); else _explicitNullProperties?.Remove("si"); } }
+        public List<double?> Si { get => _explicitNullValueSi; set { _explicitNullValueSi = value; AdditionalData?.Remove("si"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("si"); else _explicitNullProperties?.Remove("si"); } }
         private List<double?> _explicitNullValueSi = default!;
 #endif
         /// <summary>Total Blocking Time trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Tbt { get => _explicitNullValueTbt; set { _explicitNullValueTbt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tbt"); else _explicitNullProperties?.Remove("tbt"); } }
+        public List<double?>? Tbt { get => _explicitNullValueTbt; set { _explicitNullValueTbt = value; AdditionalData?.Remove("tbt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tbt"); else _explicitNullProperties?.Remove("tbt"); } }
         private List<double?>? _explicitNullValueTbt = default!;
 #nullable restore
 #else
-        public List<double?> Tbt { get => _explicitNullValueTbt; set { _explicitNullValueTbt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tbt"); else _explicitNullProperties?.Remove("tbt"); } }
+        public List<double?> Tbt { get => _explicitNullValueTbt; set { _explicitNullValueTbt = value; AdditionalData?.Remove("tbt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tbt"); else _explicitNullProperties?.Remove("tbt"); } }
         private List<double?> _explicitNullValueTbt = default!;
 #endif
         /// <summary>Time To First Byte trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Ttfb { get => _explicitNullValueTtfb; set { _explicitNullValueTtfb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttfb"); else _explicitNullProperties?.Remove("ttfb"); } }
+        public List<double?>? Ttfb { get => _explicitNullValueTtfb; set { _explicitNullValueTtfb = value; AdditionalData?.Remove("ttfb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttfb"); else _explicitNullProperties?.Remove("ttfb"); } }
         private List<double?>? _explicitNullValueTtfb = default!;
 #nullable restore
 #else
-        public List<double?> Ttfb { get => _explicitNullValueTtfb; set { _explicitNullValueTtfb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttfb"); else _explicitNullProperties?.Remove("ttfb"); } }
+        public List<double?> Ttfb { get => _explicitNullValueTtfb; set { _explicitNullValueTtfb = value; AdditionalData?.Remove("ttfb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttfb"); else _explicitNullProperties?.Remove("ttfb"); } }
         private List<double?> _explicitNullValueTtfb = default!;
 #endif
         /// <summary>Time To Interactive trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Tti { get => _explicitNullValueTti; set { _explicitNullValueTti = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tti"); else _explicitNullProperties?.Remove("tti"); } }
+        public List<double?>? Tti { get => _explicitNullValueTti; set { _explicitNullValueTti = value; AdditionalData?.Remove("tti"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tti"); else _explicitNullProperties?.Remove("tti"); } }
         private List<double?>? _explicitNullValueTti = default!;
 #nullable restore
 #else
-        public List<double?> Tti { get => _explicitNullValueTti; set { _explicitNullValueTti = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tti"); else _explicitNullProperties?.Remove("tti"); } }
+        public List<double?> Tti { get => _explicitNullValueTti; set { _explicitNullValueTti = value; AdditionalData?.Remove("tti"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tti"); else _explicitNullProperties?.Remove("tti"); } }
         private List<double?> _explicitNullValueTti = default!;
 #endif
         /// <summary>

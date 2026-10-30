@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inspection_mode") is { } nullNodeInspectionMode && nullNodeInspectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InspectionMode = null;
+            if (parseNode.GetChildNode("inspection_mode") is null) { _explicitNullValueInspectionMode = default!; _explicitNullProperties?.Remove("inspection_mode"); }
+            else if (parseNode.GetChildNode("inspection_mode") is { } nullNodeInspectionMode && nullNodeInspectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InspectionMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the inspection mode as either `deep` or `shallow`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettingsInspectionMode? InspectionMode { get => _explicitNullValueInspectionMode; set { _explicitNullValueInspectionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inspection_mode"); else _explicitNullProperties?.Remove("inspection_mode"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettingsInspectionMode? InspectionMode { get => _explicitNullValueInspectionMode; set { _explicitNullValueInspectionMode = value; AdditionalData?.Remove("inspection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inspection_mode"); else _explicitNullProperties?.Remove("inspection_mode"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettingsInspectionMode? _explicitNullValueInspectionMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettings"/> and sets the default values.
@@ -53,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inspection_mode", n => { InspectionMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettingsInspectionMode>(); } },
+                { "inspection_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBodyScanningSettingsInspectionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInspectionMode = default; _explicitNullProperties?.Remove("inspection_mode"); AdditionalData["inspection_mode"] = unknown; } else { InspectionMode = parsed; AdditionalData.Remove("inspection_mode"); } } },
             };
         }
         /// <summary>

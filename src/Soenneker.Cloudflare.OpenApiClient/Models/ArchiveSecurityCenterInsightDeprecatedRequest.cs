@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dismiss") is { } nullNodeDismiss && nullNodeDismiss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismiss = null;
+            if (parseNode.GetChildNode("dismiss") is null) { _explicitNullValueDismiss = default!; _explicitNullProperties?.Remove("dismiss"); }
+            else if (parseNode.GetChildNode("dismiss") is { } nullNodeDismiss && nullNodeDismiss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismiss = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dismiss property</summary>
-        public bool? Dismiss { get => _explicitNullValueDismiss; set { _explicitNullValueDismiss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismiss"); else _explicitNullProperties?.Remove("dismiss"); } }
+        public bool? Dismiss { get => _explicitNullValueDismiss; set { _explicitNullValueDismiss = value; AdditionalData?.Remove("dismiss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismiss"); else _explicitNullProperties?.Remove("dismiss"); } }
         private bool? _explicitNullValueDismiss = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArchiveSecurityCenterInsightDeprecatedRequest"/> and sets the default values.

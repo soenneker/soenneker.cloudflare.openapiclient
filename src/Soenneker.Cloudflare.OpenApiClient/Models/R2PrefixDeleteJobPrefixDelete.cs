@@ -18,27 +18,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletedObjects") is { } nullNodeDeletedObjects && nullNodeDeletedObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedObjects = null;
-            if (parseNode.GetChildNode("isBucketClear") is { } nullNodeIsBucketClear && nullNodeIsBucketClear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBucketClear = null;
-            if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
+            if (parseNode.GetChildNode("deletedObjects") is null) { _explicitNullValueDeletedObjects = default!; _explicitNullProperties?.Remove("deletedObjects"); }
+            else if (parseNode.GetChildNode("deletedObjects") is { } nullNodeDeletedObjects && nullNodeDeletedObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedObjects = null;
+            if (parseNode.GetChildNode("isBucketClear") is null) { _explicitNullValueIsBucketClear = default!; _explicitNullProperties?.Remove("isBucketClear"); }
+            else if (parseNode.GetChildNode("isBucketClear") is { } nullNodeIsBucketClear && nullNodeIsBucketClear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBucketClear = null;
+            if (parseNode.GetChildNode("prefix") is null) { _explicitNullValuePrefix = default!; _explicitNullProperties?.Remove("prefix"); }
+            else if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of objects deleted by the job so far.</summary>
-        public int? DeletedObjects { get => _explicitNullValueDeletedObjects; set { _explicitNullValueDeletedObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedObjects"); else _explicitNullProperties?.Remove("deletedObjects"); } }
+        public int? DeletedObjects { get => _explicitNullValueDeletedObjects; set { _explicitNullValueDeletedObjects = value; AdditionalData?.Remove("deletedObjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedObjects"); else _explicitNullProperties?.Remove("deletedObjects"); } }
         private int? _explicitNullValueDeletedObjects = default!;
         /// <summary>True when the job was created to clear the entire bucket. This field can be absenton jobs created before Empty Bucket job tracking was introduced.</summary>
-        public bool? IsBucketClear { get => _explicitNullValueIsBucketClear; set { _explicitNullValueIsBucketClear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBucketClear"); else _explicitNullProperties?.Remove("isBucketClear"); } }
+        public bool? IsBucketClear { get => _explicitNullValueIsBucketClear; set { _explicitNullValueIsBucketClear = value; AdditionalData?.Remove("isBucketClear"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBucketClear"); else _explicitNullProperties?.Remove("isBucketClear"); } }
         private bool? _explicitNullValueIsBucketClear = default!;
         /// <summary>The prefix matched against object keys. An empty string means the entire bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string? _explicitNullValuePrefix = default!;
 #nullable restore
 #else
-        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string _explicitNullValuePrefix = default!;
 #endif
         /// <summary>

@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_bytes") is { } nullNodeMaxBytes && nullNodeMaxBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxBytes = null;
-            if (parseNode.GetChildNode("max_duration_s") is { } nullNodeMaxDurationS && nullNodeMaxDurationS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationS = null;
-            if (parseNode.GetChildNode("max_rows") is { } nullNodeMaxRows && nullNodeMaxRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRows = null;
+            if (parseNode.GetChildNode("max_bytes") is null) { _explicitNullValueMaxBytes = default!; _explicitNullProperties?.Remove("max_bytes"); }
+            else if (parseNode.GetChildNode("max_bytes") is { } nullNodeMaxBytes && nullNodeMaxBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxBytes = null;
+            if (parseNode.GetChildNode("max_duration_s") is null) { _explicitNullValueMaxDurationS = default!; _explicitNullProperties?.Remove("max_duration_s"); }
+            else if (parseNode.GetChildNode("max_duration_s") is { } nullNodeMaxDurationS && nullNodeMaxDurationS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationS = null;
+            if (parseNode.GetChildNode("max_rows") is null) { _explicitNullValueMaxRows = default!; _explicitNullProperties?.Remove("max_rows"); }
+            else if (parseNode.GetChildNode("max_rows") is { } nullNodeMaxRows && nullNodeMaxRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRows = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies rough maximum size of files.</summary>
-        public int? MaxBytes { get => _explicitNullValueMaxBytes; set { _explicitNullValueMaxBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_bytes"); else _explicitNullProperties?.Remove("max_bytes"); } }
+        public int? MaxBytes { get => _explicitNullValueMaxBytes; set { _explicitNullValueMaxBytes = value; AdditionalData?.Remove("max_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_bytes"); else _explicitNullProperties?.Remove("max_bytes"); } }
         private int? _explicitNullValueMaxBytes = default!;
         /// <summary>Specifies duration to wait to aggregate batches files.</summary>
-        public double? MaxDurationS { get => _explicitNullValueMaxDurationS; set { _explicitNullValueMaxDurationS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_duration_s"); else _explicitNullProperties?.Remove("max_duration_s"); } }
+        public double? MaxDurationS { get => _explicitNullValueMaxDurationS; set { _explicitNullValueMaxDurationS = value; AdditionalData?.Remove("max_duration_s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_duration_s"); else _explicitNullProperties?.Remove("max_duration_s"); } }
         private double? _explicitNullValueMaxDurationS = default!;
         /// <summary>Specifies rough maximum number of rows per file.</summary>
-        public int? MaxRows { get => _explicitNullValueMaxRows; set { _explicitNullValueMaxRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_rows"); else _explicitNullProperties?.Remove("max_rows"); } }
+        public int? MaxRows { get => _explicitNullValueMaxRows; set { _explicitNullValueMaxRows = value; AdditionalData?.Remove("max_rows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_rows"); else _explicitNullProperties?.Remove("max_rows"); } }
         private int? _explicitNullValueMaxRows = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch"/> and sets the default values.

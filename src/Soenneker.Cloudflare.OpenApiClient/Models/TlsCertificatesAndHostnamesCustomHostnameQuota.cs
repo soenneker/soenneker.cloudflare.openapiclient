@@ -17,25 +17,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allocated") is { } nullNodeAllocated && nullNodeAllocated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocated = null;
-            if (parseNode.GetChildNode("exceeded") is { } nullNodeExceeded && nullNodeExceeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exceeded = null;
-            if (parseNode.GetChildNode("hard_cap") is { } nullNodeHardCap && nullNodeHardCap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardCap = null;
-            if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
+            if (parseNode.GetChildNode("allocated") is null) { _explicitNullValueAllocated = default!; _explicitNullProperties?.Remove("allocated"); }
+            else if (parseNode.GetChildNode("allocated") is { } nullNodeAllocated && nullNodeAllocated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocated = null;
+            if (parseNode.GetChildNode("exceeded") is null) { _explicitNullValueExceeded = default!; _explicitNullProperties?.Remove("exceeded"); }
+            else if (parseNode.GetChildNode("exceeded") is { } nullNodeExceeded && nullNodeExceeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exceeded = null;
+            if (parseNode.GetChildNode("hard_cap") is null) { _explicitNullValueHardCap = default!; _explicitNullProperties?.Remove("hard_cap"); }
+            else if (parseNode.GetChildNode("hard_cap") is { } nullNodeHardCap && nullNodeHardCap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardCap = null;
+            if (parseNode.GetChildNode("used") is null) { _explicitNullValueUsed = default!; _explicitNullProperties?.Remove("used"); }
+            else if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allocated custom hostname quota.</summary>
-        public long? Allocated { get => _explicitNullValueAllocated; set { _explicitNullValueAllocated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocated"); else _explicitNullProperties?.Remove("allocated"); } }
+        public long? Allocated { get => _explicitNullValueAllocated; set { _explicitNullValueAllocated = value; AdditionalData?.Remove("allocated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocated"); else _explicitNullProperties?.Remove("allocated"); } }
         private long? _explicitNullValueAllocated = default!;
         /// <summary>Whether the current usage has exceeded the allocated quota.</summary>
-        public bool? Exceeded { get => _explicitNullValueExceeded; set { _explicitNullValueExceeded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceeded"); else _explicitNullProperties?.Remove("exceeded"); } }
+        public bool? Exceeded { get => _explicitNullValueExceeded; set { _explicitNullValueExceeded = value; AdditionalData?.Remove("exceeded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceeded"); else _explicitNullProperties?.Remove("exceeded"); } }
         private bool? _explicitNullValueExceeded = default!;
         /// <summary>The maximum number of custom hostnames allowed before create requests are rejected.</summary>
-        public long? HardCap { get => _explicitNullValueHardCap; set { _explicitNullValueHardCap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_cap"); else _explicitNullProperties?.Remove("hard_cap"); } }
+        public long? HardCap { get => _explicitNullValueHardCap; set { _explicitNullValueHardCap = value; AdditionalData?.Remove("hard_cap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_cap"); else _explicitNullProperties?.Remove("hard_cap"); } }
         private long? _explicitNullValueHardCap = default!;
         /// <summary>The number of custom hostnames currently in use.</summary>
-        public long? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        public long? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; AdditionalData?.Remove("used"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
         private long? _explicitNullValueUsed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameQuota"/> and sets the default values.

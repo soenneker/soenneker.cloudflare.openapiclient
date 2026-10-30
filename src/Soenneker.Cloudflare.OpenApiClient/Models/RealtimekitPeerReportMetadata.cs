@@ -18,21 +18,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audio_devices_updates") is { } nullNodeAudioDevicesUpdates && nullNodeAudioDevicesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioDevicesUpdates = null;
-            if (parseNode.GetChildNode("browser_metadata") is { } nullNodeBrowserMetadata && nullNodeBrowserMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserMetadata = null;
-            if (parseNode.GetChildNode("candidate_pairs") is { } nullNodeCandidatePairs && nullNodeCandidatePairs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CandidatePairs = null;
-            if (parseNode.GetChildNode("device_info") is { } nullNodeDeviceInfo && nullNodeDeviceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceInfo = null;
-            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
-            if (parseNode.GetChildNode("ip_information") is { } nullNodeIpInformation && nullNodeIpInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpInformation = null;
-            if (parseNode.GetChildNode("native_metadata") is { } nullNodeNativeMetadata && nullNodeNativeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeMetadata = null;
-            if (parseNode.GetChildNode("pc_metadata") is { } nullNodePcMetadata && nullNodePcMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PcMetadata = null;
-            if (parseNode.GetChildNode("room_view_type") is { } nullNodeRoomViewType && nullNodeRoomViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoomViewType = null;
-            if (parseNode.GetChildNode("sdk_name") is { } nullNodeSdkName && nullNodeSdkName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkName = null;
-            if (parseNode.GetChildNode("sdk_type") is { } nullNodeSdkType && nullNodeSdkType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkType = null;
-            if (parseNode.GetChildNode("sdk_version") is { } nullNodeSdkVersion && nullNodeSdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkVersion = null;
-            if (parseNode.GetChildNode("selected_device_updates") is { } nullNodeSelectedDeviceUpdates && nullNodeSelectedDeviceUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedDeviceUpdates = null;
-            if (parseNode.GetChildNode("speaker_devices_updates") is { } nullNodeSpeakerDevicesUpdates && nullNodeSpeakerDevicesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerDevicesUpdates = null;
-            if (parseNode.GetChildNode("video_devices_updates") is { } nullNodeVideoDevicesUpdates && nullNodeVideoDevicesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoDevicesUpdates = null;
+            if (parseNode.GetChildNode("audio_devices_updates") is null) { _explicitNullValueAudioDevicesUpdates = default!; _explicitNullProperties?.Remove("audio_devices_updates"); }
+            else if (parseNode.GetChildNode("audio_devices_updates") is { } nullNodeAudioDevicesUpdates && nullNodeAudioDevicesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioDevicesUpdates = null;
+            if (parseNode.GetChildNode("browser_metadata") is null) { _explicitNullValueBrowserMetadata = default!; _explicitNullProperties?.Remove("browser_metadata"); }
+            else if (parseNode.GetChildNode("browser_metadata") is { } nullNodeBrowserMetadata && nullNodeBrowserMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserMetadata = null;
+            if (parseNode.GetChildNode("candidate_pairs") is null) { _explicitNullValueCandidatePairs = default!; _explicitNullProperties?.Remove("candidate_pairs"); }
+            else if (parseNode.GetChildNode("candidate_pairs") is { } nullNodeCandidatePairs && nullNodeCandidatePairs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CandidatePairs = null;
+            if (parseNode.GetChildNode("device_info") is null) { _explicitNullValueDeviceInfo = default!; _explicitNullProperties?.Remove("device_info"); }
+            else if (parseNode.GetChildNode("device_info") is { } nullNodeDeviceInfo && nullNodeDeviceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceInfo = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("ip_information") is null) { _explicitNullValueIpInformation = default!; _explicitNullProperties?.Remove("ip_information"); }
+            else if (parseNode.GetChildNode("ip_information") is { } nullNodeIpInformation && nullNodeIpInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpInformation = null;
+            if (parseNode.GetChildNode("native_metadata") is null) { _explicitNullValueNativeMetadata = default!; _explicitNullProperties?.Remove("native_metadata"); }
+            else if (parseNode.GetChildNode("native_metadata") is { } nullNodeNativeMetadata && nullNodeNativeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeMetadata = null;
+            if (parseNode.GetChildNode("pc_metadata") is null) { _explicitNullValuePcMetadata = default!; _explicitNullProperties?.Remove("pc_metadata"); }
+            else if (parseNode.GetChildNode("pc_metadata") is { } nullNodePcMetadata && nullNodePcMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PcMetadata = null;
+            if (parseNode.GetChildNode("room_view_type") is null) { _explicitNullValueRoomViewType = default!; _explicitNullProperties?.Remove("room_view_type"); }
+            else if (parseNode.GetChildNode("room_view_type") is { } nullNodeRoomViewType && nullNodeRoomViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoomViewType = null;
+            if (parseNode.GetChildNode("sdk_name") is null) { _explicitNullValueSdkName = default!; _explicitNullProperties?.Remove("sdk_name"); }
+            else if (parseNode.GetChildNode("sdk_name") is { } nullNodeSdkName && nullNodeSdkName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkName = null;
+            if (parseNode.GetChildNode("sdk_type") is null) { _explicitNullValueSdkType = default!; _explicitNullProperties?.Remove("sdk_type"); }
+            else if (parseNode.GetChildNode("sdk_type") is { } nullNodeSdkType && nullNodeSdkType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkType = null;
+            if (parseNode.GetChildNode("sdk_version") is null) { _explicitNullValueSdkVersion = default!; _explicitNullProperties?.Remove("sdk_version"); }
+            else if (parseNode.GetChildNode("sdk_version") is { } nullNodeSdkVersion && nullNodeSdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkVersion = null;
+            if (parseNode.GetChildNode("selected_device_updates") is null) { _explicitNullValueSelectedDeviceUpdates = default!; _explicitNullProperties?.Remove("selected_device_updates"); }
+            else if (parseNode.GetChildNode("selected_device_updates") is { } nullNodeSelectedDeviceUpdates && nullNodeSelectedDeviceUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedDeviceUpdates = null;
+            if (parseNode.GetChildNode("speaker_devices_updates") is null) { _explicitNullValueSpeakerDevicesUpdates = default!; _explicitNullProperties?.Remove("speaker_devices_updates"); }
+            else if (parseNode.GetChildNode("speaker_devices_updates") is { } nullNodeSpeakerDevicesUpdates && nullNodeSpeakerDevicesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerDevicesUpdates = null;
+            if (parseNode.GetChildNode("video_devices_updates") is null) { _explicitNullValueVideoDevicesUpdates = default!; _explicitNullProperties?.Remove("video_devices_updates"); }
+            else if (parseNode.GetChildNode("video_devices_updates") is { } nullNodeVideoDevicesUpdates && nullNodeVideoDevicesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoDevicesUpdates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,151 +55,151 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The audio_devices_updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? AudioDevicesUpdates { get => _explicitNullValueAudioDevicesUpdates; set { _explicitNullValueAudioDevicesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_devices_updates"); else _explicitNullProperties?.Remove("audio_devices_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? AudioDevicesUpdates { get => _explicitNullValueAudioDevicesUpdates; set { _explicitNullValueAudioDevicesUpdates = value; AdditionalData?.Remove("audio_devices_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_devices_updates"); else _explicitNullProperties?.Remove("audio_devices_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? _explicitNullValueAudioDevicesUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> AudioDevicesUpdates { get => _explicitNullValueAudioDevicesUpdates; set { _explicitNullValueAudioDevicesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_devices_updates"); else _explicitNullProperties?.Remove("audio_devices_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> AudioDevicesUpdates { get => _explicitNullValueAudioDevicesUpdates; set { _explicitNullValueAudioDevicesUpdates = value; AdditionalData?.Remove("audio_devices_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_devices_updates"); else _explicitNullProperties?.Remove("audio_devices_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> _explicitNullValueAudioDevicesUpdates = default!;
 #endif
         /// <summary>The browser_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata? BrowserMetadata { get => _explicitNullValueBrowserMetadata; set { _explicitNullValueBrowserMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_metadata"); else _explicitNullProperties?.Remove("browser_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata? BrowserMetadata { get => _explicitNullValueBrowserMetadata; set { _explicitNullValueBrowserMetadata = value; AdditionalData?.Remove("browser_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_metadata"); else _explicitNullProperties?.Remove("browser_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata? _explicitNullValueBrowserMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata BrowserMetadata { get => _explicitNullValueBrowserMetadata; set { _explicitNullValueBrowserMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_metadata"); else _explicitNullProperties?.Remove("browser_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata BrowserMetadata { get => _explicitNullValueBrowserMetadata; set { _explicitNullValueBrowserMetadata = value; AdditionalData?.Remove("browser_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_metadata"); else _explicitNullProperties?.Remove("browser_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataBrowserMetadata _explicitNullValueBrowserMetadata = default!;
 #endif
         /// <summary>The candidate_pairs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataCandidatePairs? CandidatePairs { get => _explicitNullValueCandidatePairs; set { _explicitNullValueCandidatePairs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidate_pairs"); else _explicitNullProperties?.Remove("candidate_pairs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataCandidatePairs? CandidatePairs { get => _explicitNullValueCandidatePairs; set { _explicitNullValueCandidatePairs = value; AdditionalData?.Remove("candidate_pairs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidate_pairs"); else _explicitNullProperties?.Remove("candidate_pairs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataCandidatePairs? _explicitNullValueCandidatePairs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataCandidatePairs CandidatePairs { get => _explicitNullValueCandidatePairs; set { _explicitNullValueCandidatePairs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidate_pairs"); else _explicitNullProperties?.Remove("candidate_pairs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataCandidatePairs CandidatePairs { get => _explicitNullValueCandidatePairs; set { _explicitNullValueCandidatePairs = value; AdditionalData?.Remove("candidate_pairs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidate_pairs"); else _explicitNullProperties?.Remove("candidate_pairs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataCandidatePairs _explicitNullValueCandidatePairs = default!;
 #endif
         /// <summary>The device_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataDeviceInfo? DeviceInfo { get => _explicitNullValueDeviceInfo; set { _explicitNullValueDeviceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_info"); else _explicitNullProperties?.Remove("device_info"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataDeviceInfo? DeviceInfo { get => _explicitNullValueDeviceInfo; set { _explicitNullValueDeviceInfo = value; AdditionalData?.Remove("device_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_info"); else _explicitNullProperties?.Remove("device_info"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataDeviceInfo? _explicitNullValueDeviceInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataDeviceInfo DeviceInfo { get => _explicitNullValueDeviceInfo; set { _explicitNullValueDeviceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_info"); else _explicitNullProperties?.Remove("device_info"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataDeviceInfo DeviceInfo { get => _explicitNullValueDeviceInfo; set { _explicitNullValueDeviceInfo = value; AdditionalData?.Remove("device_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_info"); else _explicitNullProperties?.Remove("device_info"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataDeviceInfo _explicitNullValueDeviceInfo = default!;
 #endif
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportEvent>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportEvent> _explicitNullValueEvents = default!;
 #endif
         /// <summary>The ip_information property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataIpInformation? IpInformation { get => _explicitNullValueIpInformation; set { _explicitNullValueIpInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_information"); else _explicitNullProperties?.Remove("ip_information"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataIpInformation? IpInformation { get => _explicitNullValueIpInformation; set { _explicitNullValueIpInformation = value; AdditionalData?.Remove("ip_information"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_information"); else _explicitNullProperties?.Remove("ip_information"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataIpInformation? _explicitNullValueIpInformation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataIpInformation IpInformation { get => _explicitNullValueIpInformation; set { _explicitNullValueIpInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_information"); else _explicitNullProperties?.Remove("ip_information"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataIpInformation IpInformation { get => _explicitNullValueIpInformation; set { _explicitNullValueIpInformation = value; AdditionalData?.Remove("ip_information"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_information"); else _explicitNullProperties?.Remove("ip_information"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataIpInformation _explicitNullValueIpInformation = default!;
 #endif
         /// <summary>The native_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataNativeMetadata? NativeMetadata { get => _explicitNullValueNativeMetadata; set { _explicitNullValueNativeMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_metadata"); else _explicitNullProperties?.Remove("native_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataNativeMetadata? NativeMetadata { get => _explicitNullValueNativeMetadata; set { _explicitNullValueNativeMetadata = value; AdditionalData?.Remove("native_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_metadata"); else _explicitNullProperties?.Remove("native_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataNativeMetadata? _explicitNullValueNativeMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataNativeMetadata NativeMetadata { get => _explicitNullValueNativeMetadata; set { _explicitNullValueNativeMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_metadata"); else _explicitNullProperties?.Remove("native_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataNativeMetadata NativeMetadata { get => _explicitNullValueNativeMetadata; set { _explicitNullValueNativeMetadata = value; AdditionalData?.Remove("native_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_metadata"); else _explicitNullProperties?.Remove("native_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataNativeMetadata _explicitNullValueNativeMetadata = default!;
 #endif
         /// <summary>The pc_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem>? PcMetadata { get => _explicitNullValuePcMetadata; set { _explicitNullValuePcMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pc_metadata"); else _explicitNullProperties?.Remove("pc_metadata"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem>? PcMetadata { get => _explicitNullValuePcMetadata; set { _explicitNullValuePcMetadata = value; AdditionalData?.Remove("pc_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pc_metadata"); else _explicitNullProperties?.Remove("pc_metadata"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem>? _explicitNullValuePcMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem> PcMetadata { get => _explicitNullValuePcMetadata; set { _explicitNullValuePcMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pc_metadata"); else _explicitNullProperties?.Remove("pc_metadata"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem> PcMetadata { get => _explicitNullValuePcMetadata; set { _explicitNullValuePcMetadata = value; AdditionalData?.Remove("pc_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pc_metadata"); else _explicitNullProperties?.Remove("pc_metadata"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataPcMetadataItem> _explicitNullValuePcMetadata = default!;
 #endif
         /// <summary>The room_view_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoomViewType { get => _explicitNullValueRoomViewType; set { _explicitNullValueRoomViewType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("room_view_type"); else _explicitNullProperties?.Remove("room_view_type"); } }
+        public string? RoomViewType { get => _explicitNullValueRoomViewType; set { _explicitNullValueRoomViewType = value; AdditionalData?.Remove("room_view_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("room_view_type"); else _explicitNullProperties?.Remove("room_view_type"); } }
         private string? _explicitNullValueRoomViewType = default!;
 #nullable restore
 #else
-        public string RoomViewType { get => _explicitNullValueRoomViewType; set { _explicitNullValueRoomViewType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("room_view_type"); else _explicitNullProperties?.Remove("room_view_type"); } }
+        public string RoomViewType { get => _explicitNullValueRoomViewType; set { _explicitNullValueRoomViewType = value; AdditionalData?.Remove("room_view_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("room_view_type"); else _explicitNullProperties?.Remove("room_view_type"); } }
         private string _explicitNullValueRoomViewType = default!;
 #endif
         /// <summary>The sdk_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkName { get => _explicitNullValueSdkName; set { _explicitNullValueSdkName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_name"); else _explicitNullProperties?.Remove("sdk_name"); } }
+        public string? SdkName { get => _explicitNullValueSdkName; set { _explicitNullValueSdkName = value; AdditionalData?.Remove("sdk_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_name"); else _explicitNullProperties?.Remove("sdk_name"); } }
         private string? _explicitNullValueSdkName = default!;
 #nullable restore
 #else
-        public string SdkName { get => _explicitNullValueSdkName; set { _explicitNullValueSdkName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_name"); else _explicitNullProperties?.Remove("sdk_name"); } }
+        public string SdkName { get => _explicitNullValueSdkName; set { _explicitNullValueSdkName = value; AdditionalData?.Remove("sdk_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_name"); else _explicitNullProperties?.Remove("sdk_name"); } }
         private string _explicitNullValueSdkName = default!;
 #endif
         /// <summary>The sdk_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkType { get => _explicitNullValueSdkType; set { _explicitNullValueSdkType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_type"); else _explicitNullProperties?.Remove("sdk_type"); } }
+        public string? SdkType { get => _explicitNullValueSdkType; set { _explicitNullValueSdkType = value; AdditionalData?.Remove("sdk_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_type"); else _explicitNullProperties?.Remove("sdk_type"); } }
         private string? _explicitNullValueSdkType = default!;
 #nullable restore
 #else
-        public string SdkType { get => _explicitNullValueSdkType; set { _explicitNullValueSdkType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_type"); else _explicitNullProperties?.Remove("sdk_type"); } }
+        public string SdkType { get => _explicitNullValueSdkType; set { _explicitNullValueSdkType = value; AdditionalData?.Remove("sdk_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_type"); else _explicitNullProperties?.Remove("sdk_type"); } }
         private string _explicitNullValueSdkType = default!;
 #endif
         /// <summary>The sdk_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_version"); else _explicitNullProperties?.Remove("sdk_version"); } }
+        public string? SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; AdditionalData?.Remove("sdk_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_version"); else _explicitNullProperties?.Remove("sdk_version"); } }
         private string? _explicitNullValueSdkVersion = default!;
 #nullable restore
 #else
-        public string SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_version"); else _explicitNullProperties?.Remove("sdk_version"); } }
+        public string SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; AdditionalData?.Remove("sdk_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_version"); else _explicitNullProperties?.Remove("sdk_version"); } }
         private string _explicitNullValueSdkVersion = default!;
 #endif
         /// <summary>The selected_device_updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataSelectedDeviceUpdatesItem>? SelectedDeviceUpdates { get => _explicitNullValueSelectedDeviceUpdates; set { _explicitNullValueSelectedDeviceUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_device_updates"); else _explicitNullProperties?.Remove("selected_device_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataSelectedDeviceUpdatesItem>? SelectedDeviceUpdates { get => _explicitNullValueSelectedDeviceUpdates; set { _explicitNullValueSelectedDeviceUpdates = value; AdditionalData?.Remove("selected_device_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_device_updates"); else _explicitNullProperties?.Remove("selected_device_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataSelectedDeviceUpdatesItem>? _explicitNullValueSelectedDeviceUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataSelectedDeviceUpdatesItem> SelectedDeviceUpdates { get => _explicitNullValueSelectedDeviceUpdates; set { _explicitNullValueSelectedDeviceUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_device_updates"); else _explicitNullProperties?.Remove("selected_device_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataSelectedDeviceUpdatesItem> SelectedDeviceUpdates { get => _explicitNullValueSelectedDeviceUpdates; set { _explicitNullValueSelectedDeviceUpdates = value; AdditionalData?.Remove("selected_device_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_device_updates"); else _explicitNullProperties?.Remove("selected_device_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportMetadataSelectedDeviceUpdatesItem> _explicitNullValueSelectedDeviceUpdates = default!;
 #endif
         /// <summary>The speaker_devices_updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? SpeakerDevicesUpdates { get => _explicitNullValueSpeakerDevicesUpdates; set { _explicitNullValueSpeakerDevicesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_devices_updates"); else _explicitNullProperties?.Remove("speaker_devices_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? SpeakerDevicesUpdates { get => _explicitNullValueSpeakerDevicesUpdates; set { _explicitNullValueSpeakerDevicesUpdates = value; AdditionalData?.Remove("speaker_devices_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_devices_updates"); else _explicitNullProperties?.Remove("speaker_devices_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? _explicitNullValueSpeakerDevicesUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> SpeakerDevicesUpdates { get => _explicitNullValueSpeakerDevicesUpdates; set { _explicitNullValueSpeakerDevicesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_devices_updates"); else _explicitNullProperties?.Remove("speaker_devices_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> SpeakerDevicesUpdates { get => _explicitNullValueSpeakerDevicesUpdates; set { _explicitNullValueSpeakerDevicesUpdates = value; AdditionalData?.Remove("speaker_devices_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_devices_updates"); else _explicitNullProperties?.Remove("speaker_devices_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> _explicitNullValueSpeakerDevicesUpdates = default!;
 #endif
         /// <summary>The video_devices_updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? VideoDevicesUpdates { get => _explicitNullValueVideoDevicesUpdates; set { _explicitNullValueVideoDevicesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_devices_updates"); else _explicitNullProperties?.Remove("video_devices_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? VideoDevicesUpdates { get => _explicitNullValueVideoDevicesUpdates; set { _explicitNullValueVideoDevicesUpdates = value; AdditionalData?.Remove("video_devices_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_devices_updates"); else _explicitNullProperties?.Remove("video_devices_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate>? _explicitNullValueVideoDevicesUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> VideoDevicesUpdates { get => _explicitNullValueVideoDevicesUpdates; set { _explicitNullValueVideoDevicesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_devices_updates"); else _explicitNullProperties?.Remove("video_devices_updates"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> VideoDevicesUpdates { get => _explicitNullValueVideoDevicesUpdates; set { _explicitNullValueVideoDevicesUpdates = value; AdditionalData?.Remove("video_devices_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_devices_updates"); else _explicitNullProperties?.Remove("video_devices_updates"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerReportDeviceUpdate> _explicitNullValueVideoDevicesUpdates = default!;
 #endif
         /// <summary>

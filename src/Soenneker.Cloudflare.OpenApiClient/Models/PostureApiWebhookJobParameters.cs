@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("finding_instance_id") is { } nullNodeFindingInstanceId && nullNodeFindingInstanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingInstanceId = null;
+            if (parseNode.GetChildNode("finding_instance_id") is null) { _explicitNullValueFindingInstanceId = default!; _explicitNullProperties?.Remove("finding_instance_id"); }
+            else if (parseNode.GetChildNode("finding_instance_id") is { } nullNodeFindingInstanceId && nullNodeFindingInstanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingInstanceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the finding instance.</summary>
-        public Guid? FindingInstanceId { get => _explicitNullValueFindingInstanceId; set { _explicitNullValueFindingInstanceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_instance_id"); else _explicitNullProperties?.Remove("finding_instance_id"); } }
+        public Guid? FindingInstanceId { get => _explicitNullValueFindingInstanceId; set { _explicitNullValueFindingInstanceId = value; AdditionalData?.Remove("finding_instance_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding_instance_id"); else _explicitNullProperties?.Remove("finding_instance_id"); } }
         private Guid? _explicitNullValueFindingInstanceId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookJobParameters"/> and sets the default values.

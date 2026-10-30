@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("from_list") is { } nullNodeFromList && nullNodeFromList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromList = null;
-            if (parseNode.GetChildNode("from_value") is { } nullNodeFromValue && nullNodeFromValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromValue = null;
+            if (parseNode.GetChildNode("from_list") is null) { _explicitNullValueFromList = default!; _explicitNullProperties?.Remove("from_list"); }
+            else if (parseNode.GetChildNode("from_list") is { } nullNodeFromList && nullNodeFromList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromList = null;
+            if (parseNode.GetChildNode("from_value") is null) { _explicitNullValueFromValue = default!; _explicitNullProperties?.Remove("from_value"); }
+            else if (parseNode.GetChildNode("from_value") is { } nullNodeFromValue && nullNodeFromValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A redirect based on a bulk list lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList? FromList { get => _explicitNullValueFromList; set { _explicitNullValueFromList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_list"); else _explicitNullProperties?.Remove("from_list"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList? FromList { get => _explicitNullValueFromList; set { _explicitNullValueFromList = value; AdditionalData?.Remove("from_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_list"); else _explicitNullProperties?.Remove("from_list"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList? _explicitNullValueFromList = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList FromList { get => _explicitNullValueFromList; set { _explicitNullValueFromList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_list"); else _explicitNullProperties?.Remove("from_list"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList FromList { get => _explicitNullValueFromList; set { _explicitNullValueFromList = value; AdditionalData?.Remove("from_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_list"); else _explicitNullProperties?.Remove("from_list"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList _explicitNullValueFromList = default!;
 #endif
         /// <summary>A redirect based on the request properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue? FromValue { get => _explicitNullValueFromValue; set { _explicitNullValueFromValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_value"); else _explicitNullProperties?.Remove("from_value"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue? FromValue { get => _explicitNullValueFromValue; set { _explicitNullValueFromValue = value; AdditionalData?.Remove("from_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_value"); else _explicitNullProperties?.Remove("from_value"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue? _explicitNullValueFromValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue FromValue { get => _explicitNullValueFromValue; set { _explicitNullValueFromValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_value"); else _explicitNullProperties?.Remove("from_value"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue FromValue { get => _explicitNullValueFromValue; set { _explicitNullValueFromValue = value; AdditionalData?.Remove("from_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_value"); else _explicitNullProperties?.Remove("from_value"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue _explicitNullValueFromValue = default!;
 #endif
         /// <summary>

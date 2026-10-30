@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("maintenance_config") is { } nullNodeMaintenanceConfig && nullNodeMaintenanceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceConfig = null;
+            if (parseNode.GetChildNode("maintenance_config") is null) { _explicitNullValueMaintenanceConfig = default!; _explicitNullProperties?.Remove("maintenance_config"); }
+            else if (parseNode.GetChildNode("maintenance_config") is { } nullNodeMaintenanceConfig && nullNodeMaintenanceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceConfig = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configures maintenance for the table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig? MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig? MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; AdditionalData?.Remove("maintenance_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig? _explicitNullValueMaintenanceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig MaintenanceConfig { get => _explicitNullValueMaintenanceConfig; set { _explicitNullValueMaintenanceConfig = value; AdditionalData?.Remove("maintenance_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenance_config"); else _explicitNullProperties?.Remove("maintenance_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig _explicitNullValueMaintenanceConfig = default!;
 #endif
         /// <summary>

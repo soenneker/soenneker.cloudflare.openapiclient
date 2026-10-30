@@ -17,13 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content_adds") is { } nullNodeContentAdds && nullNodeContentAdds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentAdds = null;
-            if (parseNode.GetChildNode("content_removes") is { } nullNodeContentRemoves && nullNodeContentRemoves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentRemoves = null;
-            if (parseNode.GetChildNode("indicator_type") is { } nullNodeIndicatorType && nullNodeIndicatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorType = null;
-            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
-            if (parseNode.GetChildNode("security_adds") is { } nullNodeSecurityAdds && nullNodeSecurityAdds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityAdds = null;
-            if (parseNode.GetChildNode("security_removes") is { } nullNodeSecurityRemoves && nullNodeSecurityRemoves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityRemoves = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("content_adds") is null) { _explicitNullValueContentAdds = default!; _explicitNullProperties?.Remove("content_adds"); }
+            else if (parseNode.GetChildNode("content_adds") is { } nullNodeContentAdds && nullNodeContentAdds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentAdds = null;
+            if (parseNode.GetChildNode("content_removes") is null) { _explicitNullValueContentRemoves = default!; _explicitNullProperties?.Remove("content_removes"); }
+            else if (parseNode.GetChildNode("content_removes") is { } nullNodeContentRemoves && nullNodeContentRemoves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentRemoves = null;
+            if (parseNode.GetChildNode("indicator_type") is null) { _explicitNullValueIndicatorType = default!; _explicitNullProperties?.Remove("indicator_type"); }
+            else if (parseNode.GetChildNode("indicator_type") is { } nullNodeIndicatorType && nullNodeIndicatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorType = null;
+            if (parseNode.GetChildNode("ip") is null) { _explicitNullValueIp = default!; _explicitNullProperties?.Remove("ip"); }
+            else if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("security_adds") is null) { _explicitNullValueSecurityAdds = default!; _explicitNullProperties?.Remove("security_adds"); }
+            else if (parseNode.GetChildNode("security_adds") is { } nullNodeSecurityAdds && nullNodeSecurityAdds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityAdds = null;
+            if (parseNode.GetChildNode("security_removes") is null) { _explicitNullValueSecurityRemoves = default!; _explicitNullProperties?.Remove("security_removes"); }
+            else if (parseNode.GetChildNode("security_removes") is { } nullNodeSecurityRemoves && nullNodeSecurityRemoves.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityRemoves = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,64 +38,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Content category IDs to add.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ContentAdds { get => _explicitNullValueContentAdds; set { _explicitNullValueContentAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_adds"); else _explicitNullProperties?.Remove("content_adds"); } }
+        public List<int?>? ContentAdds { get => _explicitNullValueContentAdds; set { _explicitNullValueContentAdds = value; AdditionalData?.Remove("content_adds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_adds"); else _explicitNullProperties?.Remove("content_adds"); } }
         private List<int?>? _explicitNullValueContentAdds = default!;
 #nullable restore
 #else
-        public List<int?> ContentAdds { get => _explicitNullValueContentAdds; set { _explicitNullValueContentAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_adds"); else _explicitNullProperties?.Remove("content_adds"); } }
+        public List<int?> ContentAdds { get => _explicitNullValueContentAdds; set { _explicitNullValueContentAdds = value; AdditionalData?.Remove("content_adds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_adds"); else _explicitNullProperties?.Remove("content_adds"); } }
         private List<int?> _explicitNullValueContentAdds = default!;
 #endif
         /// <summary>Content category IDs to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ContentRemoves { get => _explicitNullValueContentRemoves; set { _explicitNullValueContentRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_removes"); else _explicitNullProperties?.Remove("content_removes"); } }
+        public List<int?>? ContentRemoves { get => _explicitNullValueContentRemoves; set { _explicitNullValueContentRemoves = value; AdditionalData?.Remove("content_removes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_removes"); else _explicitNullProperties?.Remove("content_removes"); } }
         private List<int?>? _explicitNullValueContentRemoves = default!;
 #nullable restore
 #else
-        public List<int?> ContentRemoves { get => _explicitNullValueContentRemoves; set { _explicitNullValueContentRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_removes"); else _explicitNullProperties?.Remove("content_removes"); } }
+        public List<int?> ContentRemoves { get => _explicitNullValueContentRemoves; set { _explicitNullValueContentRemoves = value; AdditionalData?.Remove("content_removes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_removes"); else _explicitNullProperties?.Remove("content_removes"); } }
         private List<int?> _explicitNullValueContentRemoves = default!;
 #endif
         /// <summary>The indicator_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType? IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator_type"); else _explicitNullProperties?.Remove("indicator_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType? IndicatorType { get => _explicitNullValueIndicatorType; set { _explicitNullValueIndicatorType = value; AdditionalData?.Remove("indicator_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator_type"); else _explicitNullProperties?.Remove("indicator_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType? _explicitNullValueIndicatorType = default!;
         /// <summary>Provide only if indicator_type is `ipv4` or `ipv6`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string _explicitNullValueIp = default!;
 #endif
         /// <summary>Security category IDs to add.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SecurityAdds { get => _explicitNullValueSecurityAdds; set { _explicitNullValueSecurityAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_adds"); else _explicitNullProperties?.Remove("security_adds"); } }
+        public List<int?>? SecurityAdds { get => _explicitNullValueSecurityAdds; set { _explicitNullValueSecurityAdds = value; AdditionalData?.Remove("security_adds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_adds"); else _explicitNullProperties?.Remove("security_adds"); } }
         private List<int?>? _explicitNullValueSecurityAdds = default!;
 #nullable restore
 #else
-        public List<int?> SecurityAdds { get => _explicitNullValueSecurityAdds; set { _explicitNullValueSecurityAdds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_adds"); else _explicitNullProperties?.Remove("security_adds"); } }
+        public List<int?> SecurityAdds { get => _explicitNullValueSecurityAdds; set { _explicitNullValueSecurityAdds = value; AdditionalData?.Remove("security_adds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_adds"); else _explicitNullProperties?.Remove("security_adds"); } }
         private List<int?> _explicitNullValueSecurityAdds = default!;
 #endif
         /// <summary>Security category IDs to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SecurityRemoves { get => _explicitNullValueSecurityRemoves; set { _explicitNullValueSecurityRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_removes"); else _explicitNullProperties?.Remove("security_removes"); } }
+        public List<int?>? SecurityRemoves { get => _explicitNullValueSecurityRemoves; set { _explicitNullValueSecurityRemoves = value; AdditionalData?.Remove("security_removes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_removes"); else _explicitNullProperties?.Remove("security_removes"); } }
         private List<int?>? _explicitNullValueSecurityRemoves = default!;
 #nullable restore
 #else
-        public List<int?> SecurityRemoves { get => _explicitNullValueSecurityRemoves; set { _explicitNullValueSecurityRemoves = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_removes"); else _explicitNullProperties?.Remove("security_removes"); } }
+        public List<int?> SecurityRemoves { get => _explicitNullValueSecurityRemoves; set { _explicitNullValueSecurityRemoves = value; AdditionalData?.Remove("security_removes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_removes"); else _explicitNullProperties?.Remove("security_removes"); } }
         private List<int?> _explicitNullValueSecurityRemoves = default!;
 #endif
         /// <summary>Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -118,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "content_adds", n => { ContentAdds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "content_removes", n => { ContentRemoves = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "indicator_type", n => { IndicatorType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType>(); } },
+                { "indicator_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIndicatorType = default; _explicitNullProperties?.Remove("indicator_type"); AdditionalData["indicator_type"] = unknown; } else { IndicatorType = parsed; AdditionalData.Remove("indicator_type"); } } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "security_adds", n => { SecurityAdds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "security_removes", n => { SecurityRemoves = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },

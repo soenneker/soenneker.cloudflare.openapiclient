@@ -8,6 +8,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public enum AutoragConfigAiSearchRequestModel
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "@cf/meta/llama-3.3-70b-instruct-fp8-fast")]
         #pragma warning disable CS1591
         AtCfMetaLlama3370bInstructFp8Fast,

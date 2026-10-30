@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("oidc") is { } nullNodeOidc && nullNodeOidc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oidc = null;
+            if (parseNode.GetChildNode("oidc") is null) { _explicitNullValueOidc = default!; _explicitNullProperties?.Remove("oidc"); }
+            else if (parseNode.GetChildNode("oidc") is { } nullNodeOidc && nullNodeOidc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oidc = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The oidc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc? Oidc { get => _explicitNullValueOidc; set { _explicitNullValueOidc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidc"); else _explicitNullProperties?.Remove("oidc"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc? Oidc { get => _explicitNullValueOidc; set { _explicitNullValueOidc = value; AdditionalData?.Remove("oidc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidc"); else _explicitNullProperties?.Remove("oidc"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc? _explicitNullValueOidc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc Oidc { get => _explicitNullValueOidc; set { _explicitNullValueOidc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidc"); else _explicitNullProperties?.Remove("oidc"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc Oidc { get => _explicitNullValueOidc; set { _explicitNullValueOidc = value; AdditionalData?.Remove("oidc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidc"); else _explicitNullProperties?.Remove("oidc"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRuleOidc _explicitNullValueOidc = default!;
 #endif
         /// <summary>

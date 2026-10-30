@@ -17,13 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("class_name") is { } nullNodeClassName && nullNodeClassName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClassName = null;
-            if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
-            if (parseNode.GetChildNode("default_retention") is { } nullNodeDefaultRetention && nullNodeDefaultRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRetention = null;
-            if (parseNode.GetChildNode("jurisdiction") is { } nullNodeJurisdiction && nullNodeJurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jurisdiction = null;
-            if (parseNode.GetChildNode("limits") is { } nullNodeLimits && nullNodeLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limits = null;
-            if (parseNode.GetChildNode("schedules") is { } nullNodeSchedules && nullNodeSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedules = null;
-            if (parseNode.GetChildNode("script_name") is { } nullNodeScriptName && nullNodeScriptName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptName = null;
+            if (parseNode.GetChildNode("class_name") is null) { _explicitNullValueClassName = default!; _explicitNullProperties?.Remove("class_name"); }
+            else if (parseNode.GetChildNode("class_name") is { } nullNodeClassName && nullNodeClassName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClassName = null;
+            if (parseNode.GetChildNode("concurrency") is null) { _explicitNullValueConcurrency = default!; _explicitNullProperties?.Remove("concurrency"); }
+            else if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
+            if (parseNode.GetChildNode("default_retention") is null) { _explicitNullValueDefaultRetention = default!; _explicitNullProperties?.Remove("default_retention"); }
+            else if (parseNode.GetChildNode("default_retention") is { } nullNodeDefaultRetention && nullNodeDefaultRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRetention = null;
+            if (parseNode.GetChildNode("jurisdiction") is null) { _explicitNullValueJurisdiction = default!; _explicitNullProperties?.Remove("jurisdiction"); }
+            else if (parseNode.GetChildNode("jurisdiction") is { } nullNodeJurisdiction && nullNodeJurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jurisdiction = null;
+            if (parseNode.GetChildNode("limits") is null) { _explicitNullValueLimits = default!; _explicitNullProperties?.Remove("limits"); }
+            else if (parseNode.GetChildNode("limits") is { } nullNodeLimits && nullNodeLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limits = null;
+            if (parseNode.GetChildNode("schedules") is null) { _explicitNullValueSchedules = default!; _explicitNullProperties?.Remove("schedules"); }
+            else if (parseNode.GetChildNode("schedules") is { } nullNodeSchedules && nullNodeSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedules = null;
+            if (parseNode.GetChildNode("script_name") is null) { _explicitNullValueScriptName = default!; _explicitNullProperties?.Remove("script_name"); }
+            else if (parseNode.GetChildNode("script_name") is { } nullNodeScriptName && nullNodeScriptName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,64 +38,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The class_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        public string? ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; AdditionalData?.Remove("class_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
         private string? _explicitNullValueClassName = default!;
 #nullable restore
 #else
-        public string ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
+        public string ClassName { get => _explicitNullValueClassName; set { _explicitNullValueClassName = value; AdditionalData?.Remove("class_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class_name"); else _explicitNullProperties?.Remove("class_name"); } }
         private string _explicitNullValueClassName = default!;
 #endif
         /// <summary>The concurrency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency? _explicitNullValueConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency _explicitNullValueConcurrency = default!;
 #endif
         /// <summary>Default retention applied to instances of this version when they do not set their own retention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention? DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention? DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; AdditionalData?.Remove("default_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention? _explicitNullValueDefaultRetention = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; AdditionalData?.Remove("default_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention _explicitNullValueDefaultRetention = default!;
 #endif
         /// <summary>Jurisdiction where instances of this workflow run and store data. Can only be set when the workflow is created and cannot be changed afterwards; omit it to keep the existing jurisdiction.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; AdditionalData?.Remove("jurisdiction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction? _explicitNullValueJurisdiction = default!;
         /// <summary>The limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; AdditionalData?.Remove("limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits? _explicitNullValueLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; AdditionalData?.Remove("limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits _explicitNullValueLimits = default!;
 #endif
         /// <summary>The schedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>? Schedules { get => _explicitNullValueSchedules; set { _explicitNullValueSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedules"); else _explicitNullProperties?.Remove("schedules"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>? Schedules { get => _explicitNullValueSchedules; set { _explicitNullValueSchedules = value; AdditionalData?.Remove("schedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedules"); else _explicitNullProperties?.Remove("schedules"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>? _explicitNullValueSchedules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem> Schedules { get => _explicitNullValueSchedules; set { _explicitNullValueSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedules"); else _explicitNullProperties?.Remove("schedules"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem> Schedules { get => _explicitNullValueSchedules; set { _explicitNullValueSchedules = value; AdditionalData?.Remove("schedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedules"); else _explicitNullProperties?.Remove("schedules"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem> _explicitNullValueSchedules = default!;
 #endif
         /// <summary>The script_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_name"); else _explicitNullProperties?.Remove("script_name"); } }
+        public string? ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; AdditionalData?.Remove("script_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_name"); else _explicitNullProperties?.Remove("script_name"); } }
         private string? _explicitNullValueScriptName = default!;
 #nullable restore
 #else
-        public string ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_name"); else _explicitNullProperties?.Remove("script_name"); } }
+        public string ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; AdditionalData?.Remove("script_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script_name"); else _explicitNullProperties?.Remove("script_name"); } }
         private string _explicitNullValueScriptName = default!;
 #endif
         /// <summary>
@@ -119,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "concurrency", n => { Concurrency = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestConcurrency.CreateFromDiscriminatorValue); } },
                 { "default_retention", n => { DefaultRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestDefaultRetention.CreateFromDiscriminatorValue); } },
-                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction>(); } },
+                { "jurisdiction", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestJurisdiction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueJurisdiction = default; _explicitNullProperties?.Remove("jurisdiction"); AdditionalData["jurisdiction"] = unknown; } else { Jurisdiction = parsed; AdditionalData.Remove("jurisdiction"); } } },
                 { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestLimits.CreateFromDiscriminatorValue); } },
                 { "schedules", n => { Schedules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorCreateOrModifyWorkflowRequestSchedulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },

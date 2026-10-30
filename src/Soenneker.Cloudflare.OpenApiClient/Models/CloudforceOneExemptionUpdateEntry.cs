@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_pattern") is { } nullNodeNewPattern && nullNodeNewPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewPattern = null;
-            if (parseNode.GetChildNode("old_pattern") is { } nullNodeOldPattern && nullNodeOldPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPattern = null;
+            if (parseNode.GetChildNode("new_pattern") is null) { _explicitNullValueNewPattern = default!; _explicitNullProperties?.Remove("new_pattern"); }
+            else if (parseNode.GetChildNode("new_pattern") is { } nullNodeNewPattern && nullNodeNewPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewPattern = null;
+            if (parseNode.GetChildNode("old_pattern") is null) { _explicitNullValueOldPattern = default!; _explicitNullProperties?.Remove("old_pattern"); }
+            else if (parseNode.GetChildNode("old_pattern") is { } nullNodeOldPattern && nullNodeOldPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPattern = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The new_pattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewPattern { get => _explicitNullValueNewPattern; set { _explicitNullValueNewPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_pattern"); else _explicitNullProperties?.Remove("new_pattern"); } }
+        public string? NewPattern { get => _explicitNullValueNewPattern; set { _explicitNullValueNewPattern = value; AdditionalData?.Remove("new_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_pattern"); else _explicitNullProperties?.Remove("new_pattern"); } }
         private string? _explicitNullValueNewPattern = default!;
 #nullable restore
 #else
-        public string NewPattern { get => _explicitNullValueNewPattern; set { _explicitNullValueNewPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_pattern"); else _explicitNullProperties?.Remove("new_pattern"); } }
+        public string NewPattern { get => _explicitNullValueNewPattern; set { _explicitNullValueNewPattern = value; AdditionalData?.Remove("new_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_pattern"); else _explicitNullProperties?.Remove("new_pattern"); } }
         private string _explicitNullValueNewPattern = default!;
 #endif
         /// <summary>The old_pattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldPattern { get => _explicitNullValueOldPattern; set { _explicitNullValueOldPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_pattern"); else _explicitNullProperties?.Remove("old_pattern"); } }
+        public string? OldPattern { get => _explicitNullValueOldPattern; set { _explicitNullValueOldPattern = value; AdditionalData?.Remove("old_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_pattern"); else _explicitNullProperties?.Remove("old_pattern"); } }
         private string? _explicitNullValueOldPattern = default!;
 #nullable restore
 #else
-        public string OldPattern { get => _explicitNullValueOldPattern; set { _explicitNullValueOldPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_pattern"); else _explicitNullProperties?.Remove("old_pattern"); } }
+        public string OldPattern { get => _explicitNullValueOldPattern; set { _explicitNullValueOldPattern = value; AdditionalData?.Remove("old_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_pattern"); else _explicitNullProperties?.Remove("old_pattern"); } }
         private string _explicitNullValueOldPattern = default!;
 #endif
         /// <summary>

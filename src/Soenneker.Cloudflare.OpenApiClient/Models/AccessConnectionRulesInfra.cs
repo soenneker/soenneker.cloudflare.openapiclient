@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ssh") is { } nullNodeSsh && nullNodeSsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssh = null;
+            if (parseNode.GetChildNode("ssh") is null) { _explicitNullValueSsh = default!; _explicitNullProperties?.Remove("ssh"); }
+            else if (parseNode.GetChildNode("ssh") is { } nullNodeSsh && nullNodeSsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssh = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The SSH-specific rules that define how users may connect to the targets secured by your application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesSsh? Ssh { get => _explicitNullValueSsh; set { _explicitNullValueSsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh"); else _explicitNullProperties?.Remove("ssh"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesSsh? Ssh { get => _explicitNullValueSsh; set { _explicitNullValueSsh = value; AdditionalData?.Remove("ssh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh"); else _explicitNullProperties?.Remove("ssh"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesSsh? _explicitNullValueSsh = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesSsh Ssh { get => _explicitNullValueSsh; set { _explicitNullValueSsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh"); else _explicitNullProperties?.Remove("ssh"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesSsh Ssh { get => _explicitNullValueSsh; set { _explicitNullValueSsh = value; AdditionalData?.Remove("ssh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh"); else _explicitNullProperties?.Remove("ssh"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesSsh _explicitNullValueSsh = default!;
 #endif
         /// <summary>

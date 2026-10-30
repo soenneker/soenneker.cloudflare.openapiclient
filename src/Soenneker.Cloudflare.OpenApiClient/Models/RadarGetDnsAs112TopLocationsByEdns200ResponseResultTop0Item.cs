@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clientCountryAlpha2") is { } nullNodeClientCountryAlpha2 && nullNodeClientCountryAlpha2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientCountryAlpha2 = null;
-            if (parseNode.GetChildNode("clientCountryName") is { } nullNodeClientCountryName && nullNodeClientCountryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientCountryName = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("clientCountryAlpha2") is null) { _explicitNullValueClientCountryAlpha2 = default!; _explicitNullProperties?.Remove("clientCountryAlpha2"); }
+            else if (parseNode.GetChildNode("clientCountryAlpha2") is { } nullNodeClientCountryAlpha2 && nullNodeClientCountryAlpha2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientCountryAlpha2 = null;
+            if (parseNode.GetChildNode("clientCountryName") is null) { _explicitNullValueClientCountryName = default!; _explicitNullProperties?.Remove("clientCountryName"); }
+            else if (parseNode.GetChildNode("clientCountryName") is { } nullNodeClientCountryName && nullNodeClientCountryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientCountryName = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The clientCountryAlpha2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientCountryAlpha2 { get => _explicitNullValueClientCountryAlpha2; set { _explicitNullValueClientCountryAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryAlpha2"); else _explicitNullProperties?.Remove("clientCountryAlpha2"); } }
+        public string? ClientCountryAlpha2 { get => _explicitNullValueClientCountryAlpha2; set { _explicitNullValueClientCountryAlpha2 = value; AdditionalData?.Remove("clientCountryAlpha2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryAlpha2"); else _explicitNullProperties?.Remove("clientCountryAlpha2"); } }
         private string? _explicitNullValueClientCountryAlpha2 = default!;
 #nullable restore
 #else
-        public string ClientCountryAlpha2 { get => _explicitNullValueClientCountryAlpha2; set { _explicitNullValueClientCountryAlpha2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryAlpha2"); else _explicitNullProperties?.Remove("clientCountryAlpha2"); } }
+        public string ClientCountryAlpha2 { get => _explicitNullValueClientCountryAlpha2; set { _explicitNullValueClientCountryAlpha2 = value; AdditionalData?.Remove("clientCountryAlpha2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryAlpha2"); else _explicitNullProperties?.Remove("clientCountryAlpha2"); } }
         private string _explicitNullValueClientCountryAlpha2 = default!;
 #endif
         /// <summary>The clientCountryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientCountryName { get => _explicitNullValueClientCountryName; set { _explicitNullValueClientCountryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryName"); else _explicitNullProperties?.Remove("clientCountryName"); } }
+        public string? ClientCountryName { get => _explicitNullValueClientCountryName; set { _explicitNullValueClientCountryName = value; AdditionalData?.Remove("clientCountryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryName"); else _explicitNullProperties?.Remove("clientCountryName"); } }
         private string? _explicitNullValueClientCountryName = default!;
 #nullable restore
 #else
-        public string ClientCountryName { get => _explicitNullValueClientCountryName; set { _explicitNullValueClientCountryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryName"); else _explicitNullProperties?.Remove("clientCountryName"); } }
+        public string ClientCountryName { get => _explicitNullValueClientCountryName; set { _explicitNullValueClientCountryName = value; AdditionalData?.Remove("clientCountryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCountryName"); else _explicitNullProperties?.Remove("clientCountryName"); } }
         private string _explicitNullValueClientCountryName = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>

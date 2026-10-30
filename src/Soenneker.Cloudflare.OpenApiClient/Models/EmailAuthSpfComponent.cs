@@ -18,42 +18,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lookup_count") is { } nullNodeLookupCount && nullNodeLookupCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupCount = null;
-            if (parseNode.GetChildNode("nested") is { } nullNodeNested && nullNodeNested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nested = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("lookup_count") is null) { _explicitNullValueLookupCount = default!; _explicitNullProperties?.Remove("lookup_count"); }
+            else if (parseNode.GetChildNode("lookup_count") is { } nullNodeLookupCount && nullNodeLookupCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupCount = null;
+            if (parseNode.GetChildNode("nested") is null) { _explicitNullValueNested = default!; _explicitNullProperties?.Remove("nested"); }
+            else if (parseNode.GetChildNode("nested") is { } nullNodeNested && nullNodeNested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nested = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of DNS lookups this component requires (per RFC 7208).- MX, A, EXISTS, INCLUDE, REDIRECT, PTR: 1- IP4, IP6, ALL: 0</summary>
-        public int? LookupCount { get => _explicitNullValueLookupCount; set { _explicitNullValueLookupCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_count"); else _explicitNullProperties?.Remove("lookup_count"); } }
+        public int? LookupCount { get => _explicitNullValueLookupCount; set { _explicitNullValueLookupCount = value; AdditionalData?.Remove("lookup_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_count"); else _explicitNullProperties?.Remove("lookup_count"); } }
         private int? _explicitNullValueLookupCount = default!;
         /// <summary>Nested SPF tree for INCLUDE or REDIRECT mechanisms.Only present for INCLUDE/REDIRECT components.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested? Nested { get => _explicitNullValueNested; set { _explicitNullValueNested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nested"); else _explicitNullProperties?.Remove("nested"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested? Nested { get => _explicitNullValueNested; set { _explicitNullValueNested = value; AdditionalData?.Remove("nested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nested"); else _explicitNullProperties?.Remove("nested"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested? _explicitNullValueNested = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested Nested { get => _explicitNullValueNested; set { _explicitNullValueNested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nested"); else _explicitNullProperties?.Remove("nested"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested Nested { get => _explicitNullValueNested; set { _explicitNullValueNested = value; AdditionalData?.Remove("nested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nested"); else _explicitNullProperties?.Remove("nested"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested _explicitNullValueNested = default!;
 #endif
         /// <summary>SPF mechanism result qualifier</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult? _explicitNullValueResult = default!;
         /// <summary>Component type (UPPERCASE)</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType? _explicitNullValueType = default!;
         /// <summary>Component value with qualifier prefix.For IP4/IP6, stores just the IP address (no &quot;ip4:&quot; or &quot;ip6:&quot; prefix).Examples: &quot;203.0.113.1&quot;, &quot;203.0.113.0/24&quot;, &quot;2001:db8::1/64&quot;, &quot;-all&quot;, &quot;~mx:example.com&quot;, &quot;include:_spf.example.com&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
@@ -83,8 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "lookup_count", n => { LookupCount = n.GetIntValue(); } },
                 { "nested", n => { Nested = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType>(); } },
+                { "result", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResult = default; _explicitNullProperties?.Remove("result"); AdditionalData["result"] = unknown; } else { Result = parsed; AdditionalData.Remove("result"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }

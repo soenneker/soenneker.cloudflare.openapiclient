@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("HTTP/1.x") is { } nullNodeHTTP1X && nullNodeHTTP1X.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP1X = null;
-            if (parseNode.GetChildNode("HTTP/2") is { } nullNodeHTTP2 && nullNodeHTTP2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP2 = null;
-            if (parseNode.GetChildNode("HTTP/3") is { } nullNodeHTTP3 && nullNodeHTTP3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP3 = null;
+            if (parseNode.GetChildNode("HTTP/1.x") is null) { _explicitNullValueHTTP1X = default!; _explicitNullProperties?.Remove("HTTP/1.x"); }
+            else if (parseNode.GetChildNode("HTTP/1.x") is { } nullNodeHTTP1X && nullNodeHTTP1X.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP1X = null;
+            if (parseNode.GetChildNode("HTTP/2") is null) { _explicitNullValueHTTP2 = default!; _explicitNullProperties?.Remove("HTTP/2"); }
+            else if (parseNode.GetChildNode("HTTP/2") is { } nullNodeHTTP2 && nullNodeHTTP2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP2 = null;
+            if (parseNode.GetChildNode("HTTP/3") is null) { _explicitNullValueHTTP3 = default!; _explicitNullProperties?.Remove("HTTP/3"); }
+            else if (parseNode.GetChildNode("HTTP/3") is { } nullNodeHTTP3 && nullNodeHTTP3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP3 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTP1X property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HTTP1X { get => _explicitNullValueHTTP1X; set { _explicitNullValueHTTP1X = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/1.x"); else _explicitNullProperties?.Remove("HTTP/1.x"); } }
+        public string? HTTP1X { get => _explicitNullValueHTTP1X; set { _explicitNullValueHTTP1X = value; AdditionalData?.Remove("HTTP/1.x"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/1.x"); else _explicitNullProperties?.Remove("HTTP/1.x"); } }
         private string? _explicitNullValueHTTP1X = default!;
 #nullable restore
 #else
-        public string HTTP1X { get => _explicitNullValueHTTP1X; set { _explicitNullValueHTTP1X = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/1.x"); else _explicitNullProperties?.Remove("HTTP/1.x"); } }
+        public string HTTP1X { get => _explicitNullValueHTTP1X; set { _explicitNullValueHTTP1X = value; AdditionalData?.Remove("HTTP/1.x"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/1.x"); else _explicitNullProperties?.Remove("HTTP/1.x"); } }
         private string _explicitNullValueHTTP1X = default!;
 #endif
         /// <summary>The HTTP2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HTTP2 { get => _explicitNullValueHTTP2; set { _explicitNullValueHTTP2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/2"); else _explicitNullProperties?.Remove("HTTP/2"); } }
+        public string? HTTP2 { get => _explicitNullValueHTTP2; set { _explicitNullValueHTTP2 = value; AdditionalData?.Remove("HTTP/2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/2"); else _explicitNullProperties?.Remove("HTTP/2"); } }
         private string? _explicitNullValueHTTP2 = default!;
 #nullable restore
 #else
-        public string HTTP2 { get => _explicitNullValueHTTP2; set { _explicitNullValueHTTP2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/2"); else _explicitNullProperties?.Remove("HTTP/2"); } }
+        public string HTTP2 { get => _explicitNullValueHTTP2; set { _explicitNullValueHTTP2 = value; AdditionalData?.Remove("HTTP/2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/2"); else _explicitNullProperties?.Remove("HTTP/2"); } }
         private string _explicitNullValueHTTP2 = default!;
 #endif
         /// <summary>The HTTP3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HTTP3 { get => _explicitNullValueHTTP3; set { _explicitNullValueHTTP3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/3"); else _explicitNullProperties?.Remove("HTTP/3"); } }
+        public string? HTTP3 { get => _explicitNullValueHTTP3; set { _explicitNullValueHTTP3 = value; AdditionalData?.Remove("HTTP/3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/3"); else _explicitNullProperties?.Remove("HTTP/3"); } }
         private string? _explicitNullValueHTTP3 = default!;
 #nullable restore
 #else
-        public string HTTP3 { get => _explicitNullValueHTTP3; set { _explicitNullValueHTTP3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/3"); else _explicitNullProperties?.Remove("HTTP/3"); } }
+        public string HTTP3 { get => _explicitNullValueHTTP3; set { _explicitNullValueHTTP3 = value; AdditionalData?.Remove("HTTP/3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP/3"); else _explicitNullProperties?.Remove("HTTP/3"); } }
         private string _explicitNullValueHTTP3 = default!;
 #endif
         /// <summary>

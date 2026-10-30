@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("HTTP") is { } nullNodeHTTP && nullNodeHTTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP = null;
-            if (parseNode.GetChildNode("OTHER") is { } nullNodeOTHER && nullNodeOTHER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OTHER = null;
+            if (parseNode.GetChildNode("HTTP") is null) { _explicitNullValueHTTP = default!; _explicitNullProperties?.Remove("HTTP"); }
+            else if (parseNode.GetChildNode("HTTP") is { } nullNodeHTTP && nullNodeHTTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP = null;
+            if (parseNode.GetChildNode("OTHER") is null) { _explicitNullValueOTHER = default!; _explicitNullProperties?.Remove("OTHER"); }
+            else if (parseNode.GetChildNode("OTHER") is { } nullNodeOTHER && nullNodeOTHER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OTHER = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HTTP { get => _explicitNullValueHTTP; set { _explicitNullValueHTTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP"); else _explicitNullProperties?.Remove("HTTP"); } }
+        public string? HTTP { get => _explicitNullValueHTTP; set { _explicitNullValueHTTP = value; AdditionalData?.Remove("HTTP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP"); else _explicitNullProperties?.Remove("HTTP"); } }
         private string? _explicitNullValueHTTP = default!;
 #nullable restore
 #else
-        public string HTTP { get => _explicitNullValueHTTP; set { _explicitNullValueHTTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP"); else _explicitNullProperties?.Remove("HTTP"); } }
+        public string HTTP { get => _explicitNullValueHTTP; set { _explicitNullValueHTTP = value; AdditionalData?.Remove("HTTP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP"); else _explicitNullProperties?.Remove("HTTP"); } }
         private string _explicitNullValueHTTP = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
+        public string? OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; AdditionalData?.Remove("OTHER"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
         private string? _explicitNullValueOTHER = default!;
 #nullable restore
 #else
-        public string OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
+        public string OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; AdditionalData?.Remove("OTHER"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
         private string _explicitNullValueOTHER = default!;
 #endif
         /// <summary>

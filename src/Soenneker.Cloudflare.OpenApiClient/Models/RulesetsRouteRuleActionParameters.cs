@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("host_header") is { } nullNodeHostHeader && nullNodeHostHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostHeader = null;
-            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
-            if (parseNode.GetChildNode("sni") is { } nullNodeSni && nullNodeSni.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sni = null;
+            if (parseNode.GetChildNode("host_header") is null) { _explicitNullValueHostHeader = default!; _explicitNullProperties?.Remove("host_header"); }
+            else if (parseNode.GetChildNode("host_header") is { } nullNodeHostHeader && nullNodeHostHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostHeader = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("sni") is null) { _explicitNullValueSni = default!; _explicitNullProperties?.Remove("sni"); }
+            else if (parseNode.GetChildNode("sni") is { } nullNodeSni && nullNodeSni.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sni = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A value to rewrite the HTTP host header to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostHeader { get => _explicitNullValueHostHeader; set { _explicitNullValueHostHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_header"); else _explicitNullProperties?.Remove("host_header"); } }
+        public string? HostHeader { get => _explicitNullValueHostHeader; set { _explicitNullValueHostHeader = value; AdditionalData?.Remove("host_header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_header"); else _explicitNullProperties?.Remove("host_header"); } }
         private string? _explicitNullValueHostHeader = default!;
 #nullable restore
 #else
-        public string HostHeader { get => _explicitNullValueHostHeader; set { _explicitNullValueHostHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_header"); else _explicitNullProperties?.Remove("host_header"); } }
+        public string HostHeader { get => _explicitNullValueHostHeader; set { _explicitNullValueHostHeader = value; AdditionalData?.Remove("host_header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_header"); else _explicitNullProperties?.Remove("host_header"); } }
         private string _explicitNullValueHostHeader = default!;
 #endif
         /// <summary>An origin to route to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin _explicitNullValueOrigin = default!;
 #endif
         /// <summary>A Server Name Indication (SNI) override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni? Sni { get => _explicitNullValueSni; set { _explicitNullValueSni = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sni"); else _explicitNullProperties?.Remove("sni"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni? Sni { get => _explicitNullValueSni; set { _explicitNullValueSni = value; AdditionalData?.Remove("sni"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sni"); else _explicitNullProperties?.Remove("sni"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni? _explicitNullValueSni = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni Sni { get => _explicitNullValueSni; set { _explicitNullValueSni = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sni"); else _explicitNullProperties?.Remove("sni"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni Sni { get => _explicitNullValueSni; set { _explicitNullValueSni = value; AdditionalData?.Remove("sni"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sni"); else _explicitNullProperties?.Remove("sni"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni _explicitNullValueSni = default!;
 #endif
         /// <summary>

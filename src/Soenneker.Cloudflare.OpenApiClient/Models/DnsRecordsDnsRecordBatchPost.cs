@@ -56,6 +56,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(DnsRecordsDnsRecordWithData != null || DnsRecordsDnsRecordWithoutData != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DnsRecordsDnsRecordWithData, DnsRecordsDnsRecordWithoutData);
@@ -70,8 +72,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (DnsRecordsDnsRecordWithData == null && DnsRecordsDnsRecordWithoutData == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (DnsRecordsDnsRecordWithData != null && DnsRecordsDnsRecordWithoutData == null) { if (DnsRecordsDnsRecordWithData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordWithData); return; }
-            if (DnsRecordsDnsRecordWithoutData != null && DnsRecordsDnsRecordWithData == null) { if (DnsRecordsDnsRecordWithoutData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordWithoutData); return; }
+            int selectedUnionBranches = 0;
+            if (DnsRecordsDnsRecordWithData != null) selectedUnionBranches++;
+            if (DnsRecordsDnsRecordWithoutData != null) selectedUnionBranches++;
+            if (DnsRecordsDnsRecordWithData != null && selectedUnionBranches == 1) { if (DnsRecordsDnsRecordWithData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordWithData); return; }
+            if (DnsRecordsDnsRecordWithoutData != null && selectedUnionBranches == 1) { if (DnsRecordsDnsRecordWithoutData is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DnsRecordsDnsRecordWithoutData); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData>(null, DnsRecordsDnsRecordWithData, DnsRecordsDnsRecordWithoutData);

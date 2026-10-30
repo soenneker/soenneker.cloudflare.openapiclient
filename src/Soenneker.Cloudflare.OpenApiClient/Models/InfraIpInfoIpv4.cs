@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ip_addr") is { } nullNodeIpAddr && nullNodeIpAddr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAddr = null;
-            if (parseNode.GetChildNode("virtual_network_id") is { } nullNodeVirtualNetworkId && nullNodeVirtualNetworkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualNetworkId = null;
+            if (parseNode.GetChildNode("ip_addr") is null) { _explicitNullValueIpAddr = default!; _explicitNullProperties?.Remove("ip_addr"); }
+            else if (parseNode.GetChildNode("ip_addr") is { } nullNodeIpAddr && nullNodeIpAddr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAddr = null;
+            if (parseNode.GetChildNode("virtual_network_id") is null) { _explicitNullValueVirtualNetworkId = default!; _explicitNullProperties?.Remove("virtual_network_id"); }
+            else if (parseNode.GetChildNode("virtual_network_id") is { } nullNodeVirtualNetworkId && nullNodeVirtualNetworkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualNetworkId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IP address of the target</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddr { get => _explicitNullValueIpAddr; set { _explicitNullValueIpAddr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_addr"); else _explicitNullProperties?.Remove("ip_addr"); } }
+        public string? IpAddr { get => _explicitNullValueIpAddr; set { _explicitNullValueIpAddr = value; AdditionalData?.Remove("ip_addr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_addr"); else _explicitNullProperties?.Remove("ip_addr"); } }
         private string? _explicitNullValueIpAddr = default!;
 #nullable restore
 #else
-        public string IpAddr { get => _explicitNullValueIpAddr; set { _explicitNullValueIpAddr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_addr"); else _explicitNullProperties?.Remove("ip_addr"); } }
+        public string IpAddr { get => _explicitNullValueIpAddr; set { _explicitNullValueIpAddr = value; AdditionalData?.Remove("ip_addr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_addr"); else _explicitNullProperties?.Remove("ip_addr"); } }
         private string _explicitNullValueIpAddr = default!;
 #endif
         /// <summary>(optional) Private virtual network identifier for the target. If omitted, the default virtual network ID will be used.</summary>
-        public Guid? VirtualNetworkId { get => _explicitNullValueVirtualNetworkId; set { _explicitNullValueVirtualNetworkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_id"); else _explicitNullProperties?.Remove("virtual_network_id"); } }
+        public Guid? VirtualNetworkId { get => _explicitNullValueVirtualNetworkId; set { _explicitNullValueVirtualNetworkId = value; AdditionalData?.Remove("virtual_network_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_id"); else _explicitNullProperties?.Remove("virtual_network_id"); } }
         private Guid? _explicitNullValueVirtualNetworkId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfoIpv4"/> and sets the default values.

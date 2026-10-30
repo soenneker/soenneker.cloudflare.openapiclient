@@ -18,15 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attributes") is { } nullNodeAttributes && nullNodeAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attributes = null;
-            if (parseNode.GetChildNode("email_attribute_name") is { } nullNodeEmailAttributeName && nullNodeEmailAttributeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAttributeName = null;
-            if (parseNode.GetChildNode("force_authn") is { } nullNodeForceAuthn && nullNodeForceAuthn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceAuthn = null;
-            if (parseNode.GetChildNode("header_attributes") is { } nullNodeHeaderAttributes && nullNodeHeaderAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderAttributes = null;
-            if (parseNode.GetChildNode("idp_public_certs") is { } nullNodeIdpPublicCerts && nullNodeIdpPublicCerts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpPublicCerts = null;
-            if (parseNode.GetChildNode("issuer_url") is { } nullNodeIssuerUrl && nullNodeIssuerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerUrl = null;
-            if (parseNode.GetChildNode("max_sso_url_length") is { } nullNodeMaxSsoUrlLength && nullNodeMaxSsoUrlLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSsoUrlLength = null;
-            if (parseNode.GetChildNode("sign_request") is { } nullNodeSignRequest && nullNodeSignRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignRequest = null;
-            if (parseNode.GetChildNode("sso_target_url") is { } nullNodeSsoTargetUrl && nullNodeSsoTargetUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoTargetUrl = null;
+            if (parseNode.GetChildNode("attributes") is null) { _explicitNullValueAttributes = default!; _explicitNullProperties?.Remove("attributes"); }
+            else if (parseNode.GetChildNode("attributes") is { } nullNodeAttributes && nullNodeAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attributes = null;
+            if (parseNode.GetChildNode("email_attribute_name") is null) { _explicitNullValueEmailAttributeName = default!; _explicitNullProperties?.Remove("email_attribute_name"); }
+            else if (parseNode.GetChildNode("email_attribute_name") is { } nullNodeEmailAttributeName && nullNodeEmailAttributeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAttributeName = null;
+            if (parseNode.GetChildNode("force_authn") is null) { _explicitNullValueForceAuthn = default!; _explicitNullProperties?.Remove("force_authn"); }
+            else if (parseNode.GetChildNode("force_authn") is { } nullNodeForceAuthn && nullNodeForceAuthn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceAuthn = null;
+            if (parseNode.GetChildNode("header_attributes") is null) { _explicitNullValueHeaderAttributes = default!; _explicitNullProperties?.Remove("header_attributes"); }
+            else if (parseNode.GetChildNode("header_attributes") is { } nullNodeHeaderAttributes && nullNodeHeaderAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderAttributes = null;
+            if (parseNode.GetChildNode("idp_public_certs") is null) { _explicitNullValueIdpPublicCerts = default!; _explicitNullProperties?.Remove("idp_public_certs"); }
+            else if (parseNode.GetChildNode("idp_public_certs") is { } nullNodeIdpPublicCerts && nullNodeIdpPublicCerts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpPublicCerts = null;
+            if (parseNode.GetChildNode("issuer_url") is null) { _explicitNullValueIssuerUrl = default!; _explicitNullProperties?.Remove("issuer_url"); }
+            else if (parseNode.GetChildNode("issuer_url") is { } nullNodeIssuerUrl && nullNodeIssuerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerUrl = null;
+            if (parseNode.GetChildNode("max_sso_url_length") is null) { _explicitNullValueMaxSsoUrlLength = default!; _explicitNullProperties?.Remove("max_sso_url_length"); }
+            else if (parseNode.GetChildNode("max_sso_url_length") is { } nullNodeMaxSsoUrlLength && nullNodeMaxSsoUrlLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSsoUrlLength = null;
+            if (parseNode.GetChildNode("sign_request") is null) { _explicitNullValueSignRequest = default!; _explicitNullProperties?.Remove("sign_request"); }
+            else if (parseNode.GetChildNode("sign_request") is { } nullNodeSignRequest && nullNodeSignRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignRequest = null;
+            if (parseNode.GetChildNode("sso_target_url") is null) { _explicitNullValueSsoTargetUrl = default!; _explicitNullProperties?.Remove("sso_target_url"); }
+            else if (parseNode.GetChildNode("sso_target_url") is { } nullNodeSsoTargetUrl && nullNodeSsoTargetUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoTargetUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,70 +43,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of SAML attribute names that will be added to your signed JWT token and can be used in SAML policy rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        public List<string>? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
         private List<string>? _explicitNullValueAttributes = default!;
 #nullable restore
 #else
-        public List<string> Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        public List<string> Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
         private List<string> _explicitNullValueAttributes = default!;
 #endif
         /// <summary>The attribute name for email in the SAML response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailAttributeName { get => _explicitNullValueEmailAttributeName; set { _explicitNullValueEmailAttributeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_attribute_name"); else _explicitNullProperties?.Remove("email_attribute_name"); } }
+        public string? EmailAttributeName { get => _explicitNullValueEmailAttributeName; set { _explicitNullValueEmailAttributeName = value; AdditionalData?.Remove("email_attribute_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_attribute_name"); else _explicitNullProperties?.Remove("email_attribute_name"); } }
         private string? _explicitNullValueEmailAttributeName = default!;
 #nullable restore
 #else
-        public string EmailAttributeName { get => _explicitNullValueEmailAttributeName; set { _explicitNullValueEmailAttributeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_attribute_name"); else _explicitNullProperties?.Remove("email_attribute_name"); } }
+        public string EmailAttributeName { get => _explicitNullValueEmailAttributeName; set { _explicitNullValueEmailAttributeName = value; AdditionalData?.Remove("email_attribute_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_attribute_name"); else _explicitNullProperties?.Remove("email_attribute_name"); } }
         private string _explicitNullValueEmailAttributeName = default!;
 #endif
         /// <summary>Asks the IdP to reauthenticate the user for each SAML authentication request.</summary>
-        public bool? ForceAuthn { get => _explicitNullValueForceAuthn; set { _explicitNullValueForceAuthn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_authn"); else _explicitNullProperties?.Remove("force_authn"); } }
+        public bool? ForceAuthn { get => _explicitNullValueForceAuthn; set { _explicitNullValueForceAuthn = value; AdditionalData?.Remove("force_authn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_authn"); else _explicitNullProperties?.Remove("force_authn"); } }
         private bool? _explicitNullValueForceAuthn = default!;
         /// <summary>Add a list of attribute names that will be returned in the response header from the Access callback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem>? HeaderAttributes { get => _explicitNullValueHeaderAttributes; set { _explicitNullValueHeaderAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_attributes"); else _explicitNullProperties?.Remove("header_attributes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem>? HeaderAttributes { get => _explicitNullValueHeaderAttributes; set { _explicitNullValueHeaderAttributes = value; AdditionalData?.Remove("header_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_attributes"); else _explicitNullProperties?.Remove("header_attributes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem>? _explicitNullValueHeaderAttributes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem> HeaderAttributes { get => _explicitNullValueHeaderAttributes; set { _explicitNullValueHeaderAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_attributes"); else _explicitNullProperties?.Remove("header_attributes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem> HeaderAttributes { get => _explicitNullValueHeaderAttributes; set { _explicitNullValueHeaderAttributes = value; AdditionalData?.Remove("header_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_attributes"); else _explicitNullProperties?.Remove("header_attributes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaml2AllOf2ConfigHeaderAttributesItem> _explicitNullValueHeaderAttributes = default!;
 #endif
         /// <summary>X509 certificate to verify the signature in the SAML authentication response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IdpPublicCerts { get => _explicitNullValueIdpPublicCerts; set { _explicitNullValueIdpPublicCerts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_public_certs"); else _explicitNullProperties?.Remove("idp_public_certs"); } }
+        public List<string>? IdpPublicCerts { get => _explicitNullValueIdpPublicCerts; set { _explicitNullValueIdpPublicCerts = value; AdditionalData?.Remove("idp_public_certs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_public_certs"); else _explicitNullProperties?.Remove("idp_public_certs"); } }
         private List<string>? _explicitNullValueIdpPublicCerts = default!;
 #nullable restore
 #else
-        public List<string> IdpPublicCerts { get => _explicitNullValueIdpPublicCerts; set { _explicitNullValueIdpPublicCerts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_public_certs"); else _explicitNullProperties?.Remove("idp_public_certs"); } }
+        public List<string> IdpPublicCerts { get => _explicitNullValueIdpPublicCerts; set { _explicitNullValueIdpPublicCerts = value; AdditionalData?.Remove("idp_public_certs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_public_certs"); else _explicitNullProperties?.Remove("idp_public_certs"); } }
         private List<string> _explicitNullValueIdpPublicCerts = default!;
 #endif
         /// <summary>IdP Entity ID or Issuer URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer_url"); else _explicitNullProperties?.Remove("issuer_url"); } }
+        public string? IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; AdditionalData?.Remove("issuer_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer_url"); else _explicitNullProperties?.Remove("issuer_url"); } }
         private string? _explicitNullValueIssuerUrl = default!;
 #nullable restore
 #else
-        public string IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer_url"); else _explicitNullProperties?.Remove("issuer_url"); } }
+        public string IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; AdditionalData?.Remove("issuer_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer_url"); else _explicitNullProperties?.Remove("issuer_url"); } }
         private string _explicitNullValueIssuerUrl = default!;
 #endif
         /// <summary>The maximum URL length the IdP accepts for the SSO redirect URL.When the constructed SSO URL would exceed this length, the RelayStateis stored server-side and a short nonce is passed to the IdP instead.Set this if your IdP enforces a URL length limit.</summary>
-        public int? MaxSsoUrlLength { get => _explicitNullValueMaxSsoUrlLength; set { _explicitNullValueMaxSsoUrlLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_sso_url_length"); else _explicitNullProperties?.Remove("max_sso_url_length"); } }
+        public int? MaxSsoUrlLength { get => _explicitNullValueMaxSsoUrlLength; set { _explicitNullValueMaxSsoUrlLength = value; AdditionalData?.Remove("max_sso_url_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_sso_url_length"); else _explicitNullProperties?.Remove("max_sso_url_length"); } }
         private int? _explicitNullValueMaxSsoUrlLength = default!;
         /// <summary>Sign the SAML authentication request with Access credentials. To verify the signature, use the public key from the Access certs endpoints.</summary>
-        public bool? SignRequest { get => _explicitNullValueSignRequest; set { _explicitNullValueSignRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_request"); else _explicitNullProperties?.Remove("sign_request"); } }
+        public bool? SignRequest { get => _explicitNullValueSignRequest; set { _explicitNullValueSignRequest = value; AdditionalData?.Remove("sign_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_request"); else _explicitNullProperties?.Remove("sign_request"); } }
         private bool? _explicitNullValueSignRequest = default!;
         /// <summary>URL to send the SAML authentication requests to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SsoTargetUrl { get => _explicitNullValueSsoTargetUrl; set { _explicitNullValueSsoTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso_target_url"); else _explicitNullProperties?.Remove("sso_target_url"); } }
+        public string? SsoTargetUrl { get => _explicitNullValueSsoTargetUrl; set { _explicitNullValueSsoTargetUrl = value; AdditionalData?.Remove("sso_target_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso_target_url"); else _explicitNullProperties?.Remove("sso_target_url"); } }
         private string? _explicitNullValueSsoTargetUrl = default!;
 #nullable restore
 #else
-        public string SsoTargetUrl { get => _explicitNullValueSsoTargetUrl; set { _explicitNullValueSsoTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso_target_url"); else _explicitNullProperties?.Remove("sso_target_url"); } }
+        public string SsoTargetUrl { get => _explicitNullValueSsoTargetUrl; set { _explicitNullValueSsoTargetUrl = value; AdditionalData?.Remove("sso_target_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso_target_url"); else _explicitNullProperties?.Remove("sso_target_url"); } }
         private string _explicitNullValueSsoTargetUrl = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lifetime") is { } nullNodeLifetime && nullNodeLifetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lifetime = null;
+            if (parseNode.GetChildNode("lifetime") is null) { _explicitNullValueLifetime = default!; _explicitNullProperties?.Remove("lifetime"); }
+            else if (parseNode.GetChildNode("lifetime") is { } nullNodeLifetime && nullNodeLifetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lifetime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>How long a refresh token will be valid for after creation. Valid units are m,h,d. Must be longer than 1m.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Lifetime { get => _explicitNullValueLifetime; set { _explicitNullValueLifetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifetime"); else _explicitNullProperties?.Remove("lifetime"); } }
+        public string? Lifetime { get => _explicitNullValueLifetime; set { _explicitNullValueLifetime = value; AdditionalData?.Remove("lifetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifetime"); else _explicitNullProperties?.Remove("lifetime"); } }
         private string? _explicitNullValueLifetime = default!;
 #nullable restore
 #else
-        public string Lifetime { get => _explicitNullValueLifetime; set { _explicitNullValueLifetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifetime"); else _explicitNullProperties?.Remove("lifetime"); } }
+        public string Lifetime { get => _explicitNullValueLifetime; set { _explicitNullValueLifetime = value; AdditionalData?.Remove("lifetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifetime"); else _explicitNullProperties?.Remove("lifetime"); } }
         private string _explicitNullValueLifetime = default!;
 #endif
         /// <summary>

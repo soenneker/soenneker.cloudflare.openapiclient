@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("policy_ids") is { } nullNodePolicyIds && nullNodePolicyIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyIds = null;
-            if (parseNode.GetChildNode("version_config") is { } nullNodeVersionConfig && nullNodeVersionConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionConfig = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("policy_ids") is null) { _explicitNullValuePolicyIds = default!; _explicitNullProperties?.Remove("policy_ids"); }
+            else if (parseNode.GetChildNode("policy_ids") is { } nullNodePolicyIds && nullNodePolicyIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyIds = null;
+            if (parseNode.GetChildNode("version_config") is null) { _explicitNullValueVersionConfig = default!; _explicitNullProperties?.Remove("version_config"); }
+            else if (parseNode.GetChildNode("version_config") is { } nullNodeVersionConfig && nullNodeVersionConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionConfig = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user-friendly name for the deployment group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Replaces the entire list of policy IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PolicyIds { get => _explicitNullValuePolicyIds; set { _explicitNullValuePolicyIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_ids"); else _explicitNullProperties?.Remove("policy_ids"); } }
+        public List<string>? PolicyIds { get => _explicitNullValuePolicyIds; set { _explicitNullValuePolicyIds = value; AdditionalData?.Remove("policy_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_ids"); else _explicitNullProperties?.Remove("policy_ids"); } }
         private List<string>? _explicitNullValuePolicyIds = default!;
 #nullable restore
 #else
-        public List<string> PolicyIds { get => _explicitNullValuePolicyIds; set { _explicitNullValuePolicyIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_ids"); else _explicitNullProperties?.Remove("policy_ids"); } }
+        public List<string> PolicyIds { get => _explicitNullValuePolicyIds; set { _explicitNullValuePolicyIds = value; AdditionalData?.Remove("policy_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_ids"); else _explicitNullProperties?.Remove("policy_ids"); } }
         private List<string> _explicitNullValuePolicyIds = default!;
 #endif
         /// <summary>Replaces the entire version_config array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVersionConfig>? VersionConfig { get => _explicitNullValueVersionConfig; set { _explicitNullValueVersionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_config"); else _explicitNullProperties?.Remove("version_config"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVersionConfig>? VersionConfig { get => _explicitNullValueVersionConfig; set { _explicitNullValueVersionConfig = value; AdditionalData?.Remove("version_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_config"); else _explicitNullProperties?.Remove("version_config"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVersionConfig>? _explicitNullValueVersionConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVersionConfig> VersionConfig { get => _explicitNullValueVersionConfig; set { _explicitNullValueVersionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_config"); else _explicitNullProperties?.Remove("version_config"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVersionConfig> VersionConfig { get => _explicitNullValueVersionConfig; set { _explicitNullValueVersionConfig = value; AdditionalData?.Remove("version_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_config"); else _explicitNullProperties?.Remove("version_config"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesVersionConfig> _explicitNullValueVersionConfig = default!;
 #endif
         /// <summary>

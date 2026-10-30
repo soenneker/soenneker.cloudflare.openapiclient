@@ -17,137 +17,150 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cdate") is { } nullNodeCdate && nullNodeCdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cdate = null;
-            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
-            if (parseNode.GetChildNode("edate") is { } nullNodeEdate && nullNodeEdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edate = null;
-            if (parseNode.GetChildNode("tenant_contacts") is { } nullNodeTenantContacts && nullNodeTenantContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantContacts = null;
-            if (parseNode.GetChildNode("tenant_labels") is { } nullNodeTenantLabels && nullNodeTenantLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantLabels = null;
-            if (parseNode.GetChildNode("tenant_metadata") is { } nullNodeTenantMetadata && nullNodeTenantMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantMetadata = null;
-            if (parseNode.GetChildNode("tenant_name") is { } nullNodeTenantName && nullNodeTenantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantName = null;
-            if (parseNode.GetChildNode("tenant_network") is { } nullNodeTenantNetwork && nullNodeTenantNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantNetwork = null;
-            if (parseNode.GetChildNode("tenant_status") is { } nullNodeTenantStatus && nullNodeTenantStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantStatus = null;
-            if (parseNode.GetChildNode("tenant_tag") is { } nullNodeTenantTag && nullNodeTenantTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantTag = null;
-            if (parseNode.GetChildNode("tenant_type") is { } nullNodeTenantType && nullNodeTenantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantType = null;
-            if (parseNode.GetChildNode("tenant_units") is { } nullNodeTenantUnits && nullNodeTenantUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantUnits = null;
-            if (parseNode.GetChildNode("ui_flags") is { } nullNodeUiFlags && nullNodeUiFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UiFlags = null;
+            if (parseNode.GetChildNode("cdate") is null) { _explicitNullValueCdate = default!; _explicitNullProperties?.Remove("cdate"); }
+            else if (parseNode.GetChildNode("cdate") is { } nullNodeCdate && nullNodeCdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cdate = null;
+            if (parseNode.GetChildNode("customer_id") is null) { _explicitNullValueCustomerId = default!; _explicitNullProperties?.Remove("customer_id"); }
+            else if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("edate") is null) { _explicitNullValueEdate = default!; _explicitNullProperties?.Remove("edate"); }
+            else if (parseNode.GetChildNode("edate") is { } nullNodeEdate && nullNodeEdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edate = null;
+            if (parseNode.GetChildNode("tenant_contacts") is null) { _explicitNullValueTenantContacts = default!; _explicitNullProperties?.Remove("tenant_contacts"); }
+            else if (parseNode.GetChildNode("tenant_contacts") is { } nullNodeTenantContacts && nullNodeTenantContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantContacts = null;
+            if (parseNode.GetChildNode("tenant_labels") is null) { _explicitNullValueTenantLabels = default!; _explicitNullProperties?.Remove("tenant_labels"); }
+            else if (parseNode.GetChildNode("tenant_labels") is { } nullNodeTenantLabels && nullNodeTenantLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantLabels = null;
+            if (parseNode.GetChildNode("tenant_metadata") is null) { _explicitNullValueTenantMetadata = default!; _explicitNullProperties?.Remove("tenant_metadata"); }
+            else if (parseNode.GetChildNode("tenant_metadata") is { } nullNodeTenantMetadata && nullNodeTenantMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantMetadata = null;
+            if (parseNode.GetChildNode("tenant_name") is null) { _explicitNullValueTenantName = default!; _explicitNullProperties?.Remove("tenant_name"); }
+            else if (parseNode.GetChildNode("tenant_name") is { } nullNodeTenantName && nullNodeTenantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantName = null;
+            if (parseNode.GetChildNode("tenant_network") is null) { _explicitNullValueTenantNetwork = default!; _explicitNullProperties?.Remove("tenant_network"); }
+            else if (parseNode.GetChildNode("tenant_network") is { } nullNodeTenantNetwork && nullNodeTenantNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantNetwork = null;
+            if (parseNode.GetChildNode("tenant_status") is null) { _explicitNullValueTenantStatus = default!; _explicitNullProperties?.Remove("tenant_status"); }
+            else if (parseNode.GetChildNode("tenant_status") is { } nullNodeTenantStatus && nullNodeTenantStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantStatus = null;
+            if (parseNode.GetChildNode("tenant_tag") is null) { _explicitNullValueTenantTag = default!; _explicitNullProperties?.Remove("tenant_tag"); }
+            else if (parseNode.GetChildNode("tenant_tag") is { } nullNodeTenantTag && nullNodeTenantTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantTag = null;
+            if (parseNode.GetChildNode("tenant_type") is null) { _explicitNullValueTenantType = default!; _explicitNullProperties?.Remove("tenant_type"); }
+            else if (parseNode.GetChildNode("tenant_type") is { } nullNodeTenantType && nullNodeTenantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantType = null;
+            if (parseNode.GetChildNode("tenant_units") is null) { _explicitNullValueTenantUnits = default!; _explicitNullProperties?.Remove("tenant_units"); }
+            else if (parseNode.GetChildNode("tenant_units") is { } nullNodeTenantUnits && nullNodeTenantUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantUnits = null;
+            if (parseNode.GetChildNode("ui_flags") is null) { _explicitNullValueUiFlags = default!; _explicitNullProperties?.Remove("ui_flags"); }
+            else if (parseNode.GetChildNode("ui_flags") is { } nullNodeUiFlags && nullNodeUiFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UiFlags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cdate property</summary>
-        public DateTimeOffset? Cdate { get => _explicitNullValueCdate; set { _explicitNullValueCdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdate"); else _explicitNullProperties?.Remove("cdate"); } }
+        public DateTimeOffset? Cdate { get => _explicitNullValueCdate; set { _explicitNullValueCdate = value; AdditionalData?.Remove("cdate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdate"); else _explicitNullProperties?.Remove("cdate"); } }
         private DateTimeOffset? _explicitNullValueCdate = default!;
         /// <summary>The customer_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>The edate property</summary>
-        public DateTimeOffset? Edate { get => _explicitNullValueEdate; set { _explicitNullValueEdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edate"); else _explicitNullProperties?.Remove("edate"); } }
+        public DateTimeOffset? Edate { get => _explicitNullValueEdate; set { _explicitNullValueEdate = value; AdditionalData?.Remove("edate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edate"); else _explicitNullProperties?.Remove("edate"); } }
         private DateTimeOffset? _explicitNullValueEdate = default!;
         /// <summary>The tenant_contacts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantContacts? TenantContacts { get => _explicitNullValueTenantContacts; set { _explicitNullValueTenantContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_contacts"); else _explicitNullProperties?.Remove("tenant_contacts"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantContacts? TenantContacts { get => _explicitNullValueTenantContacts; set { _explicitNullValueTenantContacts = value; AdditionalData?.Remove("tenant_contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_contacts"); else _explicitNullProperties?.Remove("tenant_contacts"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantContacts? _explicitNullValueTenantContacts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantContacts TenantContacts { get => _explicitNullValueTenantContacts; set { _explicitNullValueTenantContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_contacts"); else _explicitNullProperties?.Remove("tenant_contacts"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantContacts TenantContacts { get => _explicitNullValueTenantContacts; set { _explicitNullValueTenantContacts = value; AdditionalData?.Remove("tenant_contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_contacts"); else _explicitNullProperties?.Remove("tenant_contacts"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantContacts _explicitNullValueTenantContacts = default!;
 #endif
         /// <summary>The tenant_labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TenantLabels { get => _explicitNullValueTenantLabels; set { _explicitNullValueTenantLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_labels"); else _explicitNullProperties?.Remove("tenant_labels"); } }
+        public List<string>? TenantLabels { get => _explicitNullValueTenantLabels; set { _explicitNullValueTenantLabels = value; AdditionalData?.Remove("tenant_labels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_labels"); else _explicitNullProperties?.Remove("tenant_labels"); } }
         private List<string>? _explicitNullValueTenantLabels = default!;
 #nullable restore
 #else
-        public List<string> TenantLabels { get => _explicitNullValueTenantLabels; set { _explicitNullValueTenantLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_labels"); else _explicitNullProperties?.Remove("tenant_labels"); } }
+        public List<string> TenantLabels { get => _explicitNullValueTenantLabels; set { _explicitNullValueTenantLabels = value; AdditionalData?.Remove("tenant_labels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_labels"); else _explicitNullProperties?.Remove("tenant_labels"); } }
         private List<string> _explicitNullValueTenantLabels = default!;
 #endif
         /// <summary>The tenant_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadata? TenantMetadata { get => _explicitNullValueTenantMetadata; set { _explicitNullValueTenantMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_metadata"); else _explicitNullProperties?.Remove("tenant_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadata? TenantMetadata { get => _explicitNullValueTenantMetadata; set { _explicitNullValueTenantMetadata = value; AdditionalData?.Remove("tenant_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_metadata"); else _explicitNullProperties?.Remove("tenant_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadata? _explicitNullValueTenantMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadata TenantMetadata { get => _explicitNullValueTenantMetadata; set { _explicitNullValueTenantMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_metadata"); else _explicitNullProperties?.Remove("tenant_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadata TenantMetadata { get => _explicitNullValueTenantMetadata; set { _explicitNullValueTenantMetadata = value; AdditionalData?.Remove("tenant_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_metadata"); else _explicitNullProperties?.Remove("tenant_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadata _explicitNullValueTenantMetadata = default!;
 #endif
         /// <summary>The tenant_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantName { get => _explicitNullValueTenantName; set { _explicitNullValueTenantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_name"); else _explicitNullProperties?.Remove("tenant_name"); } }
+        public string? TenantName { get => _explicitNullValueTenantName; set { _explicitNullValueTenantName = value; AdditionalData?.Remove("tenant_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_name"); else _explicitNullProperties?.Remove("tenant_name"); } }
         private string? _explicitNullValueTenantName = default!;
 #nullable restore
 #else
-        public string TenantName { get => _explicitNullValueTenantName; set { _explicitNullValueTenantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_name"); else _explicitNullProperties?.Remove("tenant_name"); } }
+        public string TenantName { get => _explicitNullValueTenantName; set { _explicitNullValueTenantName = value; AdditionalData?.Remove("tenant_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_name"); else _explicitNullProperties?.Remove("tenant_name"); } }
         private string _explicitNullValueTenantName = default!;
 #endif
         /// <summary>The tenant_network property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantNetwork? TenantNetwork { get => _explicitNullValueTenantNetwork; set { _explicitNullValueTenantNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_network"); else _explicitNullProperties?.Remove("tenant_network"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantNetwork? TenantNetwork { get => _explicitNullValueTenantNetwork; set { _explicitNullValueTenantNetwork = value; AdditionalData?.Remove("tenant_network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_network"); else _explicitNullProperties?.Remove("tenant_network"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantNetwork? _explicitNullValueTenantNetwork = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantNetwork TenantNetwork { get => _explicitNullValueTenantNetwork; set { _explicitNullValueTenantNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_network"); else _explicitNullProperties?.Remove("tenant_network"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantNetwork TenantNetwork { get => _explicitNullValueTenantNetwork; set { _explicitNullValueTenantNetwork = value; AdditionalData?.Remove("tenant_network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_network"); else _explicitNullProperties?.Remove("tenant_network"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantNetwork _explicitNullValueTenantNetwork = default!;
 #endif
         /// <summary>The tenant_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantStatus { get => _explicitNullValueTenantStatus; set { _explicitNullValueTenantStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_status"); else _explicitNullProperties?.Remove("tenant_status"); } }
+        public string? TenantStatus { get => _explicitNullValueTenantStatus; set { _explicitNullValueTenantStatus = value; AdditionalData?.Remove("tenant_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_status"); else _explicitNullProperties?.Remove("tenant_status"); } }
         private string? _explicitNullValueTenantStatus = default!;
 #nullable restore
 #else
-        public string TenantStatus { get => _explicitNullValueTenantStatus; set { _explicitNullValueTenantStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_status"); else _explicitNullProperties?.Remove("tenant_status"); } }
+        public string TenantStatus { get => _explicitNullValueTenantStatus; set { _explicitNullValueTenantStatus = value; AdditionalData?.Remove("tenant_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_status"); else _explicitNullProperties?.Remove("tenant_status"); } }
         private string _explicitNullValueTenantStatus = default!;
 #endif
         /// <summary>The tenant_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantTag { get => _explicitNullValueTenantTag; set { _explicitNullValueTenantTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_tag"); else _explicitNullProperties?.Remove("tenant_tag"); } }
+        public string? TenantTag { get => _explicitNullValueTenantTag; set { _explicitNullValueTenantTag = value; AdditionalData?.Remove("tenant_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_tag"); else _explicitNullProperties?.Remove("tenant_tag"); } }
         private string? _explicitNullValueTenantTag = default!;
 #nullable restore
 #else
-        public string TenantTag { get => _explicitNullValueTenantTag; set { _explicitNullValueTenantTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_tag"); else _explicitNullProperties?.Remove("tenant_tag"); } }
+        public string TenantTag { get => _explicitNullValueTenantTag; set { _explicitNullValueTenantTag = value; AdditionalData?.Remove("tenant_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_tag"); else _explicitNullProperties?.Remove("tenant_tag"); } }
         private string _explicitNullValueTenantTag = default!;
 #endif
         /// <summary>The tenant_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
+        public string? TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; AdditionalData?.Remove("tenant_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
         private string? _explicitNullValueTenantType = default!;
 #nullable restore
 #else
-        public string TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
+        public string TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; AdditionalData?.Remove("tenant_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
         private string _explicitNullValueTenantType = default!;
 #endif
         /// <summary>The tenant_units property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit>? TenantUnits { get => _explicitNullValueTenantUnits; set { _explicitNullValueTenantUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_units"); else _explicitNullProperties?.Remove("tenant_units"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit>? TenantUnits { get => _explicitNullValueTenantUnits; set { _explicitNullValueTenantUnits = value; AdditionalData?.Remove("tenant_units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_units"); else _explicitNullProperties?.Remove("tenant_units"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit>? _explicitNullValueTenantUnits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit> TenantUnits { get => _explicitNullValueTenantUnits; set { _explicitNullValueTenantUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_units"); else _explicitNullProperties?.Remove("tenant_units"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit> TenantUnits { get => _explicitNullValueTenantUnits; set { _explicitNullValueTenantUnits = value; AdditionalData?.Remove("tenant_units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_units"); else _explicitNullProperties?.Remove("tenant_units"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit> _explicitNullValueTenantUnits = default!;
 #endif
         /// <summary>Which top-level dashboard experiences to render for this tenant; both may be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantUiFlags? UiFlags { get => _explicitNullValueUiFlags; set { _explicitNullValueUiFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_flags"); else _explicitNullProperties?.Remove("ui_flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantUiFlags? UiFlags { get => _explicitNullValueUiFlags; set { _explicitNullValueUiFlags = value; AdditionalData?.Remove("ui_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_flags"); else _explicitNullProperties?.Remove("ui_flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantUiFlags? _explicitNullValueUiFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantUiFlags UiFlags { get => _explicitNullValueUiFlags; set { _explicitNullValueUiFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_flags"); else _explicitNullProperties?.Remove("ui_flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantUiFlags UiFlags { get => _explicitNullValueUiFlags; set { _explicitNullValueUiFlags = value; AdditionalData?.Remove("ui_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_flags"); else _explicitNullProperties?.Remove("ui_flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantUiFlags _explicitNullValueUiFlags = default!;
 #endif
         /// <summary>

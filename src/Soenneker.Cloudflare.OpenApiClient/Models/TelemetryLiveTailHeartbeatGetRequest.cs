@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scriptId") is { } nullNodeScriptId && nullNodeScriptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptId = null;
+            if (parseNode.GetChildNode("scriptId") is null) { _explicitNullValueScriptId = default!; _explicitNullProperties?.Remove("scriptId"); }
+            else if (parseNode.GetChildNode("scriptId") is { } nullNodeScriptId && nullNodeScriptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The scriptId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
+        public string? ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; AdditionalData?.Remove("scriptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
         private string? _explicitNullValueScriptId = default!;
 #nullable restore
 #else
-        public string ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
+        public string ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; AdditionalData?.Remove("scriptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
         private string _explicitNullValueScriptId = default!;
 #endif
         /// <summary>

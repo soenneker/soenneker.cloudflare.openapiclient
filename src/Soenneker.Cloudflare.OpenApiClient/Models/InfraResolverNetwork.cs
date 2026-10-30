@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("resolver_ips") is { } nullNodeResolverIps && nullNodeResolverIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolverIps = null;
-            if (parseNode.GetChildNode("tunnel_id") is { } nullNodeTunnelId && nullNodeTunnelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelId = null;
+            if (parseNode.GetChildNode("resolver_ips") is null) { _explicitNullValueResolverIps = default!; _explicitNullProperties?.Remove("resolver_ips"); }
+            else if (parseNode.GetChildNode("resolver_ips") is { } nullNodeResolverIps && nullNodeResolverIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolverIps = null;
+            if (parseNode.GetChildNode("tunnel_id") is null) { _explicitNullValueTunnelId = default!; _explicitNullProperties?.Remove("tunnel_id"); }
+            else if (parseNode.GetChildNode("tunnel_id") is { } nullNodeTunnelId && nullNodeTunnelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The resolver_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResolverIps { get => _explicitNullValueResolverIps; set { _explicitNullValueResolverIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolver_ips"); else _explicitNullProperties?.Remove("resolver_ips"); } }
+        public List<string>? ResolverIps { get => _explicitNullValueResolverIps; set { _explicitNullValueResolverIps = value; AdditionalData?.Remove("resolver_ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolver_ips"); else _explicitNullProperties?.Remove("resolver_ips"); } }
         private List<string>? _explicitNullValueResolverIps = default!;
 #nullable restore
 #else
-        public List<string> ResolverIps { get => _explicitNullValueResolverIps; set { _explicitNullValueResolverIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolver_ips"); else _explicitNullProperties?.Remove("resolver_ips"); } }
+        public List<string> ResolverIps { get => _explicitNullValueResolverIps; set { _explicitNullValueResolverIps = value; AdditionalData?.Remove("resolver_ips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolver_ips"); else _explicitNullProperties?.Remove("resolver_ips"); } }
         private List<string> _explicitNullValueResolverIps = default!;
 #endif
         /// <summary>The tunnel_id property</summary>
-        public Guid? TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
+        public Guid? TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; AdditionalData?.Remove("tunnel_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
         private Guid? _explicitNullValueTunnelId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraResolverNetwork"/> and sets the default values.

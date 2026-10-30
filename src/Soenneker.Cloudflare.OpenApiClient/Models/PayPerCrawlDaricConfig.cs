@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bot_overrides") is { } nullNodeBotOverrides && nullNodeBotOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotOverrides = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("price_usd_microcents") is { } nullNodePriceUsdMicrocents && nullNodePriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriceUsdMicrocents = null;
+            if (parseNode.GetChildNode("bot_overrides") is null) { _explicitNullValueBotOverrides = default!; _explicitNullProperties?.Remove("bot_overrides"); }
+            else if (parseNode.GetChildNode("bot_overrides") is { } nullNodeBotOverrides && nullNodeBotOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotOverrides = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("price_usd_microcents") is null) { _explicitNullValuePriceUsdMicrocents = default!; _explicitNullProperties?.Remove("price_usd_microcents"); }
+            else if (parseNode.GetChildNode("price_usd_microcents") is { } nullNodePriceUsdMicrocents && nullNodePriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriceUsdMicrocents = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The bot_overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty? BotOverrides { get => _explicitNullValueBotOverrides; set { _explicitNullValueBotOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_overrides"); else _explicitNullProperties?.Remove("bot_overrides"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty? BotOverrides { get => _explicitNullValueBotOverrides; set { _explicitNullValueBotOverrides = value; AdditionalData?.Remove("bot_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_overrides"); else _explicitNullProperties?.Remove("bot_overrides"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty? _explicitNullValueBotOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty BotOverrides { get => _explicitNullValueBotOverrides; set { _explicitNullValueBotOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_overrides"); else _explicitNullProperties?.Remove("bot_overrides"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty BotOverrides { get => _explicitNullValueBotOverrides; set { _explicitNullValueBotOverrides = value; AdditionalData?.Remove("bot_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_overrides"); else _explicitNullProperties?.Remove("bot_overrides"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty _explicitNullValueBotOverrides = default!;
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Price in microcents 1 USD = 100,000,000 microcents. Must be 0 or a multiple of 100,000 $0.001. Range: $0.001–$9,999.999.</summary>
-        public int? PriceUsdMicrocents { get => _explicitNullValuePriceUsdMicrocents; set { _explicitNullValuePriceUsdMicrocents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_usd_microcents"); else _explicitNullProperties?.Remove("price_usd_microcents"); } }
+        public int? PriceUsdMicrocents { get => _explicitNullValuePriceUsdMicrocents; set { _explicitNullValuePriceUsdMicrocents = value; AdditionalData?.Remove("price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_usd_microcents"); else _explicitNullProperties?.Remove("price_usd_microcents"); } }
         private int? _explicitNullValuePriceUsdMicrocents = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfig"/> and sets the default values.

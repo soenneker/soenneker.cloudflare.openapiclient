@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_version") is { } nullNodeClientVersion && nullNodeClientVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientVersion = null;
-            if (parseNode.GetChildNode("colo_name") is { } nullNodeColoName && nullNodeColoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoName = null;
-            if (parseNode.GetChildNode("opened_at") is { } nullNodeOpenedAt && nullNodeOpenedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedAt = null;
-            if (parseNode.GetChildNode("origin_ip") is { } nullNodeOriginIp && nullNodeOriginIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginIp = null;
+            if (parseNode.GetChildNode("client_version") is null) { _explicitNullValueClientVersion = default!; _explicitNullProperties?.Remove("client_version"); }
+            else if (parseNode.GetChildNode("client_version") is { } nullNodeClientVersion && nullNodeClientVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientVersion = null;
+            if (parseNode.GetChildNode("colo_name") is null) { _explicitNullValueColoName = default!; _explicitNullProperties?.Remove("colo_name"); }
+            else if (parseNode.GetChildNode("colo_name") is { } nullNodeColoName && nullNodeColoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoName = null;
+            if (parseNode.GetChildNode("opened_at") is null) { _explicitNullValueOpenedAt = default!; _explicitNullProperties?.Remove("opened_at"); }
+            else if (parseNode.GetChildNode("opened_at") is { } nullNodeOpenedAt && nullNodeOpenedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedAt = null;
+            if (parseNode.GetChildNode("origin_ip") is null) { _explicitNullValueOriginIp = default!; _explicitNullProperties?.Remove("origin_ip"); }
+            else if (parseNode.GetChildNode("origin_ip") is { } nullNodeOriginIp && nullNodeOriginIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginIp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,36 +34,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cloudflared version used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientVersion { get => _explicitNullValueClientVersion; set { _explicitNullValueClientVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_version"); else _explicitNullProperties?.Remove("client_version"); } }
+        public string? ClientVersion { get => _explicitNullValueClientVersion; set { _explicitNullValueClientVersion = value; AdditionalData?.Remove("client_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_version"); else _explicitNullProperties?.Remove("client_version"); } }
         private string? _explicitNullValueClientVersion = default!;
 #nullable restore
 #else
-        public string ClientVersion { get => _explicitNullValueClientVersion; set { _explicitNullValueClientVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_version"); else _explicitNullProperties?.Remove("client_version"); } }
+        public string ClientVersion { get => _explicitNullValueClientVersion; set { _explicitNullValueClientVersion = value; AdditionalData?.Remove("client_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_version"); else _explicitNullProperties?.Remove("client_version"); } }
         private string _explicitNullValueClientVersion = default!;
 #endif
         /// <summary>The Cloudflare data center used for this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        public string? ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; AdditionalData?.Remove("colo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
         private string? _explicitNullValueColoName = default!;
 #nullable restore
 #else
-        public string ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        public string ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; AdditionalData?.Remove("colo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
         private string _explicitNullValueColoName = default!;
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
         public Guid? Id { get; private set; }
         /// <summary>Timestamp of when the connection was established.</summary>
-        public DateTimeOffset? OpenedAt { get => _explicitNullValueOpenedAt; set { _explicitNullValueOpenedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_at"); else _explicitNullProperties?.Remove("opened_at"); } }
+        public DateTimeOffset? OpenedAt { get => _explicitNullValueOpenedAt; set { _explicitNullValueOpenedAt = value; AdditionalData?.Remove("opened_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_at"); else _explicitNullProperties?.Remove("opened_at"); } }
         private DateTimeOffset? _explicitNullValueOpenedAt = default!;
         /// <summary>The public IP address of the host running the Mesh node connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
+        public string? OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; AdditionalData?.Remove("origin_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
         private string? _explicitNullValueOriginIp = default!;
 #nullable restore
 #else
-        public string OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
+        public string OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; AdditionalData?.Remove("origin_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
         private string _explicitNullValueOriginIp = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
-            if (parseNode.GetChildNode("tag_match") is { } nullNodeTagMatch && nullNodeTagMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagMatch = null;
-            if (parseNode.GetChildNode("worker_name") is { } nullNodeWorkerName && nullNodeWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerName = null;
+            if (parseNode.GetChildNode("namespace") is null) { _explicitNullValueNamespace = default!; _explicitNullProperties?.Remove("namespace"); }
+            else if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
+            if (parseNode.GetChildNode("tag_match") is null) { _explicitNullValueTagMatch = default!; _explicitNullProperties?.Remove("tag_match"); }
+            else if (parseNode.GetChildNode("tag_match") is { } nullNodeTagMatch && nullNodeTagMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagMatch = null;
+            if (parseNode.GetChildNode("worker_name") is null) { _explicitNullValueWorkerName = default!; _explicitNullProperties?.Remove("worker_name"); }
+            else if (parseNode.GetChildNode("worker_name") is { } nullNodeWorkerName && nullNodeWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
+        public List<string>? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; AdditionalData?.Remove("namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
         private List<string>? _explicitNullValueNamespace = default!;
 #nullable restore
 #else
-        public List<string> Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
+        public List<string> Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; AdditionalData?.Remove("namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
         private List<string> _explicitNullValueNamespace = default!;
 #endif
         /// <summary>The tag_match property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TagMatch { get => _explicitNullValueTagMatch; set { _explicitNullValueTagMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_match"); else _explicitNullProperties?.Remove("tag_match"); } }
+        public List<string>? TagMatch { get => _explicitNullValueTagMatch; set { _explicitNullValueTagMatch = value; AdditionalData?.Remove("tag_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_match"); else _explicitNullProperties?.Remove("tag_match"); } }
         private List<string>? _explicitNullValueTagMatch = default!;
 #nullable restore
 #else
-        public List<string> TagMatch { get => _explicitNullValueTagMatch; set { _explicitNullValueTagMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_match"); else _explicitNullProperties?.Remove("tag_match"); } }
+        public List<string> TagMatch { get => _explicitNullValueTagMatch; set { _explicitNullValueTagMatch = value; AdditionalData?.Remove("tag_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_match"); else _explicitNullProperties?.Remove("tag_match"); } }
         private List<string> _explicitNullValueTagMatch = default!;
 #endif
         /// <summary>The worker_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
+        public List<string>? WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; AdditionalData?.Remove("worker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
         private List<string>? _explicitNullValueWorkerName = default!;
 #nullable restore
 #else
-        public List<string> WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
+        public List<string> WorkerName { get => _explicitNullValueWorkerName; set { _explicitNullValueWorkerName = value; AdditionalData?.Remove("worker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_name"); else _explicitNullProperties?.Remove("worker_name"); } }
         private List<string> _explicitNullValueWorkerName = default!;
 #endif
         /// <summary>

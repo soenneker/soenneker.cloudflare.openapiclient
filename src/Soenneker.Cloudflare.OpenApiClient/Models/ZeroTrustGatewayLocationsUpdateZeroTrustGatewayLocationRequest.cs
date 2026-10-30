@@ -17,75 +17,83 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_default") is { } nullNodeClientDefault && nullNodeClientDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientDefault = null;
-            if (parseNode.GetChildNode("dns64_enabled") is { } nullNodeDns64Enabled && nullNodeDns64Enabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns64Enabled = null;
-            if (parseNode.GetChildNode("dns_destination_ips_id") is { } nullNodeDnsDestinationIpsId && nullNodeDnsDestinationIpsId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsDestinationIpsId = null;
-            if (parseNode.GetChildNode("ecs_support") is { } nullNodeEcsSupport && nullNodeEcsSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EcsSupport = null;
-            if (parseNode.GetChildNode("endpoints") is { } nullNodeEndpoints && nullNodeEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoints = null;
-            if (parseNode.GetChildNode("max_ttl") is { } nullNodeMaxTtl && nullNodeMaxTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtl = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("networks") is { } nullNodeNetworks && nullNodeNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Networks = null;
+            if (parseNode.GetChildNode("client_default") is null) { _explicitNullValueClientDefault = default!; _explicitNullProperties?.Remove("client_default"); }
+            else if (parseNode.GetChildNode("client_default") is { } nullNodeClientDefault && nullNodeClientDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientDefault = null;
+            if (parseNode.GetChildNode("dns64_enabled") is null) { _explicitNullValueDns64Enabled = default!; _explicitNullProperties?.Remove("dns64_enabled"); }
+            else if (parseNode.GetChildNode("dns64_enabled") is { } nullNodeDns64Enabled && nullNodeDns64Enabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns64Enabled = null;
+            if (parseNode.GetChildNode("dns_destination_ips_id") is null) { _explicitNullValueDnsDestinationIpsId = default!; _explicitNullProperties?.Remove("dns_destination_ips_id"); }
+            else if (parseNode.GetChildNode("dns_destination_ips_id") is { } nullNodeDnsDestinationIpsId && nullNodeDnsDestinationIpsId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsDestinationIpsId = null;
+            if (parseNode.GetChildNode("ecs_support") is null) { _explicitNullValueEcsSupport = default!; _explicitNullProperties?.Remove("ecs_support"); }
+            else if (parseNode.GetChildNode("ecs_support") is { } nullNodeEcsSupport && nullNodeEcsSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EcsSupport = null;
+            if (parseNode.GetChildNode("endpoints") is null) { _explicitNullValueEndpoints = default!; _explicitNullProperties?.Remove("endpoints"); }
+            else if (parseNode.GetChildNode("endpoints") is { } nullNodeEndpoints && nullNodeEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoints = null;
+            if (parseNode.GetChildNode("max_ttl") is null) { _explicitNullValueMaxTtl = default!; _explicitNullProperties?.Remove("max_ttl"); }
+            else if (parseNode.GetChildNode("max_ttl") is { } nullNodeMaxTtl && nullNodeMaxTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtl = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("networks") is null) { _explicitNullValueNetworks = default!; _explicitNullProperties?.Remove("networks"); }
+            else if (parseNode.GetChildNode("networks") is { } nullNodeNetworks && nullNodeNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Networks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicate whether this location is the default location.</summary>
-        public bool? ClientDefault { get => _explicitNullValueClientDefault; set { _explicitNullValueClientDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_default"); else _explicitNullProperties?.Remove("client_default"); } }
+        public bool? ClientDefault { get => _explicitNullValueClientDefault; set { _explicitNullValueClientDefault = value; AdditionalData?.Remove("client_default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_default"); else _explicitNullProperties?.Remove("client_default"); } }
         private bool? _explicitNullValueClientDefault = default!;
         /// <summary>Enable DNS64 synthesis for DNS queries matched to this location. When updating a location, omitting this field resets it to false.</summary>
-        public bool? Dns64Enabled { get => _explicitNullValueDns64Enabled; set { _explicitNullValueDns64Enabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns64_enabled"); else _explicitNullProperties?.Remove("dns64_enabled"); } }
+        public bool? Dns64Enabled { get => _explicitNullValueDns64Enabled; set { _explicitNullValueDns64Enabled = value; AdditionalData?.Remove("dns64_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns64_enabled"); else _explicitNullProperties?.Remove("dns64_enabled"); } }
         private bool? _explicitNullValueDns64Enabled = default!;
         /// <summary>Specify the identifier of the pair of IPv4 addresses assigned to this location. When creating a location, if this field is absent or set to null, the pair of shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When updating a location, if this field is absent or set to null, the pre-assigned pair remains unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DnsDestinationIpsId { get => _explicitNullValueDnsDestinationIpsId; set { _explicitNullValueDnsDestinationIpsId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_destination_ips_id"); else _explicitNullProperties?.Remove("dns_destination_ips_id"); } }
+        public string? DnsDestinationIpsId { get => _explicitNullValueDnsDestinationIpsId; set { _explicitNullValueDnsDestinationIpsId = value; AdditionalData?.Remove("dns_destination_ips_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_destination_ips_id"); else _explicitNullProperties?.Remove("dns_destination_ips_id"); } }
         private string? _explicitNullValueDnsDestinationIpsId = default!;
 #nullable restore
 #else
-        public string DnsDestinationIpsId { get => _explicitNullValueDnsDestinationIpsId; set { _explicitNullValueDnsDestinationIpsId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_destination_ips_id"); else _explicitNullProperties?.Remove("dns_destination_ips_id"); } }
+        public string DnsDestinationIpsId { get => _explicitNullValueDnsDestinationIpsId; set { _explicitNullValueDnsDestinationIpsId = value; AdditionalData?.Remove("dns_destination_ips_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_destination_ips_id"); else _explicitNullProperties?.Remove("dns_destination_ips_id"); } }
         private string _explicitNullValueDnsDestinationIpsId = default!;
 #endif
         /// <summary>Indicate whether the location must resolve EDNS queries.</summary>
-        public bool? EcsSupport { get => _explicitNullValueEcsSupport; set { _explicitNullValueEcsSupport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ecs_support"); else _explicitNullProperties?.Remove("ecs_support"); } }
+        public bool? EcsSupport { get => _explicitNullValueEcsSupport; set { _explicitNullValueEcsSupport = value; AdditionalData?.Remove("ecs_support"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ecs_support"); else _explicitNullProperties?.Remove("ecs_support"); } }
         private bool? _explicitNullValueEcsSupport = default!;
         /// <summary>Configure the destination endpoints for this location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayEndpoints? Endpoints { get => _explicitNullValueEndpoints; set { _explicitNullValueEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoints"); else _explicitNullProperties?.Remove("endpoints"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayEndpoints? Endpoints { get => _explicitNullValueEndpoints; set { _explicitNullValueEndpoints = value; AdditionalData?.Remove("endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoints"); else _explicitNullProperties?.Remove("endpoints"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayEndpoints? _explicitNullValueEndpoints = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayEndpoints Endpoints { get => _explicitNullValueEndpoints; set { _explicitNullValueEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoints"); else _explicitNullProperties?.Remove("endpoints"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayEndpoints Endpoints { get => _explicitNullValueEndpoints; set { _explicitNullValueEndpoints = value; AdditionalData?.Remove("endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoints"); else _explicitNullProperties?.Remove("endpoints"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayEndpoints _explicitNullValueEndpoints = default!;
 #endif
         /// <summary>Controls how DNS response TTLs are capped for this location relative to the account `max_ttl_secs` setting. Omitting `max_ttl` on update resets it to `inherit`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayMaxTtl? MaxTtl { get => _explicitNullValueMaxTtl; set { _explicitNullValueMaxTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl"); else _explicitNullProperties?.Remove("max_ttl"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayMaxTtl? MaxTtl { get => _explicitNullValueMaxTtl; set { _explicitNullValueMaxTtl = value; AdditionalData?.Remove("max_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl"); else _explicitNullProperties?.Remove("max_ttl"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayMaxTtl? _explicitNullValueMaxTtl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayMaxTtl MaxTtl { get => _explicitNullValueMaxTtl; set { _explicitNullValueMaxTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl"); else _explicitNullProperties?.Remove("max_ttl"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayMaxTtl MaxTtl { get => _explicitNullValueMaxTtl; set { _explicitNullValueMaxTtl = value; AdditionalData?.Remove("max_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl"); else _explicitNullProperties?.Remove("max_ttl"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayMaxTtl _explicitNullValueMaxTtl = default!;
 #endif
         /// <summary>Specify the location name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network>? Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network>? Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; AdditionalData?.Remove("networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network>? _explicitNullValueNetworks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network> Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network> Networks { get => _explicitNullValueNetworks; set { _explicitNullValueNetworks = value; AdditionalData?.Remove("networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networks"); else _explicitNullProperties?.Remove("networks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network> _explicitNullValueNetworks = default!;
 #endif
         /// <summary>

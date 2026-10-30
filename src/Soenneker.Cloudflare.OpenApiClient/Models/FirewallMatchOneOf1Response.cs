@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("origin_traffic") is { } nullNodeOriginTraffic && nullNodeOriginTraffic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginTraffic = null;
+            if (parseNode.GetChildNode("origin_traffic") is null) { _explicitNullValueOriginTraffic = default!; _explicitNullProperties?.Remove("origin_traffic"); }
+            else if (parseNode.GetChildNode("origin_traffic") is { } nullNodeOriginTraffic && nullNodeOriginTraffic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginTraffic = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When true, only the uncached traffic served from your origin servers will count towards rate limiting. In this case, any cached traffic served by Cloudflare will not count towards rate limiting. This field is optional.Notes: This field is deprecated. Instead, use response headers and set &quot;origin_traffic&quot; to &quot;false&quot; to avoid legacy behaviour interacting with the &quot;response_headers&quot; property.</summary>
-        public bool? OriginTraffic { get => _explicitNullValueOriginTraffic; set { _explicitNullValueOriginTraffic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_traffic"); else _explicitNullProperties?.Remove("origin_traffic"); } }
+        public bool? OriginTraffic { get => _explicitNullValueOriginTraffic; set { _explicitNullValueOriginTraffic = value; AdditionalData?.Remove("origin_traffic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_traffic"); else _explicitNullProperties?.Remove("origin_traffic"); } }
         private bool? _explicitNullValueOriginTraffic = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1Response"/> and sets the default values.

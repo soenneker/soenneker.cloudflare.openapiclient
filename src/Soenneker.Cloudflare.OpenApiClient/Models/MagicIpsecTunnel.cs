@@ -17,58 +17,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_null_cipher") is { } nullNodeAllowNullCipher && nullNodeAllowNullCipher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowNullCipher = null;
-            if (parseNode.GetChildNode("automatic_return_routing") is { } nullNodeAutomaticReturnRouting && nullNodeAutomaticReturnRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticReturnRouting = null;
-            if (parseNode.GetChildNode("bgp") is { } nullNodeBgp && nullNodeBgp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bgp = null;
-            if (parseNode.GetChildNode("bgp_status") is { } nullNodeBgpStatus && nullNodeBgpStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BgpStatus = null;
-            if (parseNode.GetChildNode("cloudflare_endpoint") is { } nullNodeCloudflareEndpoint && nullNodeCloudflareEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareEndpoint = null;
-            if (parseNode.GetChildNode("customer_endpoint") is { } nullNodeCustomerEndpoint && nullNodeCustomerEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerEndpoint = null;
-            if (parseNode.GetChildNode("custom_remote_identities") is { } nullNodeCustomRemoteIdentities && nullNodeCustomRemoteIdentities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRemoteIdentities = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("health_check") is { } nullNodeHealthCheck && nullNodeHealthCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheck = null;
-            if (parseNode.GetChildNode("interface_address") is { } nullNodeInterfaceAddress && nullNodeInterfaceAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress = null;
-            if (parseNode.GetChildNode("interface_address6") is { } nullNodeInterfaceAddress6 && nullNodeInterfaceAddress6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress6 = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("psk_metadata") is { } nullNodePskMetadata && nullNodePskMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PskMetadata = null;
-            if (parseNode.GetChildNode("replay_protection") is { } nullNodeReplayProtection && nullNodeReplayProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplayProtection = null;
+            if (parseNode.GetChildNode("allow_null_cipher") is null) { _explicitNullValueAllowNullCipher = default!; _explicitNullProperties?.Remove("allow_null_cipher"); }
+            else if (parseNode.GetChildNode("allow_null_cipher") is { } nullNodeAllowNullCipher && nullNodeAllowNullCipher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowNullCipher = null;
+            if (parseNode.GetChildNode("automatic_return_routing") is null) { _explicitNullValueAutomaticReturnRouting = default!; _explicitNullProperties?.Remove("automatic_return_routing"); }
+            else if (parseNode.GetChildNode("automatic_return_routing") is { } nullNodeAutomaticReturnRouting && nullNodeAutomaticReturnRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticReturnRouting = null;
+            if (parseNode.GetChildNode("bgp") is null) { _explicitNullValueBgp = default!; _explicitNullProperties?.Remove("bgp"); }
+            else if (parseNode.GetChildNode("bgp") is { } nullNodeBgp && nullNodeBgp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bgp = null;
+            if (parseNode.GetChildNode("bgp_status") is null) { _explicitNullValueBgpStatus = default!; _explicitNullProperties?.Remove("bgp_status"); }
+            else if (parseNode.GetChildNode("bgp_status") is { } nullNodeBgpStatus && nullNodeBgpStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BgpStatus = null;
+            if (parseNode.GetChildNode("cloudflare_endpoint") is null) { _explicitNullValueCloudflareEndpoint = default!; _explicitNullProperties?.Remove("cloudflare_endpoint"); }
+            else if (parseNode.GetChildNode("cloudflare_endpoint") is { } nullNodeCloudflareEndpoint && nullNodeCloudflareEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareEndpoint = null;
+            if (parseNode.GetChildNode("customer_endpoint") is null) { _explicitNullValueCustomerEndpoint = default!; _explicitNullProperties?.Remove("customer_endpoint"); }
+            else if (parseNode.GetChildNode("customer_endpoint") is { } nullNodeCustomerEndpoint && nullNodeCustomerEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerEndpoint = null;
+            if (parseNode.GetChildNode("custom_remote_identities") is null) { _explicitNullValueCustomRemoteIdentities = default!; _explicitNullProperties?.Remove("custom_remote_identities"); }
+            else if (parseNode.GetChildNode("custom_remote_identities") is { } nullNodeCustomRemoteIdentities && nullNodeCustomRemoteIdentities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRemoteIdentities = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("health_check") is null) { _explicitNullValueHealthCheck = default!; _explicitNullProperties?.Remove("health_check"); }
+            else if (parseNode.GetChildNode("health_check") is { } nullNodeHealthCheck && nullNodeHealthCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheck = null;
+            if (parseNode.GetChildNode("interface_address") is null) { _explicitNullValueInterfaceAddress = default!; _explicitNullProperties?.Remove("interface_address"); }
+            else if (parseNode.GetChildNode("interface_address") is { } nullNodeInterfaceAddress && nullNodeInterfaceAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress = null;
+            if (parseNode.GetChildNode("interface_address6") is null) { _explicitNullValueInterfaceAddress6 = default!; _explicitNullProperties?.Remove("interface_address6"); }
+            else if (parseNode.GetChildNode("interface_address6") is { } nullNodeInterfaceAddress6 && nullNodeInterfaceAddress6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress6 = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("psk_metadata") is null) { _explicitNullValuePskMetadata = default!; _explicitNullProperties?.Remove("psk_metadata"); }
+            else if (parseNode.GetChildNode("psk_metadata") is { } nullNodePskMetadata && nullNodePskMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PskMetadata = null;
+            if (parseNode.GetChildNode("replay_protection") is null) { _explicitNullValueReplayProtection = default!; _explicitNullProperties?.Remove("replay_protection"); }
+            else if (parseNode.GetChildNode("replay_protection") is { } nullNodeReplayProtection && nullNodeReplayProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplayProtection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).</summary>
-        public bool? AllowNullCipher { get => _explicitNullValueAllowNullCipher; set { _explicitNullValueAllowNullCipher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_null_cipher"); else _explicitNullProperties?.Remove("allow_null_cipher"); } }
+        public bool? AllowNullCipher { get => _explicitNullValueAllowNullCipher; set { _explicitNullValueAllowNullCipher = value; AdditionalData?.Remove("allow_null_cipher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_null_cipher"); else _explicitNullProperties?.Remove("allow_null_cipher"); } }
         private bool? _explicitNullValueAllowNullCipher = default!;
         /// <summary>True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected.</summary>
-        public bool? AutomaticReturnRouting { get => _explicitNullValueAutomaticReturnRouting; set { _explicitNullValueAutomaticReturnRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_return_routing"); else _explicitNullProperties?.Remove("automatic_return_routing"); } }
+        public bool? AutomaticReturnRouting { get => _explicitNullValueAutomaticReturnRouting; set { _explicitNullValueAutomaticReturnRouting = value; AdditionalData?.Remove("automatic_return_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_return_routing"); else _explicitNullProperties?.Remove("automatic_return_routing"); } }
         private bool? _explicitNullValueAutomaticReturnRouting = default!;
         /// <summary>The bgp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpConfig? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpConfig? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpConfig? _explicitNullValueBgp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpConfig Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpConfig Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpConfig _explicitNullValueBgp = default!;
 #endif
         /// <summary>The bgp_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState? BgpStatus { get => _explicitNullValueBgpStatus; set { _explicitNullValueBgpStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_status"); else _explicitNullProperties?.Remove("bgp_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState? BgpStatus { get => _explicitNullValueBgpStatus; set { _explicitNullValueBgpStatus = value; AdditionalData?.Remove("bgp_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_status"); else _explicitNullProperties?.Remove("bgp_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState? _explicitNullValueBgpStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState BgpStatus { get => _explicitNullValueBgpStatus; set { _explicitNullValueBgpStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_status"); else _explicitNullProperties?.Remove("bgp_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState BgpStatus { get => _explicitNullValueBgpStatus; set { _explicitNullValueBgpStatus = value; AdditionalData?.Remove("bgp_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp_status"); else _explicitNullProperties?.Remove("bgp_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpStatusWithState _explicitNullValueBgpStatus = default!;
 #endif
         /// <summary>The IP address assigned to the Cloudflare side of the IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
+        public string? CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; AdditionalData?.Remove("cloudflare_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
         private string? _explicitNullValueCloudflareEndpoint = default!;
 #nullable restore
 #else
-        public string CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
+        public string CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; AdditionalData?.Remove("cloudflare_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
         private string _explicitNullValueCloudflareEndpoint = default!;
 #endif
         /// <summary>The date and time the tunnel was created.</summary>
@@ -76,41 +90,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The IP address assigned to the customer side of the IPsec tunnel. Not required, but must be set for proactive traceroutes to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
+        public string? CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; AdditionalData?.Remove("customer_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
         private string? _explicitNullValueCustomerEndpoint = default!;
 #nullable restore
 #else
-        public string CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
+        public string CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; AdditionalData?.Remove("customer_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
         private string _explicitNullValueCustomerEndpoint = default!;
 #endif
         /// <summary>The custom_remote_identities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCustomRemoteIdentities? CustomRemoteIdentities { get => _explicitNullValueCustomRemoteIdentities; set { _explicitNullValueCustomRemoteIdentities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_remote_identities"); else _explicitNullProperties?.Remove("custom_remote_identities"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCustomRemoteIdentities? CustomRemoteIdentities { get => _explicitNullValueCustomRemoteIdentities; set { _explicitNullValueCustomRemoteIdentities = value; AdditionalData?.Remove("custom_remote_identities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_remote_identities"); else _explicitNullProperties?.Remove("custom_remote_identities"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCustomRemoteIdentities? _explicitNullValueCustomRemoteIdentities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCustomRemoteIdentities CustomRemoteIdentities { get => _explicitNullValueCustomRemoteIdentities; set { _explicitNullValueCustomRemoteIdentities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_remote_identities"); else _explicitNullProperties?.Remove("custom_remote_identities"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCustomRemoteIdentities CustomRemoteIdentities { get => _explicitNullValueCustomRemoteIdentities; set { _explicitNullValueCustomRemoteIdentities = value; AdditionalData?.Remove("custom_remote_identities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_remote_identities"); else _explicitNullProperties?.Remove("custom_remote_identities"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCustomRemoteIdentities _explicitNullValueCustomRemoteIdentities = default!;
 #endif
         /// <summary>An optional description forthe IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck? HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck? HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck? _explicitNullValueHealthCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTunnelHealthCheck _explicitNullValueHealthCheck = default!;
 #endif
         /// <summary>Identifier</summary>
@@ -124,21 +138,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
+        public string? InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; AdditionalData?.Remove("interface_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
         private string? _explicitNullValueInterfaceAddress = default!;
 #nullable restore
 #else
-        public string InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
+        public string InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; AdditionalData?.Remove("interface_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
         private string _explicitNullValueInterfaceAddress = default!;
 #endif
         /// <summary>A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
+        public string? InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; AdditionalData?.Remove("interface_address6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
         private string? _explicitNullValueInterfaceAddress6 = default!;
 #nullable restore
 #else
-        public string InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
+        public string InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; AdditionalData?.Remove("interface_address6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
         private string _explicitNullValueInterfaceAddress6 = default!;
 #endif
         /// <summary>The date and time the tunnel was last modified.</summary>
@@ -146,25 +160,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of the IPsec tunnel. The name cannot share a name with other tunnels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The PSK metadata that includes when the PSK was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata? PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata? PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; AdditionalData?.Remove("psk_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata? _explicitNullValuePskMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; AdditionalData?.Remove("psk_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata _explicitNullValuePskMetadata = default!;
 #endif
         /// <summary>If `true`, then IPsec replay protection will be supported in the Cloudflare-to-customer direction.</summary>
-        public bool? ReplayProtection { get => _explicitNullValueReplayProtection; set { _explicitNullValueReplayProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replay_protection"); else _explicitNullProperties?.Remove("replay_protection"); } }
+        public bool? ReplayProtection { get => _explicitNullValueReplayProtection; set { _explicitNullValueReplayProtection = value; AdditionalData?.Remove("replay_protection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replay_protection"); else _explicitNullProperties?.Remove("replay_protection"); } }
         private bool? _explicitNullValueReplayProtection = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel"/> and sets the default values.

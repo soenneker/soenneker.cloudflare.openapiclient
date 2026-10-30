@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delivery_delay") is { } nullNodeDeliveryDelay && nullNodeDeliveryDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryDelay = null;
-            if (parseNode.GetChildNode("delivery_paused") is { } nullNodeDeliveryPaused && nullNodeDeliveryPaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryPaused = null;
-            if (parseNode.GetChildNode("message_retention_period") is { } nullNodeMessageRetentionPeriod && nullNodeMessageRetentionPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageRetentionPeriod = null;
+            if (parseNode.GetChildNode("delivery_delay") is null) { _explicitNullValueDeliveryDelay = default!; _explicitNullProperties?.Remove("delivery_delay"); }
+            else if (parseNode.GetChildNode("delivery_delay") is { } nullNodeDeliveryDelay && nullNodeDeliveryDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryDelay = null;
+            if (parseNode.GetChildNode("delivery_paused") is null) { _explicitNullValueDeliveryPaused = default!; _explicitNullProperties?.Remove("delivery_paused"); }
+            else if (parseNode.GetChildNode("delivery_paused") is { } nullNodeDeliveryPaused && nullNodeDeliveryPaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryPaused = null;
+            if (parseNode.GetChildNode("message_retention_period") is null) { _explicitNullValueMessageRetentionPeriod = default!; _explicitNullProperties?.Remove("message_retention_period"); }
+            else if (parseNode.GetChildNode("message_retention_period") is { } nullNodeMessageRetentionPeriod && nullNodeMessageRetentionPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageRetentionPeriod = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of seconds to delay delivery of all messages to consumers.</summary>
-        public double? DeliveryDelay { get => _explicitNullValueDeliveryDelay; set { _explicitNullValueDeliveryDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_delay"); else _explicitNullProperties?.Remove("delivery_delay"); } }
+        public double? DeliveryDelay { get => _explicitNullValueDeliveryDelay; set { _explicitNullValueDeliveryDelay = value; AdditionalData?.Remove("delivery_delay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_delay"); else _explicitNullProperties?.Remove("delivery_delay"); } }
         private double? _explicitNullValueDeliveryDelay = default!;
         /// <summary>Indicates if message delivery to consumers is currently paused.</summary>
-        public bool? DeliveryPaused { get => _explicitNullValueDeliveryPaused; set { _explicitNullValueDeliveryPaused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_paused"); else _explicitNullProperties?.Remove("delivery_paused"); } }
+        public bool? DeliveryPaused { get => _explicitNullValueDeliveryPaused; set { _explicitNullValueDeliveryPaused = value; AdditionalData?.Remove("delivery_paused"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_paused"); else _explicitNullProperties?.Remove("delivery_paused"); } }
         private bool? _explicitNullValueDeliveryPaused = default!;
         /// <summary>Number of seconds after which an unconsumed message will be delayed.</summary>
-        public double? MessageRetentionPeriod { get => _explicitNullValueMessageRetentionPeriod; set { _explicitNullValueMessageRetentionPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_retention_period"); else _explicitNullProperties?.Remove("message_retention_period"); } }
+        public double? MessageRetentionPeriod { get => _explicitNullValueMessageRetentionPeriod; set { _explicitNullValueMessageRetentionPeriod = value; AdditionalData?.Remove("message_retention_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_retention_period"); else _explicitNullProperties?.Remove("message_retention_period"); } }
         private double? _explicitNullValueMessageRetentionPeriod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueSettings"/> and sets the default values.

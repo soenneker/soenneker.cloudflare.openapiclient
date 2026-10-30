@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authorized_keys") is { } nullNodeAuthorizedKeys && nullNodeAuthorizedKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedKeys = null;
-            if (parseNode.GetChildNode("wrangler_ssh") is { } nullNodeWranglerSsh && nullNodeWranglerSsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WranglerSsh = null;
+            if (parseNode.GetChildNode("authorized_keys") is null) { _explicitNullValueAuthorizedKeys = default!; _explicitNullProperties?.Remove("authorized_keys"); }
+            else if (parseNode.GetChildNode("authorized_keys") is { } nullNodeAuthorizedKeys && nullNodeAuthorizedKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedKeys = null;
+            if (parseNode.GetChildNode("wrangler_ssh") is null) { _explicitNullValueWranglerSsh = default!; _explicitNullProperties?.Remove("wrangler_ssh"); }
+            else if (parseNode.GetChildNode("wrangler_ssh") is { } nullNodeWranglerSsh && nullNodeWranglerSsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WranglerSsh = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The authorized_keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; AdditionalData?.Remove("authorized_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey>? _explicitNullValueAuthorizedKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> AuthorizedKeys { get => _explicitNullValueAuthorizedKeys; set { _explicitNullValueAuthorizedKeys = value; AdditionalData?.Remove("authorized_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_keys"); else _explicitNullProperties?.Remove("authorized_keys"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcUserSshPublicKey> _explicitNullValueAuthorizedKeys = default!;
 #endif
         /// <summary>Configuration properties for connecting with SSH to a container using Wrangler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig? WranglerSsh { get => _explicitNullValueWranglerSsh; set { _explicitNullValueWranglerSsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_ssh"); else _explicitNullProperties?.Remove("wrangler_ssh"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig? WranglerSsh { get => _explicitNullValueWranglerSsh; set { _explicitNullValueWranglerSsh = value; AdditionalData?.Remove("wrangler_ssh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_ssh"); else _explicitNullProperties?.Remove("wrangler_ssh"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig? _explicitNullValueWranglerSsh = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig WranglerSsh { get => _explicitNullValueWranglerSsh; set { _explicitNullValueWranglerSsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_ssh"); else _explicitNullProperties?.Remove("wrangler_ssh"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig WranglerSsh { get => _explicitNullValueWranglerSsh; set { _explicitNullValueWranglerSsh = value; AdditionalData?.Remove("wrangler_ssh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrangler_ssh"); else _explicitNullProperties?.Remove("wrangler_ssh"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CcWranglerSshConfig _explicitNullValueWranglerSsh = default!;
 #endif
         /// <summary>

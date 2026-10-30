@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("extend") is { } nullNodeExtend && nullNodeExtend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extend = null;
-            if (parseNode.GetChildNode("visibility_timeout_ms") is { } nullNodeVisibilityTimeoutMs && nullNodeVisibilityTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisibilityTimeoutMs = null;
+            if (parseNode.GetChildNode("extend") is null) { _explicitNullValueExtend = default!; _explicitNullProperties?.Remove("extend"); }
+            else if (parseNode.GetChildNode("extend") is { } nullNodeExtend && nullNodeExtend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extend = null;
+            if (parseNode.GetChildNode("visibility_timeout_ms") is null) { _explicitNullValueVisibilityTimeoutMs = default!; _explicitNullProperties?.Remove("visibility_timeout_ms"); }
+            else if (parseNode.GetChildNode("visibility_timeout_ms") is { } nullNodeVisibilityTimeoutMs && nullNodeVisibilityTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisibilityTimeoutMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The extend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesExtendMessagesRequestExtendItem>? Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesExtendMessagesRequestExtendItem>? Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; AdditionalData?.Remove("extend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesExtendMessagesRequestExtendItem>? _explicitNullValueExtend = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesExtendMessagesRequestExtendItem> Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesExtendMessagesRequestExtendItem> Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; AdditionalData?.Remove("extend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesExtendMessagesRequestExtendItem> _explicitNullValueExtend = default!;
 #endif
         /// <summary>The number of milliseconds that a message is exclusively leased. After the timeout, the message becomes available for another attempt.</summary>
-        public double? VisibilityTimeoutMs { get => _explicitNullValueVisibilityTimeoutMs; set { _explicitNullValueVisibilityTimeoutMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility_timeout_ms"); else _explicitNullProperties?.Remove("visibility_timeout_ms"); } }
+        public double? VisibilityTimeoutMs { get => _explicitNullValueVisibilityTimeoutMs; set { _explicitNullValueVisibilityTimeoutMs = value; AdditionalData?.Remove("visibility_timeout_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility_timeout_ms"); else _explicitNullProperties?.Remove("visibility_timeout_ms"); } }
         private double? _explicitNullValueVisibilityTimeoutMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesExtendMessagesRequest"/> and sets the default values.

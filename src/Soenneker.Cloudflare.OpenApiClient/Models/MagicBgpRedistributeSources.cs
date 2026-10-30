@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("static:wan") is { } nullNodeStaticWan && nullNodeStaticWan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticWan = null;
+            if (parseNode.GetChildNode("static:wan") is null) { _explicitNullValueStaticWan = default!; _explicitNullProperties?.Remove("static:wan"); }
+            else if (parseNode.GetChildNode("static:wan") is { } nullNodeStaticWan && nullNodeStaticWan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticWan = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Redistribute static WAN routes into BGP</summary>
-        public bool? StaticWan { get => _explicitNullValueStaticWan; set { _explicitNullValueStaticWan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static:wan"); else _explicitNullProperties?.Remove("static:wan"); } }
+        public bool? StaticWan { get => _explicitNullValueStaticWan; set { _explicitNullValueStaticWan = value; AdditionalData?.Remove("static:wan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static:wan"); else _explicitNullProperties?.Remove("static:wan"); } }
         private bool? _explicitNullValueStaticWan = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicBgpRedistributeSources"/> and sets the default values.

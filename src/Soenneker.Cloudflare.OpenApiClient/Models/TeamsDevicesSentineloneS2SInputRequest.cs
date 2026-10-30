@@ -17,45 +17,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active_threats") is { } nullNodeActiveThreats && nullNodeActiveThreats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveThreats = null;
-            if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
-            if (parseNode.GetChildNode("infected") is { } nullNodeInfected && nullNodeInfected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Infected = null;
-            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
-            if (parseNode.GetChildNode("network_status") is { } nullNodeNetworkStatus && nullNodeNetworkStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkStatus = null;
-            if (parseNode.GetChildNode("operational_state") is { } nullNodeOperationalState && nullNodeOperationalState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationalState = null;
-            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("active_threats") is null) { _explicitNullValueActiveThreats = default!; _explicitNullProperties?.Remove("active_threats"); }
+            else if (parseNode.GetChildNode("active_threats") is { } nullNodeActiveThreats && nullNodeActiveThreats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveThreats = null;
+            if (parseNode.GetChildNode("connection_id") is null) { _explicitNullValueConnectionId = default!; _explicitNullProperties?.Remove("connection_id"); }
+            else if (parseNode.GetChildNode("connection_id") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("infected") is null) { _explicitNullValueInfected = default!; _explicitNullProperties?.Remove("infected"); }
+            else if (parseNode.GetChildNode("infected") is { } nullNodeInfected && nullNodeInfected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Infected = null;
+            if (parseNode.GetChildNode("is_active") is null) { _explicitNullValueIsActive = default!; _explicitNullProperties?.Remove("is_active"); }
+            else if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("network_status") is null) { _explicitNullValueNetworkStatus = default!; _explicitNullProperties?.Remove("network_status"); }
+            else if (parseNode.GetChildNode("network_status") is { } nullNodeNetworkStatus && nullNodeNetworkStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkStatus = null;
+            if (parseNode.GetChildNode("operational_state") is null) { _explicitNullValueOperationalState = default!; _explicitNullProperties?.Remove("operational_state"); }
+            else if (parseNode.GetChildNode("operational_state") is { } nullNodeOperationalState && nullNodeOperationalState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationalState = null;
+            if (parseNode.GetChildNode("operator") is null) { _explicitNullValueOperator = default!; _explicitNullProperties?.Remove("operator"); }
+            else if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
         }
 
         /// <summary>The Number of active threats.</summary>
-        public double? ActiveThreats { get => _explicitNullValueActiveThreats; set { _explicitNullValueActiveThreats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_threats"); else _explicitNullProperties?.Remove("active_threats"); } }
+        public double? ActiveThreats { get => _explicitNullValueActiveThreats; set { _explicitNullValueActiveThreats = value; AdditionalData?.Remove("active_threats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_threats"); else _explicitNullProperties?.Remove("active_threats"); } }
         private double? _explicitNullValueActiveThreats = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Posture Integration ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
         private string? _explicitNullValueConnectionId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
+        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_id"); else _explicitNullProperties?.Remove("connection_id"); } }
         private string _explicitNullValueConnectionId = default!;
 #endif
         /// <summary>Whether device is infected.</summary>
-        public bool? Infected { get => _explicitNullValueInfected; set { _explicitNullValueInfected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infected"); else _explicitNullProperties?.Remove("infected"); } }
+        public bool? Infected { get => _explicitNullValueInfected; set { _explicitNullValueInfected = value; AdditionalData?.Remove("infected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infected"); else _explicitNullProperties?.Remove("infected"); } }
         private bool? _explicitNullValueInfected = default!;
         /// <summary>Whether device is active.</summary>
-        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
         /// <summary>Network status of device.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; AdditionalData?.Remove("network_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus? _explicitNullValueNetworkStatus = default!;
         /// <summary>Agent operational state.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState? OperationalState { get => _explicitNullValueOperationalState; set { _explicitNullValueOperationalState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operational_state"); else _explicitNullProperties?.Remove("operational_state"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState? OperationalState { get => _explicitNullValueOperationalState; set { _explicitNullValueOperationalState = value; AdditionalData?.Remove("operational_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operational_state"); else _explicitNullProperties?.Remove("operational_state"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState? _explicitNullValueOperationalState = default!;
         /// <summary>Operator.</summary>
 #nullable enable
-        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        public string? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
         private string? _explicitNullValueOperator = default!;
 #nullable restore
         /// <summary>
@@ -87,8 +94,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "connection_id", n => { ConnectionId = n.GetStringValue(); } },
                 { "infected", n => { Infected = n.GetBoolValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
-                { "network_status", n => { NetworkStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus>(); } },
-                { "operational_state", n => { OperationalState = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState>(); } },
+                { "network_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestNetworkStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNetworkStatus = default; _explicitNullProperties?.Remove("network_status"); AdditionalData["network_status"] = unknown; } else { NetworkStatus = parsed; AdditionalData.Remove("network_status"); } } },
+                { "operational_state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequestOperationalState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperationalState = default; _explicitNullProperties?.Remove("operational_state"); AdditionalData["operational_state"] = unknown; } else { OperationalState = parsed; AdditionalData.Remove("operational_state"); } } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
             };
         }

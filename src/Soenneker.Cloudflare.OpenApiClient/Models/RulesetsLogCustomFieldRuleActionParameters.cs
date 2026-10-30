@@ -18,11 +18,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cookie_fields") is { } nullNodeCookieFields && nullNodeCookieFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CookieFields = null;
-            if (parseNode.GetChildNode("raw_response_fields") is { } nullNodeRawResponseFields && nullNodeRawResponseFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawResponseFields = null;
-            if (parseNode.GetChildNode("request_fields") is { } nullNodeRequestFields && nullNodeRequestFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestFields = null;
-            if (parseNode.GetChildNode("response_fields") is { } nullNodeResponseFields && nullNodeResponseFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFields = null;
-            if (parseNode.GetChildNode("transformed_request_fields") is { } nullNodeTransformedRequestFields && nullNodeTransformedRequestFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransformedRequestFields = null;
+            if (parseNode.GetChildNode("cookie_fields") is null) { _explicitNullValueCookieFields = default!; _explicitNullProperties?.Remove("cookie_fields"); }
+            else if (parseNode.GetChildNode("cookie_fields") is { } nullNodeCookieFields && nullNodeCookieFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CookieFields = null;
+            if (parseNode.GetChildNode("raw_response_fields") is null) { _explicitNullValueRawResponseFields = default!; _explicitNullProperties?.Remove("raw_response_fields"); }
+            else if (parseNode.GetChildNode("raw_response_fields") is { } nullNodeRawResponseFields && nullNodeRawResponseFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawResponseFields = null;
+            if (parseNode.GetChildNode("request_fields") is null) { _explicitNullValueRequestFields = default!; _explicitNullProperties?.Remove("request_fields"); }
+            else if (parseNode.GetChildNode("request_fields") is { } nullNodeRequestFields && nullNodeRequestFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestFields = null;
+            if (parseNode.GetChildNode("response_fields") is null) { _explicitNullValueResponseFields = default!; _explicitNullProperties?.Remove("response_fields"); }
+            else if (parseNode.GetChildNode("response_fields") is { } nullNodeResponseFields && nullNodeResponseFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFields = null;
+            if (parseNode.GetChildNode("transformed_request_fields") is null) { _explicitNullValueTransformedRequestFields = default!; _explicitNullProperties?.Remove("transformed_request_fields"); }
+            else if (parseNode.GetChildNode("transformed_request_fields") is { } nullNodeTransformedRequestFields && nullNodeTransformedRequestFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransformedRequestFields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cookie fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldCookieFieldsItem>? CookieFields { get => _explicitNullValueCookieFields; set { _explicitNullValueCookieFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_fields"); else _explicitNullProperties?.Remove("cookie_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldCookieFieldsItem>? CookieFields { get => _explicitNullValueCookieFields; set { _explicitNullValueCookieFields = value; AdditionalData?.Remove("cookie_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_fields"); else _explicitNullProperties?.Remove("cookie_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldCookieFieldsItem>? _explicitNullValueCookieFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldCookieFieldsItem> CookieFields { get => _explicitNullValueCookieFields; set { _explicitNullValueCookieFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_fields"); else _explicitNullProperties?.Remove("cookie_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldCookieFieldsItem> CookieFields { get => _explicitNullValueCookieFields; set { _explicitNullValueCookieFields = value; AdditionalData?.Remove("cookie_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_fields"); else _explicitNullProperties?.Remove("cookie_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldCookieFieldsItem> _explicitNullValueCookieFields = default!;
 #endif
         /// <summary>The raw response fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRawResponseFieldsItem>? RawResponseFields { get => _explicitNullValueRawResponseFields; set { _explicitNullValueRawResponseFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_response_fields"); else _explicitNullProperties?.Remove("raw_response_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRawResponseFieldsItem>? RawResponseFields { get => _explicitNullValueRawResponseFields; set { _explicitNullValueRawResponseFields = value; AdditionalData?.Remove("raw_response_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_response_fields"); else _explicitNullProperties?.Remove("raw_response_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRawResponseFieldsItem>? _explicitNullValueRawResponseFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRawResponseFieldsItem> RawResponseFields { get => _explicitNullValueRawResponseFields; set { _explicitNullValueRawResponseFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_response_fields"); else _explicitNullProperties?.Remove("raw_response_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRawResponseFieldsItem> RawResponseFields { get => _explicitNullValueRawResponseFields; set { _explicitNullValueRawResponseFields = value; AdditionalData?.Remove("raw_response_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_response_fields"); else _explicitNullProperties?.Remove("raw_response_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRawResponseFieldsItem> _explicitNullValueRawResponseFields = default!;
 #endif
         /// <summary>The raw request fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRequestFieldsItem>? RequestFields { get => _explicitNullValueRequestFields; set { _explicitNullValueRequestFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_fields"); else _explicitNullProperties?.Remove("request_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRequestFieldsItem>? RequestFields { get => _explicitNullValueRequestFields; set { _explicitNullValueRequestFields = value; AdditionalData?.Remove("request_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_fields"); else _explicitNullProperties?.Remove("request_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRequestFieldsItem>? _explicitNullValueRequestFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRequestFieldsItem> RequestFields { get => _explicitNullValueRequestFields; set { _explicitNullValueRequestFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_fields"); else _explicitNullProperties?.Remove("request_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRequestFieldsItem> RequestFields { get => _explicitNullValueRequestFields; set { _explicitNullValueRequestFields = value; AdditionalData?.Remove("request_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_fields"); else _explicitNullProperties?.Remove("request_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldRequestFieldsItem> _explicitNullValueRequestFields = default!;
 #endif
         /// <summary>The transformed response fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldResponseFieldsItem>? ResponseFields { get => _explicitNullValueResponseFields; set { _explicitNullValueResponseFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_fields"); else _explicitNullProperties?.Remove("response_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldResponseFieldsItem>? ResponseFields { get => _explicitNullValueResponseFields; set { _explicitNullValueResponseFields = value; AdditionalData?.Remove("response_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_fields"); else _explicitNullProperties?.Remove("response_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldResponseFieldsItem>? _explicitNullValueResponseFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldResponseFieldsItem> ResponseFields { get => _explicitNullValueResponseFields; set { _explicitNullValueResponseFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_fields"); else _explicitNullProperties?.Remove("response_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldResponseFieldsItem> ResponseFields { get => _explicitNullValueResponseFields; set { _explicitNullValueResponseFields = value; AdditionalData?.Remove("response_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_fields"); else _explicitNullProperties?.Remove("response_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldResponseFieldsItem> _explicitNullValueResponseFields = default!;
 #endif
         /// <summary>The transformed request fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldTransformedRequestFieldsItem>? TransformedRequestFields { get => _explicitNullValueTransformedRequestFields; set { _explicitNullValueTransformedRequestFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformed_request_fields"); else _explicitNullProperties?.Remove("transformed_request_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldTransformedRequestFieldsItem>? TransformedRequestFields { get => _explicitNullValueTransformedRequestFields; set { _explicitNullValueTransformedRequestFields = value; AdditionalData?.Remove("transformed_request_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformed_request_fields"); else _explicitNullProperties?.Remove("transformed_request_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldTransformedRequestFieldsItem>? _explicitNullValueTransformedRequestFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldTransformedRequestFieldsItem> TransformedRequestFields { get => _explicitNullValueTransformedRequestFields; set { _explicitNullValueTransformedRequestFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformed_request_fields"); else _explicitNullProperties?.Remove("transformed_request_fields"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldTransformedRequestFieldsItem> TransformedRequestFields { get => _explicitNullValueTransformedRequestFields; set { _explicitNullValueTransformedRequestFields = value; AdditionalData?.Remove("transformed_request_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformed_request_fields"); else _explicitNullProperties?.Remove("transformed_request_fields"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsLogCustomFieldTransformedRequestFieldsItem> _explicitNullValueTransformedRequestFields = default!;
 #endif
         /// <summary>

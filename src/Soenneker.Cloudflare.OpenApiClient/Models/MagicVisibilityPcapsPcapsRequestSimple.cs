@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filter_v1") is { } nullNodeFilterV1 && nullNodeFilterV1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterV1 = null;
-            if (parseNode.GetChildNode("offset_time") is { } nullNodeOffsetTime && nullNodeOffsetTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffsetTime = null;
-            if (parseNode.GetChildNode("packet_limit") is { } nullNodePacketLimit && nullNodePacketLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLimit = null;
-            if (parseNode.GetChildNode("system") is { } nullNodeSystem && nullNodeSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) System = null;
-            if (parseNode.GetChildNode("time_limit") is { } nullNodeTimeLimit && nullNodeTimeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeLimit = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("filter_v1") is null) { _explicitNullValueFilterV1 = default!; _explicitNullProperties?.Remove("filter_v1"); }
+            else if (parseNode.GetChildNode("filter_v1") is { } nullNodeFilterV1 && nullNodeFilterV1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterV1 = null;
+            if (parseNode.GetChildNode("offset_time") is null) { _explicitNullValueOffsetTime = default!; _explicitNullProperties?.Remove("offset_time"); }
+            else if (parseNode.GetChildNode("offset_time") is { } nullNodeOffsetTime && nullNodeOffsetTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffsetTime = null;
+            if (parseNode.GetChildNode("packet_limit") is null) { _explicitNullValuePacketLimit = default!; _explicitNullProperties?.Remove("packet_limit"); }
+            else if (parseNode.GetChildNode("packet_limit") is { } nullNodePacketLimit && nullNodePacketLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLimit = null;
+            if (parseNode.GetChildNode("system") is null) { _explicitNullValueSystem = default!; _explicitNullProperties?.Remove("system"); }
+            else if (parseNode.GetChildNode("system") is { } nullNodeSystem && nullNodeSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) System = null;
+            if (parseNode.GetChildNode("time_limit") is null) { _explicitNullValueTimeLimit = default!; _explicitNullProperties?.Remove("time_limit"); }
+            else if (parseNode.GetChildNode("time_limit") is { } nullNodeTimeLimit && nullNodeTimeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeLimit = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,27 +36,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The packet capture filter. When this field is empty, all packets are captured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1? FilterV1 { get => _explicitNullValueFilterV1; set { _explicitNullValueFilterV1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_v1"); else _explicitNullProperties?.Remove("filter_v1"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1? FilterV1 { get => _explicitNullValueFilterV1; set { _explicitNullValueFilterV1 = value; AdditionalData?.Remove("filter_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_v1"); else _explicitNullProperties?.Remove("filter_v1"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1? _explicitNullValueFilterV1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1 FilterV1 { get => _explicitNullValueFilterV1; set { _explicitNullValueFilterV1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_v1"); else _explicitNullProperties?.Remove("filter_v1"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1 FilterV1 { get => _explicitNullValueFilterV1; set { _explicitNullValueFilterV1 = value; AdditionalData?.Remove("filter_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_v1"); else _explicitNullProperties?.Remove("filter_v1"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1 _explicitNullValueFilterV1 = default!;
 #endif
         /// <summary>The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.</summary>
-        public DateTimeOffset? OffsetTime { get => _explicitNullValueOffsetTime; set { _explicitNullValueOffsetTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset_time"); else _explicitNullProperties?.Remove("offset_time"); } }
+        public DateTimeOffset? OffsetTime { get => _explicitNullValueOffsetTime; set { _explicitNullValueOffsetTime = value; AdditionalData?.Remove("offset_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset_time"); else _explicitNullProperties?.Remove("offset_time"); } }
         private DateTimeOffset? _explicitNullValueOffsetTime = default!;
         /// <summary>The limit of packets contained in a packet capture.</summary>
-        public double? PacketLimit { get => _explicitNullValuePacketLimit; set { _explicitNullValuePacketLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_limit"); else _explicitNullProperties?.Remove("packet_limit"); } }
+        public double? PacketLimit { get => _explicitNullValuePacketLimit; set { _explicitNullValuePacketLimit = value; AdditionalData?.Remove("packet_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_limit"); else _explicitNullProperties?.Remove("packet_limit"); } }
         private double? _explicitNullValuePacketLimit = default!;
         /// <summary>The system used to collect packet captures.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem? _explicitNullValueSystem = default!;
         /// <summary>The packet capture duration in seconds.</summary>
-        public double? TimeLimit { get => _explicitNullValueTimeLimit; set { _explicitNullValueTimeLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_limit"); else _explicitNullProperties?.Remove("time_limit"); } }
+        public double? TimeLimit { get => _explicitNullValueTimeLimit; set { _explicitNullValueTimeLimit = value; AdditionalData?.Remove("time_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_limit"); else _explicitNullProperties?.Remove("time_limit"); } }
         private double? _explicitNullValueTimeLimit = default!;
         /// <summary>The type of packet capture. `Simple` captures sampled packets, and `full` captures entire payloads and non-sampled packets.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsRequestSimple"/> and sets the default values.
@@ -80,9 +86,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "filter_v1", n => { FilterV1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsFilterV1.CreateFromDiscriminatorValue); } },
                 { "offset_time", n => { OffsetTime = n.GetDateTimeOffsetValue(); } },
                 { "packet_limit", n => { PacketLimit = n.GetDoubleValue(); } },
-                { "system", n => { System = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem>(); } },
+                { "system", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsSystem>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSystem = default; _explicitNullProperties?.Remove("system"); AdditionalData["system"] = unknown; } else { System = parsed; AdditionalData.Remove("system"); } } },
                 { "time_limit", n => { TimeLimit = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

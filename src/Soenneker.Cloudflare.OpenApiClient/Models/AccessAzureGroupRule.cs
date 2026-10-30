@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("azureAD") is { } nullNodeAzureAD && nullNodeAzureAD.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AzureAD = null;
+            if (parseNode.GetChildNode("azureAD") is null) { _explicitNullValueAzureAD = default!; _explicitNullProperties?.Remove("azureAD"); }
+            else if (parseNode.GetChildNode("azureAD") is { } nullNodeAzureAD && nullNodeAzureAD.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AzureAD = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The azureAD property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRuleAzureAd? AzureAD { get => _explicitNullValueAzureAD; set { _explicitNullValueAzureAD = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azureAD"); else _explicitNullProperties?.Remove("azureAD"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRuleAzureAd? AzureAD { get => _explicitNullValueAzureAD; set { _explicitNullValueAzureAD = value; AdditionalData?.Remove("azureAD"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azureAD"); else _explicitNullProperties?.Remove("azureAD"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRuleAzureAd? _explicitNullValueAzureAD = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRuleAzureAd AzureAD { get => _explicitNullValueAzureAD; set { _explicitNullValueAzureAD = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azureAD"); else _explicitNullProperties?.Remove("azureAD"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRuleAzureAd AzureAD { get => _explicitNullValueAzureAD; set { _explicitNullValueAzureAD = value; AdditionalData?.Remove("azureAD"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azureAD"); else _explicitNullProperties?.Remove("azureAD"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRuleAzureAd _explicitNullValueAzureAD = default!;
 #endif
         /// <summary>

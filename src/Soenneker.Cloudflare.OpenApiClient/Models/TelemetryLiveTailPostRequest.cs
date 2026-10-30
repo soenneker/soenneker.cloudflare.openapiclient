@@ -17,36 +17,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filterCombination") is { } nullNodeFilterCombination && nullNodeFilterCombination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterCombination = null;
-            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
-            if (parseNode.GetChildNode("scriptId") is { } nullNodeScriptId && nullNodeScriptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptId = null;
+            if (parseNode.GetChildNode("filterCombination") is null) { _explicitNullValueFilterCombination = default!; _explicitNullProperties?.Remove("filterCombination"); }
+            else if (parseNode.GetChildNode("filterCombination") is { } nullNodeFilterCombination && nullNodeFilterCombination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterCombination = null;
+            if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
+            else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("scriptId") is null) { _explicitNullValueScriptId = default!; _explicitNullProperties?.Remove("scriptId"); }
+            else if (parseNode.GetChildNode("scriptId") is { } nullNodeScriptId && nullNodeScriptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set a flag to describe how to combine the filters on the query.</summary>
 #nullable enable
-        public string? FilterCombination { get => _explicitNullValueFilterCombination; set { _explicitNullValueFilterCombination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterCombination"); else _explicitNullProperties?.Remove("filterCombination"); } }
+        public string? FilterCombination { get => _explicitNullValueFilterCombination; set { _explicitNullValueFilterCombination = value; AdditionalData?.Remove("filterCombination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterCombination"); else _explicitNullProperties?.Remove("filterCombination"); } }
         private string? _explicitNullValueFilterCombination = default!;
 #nullable restore
         /// <summary>Apply filters to the query. Supports nested groups via kind: &apos;group&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public List<UntypedNode>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private List<UntypedNode>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public List<UntypedNode> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private List<UntypedNode> _explicitNullValueFilters = default!;
 #endif
         /// <summary>The scriptId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
+        public string? ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; AdditionalData?.Remove("scriptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
         private string? _explicitNullValueScriptId = default!;
 #nullable restore
 #else
-        public string ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
+        public string ScriptId { get => _explicitNullValueScriptId; set { _explicitNullValueScriptId = value; AdditionalData?.Remove("scriptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptId"); else _explicitNullProperties?.Remove("scriptId"); } }
         private string _explicitNullValueScriptId = default!;
 #endif
         /// <summary>

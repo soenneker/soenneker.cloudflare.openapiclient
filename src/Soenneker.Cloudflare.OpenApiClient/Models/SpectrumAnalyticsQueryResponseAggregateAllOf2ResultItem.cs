@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
-            if (parseNode.GetChildNode("bytesEgress") is { } nullNodeBytesEgress && nullNodeBytesEgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesEgress = null;
-            if (parseNode.GetChildNode("bytesIngress") is { } nullNodeBytesIngress && nullNodeBytesIngress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesIngress = null;
-            if (parseNode.GetChildNode("connections") is { } nullNodeConnections && nullNodeConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connections = null;
-            if (parseNode.GetChildNode("durationAvg") is { } nullNodeDurationAvg && nullNodeDurationAvg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationAvg = null;
+            if (parseNode.GetChildNode("appID") is null) { _explicitNullValueAppID = default!; _explicitNullProperties?.Remove("appID"); }
+            else if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
+            if (parseNode.GetChildNode("bytesEgress") is null) { _explicitNullValueBytesEgress = default!; _explicitNullProperties?.Remove("bytesEgress"); }
+            else if (parseNode.GetChildNode("bytesEgress") is { } nullNodeBytesEgress && nullNodeBytesEgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesEgress = null;
+            if (parseNode.GetChildNode("bytesIngress") is null) { _explicitNullValueBytesIngress = default!; _explicitNullProperties?.Remove("bytesIngress"); }
+            else if (parseNode.GetChildNode("bytesIngress") is { } nullNodeBytesIngress && nullNodeBytesIngress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesIngress = null;
+            if (parseNode.GetChildNode("connections") is null) { _explicitNullValueConnections = default!; _explicitNullProperties?.Remove("connections"); }
+            else if (parseNode.GetChildNode("connections") is { } nullNodeConnections && nullNodeConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connections = null;
+            if (parseNode.GetChildNode("durationAvg") is null) { _explicitNullValueDurationAvg = default!; _explicitNullProperties?.Remove("durationAvg"); }
+            else if (parseNode.GetChildNode("durationAvg") is { } nullNodeDurationAvg && nullNodeDurationAvg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationAvg = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,24 +34,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
+        public string? AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; AdditionalData?.Remove("appID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
         private string? _explicitNullValueAppID = default!;
 #nullable restore
 #else
-        public string AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
+        public string AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; AdditionalData?.Remove("appID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
         private string _explicitNullValueAppID = default!;
 #endif
         /// <summary>Number of bytes sent.</summary>
-        public double? BytesEgress { get => _explicitNullValueBytesEgress; set { _explicitNullValueBytesEgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesEgress"); else _explicitNullProperties?.Remove("bytesEgress"); } }
+        public double? BytesEgress { get => _explicitNullValueBytesEgress; set { _explicitNullValueBytesEgress = value; AdditionalData?.Remove("bytesEgress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesEgress"); else _explicitNullProperties?.Remove("bytesEgress"); } }
         private double? _explicitNullValueBytesEgress = default!;
         /// <summary>Number of bytes received.</summary>
-        public double? BytesIngress { get => _explicitNullValueBytesIngress; set { _explicitNullValueBytesIngress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesIngress"); else _explicitNullProperties?.Remove("bytesIngress"); } }
+        public double? BytesIngress { get => _explicitNullValueBytesIngress; set { _explicitNullValueBytesIngress = value; AdditionalData?.Remove("bytesIngress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesIngress"); else _explicitNullProperties?.Remove("bytesIngress"); } }
         private double? _explicitNullValueBytesIngress = default!;
         /// <summary>Number of connections.</summary>
-        public double? Connections { get => _explicitNullValueConnections; set { _explicitNullValueConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connections"); else _explicitNullProperties?.Remove("connections"); } }
+        public double? Connections { get => _explicitNullValueConnections; set { _explicitNullValueConnections = value; AdditionalData?.Remove("connections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connections"); else _explicitNullProperties?.Remove("connections"); } }
         private double? _explicitNullValueConnections = default!;
         /// <summary>Average duration of connections.</summary>
-        public double? DurationAvg { get => _explicitNullValueDurationAvg; set { _explicitNullValueDurationAvg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationAvg"); else _explicitNullProperties?.Remove("durationAvg"); } }
+        public double? DurationAvg { get => _explicitNullValueDurationAvg; set { _explicitNullValueDurationAvg = value; AdditionalData?.Remove("durationAvg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationAvg"); else _explicitNullProperties?.Remove("durationAvg"); } }
         private double? _explicitNullValueDurationAvg = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsQueryResponseAggregateAllOf2ResultItem"/> and sets the default values.

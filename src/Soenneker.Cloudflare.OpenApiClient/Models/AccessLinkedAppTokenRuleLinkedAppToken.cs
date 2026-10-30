@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_uid") is { } nullNodeAppUid && nullNodeAppUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUid = null;
+            if (parseNode.GetChildNode("app_uid") is null) { _explicitNullValueAppUid = default!; _explicitNullProperties?.Remove("app_uid"); }
+            else if (parseNode.GetChildNode("app_uid") is { } nullNodeAppUid && nullNodeAppUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ID of an Access OIDC SaaS application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUid { get => _explicitNullValueAppUid; set { _explicitNullValueAppUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uid"); else _explicitNullProperties?.Remove("app_uid"); } }
+        public string? AppUid { get => _explicitNullValueAppUid; set { _explicitNullValueAppUid = value; AdditionalData?.Remove("app_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uid"); else _explicitNullProperties?.Remove("app_uid"); } }
         private string? _explicitNullValueAppUid = default!;
 #nullable restore
 #else
-        public string AppUid { get => _explicitNullValueAppUid; set { _explicitNullValueAppUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uid"); else _explicitNullProperties?.Remove("app_uid"); } }
+        public string AppUid { get => _explicitNullValueAppUid; set { _explicitNullValueAppUid = value; AdditionalData?.Remove("app_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uid"); else _explicitNullProperties?.Remove("app_uid"); } }
         private string _explicitNullValueAppUid = default!;
 #endif
         /// <summary>

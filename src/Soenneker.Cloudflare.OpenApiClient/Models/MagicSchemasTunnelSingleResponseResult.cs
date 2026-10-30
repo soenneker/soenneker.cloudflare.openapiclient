@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ipsec_tunnel") is { } nullNodeIpsecTunnel && nullNodeIpsecTunnel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpsecTunnel = null;
+            if (parseNode.GetChildNode("ipsec_tunnel") is null) { _explicitNullValueIpsecTunnel = default!; _explicitNullProperties?.Remove("ipsec_tunnel"); }
+            else if (parseNode.GetChildNode("ipsec_tunnel") is { } nullNodeIpsecTunnel && nullNodeIpsecTunnel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpsecTunnel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ipsec_tunnel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel? IpsecTunnel { get => _explicitNullValueIpsecTunnel; set { _explicitNullValueIpsecTunnel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipsec_tunnel"); else _explicitNullProperties?.Remove("ipsec_tunnel"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel? IpsecTunnel { get => _explicitNullValueIpsecTunnel; set { _explicitNullValueIpsecTunnel = value; AdditionalData?.Remove("ipsec_tunnel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipsec_tunnel"); else _explicitNullProperties?.Remove("ipsec_tunnel"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel? _explicitNullValueIpsecTunnel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel IpsecTunnel { get => _explicitNullValueIpsecTunnel; set { _explicitNullValueIpsecTunnel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipsec_tunnel"); else _explicitNullProperties?.Remove("ipsec_tunnel"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel IpsecTunnel { get => _explicitNullValueIpsecTunnel; set { _explicitNullValueIpsecTunnel = value; AdditionalData?.Remove("ipsec_tunnel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipsec_tunnel"); else _explicitNullProperties?.Remove("ipsec_tunnel"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel _explicitNullValueIpsecTunnel = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
+            if (parseNode.GetChildNode("hostnames") is null) { _explicitNullValueHostnames = default!; _explicitNullProperties?.Remove("hostnames"); }
+            else if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The hostnames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; AdditionalData?.Remove("hostnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
         private List<string>? _explicitNullValueHostnames = default!;
 #nullable restore
 #else
-        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; AdditionalData?.Remove("hostnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
         private List<string> _explicitNullValueHostnames = default!;
 #endif
         /// <summary>

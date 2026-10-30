@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("search_engine_crawler_bypass") is { } nullNodeSearchEngineCrawlerBypass && nullNodeSearchEngineCrawlerBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchEngineCrawlerBypass = null;
+            if (parseNode.GetChildNode("search_engine_crawler_bypass") is null) { _explicitNullValueSearchEngineCrawlerBypass = default!; _explicitNullProperties?.Remove("search_engine_crawler_bypass"); }
+            else if (parseNode.GetChildNode("search_engine_crawler_bypass") is { } nullNodeSearchEngineCrawlerBypass && nullNodeSearchEngineCrawlerBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchEngineCrawlerBypass = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone.Verified search engine crawlers will not be tracked or counted by the waiting room system,and will not appear in waiting room analytics.</summary>
-        public bool? SearchEngineCrawlerBypass { get => _explicitNullValueSearchEngineCrawlerBypass; set { _explicitNullValueSearchEngineCrawlerBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_engine_crawler_bypass"); else _explicitNullProperties?.Remove("search_engine_crawler_bypass"); } }
+        public bool? SearchEngineCrawlerBypass { get => _explicitNullValueSearchEngineCrawlerBypass; set { _explicitNullValueSearchEngineCrawlerBypass = value; AdditionalData?.Remove("search_engine_crawler_bypass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_engine_crawler_bypass"); else _explicitNullProperties?.Remove("search_engine_crawler_bypass"); } }
         private bool? _explicitNullValueSearchEngineCrawlerBypass = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomGetZoneSettings4XxResponseResult"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("main_module") is { } nullNodeMainModule && nullNodeMainModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainModule = null;
+            if (parseNode.GetChildNode("main_module") is null) { _explicitNullValueMainModule = default!; _explicitNullProperties?.Remove("main_module"); }
+            else if (parseNode.GetChildNode("main_module") is { } nullNodeMainModule && nullNodeMainModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainModule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the name of the file that contains the main module of the snippet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
+        public string? MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; AdditionalData?.Remove("main_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
         private string? _explicitNullValueMainModule = default!;
 #nullable restore
 #else
-        public string MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
+        public string MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; AdditionalData?.Remove("main_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
         private string _explicitNullValueMainModule = default!;
 #endif
         /// <summary>

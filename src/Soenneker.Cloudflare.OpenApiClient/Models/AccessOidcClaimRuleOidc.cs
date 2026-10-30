@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("claim_name") is { } nullNodeClaimName && nullNodeClaimName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimName = null;
-            if (parseNode.GetChildNode("claim_value") is { } nullNodeClaimValue && nullNodeClaimValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimValue = null;
-            if (parseNode.GetChildNode("identity_provider_id") is { } nullNodeIdentityProviderId && nullNodeIdentityProviderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityProviderId = null;
+            if (parseNode.GetChildNode("claim_name") is null) { _explicitNullValueClaimName = default!; _explicitNullProperties?.Remove("claim_name"); }
+            else if (parseNode.GetChildNode("claim_name") is { } nullNodeClaimName && nullNodeClaimName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimName = null;
+            if (parseNode.GetChildNode("claim_value") is null) { _explicitNullValueClaimValue = default!; _explicitNullProperties?.Remove("claim_value"); }
+            else if (parseNode.GetChildNode("claim_value") is { } nullNodeClaimValue && nullNodeClaimValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimValue = null;
+            if (parseNode.GetChildNode("identity_provider_id") is null) { _explicitNullValueIdentityProviderId = default!; _explicitNullProperties?.Remove("identity_provider_id"); }
+            else if (parseNode.GetChildNode("identity_provider_id") is { } nullNodeIdentityProviderId && nullNodeIdentityProviderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityProviderId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of the OIDC claim.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClaimName { get => _explicitNullValueClaimName; set { _explicitNullValueClaimName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_name"); else _explicitNullProperties?.Remove("claim_name"); } }
+        public string? ClaimName { get => _explicitNullValueClaimName; set { _explicitNullValueClaimName = value; AdditionalData?.Remove("claim_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_name"); else _explicitNullProperties?.Remove("claim_name"); } }
         private string? _explicitNullValueClaimName = default!;
 #nullable restore
 #else
-        public string ClaimName { get => _explicitNullValueClaimName; set { _explicitNullValueClaimName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_name"); else _explicitNullProperties?.Remove("claim_name"); } }
+        public string ClaimName { get => _explicitNullValueClaimName; set { _explicitNullValueClaimName = value; AdditionalData?.Remove("claim_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_name"); else _explicitNullProperties?.Remove("claim_name"); } }
         private string _explicitNullValueClaimName = default!;
 #endif
         /// <summary>The OIDC claim value to look for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClaimValue { get => _explicitNullValueClaimValue; set { _explicitNullValueClaimValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_value"); else _explicitNullProperties?.Remove("claim_value"); } }
+        public string? ClaimValue { get => _explicitNullValueClaimValue; set { _explicitNullValueClaimValue = value; AdditionalData?.Remove("claim_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_value"); else _explicitNullProperties?.Remove("claim_value"); } }
         private string? _explicitNullValueClaimValue = default!;
 #nullable restore
 #else
-        public string ClaimValue { get => _explicitNullValueClaimValue; set { _explicitNullValueClaimValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_value"); else _explicitNullProperties?.Remove("claim_value"); } }
+        public string ClaimValue { get => _explicitNullValueClaimValue; set { _explicitNullValueClaimValue = value; AdditionalData?.Remove("claim_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_value"); else _explicitNullProperties?.Remove("claim_value"); } }
         private string _explicitNullValueClaimValue = default!;
 #endif
         /// <summary>The ID of your OIDC identity provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
+        public string? IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; AdditionalData?.Remove("identity_provider_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
         private string? _explicitNullValueIdentityProviderId = default!;
 #nullable restore
 #else
-        public string IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
+        public string IdentityProviderId { get => _explicitNullValueIdentityProviderId; set { _explicitNullValueIdentityProviderId = value; AdditionalData?.Remove("identity_provider_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_provider_id"); else _explicitNullProperties?.Remove("identity_provider_id"); } }
         private string _explicitNullValueIdentityProviderId = default!;
 #endif
         /// <summary>

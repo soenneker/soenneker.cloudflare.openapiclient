@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("colo") is { } nullNodeColo && nullNodeColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colo = null;
-            if (parseNode.GetChildNode("roundTripTime") is { } nullNodeRoundTripTime && nullNodeRoundTripTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoundTripTime = null;
+            if (parseNode.GetChildNode("colo") is null) { _explicitNullValueColo = default!; _explicitNullProperties?.Remove("colo"); }
+            else if (parseNode.GetChildNode("colo") is { } nullNodeColo && nullNodeColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colo = null;
+            if (parseNode.GetChildNode("roundTripTime") is null) { _explicitNullValueRoundTripTime = default!; _explicitNullProperties?.Remove("roundTripTime"); }
+            else if (parseNode.GetChildNode("roundTripTime") is { } nullNodeRoundTripTime && nullNodeRoundTripTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoundTripTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare colo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        public string? Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; AdditionalData?.Remove("colo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
         private string? _explicitNullValueColo = default!;
 #nullable restore
 #else
-        public string Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        public string Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; AdditionalData?.Remove("colo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
         private string _explicitNullValueColo = default!;
 #endif
         /// <summary>The roundTripTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates? RoundTripTime { get => _explicitNullValueRoundTripTime; set { _explicitNullValueRoundTripTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roundTripTime"); else _explicitNullProperties?.Remove("roundTripTime"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates? RoundTripTime { get => _explicitNullValueRoundTripTime; set { _explicitNullValueRoundTripTime = value; AdditionalData?.Remove("roundTripTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roundTripTime"); else _explicitNullProperties?.Remove("roundTripTime"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates? _explicitNullValueRoundTripTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates RoundTripTime { get => _explicitNullValueRoundTripTime; set { _explicitNullValueRoundTripTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roundTripTime"); else _explicitNullProperties?.Remove("roundTripTime"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates RoundTripTime { get => _explicitNullValueRoundTripTime; set { _explicitNullValueRoundTripTime = value; AdditionalData?.Remove("roundTripTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roundTripTime"); else _explicitNullProperties?.Remove("roundTripTime"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates _explicitNullValueRoundTripTime = default!;
 #endif
         /// <summary>

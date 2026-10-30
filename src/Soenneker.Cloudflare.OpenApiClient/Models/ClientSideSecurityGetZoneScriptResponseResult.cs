@@ -17,85 +17,106 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
-            if (parseNode.GetChildNode("cryptomining_score") is { } nullNodeCryptominingScore && nullNodeCryptominingScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CryptominingScore = null;
-            if (parseNode.GetChildNode("dataflow_score") is { } nullNodeDataflowScore && nullNodeDataflowScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataflowScore = null;
-            if (parseNode.GetChildNode("domain_reported_malicious") is { } nullNodeDomainReportedMalicious && nullNodeDomainReportedMalicious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainReportedMalicious = null;
-            if (parseNode.GetChildNode("fetched_at") is { } nullNodeFetchedAt && nullNodeFetchedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchedAt = null;
-            if (parseNode.GetChildNode("first_page_url") is { } nullNodeFirstPageUrl && nullNodeFirstPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstPageUrl = null;
-            if (parseNode.GetChildNode("first_seen_at") is { } nullNodeFirstSeenAt && nullNodeFirstSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeenAt = null;
-            if (parseNode.GetChildNode("hash") is { } nullNodeHash && nullNodeHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hash = null;
-            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
-            if (parseNode.GetChildNode("js_integrity_score") is { } nullNodeJsIntegrityScore && nullNodeJsIntegrityScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsIntegrityScore = null;
-            if (parseNode.GetChildNode("last_seen_at") is { } nullNodeLastSeenAt && nullNodeLastSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeenAt = null;
-            if (parseNode.GetChildNode("magecart_score") is { } nullNodeMagecartScore && nullNodeMagecartScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MagecartScore = null;
-            if (parseNode.GetChildNode("malicious_domain_categories") is { } nullNodeMaliciousDomainCategories && nullNodeMaliciousDomainCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaliciousDomainCategories = null;
-            if (parseNode.GetChildNode("malicious_url_categories") is { } nullNodeMaliciousUrlCategories && nullNodeMaliciousUrlCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaliciousUrlCategories = null;
-            if (parseNode.GetChildNode("malware_score") is { } nullNodeMalwareScore && nullNodeMalwareScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MalwareScore = null;
-            if (parseNode.GetChildNode("obfuscation_score") is { } nullNodeObfuscationScore && nullNodeObfuscationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObfuscationScore = null;
-            if (parseNode.GetChildNode("page_urls") is { } nullNodePageUrls && nullNodePageUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageUrls = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
-            if (parseNode.GetChildNode("url_contains_cdn_cgi_path") is { } nullNodeUrlContainsCdnCgiPath && nullNodeUrlContainsCdnCgiPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlContainsCdnCgiPath = null;
-            if (parseNode.GetChildNode("url_reported_malicious") is { } nullNodeUrlReportedMalicious && nullNodeUrlReportedMalicious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlReportedMalicious = null;
-            if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
+            if (parseNode.GetChildNode("added_at") is null) { _explicitNullValueAddedAt = default!; _explicitNullProperties?.Remove("added_at"); }
+            else if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
+            if (parseNode.GetChildNode("cryptomining_score") is null) { _explicitNullValueCryptominingScore = default!; _explicitNullProperties?.Remove("cryptomining_score"); }
+            else if (parseNode.GetChildNode("cryptomining_score") is { } nullNodeCryptominingScore && nullNodeCryptominingScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CryptominingScore = null;
+            if (parseNode.GetChildNode("dataflow_score") is null) { _explicitNullValueDataflowScore = default!; _explicitNullProperties?.Remove("dataflow_score"); }
+            else if (parseNode.GetChildNode("dataflow_score") is { } nullNodeDataflowScore && nullNodeDataflowScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataflowScore = null;
+            if (parseNode.GetChildNode("domain_reported_malicious") is null) { _explicitNullValueDomainReportedMalicious = default!; _explicitNullProperties?.Remove("domain_reported_malicious"); }
+            else if (parseNode.GetChildNode("domain_reported_malicious") is { } nullNodeDomainReportedMalicious && nullNodeDomainReportedMalicious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainReportedMalicious = null;
+            if (parseNode.GetChildNode("fetched_at") is null) { _explicitNullValueFetchedAt = default!; _explicitNullProperties?.Remove("fetched_at"); }
+            else if (parseNode.GetChildNode("fetched_at") is { } nullNodeFetchedAt && nullNodeFetchedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchedAt = null;
+            if (parseNode.GetChildNode("first_page_url") is null) { _explicitNullValueFirstPageUrl = default!; _explicitNullProperties?.Remove("first_page_url"); }
+            else if (parseNode.GetChildNode("first_page_url") is { } nullNodeFirstPageUrl && nullNodeFirstPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstPageUrl = null;
+            if (parseNode.GetChildNode("first_seen_at") is null) { _explicitNullValueFirstSeenAt = default!; _explicitNullProperties?.Remove("first_seen_at"); }
+            else if (parseNode.GetChildNode("first_seen_at") is { } nullNodeFirstSeenAt && nullNodeFirstSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeenAt = null;
+            if (parseNode.GetChildNode("hash") is null) { _explicitNullValueHash = default!; _explicitNullProperties?.Remove("hash"); }
+            else if (parseNode.GetChildNode("hash") is { } nullNodeHash && nullNodeHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hash = null;
+            if (parseNode.GetChildNode("host") is null) { _explicitNullValueHost = default!; _explicitNullProperties?.Remove("host"); }
+            else if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("js_integrity_score") is null) { _explicitNullValueJsIntegrityScore = default!; _explicitNullProperties?.Remove("js_integrity_score"); }
+            else if (parseNode.GetChildNode("js_integrity_score") is { } nullNodeJsIntegrityScore && nullNodeJsIntegrityScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsIntegrityScore = null;
+            if (parseNode.GetChildNode("last_seen_at") is null) { _explicitNullValueLastSeenAt = default!; _explicitNullProperties?.Remove("last_seen_at"); }
+            else if (parseNode.GetChildNode("last_seen_at") is { } nullNodeLastSeenAt && nullNodeLastSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeenAt = null;
+            if (parseNode.GetChildNode("magecart_score") is null) { _explicitNullValueMagecartScore = default!; _explicitNullProperties?.Remove("magecart_score"); }
+            else if (parseNode.GetChildNode("magecart_score") is { } nullNodeMagecartScore && nullNodeMagecartScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MagecartScore = null;
+            if (parseNode.GetChildNode("malicious_domain_categories") is null) { _explicitNullValueMaliciousDomainCategories = default!; _explicitNullProperties?.Remove("malicious_domain_categories"); }
+            else if (parseNode.GetChildNode("malicious_domain_categories") is { } nullNodeMaliciousDomainCategories && nullNodeMaliciousDomainCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaliciousDomainCategories = null;
+            if (parseNode.GetChildNode("malicious_url_categories") is null) { _explicitNullValueMaliciousUrlCategories = default!; _explicitNullProperties?.Remove("malicious_url_categories"); }
+            else if (parseNode.GetChildNode("malicious_url_categories") is { } nullNodeMaliciousUrlCategories && nullNodeMaliciousUrlCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaliciousUrlCategories = null;
+            if (parseNode.GetChildNode("malware_score") is null) { _explicitNullValueMalwareScore = default!; _explicitNullProperties?.Remove("malware_score"); }
+            else if (parseNode.GetChildNode("malware_score") is { } nullNodeMalwareScore && nullNodeMalwareScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MalwareScore = null;
+            if (parseNode.GetChildNode("obfuscation_score") is null) { _explicitNullValueObfuscationScore = default!; _explicitNullProperties?.Remove("obfuscation_score"); }
+            else if (parseNode.GetChildNode("obfuscation_score") is { } nullNodeObfuscationScore && nullNodeObfuscationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObfuscationScore = null;
+            if (parseNode.GetChildNode("page_urls") is null) { _explicitNullValuePageUrls = default!; _explicitNullProperties?.Remove("page_urls"); }
+            else if (parseNode.GetChildNode("page_urls") is { } nullNodePageUrls && nullNodePageUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageUrls = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("url_contains_cdn_cgi_path") is null) { _explicitNullValueUrlContainsCdnCgiPath = default!; _explicitNullProperties?.Remove("url_contains_cdn_cgi_path"); }
+            else if (parseNode.GetChildNode("url_contains_cdn_cgi_path") is { } nullNodeUrlContainsCdnCgiPath && nullNodeUrlContainsCdnCgiPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlContainsCdnCgiPath = null;
+            if (parseNode.GetChildNode("url_reported_malicious") is null) { _explicitNullValueUrlReportedMalicious = default!; _explicitNullProperties?.Remove("url_reported_malicious"); }
+            else if (parseNode.GetChildNode("url_reported_malicious") is { } nullNodeUrlReportedMalicious && nullNodeUrlReportedMalicious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlReportedMalicious = null;
+            if (parseNode.GetChildNode("versions") is null) { _explicitNullValueVersions = default!; _explicitNullProperties?.Remove("versions"); }
+            else if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
         }
 
         /// <summary>The added_at property</summary>
-        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
+        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; AdditionalData?.Remove("added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
         private DateTimeOffset? _explicitNullValueAddedAt = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cryptomining score of the JavaScript content.</summary>
-        public int? CryptominingScore { get => _explicitNullValueCryptominingScore; set { _explicitNullValueCryptominingScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cryptomining_score"); else _explicitNullProperties?.Remove("cryptomining_score"); } }
+        public int? CryptominingScore { get => _explicitNullValueCryptominingScore; set { _explicitNullValueCryptominingScore = value; AdditionalData?.Remove("cryptomining_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cryptomining_score"); else _explicitNullProperties?.Remove("cryptomining_score"); } }
         private int? _explicitNullValueCryptominingScore = default!;
         /// <summary>The dataflow score of the JavaScript content. This field has been deprecated in favour of js_integrity_score.</summary>
         [Obsolete("")]
-        public int? DataflowScore { get => _explicitNullValueDataflowScore; set { _explicitNullValueDataflowScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataflow_score"); else _explicitNullProperties?.Remove("dataflow_score"); } }
+        public int? DataflowScore { get => _explicitNullValueDataflowScore; set { _explicitNullValueDataflowScore = value; AdditionalData?.Remove("dataflow_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataflow_score"); else _explicitNullProperties?.Remove("dataflow_score"); } }
         private int? _explicitNullValueDataflowScore = default!;
         /// <summary>The domain_reported_malicious property</summary>
-        public bool? DomainReportedMalicious { get => _explicitNullValueDomainReportedMalicious; set { _explicitNullValueDomainReportedMalicious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_reported_malicious"); else _explicitNullProperties?.Remove("domain_reported_malicious"); } }
+        public bool? DomainReportedMalicious { get => _explicitNullValueDomainReportedMalicious; set { _explicitNullValueDomainReportedMalicious = value; AdditionalData?.Remove("domain_reported_malicious"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_reported_malicious"); else _explicitNullProperties?.Remove("domain_reported_malicious"); } }
         private bool? _explicitNullValueDomainReportedMalicious = default!;
         /// <summary>The timestamp of when the script was last fetched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
+        public string? FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; AdditionalData?.Remove("fetched_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
         private string? _explicitNullValueFetchedAt = default!;
 #nullable restore
 #else
-        public string FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
+        public string FetchedAt { get => _explicitNullValueFetchedAt; set { _explicitNullValueFetchedAt = value; AdditionalData?.Remove("fetched_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at"); else _explicitNullProperties?.Remove("fetched_at"); } }
         private string _explicitNullValueFetchedAt = default!;
 #endif
         /// <summary>The first_page_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstPageUrl { get => _explicitNullValueFirstPageUrl; set { _explicitNullValueFirstPageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_page_url"); else _explicitNullProperties?.Remove("first_page_url"); } }
+        public string? FirstPageUrl { get => _explicitNullValueFirstPageUrl; set { _explicitNullValueFirstPageUrl = value; AdditionalData?.Remove("first_page_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_page_url"); else _explicitNullProperties?.Remove("first_page_url"); } }
         private string? _explicitNullValueFirstPageUrl = default!;
 #nullable restore
 #else
-        public string FirstPageUrl { get => _explicitNullValueFirstPageUrl; set { _explicitNullValueFirstPageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_page_url"); else _explicitNullProperties?.Remove("first_page_url"); } }
+        public string FirstPageUrl { get => _explicitNullValueFirstPageUrl; set { _explicitNullValueFirstPageUrl = value; AdditionalData?.Remove("first_page_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_page_url"); else _explicitNullProperties?.Remove("first_page_url"); } }
         private string _explicitNullValueFirstPageUrl = default!;
 #endif
         /// <summary>The first_seen_at property</summary>
-        public DateTimeOffset? FirstSeenAt { get => _explicitNullValueFirstSeenAt; set { _explicitNullValueFirstSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen_at"); else _explicitNullProperties?.Remove("first_seen_at"); } }
+        public DateTimeOffset? FirstSeenAt { get => _explicitNullValueFirstSeenAt; set { _explicitNullValueFirstSeenAt = value; AdditionalData?.Remove("first_seen_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen_at"); else _explicitNullProperties?.Remove("first_seen_at"); } }
         private DateTimeOffset? _explicitNullValueFirstSeenAt = default!;
         /// <summary>The computed hash of the analyzed script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        public string? Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; AdditionalData?.Remove("hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
         private string? _explicitNullValueHash = default!;
 #nullable restore
 #else
-        public string Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        public string Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; AdditionalData?.Remove("hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
         private string _explicitNullValueHash = default!;
 #endif
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string _explicitNullValueHost = default!;
 #endif
         /// <summary>Identifier</summary>
@@ -107,75 +128,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>The integrity score of the JavaScript content.</summary>
-        public int? JsIntegrityScore { get => _explicitNullValueJsIntegrityScore; set { _explicitNullValueJsIntegrityScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("js_integrity_score"); else _explicitNullProperties?.Remove("js_integrity_score"); } }
+        public int? JsIntegrityScore { get => _explicitNullValueJsIntegrityScore; set { _explicitNullValueJsIntegrityScore = value; AdditionalData?.Remove("js_integrity_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("js_integrity_score"); else _explicitNullProperties?.Remove("js_integrity_score"); } }
         private int? _explicitNullValueJsIntegrityScore = default!;
         /// <summary>The last_seen_at property</summary>
-        public DateTimeOffset? LastSeenAt { get => _explicitNullValueLastSeenAt; set { _explicitNullValueLastSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen_at"); else _explicitNullProperties?.Remove("last_seen_at"); } }
+        public DateTimeOffset? LastSeenAt { get => _explicitNullValueLastSeenAt; set { _explicitNullValueLastSeenAt = value; AdditionalData?.Remove("last_seen_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen_at"); else _explicitNullProperties?.Remove("last_seen_at"); } }
         private DateTimeOffset? _explicitNullValueLastSeenAt = default!;
         /// <summary>The magecart score of the JavaScript content.</summary>
-        public int? MagecartScore { get => _explicitNullValueMagecartScore; set { _explicitNullValueMagecartScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("magecart_score"); else _explicitNullProperties?.Remove("magecart_score"); } }
+        public int? MagecartScore { get => _explicitNullValueMagecartScore; set { _explicitNullValueMagecartScore = value; AdditionalData?.Remove("magecart_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("magecart_score"); else _explicitNullProperties?.Remove("magecart_score"); } }
         private int? _explicitNullValueMagecartScore = default!;
         /// <summary>The malicious_domain_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MaliciousDomainCategories { get => _explicitNullValueMaliciousDomainCategories; set { _explicitNullValueMaliciousDomainCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_domain_categories"); else _explicitNullProperties?.Remove("malicious_domain_categories"); } }
+        public List<string>? MaliciousDomainCategories { get => _explicitNullValueMaliciousDomainCategories; set { _explicitNullValueMaliciousDomainCategories = value; AdditionalData?.Remove("malicious_domain_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_domain_categories"); else _explicitNullProperties?.Remove("malicious_domain_categories"); } }
         private List<string>? _explicitNullValueMaliciousDomainCategories = default!;
 #nullable restore
 #else
-        public List<string> MaliciousDomainCategories { get => _explicitNullValueMaliciousDomainCategories; set { _explicitNullValueMaliciousDomainCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_domain_categories"); else _explicitNullProperties?.Remove("malicious_domain_categories"); } }
+        public List<string> MaliciousDomainCategories { get => _explicitNullValueMaliciousDomainCategories; set { _explicitNullValueMaliciousDomainCategories = value; AdditionalData?.Remove("malicious_domain_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_domain_categories"); else _explicitNullProperties?.Remove("malicious_domain_categories"); } }
         private List<string> _explicitNullValueMaliciousDomainCategories = default!;
 #endif
         /// <summary>The malicious_url_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MaliciousUrlCategories { get => _explicitNullValueMaliciousUrlCategories; set { _explicitNullValueMaliciousUrlCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_url_categories"); else _explicitNullProperties?.Remove("malicious_url_categories"); } }
+        public List<string>? MaliciousUrlCategories { get => _explicitNullValueMaliciousUrlCategories; set { _explicitNullValueMaliciousUrlCategories = value; AdditionalData?.Remove("malicious_url_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_url_categories"); else _explicitNullProperties?.Remove("malicious_url_categories"); } }
         private List<string>? _explicitNullValueMaliciousUrlCategories = default!;
 #nullable restore
 #else
-        public List<string> MaliciousUrlCategories { get => _explicitNullValueMaliciousUrlCategories; set { _explicitNullValueMaliciousUrlCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_url_categories"); else _explicitNullProperties?.Remove("malicious_url_categories"); } }
+        public List<string> MaliciousUrlCategories { get => _explicitNullValueMaliciousUrlCategories; set { _explicitNullValueMaliciousUrlCategories = value; AdditionalData?.Remove("malicious_url_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious_url_categories"); else _explicitNullProperties?.Remove("malicious_url_categories"); } }
         private List<string> _explicitNullValueMaliciousUrlCategories = default!;
 #endif
         /// <summary>The malware score of the JavaScript content.</summary>
-        public int? MalwareScore { get => _explicitNullValueMalwareScore; set { _explicitNullValueMalwareScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malware_score"); else _explicitNullProperties?.Remove("malware_score"); } }
+        public int? MalwareScore { get => _explicitNullValueMalwareScore; set { _explicitNullValueMalwareScore = value; AdditionalData?.Remove("malware_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malware_score"); else _explicitNullProperties?.Remove("malware_score"); } }
         private int? _explicitNullValueMalwareScore = default!;
         /// <summary>The obfuscation score of the JavaScript content. This field has been deprecated in favour of js_integrity_score.</summary>
         [Obsolete("")]
-        public int? ObfuscationScore { get => _explicitNullValueObfuscationScore; set { _explicitNullValueObfuscationScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("obfuscation_score"); else _explicitNullProperties?.Remove("obfuscation_score"); } }
+        public int? ObfuscationScore { get => _explicitNullValueObfuscationScore; set { _explicitNullValueObfuscationScore = value; AdditionalData?.Remove("obfuscation_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("obfuscation_score"); else _explicitNullProperties?.Remove("obfuscation_score"); } }
         private int? _explicitNullValueObfuscationScore = default!;
         /// <summary>The page_urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PageUrls { get => _explicitNullValuePageUrls; set { _explicitNullValuePageUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_urls"); else _explicitNullProperties?.Remove("page_urls"); } }
+        public List<string>? PageUrls { get => _explicitNullValuePageUrls; set { _explicitNullValuePageUrls = value; AdditionalData?.Remove("page_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_urls"); else _explicitNullProperties?.Remove("page_urls"); } }
         private List<string>? _explicitNullValuePageUrls = default!;
 #nullable restore
 #else
-        public List<string> PageUrls { get => _explicitNullValuePageUrls; set { _explicitNullValuePageUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_urls"); else _explicitNullProperties?.Remove("page_urls"); } }
+        public List<string> PageUrls { get => _explicitNullValuePageUrls; set { _explicitNullValuePageUrls = value; AdditionalData?.Remove("page_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_urls"); else _explicitNullProperties?.Remove("page_urls"); } }
         private List<string> _explicitNullValuePageUrls = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>The url_contains_cdn_cgi_path property</summary>
-        public bool? UrlContainsCdnCgiPath { get => _explicitNullValueUrlContainsCdnCgiPath; set { _explicitNullValueUrlContainsCdnCgiPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_contains_cdn_cgi_path"); else _explicitNullProperties?.Remove("url_contains_cdn_cgi_path"); } }
+        public bool? UrlContainsCdnCgiPath { get => _explicitNullValueUrlContainsCdnCgiPath; set { _explicitNullValueUrlContainsCdnCgiPath = value; AdditionalData?.Remove("url_contains_cdn_cgi_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_contains_cdn_cgi_path"); else _explicitNullProperties?.Remove("url_contains_cdn_cgi_path"); } }
         private bool? _explicitNullValueUrlContainsCdnCgiPath = default!;
         /// <summary>The url_reported_malicious property</summary>
-        public bool? UrlReportedMalicious { get => _explicitNullValueUrlReportedMalicious; set { _explicitNullValueUrlReportedMalicious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_reported_malicious"); else _explicitNullProperties?.Remove("url_reported_malicious"); } }
+        public bool? UrlReportedMalicious { get => _explicitNullValueUrlReportedMalicious; set { _explicitNullValueUrlReportedMalicious = value; AdditionalData?.Remove("url_reported_malicious"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_reported_malicious"); else _explicitNullProperties?.Remove("url_reported_malicious"); } }
         private bool? _explicitNullValueUrlReportedMalicious = default!;
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion>? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion>? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; AdditionalData?.Remove("versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion>? _explicitNullValueVersions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion> Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion> Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; AdditionalData?.Remove("versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityVersion> _explicitNullValueVersions = default!;
 #endif
         /// <summary>

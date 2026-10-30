@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("schema_id") is { } nullNodeSchemaId && nullNodeSchemaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaId = null;
-            if (parseNode.GetChildNode("validation_enabled") is { } nullNodeValidationEnabled && nullNodeValidationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationEnabled = null;
+            if (parseNode.GetChildNode("schema_id") is null) { _explicitNullValueSchemaId = default!; _explicitNullProperties?.Remove("schema_id"); }
+            else if (parseNode.GetChildNode("schema_id") is { } nullNodeSchemaId && nullNodeSchemaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaId = null;
+            if (parseNode.GetChildNode("validation_enabled") is null) { _explicitNullValueValidationEnabled = default!; _explicitNullProperties?.Remove("validation_enabled"); }
+            else if (parseNode.GetChildNode("validation_enabled") is { } nullNodeValidationEnabled && nullNodeValidationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,11 +41,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The schema_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId? SchemaId { get => _explicitNullValueSchemaId; set { _explicitNullValueSchemaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_id"); else _explicitNullProperties?.Remove("schema_id"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId? SchemaId { get => _explicitNullValueSchemaId; set { _explicitNullValueSchemaId = value; AdditionalData?.Remove("schema_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_id"); else _explicitNullProperties?.Remove("schema_id"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId? _explicitNullValueSchemaId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId SchemaId { get => _explicitNullValueSchemaId; set { _explicitNullValueSchemaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_id"); else _explicitNullProperties?.Remove("schema_id"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId SchemaId { get => _explicitNullValueSchemaId; set { _explicitNullValueSchemaId = value; AdditionalData?.Remove("schema_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_id"); else _explicitNullProperties?.Remove("schema_id"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId _explicitNullValueSchemaId = default!;
 #endif
         /// <summary>The raw schema, e.g., the OpenAPI schema, either as JSON or YAML</summary>
@@ -55,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Source { get; private set; }
 #endif
         /// <summary>An indicator if this schema is enabled</summary>
-        public bool? ValidationEnabled { get => _explicitNullValueValidationEnabled; set { _explicitNullValueValidationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_enabled"); else _explicitNullProperties?.Remove("validation_enabled"); } }
+        public bool? ValidationEnabled { get => _explicitNullValueValidationEnabled; set { _explicitNullValueValidationEnabled = value; AdditionalData?.Remove("validation_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_enabled"); else _explicitNullProperties?.Remove("validation_enabled"); } }
         private bool? _explicitNullValueValidationEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema"/> and sets the default values.

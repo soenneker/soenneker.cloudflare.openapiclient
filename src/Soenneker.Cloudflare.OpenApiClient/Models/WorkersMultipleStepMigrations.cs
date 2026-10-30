@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_tag") is { } nullNodeNewTag && nullNodeNewTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTag = null;
-            if (parseNode.GetChildNode("old_tag") is { } nullNodeOldTag && nullNodeOldTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTag = null;
-            if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
+            if (parseNode.GetChildNode("new_tag") is null) { _explicitNullValueNewTag = default!; _explicitNullProperties?.Remove("new_tag"); }
+            else if (parseNode.GetChildNode("new_tag") is { } nullNodeNewTag && nullNodeNewTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTag = null;
+            if (parseNode.GetChildNode("old_tag") is null) { _explicitNullValueOldTag = default!; _explicitNullProperties?.Remove("old_tag"); }
+            else if (parseNode.GetChildNode("old_tag") is { } nullNodeOldTag && nullNodeOldTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTag = null;
+            if (parseNode.GetChildNode("steps") is null) { _explicitNullValueSteps = default!; _explicitNullProperties?.Remove("steps"); }
+            else if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Tag to set as the latest migration tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewTag { get => _explicitNullValueNewTag; set { _explicitNullValueNewTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_tag"); else _explicitNullProperties?.Remove("new_tag"); } }
+        public string? NewTag { get => _explicitNullValueNewTag; set { _explicitNullValueNewTag = value; AdditionalData?.Remove("new_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_tag"); else _explicitNullProperties?.Remove("new_tag"); } }
         private string? _explicitNullValueNewTag = default!;
 #nullable restore
 #else
-        public string NewTag { get => _explicitNullValueNewTag; set { _explicitNullValueNewTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_tag"); else _explicitNullProperties?.Remove("new_tag"); } }
+        public string NewTag { get => _explicitNullValueNewTag; set { _explicitNullValueNewTag = value; AdditionalData?.Remove("new_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_tag"); else _explicitNullProperties?.Remove("new_tag"); } }
         private string _explicitNullValueNewTag = default!;
 #endif
         /// <summary>Tag used to verify against the latest migration tag for this Worker. If they don&apos;t match, the upload is rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldTag { get => _explicitNullValueOldTag; set { _explicitNullValueOldTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_tag"); else _explicitNullProperties?.Remove("old_tag"); } }
+        public string? OldTag { get => _explicitNullValueOldTag; set { _explicitNullValueOldTag = value; AdditionalData?.Remove("old_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_tag"); else _explicitNullProperties?.Remove("old_tag"); } }
         private string? _explicitNullValueOldTag = default!;
 #nullable restore
 #else
-        public string OldTag { get => _explicitNullValueOldTag; set { _explicitNullValueOldTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_tag"); else _explicitNullProperties?.Remove("old_tag"); } }
+        public string OldTag { get => _explicitNullValueOldTag; set { _explicitNullValueOldTag = value; AdditionalData?.Remove("old_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_tag"); else _explicitNullProperties?.Remove("old_tag"); } }
         private string _explicitNullValueOldTag = default!;
 #endif
         /// <summary>Migrations to apply in order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStep>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStep>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; AdditionalData?.Remove("steps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStep>? _explicitNullValueSteps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStep> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStep> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; AdditionalData?.Remove("steps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMigrationStep> _explicitNullValueSteps = default!;
 #endif
         /// <summary>

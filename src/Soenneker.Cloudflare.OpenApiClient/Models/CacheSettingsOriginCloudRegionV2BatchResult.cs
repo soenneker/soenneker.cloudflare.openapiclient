@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failed") is { } nullNodeFailed && nullNodeFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Failed = null;
-            if (parseNode.GetChildNode("succeeded") is { } nullNodeSucceeded && nullNodeSucceeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Succeeded = null;
+            if (parseNode.GetChildNode("failed") is null) { _explicitNullValueFailed = default!; _explicitNullProperties?.Remove("failed"); }
+            else if (parseNode.GetChildNode("failed") is { } nullNodeFailed && nullNodeFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Failed = null;
+            if (parseNode.GetChildNode("succeeded") is null) { _explicitNullValueSucceeded = default!; _explicitNullProperties?.Remove("succeeded"); }
+            else if (parseNode.GetChildNode("succeeded") is { } nullNodeSucceeded && nullNodeSucceeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Succeeded = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Items that could not be applied, with error details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult>? Failed { get => _explicitNullValueFailed; set { _explicitNullValueFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed"); else _explicitNullProperties?.Remove("failed"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult>? Failed { get => _explicitNullValueFailed; set { _explicitNullValueFailed = value; AdditionalData?.Remove("failed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed"); else _explicitNullProperties?.Remove("failed"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult>? _explicitNullValueFailed = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult> Failed { get => _explicitNullValueFailed; set { _explicitNullValueFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed"); else _explicitNullProperties?.Remove("failed"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult> Failed { get => _explicitNullValueFailed; set { _explicitNullValueFailed = value; AdditionalData?.Remove("failed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed"); else _explicitNullProperties?.Remove("failed"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult> _explicitNullValueFailed = default!;
 #endif
         /// <summary>Items that were successfully applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult>? Succeeded { get => _explicitNullValueSucceeded; set { _explicitNullValueSucceeded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("succeeded"); else _explicitNullProperties?.Remove("succeeded"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult>? Succeeded { get => _explicitNullValueSucceeded; set { _explicitNullValueSucceeded = value; AdditionalData?.Remove("succeeded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("succeeded"); else _explicitNullProperties?.Remove("succeeded"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult>? _explicitNullValueSucceeded = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult> Succeeded { get => _explicitNullValueSucceeded; set { _explicitNullValueSucceeded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("succeeded"); else _explicitNullProperties?.Remove("succeeded"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult> Succeeded { get => _explicitNullValueSucceeded; set { _explicitNullValueSucceeded = value; AdditionalData?.Remove("succeeded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("succeeded"); else _explicitNullProperties?.Remove("succeeded"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsOriginCloudRegionV2BatchItemResult> _explicitNullValueSucceeded = default!;
 #endif
         /// <summary>

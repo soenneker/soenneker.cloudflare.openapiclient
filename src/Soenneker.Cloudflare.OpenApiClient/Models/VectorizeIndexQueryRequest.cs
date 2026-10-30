@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
-            if (parseNode.GetChildNode("returnMetadata") is { } nullNodeReturnMetadata && nullNodeReturnMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnMetadata = null;
-            if (parseNode.GetChildNode("returnValues") is { } nullNodeReturnValues && nullNodeReturnValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnValues = null;
-            if (parseNode.GetChildNode("topK") is { } nullNodeTopK && nullNodeTopK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopK = null;
-            if (parseNode.GetChildNode("vector") is { } nullNodeVector && nullNodeVector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vector = null;
+            if (parseNode.GetChildNode("filter") is null) { _explicitNullValueFilter = default!; _explicitNullProperties?.Remove("filter"); }
+            else if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("returnMetadata") is null) { _explicitNullValueReturnMetadata = default!; _explicitNullProperties?.Remove("returnMetadata"); }
+            else if (parseNode.GetChildNode("returnMetadata") is { } nullNodeReturnMetadata && nullNodeReturnMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnMetadata = null;
+            if (parseNode.GetChildNode("returnValues") is null) { _explicitNullValueReturnValues = default!; _explicitNullProperties?.Remove("returnValues"); }
+            else if (parseNode.GetChildNode("returnValues") is { } nullNodeReturnValues && nullNodeReturnValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnValues = null;
+            if (parseNode.GetChildNode("topK") is null) { _explicitNullValueTopK = default!; _explicitNullProperties?.Remove("topK"); }
+            else if (parseNode.GetChildNode("topK") is { } nullNodeTopK && nullNodeTopK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopK = null;
+            if (parseNode.GetChildNode("vector") is null) { _explicitNullValueVector = default!; _explicitNullProperties?.Remove("vector"); }
+            else if (parseNode.GetChildNode("vector") is { } nullNodeVector && nullNodeVector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vector = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,30 +34,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A metadata filter expression used to limit nearest neighbor results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryRequestFilterProperty? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryRequestFilterProperty? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryRequestFilterProperty? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryRequestFilterProperty Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryRequestFilterProperty Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryRequestFilterProperty _explicitNullValueFilter = default!;
 #endif
         /// <summary>Whether to return the metadata associated with the closest vectors.</summary>
-        public bool? ReturnMetadata { get => _explicitNullValueReturnMetadata; set { _explicitNullValueReturnMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnMetadata"); else _explicitNullProperties?.Remove("returnMetadata"); } }
+        public bool? ReturnMetadata { get => _explicitNullValueReturnMetadata; set { _explicitNullValueReturnMetadata = value; AdditionalData?.Remove("returnMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnMetadata"); else _explicitNullProperties?.Remove("returnMetadata"); } }
         private bool? _explicitNullValueReturnMetadata = default!;
         /// <summary>Whether to return the values associated with the closest vectors.</summary>
-        public bool? ReturnValues { get => _explicitNullValueReturnValues; set { _explicitNullValueReturnValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnValues"); else _explicitNullProperties?.Remove("returnValues"); } }
+        public bool? ReturnValues { get => _explicitNullValueReturnValues; set { _explicitNullValueReturnValues = value; AdditionalData?.Remove("returnValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnValues"); else _explicitNullProperties?.Remove("returnValues"); } }
         private bool? _explicitNullValueReturnValues = default!;
         /// <summary>The number of nearest neighbors to find.</summary>
-        public double? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topK"); else _explicitNullProperties?.Remove("topK"); } }
+        public double? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; AdditionalData?.Remove("topK"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topK"); else _explicitNullProperties?.Remove("topK"); } }
         private double? _explicitNullValueTopK = default!;
         /// <summary>The search vector that will be used to find the nearest neighbors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Vector { get => _explicitNullValueVector; set { _explicitNullValueVector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector"); else _explicitNullProperties?.Remove("vector"); } }
+        public List<double?>? Vector { get => _explicitNullValueVector; set { _explicitNullValueVector = value; AdditionalData?.Remove("vector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector"); else _explicitNullProperties?.Remove("vector"); } }
         private List<double?>? _explicitNullValueVector = default!;
 #nullable restore
 #else
-        public List<double?> Vector { get => _explicitNullValueVector; set { _explicitNullValueVector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector"); else _explicitNullProperties?.Remove("vector"); } }
+        public List<double?> Vector { get => _explicitNullValueVector; set { _explicitNullValueVector = value; AdditionalData?.Remove("vector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector"); else _explicitNullProperties?.Remove("vector"); } }
         private List<double?> _explicitNullValueVector = default!;
 #endif
         /// <summary>

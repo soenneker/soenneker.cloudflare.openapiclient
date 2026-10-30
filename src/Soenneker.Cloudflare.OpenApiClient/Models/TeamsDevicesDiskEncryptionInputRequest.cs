@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("checkDisks") is { } nullNodeCheckDisks && nullNodeCheckDisks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckDisks = null;
-            if (parseNode.GetChildNode("requireAll") is { } nullNodeRequireAll && nullNodeRequireAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireAll = null;
+            if (parseNode.GetChildNode("checkDisks") is null) { _explicitNullValueCheckDisks = default!; _explicitNullProperties?.Remove("checkDisks"); }
+            else if (parseNode.GetChildNode("checkDisks") is { } nullNodeCheckDisks && nullNodeCheckDisks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckDisks = null;
+            if (parseNode.GetChildNode("requireAll") is null) { _explicitNullValueRequireAll = default!; _explicitNullProperties?.Remove("requireAll"); }
+            else if (parseNode.GetChildNode("requireAll") is { } nullNodeRequireAll && nullNodeRequireAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireAll = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of volume names to be checked for encryption.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CheckDisks { get => _explicitNullValueCheckDisks; set { _explicitNullValueCheckDisks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkDisks"); else _explicitNullProperties?.Remove("checkDisks"); } }
+        public List<string>? CheckDisks { get => _explicitNullValueCheckDisks; set { _explicitNullValueCheckDisks = value; AdditionalData?.Remove("checkDisks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkDisks"); else _explicitNullProperties?.Remove("checkDisks"); } }
         private List<string>? _explicitNullValueCheckDisks = default!;
 #nullable restore
 #else
-        public List<string> CheckDisks { get => _explicitNullValueCheckDisks; set { _explicitNullValueCheckDisks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkDisks"); else _explicitNullProperties?.Remove("checkDisks"); } }
+        public List<string> CheckDisks { get => _explicitNullValueCheckDisks; set { _explicitNullValueCheckDisks = value; AdditionalData?.Remove("checkDisks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkDisks"); else _explicitNullProperties?.Remove("checkDisks"); } }
         private List<string> _explicitNullValueCheckDisks = default!;
 #endif
         /// <summary>Whether to check all disks for encryption.</summary>
-        public bool? RequireAll { get => _explicitNullValueRequireAll; set { _explicitNullValueRequireAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireAll"); else _explicitNullProperties?.Remove("requireAll"); } }
+        public bool? RequireAll { get => _explicitNullValueRequireAll; set { _explicitNullValueRequireAll = value; AdditionalData?.Remove("requireAll"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireAll"); else _explicitNullProperties?.Remove("requireAll"); } }
         private bool? _explicitNullValueRequireAll = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDiskEncryptionInputRequest"/> and sets the default values.

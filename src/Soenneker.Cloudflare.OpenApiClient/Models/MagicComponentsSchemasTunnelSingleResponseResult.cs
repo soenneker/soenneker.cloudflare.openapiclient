@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("interconnect") is { } nullNodeInterconnect && nullNodeInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interconnect = null;
+            if (parseNode.GetChildNode("interconnect") is null) { _explicitNullValueInterconnect = default!; _explicitNullProperties?.Remove("interconnect"); }
+            else if (parseNode.GetChildNode("interconnect") is { } nullNodeInterconnect && nullNodeInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interconnect = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The interconnect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect? Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect? Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; AdditionalData?.Remove("interconnect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect? _explicitNullValueInterconnect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect Interconnect { get => _explicitNullValueInterconnect; set { _explicitNullValueInterconnect = value; AdditionalData?.Remove("interconnect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interconnect"); else _explicitNullProperties?.Remove("interconnect"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect _explicitNullValueInterconnect = default!;
 #endif
         /// <summary>

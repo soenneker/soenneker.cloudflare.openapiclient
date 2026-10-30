@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ENCRYPTED") is { } nullNodeENCRYPTED && nullNodeENCRYPTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ENCRYPTED = null;
-            if (parseNode.GetChildNode("NOT_ENCRYPTED") is { } nullNodeNOTENCRYPTED && nullNodeNOTENCRYPTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTENCRYPTED = null;
+            if (parseNode.GetChildNode("ENCRYPTED") is null) { _explicitNullValueENCRYPTED = default!; _explicitNullProperties?.Remove("ENCRYPTED"); }
+            else if (parseNode.GetChildNode("ENCRYPTED") is { } nullNodeENCRYPTED && nullNodeENCRYPTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ENCRYPTED = null;
+            if (parseNode.GetChildNode("NOT_ENCRYPTED") is null) { _explicitNullValueNOTENCRYPTED = default!; _explicitNullProperties?.Remove("NOT_ENCRYPTED"); }
+            else if (parseNode.GetChildNode("NOT_ENCRYPTED") is { } nullNodeNOTENCRYPTED && nullNodeNOTENCRYPTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTENCRYPTED = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ENCRYPTED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ENCRYPTED { get => _explicitNullValueENCRYPTED; set { _explicitNullValueENCRYPTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ENCRYPTED"); else _explicitNullProperties?.Remove("ENCRYPTED"); } }
+        public List<string>? ENCRYPTED { get => _explicitNullValueENCRYPTED; set { _explicitNullValueENCRYPTED = value; AdditionalData?.Remove("ENCRYPTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ENCRYPTED"); else _explicitNullProperties?.Remove("ENCRYPTED"); } }
         private List<string>? _explicitNullValueENCRYPTED = default!;
 #nullable restore
 #else
-        public List<string> ENCRYPTED { get => _explicitNullValueENCRYPTED; set { _explicitNullValueENCRYPTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ENCRYPTED"); else _explicitNullProperties?.Remove("ENCRYPTED"); } }
+        public List<string> ENCRYPTED { get => _explicitNullValueENCRYPTED; set { _explicitNullValueENCRYPTED = value; AdditionalData?.Remove("ENCRYPTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ENCRYPTED"); else _explicitNullProperties?.Remove("ENCRYPTED"); } }
         private List<string> _explicitNullValueENCRYPTED = default!;
 #endif
         /// <summary>The NOT_ENCRYPTED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NOTENCRYPTED { get => _explicitNullValueNOTENCRYPTED; set { _explicitNullValueNOTENCRYPTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_ENCRYPTED"); else _explicitNullProperties?.Remove("NOT_ENCRYPTED"); } }
+        public List<string>? NOTENCRYPTED { get => _explicitNullValueNOTENCRYPTED; set { _explicitNullValueNOTENCRYPTED = value; AdditionalData?.Remove("NOT_ENCRYPTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_ENCRYPTED"); else _explicitNullProperties?.Remove("NOT_ENCRYPTED"); } }
         private List<string>? _explicitNullValueNOTENCRYPTED = default!;
 #nullable restore
 #else
-        public List<string> NOTENCRYPTED { get => _explicitNullValueNOTENCRYPTED; set { _explicitNullValueNOTENCRYPTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_ENCRYPTED"); else _explicitNullProperties?.Remove("NOT_ENCRYPTED"); } }
+        public List<string> NOTENCRYPTED { get => _explicitNullValueNOTENCRYPTED; set { _explicitNullValueNOTENCRYPTED = value; AdditionalData?.Remove("NOT_ENCRYPTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_ENCRYPTED"); else _explicitNullProperties?.Remove("NOT_ENCRYPTED"); } }
         private List<string> _explicitNullValueNOTENCRYPTED = default!;
 #endif
         /// <summary>

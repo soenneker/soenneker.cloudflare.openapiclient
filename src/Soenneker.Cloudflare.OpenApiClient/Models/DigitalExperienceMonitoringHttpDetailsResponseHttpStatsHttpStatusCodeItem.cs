@@ -17,35 +17,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("status200") is { } nullNodeStatus200 && nullNodeStatus200.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status200 = null;
-            if (parseNode.GetChildNode("status300") is { } nullNodeStatus300 && nullNodeStatus300.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status300 = null;
-            if (parseNode.GetChildNode("status400") is { } nullNodeStatus400 && nullNodeStatus400.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status400 = null;
-            if (parseNode.GetChildNode("status500") is { } nullNodeStatus500 && nullNodeStatus500.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status500 = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("status200") is null) { _explicitNullValueStatus200 = default!; _explicitNullProperties?.Remove("status200"); }
+            else if (parseNode.GetChildNode("status200") is { } nullNodeStatus200 && nullNodeStatus200.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status200 = null;
+            if (parseNode.GetChildNode("status300") is null) { _explicitNullValueStatus300 = default!; _explicitNullProperties?.Remove("status300"); }
+            else if (parseNode.GetChildNode("status300") is { } nullNodeStatus300 && nullNodeStatus300.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status300 = null;
+            if (parseNode.GetChildNode("status400") is null) { _explicitNullValueStatus400 = default!; _explicitNullProperties?.Remove("status400"); }
+            else if (parseNode.GetChildNode("status400") is { } nullNodeStatus400 && nullNodeStatus400.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status400 = null;
+            if (parseNode.GetChildNode("status500") is null) { _explicitNullValueStatus500 = default!; _explicitNullProperties?.Remove("status500"); }
+            else if (parseNode.GetChildNode("status500") is { } nullNodeStatus500 && nullNodeStatus500.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status500 = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status200 property</summary>
-        public int? Status200 { get => _explicitNullValueStatus200; set { _explicitNullValueStatus200 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status200"); else _explicitNullProperties?.Remove("status200"); } }
+        public int? Status200 { get => _explicitNullValueStatus200; set { _explicitNullValueStatus200 = value; AdditionalData?.Remove("status200"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status200"); else _explicitNullProperties?.Remove("status200"); } }
         private int? _explicitNullValueStatus200 = default!;
         /// <summary>The status300 property</summary>
-        public int? Status300 { get => _explicitNullValueStatus300; set { _explicitNullValueStatus300 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status300"); else _explicitNullProperties?.Remove("status300"); } }
+        public int? Status300 { get => _explicitNullValueStatus300; set { _explicitNullValueStatus300 = value; AdditionalData?.Remove("status300"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status300"); else _explicitNullProperties?.Remove("status300"); } }
         private int? _explicitNullValueStatus300 = default!;
         /// <summary>The status400 property</summary>
-        public int? Status400 { get => _explicitNullValueStatus400; set { _explicitNullValueStatus400 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status400"); else _explicitNullProperties?.Remove("status400"); } }
+        public int? Status400 { get => _explicitNullValueStatus400; set { _explicitNullValueStatus400 = value; AdditionalData?.Remove("status400"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status400"); else _explicitNullProperties?.Remove("status400"); } }
         private int? _explicitNullValueStatus400 = default!;
         /// <summary>The status500 property</summary>
-        public int? Status500 { get => _explicitNullValueStatus500; set { _explicitNullValueStatus500 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status500"); else _explicitNullProperties?.Remove("status500"); } }
+        public int? Status500 { get => _explicitNullValueStatus500; set { _explicitNullValueStatus500 = value; AdditionalData?.Remove("status500"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status500"); else _explicitNullProperties?.Remove("status500"); } }
         private int? _explicitNullValueStatus500 = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>

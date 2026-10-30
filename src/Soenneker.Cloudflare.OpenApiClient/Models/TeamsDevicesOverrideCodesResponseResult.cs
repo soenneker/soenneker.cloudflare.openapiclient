@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("disable_for_time") is { } nullNodeDisableForTime && nullNodeDisableForTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableForTime = null;
+            if (parseNode.GetChildNode("disable_for_time") is null) { _explicitNullValueDisableForTime = default!; _explicitNullProperties?.Remove("disable_for_time"); }
+            else if (parseNode.GetChildNode("disable_for_time") is { } nullNodeDisableForTime && nullNodeDisableForTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableForTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The disable_for_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime? DisableForTime { get => _explicitNullValueDisableForTime; set { _explicitNullValueDisableForTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_for_time"); else _explicitNullProperties?.Remove("disable_for_time"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime? DisableForTime { get => _explicitNullValueDisableForTime; set { _explicitNullValueDisableForTime = value; AdditionalData?.Remove("disable_for_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_for_time"); else _explicitNullProperties?.Remove("disable_for_time"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime? _explicitNullValueDisableForTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime DisableForTime { get => _explicitNullValueDisableForTime; set { _explicitNullValueDisableForTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_for_time"); else _explicitNullProperties?.Remove("disable_for_time"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime DisableForTime { get => _explicitNullValueDisableForTime; set { _explicitNullValueDisableForTime = value; AdditionalData?.Remove("disable_for_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_for_time"); else _explicitNullProperties?.Remove("disable_for_time"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDisableForTime _explicitNullValueDisableForTime = default!;
 #endif
         /// <summary>

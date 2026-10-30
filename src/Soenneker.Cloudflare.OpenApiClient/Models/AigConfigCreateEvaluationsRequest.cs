@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dataset_ids") is { } nullNodeDatasetIds && nullNodeDatasetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetIds = null;
-            if (parseNode.GetChildNode("evaluation_type_ids") is { } nullNodeEvaluationTypeIds && nullNodeEvaluationTypeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationTypeIds = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("dataset_ids") is null) { _explicitNullValueDatasetIds = default!; _explicitNullProperties?.Remove("dataset_ids"); }
+            else if (parseNode.GetChildNode("dataset_ids") is { } nullNodeDatasetIds && nullNodeDatasetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetIds = null;
+            if (parseNode.GetChildNode("evaluation_type_ids") is null) { _explicitNullValueEvaluationTypeIds = default!; _explicitNullProperties?.Remove("evaluation_type_ids"); }
+            else if (parseNode.GetChildNode("evaluation_type_ids") is { } nullNodeEvaluationTypeIds && nullNodeEvaluationTypeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationTypeIds = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The dataset_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DatasetIds { get => _explicitNullValueDatasetIds; set { _explicitNullValueDatasetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_ids"); else _explicitNullProperties?.Remove("dataset_ids"); } }
+        public List<string>? DatasetIds { get => _explicitNullValueDatasetIds; set { _explicitNullValueDatasetIds = value; AdditionalData?.Remove("dataset_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_ids"); else _explicitNullProperties?.Remove("dataset_ids"); } }
         private List<string>? _explicitNullValueDatasetIds = default!;
 #nullable restore
 #else
-        public List<string> DatasetIds { get => _explicitNullValueDatasetIds; set { _explicitNullValueDatasetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_ids"); else _explicitNullProperties?.Remove("dataset_ids"); } }
+        public List<string> DatasetIds { get => _explicitNullValueDatasetIds; set { _explicitNullValueDatasetIds = value; AdditionalData?.Remove("dataset_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_ids"); else _explicitNullProperties?.Remove("dataset_ids"); } }
         private List<string> _explicitNullValueDatasetIds = default!;
 #endif
         /// <summary>The evaluation_type_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EvaluationTypeIds { get => _explicitNullValueEvaluationTypeIds; set { _explicitNullValueEvaluationTypeIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_type_ids"); else _explicitNullProperties?.Remove("evaluation_type_ids"); } }
+        public List<string>? EvaluationTypeIds { get => _explicitNullValueEvaluationTypeIds; set { _explicitNullValueEvaluationTypeIds = value; AdditionalData?.Remove("evaluation_type_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_type_ids"); else _explicitNullProperties?.Remove("evaluation_type_ids"); } }
         private List<string>? _explicitNullValueEvaluationTypeIds = default!;
 #nullable restore
 #else
-        public List<string> EvaluationTypeIds { get => _explicitNullValueEvaluationTypeIds; set { _explicitNullValueEvaluationTypeIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_type_ids"); else _explicitNullProperties?.Remove("evaluation_type_ids"); } }
+        public List<string> EvaluationTypeIds { get => _explicitNullValueEvaluationTypeIds; set { _explicitNullValueEvaluationTypeIds = value; AdditionalData?.Remove("evaluation_type_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_type_ids"); else _explicitNullProperties?.Remove("evaluation_type_ids"); } }
         private List<string> _explicitNullValueEvaluationTypeIds = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

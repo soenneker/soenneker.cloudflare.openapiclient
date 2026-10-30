@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audio_encoder") is { } nullNodeAudioEncoder && nullNodeAudioEncoder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioEncoder = null;
-            if (parseNode.GetChildNode("video_encoder") is { } nullNodeVideoEncoder && nullNodeVideoEncoder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoEncoder = null;
+            if (parseNode.GetChildNode("audio_encoder") is null) { _explicitNullValueAudioEncoder = default!; _explicitNullProperties?.Remove("audio_encoder"); }
+            else if (parseNode.GetChildNode("audio_encoder") is { } nullNodeAudioEncoder && nullNodeAudioEncoder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioEncoder = null;
+            if (parseNode.GetChildNode("video_encoder") is null) { _explicitNullValueVideoEncoder = default!; _explicitNullProperties?.Remove("video_encoder"); }
+            else if (parseNode.GetChildNode("video_encoder") is { } nullNodeVideoEncoder && nullNodeVideoEncoder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoEncoder = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The audio_encoder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioEncoder { get => _explicitNullValueAudioEncoder; set { _explicitNullValueAudioEncoder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_encoder"); else _explicitNullProperties?.Remove("audio_encoder"); } }
+        public string? AudioEncoder { get => _explicitNullValueAudioEncoder; set { _explicitNullValueAudioEncoder = value; AdditionalData?.Remove("audio_encoder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_encoder"); else _explicitNullProperties?.Remove("audio_encoder"); } }
         private string? _explicitNullValueAudioEncoder = default!;
 #nullable restore
 #else
-        public string AudioEncoder { get => _explicitNullValueAudioEncoder; set { _explicitNullValueAudioEncoder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_encoder"); else _explicitNullProperties?.Remove("audio_encoder"); } }
+        public string AudioEncoder { get => _explicitNullValueAudioEncoder; set { _explicitNullValueAudioEncoder = value; AdditionalData?.Remove("audio_encoder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_encoder"); else _explicitNullProperties?.Remove("audio_encoder"); } }
         private string _explicitNullValueAudioEncoder = default!;
 #endif
         /// <summary>The video_encoder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VideoEncoder { get => _explicitNullValueVideoEncoder; set { _explicitNullValueVideoEncoder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_encoder"); else _explicitNullProperties?.Remove("video_encoder"); } }
+        public string? VideoEncoder { get => _explicitNullValueVideoEncoder; set { _explicitNullValueVideoEncoder = value; AdditionalData?.Remove("video_encoder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_encoder"); else _explicitNullProperties?.Remove("video_encoder"); } }
         private string? _explicitNullValueVideoEncoder = default!;
 #nullable restore
 #else
-        public string VideoEncoder { get => _explicitNullValueVideoEncoder; set { _explicitNullValueVideoEncoder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_encoder"); else _explicitNullProperties?.Remove("video_encoder"); } }
+        public string VideoEncoder { get => _explicitNullValueVideoEncoder; set { _explicitNullValueVideoEncoder = value; AdditionalData?.Remove("video_encoder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_encoder"); else _explicitNullProperties?.Remove("video_encoder"); } }
         private string _explicitNullValueVideoEncoder = default!;
 #endif
         /// <summary>

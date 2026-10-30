@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dataTime") is { } nullNodeDataTime && nullNodeDataTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataTime = null;
-            if (parseNode.GetChildNode("queryTime") is { } nullNodeQueryTime && nullNodeQueryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTime = null;
-            if (parseNode.GetChildNode("totalCount") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("dataTime") is null) { _explicitNullValueDataTime = default!; _explicitNullProperties?.Remove("dataTime"); }
+            else if (parseNode.GetChildNode("dataTime") is { } nullNodeDataTime && nullNodeDataTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataTime = null;
+            if (parseNode.GetChildNode("queryTime") is null) { _explicitNullValueQueryTime = default!; _explicitNullProperties?.Remove("queryTime"); }
+            else if (parseNode.GetChildNode("queryTime") is { } nullNodeQueryTime && nullNodeQueryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTime = null;
+            if (parseNode.GetChildNode("totalCount") is null) { _explicitNullValueTotalCount = default!; _explicitNullProperties?.Remove("totalCount"); }
+            else if (parseNode.GetChildNode("totalCount") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp of the underlying data.</summary>
-        public DateTimeOffset? DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataTime"); else _explicitNullProperties?.Remove("dataTime"); } }
+        public DateTimeOffset? DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; AdditionalData?.Remove("dataTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataTime"); else _explicitNullProperties?.Remove("dataTime"); } }
         private DateTimeOffset? _explicitNullValueDataTime = default!;
         /// <summary>Timestamp when the query was executed.</summary>
-        public DateTimeOffset? QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryTime"); else _explicitNullProperties?.Remove("queryTime"); } }
+        public DateTimeOffset? QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; AdditionalData?.Remove("queryTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryTime"); else _explicitNullProperties?.Remove("queryTime"); } }
         private DateTimeOffset? _explicitNullValueQueryTime = default!;
         /// <summary>Total number of ASPA objects.</summary>
-        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalCount"); else _explicitNullProperties?.Remove("totalCount"); } }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("totalCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalCount"); else _explicitNullProperties?.Remove("totalCount"); } }
         private int? _explicitNullValueTotalCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultMeta"/> and sets the default values.

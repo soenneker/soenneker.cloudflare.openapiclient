@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("jobs") is { } nullNodeJobs && nullNodeJobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jobs = null;
-            if (parseNode.GetChildNode("nextContinuationToken") is { } nullNodeNextContinuationToken && nullNodeNextContinuationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextContinuationToken = null;
+            if (parseNode.GetChildNode("jobs") is null) { _explicitNullValueJobs = default!; _explicitNullProperties?.Remove("jobs"); }
+            else if (parseNode.GetChildNode("jobs") is { } nullNodeJobs && nullNodeJobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jobs = null;
+            if (parseNode.GetChildNode("nextContinuationToken") is null) { _explicitNullValueNextContinuationToken = default!; _explicitNullProperties?.Remove("nextContinuationToken"); }
+            else if (parseNode.GetChildNode("nextContinuationToken") is { } nullNodeNextContinuationToken && nullNodeNextContinuationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextContinuationToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Bucket jobs in the current page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2BucketJob>? Jobs { get => _explicitNullValueJobs; set { _explicitNullValueJobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobs"); else _explicitNullProperties?.Remove("jobs"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2BucketJob>? _explicitNullValueJobs = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult>? Jobs { get => _explicitNullValueJobs; set { _explicitNullValueJobs = value; AdditionalData?.Remove("jobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobs"); else _explicitNullProperties?.Remove("jobs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult>? _explicitNullValueJobs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2BucketJob> Jobs { get => _explicitNullValueJobs; set { _explicitNullValueJobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobs"); else _explicitNullProperties?.Remove("jobs"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2BucketJob> _explicitNullValueJobs = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult> Jobs { get => _explicitNullValueJobs; set { _explicitNullValueJobs = value; AdditionalData?.Remove("jobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobs"); else _explicitNullProperties?.Remove("jobs"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult> _explicitNullValueJobs = default!;
 #endif
         /// <summary>Token to pass as `continuationToken` to retrieve the next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextContinuationToken { get => _explicitNullValueNextContinuationToken; set { _explicitNullValueNextContinuationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextContinuationToken"); else _explicitNullProperties?.Remove("nextContinuationToken"); } }
+        public string? NextContinuationToken { get => _explicitNullValueNextContinuationToken; set { _explicitNullValueNextContinuationToken = value; AdditionalData?.Remove("nextContinuationToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextContinuationToken"); else _explicitNullProperties?.Remove("nextContinuationToken"); } }
         private string? _explicitNullValueNextContinuationToken = default!;
 #nullable restore
 #else
-        public string NextContinuationToken { get => _explicitNullValueNextContinuationToken; set { _explicitNullValueNextContinuationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextContinuationToken"); else _explicitNullProperties?.Remove("nextContinuationToken"); } }
+        public string NextContinuationToken { get => _explicitNullValueNextContinuationToken; set { _explicitNullValueNextContinuationToken = value; AdditionalData?.Remove("nextContinuationToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextContinuationToken"); else _explicitNullProperties?.Remove("nextContinuationToken"); } }
         private string _explicitNullValueNextContinuationToken = default!;
 #endif
         /// <summary>
@@ -68,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2BucketJob>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2BucketJob.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "nextContinuationToken", n => { NextContinuationToken = n.GetStringValue(); } },
             };
         }
@@ -79,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2BucketJob>("jobs", Jobs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult>("jobs", Jobs);
             writer.WriteStringValue("nextContinuationToken", NextContinuationToken);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

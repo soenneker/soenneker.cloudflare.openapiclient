@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ns_pool") is { } nullNodeNsPool && nullNodeNsPool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsPool = null;
+            if (parseNode.GetChildNode("ns_pool") is null) { _explicitNullValueNsPool = default!; _explicitNullProperties?.Remove("ns_pool"); }
+            else if (parseNode.GetChildNode("ns_pool") is { } nullNodeNsPool && nullNodeNsPool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsPool = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ns_pool property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDnsNsPool? NsPool { get => _explicitNullValueNsPool; set { _explicitNullValueNsPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_pool"); else _explicitNullProperties?.Remove("ns_pool"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDnsNsPool? NsPool { get => _explicitNullValueNsPool; set { _explicitNullValueNsPool = value; AdditionalData?.Remove("ns_pool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_pool"); else _explicitNullProperties?.Remove("ns_pool"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDnsNsPool? _explicitNullValueNsPool = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDnsNsPool NsPool { get => _explicitNullValueNsPool; set { _explicitNullValueNsPool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_pool"); else _explicitNullProperties?.Remove("ns_pool"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDnsNsPool NsPool { get => _explicitNullValueNsPool; set { _explicitNullValueNsPool = value; AdditionalData?.Remove("ns_pool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_pool"); else _explicitNullProperties?.Remove("ns_pool"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDnsNsPool _explicitNullValueNsPool = default!;
 #endif
         /// <summary>

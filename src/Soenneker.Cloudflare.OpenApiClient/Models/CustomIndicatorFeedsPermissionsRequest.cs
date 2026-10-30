@@ -17,24 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_tag") is { } nullNodeAccountTag && nullNodeAccountTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountTag = null;
-            if (parseNode.GetChildNode("feed_id") is { } nullNodeFeedId && nullNodeFeedId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedId = null;
+            if (parseNode.GetChildNode("account_tag") is null) { _explicitNullValueAccountTag = default!; _explicitNullProperties?.Remove("account_tag"); }
+            else if (parseNode.GetChildNode("account_tag") is { } nullNodeAccountTag && nullNodeAccountTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountTag = null;
+            if (parseNode.GetChildNode("feed_id") is null) { _explicitNullValueFeedId = default!; _explicitNullProperties?.Remove("feed_id"); }
+            else if (parseNode.GetChildNode("feed_id") is { } nullNodeFeedId && nullNodeFeedId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedId = null;
         }
 
         /// <summary>The Cloudflare account tag of the account to change permissions on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountTag { get => _explicitNullValueAccountTag; set { _explicitNullValueAccountTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_tag"); else _explicitNullProperties?.Remove("account_tag"); } }
+        public string? AccountTag { get => _explicitNullValueAccountTag; set { _explicitNullValueAccountTag = value; AdditionalData?.Remove("account_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_tag"); else _explicitNullProperties?.Remove("account_tag"); } }
         private string? _explicitNullValueAccountTag = default!;
 #nullable restore
 #else
-        public string AccountTag { get => _explicitNullValueAccountTag; set { _explicitNullValueAccountTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_tag"); else _explicitNullProperties?.Remove("account_tag"); } }
+        public string AccountTag { get => _explicitNullValueAccountTag; set { _explicitNullValueAccountTag = value; AdditionalData?.Remove("account_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_tag"); else _explicitNullProperties?.Remove("account_tag"); } }
         private string _explicitNullValueAccountTag = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the feed to add/remove permissions on</summary>
-        public int? FeedId { get => _explicitNullValueFeedId; set { _explicitNullValueFeedId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feed_id"); else _explicitNullProperties?.Remove("feed_id"); } }
+        public int? FeedId { get => _explicitNullValueFeedId; set { _explicitNullValueFeedId = value; AdditionalData?.Remove("feed_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feed_id"); else _explicitNullProperties?.Remove("feed_id"); } }
         private int? _explicitNullValueFeedId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsPermissionsRequest"/> and sets the default values.

@@ -17,36 +17,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("estimated_queued_users") is { } nullNodeEstimatedQueuedUsers && nullNodeEstimatedQueuedUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedQueuedUsers = null;
-            if (parseNode.GetChildNode("estimated_total_active_users") is { } nullNodeEstimatedTotalActiveUsers && nullNodeEstimatedTotalActiveUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedTotalActiveUsers = null;
-            if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
-            if (parseNode.GetChildNode("max_estimated_time_minutes") is { } nullNodeMaxEstimatedTimeMinutes && nullNodeMaxEstimatedTimeMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxEstimatedTimeMinutes = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("estimated_queued_users") is null) { _explicitNullValueEstimatedQueuedUsers = default!; _explicitNullProperties?.Remove("estimated_queued_users"); }
+            else if (parseNode.GetChildNode("estimated_queued_users") is { } nullNodeEstimatedQueuedUsers && nullNodeEstimatedQueuedUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedQueuedUsers = null;
+            if (parseNode.GetChildNode("estimated_total_active_users") is null) { _explicitNullValueEstimatedTotalActiveUsers = default!; _explicitNullProperties?.Remove("estimated_total_active_users"); }
+            else if (parseNode.GetChildNode("estimated_total_active_users") is { } nullNodeEstimatedTotalActiveUsers && nullNodeEstimatedTotalActiveUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedTotalActiveUsers = null;
+            if (parseNode.GetChildNode("event_id") is null) { _explicitNullValueEventId = default!; _explicitNullProperties?.Remove("event_id"); }
+            else if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("max_estimated_time_minutes") is null) { _explicitNullValueMaxEstimatedTimeMinutes = default!; _explicitNullProperties?.Remove("max_estimated_time_minutes"); }
+            else if (parseNode.GetChildNode("max_estimated_time_minutes") is { } nullNodeMaxEstimatedTimeMinutes && nullNodeMaxEstimatedTimeMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxEstimatedTimeMinutes = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated_queued_users property</summary>
-        public int? EstimatedQueuedUsers { get => _explicitNullValueEstimatedQueuedUsers; set { _explicitNullValueEstimatedQueuedUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_queued_users"); else _explicitNullProperties?.Remove("estimated_queued_users"); } }
+        public int? EstimatedQueuedUsers { get => _explicitNullValueEstimatedQueuedUsers; set { _explicitNullValueEstimatedQueuedUsers = value; AdditionalData?.Remove("estimated_queued_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_queued_users"); else _explicitNullProperties?.Remove("estimated_queued_users"); } }
         private int? _explicitNullValueEstimatedQueuedUsers = default!;
         /// <summary>The estimated_total_active_users property</summary>
-        public int? EstimatedTotalActiveUsers { get => _explicitNullValueEstimatedTotalActiveUsers; set { _explicitNullValueEstimatedTotalActiveUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_total_active_users"); else _explicitNullProperties?.Remove("estimated_total_active_users"); } }
+        public int? EstimatedTotalActiveUsers { get => _explicitNullValueEstimatedTotalActiveUsers; set { _explicitNullValueEstimatedTotalActiveUsers = value; AdditionalData?.Remove("estimated_total_active_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_total_active_users"); else _explicitNullProperties?.Remove("estimated_total_active_users"); } }
         private int? _explicitNullValueEstimatedTotalActiveUsers = default!;
         /// <summary>The event_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
         private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
         private string _explicitNullValueEventId = default!;
 #endif
         /// <summary>The max_estimated_time_minutes property</summary>
-        public int? MaxEstimatedTimeMinutes { get => _explicitNullValueMaxEstimatedTimeMinutes; set { _explicitNullValueMaxEstimatedTimeMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_estimated_time_minutes"); else _explicitNullProperties?.Remove("max_estimated_time_minutes"); } }
+        public int? MaxEstimatedTimeMinutes { get => _explicitNullValueMaxEstimatedTimeMinutes; set { _explicitNullValueMaxEstimatedTimeMinutes = value; AdditionalData?.Remove("max_estimated_time_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_estimated_time_minutes"); else _explicitNullProperties?.Remove("max_estimated_time_minutes"); } }
         private int? _explicitNullValueMaxEstimatedTimeMinutes = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatusResponseResult"/> and sets the default values.
@@ -77,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetIntValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "max_estimated_time_minutes", n => { MaxEstimatedTimeMinutes = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

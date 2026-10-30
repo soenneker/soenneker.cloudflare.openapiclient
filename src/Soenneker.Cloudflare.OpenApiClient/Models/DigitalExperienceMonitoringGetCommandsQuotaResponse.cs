@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("quota") is { } nullNodeQuota && nullNodeQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quota = null;
-            if (parseNode.GetChildNode("quota_usage") is { } nullNodeQuotaUsage && nullNodeQuotaUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuotaUsage = null;
-            if (parseNode.GetChildNode("reset_time") is { } nullNodeResetTime && nullNodeResetTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResetTime = null;
+            if (parseNode.GetChildNode("quota") is null) { _explicitNullValueQuota = default!; _explicitNullProperties?.Remove("quota"); }
+            else if (parseNode.GetChildNode("quota") is { } nullNodeQuota && nullNodeQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quota = null;
+            if (parseNode.GetChildNode("quota_usage") is null) { _explicitNullValueQuotaUsage = default!; _explicitNullProperties?.Remove("quota_usage"); }
+            else if (parseNode.GetChildNode("quota_usage") is { } nullNodeQuotaUsage && nullNodeQuotaUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuotaUsage = null;
+            if (parseNode.GetChildNode("reset_time") is null) { _explicitNullValueResetTime = default!; _explicitNullProperties?.Remove("reset_time"); }
+            else if (parseNode.GetChildNode("reset_time") is { } nullNodeResetTime && nullNodeResetTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResetTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of commands that can be initiated for an account.</summary>
-        public double? Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
+        public double? Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; AdditionalData?.Remove("quota"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
         private double? _explicitNullValueQuota = default!;
         /// <summary>The number of commands that have been initiated for an account.</summary>
-        public double? QuotaUsage { get => _explicitNullValueQuotaUsage; set { _explicitNullValueQuotaUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota_usage"); else _explicitNullProperties?.Remove("quota_usage"); } }
+        public double? QuotaUsage { get => _explicitNullValueQuotaUsage; set { _explicitNullValueQuotaUsage = value; AdditionalData?.Remove("quota_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota_usage"); else _explicitNullProperties?.Remove("quota_usage"); } }
         private double? _explicitNullValueQuotaUsage = default!;
         /// <summary>The time when the quota resets.</summary>
-        public DateTimeOffset? ResetTime { get => _explicitNullValueResetTime; set { _explicitNullValueResetTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reset_time"); else _explicitNullProperties?.Remove("reset_time"); } }
+        public DateTimeOffset? ResetTime { get => _explicitNullValueResetTime; set { _explicitNullValueResetTime = value; AdditionalData?.Remove("reset_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reset_time"); else _explicitNullProperties?.Remove("reset_time"); } }
         private DateTimeOffset? _explicitNullValueResetTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringGetCommandsQuotaResponse"/> and sets the default values.

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("articles") is { } nullNodeArticles && nullNodeArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Articles = null;
-            if (parseNode.GetChildNode("priorities") is { } nullNodePriorities && nullNodePriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priorities = null;
+            if (parseNode.GetChildNode("articles") is null) { _explicitNullValueArticles = default!; _explicitNullProperties?.Remove("articles"); }
+            else if (parseNode.GetChildNode("articles") is { } nullNodeArticles && nullNodeArticles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Articles = null;
+            if (parseNode.GetChildNode("priorities") is null) { _explicitNullValuePriorities = default!; _explicitNullProperties?.Remove("priorities"); }
+            else if (parseNode.GetChildNode("priorities") is { } nullNodePriorities && nullNodePriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priorities = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Beta. Number of articles in each severity band, the band reported as the article&apos;s severity. Articles without a severity are not counted, and every count is zero when the account has no active Priority Intelligence Requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles? Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles? Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; AdditionalData?.Remove("articles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles? _explicitNullValueArticles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles Articles { get => _explicitNullValueArticles; set { _explicitNullValueArticles = value; AdditionalData?.Remove("articles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles"); else _explicitNullProperties?.Remove("articles"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultArticles _explicitNullValueArticles = default!;
 #endif
         /// <summary>Beta. Each active PIR, including PIRs the matcher paused, ordered by ID. Drafts and deleted PIRs are excluded. An article can count toward several PIRs, so these are not parts of articles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem>? Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem>? Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; AdditionalData?.Remove("priorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem>? _explicitNullValuePriorities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem> Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem> Priorities { get => _explicitNullValuePriorities; set { _explicitNullValuePriorities = value; AdditionalData?.Remove("priorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorities"); else _explicitNullProperties?.Remove("priorities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItem> _explicitNullValuePriorities = default!;
 #endif
         /// <summary>

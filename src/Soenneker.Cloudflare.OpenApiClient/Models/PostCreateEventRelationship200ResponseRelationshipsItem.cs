@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("childDatasetId") is { } nullNodeChildDatasetId && nullNodeChildDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChildDatasetId = null;
-            if (parseNode.GetChildNode("childId") is { } nullNodeChildId && nullNodeChildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChildId = null;
-            if (parseNode.GetChildNode("parentDatasetId") is { } nullNodeParentDatasetId && nullNodeParentDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentDatasetId = null;
-            if (parseNode.GetChildNode("parentId") is { } nullNodeParentId && nullNodeParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentId = null;
-            if (parseNode.GetChildNode("relationshipType") is { } nullNodeRelationshipType && nullNodeRelationshipType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationshipType = null;
+            if (parseNode.GetChildNode("childDatasetId") is null) { _explicitNullValueChildDatasetId = default!; _explicitNullProperties?.Remove("childDatasetId"); }
+            else if (parseNode.GetChildNode("childDatasetId") is { } nullNodeChildDatasetId && nullNodeChildDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChildDatasetId = null;
+            if (parseNode.GetChildNode("childId") is null) { _explicitNullValueChildId = default!; _explicitNullProperties?.Remove("childId"); }
+            else if (parseNode.GetChildNode("childId") is { } nullNodeChildId && nullNodeChildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChildId = null;
+            if (parseNode.GetChildNode("parentDatasetId") is null) { _explicitNullValueParentDatasetId = default!; _explicitNullProperties?.Remove("parentDatasetId"); }
+            else if (parseNode.GetChildNode("parentDatasetId") is { } nullNodeParentDatasetId && nullNodeParentDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentDatasetId = null;
+            if (parseNode.GetChildNode("parentId") is null) { _explicitNullValueParentId = default!; _explicitNullProperties?.Remove("parentId"); }
+            else if (parseNode.GetChildNode("parentId") is { } nullNodeParentId && nullNodeParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentId = null;
+            if (parseNode.GetChildNode("relationshipType") is null) { _explicitNullValueRelationshipType = default!; _explicitNullProperties?.Remove("relationshipType"); }
+            else if (parseNode.GetChildNode("relationshipType") is { } nullNodeRelationshipType && nullNodeRelationshipType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationshipType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,31 +34,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Dataset ID where the child event resides</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChildDatasetId { get => _explicitNullValueChildDatasetId; set { _explicitNullValueChildDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("childDatasetId"); else _explicitNullProperties?.Remove("childDatasetId"); } }
+        public string? ChildDatasetId { get => _explicitNullValueChildDatasetId; set { _explicitNullValueChildDatasetId = value; AdditionalData?.Remove("childDatasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("childDatasetId"); else _explicitNullProperties?.Remove("childDatasetId"); } }
         private string? _explicitNullValueChildDatasetId = default!;
 #nullable restore
 #else
-        public string ChildDatasetId { get => _explicitNullValueChildDatasetId; set { _explicitNullValueChildDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("childDatasetId"); else _explicitNullProperties?.Remove("childDatasetId"); } }
+        public string ChildDatasetId { get => _explicitNullValueChildDatasetId; set { _explicitNullValueChildDatasetId = value; AdditionalData?.Remove("childDatasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("childDatasetId"); else _explicitNullProperties?.Remove("childDatasetId"); } }
         private string _explicitNullValueChildDatasetId = default!;
 #endif
         /// <summary>UUID of the child event in the relationship</summary>
-        public Guid? ChildId { get => _explicitNullValueChildId; set { _explicitNullValueChildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("childId"); else _explicitNullProperties?.Remove("childId"); } }
+        public Guid? ChildId { get => _explicitNullValueChildId; set { _explicitNullValueChildId = value; AdditionalData?.Remove("childId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("childId"); else _explicitNullProperties?.Remove("childId"); } }
         private Guid? _explicitNullValueChildId = default!;
         /// <summary>Dataset ID where the parent event resides</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentDatasetId { get => _explicitNullValueParentDatasetId; set { _explicitNullValueParentDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentDatasetId"); else _explicitNullProperties?.Remove("parentDatasetId"); } }
+        public string? ParentDatasetId { get => _explicitNullValueParentDatasetId; set { _explicitNullValueParentDatasetId = value; AdditionalData?.Remove("parentDatasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentDatasetId"); else _explicitNullProperties?.Remove("parentDatasetId"); } }
         private string? _explicitNullValueParentDatasetId = default!;
 #nullable restore
 #else
-        public string ParentDatasetId { get => _explicitNullValueParentDatasetId; set { _explicitNullValueParentDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentDatasetId"); else _explicitNullProperties?.Remove("parentDatasetId"); } }
+        public string ParentDatasetId { get => _explicitNullValueParentDatasetId; set { _explicitNullValueParentDatasetId = value; AdditionalData?.Remove("parentDatasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentDatasetId"); else _explicitNullProperties?.Remove("parentDatasetId"); } }
         private string _explicitNullValueParentDatasetId = default!;
 #endif
         /// <summary>UUID of the parent event in the relationship</summary>
-        public Guid? ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentId"); else _explicitNullProperties?.Remove("parentId"); } }
+        public Guid? ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; AdditionalData?.Remove("parentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentId"); else _explicitNullProperties?.Remove("parentId"); } }
         private Guid? _explicitNullValueParentId = default!;
         /// <summary>Type of relationship between the events</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCreateEventRelationship200ResponseRelationshipsItemRelationshipType? RelationshipType { get => _explicitNullValueRelationshipType; set { _explicitNullValueRelationshipType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationshipType"); else _explicitNullProperties?.Remove("relationshipType"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCreateEventRelationship200ResponseRelationshipsItemRelationshipType? RelationshipType { get => _explicitNullValueRelationshipType; set { _explicitNullValueRelationshipType = value; AdditionalData?.Remove("relationshipType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationshipType"); else _explicitNullProperties?.Remove("relationshipType"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostCreateEventRelationship200ResponseRelationshipsItemRelationshipType? _explicitNullValueRelationshipType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCreateEventRelationship200ResponseRelationshipsItem"/> and sets the default values.
@@ -84,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "childId", n => { ChildId = n.GetGuidValue(); } },
                 { "parentDatasetId", n => { ParentDatasetId = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetGuidValue(); } },
-                { "relationshipType", n => { RelationshipType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCreateEventRelationship200ResponseRelationshipsItemRelationshipType>(); } },
+                { "relationshipType", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCreateEventRelationship200ResponseRelationshipsItemRelationshipType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRelationshipType = default; _explicitNullProperties?.Remove("relationshipType"); AdditionalData["relationshipType"] = unknown; } else { RelationshipType = parsed; AdditionalData.Remove("relationshipType"); } } },
             };
         }
         /// <summary>

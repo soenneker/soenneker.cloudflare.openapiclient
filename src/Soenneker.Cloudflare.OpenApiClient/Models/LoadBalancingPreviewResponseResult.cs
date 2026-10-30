@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pools") is { } nullNodePools && nullNodePools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pools = null;
-            if (parseNode.GetChildNode("preview_id") is { } nullNodePreviewId && nullNodePreviewId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewId = null;
+            if (parseNode.GetChildNode("pools") is null) { _explicitNullValuePools = default!; _explicitNullProperties?.Remove("pools"); }
+            else if (parseNode.GetChildNode("pools") is { } nullNodePools && nullNodePools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pools = null;
+            if (parseNode.GetChildNode("preview_id") is null) { _explicitNullValuePreviewId = default!; _explicitNullProperties?.Remove("preview_id"); }
+            else if (parseNode.GetChildNode("preview_id") is { } nullNodePreviewId && nullNodePreviewId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Monitored pool IDs mapped to their respective names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPreviewResponseAllOf2ResultPoolsProperty? Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPreviewResponseAllOf2ResultPoolsProperty? Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; AdditionalData?.Remove("pools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPreviewResponseAllOf2ResultPoolsProperty? _explicitNullValuePools = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPreviewResponseAllOf2ResultPoolsProperty Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPreviewResponseAllOf2ResultPoolsProperty Pools { get => _explicitNullValuePools; set { _explicitNullValuePools = value; AdditionalData?.Remove("pools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pools"); else _explicitNullProperties?.Remove("pools"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPreviewResponseAllOf2ResultPoolsProperty _explicitNullValuePools = default!;
 #endif
         /// <summary>The preview_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
+        public string? PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; AdditionalData?.Remove("preview_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
         private string? _explicitNullValuePreviewId = default!;
 #nullable restore
 #else
-        public string PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
+        public string PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; AdditionalData?.Remove("preview_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
         private string _explicitNullValuePreviewId = default!;
 #endif
         /// <summary>

@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("instance_id") is { } nullNodeInstanceId && nullNodeInstanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceId = null;
-            if (parseNode.GetChildNode("instance_retention") is { } nullNodeInstanceRetention && nullNodeInstanceRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceRetention = null;
-            if (parseNode.GetChildNode("location_hint") is { } nullNodeLocationHint && nullNodeLocationHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationHint = null;
-            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("instance_id") is null) { _explicitNullValueInstanceId = default!; _explicitNullProperties?.Remove("instance_id"); }
+            else if (parseNode.GetChildNode("instance_id") is { } nullNodeInstanceId && nullNodeInstanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceId = null;
+            if (parseNode.GetChildNode("instance_retention") is null) { _explicitNullValueInstanceRetention = default!; _explicitNullProperties?.Remove("instance_retention"); }
+            else if (parseNode.GetChildNode("instance_retention") is { } nullNodeInstanceRetention && nullNodeInstanceRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceRetention = null;
+            if (parseNode.GetChildNode("location_hint") is null) { _explicitNullValueLocationHint = default!; _explicitNullProperties?.Remove("location_hint"); }
+            else if (parseNode.GetChildNode("location_hint") is { } nullNodeLocationHint && nullNodeLocationHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationHint = null;
+            if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
+            else if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The system reserves IDs that consist of the `cf_` prefix and exactly 64 lowercase hexadecimal characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_id"); else _explicitNullProperties?.Remove("instance_id"); } }
+        public string? InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; AdditionalData?.Remove("instance_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_id"); else _explicitNullProperties?.Remove("instance_id"); } }
         private string? _explicitNullValueInstanceId = default!;
 #nullable restore
 #else
-        public string InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_id"); else _explicitNullProperties?.Remove("instance_id"); } }
+        public string InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; AdditionalData?.Remove("instance_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_id"); else _explicitNullProperties?.Remove("instance_id"); } }
         private string _explicitNullValueInstanceId = default!;
 #endif
         /// <summary>The instance_retention property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention? InstanceRetention { get => _explicitNullValueInstanceRetention; set { _explicitNullValueInstanceRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_retention"); else _explicitNullProperties?.Remove("instance_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention? InstanceRetention { get => _explicitNullValueInstanceRetention; set { _explicitNullValueInstanceRetention = value; AdditionalData?.Remove("instance_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_retention"); else _explicitNullProperties?.Remove("instance_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention? _explicitNullValueInstanceRetention = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention InstanceRetention { get => _explicitNullValueInstanceRetention; set { _explicitNullValueInstanceRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_retention"); else _explicitNullProperties?.Remove("instance_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention InstanceRetention { get => _explicitNullValueInstanceRetention; set { _explicitNullValueInstanceRetention = value; AdditionalData?.Remove("instance_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_retention"); else _explicitNullProperties?.Remove("instance_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention _explicitNullValueInstanceRetention = default!;
 #endif
         /// <summary>The location_hint property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint? LocationHint { get => _explicitNullValueLocationHint; set { _explicitNullValueLocationHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_hint"); else _explicitNullProperties?.Remove("location_hint"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint? LocationHint { get => _explicitNullValueLocationHint; set { _explicitNullValueLocationHint = value; AdditionalData?.Remove("location_hint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_hint"); else _explicitNullProperties?.Remove("location_hint"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint? _explicitNullValueLocationHint = default!;
         /// <summary>JSON-encoded event payload passed into the new instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public string? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private string? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public string Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public string Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private string _explicitNullValueParams = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
                 { "instance_retention", n => { InstanceRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention.CreateFromDiscriminatorValue); } },
-                { "location_hint", n => { LocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint>(); } },
+                { "location_hint", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLocationHint = default; _explicitNullProperties?.Remove("location_hint"); AdditionalData["location_hint"] = unknown; } else { LocationHint = parsed; AdditionalData.Remove("location_hint"); } } },
                 { "params", n => { Params = n.GetStringValue(); } },
             };
         }

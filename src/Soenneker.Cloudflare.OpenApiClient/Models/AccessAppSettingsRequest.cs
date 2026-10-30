@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_iframe") is { } nullNodeAllowIframe && nullNodeAllowIframe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowIframe = null;
-            if (parseNode.GetChildNode("skip_interstitial") is { } nullNodeSkipInterstitial && nullNodeSkipInterstitial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipInterstitial = null;
+            if (parseNode.GetChildNode("allow_iframe") is null) { _explicitNullValueAllowIframe = default!; _explicitNullProperties?.Remove("allow_iframe"); }
+            else if (parseNode.GetChildNode("allow_iframe") is { } nullNodeAllowIframe && nullNodeAllowIframe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowIframe = null;
+            if (parseNode.GetChildNode("skip_interstitial") is null) { _explicitNullValueSkipInterstitial = default!; _explicitNullProperties?.Remove("skip_interstitial"); }
+            else if (parseNode.GetChildNode("skip_interstitial") is { } nullNodeSkipInterstitial && nullNodeSkipInterstitial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipInterstitial = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enables loading application content in an iFrame.</summary>
-        public bool? AllowIframe { get => _explicitNullValueAllowIframe; set { _explicitNullValueAllowIframe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_iframe"); else _explicitNullProperties?.Remove("allow_iframe"); } }
+        public bool? AllowIframe { get => _explicitNullValueAllowIframe; set { _explicitNullValueAllowIframe = value; AdditionalData?.Remove("allow_iframe"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_iframe"); else _explicitNullProperties?.Remove("allow_iframe"); } }
         private bool? _explicitNullValueAllowIframe = default!;
         /// <summary>Enables automatic authentication through cloudflared.</summary>
-        public bool? SkipInterstitial { get => _explicitNullValueSkipInterstitial; set { _explicitNullValueSkipInterstitial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_interstitial"); else _explicitNullProperties?.Remove("skip_interstitial"); } }
+        public bool? SkipInterstitial { get => _explicitNullValueSkipInterstitial; set { _explicitNullValueSkipInterstitial = value; AdditionalData?.Remove("skip_interstitial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_interstitial"); else _explicitNullProperties?.Remove("skip_interstitial"); } }
         private bool? _explicitNullValueSkipInterstitial = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppSettingsRequest"/> and sets the default values.

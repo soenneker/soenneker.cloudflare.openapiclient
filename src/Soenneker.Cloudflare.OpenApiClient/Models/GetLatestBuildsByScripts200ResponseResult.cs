@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("builds") is { } nullNodeBuilds && nullNodeBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Builds = null;
+            if (parseNode.GetChildNode("builds") is null) { _explicitNullValueBuilds = default!; _explicitNullProperties?.Remove("builds"); }
+            else if (parseNode.GetChildNode("builds") is { } nullNodeBuilds && nullNodeBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Builds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The builds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsLatestBuildsResponseBuildsProperty? Builds { get => _explicitNullValueBuilds; set { _explicitNullValueBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builds"); else _explicitNullProperties?.Remove("builds"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsLatestBuildsResponseBuildsProperty? Builds { get => _explicitNullValueBuilds; set { _explicitNullValueBuilds = value; AdditionalData?.Remove("builds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builds"); else _explicitNullProperties?.Remove("builds"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsLatestBuildsResponseBuildsProperty? _explicitNullValueBuilds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsLatestBuildsResponseBuildsProperty Builds { get => _explicitNullValueBuilds; set { _explicitNullValueBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builds"); else _explicitNullProperties?.Remove("builds"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsLatestBuildsResponseBuildsProperty Builds { get => _explicitNullValueBuilds; set { _explicitNullValueBuilds = value; AdditionalData?.Remove("builds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builds"); else _explicitNullProperties?.Remove("builds"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsLatestBuildsResponseBuildsProperty _explicitNullValueBuilds = default!;
 #endif
         /// <summary>

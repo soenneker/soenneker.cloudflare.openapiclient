@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("livestream") is { } nullNodeLivestream && nullNodeLivestream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Livestream = null;
-            if (parseNode.GetChildNode("sessions") is { } nullNodeSessions && nullNodeSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sessions = null;
+            if (parseNode.GetChildNode("livestream") is null) { _explicitNullValueLivestream = default!; _explicitNullProperties?.Remove("livestream"); }
+            else if (parseNode.GetChildNode("livestream") is { } nullNodeLivestream && nullNodeLivestream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Livestream = null;
+            if (parseNode.GetChildNode("sessions") is null) { _explicitNullValueSessions = default!; _explicitNullProperties?.Remove("sessions"); }
+            else if (parseNode.GetChildNode("sessions") is { } nullNodeSessions && nullNodeSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sessions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The livestream property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestream? Livestream { get => _explicitNullValueLivestream; set { _explicitNullValueLivestream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream"); else _explicitNullProperties?.Remove("livestream"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestream? Livestream { get => _explicitNullValueLivestream; set { _explicitNullValueLivestream = value; AdditionalData?.Remove("livestream"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream"); else _explicitNullProperties?.Remove("livestream"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestream? _explicitNullValueLivestream = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestream Livestream { get => _explicitNullValueLivestream; set { _explicitNullValueLivestream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream"); else _explicitNullProperties?.Remove("livestream"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestream Livestream { get => _explicitNullValueLivestream; set { _explicitNullValueLivestream = value; AdditionalData?.Remove("livestream"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream"); else _explicitNullProperties?.Remove("livestream"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestream _explicitNullValueLivestream = default!;
 #endif
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession>? Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession>? Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; AdditionalData?.Remove("sessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession>? _explicitNullValueSessions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession> Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession> Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; AdditionalData?.Remove("sessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamSession> _explicitNullValueSessions = default!;
 #endif
         /// <summary>

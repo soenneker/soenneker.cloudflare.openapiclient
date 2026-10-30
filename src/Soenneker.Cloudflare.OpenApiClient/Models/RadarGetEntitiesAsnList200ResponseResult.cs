@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asns") is { } nullNodeAsns && nullNodeAsns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asns = null;
+            if (parseNode.GetChildNode("asns") is null) { _explicitNullValueAsns = default!; _explicitNullProperties?.Remove("asns"); }
+            else if (parseNode.GetChildNode("asns") is { } nullNodeAsns && nullNodeAsns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asns = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The asns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnList200ResponseResultAsnsItem>? Asns { get => _explicitNullValueAsns; set { _explicitNullValueAsns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asns"); else _explicitNullProperties?.Remove("asns"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnList200ResponseResultAsnsItem>? Asns { get => _explicitNullValueAsns; set { _explicitNullValueAsns = value; AdditionalData?.Remove("asns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asns"); else _explicitNullProperties?.Remove("asns"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnList200ResponseResultAsnsItem>? _explicitNullValueAsns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnList200ResponseResultAsnsItem> Asns { get => _explicitNullValueAsns; set { _explicitNullValueAsns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asns"); else _explicitNullProperties?.Remove("asns"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnList200ResponseResultAsnsItem> Asns { get => _explicitNullValueAsns; set { _explicitNullValueAsns = value; AdditionalData?.Remove("asns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asns"); else _explicitNullProperties?.Remove("asns"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEntitiesAsnList200ResponseResultAsnsItem> _explicitNullValueAsns = default!;
 #endif
         /// <summary>

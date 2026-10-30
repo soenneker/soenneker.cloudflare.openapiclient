@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("jwt") is { } nullNodeJwt && nullNodeJwt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jwt = null;
+            if (parseNode.GetChildNode("jwt") is null) { _explicitNullValueJwt = default!; _explicitNullProperties?.Remove("jwt"); }
+            else if (parseNode.GetChildNode("jwt") is { } nullNodeJwt && nullNodeJwt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jwt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Short-lived JWT used to authenticate Pages Direct Upload asset operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Jwt { get => _explicitNullValueJwt; set { _explicitNullValueJwt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwt"); else _explicitNullProperties?.Remove("jwt"); } }
+        public string? Jwt { get => _explicitNullValueJwt; set { _explicitNullValueJwt = value; AdditionalData?.Remove("jwt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwt"); else _explicitNullProperties?.Remove("jwt"); } }
         private string? _explicitNullValueJwt = default!;
 #nullable restore
 #else
-        public string Jwt { get => _explicitNullValueJwt; set { _explicitNullValueJwt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwt"); else _explicitNullProperties?.Remove("jwt"); } }
+        public string Jwt { get => _explicitNullValueJwt; set { _explicitNullValueJwt = value; AdditionalData?.Remove("jwt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwt"); else _explicitNullProperties?.Remove("jwt"); } }
         private string _explicitNullValueJwt = default!;
 #endif
         /// <summary>

@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("recs_added") is { } nullNodeRecsAdded && nullNodeRecsAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecsAdded = null;
-            if (parseNode.GetChildNode("total_records_parsed") is { } nullNodeTotalRecordsParsed && nullNodeTotalRecordsParsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRecordsParsed = null;
+            if (parseNode.GetChildNode("recs_added") is null) { _explicitNullValueRecsAdded = default!; _explicitNullProperties?.Remove("recs_added"); }
+            else if (parseNode.GetChildNode("recs_added") is { } nullNodeRecsAdded && nullNodeRecsAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecsAdded = null;
+            if (parseNode.GetChildNode("total_records_parsed") is null) { _explicitNullValueTotalRecordsParsed = default!; _explicitNullProperties?.Remove("total_records_parsed"); }
+            else if (parseNode.GetChildNode("total_records_parsed") is { } nullNodeTotalRecordsParsed && nullNodeTotalRecordsParsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRecordsParsed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of DNS records added.</summary>
-        public double? RecsAdded { get => _explicitNullValueRecsAdded; set { _explicitNullValueRecsAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recs_added"); else _explicitNullProperties?.Remove("recs_added"); } }
+        public double? RecsAdded { get => _explicitNullValueRecsAdded; set { _explicitNullValueRecsAdded = value; AdditionalData?.Remove("recs_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recs_added"); else _explicitNullProperties?.Remove("recs_added"); } }
         private double? _explicitNullValueRecsAdded = default!;
         /// <summary>Total number of DNS records parsed.</summary>
-        public double? TotalRecordsParsed { get => _explicitNullValueTotalRecordsParsed; set { _explicitNullValueTotalRecordsParsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_records_parsed"); else _explicitNullProperties?.Remove("total_records_parsed"); } }
+        public double? TotalRecordsParsed { get => _explicitNullValueTotalRecordsParsed; set { _explicitNullValueTotalRecordsParsed = value; AdditionalData?.Remove("total_records_parsed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_records_parsed"); else _explicitNullProperties?.Remove("total_records_parsed"); } }
         private double? _explicitNullValueTotalRecordsParsed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseImportScanAllOf2Result"/> and sets the default values.

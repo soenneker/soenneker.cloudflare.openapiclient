@@ -17,25 +17,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activeIssues") is { } nullNodeActiveIssues && nullNodeActiveIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveIssues = null;
-            if (parseNode.GetChildNode("activeOccurrences") is { } nullNodeActiveOccurrences && nullNodeActiveOccurrences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveOccurrences = null;
-            if (parseNode.GetChildNode("lastIssue") is { } nullNodeLastIssue && nullNodeLastIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastIssue = null;
-            if (parseNode.GetChildNode("resolvedIssues") is { } nullNodeResolvedIssues && nullNodeResolvedIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvedIssues = null;
+            if (parseNode.GetChildNode("activeIssues") is null) { _explicitNullValueActiveIssues = default!; _explicitNullProperties?.Remove("activeIssues"); }
+            else if (parseNode.GetChildNode("activeIssues") is { } nullNodeActiveIssues && nullNodeActiveIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveIssues = null;
+            if (parseNode.GetChildNode("activeOccurrences") is null) { _explicitNullValueActiveOccurrences = default!; _explicitNullProperties?.Remove("activeOccurrences"); }
+            else if (parseNode.GetChildNode("activeOccurrences") is { } nullNodeActiveOccurrences && nullNodeActiveOccurrences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveOccurrences = null;
+            if (parseNode.GetChildNode("lastIssue") is null) { _explicitNullValueLastIssue = default!; _explicitNullProperties?.Remove("lastIssue"); }
+            else if (parseNode.GetChildNode("lastIssue") is { } nullNodeLastIssue && nullNodeLastIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastIssue = null;
+            if (parseNode.GetChildNode("resolvedIssues") is null) { _explicitNullValueResolvedIssues = default!; _explicitNullProperties?.Remove("resolvedIssues"); }
+            else if (parseNode.GetChildNode("resolvedIssues") is { } nullNodeResolvedIssues && nullNodeResolvedIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvedIssues = null;
         }
 
         /// <summary>The activeIssues property</summary>
-        public double? ActiveIssues { get => _explicitNullValueActiveIssues; set { _explicitNullValueActiveIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIssues"); else _explicitNullProperties?.Remove("activeIssues"); } }
+        public double? ActiveIssues { get => _explicitNullValueActiveIssues; set { _explicitNullValueActiveIssues = value; AdditionalData?.Remove("activeIssues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIssues"); else _explicitNullProperties?.Remove("activeIssues"); } }
         private double? _explicitNullValueActiveIssues = default!;
         /// <summary>The activeOccurrences property</summary>
-        public double? ActiveOccurrences { get => _explicitNullValueActiveOccurrences; set { _explicitNullValueActiveOccurrences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeOccurrences"); else _explicitNullProperties?.Remove("activeOccurrences"); } }
+        public double? ActiveOccurrences { get => _explicitNullValueActiveOccurrences; set { _explicitNullValueActiveOccurrences = value; AdditionalData?.Remove("activeOccurrences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeOccurrences"); else _explicitNullProperties?.Remove("activeOccurrences"); } }
         private double? _explicitNullValueActiveOccurrences = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The lastIssue property</summary>
-        public double? LastIssue { get => _explicitNullValueLastIssue; set { _explicitNullValueLastIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastIssue"); else _explicitNullProperties?.Remove("lastIssue"); } }
+        public double? LastIssue { get => _explicitNullValueLastIssue; set { _explicitNullValueLastIssue = value; AdditionalData?.Remove("lastIssue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastIssue"); else _explicitNullProperties?.Remove("lastIssue"); } }
         private double? _explicitNullValueLastIssue = default!;
         /// <summary>The resolvedIssues property</summary>
-        public double? ResolvedIssues { get => _explicitNullValueResolvedIssues; set { _explicitNullValueResolvedIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolvedIssues"); else _explicitNullProperties?.Remove("resolvedIssues"); } }
+        public double? ResolvedIssues { get => _explicitNullValueResolvedIssues; set { _explicitNullValueResolvedIssues = value; AdditionalData?.Remove("resolvedIssues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolvedIssues"); else _explicitNullProperties?.Remove("resolvedIssues"); } }
         private double? _explicitNullValueResolvedIssues = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IssuesSummary200ResponseResult"/> and sets the default values.

@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("upstreams") is { } nullNodeUpstreams && nullNodeUpstreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upstreams = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("upstreams") is null) { _explicitNullValueUpstreams = default!; _explicitNullProperties?.Remove("upstreams"); }
+            else if (parseNode.GetChildNode("upstreams") is { } nullNodeUpstreams && nullNodeUpstreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upstreams = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Ordered list of upstream MOQT server publishers. Each entry is anobject (not a bare string) so per-upstream configuration can beadded in the future without another breaking change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstream>? Upstreams { get => _explicitNullValueUpstreams; set { _explicitNullValueUpstreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstreams"); else _explicitNullProperties?.Remove("upstreams"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstream>? Upstreams { get => _explicitNullValueUpstreams; set { _explicitNullValueUpstreams = value; AdditionalData?.Remove("upstreams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstreams"); else _explicitNullProperties?.Remove("upstreams"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstream>? _explicitNullValueUpstreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstream> Upstreams { get => _explicitNullValueUpstreams; set { _explicitNullValueUpstreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstreams"); else _explicitNullProperties?.Remove("upstreams"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstream> Upstreams { get => _explicitNullValueUpstreams; set { _explicitNullValueUpstreams = value; AdditionalData?.Remove("upstreams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstreams"); else _explicitNullProperties?.Remove("upstreams"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstream> _explicitNullValueUpstreams = default!;
 #endif
         /// <summary>

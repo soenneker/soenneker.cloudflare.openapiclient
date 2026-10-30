@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
-            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("indicators") is null) { _explicitNullValueIndicators = default!; _explicitNullProperties?.Remove("indicators"); }
+            else if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
+            if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
+            else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The indicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultIndicatorsItem>? Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultIndicatorsItem>? Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; AdditionalData?.Remove("indicators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultIndicatorsItem>? _explicitNullValueIndicators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultIndicatorsItem> Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultIndicatorsItem> Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; AdditionalData?.Remove("indicators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultIndicatorsItem> _explicitNullValueIndicators = default!;
 #endif
         /// <summary>The pagination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultPagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleIndicatorList200ResponseResultPagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>

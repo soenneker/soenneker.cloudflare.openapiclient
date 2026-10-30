@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dynamic_client_registration") is { } nullNodeDynamicClientRegistration && nullNodeDynamicClientRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicClientRegistration = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("grant") is { } nullNodeGrant && nullNodeGrant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Grant = null;
+            if (parseNode.GetChildNode("dynamic_client_registration") is null) { _explicitNullValueDynamicClientRegistration = default!; _explicitNullProperties?.Remove("dynamic_client_registration"); }
+            else if (parseNode.GetChildNode("dynamic_client_registration") is { } nullNodeDynamicClientRegistration && nullNodeDynamicClientRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicClientRegistration = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("grant") is null) { _explicitNullValueGrant = default!; _explicitNullProperties?.Remove("grant"); }
+            else if (parseNode.GetChildNode("grant") is { } nullNodeGrant && nullNodeGrant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Grant = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Settings for OAuth dynamic client registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration? DynamicClientRegistration { get => _explicitNullValueDynamicClientRegistration; set { _explicitNullValueDynamicClientRegistration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_client_registration"); else _explicitNullProperties?.Remove("dynamic_client_registration"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration? DynamicClientRegistration { get => _explicitNullValueDynamicClientRegistration; set { _explicitNullValueDynamicClientRegistration = value; AdditionalData?.Remove("dynamic_client_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_client_registration"); else _explicitNullProperties?.Remove("dynamic_client_registration"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration? _explicitNullValueDynamicClientRegistration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration DynamicClientRegistration { get => _explicitNullValueDynamicClientRegistration; set { _explicitNullValueDynamicClientRegistration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_client_registration"); else _explicitNullProperties?.Remove("dynamic_client_registration"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration DynamicClientRegistration { get => _explicitNullValueDynamicClientRegistration; set { _explicitNullValueDynamicClientRegistration = value; AdditionalData?.Remove("dynamic_client_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_client_registration"); else _explicitNullProperties?.Remove("dynamic_client_registration"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration _explicitNullValueDynamicClientRegistration = default!;
 #endif
         /// <summary>Whether the OAuth configuration is enabled for this application. When set to `false`, Access will not handle OAuth for this application. Defaults to `true` if omitted.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Settings for OAuth grant behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant? Grant { get => _explicitNullValueGrant; set { _explicitNullValueGrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant"); else _explicitNullProperties?.Remove("grant"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant? Grant { get => _explicitNullValueGrant; set { _explicitNullValueGrant = value; AdditionalData?.Remove("grant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant"); else _explicitNullProperties?.Remove("grant"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant? _explicitNullValueGrant = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant Grant { get => _explicitNullValueGrant; set { _explicitNullValueGrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant"); else _explicitNullProperties?.Remove("grant"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant Grant { get => _explicitNullValueGrant; set { _explicitNullValueGrant = value; AdditionalData?.Remove("grant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant"); else _explicitNullProperties?.Remove("grant"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationGrant _explicitNullValueGrant = default!;
 #endif
         /// <summary>

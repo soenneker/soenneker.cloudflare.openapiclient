@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destDatasetId") is { } nullNodeDestDatasetId && nullNodeDestDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestDatasetId = null;
-            if (parseNode.GetChildNode("eventIds") is { } nullNodeEventIds && nullNodeEventIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIds = null;
+            if (parseNode.GetChildNode("destDatasetId") is null) { _explicitNullValueDestDatasetId = default!; _explicitNullProperties?.Remove("destDatasetId"); }
+            else if (parseNode.GetChildNode("destDatasetId") is { } nullNodeDestDatasetId && nullNodeDestDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestDatasetId = null;
+            if (parseNode.GetChildNode("eventIds") is null) { _explicitNullValueEventIds = default!; _explicitNullProperties?.Remove("eventIds"); }
+            else if (parseNode.GetChildNode("eventIds") is { } nullNodeEventIds && nullNodeEventIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The destDatasetId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestDatasetId { get => _explicitNullValueDestDatasetId; set { _explicitNullValueDestDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destDatasetId"); else _explicitNullProperties?.Remove("destDatasetId"); } }
+        public string? DestDatasetId { get => _explicitNullValueDestDatasetId; set { _explicitNullValueDestDatasetId = value; AdditionalData?.Remove("destDatasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destDatasetId"); else _explicitNullProperties?.Remove("destDatasetId"); } }
         private string? _explicitNullValueDestDatasetId = default!;
 #nullable restore
 #else
-        public string DestDatasetId { get => _explicitNullValueDestDatasetId; set { _explicitNullValueDestDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destDatasetId"); else _explicitNullProperties?.Remove("destDatasetId"); } }
+        public string DestDatasetId { get => _explicitNullValueDestDatasetId; set { _explicitNullValueDestDatasetId = value; AdditionalData?.Remove("destDatasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destDatasetId"); else _explicitNullProperties?.Remove("destDatasetId"); } }
         private string _explicitNullValueDestDatasetId = default!;
 #endif
         /// <summary>The eventIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
+        public List<string>? EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; AdditionalData?.Remove("eventIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
         private List<string>? _explicitNullValueEventIds = default!;
 #nullable restore
 #else
-        public List<string> EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
+        public List<string> EventIds { get => _explicitNullValueEventIds; set { _explicitNullValueEventIds = value; AdditionalData?.Remove("eventIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIds"); else _explicitNullProperties?.Remove("eventIds"); } }
         private List<string> _explicitNullValueEventIds = default!;
 #endif
         /// <summary>

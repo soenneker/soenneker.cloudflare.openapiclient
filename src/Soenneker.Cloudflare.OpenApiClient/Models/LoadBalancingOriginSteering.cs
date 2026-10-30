@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
+            if (parseNode.GetChildNode("policy") is null) { _explicitNullValuePolicy = default!; _explicitNullProperties?.Remove("policy"); }
+            else if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of origin steering policy to use.- `&quot;random&quot;`: Select an origin randomly.- `&quot;hash&quot;`: Select an origin by computing a hash over the CF-Connecting-IP address.- `&quot;least_outstanding_requests&quot;`: Select an origin by taking into consideration origin weights, as well as each origin&apos;s number of outstanding requests. Origins with more pending requests are weighted proportionately less relative to others.- `&quot;least_connections&quot;`: Select an origin by taking into consideration origin weights, as well as each origin&apos;s number of open connections. Origins with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteeringPolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteeringPolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteeringPolicy? _explicitNullValuePolicy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteering"/> and sets the default values.
@@ -53,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "policy", n => { Policy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteeringPolicy>(); } },
+                { "policy", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginSteeringPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePolicy = default; _explicitNullProperties?.Remove("policy"); AdditionalData["policy"] = unknown; } else { Policy = parsed; AdditionalData.Remove("policy"); } } },
             };
         }
         /// <summary>

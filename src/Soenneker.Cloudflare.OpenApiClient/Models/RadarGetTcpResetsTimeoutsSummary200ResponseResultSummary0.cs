@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("later_in_flow") is { } nullNodeLaterInFlow && nullNodeLaterInFlow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LaterInFlow = null;
-            if (parseNode.GetChildNode("no_match") is { } nullNodeNoMatch && nullNodeNoMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoMatch = null;
-            if (parseNode.GetChildNode("post_ack") is { } nullNodePostAck && nullNodePostAck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostAck = null;
-            if (parseNode.GetChildNode("post_psh") is { } nullNodePostPsh && nullNodePostPsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostPsh = null;
-            if (parseNode.GetChildNode("post_syn") is { } nullNodePostSyn && nullNodePostSyn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostSyn = null;
+            if (parseNode.GetChildNode("later_in_flow") is null) { _explicitNullValueLaterInFlow = default!; _explicitNullProperties?.Remove("later_in_flow"); }
+            else if (parseNode.GetChildNode("later_in_flow") is { } nullNodeLaterInFlow && nullNodeLaterInFlow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LaterInFlow = null;
+            if (parseNode.GetChildNode("no_match") is null) { _explicitNullValueNoMatch = default!; _explicitNullProperties?.Remove("no_match"); }
+            else if (parseNode.GetChildNode("no_match") is { } nullNodeNoMatch && nullNodeNoMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoMatch = null;
+            if (parseNode.GetChildNode("post_ack") is null) { _explicitNullValuePostAck = default!; _explicitNullProperties?.Remove("post_ack"); }
+            else if (parseNode.GetChildNode("post_ack") is { } nullNodePostAck && nullNodePostAck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostAck = null;
+            if (parseNode.GetChildNode("post_psh") is null) { _explicitNullValuePostPsh = default!; _explicitNullProperties?.Remove("post_psh"); }
+            else if (parseNode.GetChildNode("post_psh") is { } nullNodePostPsh && nullNodePostPsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostPsh = null;
+            if (parseNode.GetChildNode("post_syn") is null) { _explicitNullValuePostSyn = default!; _explicitNullProperties?.Remove("post_syn"); }
+            else if (parseNode.GetChildNode("post_syn") is { } nullNodePostSyn && nullNodePostSyn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostSyn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Connection resets within the first 10 packets from the client, but after the server has received multiple data packets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LaterInFlow { get => _explicitNullValueLaterInFlow; set { _explicitNullValueLaterInFlow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("later_in_flow"); else _explicitNullProperties?.Remove("later_in_flow"); } }
+        public string? LaterInFlow { get => _explicitNullValueLaterInFlow; set { _explicitNullValueLaterInFlow = value; AdditionalData?.Remove("later_in_flow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("later_in_flow"); else _explicitNullProperties?.Remove("later_in_flow"); } }
         private string? _explicitNullValueLaterInFlow = default!;
 #nullable restore
 #else
-        public string LaterInFlow { get => _explicitNullValueLaterInFlow; set { _explicitNullValueLaterInFlow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("later_in_flow"); else _explicitNullProperties?.Remove("later_in_flow"); } }
+        public string LaterInFlow { get => _explicitNullValueLaterInFlow; set { _explicitNullValueLaterInFlow = value; AdditionalData?.Remove("later_in_flow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("later_in_flow"); else _explicitNullProperties?.Remove("later_in_flow"); } }
         private string _explicitNullValueLaterInFlow = default!;
 #endif
         /// <summary>All other connections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NoMatch { get => _explicitNullValueNoMatch; set { _explicitNullValueNoMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_match"); else _explicitNullProperties?.Remove("no_match"); } }
+        public string? NoMatch { get => _explicitNullValueNoMatch; set { _explicitNullValueNoMatch = value; AdditionalData?.Remove("no_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_match"); else _explicitNullProperties?.Remove("no_match"); } }
         private string? _explicitNullValueNoMatch = default!;
 #nullable restore
 #else
-        public string NoMatch { get => _explicitNullValueNoMatch; set { _explicitNullValueNoMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_match"); else _explicitNullProperties?.Remove("no_match"); } }
+        public string NoMatch { get => _explicitNullValueNoMatch; set { _explicitNullValueNoMatch = value; AdditionalData?.Remove("no_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_match"); else _explicitNullProperties?.Remove("no_match"); } }
         private string _explicitNullValueNoMatch = default!;
 #endif
         /// <summary>Connection resets or timeouts after the server received both a SYN packet and an ACK packet, meaning the connection was successfully established.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostAck { get => _explicitNullValuePostAck; set { _explicitNullValuePostAck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_ack"); else _explicitNullProperties?.Remove("post_ack"); } }
+        public string? PostAck { get => _explicitNullValuePostAck; set { _explicitNullValuePostAck = value; AdditionalData?.Remove("post_ack"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_ack"); else _explicitNullProperties?.Remove("post_ack"); } }
         private string? _explicitNullValuePostAck = default!;
 #nullable restore
 #else
-        public string PostAck { get => _explicitNullValuePostAck; set { _explicitNullValuePostAck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_ack"); else _explicitNullProperties?.Remove("post_ack"); } }
+        public string PostAck { get => _explicitNullValuePostAck; set { _explicitNullValuePostAck = value; AdditionalData?.Remove("post_ack"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_ack"); else _explicitNullProperties?.Remove("post_ack"); } }
         private string _explicitNullValuePostAck = default!;
 #endif
         /// <summary>Connection resets or timeouts after the server received a packet with PSH flag set, following connection establishment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostPsh { get => _explicitNullValuePostPsh; set { _explicitNullValuePostPsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_psh"); else _explicitNullProperties?.Remove("post_psh"); } }
+        public string? PostPsh { get => _explicitNullValuePostPsh; set { _explicitNullValuePostPsh = value; AdditionalData?.Remove("post_psh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_psh"); else _explicitNullProperties?.Remove("post_psh"); } }
         private string? _explicitNullValuePostPsh = default!;
 #nullable restore
 #else
-        public string PostPsh { get => _explicitNullValuePostPsh; set { _explicitNullValuePostPsh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_psh"); else _explicitNullProperties?.Remove("post_psh"); } }
+        public string PostPsh { get => _explicitNullValuePostPsh; set { _explicitNullValuePostPsh = value; AdditionalData?.Remove("post_psh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_psh"); else _explicitNullProperties?.Remove("post_psh"); } }
         private string _explicitNullValuePostPsh = default!;
 #endif
         /// <summary>Connection resets or timeouts after the server received only a single SYN packet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostSyn { get => _explicitNullValuePostSyn; set { _explicitNullValuePostSyn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_syn"); else _explicitNullProperties?.Remove("post_syn"); } }
+        public string? PostSyn { get => _explicitNullValuePostSyn; set { _explicitNullValuePostSyn = value; AdditionalData?.Remove("post_syn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_syn"); else _explicitNullProperties?.Remove("post_syn"); } }
         private string? _explicitNullValuePostSyn = default!;
 #nullable restore
 #else
-        public string PostSyn { get => _explicitNullValuePostSyn; set { _explicitNullValuePostSyn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_syn"); else _explicitNullProperties?.Remove("post_syn"); } }
+        public string PostSyn { get => _explicitNullValuePostSyn; set { _explicitNullValuePostSyn = value; AdditionalData?.Remove("post_syn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_syn"); else _explicitNullProperties?.Remove("post_syn"); } }
         private string _explicitNullValuePostSyn = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("error_retention") is { } nullNodeErrorRetention && nullNodeErrorRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorRetention = null;
-            if (parseNode.GetChildNode("success_retention") is { } nullNodeSuccessRetention && nullNodeSuccessRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessRetention = null;
+            if (parseNode.GetChildNode("error_retention") is null) { _explicitNullValueErrorRetention = default!; _explicitNullProperties?.Remove("error_retention"); }
+            else if (parseNode.GetChildNode("error_retention") is { } nullNodeErrorRetention && nullNodeErrorRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorRetention = null;
+            if (parseNode.GetChildNode("success_retention") is null) { _explicitNullValueSuccessRetention = default!; _explicitNullProperties?.Remove("success_retention"); }
+            else if (parseNode.GetChildNode("success_retention") is { } nullNodeSuccessRetention && nullNodeSuccessRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessRetention = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies the duration in milliseconds or as a string like &apos;5 minutes&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionErrorRetention? ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionErrorRetention? ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; AdditionalData?.Remove("error_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionErrorRetention? _explicitNullValueErrorRetention = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionErrorRetention ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionErrorRetention ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; AdditionalData?.Remove("error_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionErrorRetention _explicitNullValueErrorRetention = default!;
 #endif
         /// <summary>Specifies the duration in milliseconds or as a string like &apos;5 minutes&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionSuccessRetention? SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionSuccessRetention? SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; AdditionalData?.Remove("success_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionSuccessRetention? _explicitNullValueSuccessRetention = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionSuccessRetention SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionSuccessRetention SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; AdditionalData?.Remove("success_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionSuccessRetention _explicitNullValueSuccessRetention = default!;
 #endif
         /// <summary>

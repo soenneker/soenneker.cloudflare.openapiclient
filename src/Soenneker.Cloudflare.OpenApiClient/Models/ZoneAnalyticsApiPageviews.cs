@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("all") is { } nullNodeAll && nullNodeAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) All = null;
-            if (parseNode.GetChildNode("search_engine") is { } nullNodeSearchEngine && nullNodeSearchEngine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchEngine = null;
+            if (parseNode.GetChildNode("all") is null) { _explicitNullValueAll = default!; _explicitNullProperties?.Remove("all"); }
+            else if (parseNode.GetChildNode("all") is { } nullNodeAll && nullNodeAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) All = null;
+            if (parseNode.GetChildNode("search_engine") is null) { _explicitNullValueSearchEngine = default!; _explicitNullProperties?.Remove("search_engine"); }
+            else if (parseNode.GetChildNode("search_engine") is { } nullNodeSearchEngine && nullNodeSearchEngine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchEngine = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of pageviews served within the time range.</summary>
-        public int? All { get => _explicitNullValueAll; set { _explicitNullValueAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all"); else _explicitNullProperties?.Remove("all"); } }
+        public int? All { get => _explicitNullValueAll; set { _explicitNullValueAll = value; AdditionalData?.Remove("all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all"); else _explicitNullProperties?.Remove("all"); } }
         private int? _explicitNullValueAll = default!;
         /// <summary>A variable list of key/value pairs representing the search engine and number of hits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviewsSearchEngineProperty? SearchEngine { get => _explicitNullValueSearchEngine; set { _explicitNullValueSearchEngine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_engine"); else _explicitNullProperties?.Remove("search_engine"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviewsSearchEngineProperty? SearchEngine { get => _explicitNullValueSearchEngine; set { _explicitNullValueSearchEngine = value; AdditionalData?.Remove("search_engine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_engine"); else _explicitNullProperties?.Remove("search_engine"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviewsSearchEngineProperty? _explicitNullValueSearchEngine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviewsSearchEngineProperty SearchEngine { get => _explicitNullValueSearchEngine; set { _explicitNullValueSearchEngine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_engine"); else _explicitNullProperties?.Remove("search_engine"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviewsSearchEngineProperty SearchEngine { get => _explicitNullValueSearchEngine; set { _explicitNullValueSearchEngine = value; AdditionalData?.Remove("search_engine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_engine"); else _explicitNullProperties?.Remove("search_engine"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiPageviewsSearchEngineProperty _explicitNullValueSearchEngine = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("policy_fields") is { } nullNodePolicyFields && nullNodePolicyFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyFields = null;
-            if (parseNode.GetChildNode("workload_fields") is { } nullNodeWorkloadFields && nullNodeWorkloadFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkloadFields = null;
+            if (parseNode.GetChildNode("policy_fields") is null) { _explicitNullValuePolicyFields = default!; _explicitNullProperties?.Remove("policy_fields"); }
+            else if (parseNode.GetChildNode("policy_fields") is { } nullNodePolicyFields && nullNodePolicyFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyFields = null;
+            if (parseNode.GetChildNode("workload_fields") is null) { _explicitNullValueWorkloadFields = default!; _explicitNullProperties?.Remove("workload_fields"); }
+            else if (parseNode.GetChildNode("workload_fields") is { } nullNodeWorkloadFields && nullNodeWorkloadFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkloadFields = null;
         }
 
         /// <summary>Fields available in policy filter expressions, in display order</summary>

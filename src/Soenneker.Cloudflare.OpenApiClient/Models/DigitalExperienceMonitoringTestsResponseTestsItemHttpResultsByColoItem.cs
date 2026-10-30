@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("colo") is { } nullNodeColo && nullNodeColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colo = null;
-            if (parseNode.GetChildNode("resourceFetchTime") is { } nullNodeResourceFetchTime && nullNodeResourceFetchTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceFetchTime = null;
+            if (parseNode.GetChildNode("colo") is null) { _explicitNullValueColo = default!; _explicitNullProperties?.Remove("colo"); }
+            else if (parseNode.GetChildNode("colo") is { } nullNodeColo && nullNodeColo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colo = null;
+            if (parseNode.GetChildNode("resourceFetchTime") is null) { _explicitNullValueResourceFetchTime = default!; _explicitNullProperties?.Remove("resourceFetchTime"); }
+            else if (parseNode.GetChildNode("resourceFetchTime") is { } nullNodeResourceFetchTime && nullNodeResourceFetchTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceFetchTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare colo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        public string? Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; AdditionalData?.Remove("colo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
         private string? _explicitNullValueColo = default!;
 #nullable restore
 #else
-        public string Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
+        public string Colo { get => _explicitNullValueColo; set { _explicitNullValueColo = value; AdditionalData?.Remove("colo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo"); else _explicitNullProperties?.Remove("colo"); } }
         private string _explicitNullValueColo = default!;
 #endif
         /// <summary>The resourceFetchTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates? ResourceFetchTime { get => _explicitNullValueResourceFetchTime; set { _explicitNullValueResourceFetchTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceFetchTime"); else _explicitNullProperties?.Remove("resourceFetchTime"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates? ResourceFetchTime { get => _explicitNullValueResourceFetchTime; set { _explicitNullValueResourceFetchTime = value; AdditionalData?.Remove("resourceFetchTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceFetchTime"); else _explicitNullProperties?.Remove("resourceFetchTime"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates? _explicitNullValueResourceFetchTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates ResourceFetchTime { get => _explicitNullValueResourceFetchTime; set { _explicitNullValueResourceFetchTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceFetchTime"); else _explicitNullProperties?.Remove("resourceFetchTime"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates ResourceFetchTime { get => _explicitNullValueResourceFetchTime; set { _explicitNullValueResourceFetchTime = value; AdditionalData?.Remove("resourceFetchTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceFetchTime"); else _explicitNullProperties?.Remove("resourceFetchTime"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates _explicitNullValueResourceFetchTime = default!;
 #endif
         /// <summary>

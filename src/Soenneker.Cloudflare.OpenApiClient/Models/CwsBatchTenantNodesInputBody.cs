@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("creates") is { } nullNodeCreates && nullNodeCreates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creates = null;
-            if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
-            if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
+            if (parseNode.GetChildNode("creates") is null) { _explicitNullValueCreates = default!; _explicitNullProperties?.Remove("creates"); }
+            else if (parseNode.GetChildNode("creates") is { } nullNodeCreates && nullNodeCreates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creates = null;
+            if (parseNode.GetChildNode("deletes") is null) { _explicitNullValueDeletes = default!; _explicitNullProperties?.Remove("deletes"); }
+            else if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
+            if (parseNode.GetChildNode("updates") is null) { _explicitNullValueUpdates = default!; _explicitNullProperties?.Remove("updates"); }
+            else if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
         }
 
         /// <summary>Nodes to create; parents may be created elsewhere in this request</summary>

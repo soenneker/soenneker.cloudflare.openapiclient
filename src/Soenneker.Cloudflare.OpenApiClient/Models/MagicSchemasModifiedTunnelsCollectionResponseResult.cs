@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
-            if (parseNode.GetChildNode("modified_ipsec_tunnels") is { } nullNodeModifiedIpsecTunnels && nullNodeModifiedIpsecTunnels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedIpsecTunnels = null;
+            if (parseNode.GetChildNode("modified") is null) { _explicitNullValueModified = default!; _explicitNullProperties?.Remove("modified"); }
+            else if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("modified_ipsec_tunnels") is null) { _explicitNullValueModifiedIpsecTunnels = default!; _explicitNullProperties?.Remove("modified_ipsec_tunnels"); }
+            else if (parseNode.GetChildNode("modified_ipsec_tunnels") is { } nullNodeModifiedIpsecTunnels && nullNodeModifiedIpsecTunnels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedIpsecTunnels = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The modified property</summary>
-        public bool? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public bool? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private bool? _explicitNullValueModified = default!;
         /// <summary>The modified_ipsec_tunnels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel>? ModifiedIpsecTunnels { get => _explicitNullValueModifiedIpsecTunnels; set { _explicitNullValueModifiedIpsecTunnels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_ipsec_tunnels"); else _explicitNullProperties?.Remove("modified_ipsec_tunnels"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel>? ModifiedIpsecTunnels { get => _explicitNullValueModifiedIpsecTunnels; set { _explicitNullValueModifiedIpsecTunnels = value; AdditionalData?.Remove("modified_ipsec_tunnels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_ipsec_tunnels"); else _explicitNullProperties?.Remove("modified_ipsec_tunnels"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel>? _explicitNullValueModifiedIpsecTunnels = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel> ModifiedIpsecTunnels { get => _explicitNullValueModifiedIpsecTunnels; set { _explicitNullValueModifiedIpsecTunnels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_ipsec_tunnels"); else _explicitNullProperties?.Remove("modified_ipsec_tunnels"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel> ModifiedIpsecTunnels { get => _explicitNullValueModifiedIpsecTunnels; set { _explicitNullValueModifiedIpsecTunnels = value; AdditionalData?.Remove("modified_ipsec_tunnels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_ipsec_tunnels"); else _explicitNullProperties?.Remove("modified_ipsec_tunnels"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnel> _explicitNullValueModifiedIpsecTunnels = default!;
 #endif
         /// <summary>

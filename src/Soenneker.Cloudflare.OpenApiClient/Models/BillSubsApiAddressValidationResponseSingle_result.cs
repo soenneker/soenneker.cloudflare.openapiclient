@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("validated_addresses") is { } nullNodeValidatedAddresses && nullNodeValidatedAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidatedAddresses = null;
+            if (parseNode.GetChildNode("validated_addresses") is null) { _explicitNullValueValidatedAddresses = default!; _explicitNullProperties?.Remove("validated_addresses"); }
+            else if (parseNode.GetChildNode("validated_addresses") is { } nullNodeValidatedAddresses && nullNodeValidatedAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidatedAddresses = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of validated address suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiValidatedAddress>? ValidatedAddresses { get => _explicitNullValueValidatedAddresses; set { _explicitNullValueValidatedAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validated_addresses"); else _explicitNullProperties?.Remove("validated_addresses"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiValidatedAddress>? ValidatedAddresses { get => _explicitNullValueValidatedAddresses; set { _explicitNullValueValidatedAddresses = value; AdditionalData?.Remove("validated_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validated_addresses"); else _explicitNullProperties?.Remove("validated_addresses"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiValidatedAddress>? _explicitNullValueValidatedAddresses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiValidatedAddress> ValidatedAddresses { get => _explicitNullValueValidatedAddresses; set { _explicitNullValueValidatedAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validated_addresses"); else _explicitNullProperties?.Remove("validated_addresses"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiValidatedAddress> ValidatedAddresses { get => _explicitNullValueValidatedAddresses; set { _explicitNullValueValidatedAddresses = value; AdditionalData?.Remove("validated_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validated_addresses"); else _explicitNullProperties?.Remove("validated_addresses"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiValidatedAddress> _explicitNullValueValidatedAddresses = default!;
 #endif
         /// <summary>

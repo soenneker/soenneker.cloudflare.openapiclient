@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("escapedWorkerName") is { } nullNodeEscapedWorkerName && nullNodeEscapedWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscapedWorkerName = null;
-            if (parseNode.GetChildNode("workerTag") is { } nullNodeWorkerTag && nullNodeWorkerTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerTag = null;
+            if (parseNode.GetChildNode("escapedWorkerName") is null) { _explicitNullValueEscapedWorkerName = default!; _explicitNullProperties?.Remove("escapedWorkerName"); }
+            else if (parseNode.GetChildNode("escapedWorkerName") is { } nullNodeEscapedWorkerName && nullNodeEscapedWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EscapedWorkerName = null;
+            if (parseNode.GetChildNode("workerTag") is null) { _explicitNullValueWorkerTag = default!; _explicitNullProperties?.Remove("workerTag"); }
+            else if (parseNode.GetChildNode("workerTag") is { } nullNodeWorkerTag && nullNodeWorkerTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The escapedWorkerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EscapedWorkerName { get => _explicitNullValueEscapedWorkerName; set { _explicitNullValueEscapedWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escapedWorkerName"); else _explicitNullProperties?.Remove("escapedWorkerName"); } }
+        public string? EscapedWorkerName { get => _explicitNullValueEscapedWorkerName; set { _explicitNullValueEscapedWorkerName = value; AdditionalData?.Remove("escapedWorkerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escapedWorkerName"); else _explicitNullProperties?.Remove("escapedWorkerName"); } }
         private string? _explicitNullValueEscapedWorkerName = default!;
 #nullable restore
 #else
-        public string EscapedWorkerName { get => _explicitNullValueEscapedWorkerName; set { _explicitNullValueEscapedWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escapedWorkerName"); else _explicitNullProperties?.Remove("escapedWorkerName"); } }
+        public string EscapedWorkerName { get => _explicitNullValueEscapedWorkerName; set { _explicitNullValueEscapedWorkerName = value; AdditionalData?.Remove("escapedWorkerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("escapedWorkerName"); else _explicitNullProperties?.Remove("escapedWorkerName"); } }
         private string _explicitNullValueEscapedWorkerName = default!;
 #endif
         /// <summary>The workerTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkerTag { get => _explicitNullValueWorkerTag; set { _explicitNullValueWorkerTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workerTag"); else _explicitNullProperties?.Remove("workerTag"); } }
+        public string? WorkerTag { get => _explicitNullValueWorkerTag; set { _explicitNullValueWorkerTag = value; AdditionalData?.Remove("workerTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workerTag"); else _explicitNullProperties?.Remove("workerTag"); } }
         private string? _explicitNullValueWorkerTag = default!;
 #nullable restore
 #else
-        public string WorkerTag { get => _explicitNullValueWorkerTag; set { _explicitNullValueWorkerTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workerTag"); else _explicitNullProperties?.Remove("workerTag"); } }
+        public string WorkerTag { get => _explicitNullValueWorkerTag; set { _explicitNullValueWorkerTag = value; AdditionalData?.Remove("workerTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workerTag"); else _explicitNullProperties?.Remove("workerTag"); } }
         private string _explicitNullValueWorkerTag = default!;
 #endif
         /// <summary>

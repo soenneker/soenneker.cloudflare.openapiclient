@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
-            if (parseNode.GetChildNode("TLS 1.0") is { } nullNodeTLS10 && nullNodeTLS10.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS10 = null;
-            if (parseNode.GetChildNode("TLS 1.1") is { } nullNodeTLS11 && nullNodeTLS11.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS11 = null;
-            if (parseNode.GetChildNode("TLS 1.2") is { } nullNodeTLS12 && nullNodeTLS12.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS12 = null;
-            if (parseNode.GetChildNode("TLS 1.3") is { } nullNodeTLS13 && nullNodeTLS13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS13 = null;
-            if (parseNode.GetChildNode("TLS QUIC") is { } nullNodeTLSQUIC && nullNodeTLSQUIC.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSQUIC = null;
+            if (parseNode.GetChildNode("timestamps") is null) { _explicitNullValueTimestamps = default!; _explicitNullProperties?.Remove("timestamps"); }
+            else if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
+            if (parseNode.GetChildNode("TLS 1.0") is null) { _explicitNullValueTLS10 = default!; _explicitNullProperties?.Remove("TLS 1.0"); }
+            else if (parseNode.GetChildNode("TLS 1.0") is { } nullNodeTLS10 && nullNodeTLS10.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS10 = null;
+            if (parseNode.GetChildNode("TLS 1.1") is null) { _explicitNullValueTLS11 = default!; _explicitNullProperties?.Remove("TLS 1.1"); }
+            else if (parseNode.GetChildNode("TLS 1.1") is { } nullNodeTLS11 && nullNodeTLS11.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS11 = null;
+            if (parseNode.GetChildNode("TLS 1.2") is null) { _explicitNullValueTLS12 = default!; _explicitNullProperties?.Remove("TLS 1.2"); }
+            else if (parseNode.GetChildNode("TLS 1.2") is { } nullNodeTLS12 && nullNodeTLS12.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS12 = null;
+            if (parseNode.GetChildNode("TLS 1.3") is null) { _explicitNullValueTLS13 = default!; _explicitNullProperties?.Remove("TLS 1.3"); }
+            else if (parseNode.GetChildNode("TLS 1.3") is { } nullNodeTLS13 && nullNodeTLS13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS13 = null;
+            if (parseNode.GetChildNode("TLS QUIC") is null) { _explicitNullValueTLSQUIC = default!; _explicitNullProperties?.Remove("TLS QUIC"); }
+            else if (parseNode.GetChildNode("TLS QUIC") is { } nullNodeTLSQUIC && nullNodeTLSQUIC.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLSQUIC = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?>? _explicitNullValueTimestamps = default!;
 #nullable restore
 #else
-        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?> _explicitNullValueTimestamps = default!;
 #endif
         /// <summary>The TLS10 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TLS10 { get => _explicitNullValueTLS10; set { _explicitNullValueTLS10 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.0"); else _explicitNullProperties?.Remove("TLS 1.0"); } }
+        public List<string>? TLS10 { get => _explicitNullValueTLS10; set { _explicitNullValueTLS10 = value; AdditionalData?.Remove("TLS 1.0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.0"); else _explicitNullProperties?.Remove("TLS 1.0"); } }
         private List<string>? _explicitNullValueTLS10 = default!;
 #nullable restore
 #else
-        public List<string> TLS10 { get => _explicitNullValueTLS10; set { _explicitNullValueTLS10 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.0"); else _explicitNullProperties?.Remove("TLS 1.0"); } }
+        public List<string> TLS10 { get => _explicitNullValueTLS10; set { _explicitNullValueTLS10 = value; AdditionalData?.Remove("TLS 1.0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.0"); else _explicitNullProperties?.Remove("TLS 1.0"); } }
         private List<string> _explicitNullValueTLS10 = default!;
 #endif
         /// <summary>The TLS11 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TLS11 { get => _explicitNullValueTLS11; set { _explicitNullValueTLS11 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.1"); else _explicitNullProperties?.Remove("TLS 1.1"); } }
+        public List<string>? TLS11 { get => _explicitNullValueTLS11; set { _explicitNullValueTLS11 = value; AdditionalData?.Remove("TLS 1.1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.1"); else _explicitNullProperties?.Remove("TLS 1.1"); } }
         private List<string>? _explicitNullValueTLS11 = default!;
 #nullable restore
 #else
-        public List<string> TLS11 { get => _explicitNullValueTLS11; set { _explicitNullValueTLS11 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.1"); else _explicitNullProperties?.Remove("TLS 1.1"); } }
+        public List<string> TLS11 { get => _explicitNullValueTLS11; set { _explicitNullValueTLS11 = value; AdditionalData?.Remove("TLS 1.1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.1"); else _explicitNullProperties?.Remove("TLS 1.1"); } }
         private List<string> _explicitNullValueTLS11 = default!;
 #endif
         /// <summary>The TLS12 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TLS12 { get => _explicitNullValueTLS12; set { _explicitNullValueTLS12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.2"); else _explicitNullProperties?.Remove("TLS 1.2"); } }
+        public List<string>? TLS12 { get => _explicitNullValueTLS12; set { _explicitNullValueTLS12 = value; AdditionalData?.Remove("TLS 1.2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.2"); else _explicitNullProperties?.Remove("TLS 1.2"); } }
         private List<string>? _explicitNullValueTLS12 = default!;
 #nullable restore
 #else
-        public List<string> TLS12 { get => _explicitNullValueTLS12; set { _explicitNullValueTLS12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.2"); else _explicitNullProperties?.Remove("TLS 1.2"); } }
+        public List<string> TLS12 { get => _explicitNullValueTLS12; set { _explicitNullValueTLS12 = value; AdditionalData?.Remove("TLS 1.2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.2"); else _explicitNullProperties?.Remove("TLS 1.2"); } }
         private List<string> _explicitNullValueTLS12 = default!;
 #endif
         /// <summary>The TLS13 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TLS13 { get => _explicitNullValueTLS13; set { _explicitNullValueTLS13 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3"); else _explicitNullProperties?.Remove("TLS 1.3"); } }
+        public List<string>? TLS13 { get => _explicitNullValueTLS13; set { _explicitNullValueTLS13 = value; AdditionalData?.Remove("TLS 1.3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3"); else _explicitNullProperties?.Remove("TLS 1.3"); } }
         private List<string>? _explicitNullValueTLS13 = default!;
 #nullable restore
 #else
-        public List<string> TLS13 { get => _explicitNullValueTLS13; set { _explicitNullValueTLS13 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3"); else _explicitNullProperties?.Remove("TLS 1.3"); } }
+        public List<string> TLS13 { get => _explicitNullValueTLS13; set { _explicitNullValueTLS13 = value; AdditionalData?.Remove("TLS 1.3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3"); else _explicitNullProperties?.Remove("TLS 1.3"); } }
         private List<string> _explicitNullValueTLS13 = default!;
 #endif
         /// <summary>The TLSQUIC property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TLSQUIC { get => _explicitNullValueTLSQUIC; set { _explicitNullValueTLSQUIC = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS QUIC"); else _explicitNullProperties?.Remove("TLS QUIC"); } }
+        public List<string>? TLSQUIC { get => _explicitNullValueTLSQUIC; set { _explicitNullValueTLSQUIC = value; AdditionalData?.Remove("TLS QUIC"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS QUIC"); else _explicitNullProperties?.Remove("TLS QUIC"); } }
         private List<string>? _explicitNullValueTLSQUIC = default!;
 #nullable restore
 #else
-        public List<string> TLSQUIC { get => _explicitNullValueTLSQUIC; set { _explicitNullValueTLSQUIC = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS QUIC"); else _explicitNullProperties?.Remove("TLS QUIC"); } }
+        public List<string> TLSQUIC { get => _explicitNullValueTLSQUIC; set { _explicitNullValueTLSQUIC = value; AdditionalData?.Remove("TLS QUIC"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS QUIC"); else _explicitNullProperties?.Remove("TLS QUIC"); } }
         private List<string> _explicitNullValueTLSQUIC = default!;
 #endif
         /// <summary>

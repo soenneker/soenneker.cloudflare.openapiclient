@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deploy_command") is { } nullNodeDeployCommand && nullNodeDeployCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployCommand = null;
+            if (parseNode.GetChildNode("deploy_command") is null) { _explicitNullValueDeployCommand = default!; _explicitNullProperties?.Remove("deploy_command"); }
+            else if (parseNode.GetChildNode("deploy_command") is { } nullNodeDeployCommand && nullNodeDeployCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployCommand = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Deploy command for the migrated Preview settings. Omit it to have the existing &apos;wrangler versions upload&apos; command rewritten to &apos;wrangler preview&apos; automatically, which fails with 400 when the existing command cannot be rewritten.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
+        public string? DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; AdditionalData?.Remove("deploy_command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
         private string? _explicitNullValueDeployCommand = default!;
 #nullable restore
 #else
-        public string DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
+        public string DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; AdditionalData?.Remove("deploy_command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
         private string _explicitNullValueDeployCommand = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ANDROID") is { } nullNodeANDROID && nullNodeANDROID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ANDROID = null;
-            if (parseNode.GetChildNode("IOS") is { } nullNodeIOS && nullNodeIOS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IOS = null;
+            if (parseNode.GetChildNode("ANDROID") is null) { _explicitNullValueANDROID = default!; _explicitNullProperties?.Remove("ANDROID"); }
+            else if (parseNode.GetChildNode("ANDROID") is { } nullNodeANDROID && nullNodeANDROID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ANDROID = null;
+            if (parseNode.GetChildNode("IOS") is null) { _explicitNullValueIOS = default!; _explicitNullProperties?.Remove("IOS"); }
+            else if (parseNode.GetChildNode("IOS") is { } nullNodeIOS && nullNodeIOS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IOS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ANDROID { get => _explicitNullValueANDROID; set { _explicitNullValueANDROID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ANDROID"); else _explicitNullProperties?.Remove("ANDROID"); } }
+        public string? ANDROID { get => _explicitNullValueANDROID; set { _explicitNullValueANDROID = value; AdditionalData?.Remove("ANDROID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ANDROID"); else _explicitNullProperties?.Remove("ANDROID"); } }
         private string? _explicitNullValueANDROID = default!;
 #nullable restore
 #else
-        public string ANDROID { get => _explicitNullValueANDROID; set { _explicitNullValueANDROID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ANDROID"); else _explicitNullProperties?.Remove("ANDROID"); } }
+        public string ANDROID { get => _explicitNullValueANDROID; set { _explicitNullValueANDROID = value; AdditionalData?.Remove("ANDROID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ANDROID"); else _explicitNullProperties?.Remove("ANDROID"); } }
         private string _explicitNullValueANDROID = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IOS { get => _explicitNullValueIOS; set { _explicitNullValueIOS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IOS"); else _explicitNullProperties?.Remove("IOS"); } }
+        public string? IOS { get => _explicitNullValueIOS; set { _explicitNullValueIOS = value; AdditionalData?.Remove("IOS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IOS"); else _explicitNullProperties?.Remove("IOS"); } }
         private string? _explicitNullValueIOS = default!;
 #nullable restore
 #else
-        public string IOS { get => _explicitNullValueIOS; set { _explicitNullValueIOS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IOS"); else _explicitNullProperties?.Remove("IOS"); } }
+        public string IOS { get => _explicitNullValueIOS; set { _explicitNullValueIOS = value; AdditionalData?.Remove("IOS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IOS"); else _explicitNullProperties?.Remove("IOS"); } }
         private string _explicitNullValueIOS = default!;
 #endif
         /// <summary>

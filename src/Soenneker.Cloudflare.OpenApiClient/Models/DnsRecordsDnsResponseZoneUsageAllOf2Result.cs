@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("record_quota") is { } nullNodeRecordQuota && nullNodeRecordQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordQuota = null;
-            if (parseNode.GetChildNode("record_usage") is { } nullNodeRecordUsage && nullNodeRecordUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordUsage = null;
+            if (parseNode.GetChildNode("record_quota") is null) { _explicitNullValueRecordQuota = default!; _explicitNullProperties?.Remove("record_quota"); }
+            else if (parseNode.GetChildNode("record_quota") is { } nullNodeRecordQuota && nullNodeRecordQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordQuota = null;
+            if (parseNode.GetChildNode("record_usage") is null) { _explicitNullValueRecordUsage = default!; _explicitNullProperties?.Remove("record_usage"); }
+            else if (parseNode.GetChildNode("record_usage") is { } nullNodeRecordUsage && nullNodeRecordUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordUsage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum number of DNS records allowed for the zone. Null if using account-level quota.</summary>
-        public int? RecordQuota { get => _explicitNullValueRecordQuota; set { _explicitNullValueRecordQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_quota"); else _explicitNullProperties?.Remove("record_quota"); } }
+        public int? RecordQuota { get => _explicitNullValueRecordQuota; set { _explicitNullValueRecordQuota = value; AdditionalData?.Remove("record_quota"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_quota"); else _explicitNullProperties?.Remove("record_quota"); } }
         private int? _explicitNullValueRecordQuota = default!;
         /// <summary>Current number of DNS records in the zone.</summary>
-        public int? RecordUsage { get => _explicitNullValueRecordUsage; set { _explicitNullValueRecordUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_usage"); else _explicitNullProperties?.Remove("record_usage"); } }
+        public int? RecordUsage { get => _explicitNullValueRecordUsage; set { _explicitNullValueRecordUsage = value; AdditionalData?.Remove("record_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_usage"); else _explicitNullProperties?.Remove("record_usage"); } }
         private int? _explicitNullValueRecordUsage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseZoneUsageAllOf2Result"/> and sets the default values.

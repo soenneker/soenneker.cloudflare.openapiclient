@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("managed_request_headers") is { } nullNodeManagedRequestHeaders && nullNodeManagedRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedRequestHeaders = null;
-            if (parseNode.GetChildNode("managed_response_headers") is { } nullNodeManagedResponseHeaders && nullNodeManagedResponseHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedResponseHeaders = null;
+            if (parseNode.GetChildNode("managed_request_headers") is null) { _explicitNullValueManagedRequestHeaders = default!; _explicitNullProperties?.Remove("managed_request_headers"); }
+            else if (parseNode.GetChildNode("managed_request_headers") is { } nullNodeManagedRequestHeaders && nullNodeManagedRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedRequestHeaders = null;
+            if (parseNode.GetChildNode("managed_response_headers") is null) { _explicitNullValueManagedResponseHeaders = default!; _explicitNullProperties?.Remove("managed_response_headers"); }
+            else if (parseNode.GetChildNode("managed_response_headers") is { } nullNodeManagedResponseHeaders && nullNodeManagedResponseHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedResponseHeaders = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The list of Managed Request Transforms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedRequestHeadersItem>? ManagedRequestHeaders { get => _explicitNullValueManagedRequestHeaders; set { _explicitNullValueManagedRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_request_headers"); else _explicitNullProperties?.Remove("managed_request_headers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedRequestHeadersItem>? ManagedRequestHeaders { get => _explicitNullValueManagedRequestHeaders; set { _explicitNullValueManagedRequestHeaders = value; AdditionalData?.Remove("managed_request_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_request_headers"); else _explicitNullProperties?.Remove("managed_request_headers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedRequestHeadersItem>? _explicitNullValueManagedRequestHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedRequestHeadersItem> ManagedRequestHeaders { get => _explicitNullValueManagedRequestHeaders; set { _explicitNullValueManagedRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_request_headers"); else _explicitNullProperties?.Remove("managed_request_headers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedRequestHeadersItem> ManagedRequestHeaders { get => _explicitNullValueManagedRequestHeaders; set { _explicitNullValueManagedRequestHeaders = value; AdditionalData?.Remove("managed_request_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_request_headers"); else _explicitNullProperties?.Remove("managed_request_headers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedRequestHeadersItem> _explicitNullValueManagedRequestHeaders = default!;
 #endif
         /// <summary>The list of Managed Response Transforms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedResponseHeadersItem>? ManagedResponseHeaders { get => _explicitNullValueManagedResponseHeaders; set { _explicitNullValueManagedResponseHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_response_headers"); else _explicitNullProperties?.Remove("managed_response_headers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedResponseHeadersItem>? ManagedResponseHeaders { get => _explicitNullValueManagedResponseHeaders; set { _explicitNullValueManagedResponseHeaders = value; AdditionalData?.Remove("managed_response_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_response_headers"); else _explicitNullProperties?.Remove("managed_response_headers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedResponseHeadersItem>? _explicitNullValueManagedResponseHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedResponseHeadersItem> ManagedResponseHeaders { get => _explicitNullValueManagedResponseHeaders; set { _explicitNullValueManagedResponseHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_response_headers"); else _explicitNullProperties?.Remove("managed_response_headers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedResponseHeadersItem> ManagedResponseHeaders { get => _explicitNullValueManagedResponseHeaders; set { _explicitNullValueManagedResponseHeaders = value; AdditionalData?.Remove("managed_response_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_response_headers"); else _explicitNullProperties?.Remove("managed_response_headers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsManagedTransformsManagedResponseHeadersItem> _explicitNullValueManagedResponseHeaders = default!;
 #endif
         /// <summary>

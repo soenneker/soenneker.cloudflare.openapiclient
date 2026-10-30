@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
+            if (parseNode.GetChildNode("deletes") is null) { _explicitNullValueDeletes = default!; _explicitNullProperties?.Remove("deletes"); }
+            else if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IDs of the sending domain restrictions to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchSendingDomainRestrictionsRequestDeletesItem>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchSendingDomainRestrictionsRequestDeletesItem>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; AdditionalData?.Remove("deletes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchSendingDomainRestrictionsRequestDeletesItem>? _explicitNullValueDeletes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchSendingDomainRestrictionsRequestDeletesItem> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchSendingDomainRestrictionsRequestDeletesItem> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; AdditionalData?.Remove("deletes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBatchSendingDomainRestrictionsRequestDeletesItem> _explicitNullValueDeletes = default!;
 #endif
         /// <summary>

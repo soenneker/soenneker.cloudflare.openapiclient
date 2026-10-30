@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("issue_class") is { } nullNodeIssueClass && nullNodeIssueClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueClass = null;
+            if (parseNode.GetChildNode("issue_class") is null) { _explicitNullValueIssueClass = default!; _explicitNullProperties?.Remove("issue_class"); }
+            else if (parseNode.GetChildNode("issue_class") is { } nullNodeIssueClass && nullNodeIssueClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueClass = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The issue_class property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueClass { get => _explicitNullValueIssueClass; set { _explicitNullValueIssueClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_class"); else _explicitNullProperties?.Remove("issue_class"); } }
+        public string? IssueClass { get => _explicitNullValueIssueClass; set { _explicitNullValueIssueClass = value; AdditionalData?.Remove("issue_class"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_class"); else _explicitNullProperties?.Remove("issue_class"); } }
         private string? _explicitNullValueIssueClass = default!;
 #nullable restore
 #else
-        public string IssueClass { get => _explicitNullValueIssueClass; set { _explicitNullValueIssueClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_class"); else _explicitNullProperties?.Remove("issue_class"); } }
+        public string IssueClass { get => _explicitNullValueIssueClass; set { _explicitNullValueIssueClass = value; AdditionalData?.Remove("issue_class"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_class"); else _explicitNullProperties?.Remove("issue_class"); } }
         private string _explicitNullValueIssueClass = default!;
 #endif
         /// <summary>

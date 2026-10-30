@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("device_posture") is { } nullNodeDevicePosture && nullNodeDevicePosture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevicePosture = null;
+            if (parseNode.GetChildNode("device_posture") is null) { _explicitNullValueDevicePosture = default!; _explicitNullProperties?.Remove("device_posture"); }
+            else if (parseNode.GetChildNode("device_posture") is { } nullNodeDevicePosture && nullNodeDevicePosture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevicePosture = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The device_posture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRuleDevicePosture? DevicePosture { get => _explicitNullValueDevicePosture; set { _explicitNullValueDevicePosture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_posture"); else _explicitNullProperties?.Remove("device_posture"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRuleDevicePosture? DevicePosture { get => _explicitNullValueDevicePosture; set { _explicitNullValueDevicePosture = value; AdditionalData?.Remove("device_posture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_posture"); else _explicitNullProperties?.Remove("device_posture"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRuleDevicePosture? _explicitNullValueDevicePosture = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRuleDevicePosture DevicePosture { get => _explicitNullValueDevicePosture; set { _explicitNullValueDevicePosture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_posture"); else _explicitNullProperties?.Remove("device_posture"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRuleDevicePosture DevicePosture { get => _explicitNullValueDevicePosture; set { _explicitNullValueDevicePosture = value; AdditionalData?.Remove("device_posture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_posture"); else _explicitNullProperties?.Remove("device_posture"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRuleDevicePosture _explicitNullValueDevicePosture = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
-            if (parseNode.GetChildNode("source_lang") is { } nullNodeSourceLang && nullNodeSourceLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLang = null;
-            if (parseNode.GetChildNode("target_lang") is { } nullNodeTargetLang && nullNodeTargetLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLang = null;
+            if (parseNode.GetChildNode("audio") is null) { _explicitNullValueAudio = default!; _explicitNullProperties?.Remove("audio"); }
+            else if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
+            if (parseNode.GetChildNode("source_lang") is null) { _explicitNullValueSourceLang = default!; _explicitNullProperties?.Remove("source_lang"); }
+            else if (parseNode.GetChildNode("source_lang") is { } nullNodeSourceLang && nullNodeSourceLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLang = null;
+            if (parseNode.GetChildNode("target_lang") is null) { _explicitNullValueTargetLang = default!; _explicitNullProperties?.Remove("target_lang"); }
+            else if (parseNode.GetChildNode("target_lang") is { } nullNodeTargetLang && nullNodeTargetLang.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLang = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An array of integers that represent the audio data constrained to 8-bit unsigned integer values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        public List<double?>? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; AdditionalData?.Remove("audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
         private List<double?>? _explicitNullValueAudio = default!;
 #nullable restore
 #else
-        public List<double?> Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        public List<double?> Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; AdditionalData?.Remove("audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
         private List<double?> _explicitNullValueAudio = default!;
 #endif
         /// <summary>The language of the recorded audio</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
+        public string? SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; AdditionalData?.Remove("source_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
         private string? _explicitNullValueSourceLang = default!;
 #nullable restore
 #else
-        public string SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
+        public string SourceLang { get => _explicitNullValueSourceLang; set { _explicitNullValueSourceLang = value; AdditionalData?.Remove("source_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_lang"); else _explicitNullProperties?.Remove("source_lang"); } }
         private string _explicitNullValueSourceLang = default!;
 #endif
         /// <summary>The language to translate the transcription into. Currently only English is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
+        public string? TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; AdditionalData?.Remove("target_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
         private string? _explicitNullValueTargetLang = default!;
 #nullable restore
 #else
-        public string TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
+        public string TargetLang { get => _explicitNullValueTargetLang; set { _explicitNullValueTargetLang = value; AdditionalData?.Remove("target_lang"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_lang"); else _explicitNullProperties?.Remove("target_lang"); } }
         private string _explicitNullValueTargetLang = default!;
 #endif
         /// <summary>

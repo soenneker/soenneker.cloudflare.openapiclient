@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("as_sets") is { } nullNodeAsSets && nullNodeAsSets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsSets = null;
-            if (parseNode.GetChildNode("paths") is { } nullNodePaths && nullNodePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paths = null;
+            if (parseNode.GetChildNode("as_sets") is null) { _explicitNullValueAsSets = default!; _explicitNullProperties?.Remove("as_sets"); }
+            else if (parseNode.GetChildNode("as_sets") is { } nullNodeAsSets && nullNodeAsSets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsSets = null;
+            if (parseNode.GetChildNode("paths") is null) { _explicitNullValuePaths = default!; _explicitNullProperties?.Remove("paths"); }
+            else if (parseNode.GetChildNode("paths") is { } nullNodePaths && nullNodePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paths = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The as_sets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem>? AsSets { get => _explicitNullValueAsSets; set { _explicitNullValueAsSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_sets"); else _explicitNullProperties?.Remove("as_sets"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem>? AsSets { get => _explicitNullValueAsSets; set { _explicitNullValueAsSets = value; AdditionalData?.Remove("as_sets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_sets"); else _explicitNullProperties?.Remove("as_sets"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem>? _explicitNullValueAsSets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem> AsSets { get => _explicitNullValueAsSets; set { _explicitNullValueAsSets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_sets"); else _explicitNullProperties?.Remove("as_sets"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem> AsSets { get => _explicitNullValueAsSets; set { _explicitNullValueAsSets = value; AdditionalData?.Remove("as_sets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_sets"); else _explicitNullProperties?.Remove("as_sets"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsnsAsSet200ResponseResultAsSetsItem> _explicitNullValueAsSets = default!;
 #endif
         /// <summary>Paths from the AS-SET that include the given AS to its upstreams recursively</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
+        public UntypedNode? Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; AdditionalData?.Remove("paths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
         private UntypedNode? _explicitNullValuePaths = default!;
 #nullable restore
 #else
-        public UntypedNode Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
+        public UntypedNode Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; AdditionalData?.Remove("paths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
         private UntypedNode _explicitNullValuePaths = default!;
 #endif
         /// <summary>

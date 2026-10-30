@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
-            if (parseNode.GetChildNode("total_session_minutes") is { } nullNodeTotalSessionMinutes && nullNodeTotalSessionMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSessionMinutes = null;
-            if (parseNode.GetChildNode("total_sessions") is { } nullNodeTotalSessions && nullNodeTotalSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSessions = null;
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("total_session_minutes") is null) { _explicitNullValueTotalSessionMinutes = default!; _explicitNullProperties?.Remove("total_session_minutes"); }
+            else if (parseNode.GetChildNode("total_session_minutes") is { } nullNodeTotalSessionMinutes && nullNodeTotalSessionMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSessionMinutes = null;
+            if (parseNode.GetChildNode("total_sessions") is null) { _explicitNullValueTotalSessions = default!; _explicitNullProperties?.Remove("total_sessions"); }
+            else if (parseNode.GetChildNode("total_sessions") is { } nullNodeTotalSessions && nullNodeTotalSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSessions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The day property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        public string? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
         private string? _explicitNullValueDay = default!;
 #nullable restore
 #else
-        public string Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        public string Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
         private string _explicitNullValueDay = default!;
 #endif
         /// <summary>Total session minutes for a specific day</summary>
-        public double? TotalSessionMinutes { get => _explicitNullValueTotalSessionMinutes; set { _explicitNullValueTotalSessionMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_session_minutes"); else _explicitNullProperties?.Remove("total_session_minutes"); } }
+        public double? TotalSessionMinutes { get => _explicitNullValueTotalSessionMinutes; set { _explicitNullValueTotalSessionMinutes = value; AdditionalData?.Remove("total_session_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_session_minutes"); else _explicitNullProperties?.Remove("total_session_minutes"); } }
         private double? _explicitNullValueTotalSessionMinutes = default!;
         /// <summary>Total number of sessions for a specific day</summary>
-        public int? TotalSessions { get => _explicitNullValueTotalSessions; set { _explicitNullValueTotalSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_sessions"); else _explicitNullProperties?.Remove("total_sessions"); } }
+        public int? TotalSessions { get => _explicitNullValueTotalSessions; set { _explicitNullValueTotalSessions = value; AdditionalData?.Remove("total_sessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_sessions"); else _explicitNullProperties?.Remove("total_sessions"); } }
         private int? _explicitNullValueTotalSessions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataSessionStatsDayStatsItem"/> and sets the default values.

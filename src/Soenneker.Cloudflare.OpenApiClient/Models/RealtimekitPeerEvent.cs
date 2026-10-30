@@ -18,16 +18,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("event_name") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("minutes_consumed") is { } nullNodeMinutesConsumed && nullNodeMinutesConsumed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinutesConsumed = null;
-            if (parseNode.GetChildNode("participant_id") is { } nullNodeParticipantId && nullNodeParticipantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParticipantId = null;
-            if (parseNode.GetChildNode("peer_id") is { } nullNodePeerId && nullNodePeerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeerId = null;
-            if (parseNode.GetChildNode("preset_view_type") is { } nullNodePresetViewType && nullNodePresetViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresetViewType = null;
-            if (parseNode.GetChildNode("session_id") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
-            if (parseNode.GetChildNode("socket_session_id") is { } nullNodeSocketSessionId && nullNodeSocketSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocketSessionId = null;
-            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("event_name") is null) { _explicitNullValueEventName = default!; _explicitNullProperties?.Remove("event_name"); }
+            else if (parseNode.GetChildNode("event_name") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("minutes_consumed") is null) { _explicitNullValueMinutesConsumed = default!; _explicitNullProperties?.Remove("minutes_consumed"); }
+            else if (parseNode.GetChildNode("minutes_consumed") is { } nullNodeMinutesConsumed && nullNodeMinutesConsumed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinutesConsumed = null;
+            if (parseNode.GetChildNode("participant_id") is null) { _explicitNullValueParticipantId = default!; _explicitNullProperties?.Remove("participant_id"); }
+            else if (parseNode.GetChildNode("participant_id") is { } nullNodeParticipantId && nullNodeParticipantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParticipantId = null;
+            if (parseNode.GetChildNode("peer_id") is null) { _explicitNullValuePeerId = default!; _explicitNullProperties?.Remove("peer_id"); }
+            else if (parseNode.GetChildNode("peer_id") is { } nullNodePeerId && nullNodePeerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeerId = null;
+            if (parseNode.GetChildNode("preset_view_type") is null) { _explicitNullValuePresetViewType = default!; _explicitNullProperties?.Remove("preset_view_type"); }
+            else if (parseNode.GetChildNode("preset_view_type") is { } nullNodePresetViewType && nullNodePresetViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresetViewType = null;
+            if (parseNode.GetChildNode("session_id") is null) { _explicitNullValueSessionId = default!; _explicitNullProperties?.Remove("session_id"); }
+            else if (parseNode.GetChildNode("session_id") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
+            if (parseNode.GetChildNode("socket_session_id") is null) { _explicitNullValueSocketSessionId = default!; _explicitNullProperties?.Remove("socket_session_id"); }
+            else if (parseNode.GetChildNode("socket_session_id") is { } nullNodeSocketSessionId && nullNodeSocketSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocketSessionId = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,80 +45,80 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Timestamp when this peer event was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>Name of the peer event.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventEventName? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_name"); else _explicitNullProperties?.Remove("event_name"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventEventName? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; AdditionalData?.Remove("event_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_name"); else _explicitNullProperties?.Remove("event_name"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventEventName? _explicitNullValueEventName = default!;
         /// <summary>ID of the peer event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Minutes consumed attributed to this event.</summary>
-        public double? MinutesConsumed { get => _explicitNullValueMinutesConsumed; set { _explicitNullValueMinutesConsumed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minutes_consumed"); else _explicitNullProperties?.Remove("minutes_consumed"); } }
+        public double? MinutesConsumed { get => _explicitNullValueMinutesConsumed; set { _explicitNullValueMinutesConsumed = value; AdditionalData?.Remove("minutes_consumed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minutes_consumed"); else _explicitNullProperties?.Remove("minutes_consumed"); } }
         private double? _explicitNullValueMinutesConsumed = default!;
         /// <summary>ID of the participant this event belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParticipantId { get => _explicitNullValueParticipantId; set { _explicitNullValueParticipantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_id"); else _explicitNullProperties?.Remove("participant_id"); } }
+        public string? ParticipantId { get => _explicitNullValueParticipantId; set { _explicitNullValueParticipantId = value; AdditionalData?.Remove("participant_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_id"); else _explicitNullProperties?.Remove("participant_id"); } }
         private string? _explicitNullValueParticipantId = default!;
 #nullable restore
 #else
-        public string ParticipantId { get => _explicitNullValueParticipantId; set { _explicitNullValueParticipantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_id"); else _explicitNullProperties?.Remove("participant_id"); } }
+        public string ParticipantId { get => _explicitNullValueParticipantId; set { _explicitNullValueParticipantId = value; AdditionalData?.Remove("participant_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_id"); else _explicitNullProperties?.Remove("participant_id"); } }
         private string _explicitNullValueParticipantId = default!;
 #endif
         /// <summary>Peer ID this event belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeerId { get => _explicitNullValuePeerId; set { _explicitNullValuePeerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_id"); else _explicitNullProperties?.Remove("peer_id"); } }
+        public string? PeerId { get => _explicitNullValuePeerId; set { _explicitNullValuePeerId = value; AdditionalData?.Remove("peer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_id"); else _explicitNullProperties?.Remove("peer_id"); } }
         private string? _explicitNullValuePeerId = default!;
 #nullable restore
 #else
-        public string PeerId { get => _explicitNullValuePeerId; set { _explicitNullValuePeerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_id"); else _explicitNullProperties?.Remove("peer_id"); } }
+        public string PeerId { get => _explicitNullValuePeerId; set { _explicitNullValuePeerId = value; AdditionalData?.Remove("peer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peer_id"); else _explicitNullProperties?.Remove("peer_id"); } }
         private string _explicitNullValuePeerId = default!;
 #endif
         /// <summary>View type of the preset associated with the peer.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventPresetViewType? PresetViewType { get => _explicitNullValuePresetViewType; set { _explicitNullValuePresetViewType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preset_view_type"); else _explicitNullProperties?.Remove("preset_view_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventPresetViewType? PresetViewType { get => _explicitNullValuePresetViewType; set { _explicitNullValuePresetViewType = value; AdditionalData?.Remove("preset_view_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preset_view_type"); else _explicitNullProperties?.Remove("preset_view_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventPresetViewType? _explicitNullValuePresetViewType = default!;
         /// <summary>ID of the session this event belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_id"); else _explicitNullProperties?.Remove("session_id"); } }
+        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_id"); else _explicitNullProperties?.Remove("session_id"); } }
         private string? _explicitNullValueSessionId = default!;
 #nullable restore
 #else
-        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_id"); else _explicitNullProperties?.Remove("session_id"); } }
+        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_id"); else _explicitNullProperties?.Remove("session_id"); } }
         private string _explicitNullValueSessionId = default!;
 #endif
         /// <summary>ID of the socket session associated with this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SocketSessionId { get => _explicitNullValueSocketSessionId; set { _explicitNullValueSocketSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("socket_session_id"); else _explicitNullProperties?.Remove("socket_session_id"); } }
+        public string? SocketSessionId { get => _explicitNullValueSocketSessionId; set { _explicitNullValueSocketSessionId = value; AdditionalData?.Remove("socket_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("socket_session_id"); else _explicitNullProperties?.Remove("socket_session_id"); } }
         private string? _explicitNullValueSocketSessionId = default!;
 #nullable restore
 #else
-        public string SocketSessionId { get => _explicitNullValueSocketSessionId; set { _explicitNullValueSocketSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("socket_session_id"); else _explicitNullProperties?.Remove("socket_session_id"); } }
+        public string SocketSessionId { get => _explicitNullValueSocketSessionId; set { _explicitNullValueSocketSessionId = value; AdditionalData?.Remove("socket_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("socket_session_id"); else _explicitNullProperties?.Remove("socket_session_id"); } }
         private string _explicitNullValueSocketSessionId = default!;
 #endif
         /// <summary>Timestamp when this peer event was last updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
@@ -137,12 +147,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "event_name", n => { EventName = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventEventName>(); } },
+                { "event_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventEventName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventName = default; _explicitNullProperties?.Remove("event_name"); AdditionalData["event_name"] = unknown; } else { EventName = parsed; AdditionalData.Remove("event_name"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "minutes_consumed", n => { MinutesConsumed = n.GetDoubleValue(); } },
                 { "participant_id", n => { ParticipantId = n.GetStringValue(); } },
                 { "peer_id", n => { PeerId = n.GetStringValue(); } },
-                { "preset_view_type", n => { PresetViewType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventPresetViewType>(); } },
+                { "preset_view_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEventPresetViewType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePresetViewType = default; _explicitNullProperties?.Remove("preset_view_type"); AdditionalData["preset_view_type"] = unknown; } else { PresetViewType = parsed; AdditionalData.Remove("preset_view_type"); } } },
                 { "session_id", n => { SessionId = n.GetStringValue(); } },
                 { "socket_session_id", n => { SocketSessionId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },

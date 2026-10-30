@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("redact_pii") is { } nullNodeRedactPii && nullNodeRedactPii.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactPii = null;
-            if (parseNode.GetChildNode("settings_by_rule_type") is { } nullNodeSettingsByRuleType && nullNodeSettingsByRuleType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettingsByRuleType = null;
+            if (parseNode.GetChildNode("redact_pii") is null) { _explicitNullValueRedactPii = default!; _explicitNullProperties?.Remove("redact_pii"); }
+            else if (parseNode.GetChildNode("redact_pii") is { } nullNodeRedactPii && nullNodeRedactPii.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactPii = null;
+            if (parseNode.GetChildNode("settings_by_rule_type") is null) { _explicitNullValueSettingsByRuleType = default!; _explicitNullProperties?.Remove("settings_by_rule_type"); }
+            else if (parseNode.GetChildNode("settings_by_rule_type") is { } nullNodeSettingsByRuleType && nullNodeSettingsByRuleType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettingsByRuleType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicate whether to redact personally identifiable information from activity logging (PII fields include source IP, user email, user ID, device ID, URL, referrer, and user agent).</summary>
-        public bool? RedactPii { get => _explicitNullValueRedactPii; set { _explicitNullValueRedactPii = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redact_pii"); else _explicitNullProperties?.Remove("redact_pii"); } }
+        public bool? RedactPii { get => _explicitNullValueRedactPii; set { _explicitNullValueRedactPii = value; AdditionalData?.Remove("redact_pii"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redact_pii"); else _explicitNullProperties?.Remove("redact_pii"); } }
         private bool? _explicitNullValueRedactPii = default!;
         /// <summary>Configure logging settings for each rule type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType? SettingsByRuleType { get => _explicitNullValueSettingsByRuleType; set { _explicitNullValueSettingsByRuleType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings_by_rule_type"); else _explicitNullProperties?.Remove("settings_by_rule_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType? SettingsByRuleType { get => _explicitNullValueSettingsByRuleType; set { _explicitNullValueSettingsByRuleType = value; AdditionalData?.Remove("settings_by_rule_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings_by_rule_type"); else _explicitNullProperties?.Remove("settings_by_rule_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType? _explicitNullValueSettingsByRuleType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType SettingsByRuleType { get => _explicitNullValueSettingsByRuleType; set { _explicitNullValueSettingsByRuleType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings_by_rule_type"); else _explicitNullProperties?.Remove("settings_by_rule_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType SettingsByRuleType { get => _explicitNullValueSettingsByRuleType; set { _explicitNullValueSettingsByRuleType = value; AdditionalData?.Remove("settings_by_rule_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings_by_rule_type"); else _explicitNullProperties?.Remove("settings_by_rule_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType _explicitNullValueSettingsByRuleType = default!;
 #endif
         /// <summary>

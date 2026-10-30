@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delay_seconds") is { } nullNodeDelaySeconds && nullNodeDelaySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelaySeconds = null;
-            if (parseNode.GetChildNode("lease_id") is { } nullNodeLeaseId && nullNodeLeaseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeaseId = null;
+            if (parseNode.GetChildNode("delay_seconds") is null) { _explicitNullValueDelaySeconds = default!; _explicitNullProperties?.Remove("delay_seconds"); }
+            else if (parseNode.GetChildNode("delay_seconds") is { } nullNodeDelaySeconds && nullNodeDelaySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelaySeconds = null;
+            if (parseNode.GetChildNode("lease_id") is null) { _explicitNullValueLeaseId = default!; _explicitNullProperties?.Remove("lease_id"); }
+            else if (parseNode.GetChildNode("lease_id") is { } nullNodeLeaseId && nullNodeLeaseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeaseId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of seconds to delay before making the message available for another attempt.</summary>
-        public double? DelaySeconds { get => _explicitNullValueDelaySeconds; set { _explicitNullValueDelaySeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay_seconds"); else _explicitNullProperties?.Remove("delay_seconds"); } }
+        public double? DelaySeconds { get => _explicitNullValueDelaySeconds; set { _explicitNullValueDelaySeconds = value; AdditionalData?.Remove("delay_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay_seconds"); else _explicitNullProperties?.Remove("delay_seconds"); } }
         private double? _explicitNullValueDelaySeconds = default!;
         /// <summary>An ID that represents an &quot;in-flight&quot; message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeaseId { get => _explicitNullValueLeaseId; set { _explicitNullValueLeaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease_id"); else _explicitNullProperties?.Remove("lease_id"); } }
+        public string? LeaseId { get => _explicitNullValueLeaseId; set { _explicitNullValueLeaseId = value; AdditionalData?.Remove("lease_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease_id"); else _explicitNullProperties?.Remove("lease_id"); } }
         private string? _explicitNullValueLeaseId = default!;
 #nullable restore
 #else
-        public string LeaseId { get => _explicitNullValueLeaseId; set { _explicitNullValueLeaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease_id"); else _explicitNullProperties?.Remove("lease_id"); } }
+        public string LeaseId { get => _explicitNullValueLeaseId; set { _explicitNullValueLeaseId = value; AdditionalData?.Remove("lease_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease_id"); else _explicitNullProperties?.Remove("lease_id"); } }
         private string _explicitNullValueLeaseId = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("EXPIRED") is { } nullNodeEXPIRED && nullNodeEXPIRED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EXPIRED = null;
-            if (parseNode.GetChildNode("VALID") is { } nullNodeVALID && nullNodeVALID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VALID = null;
+            if (parseNode.GetChildNode("EXPIRED") is null) { _explicitNullValueEXPIRED = default!; _explicitNullProperties?.Remove("EXPIRED"); }
+            else if (parseNode.GetChildNode("EXPIRED") is { } nullNodeEXPIRED && nullNodeEXPIRED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EXPIRED = null;
+            if (parseNode.GetChildNode("VALID") is null) { _explicitNullValueVALID = default!; _explicitNullProperties?.Remove("VALID"); }
+            else if (parseNode.GetChildNode("VALID") is { } nullNodeVALID && nullNodeVALID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VALID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The EXPIRED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EXPIRED { get => _explicitNullValueEXPIRED; set { _explicitNullValueEXPIRED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EXPIRED"); else _explicitNullProperties?.Remove("EXPIRED"); } }
+        public List<string>? EXPIRED { get => _explicitNullValueEXPIRED; set { _explicitNullValueEXPIRED = value; AdditionalData?.Remove("EXPIRED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EXPIRED"); else _explicitNullProperties?.Remove("EXPIRED"); } }
         private List<string>? _explicitNullValueEXPIRED = default!;
 #nullable restore
 #else
-        public List<string> EXPIRED { get => _explicitNullValueEXPIRED; set { _explicitNullValueEXPIRED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EXPIRED"); else _explicitNullProperties?.Remove("EXPIRED"); } }
+        public List<string> EXPIRED { get => _explicitNullValueEXPIRED; set { _explicitNullValueEXPIRED = value; AdditionalData?.Remove("EXPIRED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EXPIRED"); else _explicitNullProperties?.Remove("EXPIRED"); } }
         private List<string> _explicitNullValueEXPIRED = default!;
 #endif
         /// <summary>The VALID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VALID { get => _explicitNullValueVALID; set { _explicitNullValueVALID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VALID"); else _explicitNullProperties?.Remove("VALID"); } }
+        public List<string>? VALID { get => _explicitNullValueVALID; set { _explicitNullValueVALID = value; AdditionalData?.Remove("VALID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VALID"); else _explicitNullProperties?.Remove("VALID"); } }
         private List<string>? _explicitNullValueVALID = default!;
 #nullable restore
 #else
-        public List<string> VALID { get => _explicitNullValueVALID; set { _explicitNullValueVALID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VALID"); else _explicitNullProperties?.Remove("VALID"); } }
+        public List<string> VALID { get => _explicitNullValueVALID; set { _explicitNullValueVALID = value; AdditionalData?.Remove("VALID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VALID"); else _explicitNullProperties?.Remove("VALID"); } }
         private List<string> _explicitNullValueVALID = default!;
 #endif
         /// <summary>

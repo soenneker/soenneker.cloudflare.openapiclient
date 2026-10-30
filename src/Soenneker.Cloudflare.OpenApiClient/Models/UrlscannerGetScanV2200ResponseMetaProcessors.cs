@@ -17,17 +17,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agentReadiness") is { } nullNodeAgentReadiness && nullNodeAgentReadiness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentReadiness = null;
-            if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
-            if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
-            if (parseNode.GetChildNode("domainCategories") is { } nullNodeDomainCategories && nullNodeDomainCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCategories = null;
-            if (parseNode.GetChildNode("geoip") is { } nullNodeGeoip && nullNodeGeoip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geoip = null;
-            if (parseNode.GetChildNode("phishing") is { } nullNodePhishing && nullNodePhishing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phishing = null;
-            if (parseNode.GetChildNode("phishing_v2") is { } nullNodePhishingV2 && nullNodePhishingV2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhishingV2 = null;
-            if (parseNode.GetChildNode("radarRank") is { } nullNodeRadarRank && nullNodeRadarRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RadarRank = null;
-            if (parseNode.GetChildNode("robotsTxt") is { } nullNodeRobotsTxt && nullNodeRobotsTxt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RobotsTxt = null;
-            if (parseNode.GetChildNode("urlCategories") is { } nullNodeUrlCategories && nullNodeUrlCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlCategories = null;
-            if (parseNode.GetChildNode("wappa") is { } nullNodeWappa && nullNodeWappa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wappa = null;
+            if (parseNode.GetChildNode("agentReadiness") is null) { _explicitNullValueAgentReadiness = default!; _explicitNullProperties?.Remove("agentReadiness"); }
+            else if (parseNode.GetChildNode("agentReadiness") is { } nullNodeAgentReadiness && nullNodeAgentReadiness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentReadiness = null;
+            if (parseNode.GetChildNode("asn") is null) { _explicitNullValueAsn = default!; _explicitNullProperties?.Remove("asn"); }
+            else if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
+            if (parseNode.GetChildNode("dns") is null) { _explicitNullValueDns = default!; _explicitNullProperties?.Remove("dns"); }
+            else if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
+            if (parseNode.GetChildNode("domainCategories") is null) { _explicitNullValueDomainCategories = default!; _explicitNullProperties?.Remove("domainCategories"); }
+            else if (parseNode.GetChildNode("domainCategories") is { } nullNodeDomainCategories && nullNodeDomainCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCategories = null;
+            if (parseNode.GetChildNode("geoip") is null) { _explicitNullValueGeoip = default!; _explicitNullProperties?.Remove("geoip"); }
+            else if (parseNode.GetChildNode("geoip") is { } nullNodeGeoip && nullNodeGeoip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geoip = null;
+            if (parseNode.GetChildNode("phishing") is null) { _explicitNullValuePhishing = default!; _explicitNullProperties?.Remove("phishing"); }
+            else if (parseNode.GetChildNode("phishing") is { } nullNodePhishing && nullNodePhishing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phishing = null;
+            if (parseNode.GetChildNode("phishing_v2") is null) { _explicitNullValuePhishingV2 = default!; _explicitNullProperties?.Remove("phishing_v2"); }
+            else if (parseNode.GetChildNode("phishing_v2") is { } nullNodePhishingV2 && nullNodePhishingV2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhishingV2 = null;
+            if (parseNode.GetChildNode("radarRank") is null) { _explicitNullValueRadarRank = default!; _explicitNullProperties?.Remove("radarRank"); }
+            else if (parseNode.GetChildNode("radarRank") is { } nullNodeRadarRank && nullNodeRadarRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RadarRank = null;
+            if (parseNode.GetChildNode("robotsTxt") is null) { _explicitNullValueRobotsTxt = default!; _explicitNullProperties?.Remove("robotsTxt"); }
+            else if (parseNode.GetChildNode("robotsTxt") is { } nullNodeRobotsTxt && nullNodeRobotsTxt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RobotsTxt = null;
+            if (parseNode.GetChildNode("urlCategories") is null) { _explicitNullValueUrlCategories = default!; _explicitNullProperties?.Remove("urlCategories"); }
+            else if (parseNode.GetChildNode("urlCategories") is { } nullNodeUrlCategories && nullNodeUrlCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlCategories = null;
+            if (parseNode.GetChildNode("wappa") is null) { _explicitNullValueWappa = default!; _explicitNullProperties?.Remove("wappa"); }
+            else if (parseNode.GetChildNode("wappa") is { } nullNodeWappa && nullNodeWappa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wappa = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,111 +46,111 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The agentReadiness property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadiness? AgentReadiness { get => _explicitNullValueAgentReadiness; set { _explicitNullValueAgentReadiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentReadiness"); else _explicitNullProperties?.Remove("agentReadiness"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadiness? AgentReadiness { get => _explicitNullValueAgentReadiness; set { _explicitNullValueAgentReadiness = value; AdditionalData?.Remove("agentReadiness"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentReadiness"); else _explicitNullProperties?.Remove("agentReadiness"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadiness? _explicitNullValueAgentReadiness = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadiness AgentReadiness { get => _explicitNullValueAgentReadiness; set { _explicitNullValueAgentReadiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentReadiness"); else _explicitNullProperties?.Remove("agentReadiness"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadiness AgentReadiness { get => _explicitNullValueAgentReadiness; set { _explicitNullValueAgentReadiness = value; AdditionalData?.Remove("agentReadiness"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentReadiness"); else _explicitNullProperties?.Remove("agentReadiness"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadiness _explicitNullValueAgentReadiness = default!;
 #endif
         /// <summary>The asn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAsn? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAsn? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; AdditionalData?.Remove("asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAsn? _explicitNullValueAsn = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAsn Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAsn Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; AdditionalData?.Remove("asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAsn _explicitNullValueAsn = default!;
 #endif
         /// <summary>The dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDns? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDns? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; AdditionalData?.Remove("dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDns? _explicitNullValueDns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDns Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDns Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; AdditionalData?.Remove("dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDns _explicitNullValueDns = default!;
 #endif
         /// <summary>The domainCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDomainCategories? DomainCategories { get => _explicitNullValueDomainCategories; set { _explicitNullValueDomainCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCategories"); else _explicitNullProperties?.Remove("domainCategories"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDomainCategories? DomainCategories { get => _explicitNullValueDomainCategories; set { _explicitNullValueDomainCategories = value; AdditionalData?.Remove("domainCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCategories"); else _explicitNullProperties?.Remove("domainCategories"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDomainCategories? _explicitNullValueDomainCategories = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDomainCategories DomainCategories { get => _explicitNullValueDomainCategories; set { _explicitNullValueDomainCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCategories"); else _explicitNullProperties?.Remove("domainCategories"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDomainCategories DomainCategories { get => _explicitNullValueDomainCategories; set { _explicitNullValueDomainCategories = value; AdditionalData?.Remove("domainCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCategories"); else _explicitNullProperties?.Remove("domainCategories"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsDomainCategories _explicitNullValueDomainCategories = default!;
 #endif
         /// <summary>The geoip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsGeoip? Geoip { get => _explicitNullValueGeoip; set { _explicitNullValueGeoip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoip"); else _explicitNullProperties?.Remove("geoip"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsGeoip? Geoip { get => _explicitNullValueGeoip; set { _explicitNullValueGeoip = value; AdditionalData?.Remove("geoip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoip"); else _explicitNullProperties?.Remove("geoip"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsGeoip? _explicitNullValueGeoip = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsGeoip Geoip { get => _explicitNullValueGeoip; set { _explicitNullValueGeoip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoip"); else _explicitNullProperties?.Remove("geoip"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsGeoip Geoip { get => _explicitNullValueGeoip; set { _explicitNullValueGeoip = value; AdditionalData?.Remove("geoip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoip"); else _explicitNullProperties?.Remove("geoip"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsGeoip _explicitNullValueGeoip = default!;
 #endif
         /// <summary>The phishing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishing? Phishing { get => _explicitNullValuePhishing; set { _explicitNullValuePhishing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing"); else _explicitNullProperties?.Remove("phishing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishing? Phishing { get => _explicitNullValuePhishing; set { _explicitNullValuePhishing = value; AdditionalData?.Remove("phishing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing"); else _explicitNullProperties?.Remove("phishing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishing? _explicitNullValuePhishing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishing Phishing { get => _explicitNullValuePhishing; set { _explicitNullValuePhishing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing"); else _explicitNullProperties?.Remove("phishing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishing Phishing { get => _explicitNullValuePhishing; set { _explicitNullValuePhishing = value; AdditionalData?.Remove("phishing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing"); else _explicitNullProperties?.Remove("phishing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishing _explicitNullValuePhishing = default!;
 #endif
         /// <summary>The phishing_v2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishingV2? PhishingV2 { get => _explicitNullValuePhishingV2; set { _explicitNullValuePhishingV2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing_v2"); else _explicitNullProperties?.Remove("phishing_v2"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishingV2? PhishingV2 { get => _explicitNullValuePhishingV2; set { _explicitNullValuePhishingV2 = value; AdditionalData?.Remove("phishing_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing_v2"); else _explicitNullProperties?.Remove("phishing_v2"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishingV2? _explicitNullValuePhishingV2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishingV2 PhishingV2 { get => _explicitNullValuePhishingV2; set { _explicitNullValuePhishingV2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing_v2"); else _explicitNullProperties?.Remove("phishing_v2"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishingV2 PhishingV2 { get => _explicitNullValuePhishingV2; set { _explicitNullValuePhishingV2 = value; AdditionalData?.Remove("phishing_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phishing_v2"); else _explicitNullProperties?.Remove("phishing_v2"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsPhishingV2 _explicitNullValuePhishingV2 = default!;
 #endif
         /// <summary>The radarRank property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank? RadarRank { get => _explicitNullValueRadarRank; set { _explicitNullValueRadarRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radarRank"); else _explicitNullProperties?.Remove("radarRank"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank? RadarRank { get => _explicitNullValueRadarRank; set { _explicitNullValueRadarRank = value; AdditionalData?.Remove("radarRank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radarRank"); else _explicitNullProperties?.Remove("radarRank"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank? _explicitNullValueRadarRank = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank RadarRank { get => _explicitNullValueRadarRank; set { _explicitNullValueRadarRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radarRank"); else _explicitNullProperties?.Remove("radarRank"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank RadarRank { get => _explicitNullValueRadarRank; set { _explicitNullValueRadarRank = value; AdditionalData?.Remove("radarRank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radarRank"); else _explicitNullProperties?.Remove("radarRank"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank _explicitNullValueRadarRank = default!;
 #endif
         /// <summary>The robotsTxt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRobotsTxt? RobotsTxt { get => _explicitNullValueRobotsTxt; set { _explicitNullValueRobotsTxt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxt"); else _explicitNullProperties?.Remove("robotsTxt"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRobotsTxt? RobotsTxt { get => _explicitNullValueRobotsTxt; set { _explicitNullValueRobotsTxt = value; AdditionalData?.Remove("robotsTxt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxt"); else _explicitNullProperties?.Remove("robotsTxt"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRobotsTxt? _explicitNullValueRobotsTxt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRobotsTxt RobotsTxt { get => _explicitNullValueRobotsTxt; set { _explicitNullValueRobotsTxt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxt"); else _explicitNullProperties?.Remove("robotsTxt"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRobotsTxt RobotsTxt { get => _explicitNullValueRobotsTxt; set { _explicitNullValueRobotsTxt = value; AdditionalData?.Remove("robotsTxt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxt"); else _explicitNullProperties?.Remove("robotsTxt"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsRobotsTxt _explicitNullValueRobotsTxt = default!;
 #endif
         /// <summary>The urlCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories? UrlCategories { get => _explicitNullValueUrlCategories; set { _explicitNullValueUrlCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlCategories"); else _explicitNullProperties?.Remove("urlCategories"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories? UrlCategories { get => _explicitNullValueUrlCategories; set { _explicitNullValueUrlCategories = value; AdditionalData?.Remove("urlCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlCategories"); else _explicitNullProperties?.Remove("urlCategories"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories? _explicitNullValueUrlCategories = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories UrlCategories { get => _explicitNullValueUrlCategories; set { _explicitNullValueUrlCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlCategories"); else _explicitNullProperties?.Remove("urlCategories"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories UrlCategories { get => _explicitNullValueUrlCategories; set { _explicitNullValueUrlCategories = value; AdditionalData?.Remove("urlCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlCategories"); else _explicitNullProperties?.Remove("urlCategories"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories _explicitNullValueUrlCategories = default!;
 #endif
         /// <summary>The wappa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsWappa? Wappa { get => _explicitNullValueWappa; set { _explicitNullValueWappa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wappa"); else _explicitNullProperties?.Remove("wappa"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsWappa? Wappa { get => _explicitNullValueWappa; set { _explicitNullValueWappa = value; AdditionalData?.Remove("wappa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wappa"); else _explicitNullProperties?.Remove("wappa"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsWappa? _explicitNullValueWappa = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsWappa Wappa { get => _explicitNullValueWappa; set { _explicitNullValueWappa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wappa"); else _explicitNullProperties?.Remove("wappa"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsWappa Wappa { get => _explicitNullValueWappa; set { _explicitNullValueWappa = value; AdditionalData?.Remove("wappa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wappa"); else _explicitNullProperties?.Remove("wappa"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsWappa _explicitNullValueWappa = default!;
 #endif
         /// <summary>

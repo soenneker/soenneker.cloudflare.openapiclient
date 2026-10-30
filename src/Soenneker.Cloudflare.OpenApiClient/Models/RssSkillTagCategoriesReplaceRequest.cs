@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category_uuids") is { } nullNodeCategoryUuids && nullNodeCategoryUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryUuids = null;
+            if (parseNode.GetChildNode("category_uuids") is null) { _explicitNullValueCategoryUuids = default!; _explicitNullProperties?.Remove("category_uuids"); }
+            else if (parseNode.GetChildNode("category_uuids") is { } nullNodeCategoryUuids && nullNodeCategoryUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryUuids = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Up to 100 unique tag category UUIDs that the managed default tagging skill may select tags from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
+        public List<Guid?>? CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; AdditionalData?.Remove("category_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
         private List<Guid?>? _explicitNullValueCategoryUuids = default!;
 #nullable restore
 #else
-        public List<Guid?> CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
+        public List<Guid?> CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; AdditionalData?.Remove("category_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
         private List<Guid?> _explicitNullValueCategoryUuids = default!;
 #endif
         /// <summary>

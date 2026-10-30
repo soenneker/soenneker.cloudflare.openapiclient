@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("interfaces") is { } nullNodeInterfaces && nullNodeInterfaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interfaces = null;
+            if (parseNode.GetChildNode("interfaces") is null) { _explicitNullValueInterfaces = default!; _explicitNullProperties?.Remove("interfaces"); }
+            else if (parseNode.GetChildNode("interfaces") is { } nullNodeInterfaces && nullNodeInterfaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interfaces = null;
         }
 
         /// <summary>List of interfaces to run the speed test on</summary>

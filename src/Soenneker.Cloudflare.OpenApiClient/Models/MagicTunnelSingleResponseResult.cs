@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gre_tunnel") is { } nullNodeGreTunnel && nullNodeGreTunnel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GreTunnel = null;
+            if (parseNode.GetChildNode("gre_tunnel") is null) { _explicitNullValueGreTunnel = default!; _explicitNullProperties?.Remove("gre_tunnel"); }
+            else if (parseNode.GetChildNode("gre_tunnel") is { } nullNodeGreTunnel && nullNodeGreTunnel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GreTunnel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The gre_tunnel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel? GreTunnel { get => _explicitNullValueGreTunnel; set { _explicitNullValueGreTunnel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre_tunnel"); else _explicitNullProperties?.Remove("gre_tunnel"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel? GreTunnel { get => _explicitNullValueGreTunnel; set { _explicitNullValueGreTunnel = value; AdditionalData?.Remove("gre_tunnel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre_tunnel"); else _explicitNullProperties?.Remove("gre_tunnel"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel? _explicitNullValueGreTunnel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel GreTunnel { get => _explicitNullValueGreTunnel; set { _explicitNullValueGreTunnel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre_tunnel"); else _explicitNullProperties?.Remove("gre_tunnel"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel GreTunnel { get => _explicitNullValueGreTunnel; set { _explicitNullValueGreTunnel = value; AdditionalData?.Remove("gre_tunnel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre_tunnel"); else _explicitNullProperties?.Remove("gre_tunnel"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel _explicitNullValueGreTunnel = default!;
 #endif
         /// <summary>

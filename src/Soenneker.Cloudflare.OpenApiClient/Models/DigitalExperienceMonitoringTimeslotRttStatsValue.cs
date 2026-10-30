@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("minRttUs") is { } nullNodeMinRttUs && nullNodeMinRttUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinRttUs = null;
-            if (parseNode.GetChildNode("rttUs") is { } nullNodeRttUs && nullNodeRttUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RttUs = null;
-            if (parseNode.GetChildNode("rttVarUs") is { } nullNodeRttVarUs && nullNodeRttVarUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RttVarUs = null;
+            if (parseNode.GetChildNode("minRttUs") is null) { _explicitNullValueMinRttUs = default!; _explicitNullProperties?.Remove("minRttUs"); }
+            else if (parseNode.GetChildNode("minRttUs") is { } nullNodeMinRttUs && nullNodeMinRttUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinRttUs = null;
+            if (parseNode.GetChildNode("rttUs") is null) { _explicitNullValueRttUs = default!; _explicitNullProperties?.Remove("rttUs"); }
+            else if (parseNode.GetChildNode("rttUs") is { } nullNodeRttUs && nullNodeRttUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RttUs = null;
+            if (parseNode.GetChildNode("rttVarUs") is null) { _explicitNullValueRttVarUs = default!; _explicitNullProperties?.Remove("rttVarUs"); }
+            else if (parseNode.GetChildNode("rttVarUs") is { } nullNodeRttVarUs && nullNodeRttVarUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RttVarUs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Minimum round-trip time in microseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsMinRttUs? MinRttUs { get => _explicitNullValueMinRttUs; set { _explicitNullValueMinRttUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minRttUs"); else _explicitNullProperties?.Remove("minRttUs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsMinRttUs? MinRttUs { get => _explicitNullValueMinRttUs; set { _explicitNullValueMinRttUs = value; AdditionalData?.Remove("minRttUs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minRttUs"); else _explicitNullProperties?.Remove("minRttUs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsMinRttUs? _explicitNullValueMinRttUs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsMinRttUs MinRttUs { get => _explicitNullValueMinRttUs; set { _explicitNullValueMinRttUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minRttUs"); else _explicitNullProperties?.Remove("minRttUs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsMinRttUs MinRttUs { get => _explicitNullValueMinRttUs; set { _explicitNullValueMinRttUs = value; AdditionalData?.Remove("minRttUs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minRttUs"); else _explicitNullProperties?.Remove("minRttUs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsMinRttUs _explicitNullValueMinRttUs = default!;
 #endif
         /// <summary>Round-trip time in microseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttUs? RttUs { get => _explicitNullValueRttUs; set { _explicitNullValueRttUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttUs"); else _explicitNullProperties?.Remove("rttUs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttUs? RttUs { get => _explicitNullValueRttUs; set { _explicitNullValueRttUs = value; AdditionalData?.Remove("rttUs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttUs"); else _explicitNullProperties?.Remove("rttUs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttUs? _explicitNullValueRttUs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttUs RttUs { get => _explicitNullValueRttUs; set { _explicitNullValueRttUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttUs"); else _explicitNullProperties?.Remove("rttUs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttUs RttUs { get => _explicitNullValueRttUs; set { _explicitNullValueRttUs = value; AdditionalData?.Remove("rttUs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttUs"); else _explicitNullProperties?.Remove("rttUs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttUs _explicitNullValueRttUs = default!;
 #endif
         /// <summary>Round-trip time variance in microseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttVarUs? RttVarUs { get => _explicitNullValueRttVarUs; set { _explicitNullValueRttVarUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttVarUs"); else _explicitNullProperties?.Remove("rttVarUs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttVarUs? RttVarUs { get => _explicitNullValueRttVarUs; set { _explicitNullValueRttVarUs = value; AdditionalData?.Remove("rttVarUs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttVarUs"); else _explicitNullProperties?.Remove("rttVarUs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttVarUs? _explicitNullValueRttVarUs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttVarUs RttVarUs { get => _explicitNullValueRttVarUs; set { _explicitNullValueRttVarUs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttVarUs"); else _explicitNullProperties?.Remove("rttVarUs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttVarUs RttVarUs { get => _explicitNullValueRttVarUs; set { _explicitNullValueRttVarUs = value; AdditionalData?.Remove("rttVarUs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rttVarUs"); else _explicitNullProperties?.Remove("rttVarUs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttVarUs _explicitNullValueRttVarUs = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("proxy_control") is { } nullNodeProxyControl && nullNodeProxyControl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyControl = null;
-            if (parseNode.GetChildNode("proxy_enabled") is { } nullNodeProxyEnabled && nullNodeProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyEnabled = null;
+            if (parseNode.GetChildNode("proxy_control") is null) { _explicitNullValueProxyControl = default!; _explicitNullProperties?.Remove("proxy_control"); }
+            else if (parseNode.GetChildNode("proxy_control") is { } nullNodeProxyControl && nullNodeProxyControl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyControl = null;
+            if (parseNode.GetChildNode("proxy_enabled") is null) { _explicitNullValueProxyEnabled = default!; _explicitNullProperties?.Remove("proxy_enabled"); }
+            else if (parseNode.GetChildNode("proxy_enabled") is { } nullNodeProxyEnabled && nullNodeProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyEnabled = null;
         }
 
         /// <summary>Whether the user may disable the browser extension proxy.</summary>

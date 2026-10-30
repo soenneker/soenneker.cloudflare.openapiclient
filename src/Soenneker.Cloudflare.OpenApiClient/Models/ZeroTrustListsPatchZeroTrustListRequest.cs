@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("append") is { } nullNodeAppend && nullNodeAppend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Append = null;
-            if (parseNode.GetChildNode("remove") is { } nullNodeRemove && nullNodeRemove.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remove = null;
+            if (parseNode.GetChildNode("append") is null) { _explicitNullValueAppend = default!; _explicitNullProperties?.Remove("append"); }
+            else if (parseNode.GetChildNode("append") is { } nullNodeAppend && nullNodeAppend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Append = null;
+            if (parseNode.GetChildNode("remove") is null) { _explicitNullValueRemove = default!; _explicitNullProperties?.Remove("remove"); }
+            else if (parseNode.GetChildNode("remove") is { } nullNodeRemove && nullNodeRemove.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remove = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Add items to the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayItemsInputItem>? Append { get => _explicitNullValueAppend; set { _explicitNullValueAppend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("append"); else _explicitNullProperties?.Remove("append"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayItemsInputItem>? Append { get => _explicitNullValueAppend; set { _explicitNullValueAppend = value; AdditionalData?.Remove("append"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("append"); else _explicitNullProperties?.Remove("append"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayItemsInputItem>? _explicitNullValueAppend = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayItemsInputItem> Append { get => _explicitNullValueAppend; set { _explicitNullValueAppend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("append"); else _explicitNullProperties?.Remove("append"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayItemsInputItem> Append { get => _explicitNullValueAppend; set { _explicitNullValueAppend = value; AdditionalData?.Remove("append"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("append"); else _explicitNullProperties?.Remove("append"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayItemsInputItem> _explicitNullValueAppend = default!;
 #endif
         /// <summary>Lists of item values you want to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Remove { get => _explicitNullValueRemove; set { _explicitNullValueRemove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove"); else _explicitNullProperties?.Remove("remove"); } }
+        public List<string>? Remove { get => _explicitNullValueRemove; set { _explicitNullValueRemove = value; AdditionalData?.Remove("remove"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove"); else _explicitNullProperties?.Remove("remove"); } }
         private List<string>? _explicitNullValueRemove = default!;
 #nullable restore
 #else
-        public List<string> Remove { get => _explicitNullValueRemove; set { _explicitNullValueRemove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove"); else _explicitNullProperties?.Remove("remove"); } }
+        public List<string> Remove { get => _explicitNullValueRemove; set { _explicitNullValueRemove = value; AdditionalData?.Remove("remove"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove"); else _explicitNullProperties?.Remove("remove"); } }
         private List<string> _explicitNullValueRemove = default!;
 #endif
         /// <summary>

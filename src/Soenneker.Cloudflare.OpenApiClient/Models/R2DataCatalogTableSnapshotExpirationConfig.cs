@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_snapshot_age") is { } nullNodeMaxSnapshotAge && nullNodeMaxSnapshotAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSnapshotAge = null;
-            if (parseNode.GetChildNode("min_snapshots_to_keep") is { } nullNodeMinSnapshotsToKeep && nullNodeMinSnapshotsToKeep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinSnapshotsToKeep = null;
-            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("max_snapshot_age") is null) { _explicitNullValueMaxSnapshotAge = default!; _explicitNullProperties?.Remove("max_snapshot_age"); }
+            else if (parseNode.GetChildNode("max_snapshot_age") is { } nullNodeMaxSnapshotAge && nullNodeMaxSnapshotAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSnapshotAge = null;
+            if (parseNode.GetChildNode("min_snapshots_to_keep") is null) { _explicitNullValueMinSnapshotsToKeep = default!; _explicitNullProperties?.Remove("min_snapshots_to_keep"); }
+            else if (parseNode.GetChildNode("min_snapshots_to_keep") is { } nullNodeMinSnapshotsToKeep && nullNodeMinSnapshotsToKeep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinSnapshotsToKeep = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,20 +30,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies the maximum age for snapshots.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxSnapshotAge { get => _explicitNullValueMaxSnapshotAge; set { _explicitNullValueMaxSnapshotAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_snapshot_age"); else _explicitNullProperties?.Remove("max_snapshot_age"); } }
+        public string? MaxSnapshotAge { get => _explicitNullValueMaxSnapshotAge; set { _explicitNullValueMaxSnapshotAge = value; AdditionalData?.Remove("max_snapshot_age"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_snapshot_age"); else _explicitNullProperties?.Remove("max_snapshot_age"); } }
         private string? _explicitNullValueMaxSnapshotAge = default!;
 #nullable restore
 #else
-        public string MaxSnapshotAge { get => _explicitNullValueMaxSnapshotAge; set { _explicitNullValueMaxSnapshotAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_snapshot_age"); else _explicitNullProperties?.Remove("max_snapshot_age"); } }
+        public string MaxSnapshotAge { get => _explicitNullValueMaxSnapshotAge; set { _explicitNullValueMaxSnapshotAge = value; AdditionalData?.Remove("max_snapshot_age"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_snapshot_age"); else _explicitNullProperties?.Remove("max_snapshot_age"); } }
         private string _explicitNullValueMaxSnapshotAge = default!;
 #endif
         /// <summary>Specifies the minimum number of snapshots to retain. Defaults to 100.</summary>
-        public long? MinSnapshotsToKeep { get => _explicitNullValueMinSnapshotsToKeep; set { _explicitNullValueMinSnapshotsToKeep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_snapshots_to_keep"); else _explicitNullProperties?.Remove("min_snapshots_to_keep"); } }
+        public long? MinSnapshotsToKeep { get => _explicitNullValueMinSnapshotsToKeep; set { _explicitNullValueMinSnapshotsToKeep = value; AdditionalData?.Remove("min_snapshots_to_keep"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_snapshots_to_keep"); else _explicitNullProperties?.Remove("min_snapshots_to_keep"); } }
         private long? _explicitNullValueMinSnapshotsToKeep = default!;
         /// <summary>Earliest time when the scheduler can claim this operation. Null when disabled.</summary>
         public DateTimeOffset? NextEligibleAt { get; private set; }
         /// <summary>Specifies the state of maintenance operations.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig"/> and sets the default values.
@@ -70,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "max_snapshot_age", n => { MaxSnapshotAge = n.GetStringValue(); } },
                 { "min_snapshots_to_keep", n => { MinSnapshotsToKeep = n.GetLongValue(); } },
                 { "next_eligible_at", n => { NextEligibleAt = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
             };
         }
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
-            if (parseNode.GetChildNode("prefix_origins") is { } nullNodePrefixOrigins && nullNodePrefixOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixOrigins = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("prefix_origins") is null) { _explicitNullValuePrefixOrigins = default!; _explicitNullProperties?.Remove("prefix_origins"); }
+            else if (parseNode.GetChildNode("prefix_origins") is { } nullNodePrefixOrigins && nullNodePrefixOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixOrigins = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The prefix_origins property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultPrefixOriginsItem>? PrefixOrigins { get => _explicitNullValuePrefixOrigins; set { _explicitNullValuePrefixOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_origins"); else _explicitNullProperties?.Remove("prefix_origins"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultPrefixOriginsItem>? PrefixOrigins { get => _explicitNullValuePrefixOrigins; set { _explicitNullValuePrefixOrigins = value; AdditionalData?.Remove("prefix_origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_origins"); else _explicitNullProperties?.Remove("prefix_origins"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultPrefixOriginsItem>? _explicitNullValuePrefixOrigins = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultPrefixOriginsItem> PrefixOrigins { get => _explicitNullValuePrefixOrigins; set { _explicitNullValuePrefixOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_origins"); else _explicitNullProperties?.Remove("prefix_origins"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultPrefixOriginsItem> PrefixOrigins { get => _explicitNullValuePrefixOrigins; set { _explicitNullValuePrefixOrigins = value; AdditionalData?.Remove("prefix_origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_origins"); else _explicitNullProperties?.Remove("prefix_origins"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200ResponseResultPrefixOriginsItem> _explicitNullValuePrefixOrigins = default!;
 #endif
         /// <summary>

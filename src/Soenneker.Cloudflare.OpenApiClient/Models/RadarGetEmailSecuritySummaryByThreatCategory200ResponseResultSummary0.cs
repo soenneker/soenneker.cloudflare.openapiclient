@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("BrandImpersonation") is { } nullNodeBrandImpersonation && nullNodeBrandImpersonation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandImpersonation = null;
-            if (parseNode.GetChildNode("CredentialHarvester") is { } nullNodeCredentialHarvester && nullNodeCredentialHarvester.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialHarvester = null;
-            if (parseNode.GetChildNode("IdentityDeception") is { } nullNodeIdentityDeception && nullNodeIdentityDeception.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityDeception = null;
-            if (parseNode.GetChildNode("Link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("BrandImpersonation") is null) { _explicitNullValueBrandImpersonation = default!; _explicitNullProperties?.Remove("BrandImpersonation"); }
+            else if (parseNode.GetChildNode("BrandImpersonation") is { } nullNodeBrandImpersonation && nullNodeBrandImpersonation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandImpersonation = null;
+            if (parseNode.GetChildNode("CredentialHarvester") is null) { _explicitNullValueCredentialHarvester = default!; _explicitNullProperties?.Remove("CredentialHarvester"); }
+            else if (parseNode.GetChildNode("CredentialHarvester") is { } nullNodeCredentialHarvester && nullNodeCredentialHarvester.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialHarvester = null;
+            if (parseNode.GetChildNode("IdentityDeception") is null) { _explicitNullValueIdentityDeception = default!; _explicitNullProperties?.Remove("IdentityDeception"); }
+            else if (parseNode.GetChildNode("IdentityDeception") is { } nullNodeIdentityDeception && nullNodeIdentityDeception.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityDeception = null;
+            if (parseNode.GetChildNode("Link") is null) { _explicitNullValueLink = default!; _explicitNullProperties?.Remove("Link"); }
+            else if (parseNode.GetChildNode("Link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrandImpersonation { get => _explicitNullValueBrandImpersonation; set { _explicitNullValueBrandImpersonation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BrandImpersonation"); else _explicitNullProperties?.Remove("BrandImpersonation"); } }
+        public string? BrandImpersonation { get => _explicitNullValueBrandImpersonation; set { _explicitNullValueBrandImpersonation = value; AdditionalData?.Remove("BrandImpersonation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BrandImpersonation"); else _explicitNullProperties?.Remove("BrandImpersonation"); } }
         private string? _explicitNullValueBrandImpersonation = default!;
 #nullable restore
 #else
-        public string BrandImpersonation { get => _explicitNullValueBrandImpersonation; set { _explicitNullValueBrandImpersonation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BrandImpersonation"); else _explicitNullProperties?.Remove("BrandImpersonation"); } }
+        public string BrandImpersonation { get => _explicitNullValueBrandImpersonation; set { _explicitNullValueBrandImpersonation = value; AdditionalData?.Remove("BrandImpersonation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BrandImpersonation"); else _explicitNullProperties?.Remove("BrandImpersonation"); } }
         private string _explicitNullValueBrandImpersonation = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CredentialHarvester { get => _explicitNullValueCredentialHarvester; set { _explicitNullValueCredentialHarvester = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CredentialHarvester"); else _explicitNullProperties?.Remove("CredentialHarvester"); } }
+        public string? CredentialHarvester { get => _explicitNullValueCredentialHarvester; set { _explicitNullValueCredentialHarvester = value; AdditionalData?.Remove("CredentialHarvester"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CredentialHarvester"); else _explicitNullProperties?.Remove("CredentialHarvester"); } }
         private string? _explicitNullValueCredentialHarvester = default!;
 #nullable restore
 #else
-        public string CredentialHarvester { get => _explicitNullValueCredentialHarvester; set { _explicitNullValueCredentialHarvester = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CredentialHarvester"); else _explicitNullProperties?.Remove("CredentialHarvester"); } }
+        public string CredentialHarvester { get => _explicitNullValueCredentialHarvester; set { _explicitNullValueCredentialHarvester = value; AdditionalData?.Remove("CredentialHarvester"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CredentialHarvester"); else _explicitNullProperties?.Remove("CredentialHarvester"); } }
         private string _explicitNullValueCredentialHarvester = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityDeception { get => _explicitNullValueIdentityDeception; set { _explicitNullValueIdentityDeception = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentityDeception"); else _explicitNullProperties?.Remove("IdentityDeception"); } }
+        public string? IdentityDeception { get => _explicitNullValueIdentityDeception; set { _explicitNullValueIdentityDeception = value; AdditionalData?.Remove("IdentityDeception"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentityDeception"); else _explicitNullProperties?.Remove("IdentityDeception"); } }
         private string? _explicitNullValueIdentityDeception = default!;
 #nullable restore
 #else
-        public string IdentityDeception { get => _explicitNullValueIdentityDeception; set { _explicitNullValueIdentityDeception = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentityDeception"); else _explicitNullProperties?.Remove("IdentityDeception"); } }
+        public string IdentityDeception { get => _explicitNullValueIdentityDeception; set { _explicitNullValueIdentityDeception = value; AdditionalData?.Remove("IdentityDeception"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentityDeception"); else _explicitNullProperties?.Remove("IdentityDeception"); } }
         private string _explicitNullValueIdentityDeception = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Link"); else _explicitNullProperties?.Remove("Link"); } }
+        public string? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("Link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Link"); else _explicitNullProperties?.Remove("Link"); } }
         private string? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public string Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Link"); else _explicitNullProperties?.Remove("Link"); } }
+        public string Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("Link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Link"); else _explicitNullProperties?.Remove("Link"); } }
         private string _explicitNullValueLink = default!;
 #endif
         /// <summary>

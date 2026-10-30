@@ -18,43 +18,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
-            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("language-locale") is { } nullNodeLanguageLocale && nullNodeLanguageLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageLocale = null;
-            if (parseNode.GetChildNode("preferences") is { } nullNodePreferences && nullNodePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preferences = null;
-            if (parseNode.GetChildNode("updated_on") is { } nullNodeUpdatedOn && nullNodeUpdatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedOn = null;
+            if (parseNode.GetChildNode("created_on") is null) { _explicitNullValueCreatedOn = default!; _explicitNullProperties?.Remove("created_on"); }
+            else if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("language-locale") is null) { _explicitNullValueLanguageLocale = default!; _explicitNullProperties?.Remove("language-locale"); }
+            else if (parseNode.GetChildNode("language-locale") is { } nullNodeLanguageLocale && nullNodeLanguageLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageLocale = null;
+            if (parseNode.GetChildNode("preferences") is null) { _explicitNullValuePreferences = default!; _explicitNullProperties?.Remove("preferences"); }
+            else if (parseNode.GetChildNode("preferences") is { } nullNodePreferences && nullNodePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preferences = null;
+            if (parseNode.GetChildNode("updated_on") is null) { _explicitNullValueUpdatedOn = default!; _explicitNullProperties?.Remove("updated_on"); }
+            else if (parseNode.GetChildNode("updated_on") is { } nullNodeUpdatedOn && nullNodeUpdatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedOn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp of the most recently created preference.</summary>
-        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
+        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; AdditionalData?.Remove("created_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
         private DateTimeOffset? _explicitNullValueCreatedOn = default!;
         /// <summary>Email verification status for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail _explicitNullValueEmail = default!;
 #endif
         /// <summary>The user&apos;s preferred language locale for communications.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesLanguageLocale? LanguageLocale { get => _explicitNullValueLanguageLocale; set { _explicitNullValueLanguageLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language-locale"); else _explicitNullProperties?.Remove("language-locale"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesLanguageLocale? LanguageLocale { get => _explicitNullValueLanguageLocale; set { _explicitNullValueLanguageLocale = value; AdditionalData?.Remove("language-locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language-locale"); else _explicitNullProperties?.Remove("language-locale"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesLanguageLocale? _explicitNullValueLanguageLocale = default!;
         /// <summary>Preference keys mapped to subscription states. Keys use human-readable slugs (e.g. &quot;product_news&quot;, &quot;marketing&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty? Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty? Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; AdditionalData?.Remove("preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty? _explicitNullValuePreferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty Preferences { get => _explicitNullValuePreferences; set { _explicitNullValuePreferences = value; AdditionalData?.Remove("preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferences"); else _explicitNullProperties?.Remove("preferences"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty _explicitNullValuePreferences = default!;
 #endif
         /// <summary>Timestamp of the most recently updated preference.</summary>
-        public DateTimeOffset? UpdatedOn { get => _explicitNullValueUpdatedOn; set { _explicitNullValueUpdatedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_on"); else _explicitNullProperties?.Remove("updated_on"); } }
+        public DateTimeOffset? UpdatedOn { get => _explicitNullValueUpdatedOn; set { _explicitNullValueUpdatedOn = value; AdditionalData?.Remove("updated_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_on"); else _explicitNullProperties?.Remove("updated_on"); } }
         private DateTimeOffset? _explicitNullValueUpdatedOn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferences"/> and sets the default values.
@@ -83,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "email", n => { Email = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail>(global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesEmail.CreateFromDiscriminatorValue); } },
-                { "language-locale", n => { LanguageLocale = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesLanguageLocale>(); } },
+                { "language-locale", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesLanguageLocale>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLanguageLocale = default; _explicitNullProperties?.Remove("language-locale"); AdditionalData["language-locale"] = unknown; } else { LanguageLocale = parsed; AdditionalData.Remove("language-locale"); } } },
                 { "preferences", n => { Preferences = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CpsCommunicationPreferencesPreferencesProperty.CreateFromDiscriminatorValue); } },
                 { "updated_on", n => { UpdatedOn = n.GetDateTimeOffsetValue(); } },
             };

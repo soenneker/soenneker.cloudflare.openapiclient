@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ruleIds") is { } nullNodeRuleIds && nullNodeRuleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleIds = null;
+            if (parseNode.GetChildNode("ruleIds") is null) { _explicitNullValueRuleIds = default!; _explicitNullProperties?.Remove("ruleIds"); }
+            else if (parseNode.GetChildNode("ruleIds") is { } nullNodeRuleIds && nullNodeRuleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of rule ids to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RuleIds { get => _explicitNullValueRuleIds; set { _explicitNullValueRuleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleIds"); else _explicitNullProperties?.Remove("ruleIds"); } }
+        public List<string>? RuleIds { get => _explicitNullValueRuleIds; set { _explicitNullValueRuleIds = value; AdditionalData?.Remove("ruleIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleIds"); else _explicitNullProperties?.Remove("ruleIds"); } }
         private List<string>? _explicitNullValueRuleIds = default!;
 #nullable restore
 #else
-        public List<string> RuleIds { get => _explicitNullValueRuleIds; set { _explicitNullValueRuleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleIds"); else _explicitNullProperties?.Remove("ruleIds"); } }
+        public List<string> RuleIds { get => _explicitNullValueRuleIds; set { _explicitNullValueRuleIds = value; AdditionalData?.Remove("ruleIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleIds"); else _explicitNullProperties?.Remove("ruleIds"); } }
         private List<string> _explicitNullValueRuleIds = default!;
 #endif
         /// <summary>

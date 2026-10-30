@@ -18,11 +18,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dispatch_namespace_outbounds") is { } nullNodeDispatchNamespaceOutbounds && nullNodeDispatchNamespaceOutbounds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespaceOutbounds = null;
-            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
-            if (parseNode.GetChildNode("durable_objects") is { } nullNodeDurableObjects && nullNodeDurableObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurableObjects = null;
-            if (parseNode.GetChildNode("queues") is { } nullNodeQueues && nullNodeQueues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queues = null;
-            if (parseNode.GetChildNode("workers") is { } nullNodeWorkers && nullNodeWorkers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workers = null;
+            if (parseNode.GetChildNode("dispatch_namespace_outbounds") is null) { _explicitNullValueDispatchNamespaceOutbounds = default!; _explicitNullProperties?.Remove("dispatch_namespace_outbounds"); }
+            else if (parseNode.GetChildNode("dispatch_namespace_outbounds") is { } nullNodeDispatchNamespaceOutbounds && nullNodeDispatchNamespaceOutbounds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespaceOutbounds = null;
+            if (parseNode.GetChildNode("domains") is null) { _explicitNullValueDomains = default!; _explicitNullProperties?.Remove("domains"); }
+            else if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("durable_objects") is null) { _explicitNullValueDurableObjects = default!; _explicitNullProperties?.Remove("durable_objects"); }
+            else if (parseNode.GetChildNode("durable_objects") is { } nullNodeDurableObjects && nullNodeDurableObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurableObjects = null;
+            if (parseNode.GetChildNode("queues") is null) { _explicitNullValueQueues = default!; _explicitNullProperties?.Remove("queues"); }
+            else if (parseNode.GetChildNode("queues") is { } nullNodeQueues && nullNodeQueues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queues = null;
+            if (parseNode.GetChildNode("workers") is null) { _explicitNullValueWorkers = default!; _explicitNullProperties?.Remove("workers"); }
+            else if (parseNode.GetChildNode("workers") is { } nullNodeWorkers && nullNodeWorkers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Other Workers that reference the Worker as an outbound for a dispatch namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem>? DispatchNamespaceOutbounds { get => _explicitNullValueDispatchNamespaceOutbounds; set { _explicitNullValueDispatchNamespaceOutbounds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace_outbounds"); else _explicitNullProperties?.Remove("dispatch_namespace_outbounds"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem>? DispatchNamespaceOutbounds { get => _explicitNullValueDispatchNamespaceOutbounds; set { _explicitNullValueDispatchNamespaceOutbounds = value; AdditionalData?.Remove("dispatch_namespace_outbounds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace_outbounds"); else _explicitNullProperties?.Remove("dispatch_namespace_outbounds"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem>? _explicitNullValueDispatchNamespaceOutbounds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem> DispatchNamespaceOutbounds { get => _explicitNullValueDispatchNamespaceOutbounds; set { _explicitNullValueDispatchNamespaceOutbounds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace_outbounds"); else _explicitNullProperties?.Remove("dispatch_namespace_outbounds"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem> DispatchNamespaceOutbounds { get => _explicitNullValueDispatchNamespaceOutbounds; set { _explicitNullValueDispatchNamespaceOutbounds = value; AdditionalData?.Remove("dispatch_namespace_outbounds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace_outbounds"); else _explicitNullProperties?.Remove("dispatch_namespace_outbounds"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem> _explicitNullValueDispatchNamespaceOutbounds = default!;
 #endif
         /// <summary>Custom domains connected to the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem> _explicitNullValueDomains = default!;
 #endif
         /// <summary>Other Workers that reference Durable Object classes implemented by the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem>? DurableObjects { get => _explicitNullValueDurableObjects; set { _explicitNullValueDurableObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_objects"); else _explicitNullProperties?.Remove("durable_objects"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem>? DurableObjects { get => _explicitNullValueDurableObjects; set { _explicitNullValueDurableObjects = value; AdditionalData?.Remove("durable_objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_objects"); else _explicitNullProperties?.Remove("durable_objects"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem>? _explicitNullValueDurableObjects = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem> DurableObjects { get => _explicitNullValueDurableObjects; set { _explicitNullValueDurableObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_objects"); else _explicitNullProperties?.Remove("durable_objects"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem> DurableObjects { get => _explicitNullValueDurableObjects; set { _explicitNullValueDurableObjects = value; AdditionalData?.Remove("durable_objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_objects"); else _explicitNullProperties?.Remove("durable_objects"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem> _explicitNullValueDurableObjects = default!;
 #endif
         /// <summary>Queues that send messages to the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem>? Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem>? Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; AdditionalData?.Remove("queues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem>? _explicitNullValueQueues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem> Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem> Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; AdditionalData?.Remove("queues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem> _explicitNullValueQueues = default!;
 #endif
         /// <summary>Other Workers that reference the Worker using [service bindings](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem>? Workers { get => _explicitNullValueWorkers; set { _explicitNullValueWorkers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers"); else _explicitNullProperties?.Remove("workers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem>? Workers { get => _explicitNullValueWorkers; set { _explicitNullValueWorkers = value; AdditionalData?.Remove("workers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers"); else _explicitNullProperties?.Remove("workers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem>? _explicitNullValueWorkers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem> Workers { get => _explicitNullValueWorkers; set { _explicitNullValueWorkers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers"); else _explicitNullProperties?.Remove("workers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem> Workers { get => _explicitNullValueWorkers; set { _explicitNullValueWorkers = value; AdditionalData?.Remove("workers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers"); else _explicitNullProperties?.Remove("workers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem> _explicitNullValueWorkers = default!;
 #endif
         /// <summary>

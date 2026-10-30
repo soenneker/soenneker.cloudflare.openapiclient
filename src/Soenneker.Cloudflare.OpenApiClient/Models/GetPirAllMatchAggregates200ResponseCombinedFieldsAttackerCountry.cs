@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("distinct_values") is { } nullNodeDistinctValues && nullNodeDistinctValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctValues = null;
-            if (parseNode.GetChildNode("distinct_values_truncated") is { } nullNodeDistinctValuesTruncated && nullNodeDistinctValuesTruncated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctValuesTruncated = null;
+            if (parseNode.GetChildNode("distinct_values") is null) { _explicitNullValueDistinctValues = default!; _explicitNullProperties?.Remove("distinct_values"); }
+            else if (parseNode.GetChildNode("distinct_values") is { } nullNodeDistinctValues && nullNodeDistinctValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctValues = null;
+            if (parseNode.GetChildNode("distinct_values_truncated") is null) { _explicitNullValueDistinctValuesTruncated = default!; _explicitNullProperties?.Remove("distinct_values_truncated"); }
+            else if (parseNode.GetChildNode("distinct_values_truncated") is { } nullNodeDistinctValuesTruncated && nullNodeDistinctValuesTruncated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctValuesTruncated = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Distinct values across the listed priorities, each counted once. Null when a priority has more distinct values than can be merged.</summary>
-        public int? DistinctValues { get => _explicitNullValueDistinctValues; set { _explicitNullValueDistinctValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_values"); else _explicitNullProperties?.Remove("distinct_values"); } }
+        public int? DistinctValues { get => _explicitNullValueDistinctValues; set { _explicitNullValueDistinctValues = value; AdditionalData?.Remove("distinct_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_values"); else _explicitNullProperties?.Remove("distinct_values"); } }
         private int? _explicitNullValueDistinctValues = default!;
         /// <summary>The distinct_values_truncated property</summary>
-        public bool? DistinctValuesTruncated { get => _explicitNullValueDistinctValuesTruncated; set { _explicitNullValueDistinctValuesTruncated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_values_truncated"); else _explicitNullProperties?.Remove("distinct_values_truncated"); } }
+        public bool? DistinctValuesTruncated { get => _explicitNullValueDistinctValuesTruncated; set { _explicitNullValueDistinctValuesTruncated = value; AdditionalData?.Remove("distinct_values_truncated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_values_truncated"); else _explicitNullProperties?.Remove("distinct_values_truncated"); } }
         private bool? _explicitNullValueDistinctValuesTruncated = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPirAllMatchAggregates200ResponseCombinedFieldsAttackerCountry"/> and sets the default values.

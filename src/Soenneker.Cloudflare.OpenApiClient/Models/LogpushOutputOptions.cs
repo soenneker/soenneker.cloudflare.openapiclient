@@ -18,19 +18,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("batch_prefix") is { } nullNodeBatchPrefix && nullNodeBatchPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchPrefix = null;
-            if (parseNode.GetChildNode("batch_suffix") is { } nullNodeBatchSuffix && nullNodeBatchSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchSuffix = null;
-            if (parseNode.GetChildNode("CVE-2021-44228") is { } nullNodeCVE202144228 && nullNodeCVE202144228.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CVE202144228 = null;
-            if (parseNode.GetChildNode("field_delimiter") is { } nullNodeFieldDelimiter && nullNodeFieldDelimiter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldDelimiter = null;
-            if (parseNode.GetChildNode("field_names") is { } nullNodeFieldNames && nullNodeFieldNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldNames = null;
-            if (parseNode.GetChildNode("merge_subrequests") is { } nullNodeMergeSubrequests && nullNodeMergeSubrequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeSubrequests = null;
-            if (parseNode.GetChildNode("output_type") is { } nullNodeOutputType && nullNodeOutputType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputType = null;
-            if (parseNode.GetChildNode("record_delimiter") is { } nullNodeRecordDelimiter && nullNodeRecordDelimiter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordDelimiter = null;
-            if (parseNode.GetChildNode("record_prefix") is { } nullNodeRecordPrefix && nullNodeRecordPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordPrefix = null;
-            if (parseNode.GetChildNode("record_suffix") is { } nullNodeRecordSuffix && nullNodeRecordSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordSuffix = null;
-            if (parseNode.GetChildNode("record_template") is { } nullNodeRecordTemplate && nullNodeRecordTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordTemplate = null;
-            if (parseNode.GetChildNode("sample_rate") is { } nullNodeSampleRate && nullNodeSampleRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleRate = null;
-            if (parseNode.GetChildNode("timestamp_format") is { } nullNodeTimestampFormat && nullNodeTimestampFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampFormat = null;
+            if (parseNode.GetChildNode("batch_prefix") is null) { _explicitNullValueBatchPrefix = default!; _explicitNullProperties?.Remove("batch_prefix"); }
+            else if (parseNode.GetChildNode("batch_prefix") is { } nullNodeBatchPrefix && nullNodeBatchPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchPrefix = null;
+            if (parseNode.GetChildNode("batch_suffix") is null) { _explicitNullValueBatchSuffix = default!; _explicitNullProperties?.Remove("batch_suffix"); }
+            else if (parseNode.GetChildNode("batch_suffix") is { } nullNodeBatchSuffix && nullNodeBatchSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchSuffix = null;
+            if (parseNode.GetChildNode("CVE-2021-44228") is null) { _explicitNullValueCVE202144228 = default!; _explicitNullProperties?.Remove("CVE-2021-44228"); }
+            else if (parseNode.GetChildNode("CVE-2021-44228") is { } nullNodeCVE202144228 && nullNodeCVE202144228.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CVE202144228 = null;
+            if (parseNode.GetChildNode("field_delimiter") is null) { _explicitNullValueFieldDelimiter = default!; _explicitNullProperties?.Remove("field_delimiter"); }
+            else if (parseNode.GetChildNode("field_delimiter") is { } nullNodeFieldDelimiter && nullNodeFieldDelimiter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldDelimiter = null;
+            if (parseNode.GetChildNode("field_names") is null) { _explicitNullValueFieldNames = default!; _explicitNullProperties?.Remove("field_names"); }
+            else if (parseNode.GetChildNode("field_names") is { } nullNodeFieldNames && nullNodeFieldNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldNames = null;
+            if (parseNode.GetChildNode("merge_subrequests") is null) { _explicitNullValueMergeSubrequests = default!; _explicitNullProperties?.Remove("merge_subrequests"); }
+            else if (parseNode.GetChildNode("merge_subrequests") is { } nullNodeMergeSubrequests && nullNodeMergeSubrequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeSubrequests = null;
+            if (parseNode.GetChildNode("output_type") is null) { _explicitNullValueOutputType = default!; _explicitNullProperties?.Remove("output_type"); }
+            else if (parseNode.GetChildNode("output_type") is { } nullNodeOutputType && nullNodeOutputType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputType = null;
+            if (parseNode.GetChildNode("record_delimiter") is null) { _explicitNullValueRecordDelimiter = default!; _explicitNullProperties?.Remove("record_delimiter"); }
+            else if (parseNode.GetChildNode("record_delimiter") is { } nullNodeRecordDelimiter && nullNodeRecordDelimiter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordDelimiter = null;
+            if (parseNode.GetChildNode("record_prefix") is null) { _explicitNullValueRecordPrefix = default!; _explicitNullProperties?.Remove("record_prefix"); }
+            else if (parseNode.GetChildNode("record_prefix") is { } nullNodeRecordPrefix && nullNodeRecordPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordPrefix = null;
+            if (parseNode.GetChildNode("record_suffix") is null) { _explicitNullValueRecordSuffix = default!; _explicitNullProperties?.Remove("record_suffix"); }
+            else if (parseNode.GetChildNode("record_suffix") is { } nullNodeRecordSuffix && nullNodeRecordSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordSuffix = null;
+            if (parseNode.GetChildNode("record_template") is null) { _explicitNullValueRecordTemplate = default!; _explicitNullProperties?.Remove("record_template"); }
+            else if (parseNode.GetChildNode("record_template") is { } nullNodeRecordTemplate && nullNodeRecordTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordTemplate = null;
+            if (parseNode.GetChildNode("sample_rate") is null) { _explicitNullValueSampleRate = default!; _explicitNullProperties?.Remove("sample_rate"); }
+            else if (parseNode.GetChildNode("sample_rate") is { } nullNodeSampleRate && nullNodeSampleRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleRate = null;
+            if (parseNode.GetChildNode("timestamp_format") is null) { _explicitNullValueTimestampFormat = default!; _explicitNullProperties?.Remove("timestamp_format"); }
+            else if (parseNode.GetChildNode("timestamp_format") is { } nullNodeTimestampFormat && nullNodeTimestampFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampFormat = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,97 +51,97 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>String to be prepended before each batch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchPrefix { get => _explicitNullValueBatchPrefix; set { _explicitNullValueBatchPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_prefix"); else _explicitNullProperties?.Remove("batch_prefix"); } }
+        public string? BatchPrefix { get => _explicitNullValueBatchPrefix; set { _explicitNullValueBatchPrefix = value; AdditionalData?.Remove("batch_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_prefix"); else _explicitNullProperties?.Remove("batch_prefix"); } }
         private string? _explicitNullValueBatchPrefix = default!;
 #nullable restore
 #else
-        public string BatchPrefix { get => _explicitNullValueBatchPrefix; set { _explicitNullValueBatchPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_prefix"); else _explicitNullProperties?.Remove("batch_prefix"); } }
+        public string BatchPrefix { get => _explicitNullValueBatchPrefix; set { _explicitNullValueBatchPrefix = value; AdditionalData?.Remove("batch_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_prefix"); else _explicitNullProperties?.Remove("batch_prefix"); } }
         private string _explicitNullValueBatchPrefix = default!;
 #endif
         /// <summary>String to be appended after each batch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchSuffix { get => _explicitNullValueBatchSuffix; set { _explicitNullValueBatchSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_suffix"); else _explicitNullProperties?.Remove("batch_suffix"); } }
+        public string? BatchSuffix { get => _explicitNullValueBatchSuffix; set { _explicitNullValueBatchSuffix = value; AdditionalData?.Remove("batch_suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_suffix"); else _explicitNullProperties?.Remove("batch_suffix"); } }
         private string? _explicitNullValueBatchSuffix = default!;
 #nullable restore
 #else
-        public string BatchSuffix { get => _explicitNullValueBatchSuffix; set { _explicitNullValueBatchSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_suffix"); else _explicitNullProperties?.Remove("batch_suffix"); } }
+        public string BatchSuffix { get => _explicitNullValueBatchSuffix; set { _explicitNullValueBatchSuffix = value; AdditionalData?.Remove("batch_suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_suffix"); else _explicitNullProperties?.Remove("batch_suffix"); } }
         private string _explicitNullValueBatchSuffix = default!;
 #endif
         /// <summary>If set to true, will cause all occurrences of `${` in the generated files to be replaced with `x{`.</summary>
-        public bool? CVE202144228 { get => _explicitNullValueCVE202144228; set { _explicitNullValueCVE202144228 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CVE-2021-44228"); else _explicitNullProperties?.Remove("CVE-2021-44228"); } }
+        public bool? CVE202144228 { get => _explicitNullValueCVE202144228; set { _explicitNullValueCVE202144228 = value; AdditionalData?.Remove("CVE-2021-44228"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CVE-2021-44228"); else _explicitNullProperties?.Remove("CVE-2021-44228"); } }
         private bool? _explicitNullValueCVE202144228 = default!;
         /// <summary>String to join fields. This field be ignored when `record_template` is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldDelimiter { get => _explicitNullValueFieldDelimiter; set { _explicitNullValueFieldDelimiter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_delimiter"); else _explicitNullProperties?.Remove("field_delimiter"); } }
+        public string? FieldDelimiter { get => _explicitNullValueFieldDelimiter; set { _explicitNullValueFieldDelimiter = value; AdditionalData?.Remove("field_delimiter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_delimiter"); else _explicitNullProperties?.Remove("field_delimiter"); } }
         private string? _explicitNullValueFieldDelimiter = default!;
 #nullable restore
 #else
-        public string FieldDelimiter { get => _explicitNullValueFieldDelimiter; set { _explicitNullValueFieldDelimiter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_delimiter"); else _explicitNullProperties?.Remove("field_delimiter"); } }
+        public string FieldDelimiter { get => _explicitNullValueFieldDelimiter; set { _explicitNullValueFieldDelimiter = value; AdditionalData?.Remove("field_delimiter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_delimiter"); else _explicitNullProperties?.Remove("field_delimiter"); } }
         private string _explicitNullValueFieldDelimiter = default!;
 #endif
         /// <summary>List of field names to be included in the Logpush output. For the moment, there is no option to add all fields at once, so you must specify all the fields names you are interested in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FieldNames { get => _explicitNullValueFieldNames; set { _explicitNullValueFieldNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_names"); else _explicitNullProperties?.Remove("field_names"); } }
+        public List<string>? FieldNames { get => _explicitNullValueFieldNames; set { _explicitNullValueFieldNames = value; AdditionalData?.Remove("field_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_names"); else _explicitNullProperties?.Remove("field_names"); } }
         private List<string>? _explicitNullValueFieldNames = default!;
 #nullable restore
 #else
-        public List<string> FieldNames { get => _explicitNullValueFieldNames; set { _explicitNullValueFieldNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_names"); else _explicitNullProperties?.Remove("field_names"); } }
+        public List<string> FieldNames { get => _explicitNullValueFieldNames; set { _explicitNullValueFieldNames = value; AdditionalData?.Remove("field_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_names"); else _explicitNullProperties?.Remove("field_names"); } }
         private List<string> _explicitNullValueFieldNames = default!;
 #endif
         /// <summary>If set to true, subrequests will be merged into the parent request. Only supported for the `http_requests` dataset.</summary>
-        public bool? MergeSubrequests { get => _explicitNullValueMergeSubrequests; set { _explicitNullValueMergeSubrequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge_subrequests"); else _explicitNullProperties?.Remove("merge_subrequests"); } }
+        public bool? MergeSubrequests { get => _explicitNullValueMergeSubrequests; set { _explicitNullValueMergeSubrequests = value; AdditionalData?.Remove("merge_subrequests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge_subrequests"); else _explicitNullProperties?.Remove("merge_subrequests"); } }
         private bool? _explicitNullValueMergeSubrequests = default!;
         /// <summary>Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType? OutputType { get => _explicitNullValueOutputType; set { _explicitNullValueOutputType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_type"); else _explicitNullProperties?.Remove("output_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType? OutputType { get => _explicitNullValueOutputType; set { _explicitNullValueOutputType = value; AdditionalData?.Remove("output_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_type"); else _explicitNullProperties?.Remove("output_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType? _explicitNullValueOutputType = default!;
         /// <summary>String to be inserted in-between the records as separator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordDelimiter { get => _explicitNullValueRecordDelimiter; set { _explicitNullValueRecordDelimiter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_delimiter"); else _explicitNullProperties?.Remove("record_delimiter"); } }
+        public string? RecordDelimiter { get => _explicitNullValueRecordDelimiter; set { _explicitNullValueRecordDelimiter = value; AdditionalData?.Remove("record_delimiter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_delimiter"); else _explicitNullProperties?.Remove("record_delimiter"); } }
         private string? _explicitNullValueRecordDelimiter = default!;
 #nullable restore
 #else
-        public string RecordDelimiter { get => _explicitNullValueRecordDelimiter; set { _explicitNullValueRecordDelimiter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_delimiter"); else _explicitNullProperties?.Remove("record_delimiter"); } }
+        public string RecordDelimiter { get => _explicitNullValueRecordDelimiter; set { _explicitNullValueRecordDelimiter = value; AdditionalData?.Remove("record_delimiter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_delimiter"); else _explicitNullProperties?.Remove("record_delimiter"); } }
         private string _explicitNullValueRecordDelimiter = default!;
 #endif
         /// <summary>String to be prepended before each record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordPrefix { get => _explicitNullValueRecordPrefix; set { _explicitNullValueRecordPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_prefix"); else _explicitNullProperties?.Remove("record_prefix"); } }
+        public string? RecordPrefix { get => _explicitNullValueRecordPrefix; set { _explicitNullValueRecordPrefix = value; AdditionalData?.Remove("record_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_prefix"); else _explicitNullProperties?.Remove("record_prefix"); } }
         private string? _explicitNullValueRecordPrefix = default!;
 #nullable restore
 #else
-        public string RecordPrefix { get => _explicitNullValueRecordPrefix; set { _explicitNullValueRecordPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_prefix"); else _explicitNullProperties?.Remove("record_prefix"); } }
+        public string RecordPrefix { get => _explicitNullValueRecordPrefix; set { _explicitNullValueRecordPrefix = value; AdditionalData?.Remove("record_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_prefix"); else _explicitNullProperties?.Remove("record_prefix"); } }
         private string _explicitNullValueRecordPrefix = default!;
 #endif
         /// <summary>String to be appended after each record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordSuffix { get => _explicitNullValueRecordSuffix; set { _explicitNullValueRecordSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_suffix"); else _explicitNullProperties?.Remove("record_suffix"); } }
+        public string? RecordSuffix { get => _explicitNullValueRecordSuffix; set { _explicitNullValueRecordSuffix = value; AdditionalData?.Remove("record_suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_suffix"); else _explicitNullProperties?.Remove("record_suffix"); } }
         private string? _explicitNullValueRecordSuffix = default!;
 #nullable restore
 #else
-        public string RecordSuffix { get => _explicitNullValueRecordSuffix; set { _explicitNullValueRecordSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_suffix"); else _explicitNullProperties?.Remove("record_suffix"); } }
+        public string RecordSuffix { get => _explicitNullValueRecordSuffix; set { _explicitNullValueRecordSuffix = value; AdditionalData?.Remove("record_suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_suffix"); else _explicitNullProperties?.Remove("record_suffix"); } }
         private string _explicitNullValueRecordSuffix = default!;
 #endif
         /// <summary>String to use as template for each record instead of the default json key value mapping. All fields used in the template must be present in `field_names` as well, otherwise they will end up as null. Format as a Go `text/template` without any standard functions, like conditionals, loops, sub-templates, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordTemplate { get => _explicitNullValueRecordTemplate; set { _explicitNullValueRecordTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_template"); else _explicitNullProperties?.Remove("record_template"); } }
+        public string? RecordTemplate { get => _explicitNullValueRecordTemplate; set { _explicitNullValueRecordTemplate = value; AdditionalData?.Remove("record_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_template"); else _explicitNullProperties?.Remove("record_template"); } }
         private string? _explicitNullValueRecordTemplate = default!;
 #nullable restore
 #else
-        public string RecordTemplate { get => _explicitNullValueRecordTemplate; set { _explicitNullValueRecordTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_template"); else _explicitNullProperties?.Remove("record_template"); } }
+        public string RecordTemplate { get => _explicitNullValueRecordTemplate; set { _explicitNullValueRecordTemplate = value; AdditionalData?.Remove("record_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_template"); else _explicitNullProperties?.Remove("record_template"); } }
         private string _explicitNullValueRecordTemplate = default!;
 #endif
         /// <summary>Specifies the sampling rate as a floating number greater than 0 and at most 1. Sampling is applied on top of filtering, and regardless of the current `sample_interval` of the data.</summary>
-        public float? SampleRate { get => _explicitNullValueSampleRate; set { _explicitNullValueSampleRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_rate"); else _explicitNullProperties?.Remove("sample_rate"); } }
+        public float? SampleRate { get => _explicitNullValueSampleRate; set { _explicitNullValueSampleRate = value; AdditionalData?.Remove("sample_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_rate"); else _explicitNullProperties?.Remove("sample_rate"); } }
         private float? _explicitNullValueSampleRate = default!;
         /// <summary>String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339`, `rfc3339ms` or `rfc3339ns`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat? TimestampFormat { get => _explicitNullValueTimestampFormat; set { _explicitNullValueTimestampFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_format"); else _explicitNullProperties?.Remove("timestamp_format"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat? TimestampFormat { get => _explicitNullValueTimestampFormat; set { _explicitNullValueTimestampFormat = value; AdditionalData?.Remove("timestamp_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_format"); else _explicitNullProperties?.Remove("timestamp_format"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat? _explicitNullValueTimestampFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions"/> and sets the default values.
@@ -163,13 +176,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "field_delimiter", n => { FieldDelimiter = n.GetStringValue(); } },
                 { "field_names", n => { FieldNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "merge_subrequests", n => { MergeSubrequests = n.GetBoolValue(); } },
-                { "output_type", n => { OutputType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType>(); } },
+                { "output_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutputType = default; _explicitNullProperties?.Remove("output_type"); AdditionalData["output_type"] = unknown; } else { OutputType = parsed; AdditionalData.Remove("output_type"); } } },
                 { "record_delimiter", n => { RecordDelimiter = n.GetStringValue(); } },
                 { "record_prefix", n => { RecordPrefix = n.GetStringValue(); } },
                 { "record_suffix", n => { RecordSuffix = n.GetStringValue(); } },
                 { "record_template", n => { RecordTemplate = n.GetStringValue(); } },
                 { "sample_rate", n => { SampleRate = n.GetFloatValue(); } },
-                { "timestamp_format", n => { TimestampFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat>(); } },
+                { "timestamp_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTimestampFormat = default; _explicitNullProperties?.Remove("timestamp_format"); AdditionalData["timestamp_format"] = unknown; } else { TimestampFormat = parsed; AdditionalData.Remove("timestamp_format"); } } },
             };
         }
         /// <summary>

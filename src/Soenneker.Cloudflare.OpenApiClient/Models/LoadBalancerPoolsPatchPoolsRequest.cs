@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notification_email") is { } nullNodeNotificationEmail && nullNodeNotificationEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationEmail = null;
+            if (parseNode.GetChildNode("notification_email") is null) { _explicitNullValueNotificationEmail = default!; _explicitNullProperties?.Remove("notification_email"); }
+            else if (parseNode.GetChildNode("notification_email") is { } nullNodeNotificationEmail && nullNodeNotificationEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationEmail = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The email address to send health status notifications to. This field is now deprecated in favor of Cloudflare Notifications for Load Balancing, so only resetting this field with an empty string `&quot;&quot;` is accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationEmail { get => _explicitNullValueNotificationEmail; set { _explicitNullValueNotificationEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_email"); else _explicitNullProperties?.Remove("notification_email"); } }
+        public string? NotificationEmail { get => _explicitNullValueNotificationEmail; set { _explicitNullValueNotificationEmail = value; AdditionalData?.Remove("notification_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_email"); else _explicitNullProperties?.Remove("notification_email"); } }
         private string? _explicitNullValueNotificationEmail = default!;
 #nullable restore
 #else
-        public string NotificationEmail { get => _explicitNullValueNotificationEmail; set { _explicitNullValueNotificationEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_email"); else _explicitNullProperties?.Remove("notification_email"); } }
+        public string NotificationEmail { get => _explicitNullValueNotificationEmail; set { _explicitNullValueNotificationEmail = value; AdditionalData?.Remove("notification_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_email"); else _explicitNullProperties?.Remove("notification_email"); } }
         private string _explicitNullValueNotificationEmail = default!;
 #endif
         /// <summary>

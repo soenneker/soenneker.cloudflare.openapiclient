@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("subset_of") is { } nullNodeSubsetOf && nullNodeSubsetOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubsetOf = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("subset_of") is null) { _explicitNullValueSubsetOf = default!; _explicitNullProperties?.Remove("subset_of"); }
+            else if (parseNode.GetChildNode("subset_of") is { } nullNodeSubsetOf && nullNodeSubsetOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubsetOf = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An Organization (`com.cloudflare.api.tenant.unit.&lt;tag&gt;`) or Account (`com.cloudflare.api.account.&lt;tag&gt;`) key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The route Organization for Account scopes. Optional in requests and always returned for Account scopes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberPolicyScope>? SubsetOf { get => _explicitNullValueSubsetOf; set { _explicitNullValueSubsetOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subset_of"); else _explicitNullProperties?.Remove("subset_of"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberPolicyScope>? SubsetOf { get => _explicitNullValueSubsetOf; set { _explicitNullValueSubsetOf = value; AdditionalData?.Remove("subset_of"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subset_of"); else _explicitNullProperties?.Remove("subset_of"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberPolicyScope>? _explicitNullValueSubsetOf = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberPolicyScope> SubsetOf { get => _explicitNullValueSubsetOf; set { _explicitNullValueSubsetOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subset_of"); else _explicitNullProperties?.Remove("subset_of"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberPolicyScope> SubsetOf { get => _explicitNullValueSubsetOf; set { _explicitNullValueSubsetOf = value; AdditionalData?.Remove("subset_of"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subset_of"); else _explicitNullProperties?.Remove("subset_of"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberPolicyScope> _explicitNullValueSubsetOf = default!;
 #endif
         /// <summary>

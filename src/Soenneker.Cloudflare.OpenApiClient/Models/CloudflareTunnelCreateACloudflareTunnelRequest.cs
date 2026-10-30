@@ -17,34 +17,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("config_src") is { } nullNodeConfigSrc && nullNodeConfigSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigSrc = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("tunnel_secret") is { } nullNodeTunnelSecret && nullNodeTunnelSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelSecret = null;
+            if (parseNode.GetChildNode("config_src") is null) { _explicitNullValueConfigSrc = default!; _explicitNullProperties?.Remove("config_src"); }
+            else if (parseNode.GetChildNode("config_src") is { } nullNodeConfigSrc && nullNodeConfigSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigSrc = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("tunnel_secret") is null) { _explicitNullValueTunnelSecret = default!; _explicitNullProperties?.Remove("tunnel_secret"); }
+            else if (parseNode.GetChildNode("tunnel_secret") is { } nullNodeTunnelSecret && nullNodeTunnelSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelSecret = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc? ConfigSrc { get => _explicitNullValueConfigSrc; set { _explicitNullValueConfigSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_src"); else _explicitNullProperties?.Remove("config_src"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc? ConfigSrc { get => _explicitNullValueConfigSrc; set { _explicitNullValueConfigSrc = value; AdditionalData?.Remove("config_src"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_src"); else _explicitNullProperties?.Remove("config_src"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc? _explicitNullValueConfigSrc = default!;
         /// <summary>A user-friendly name for a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TunnelSecret { get => _explicitNullValueTunnelSecret; set { _explicitNullValueTunnelSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_secret"); else _explicitNullProperties?.Remove("tunnel_secret"); } }
+        public string? TunnelSecret { get => _explicitNullValueTunnelSecret; set { _explicitNullValueTunnelSecret = value; AdditionalData?.Remove("tunnel_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_secret"); else _explicitNullProperties?.Remove("tunnel_secret"); } }
         private string? _explicitNullValueTunnelSecret = default!;
 #nullable restore
 #else
-        public string TunnelSecret { get => _explicitNullValueTunnelSecret; set { _explicitNullValueTunnelSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_secret"); else _explicitNullProperties?.Remove("tunnel_secret"); } }
+        public string TunnelSecret { get => _explicitNullValueTunnelSecret; set { _explicitNullValueTunnelSecret = value; AdditionalData?.Remove("tunnel_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_secret"); else _explicitNullProperties?.Remove("tunnel_secret"); } }
         private string _explicitNullValueTunnelSecret = default!;
 #endif
         /// <summary>
@@ -72,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config_src", n => { ConfigSrc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc>(); } },
+                { "config_src", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfigSrc = default; _explicitNullProperties?.Remove("config_src"); AdditionalData["config_src"] = unknown; } else { ConfigSrc = parsed; AdditionalData.Remove("config_src"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tunnel_secret", n => { TunnelSecret = n.GetStringValue(); } },
             };

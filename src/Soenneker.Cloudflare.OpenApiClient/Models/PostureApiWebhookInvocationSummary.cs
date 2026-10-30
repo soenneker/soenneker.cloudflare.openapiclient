@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("latest_job") is { } nullNodeLatestJob && nullNodeLatestJob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestJob = null;
-            if (parseNode.GetChildNode("webhook_id") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
-            if (parseNode.GetChildNode("webhook_label") is { } nullNodeWebhookLabel && nullNodeWebhookLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookLabel = null;
+            if (parseNode.GetChildNode("latest_job") is null) { _explicitNullValueLatestJob = default!; _explicitNullProperties?.Remove("latest_job"); }
+            else if (parseNode.GetChildNode("latest_job") is { } nullNodeLatestJob && nullNodeLatestJob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestJob = null;
+            if (parseNode.GetChildNode("webhook_id") is null) { _explicitNullValueWebhookId = default!; _explicitNullProperties?.Remove("webhook_id"); }
+            else if (parseNode.GetChildNode("webhook_id") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
+            if (parseNode.GetChildNode("webhook_label") is null) { _explicitNullValueWebhookLabel = default!; _explicitNullProperties?.Remove("webhook_label"); }
+            else if (parseNode.GetChildNode("webhook_label") is { } nullNodeWebhookLabel && nullNodeWebhookLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookLabel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The most recent webhook job for this webhook configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookInvocationSummaryLatestJob? LatestJob { get => _explicitNullValueLatestJob; set { _explicitNullValueLatestJob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_job"); else _explicitNullProperties?.Remove("latest_job"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookInvocationSummaryLatestJob? LatestJob { get => _explicitNullValueLatestJob; set { _explicitNullValueLatestJob = value; AdditionalData?.Remove("latest_job"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_job"); else _explicitNullProperties?.Remove("latest_job"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookInvocationSummaryLatestJob? _explicitNullValueLatestJob = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookInvocationSummaryLatestJob LatestJob { get => _explicitNullValueLatestJob; set { _explicitNullValueLatestJob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_job"); else _explicitNullProperties?.Remove("latest_job"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookInvocationSummaryLatestJob LatestJob { get => _explicitNullValueLatestJob; set { _explicitNullValueLatestJob = value; AdditionalData?.Remove("latest_job"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_job"); else _explicitNullProperties?.Remove("latest_job"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiWebhookInvocationSummaryLatestJob _explicitNullValueLatestJob = default!;
 #endif
         /// <summary>Unique identifier for the webhook configuration.</summary>
-        public Guid? WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
+        public Guid? WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; AdditionalData?.Remove("webhook_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
         private Guid? _explicitNullValueWebhookId = default!;
         /// <summary>Account-specified display label for the webhook configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookLabel { get => _explicitNullValueWebhookLabel; set { _explicitNullValueWebhookLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_label"); else _explicitNullProperties?.Remove("webhook_label"); } }
+        public string? WebhookLabel { get => _explicitNullValueWebhookLabel; set { _explicitNullValueWebhookLabel = value; AdditionalData?.Remove("webhook_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_label"); else _explicitNullProperties?.Remove("webhook_label"); } }
         private string? _explicitNullValueWebhookLabel = default!;
 #nullable restore
 #else
-        public string WebhookLabel { get => _explicitNullValueWebhookLabel; set { _explicitNullValueWebhookLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_label"); else _explicitNullProperties?.Remove("webhook_label"); } }
+        public string WebhookLabel { get => _explicitNullValueWebhookLabel; set { _explicitNullValueWebhookLabel = value; AdditionalData?.Remove("webhook_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_label"); else _explicitNullProperties?.Remove("webhook_label"); } }
         private string _explicitNullValueWebhookLabel = default!;
 #endif
         /// <summary>

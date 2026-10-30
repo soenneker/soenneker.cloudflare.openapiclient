@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("okta") is { } nullNodeOkta && nullNodeOkta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Okta = null;
+            if (parseNode.GetChildNode("okta") is null) { _explicitNullValueOkta = default!; _explicitNullProperties?.Remove("okta"); }
+            else if (parseNode.GetChildNode("okta") is { } nullNodeOkta && nullNodeOkta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Okta = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The okta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRuleOkta? Okta { get => _explicitNullValueOkta; set { _explicitNullValueOkta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("okta"); else _explicitNullProperties?.Remove("okta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRuleOkta? Okta { get => _explicitNullValueOkta; set { _explicitNullValueOkta = value; AdditionalData?.Remove("okta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("okta"); else _explicitNullProperties?.Remove("okta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRuleOkta? _explicitNullValueOkta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRuleOkta Okta { get => _explicitNullValueOkta; set { _explicitNullValueOkta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("okta"); else _explicitNullProperties?.Remove("okta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRuleOkta Okta { get => _explicitNullValueOkta; set { _explicitNullValueOkta = value; AdditionalData?.Remove("okta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("okta"); else _explicitNullProperties?.Remove("okta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRuleOkta _explicitNullValueOkta = default!;
 #endif
         /// <summary>

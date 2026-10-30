@@ -17,17 +17,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_aud") is { } nullNodeAppAud && nullNodeAppAud.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppAud = null;
-            if (parseNode.GetChildNode("app_hostname") is { } nullNodeAppHostname && nullNodeAppHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppHostname = null;
-            if (parseNode.GetChildNode("approvals_received") is { } nullNodeApprovalsReceived && nullNodeApprovalsReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalsReceived = null;
-            if (parseNode.GetChildNode("approver_emails") is { } nullNodeApproverEmails && nullNodeApproverEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproverEmails = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
-            if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
-            if (parseNode.GetChildNode("knock_request_id") is { } nullNodeKnockRequestId && nullNodeKnockRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KnockRequestId = null;
-            if (parseNode.GetChildNode("purpose_justification") is { } nullNodePurposeJustification && nullNodePurposeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurposeJustification = null;
-            if (parseNode.GetChildNode("requester_email") is { } nullNodeRequesterEmail && nullNodeRequesterEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequesterEmail = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("app_aud") is null) { _explicitNullValueAppAud = default!; _explicitNullProperties?.Remove("app_aud"); }
+            else if (parseNode.GetChildNode("app_aud") is { } nullNodeAppAud && nullNodeAppAud.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppAud = null;
+            if (parseNode.GetChildNode("app_hostname") is null) { _explicitNullValueAppHostname = default!; _explicitNullProperties?.Remove("app_hostname"); }
+            else if (parseNode.GetChildNode("app_hostname") is { } nullNodeAppHostname && nullNodeAppHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppHostname = null;
+            if (parseNode.GetChildNode("approvals_received") is null) { _explicitNullValueApprovalsReceived = default!; _explicitNullProperties?.Remove("approvals_received"); }
+            else if (parseNode.GetChildNode("approvals_received") is { } nullNodeApprovalsReceived && nullNodeApprovalsReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalsReceived = null;
+            if (parseNode.GetChildNode("approver_emails") is null) { _explicitNullValueApproverEmails = default!; _explicitNullProperties?.Remove("approver_emails"); }
+            else if (parseNode.GetChildNode("approver_emails") is { } nullNodeApproverEmails && nullNodeApproverEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproverEmails = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("expires_at") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expires_at"); }
+            else if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("knock_request_id") is null) { _explicitNullValueKnockRequestId = default!; _explicitNullProperties?.Remove("knock_request_id"); }
+            else if (parseNode.GetChildNode("knock_request_id") is { } nullNodeKnockRequestId && nullNodeKnockRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KnockRequestId = null;
+            if (parseNode.GetChildNode("purpose_justification") is null) { _explicitNullValuePurposeJustification = default!; _explicitNullProperties?.Remove("purpose_justification"); }
+            else if (parseNode.GetChildNode("purpose_justification") is { } nullNodePurposeJustification && nullNodePurposeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurposeJustification = null;
+            if (parseNode.GetChildNode("requester_email") is null) { _explicitNullValueRequesterEmail = default!; _explicitNullProperties?.Remove("requester_email"); }
+            else if (parseNode.GetChildNode("requester_email") is { } nullNodeRequesterEmail && nullNodeRequesterEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequesterEmail = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,84 +46,84 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Audience of the Access application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppAud { get => _explicitNullValueAppAud; set { _explicitNullValueAppAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_aud"); else _explicitNullProperties?.Remove("app_aud"); } }
+        public string? AppAud { get => _explicitNullValueAppAud; set { _explicitNullValueAppAud = value; AdditionalData?.Remove("app_aud"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_aud"); else _explicitNullProperties?.Remove("app_aud"); } }
         private string? _explicitNullValueAppAud = default!;
 #nullable restore
 #else
-        public string AppAud { get => _explicitNullValueAppAud; set { _explicitNullValueAppAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_aud"); else _explicitNullProperties?.Remove("app_aud"); } }
+        public string AppAud { get => _explicitNullValueAppAud; set { _explicitNullValueAppAud = value; AdditionalData?.Remove("app_aud"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_aud"); else _explicitNullProperties?.Remove("app_aud"); } }
         private string _explicitNullValueAppAud = default!;
 #endif
         /// <summary>The app_hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppHostname { get => _explicitNullValueAppHostname; set { _explicitNullValueAppHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_hostname"); else _explicitNullProperties?.Remove("app_hostname"); } }
+        public string? AppHostname { get => _explicitNullValueAppHostname; set { _explicitNullValueAppHostname = value; AdditionalData?.Remove("app_hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_hostname"); else _explicitNullProperties?.Remove("app_hostname"); } }
         private string? _explicitNullValueAppHostname = default!;
 #nullable restore
 #else
-        public string AppHostname { get => _explicitNullValueAppHostname; set { _explicitNullValueAppHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_hostname"); else _explicitNullProperties?.Remove("app_hostname"); } }
+        public string AppHostname { get => _explicitNullValueAppHostname; set { _explicitNullValueAppHostname = value; AdditionalData?.Remove("app_hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_hostname"); else _explicitNullProperties?.Remove("app_hostname"); } }
         private string _explicitNullValueAppHostname = default!;
 #endif
         /// <summary>Number of unique actors who approved the request.</summary>
-        public int? ApprovalsReceived { get => _explicitNullValueApprovalsReceived; set { _explicitNullValueApprovalsReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals_received"); else _explicitNullProperties?.Remove("approvals_received"); } }
+        public int? ApprovalsReceived { get => _explicitNullValueApprovalsReceived; set { _explicitNullValueApprovalsReceived = value; AdditionalData?.Remove("approvals_received"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals_received"); else _explicitNullProperties?.Remove("approvals_received"); } }
         private int? _explicitNullValueApprovalsReceived = default!;
         /// <summary>Unique actors who approved the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ApproverEmails { get => _explicitNullValueApproverEmails; set { _explicitNullValueApproverEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_emails"); else _explicitNullProperties?.Remove("approver_emails"); } }
+        public List<string>? ApproverEmails { get => _explicitNullValueApproverEmails; set { _explicitNullValueApproverEmails = value; AdditionalData?.Remove("approver_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_emails"); else _explicitNullProperties?.Remove("approver_emails"); } }
         private List<string>? _explicitNullValueApproverEmails = default!;
 #nullable restore
 #else
-        public List<string> ApproverEmails { get => _explicitNullValueApproverEmails; set { _explicitNullValueApproverEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_emails"); else _explicitNullProperties?.Remove("approver_emails"); } }
+        public List<string> ApproverEmails { get => _explicitNullValueApproverEmails; set { _explicitNullValueApproverEmails = value; AdditionalData?.Remove("approver_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_emails"); else _explicitNullProperties?.Remove("approver_emails"); } }
         private List<string> _explicitNullValueApproverEmails = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestEvent>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestEvent> _explicitNullValueEvents = default!;
 #endif
         /// <summary>The expires_at property</summary>
-        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>Unique identifier for the JIT request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KnockRequestId { get => _explicitNullValueKnockRequestId; set { _explicitNullValueKnockRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knock_request_id"); else _explicitNullProperties?.Remove("knock_request_id"); } }
+        public string? KnockRequestId { get => _explicitNullValueKnockRequestId; set { _explicitNullValueKnockRequestId = value; AdditionalData?.Remove("knock_request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knock_request_id"); else _explicitNullProperties?.Remove("knock_request_id"); } }
         private string? _explicitNullValueKnockRequestId = default!;
 #nullable restore
 #else
-        public string KnockRequestId { get => _explicitNullValueKnockRequestId; set { _explicitNullValueKnockRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knock_request_id"); else _explicitNullProperties?.Remove("knock_request_id"); } }
+        public string KnockRequestId { get => _explicitNullValueKnockRequestId; set { _explicitNullValueKnockRequestId = value; AdditionalData?.Remove("knock_request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knock_request_id"); else _explicitNullProperties?.Remove("knock_request_id"); } }
         private string _explicitNullValueKnockRequestId = default!;
 #endif
         /// <summary>The purpose_justification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurposeJustification { get => _explicitNullValuePurposeJustification; set { _explicitNullValuePurposeJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification"); else _explicitNullProperties?.Remove("purpose_justification"); } }
+        public string? PurposeJustification { get => _explicitNullValuePurposeJustification; set { _explicitNullValuePurposeJustification = value; AdditionalData?.Remove("purpose_justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification"); else _explicitNullProperties?.Remove("purpose_justification"); } }
         private string? _explicitNullValuePurposeJustification = default!;
 #nullable restore
 #else
-        public string PurposeJustification { get => _explicitNullValuePurposeJustification; set { _explicitNullValuePurposeJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification"); else _explicitNullProperties?.Remove("purpose_justification"); } }
+        public string PurposeJustification { get => _explicitNullValuePurposeJustification; set { _explicitNullValuePurposeJustification = value; AdditionalData?.Remove("purpose_justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification"); else _explicitNullProperties?.Remove("purpose_justification"); } }
         private string _explicitNullValuePurposeJustification = default!;
 #endif
         /// <summary>The requester_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequesterEmail { get => _explicitNullValueRequesterEmail; set { _explicitNullValueRequesterEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requester_email"); else _explicitNullProperties?.Remove("requester_email"); } }
+        public string? RequesterEmail { get => _explicitNullValueRequesterEmail; set { _explicitNullValueRequesterEmail = value; AdditionalData?.Remove("requester_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requester_email"); else _explicitNullProperties?.Remove("requester_email"); } }
         private string? _explicitNullValueRequesterEmail = default!;
 #nullable restore
 #else
-        public string RequesterEmail { get => _explicitNullValueRequesterEmail; set { _explicitNullValueRequesterEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requester_email"); else _explicitNullProperties?.Remove("requester_email"); } }
+        public string RequesterEmail { get => _explicitNullValueRequesterEmail; set { _explicitNullValueRequesterEmail = value; AdditionalData?.Remove("requester_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requester_email"); else _explicitNullProperties?.Remove("requester_email"); } }
         private string _explicitNullValueRequesterEmail = default!;
 #endif
         /// <summary>JIT request status. `SPENT` is deprecated and interpreted as `APPROVED`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestLogDetail"/> and sets the default values.
@@ -149,7 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "knock_request_id", n => { KnockRequestId = n.GetStringValue(); } },
                 { "purpose_justification", n => { PurposeJustification = n.GetStringValue(); } },
                 { "requester_email", n => { RequesterEmail = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessJitRequestStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

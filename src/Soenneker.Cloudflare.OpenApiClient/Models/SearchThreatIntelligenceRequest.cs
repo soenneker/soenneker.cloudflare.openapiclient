@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entity_types") is { } nullNodeEntityTypes && nullNodeEntityTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityTypes = null;
-            if (parseNode.GetChildNode("include_analytics_datasets") is { } nullNodeIncludeAnalyticsDatasets && nullNodeIncludeAnalyticsDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeAnalyticsDatasets = null;
-            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
-            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("entity_types") is null) { _explicitNullValueEntityTypes = default!; _explicitNullProperties?.Remove("entity_types"); }
+            else if (parseNode.GetChildNode("entity_types") is { } nullNodeEntityTypes && nullNodeEntityTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityTypes = null;
+            if (parseNode.GetChildNode("include_analytics_datasets") is null) { _explicitNullValueIncludeAnalyticsDatasets = default!; _explicitNullProperties?.Remove("include_analytics_datasets"); }
+            else if (parseNode.GetChildNode("include_analytics_datasets") is { } nullNodeIncludeAnalyticsDatasets && nullNodeIncludeAnalyticsDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeAnalyticsDatasets = null;
+            if (parseNode.GetChildNode("limit") is null) { _explicitNullValueLimit = default!; _explicitNullProperties?.Remove("limit"); }
+            else if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
+            else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,27 +32,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Entity types to search. Omit to search articles, actors, tags, events, and indicators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligenceRequestEntityTypesItem?>? EntityTypes { get => _explicitNullValueEntityTypes; set { _explicitNullValueEntityTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_types"); else _explicitNullProperties?.Remove("entity_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligenceRequestEntityTypesItem?>? EntityTypes { get => _explicitNullValueEntityTypes; set { _explicitNullValueEntityTypes = value; AdditionalData?.Remove("entity_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_types"); else _explicitNullProperties?.Remove("entity_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligenceRequestEntityTypesItem?>? _explicitNullValueEntityTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligenceRequestEntityTypesItem?> EntityTypes { get => _explicitNullValueEntityTypes; set { _explicitNullValueEntityTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_types"); else _explicitNullProperties?.Remove("entity_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligenceRequestEntityTypesItem?> EntityTypes { get => _explicitNullValueEntityTypes; set { _explicitNullValueEntityTypes = value; AdditionalData?.Remove("entity_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_types"); else _explicitNullProperties?.Remove("entity_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.SearchThreatIntelligenceRequestEntityTypesItem?> _explicitNullValueEntityTypes = default!;
 #endif
         /// <summary>Whether to include Event and Indicator matches from analytics datasets. Defaults to false because these datasets can take longer to search. When omitted or false, those matches are intentionally excluded and source completeness covers only the backends that were queried.</summary>
-        public bool? IncludeAnalyticsDatasets { get => _explicitNullValueIncludeAnalyticsDatasets; set { _explicitNullValueIncludeAnalyticsDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_analytics_datasets"); else _explicitNullProperties?.Remove("include_analytics_datasets"); } }
+        public bool? IncludeAnalyticsDatasets { get => _explicitNullValueIncludeAnalyticsDatasets; set { _explicitNullValueIncludeAnalyticsDatasets = value; AdditionalData?.Remove("include_analytics_datasets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_analytics_datasets"); else _explicitNullProperties?.Remove("include_analytics_datasets"); } }
         private bool? _explicitNullValueIncludeAnalyticsDatasets = default!;
         /// <summary>Maximum number of results to return. Defaults to 20.</summary>
-        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private int? _explicitNullValueLimit = default!;
         /// <summary>Search text, from 1 to 1000 characters after trimming.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>

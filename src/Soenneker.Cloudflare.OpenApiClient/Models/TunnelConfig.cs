@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ingress") is { } nullNodeIngress && nullNodeIngress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ingress = null;
-            if (parseNode.GetChildNode("originRequest") is { } nullNodeOriginRequest && nullNodeOriginRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginRequest = null;
+            if (parseNode.GetChildNode("ingress") is null) { _explicitNullValueIngress = default!; _explicitNullProperties?.Remove("ingress"); }
+            else if (parseNode.GetChildNode("ingress") is { } nullNodeIngress && nullNodeIngress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ingress = null;
+            if (parseNode.GetChildNode("originRequest") is null) { _explicitNullValueOriginRequest = default!; _explicitNullProperties?.Remove("originRequest"); }
+            else if (parseNode.GetChildNode("originRequest") is { } nullNodeOriginRequest && nullNodeOriginRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginRequest = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of public hostname definitions. At least one ingress rule needs to be defined for the tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule>? Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule>? Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; AdditionalData?.Remove("ingress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule>? _explicitNullValueIngress = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule> Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule> Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; AdditionalData?.Remove("ingress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelIngressRule> _explicitNullValueIngress = default!;
 #endif
         /// <summary>Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest? OriginRequest { get => _explicitNullValueOriginRequest; set { _explicitNullValueOriginRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originRequest"); else _explicitNullProperties?.Remove("originRequest"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest? OriginRequest { get => _explicitNullValueOriginRequest; set { _explicitNullValueOriginRequest = value; AdditionalData?.Remove("originRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originRequest"); else _explicitNullProperties?.Remove("originRequest"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest? _explicitNullValueOriginRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest OriginRequest { get => _explicitNullValueOriginRequest; set { _explicitNullValueOriginRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originRequest"); else _explicitNullProperties?.Remove("originRequest"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest OriginRequest { get => _explicitNullValueOriginRequest; set { _explicitNullValueOriginRequest = value; AdditionalData?.Remove("originRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originRequest"); else _explicitNullProperties?.Remove("originRequest"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelOriginRequest _explicitNullValueOriginRequest = default!;
 #endif
         /// <summary>Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.</summary>

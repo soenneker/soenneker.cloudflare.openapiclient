@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("administrator") is { } nullNodeAdministrator && nullNodeAdministrator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Administrator = null;
-            if (parseNode.GetChildNode("billing") is { } nullNodeBilling && nullNodeBilling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billing = null;
-            if (parseNode.GetChildNode("registrant") is { } nullNodeRegistrant && nullNodeRegistrant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrant = null;
-            if (parseNode.GetChildNode("technical") is { } nullNodeTechnical && nullNodeTechnical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Technical = null;
+            if (parseNode.GetChildNode("administrator") is null) { _explicitNullValueAdministrator = default!; _explicitNullProperties?.Remove("administrator"); }
+            else if (parseNode.GetChildNode("administrator") is { } nullNodeAdministrator && nullNodeAdministrator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Administrator = null;
+            if (parseNode.GetChildNode("billing") is null) { _explicitNullValueBilling = default!; _explicitNullProperties?.Remove("billing"); }
+            else if (parseNode.GetChildNode("billing") is { } nullNodeBilling && nullNodeBilling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billing = null;
+            if (parseNode.GetChildNode("registrant") is null) { _explicitNullValueRegistrant = default!; _explicitNullProperties?.Remove("registrant"); }
+            else if (parseNode.GetChildNode("registrant") is { } nullNodeRegistrant && nullNodeRegistrant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrant = null;
+            if (parseNode.GetChildNode("technical") is null) { _explicitNullValueTechnical = default!; _explicitNullProperties?.Remove("technical"); }
+            else if (parseNode.GetChildNode("technical") is { } nullNodeTechnical && nullNodeTechnical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Technical = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Optional administrator contact. Accepted only when the extensionschema includes this role. When the registry requires an omittedcontact, Cloudflare may derive it from `contacts.registrant`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsAdministrator? Administrator { get => _explicitNullValueAdministrator; set { _explicitNullValueAdministrator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrator"); else _explicitNullProperties?.Remove("administrator"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsAdministrator? Administrator { get => _explicitNullValueAdministrator; set { _explicitNullValueAdministrator = value; AdditionalData?.Remove("administrator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrator"); else _explicitNullProperties?.Remove("administrator"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsAdministrator? _explicitNullValueAdministrator = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsAdministrator Administrator { get => _explicitNullValueAdministrator; set { _explicitNullValueAdministrator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrator"); else _explicitNullProperties?.Remove("administrator"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsAdministrator Administrator { get => _explicitNullValueAdministrator; set { _explicitNullValueAdministrator = value; AdditionalData?.Remove("administrator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrator"); else _explicitNullProperties?.Remove("administrator"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsAdministrator _explicitNullValueAdministrator = default!;
 #endif
         /// <summary>Optional billing contact. Accepted only when the extension schemaincludes this role. When the registry requires an omitted contact,Cloudflare may derive it from `contacts.registrant`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsBilling? Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsBilling? Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; AdditionalData?.Remove("billing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsBilling? _explicitNullValueBilling = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsBilling Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsBilling Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; AdditionalData?.Remove("billing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsBilling _explicitNullValueBilling = default!;
 #endif
         /// <summary>Optional registrant contact. If omitted, the account&apos;s defaultaddress book entry is used instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsRegistrant? Registrant { get => _explicitNullValueRegistrant; set { _explicitNullValueRegistrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrant"); else _explicitNullProperties?.Remove("registrant"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsRegistrant? Registrant { get => _explicitNullValueRegistrant; set { _explicitNullValueRegistrant = value; AdditionalData?.Remove("registrant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrant"); else _explicitNullProperties?.Remove("registrant"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsRegistrant? _explicitNullValueRegistrant = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsRegistrant Registrant { get => _explicitNullValueRegistrant; set { _explicitNullValueRegistrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrant"); else _explicitNullProperties?.Remove("registrant"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsRegistrant Registrant { get => _explicitNullValueRegistrant; set { _explicitNullValueRegistrant = value; AdditionalData?.Remove("registrant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrant"); else _explicitNullProperties?.Remove("registrant"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsRegistrant _explicitNullValueRegistrant = default!;
 #endif
         /// <summary>Optional technical contact. Accepted only when the extension schemaincludes this role. When the registry requires an omitted contact,Cloudflare may derive it from `contacts.registrant`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsTechnical? Technical { get => _explicitNullValueTechnical; set { _explicitNullValueTechnical = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technical"); else _explicitNullProperties?.Remove("technical"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsTechnical? Technical { get => _explicitNullValueTechnical; set { _explicitNullValueTechnical = value; AdditionalData?.Remove("technical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technical"); else _explicitNullProperties?.Remove("technical"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsTechnical? _explicitNullValueTechnical = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsTechnical Technical { get => _explicitNullValueTechnical; set { _explicitNullValueTechnical = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technical"); else _explicitNullProperties?.Remove("technical"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsTechnical Technical { get => _explicitNullValueTechnical; set { _explicitNullValueTechnical = value; AdditionalData?.Remove("technical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technical"); else _explicitNullProperties?.Remove("technical"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiSandboxRegistrationContactsTechnical _explicitNullValueTechnical = default!;
 #endif
         /// <summary>

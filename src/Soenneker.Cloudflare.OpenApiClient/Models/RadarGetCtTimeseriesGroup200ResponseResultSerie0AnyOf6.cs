@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("NEGATIVE") is { } nullNodeNEGATIVE && nullNodeNEGATIVE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NEGATIVE = null;
-            if (parseNode.GetChildNode("POSITIVE") is { } nullNodePOSITIVE && nullNodePOSITIVE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POSITIVE = null;
+            if (parseNode.GetChildNode("NEGATIVE") is null) { _explicitNullValueNEGATIVE = default!; _explicitNullProperties?.Remove("NEGATIVE"); }
+            else if (parseNode.GetChildNode("NEGATIVE") is { } nullNodeNEGATIVE && nullNodeNEGATIVE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NEGATIVE = null;
+            if (parseNode.GetChildNode("POSITIVE") is null) { _explicitNullValuePOSITIVE = default!; _explicitNullProperties?.Remove("POSITIVE"); }
+            else if (parseNode.GetChildNode("POSITIVE") is { } nullNodePOSITIVE && nullNodePOSITIVE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POSITIVE = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The NEGATIVE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NEGATIVE { get => _explicitNullValueNEGATIVE; set { _explicitNullValueNEGATIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NEGATIVE"); else _explicitNullProperties?.Remove("NEGATIVE"); } }
+        public List<string>? NEGATIVE { get => _explicitNullValueNEGATIVE; set { _explicitNullValueNEGATIVE = value; AdditionalData?.Remove("NEGATIVE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NEGATIVE"); else _explicitNullProperties?.Remove("NEGATIVE"); } }
         private List<string>? _explicitNullValueNEGATIVE = default!;
 #nullable restore
 #else
-        public List<string> NEGATIVE { get => _explicitNullValueNEGATIVE; set { _explicitNullValueNEGATIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NEGATIVE"); else _explicitNullProperties?.Remove("NEGATIVE"); } }
+        public List<string> NEGATIVE { get => _explicitNullValueNEGATIVE; set { _explicitNullValueNEGATIVE = value; AdditionalData?.Remove("NEGATIVE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NEGATIVE"); else _explicitNullProperties?.Remove("NEGATIVE"); } }
         private List<string> _explicitNullValueNEGATIVE = default!;
 #endif
         /// <summary>The POSITIVE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? POSITIVE { get => _explicitNullValuePOSITIVE; set { _explicitNullValuePOSITIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POSITIVE"); else _explicitNullProperties?.Remove("POSITIVE"); } }
+        public List<string>? POSITIVE { get => _explicitNullValuePOSITIVE; set { _explicitNullValuePOSITIVE = value; AdditionalData?.Remove("POSITIVE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POSITIVE"); else _explicitNullProperties?.Remove("POSITIVE"); } }
         private List<string>? _explicitNullValuePOSITIVE = default!;
 #nullable restore
 #else
-        public List<string> POSITIVE { get => _explicitNullValuePOSITIVE; set { _explicitNullValuePOSITIVE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POSITIVE"); else _explicitNullProperties?.Remove("POSITIVE"); } }
+        public List<string> POSITIVE { get => _explicitNullValuePOSITIVE; set { _explicitNullValuePOSITIVE = value; AdditionalData?.Remove("POSITIVE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POSITIVE"); else _explicitNullProperties?.Remove("POSITIVE"); } }
         private List<string> _explicitNullValuePOSITIVE = default!;
 #endif
         /// <summary>

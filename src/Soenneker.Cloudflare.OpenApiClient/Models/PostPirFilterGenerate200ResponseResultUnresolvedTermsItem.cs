@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("term") is { } nullNodeTerm && nullNodeTerm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Term = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("term") is null) { _explicitNullValueTerm = default!; _explicitNullProperties?.Remove("term"); }
+            else if (parseNode.GetChildNode("term") is { } nullNodeTerm && nullNodeTerm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Term = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The reason property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItemReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItemReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItemReason? _explicitNullValueReason = default!;
         /// <summary>The term property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
+        public string? Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; AdditionalData?.Remove("term"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
         private string? _explicitNullValueTerm = default!;
 #nullable restore
 #else
-        public string Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
+        public string Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; AdditionalData?.Remove("term"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
         private string _explicitNullValueTerm = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItemReason>(); } },
+                { "reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPirFilterGenerate200ResponseResultUnresolvedTermsItemReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReason = default; _explicitNullProperties?.Remove("reason"); AdditionalData["reason"] = unknown; } else { Reason = parsed; AdditionalData.Remove("reason"); } } },
                 { "term", n => { Term = n.GetStringValue(); } },
             };
         }

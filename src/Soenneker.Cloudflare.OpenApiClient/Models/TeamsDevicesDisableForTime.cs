@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("1") is { } nullNodeOne && nullNodeOne.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) One = null;
-            if (parseNode.GetChildNode("12") is { } nullNodeOneTwo && nullNodeOneTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneTwo = null;
-            if (parseNode.GetChildNode("6") is { } nullNodeSix && nullNodeSix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Six = null;
-            if (parseNode.GetChildNode("3") is { } nullNodeThree && nullNodeThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Three = null;
-            if (parseNode.GetChildNode("24") is { } nullNodeTwoFour && nullNodeTwoFour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFour = null;
+            if (parseNode.GetChildNode("1") is null) { _explicitNullValueOne = default!; _explicitNullProperties?.Remove("1"); }
+            else if (parseNode.GetChildNode("1") is { } nullNodeOne && nullNodeOne.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) One = null;
+            if (parseNode.GetChildNode("12") is null) { _explicitNullValueOneTwo = default!; _explicitNullProperties?.Remove("12"); }
+            else if (parseNode.GetChildNode("12") is { } nullNodeOneTwo && nullNodeOneTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneTwo = null;
+            if (parseNode.GetChildNode("6") is null) { _explicitNullValueSix = default!; _explicitNullProperties?.Remove("6"); }
+            else if (parseNode.GetChildNode("6") is { } nullNodeSix && nullNodeSix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Six = null;
+            if (parseNode.GetChildNode("3") is null) { _explicitNullValueThree = default!; _explicitNullProperties?.Remove("3"); }
+            else if (parseNode.GetChildNode("3") is { } nullNodeThree && nullNodeThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Three = null;
+            if (parseNode.GetChildNode("24") is null) { _explicitNullValueTwoFour = default!; _explicitNullProperties?.Remove("24"); }
+            else if (parseNode.GetChildNode("24") is { } nullNodeTwoFour && nullNodeTwoFour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFour = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Override code that is valid for 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? One { get => _explicitNullValueOne; set { _explicitNullValueOne = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1"); else _explicitNullProperties?.Remove("1"); } }
+        public string? One { get => _explicitNullValueOne; set { _explicitNullValueOne = value; AdditionalData?.Remove("1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1"); else _explicitNullProperties?.Remove("1"); } }
         private string? _explicitNullValueOne = default!;
 #nullable restore
 #else
-        public string One { get => _explicitNullValueOne; set { _explicitNullValueOne = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1"); else _explicitNullProperties?.Remove("1"); } }
+        public string One { get => _explicitNullValueOne; set { _explicitNullValueOne = value; AdditionalData?.Remove("1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1"); else _explicitNullProperties?.Remove("1"); } }
         private string _explicitNullValueOne = default!;
 #endif
         /// <summary>Override code that is valid for 12 hour2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OneTwo { get => _explicitNullValueOneTwo; set { _explicitNullValueOneTwo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("12"); else _explicitNullProperties?.Remove("12"); } }
+        public string? OneTwo { get => _explicitNullValueOneTwo; set { _explicitNullValueOneTwo = value; AdditionalData?.Remove("12"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("12"); else _explicitNullProperties?.Remove("12"); } }
         private string? _explicitNullValueOneTwo = default!;
 #nullable restore
 #else
-        public string OneTwo { get => _explicitNullValueOneTwo; set { _explicitNullValueOneTwo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("12"); else _explicitNullProperties?.Remove("12"); } }
+        public string OneTwo { get => _explicitNullValueOneTwo; set { _explicitNullValueOneTwo = value; AdditionalData?.Remove("12"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("12"); else _explicitNullProperties?.Remove("12"); } }
         private string _explicitNullValueOneTwo = default!;
 #endif
         /// <summary>Override code that is valid for 6 hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
+        public string? Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; AdditionalData?.Remove("6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
         private string? _explicitNullValueSix = default!;
 #nullable restore
 #else
-        public string Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
+        public string Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; AdditionalData?.Remove("6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
         private string _explicitNullValueSix = default!;
 #endif
         /// <summary>Override code that is valid for 3 hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Three { get => _explicitNullValueThree; set { _explicitNullValueThree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3"); else _explicitNullProperties?.Remove("3"); } }
+        public string? Three { get => _explicitNullValueThree; set { _explicitNullValueThree = value; AdditionalData?.Remove("3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3"); else _explicitNullProperties?.Remove("3"); } }
         private string? _explicitNullValueThree = default!;
 #nullable restore
 #else
-        public string Three { get => _explicitNullValueThree; set { _explicitNullValueThree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3"); else _explicitNullProperties?.Remove("3"); } }
+        public string Three { get => _explicitNullValueThree; set { _explicitNullValueThree = value; AdditionalData?.Remove("3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3"); else _explicitNullProperties?.Remove("3"); } }
         private string _explicitNullValueThree = default!;
 #endif
         /// <summary>Override code that is valid for 24 hour.2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TwoFour { get => _explicitNullValueTwoFour; set { _explicitNullValueTwoFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24"); else _explicitNullProperties?.Remove("24"); } }
+        public string? TwoFour { get => _explicitNullValueTwoFour; set { _explicitNullValueTwoFour = value; AdditionalData?.Remove("24"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24"); else _explicitNullProperties?.Remove("24"); } }
         private string? _explicitNullValueTwoFour = default!;
 #nullable restore
 #else
-        public string TwoFour { get => _explicitNullValueTwoFour; set { _explicitNullValueTwoFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24"); else _explicitNullProperties?.Remove("24"); } }
+        public string TwoFour { get => _explicitNullValueTwoFour; set { _explicitNullValueTwoFour = value; AdditionalData?.Remove("24"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24"); else _explicitNullProperties?.Remove("24"); } }
         private string _explicitNullValueTwoFour = default!;
 #endif
         /// <summary>

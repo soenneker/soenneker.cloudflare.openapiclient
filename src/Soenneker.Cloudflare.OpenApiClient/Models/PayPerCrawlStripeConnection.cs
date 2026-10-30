@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connect_status") is { } nullNodeConnectStatus && nullNodeConnectStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectStatus = null;
-            if (parseNode.GetChildNode("stripe_account_id") is { } nullNodeStripeAccountId && nullNodeStripeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StripeAccountId = null;
+            if (parseNode.GetChildNode("connect_status") is null) { _explicitNullValueConnectStatus = default!; _explicitNullProperties?.Remove("connect_status"); }
+            else if (parseNode.GetChildNode("connect_status") is { } nullNodeConnectStatus && nullNodeConnectStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectStatus = null;
+            if (parseNode.GetChildNode("stripe_account_id") is null) { _explicitNullValueStripeAccountId = default!; _explicitNullProperties?.Remove("stripe_account_id"); }
+            else if (parseNode.GetChildNode("stripe_account_id") is { } nullNodeStripeAccountId && nullNodeStripeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StripeAccountId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The connect_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectStatus { get => _explicitNullValueConnectStatus; set { _explicitNullValueConnectStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect_status"); else _explicitNullProperties?.Remove("connect_status"); } }
+        public string? ConnectStatus { get => _explicitNullValueConnectStatus; set { _explicitNullValueConnectStatus = value; AdditionalData?.Remove("connect_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect_status"); else _explicitNullProperties?.Remove("connect_status"); } }
         private string? _explicitNullValueConnectStatus = default!;
 #nullable restore
 #else
-        public string ConnectStatus { get => _explicitNullValueConnectStatus; set { _explicitNullValueConnectStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect_status"); else _explicitNullProperties?.Remove("connect_status"); } }
+        public string ConnectStatus { get => _explicitNullValueConnectStatus; set { _explicitNullValueConnectStatus = value; AdditionalData?.Remove("connect_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect_status"); else _explicitNullProperties?.Remove("connect_status"); } }
         private string _explicitNullValueConnectStatus = default!;
 #endif
         /// <summary>The stripe_account_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StripeAccountId { get => _explicitNullValueStripeAccountId; set { _explicitNullValueStripeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe_account_id"); else _explicitNullProperties?.Remove("stripe_account_id"); } }
+        public string? StripeAccountId { get => _explicitNullValueStripeAccountId; set { _explicitNullValueStripeAccountId = value; AdditionalData?.Remove("stripe_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe_account_id"); else _explicitNullProperties?.Remove("stripe_account_id"); } }
         private string? _explicitNullValueStripeAccountId = default!;
 #nullable restore
 #else
-        public string StripeAccountId { get => _explicitNullValueStripeAccountId; set { _explicitNullValueStripeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe_account_id"); else _explicitNullProperties?.Remove("stripe_account_id"); } }
+        public string StripeAccountId { get => _explicitNullValueStripeAccountId; set { _explicitNullValueStripeAccountId = value; AdditionalData?.Remove("stripe_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripe_account_id"); else _explicitNullProperties?.Remove("stripe_account_id"); } }
         private string _explicitNullValueStripeAccountId = default!;
 #endif
         /// <summary>

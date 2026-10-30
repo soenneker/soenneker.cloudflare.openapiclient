@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("complaints") is { } nullNodeComplaints && nullNodeComplaints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Complaints = null;
+            if (parseNode.GetChildNode("complaints") is null) { _explicitNullValueComplaints = default!; _explicitNullProperties?.Remove("complaints"); }
+            else if (parseNode.GetChildNode("complaints") is { } nullNodeComplaints && nullNodeComplaints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Complaints = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of matched complaints for the sending subdomain in the requested time window.</summary>
-        public int? Complaints { get => _explicitNullValueComplaints; set { _explicitNullValueComplaints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complaints"); else _explicitNullProperties?.Remove("complaints"); } }
+        public int? Complaints { get => _explicitNullValueComplaints; set { _explicitNullValueComplaints = value; AdditionalData?.Remove("complaints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complaints"); else _explicitNullProperties?.Remove("complaints"); } }
         private int? _explicitNullValueComplaints = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainReputationComplaints"/> and sets the default values.

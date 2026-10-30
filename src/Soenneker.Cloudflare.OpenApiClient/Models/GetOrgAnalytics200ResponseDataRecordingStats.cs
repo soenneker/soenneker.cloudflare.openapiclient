@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("day_stats") is { } nullNodeDayStats && nullNodeDayStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DayStats = null;
-            if (parseNode.GetChildNode("recording_count") is { } nullNodeRecordingCount && nullNodeRecordingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingCount = null;
-            if (parseNode.GetChildNode("recording_minutes_consumed") is { } nullNodeRecordingMinutesConsumed && nullNodeRecordingMinutesConsumed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingMinutesConsumed = null;
+            if (parseNode.GetChildNode("day_stats") is null) { _explicitNullValueDayStats = default!; _explicitNullProperties?.Remove("day_stats"); }
+            else if (parseNode.GetChildNode("day_stats") is { } nullNodeDayStats && nullNodeDayStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DayStats = null;
+            if (parseNode.GetChildNode("recording_count") is null) { _explicitNullValueRecordingCount = default!; _explicitNullProperties?.Remove("recording_count"); }
+            else if (parseNode.GetChildNode("recording_count") is { } nullNodeRecordingCount && nullNodeRecordingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingCount = null;
+            if (parseNode.GetChildNode("recording_minutes_consumed") is null) { _explicitNullValueRecordingMinutesConsumed = default!; _explicitNullProperties?.Remove("recording_minutes_consumed"); }
+            else if (parseNode.GetChildNode("recording_minutes_consumed") is { } nullNodeRecordingMinutesConsumed && nullNodeRecordingMinutesConsumed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingMinutesConsumed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Day wise recording stats</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStatsDayStatsItem>? DayStats { get => _explicitNullValueDayStats; set { _explicitNullValueDayStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day_stats"); else _explicitNullProperties?.Remove("day_stats"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStatsDayStatsItem>? DayStats { get => _explicitNullValueDayStats; set { _explicitNullValueDayStats = value; AdditionalData?.Remove("day_stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day_stats"); else _explicitNullProperties?.Remove("day_stats"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStatsDayStatsItem>? _explicitNullValueDayStats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStatsDayStatsItem> DayStats { get => _explicitNullValueDayStats; set { _explicitNullValueDayStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day_stats"); else _explicitNullProperties?.Remove("day_stats"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStatsDayStatsItem> DayStats { get => _explicitNullValueDayStats; set { _explicitNullValueDayStats = value; AdditionalData?.Remove("day_stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day_stats"); else _explicitNullProperties?.Remove("day_stats"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStatsDayStatsItem> _explicitNullValueDayStats = default!;
 #endif
         /// <summary>Total number of recordings during the range specified</summary>
-        public int? RecordingCount { get => _explicitNullValueRecordingCount; set { _explicitNullValueRecordingCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_count"); else _explicitNullProperties?.Remove("recording_count"); } }
+        public int? RecordingCount { get => _explicitNullValueRecordingCount; set { _explicitNullValueRecordingCount = value; AdditionalData?.Remove("recording_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_count"); else _explicitNullProperties?.Remove("recording_count"); } }
         private int? _explicitNullValueRecordingCount = default!;
         /// <summary>Total recording minutes during the range specified</summary>
-        public double? RecordingMinutesConsumed { get => _explicitNullValueRecordingMinutesConsumed; set { _explicitNullValueRecordingMinutesConsumed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_minutes_consumed"); else _explicitNullProperties?.Remove("recording_minutes_consumed"); } }
+        public double? RecordingMinutesConsumed { get => _explicitNullValueRecordingMinutesConsumed; set { _explicitNullValueRecordingMinutesConsumed = value; AdditionalData?.Remove("recording_minutes_consumed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_minutes_consumed"); else _explicitNullProperties?.Remove("recording_minutes_consumed"); } }
         private double? _explicitNullValueRecordingMinutesConsumed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStats"/> and sets the default values.

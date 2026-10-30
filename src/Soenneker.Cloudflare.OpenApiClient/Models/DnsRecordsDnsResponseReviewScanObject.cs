@@ -17,18 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accepts") is { } nullNodeAccepts && nullNodeAccepts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accepts = null;
-            if (parseNode.GetChildNode("rejects") is { } nullNodeRejects && nullNodeRejects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rejects = null;
+            if (parseNode.GetChildNode("accepts") is null) { _explicitNullValueAccepts = default!; _explicitNullProperties?.Remove("accepts"); }
+            else if (parseNode.GetChildNode("accepts") is { } nullNodeAccepts && nullNodeAccepts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accepts = null;
+            if (parseNode.GetChildNode("rejects") is null) { _explicitNullValueRejects = default!; _explicitNullProperties?.Remove("rejects"); }
+            else if (parseNode.GetChildNode("rejects") is { } nullNodeRejects && nullNodeRejects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rejects = null;
         }
 
         /// <summary>The accepts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse>? Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse>? Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; AdditionalData?.Remove("accepts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse>? _explicitNullValueAccepts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse> Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse> Accepts { get => _explicitNullValueAccepts; set { _explicitNullValueAccepts = value; AdditionalData?.Remove("accepts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accepts"); else _explicitNullProperties?.Remove("accepts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse> _explicitNullValueAccepts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rejects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
+        public List<string>? Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; AdditionalData?.Remove("rejects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
         private List<string>? _explicitNullValueRejects = default!;
 #nullable restore
 #else
-        public List<string> Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
+        public List<string> Rejects { get => _explicitNullValueRejects; set { _explicitNullValueRejects = value; AdditionalData?.Remove("rejects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejects"); else _explicitNullProperties?.Remove("rejects"); } }
         private List<string> _explicitNullValueRejects = default!;
 #endif
         /// <summary>

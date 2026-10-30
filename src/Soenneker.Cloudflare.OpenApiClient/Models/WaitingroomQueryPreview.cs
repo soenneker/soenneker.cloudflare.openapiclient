@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_html") is { } nullNodeCustomHtml && nullNodeCustomHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomHtml = null;
+            if (parseNode.GetChildNode("custom_html") is null) { _explicitNullValueCustomHtml = default!; _explicitNullProperties?.Remove("custom_html"); }
+            else if (parseNode.GetChildNode("custom_html") is { } nullNodeCustomHtml && nullNodeCustomHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomHtml = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Only available for the Waiting Room Advanced subscription. This is a template html file that will be rendered at the edge. If no custom_page_html is provided, the default waiting room will be used. The template is based on mustache ( https://mustache.github.io/ ). There are several variables that are evaluated by the Cloudflare edge:1. {{`waitTimeKnown`}} Acts like a boolean value that indicates the behavior to take when wait time is not available, for instance when queue_all is **true**.2. {{`waitTimeFormatted`}} Estimated wait time for the user. For example, five minutes. Alternatively, you can use:3. {{`waitTime`}} Number of minutes of estimated wait for a user.4. {{`waitTimeHours`}} Number of hours of estimated wait for a user (`Math.floor(waitTime/60)`).5. {{`waitTimeHourMinutes`}} Number of minutes above the `waitTimeHours` value (`waitTime%60`).6. {{`queueIsFull`}} Changes to **true** when no more people can be added to the queue.To view the full list of variables, look at the `cfWaitingRoom` object described under the `json_response_enabled` property in other Waiting Room API calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomHtml { get => _explicitNullValueCustomHtml; set { _explicitNullValueCustomHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_html"); else _explicitNullProperties?.Remove("custom_html"); } }
+        public string? CustomHtml { get => _explicitNullValueCustomHtml; set { _explicitNullValueCustomHtml = value; AdditionalData?.Remove("custom_html"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_html"); else _explicitNullProperties?.Remove("custom_html"); } }
         private string? _explicitNullValueCustomHtml = default!;
 #nullable restore
 #else
-        public string CustomHtml { get => _explicitNullValueCustomHtml; set { _explicitNullValueCustomHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_html"); else _explicitNullProperties?.Remove("custom_html"); } }
+        public string CustomHtml { get => _explicitNullValueCustomHtml; set { _explicitNullValueCustomHtml = value; AdditionalData?.Remove("custom_html"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_html"); else _explicitNullProperties?.Remove("custom_html"); } }
         private string _explicitNullValueCustomHtml = default!;
 #endif
         /// <summary>

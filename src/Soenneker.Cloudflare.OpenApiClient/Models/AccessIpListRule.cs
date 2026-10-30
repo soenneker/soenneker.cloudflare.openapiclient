@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ip_list") is { } nullNodeIpList && nullNodeIpList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpList = null;
+            if (parseNode.GetChildNode("ip_list") is null) { _explicitNullValueIpList = default!; _explicitNullProperties?.Remove("ip_list"); }
+            else if (parseNode.GetChildNode("ip_list") is { } nullNodeIpList && nullNodeIpList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpList = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ip_list property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRuleIpList? IpList { get => _explicitNullValueIpList; set { _explicitNullValueIpList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_list"); else _explicitNullProperties?.Remove("ip_list"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRuleIpList? IpList { get => _explicitNullValueIpList; set { _explicitNullValueIpList = value; AdditionalData?.Remove("ip_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_list"); else _explicitNullProperties?.Remove("ip_list"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRuleIpList? _explicitNullValueIpList = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRuleIpList IpList { get => _explicitNullValueIpList; set { _explicitNullValueIpList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_list"); else _explicitNullProperties?.Remove("ip_list"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRuleIpList IpList { get => _explicitNullValueIpList; set { _explicitNullValueIpList = value; AdditionalData?.Remove("ip_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_list"); else _explicitNullProperties?.Remove("ip_list"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRuleIpList _explicitNullValueIpList = default!;
 #endif
         /// <summary>

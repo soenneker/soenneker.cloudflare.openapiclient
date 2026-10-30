@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scans_enabled") is { } nullNodeScansEnabled && nullNodeScansEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScansEnabled = null;
+            if (parseNode.GetChildNode("scans_enabled") is null) { _explicitNullValueScansEnabled = default!; _explicitNullProperties?.Remove("scans_enabled"); }
+            else if (parseNode.GetChildNode("scans_enabled") is { } nullNodeScansEnabled && nullNodeScansEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScansEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable or disable scans for the account.</summary>
-        public bool? ScansEnabled { get => _explicitNullValueScansEnabled; set { _explicitNullValueScansEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scans_enabled"); else _explicitNullProperties?.Remove("scans_enabled"); } }
+        public bool? ScansEnabled { get => _explicitNullValueScansEnabled; set { _explicitNullValueScansEnabled = value; AdditionalData?.Remove("scans_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scans_enabled"); else _explicitNullProperties?.Remove("scans_enabled"); } }
         private bool? _explicitNullValueScansEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUpdateAccountStateRequest"/> and sets the default values.

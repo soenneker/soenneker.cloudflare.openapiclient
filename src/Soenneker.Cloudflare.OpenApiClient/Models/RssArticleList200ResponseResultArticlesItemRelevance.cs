@@ -18,27 +18,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
-            if (parseNode.GetChildNode("pir_id") is { } nullNodePirId && nullNodePirId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PirId = null;
-            if (parseNode.GetChildNode("pirs") is { } nullNodePirs && nullNodePirs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pirs = null;
+            if (parseNode.GetChildNode("band") is null) { _explicitNullValueBand = default!; _explicitNullProperties?.Remove("band"); }
+            else if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
+            if (parseNode.GetChildNode("pir_id") is null) { _explicitNullValuePirId = default!; _explicitNullProperties?.Remove("pir_id"); }
+            else if (parseNode.GetChildNode("pir_id") is { } nullNodePirId && nullNodePirId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PirId = null;
+            if (parseNode.GetChildNode("pirs") is null) { _explicitNullValuePirs = default!; _explicitNullProperties?.Remove("pirs"); }
+            else if (parseNode.GetChildNode("pirs") is { } nullNodePirs && nullNodePirs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pirs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Beta. How relevant the article is to a Priority Intelligence Requirement: high, medium, or low. Cloudflare may change the scores behind each band as relevance scoring is calibrated.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand? Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand? Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; AdditionalData?.Remove("band"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand? _explicitNullValueBand = default!;
         /// <summary>Beta. The pir_id requested from the article list, or otherwise the account&apos;s most relevant active PIR for this article.</summary>
-        public Guid? PirId { get => _explicitNullValuePirId; set { _explicitNullValuePirId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pir_id"); else _explicitNullProperties?.Remove("pir_id"); } }
+        public Guid? PirId { get => _explicitNullValuePirId; set { _explicitNullValuePirId = value; AdditionalData?.Remove("pir_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pir_id"); else _explicitNullProperties?.Remove("pir_id"); } }
         private Guid? _explicitNullValuePirId = default!;
         /// <summary>Beta. Every active PIR the article was scored against, most relevant first. Draft and deleted PIRs are excluded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>? Pirs { get => _explicitNullValuePirs; set { _explicitNullValuePirs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pirs"); else _explicitNullProperties?.Remove("pirs"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>? Pirs { get => _explicitNullValuePirs; set { _explicitNullValuePirs = value; AdditionalData?.Remove("pirs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pirs"); else _explicitNullProperties?.Remove("pirs"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>? _explicitNullValuePirs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem> Pirs { get => _explicitNullValuePirs; set { _explicitNullValuePirs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pirs"); else _explicitNullProperties?.Remove("pirs"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem> Pirs { get => _explicitNullValuePirs; set { _explicitNullValuePirs = value; AdditionalData?.Remove("pirs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pirs"); else _explicitNullProperties?.Remove("pirs"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem> _explicitNullValuePirs = default!;
 #endif
         /// <summary>
@@ -68,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "band", n => { Band = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand>(); } },
+                { "band", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevanceBand>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBand = default; _explicitNullProperties?.Remove("band"); AdditionalData["band"] = unknown; } else { Band = parsed; AdditionalData.Remove("band"); } } },
                 { "pir_id", n => { PirId = n.GetGuidValue(); } },
                 { "pirs", n => { Pirs = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };

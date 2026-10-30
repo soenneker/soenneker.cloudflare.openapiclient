@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email_list") is { } nullNodeEmailList && nullNodeEmailList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailList = null;
+            if (parseNode.GetChildNode("email_list") is null) { _explicitNullValueEmailList = default!; _explicitNullProperties?.Remove("email_list"); }
+            else if (parseNode.GetChildNode("email_list") is { } nullNodeEmailList && nullNodeEmailList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailList = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The email_list property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRuleEmailList? EmailList { get => _explicitNullValueEmailList; set { _explicitNullValueEmailList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_list"); else _explicitNullProperties?.Remove("email_list"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRuleEmailList? EmailList { get => _explicitNullValueEmailList; set { _explicitNullValueEmailList = value; AdditionalData?.Remove("email_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_list"); else _explicitNullProperties?.Remove("email_list"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRuleEmailList? _explicitNullValueEmailList = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRuleEmailList EmailList { get => _explicitNullValueEmailList; set { _explicitNullValueEmailList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_list"); else _explicitNullProperties?.Remove("email_list"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRuleEmailList EmailList { get => _explicitNullValueEmailList; set { _explicitNullValueEmailList = value; AdditionalData?.Remove("email_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_list"); else _explicitNullProperties?.Remove("email_list"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRuleEmailList _explicitNullValueEmailList = default!;
 #endif
         /// <summary>

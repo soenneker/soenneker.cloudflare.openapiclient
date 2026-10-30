@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("automatic_advertisement") is { } nullNodeAutomaticAdvertisement && nullNodeAutomaticAdvertisement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticAdvertisement = null;
+            if (parseNode.GetChildNode("automatic_advertisement") is null) { _explicitNullValueAutomaticAdvertisement = default!; _explicitNullProperties?.Remove("automatic_advertisement"); }
+            else if (parseNode.GetChildNode("automatic_advertisement") is { } nullNodeAutomaticAdvertisement && nullNodeAutomaticAdvertisement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticAdvertisement = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.</summary>
-        public bool? AutomaticAdvertisement { get => _explicitNullValueAutomaticAdvertisement; set { _explicitNullValueAutomaticAdvertisement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_advertisement"); else _explicitNullProperties?.Remove("automatic_advertisement"); } }
+        public bool? AutomaticAdvertisement { get => _explicitNullValueAutomaticAdvertisement; set { _explicitNullValueAutomaticAdvertisement = value; AdditionalData?.Remove("automatic_advertisement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_advertisement"); else _explicitNullProperties?.Remove("automatic_advertisement"); } }
         private bool? _explicitNullValueAutomaticAdvertisement = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNetworkMonitoringRulesUpdateAdvertisementForRule4XxResponseResult"/> and sets the default values.

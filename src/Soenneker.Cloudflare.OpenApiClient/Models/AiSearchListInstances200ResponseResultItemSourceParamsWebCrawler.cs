@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("discover_options") is { } nullNodeDiscoverOptions && nullNodeDiscoverOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscoverOptions = null;
-            if (parseNode.GetChildNode("parse_options") is { } nullNodeParseOptions && nullNodeParseOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParseOptions = null;
-            if (parseNode.GetChildNode("parse_type") is { } nullNodeParseType && nullNodeParseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParseType = null;
+            if (parseNode.GetChildNode("discover_options") is null) { _explicitNullValueDiscoverOptions = default!; _explicitNullProperties?.Remove("discover_options"); }
+            else if (parseNode.GetChildNode("discover_options") is { } nullNodeDiscoverOptions && nullNodeDiscoverOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscoverOptions = null;
+            if (parseNode.GetChildNode("parse_options") is null) { _explicitNullValueParseOptions = default!; _explicitNullProperties?.Remove("parse_options"); }
+            else if (parseNode.GetChildNode("parse_options") is { } nullNodeParseOptions && nullNodeParseOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParseOptions = null;
+            if (parseNode.GetChildNode("parse_type") is null) { _explicitNullValueParseType = default!; _explicitNullProperties?.Remove("parse_type"); }
+            else if (parseNode.GetChildNode("parse_type") is { } nullNodeParseType && nullNodeParseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParseType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The discover_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions? DiscoverOptions { get => _explicitNullValueDiscoverOptions; set { _explicitNullValueDiscoverOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discover_options"); else _explicitNullProperties?.Remove("discover_options"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions? DiscoverOptions { get => _explicitNullValueDiscoverOptions; set { _explicitNullValueDiscoverOptions = value; AdditionalData?.Remove("discover_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discover_options"); else _explicitNullProperties?.Remove("discover_options"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions? _explicitNullValueDiscoverOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions DiscoverOptions { get => _explicitNullValueDiscoverOptions; set { _explicitNullValueDiscoverOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discover_options"); else _explicitNullProperties?.Remove("discover_options"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions DiscoverOptions { get => _explicitNullValueDiscoverOptions; set { _explicitNullValueDiscoverOptions = value; AdditionalData?.Remove("discover_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discover_options"); else _explicitNullProperties?.Remove("discover_options"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions _explicitNullValueDiscoverOptions = default!;
 #endif
         /// <summary>The parse_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions? ParseOptions { get => _explicitNullValueParseOptions; set { _explicitNullValueParseOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parse_options"); else _explicitNullProperties?.Remove("parse_options"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions? ParseOptions { get => _explicitNullValueParseOptions; set { _explicitNullValueParseOptions = value; AdditionalData?.Remove("parse_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parse_options"); else _explicitNullProperties?.Remove("parse_options"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions? _explicitNullValueParseOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions ParseOptions { get => _explicitNullValueParseOptions; set { _explicitNullValueParseOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parse_options"); else _explicitNullProperties?.Remove("parse_options"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions ParseOptions { get => _explicitNullValueParseOptions; set { _explicitNullValueParseOptions = value; AdditionalData?.Remove("parse_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parse_options"); else _explicitNullProperties?.Remove("parse_options"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions _explicitNullValueParseOptions = default!;
 #endif
         /// <summary>The parse_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseType? ParseType { get => _explicitNullValueParseType; set { _explicitNullValueParseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parse_type"); else _explicitNullProperties?.Remove("parse_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseType? ParseType { get => _explicitNullValueParseType; set { _explicitNullValueParseType = value; AdditionalData?.Remove("parse_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parse_type"); else _explicitNullProperties?.Remove("parse_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseType? _explicitNullValueParseType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawler"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "discover_options", n => { DiscoverOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptions.CreateFromDiscriminatorValue); } },
                 { "parse_options", n => { ParseOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions.CreateFromDiscriminatorValue); } },
-                { "parse_type", n => { ParseType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseType>(); } },
+                { "parse_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueParseType = default; _explicitNullProperties?.Remove("parse_type"); AdditionalData["parse_type"] = unknown; } else { ParseType = parsed; AdditionalData.Remove("parse_type"); } } },
             };
         }
         /// <summary>

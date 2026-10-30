@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("letters") is { } nullNodeLetters && nullNodeLetters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Letters = null;
+            if (parseNode.GetChildNode("letters") is null) { _explicitNullValueLetters = default!; _explicitNullProperties?.Remove("letters"); }
+            else if (parseNode.GetChildNode("letters") is { } nullNodeLetters && nullNodeLetters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Letters = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The letters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownLetterList200ResponseLettersItem>? Letters { get => _explicitNullValueLetters; set { _explicitNullValueLetters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("letters"); else _explicitNullProperties?.Remove("letters"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownLetterList200ResponseLettersItem>? Letters { get => _explicitNullValueLetters; set { _explicitNullValueLetters = value; AdditionalData?.Remove("letters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("letters"); else _explicitNullProperties?.Remove("letters"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownLetterList200ResponseLettersItem>? _explicitNullValueLetters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownLetterList200ResponseLettersItem> Letters { get => _explicitNullValueLetters; set { _explicitNullValueLetters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("letters"); else _explicitNullProperties?.Remove("letters"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownLetterList200ResponseLettersItem> Letters { get => _explicitNullValueLetters; set { _explicitNullValueLetters = value; AdditionalData?.Remove("letters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("letters"); else _explicitNullProperties?.Remove("letters"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownLetterList200ResponseLettersItem> _explicitNullValueLetters = default!;
 #endif
         /// <summary>

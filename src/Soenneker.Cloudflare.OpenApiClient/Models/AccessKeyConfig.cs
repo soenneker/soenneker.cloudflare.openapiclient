@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("key_rotation_interval_days") is { } nullNodeKeyRotationIntervalDays && nullNodeKeyRotationIntervalDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyRotationIntervalDays = null;
-            if (parseNode.GetChildNode("last_key_rotation_at") is { } nullNodeLastKeyRotationAt && nullNodeLastKeyRotationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastKeyRotationAt = null;
+            if (parseNode.GetChildNode("key_rotation_interval_days") is null) { _explicitNullValueKeyRotationIntervalDays = default!; _explicitNullProperties?.Remove("key_rotation_interval_days"); }
+            else if (parseNode.GetChildNode("key_rotation_interval_days") is { } nullNodeKeyRotationIntervalDays && nullNodeKeyRotationIntervalDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyRotationIntervalDays = null;
+            if (parseNode.GetChildNode("last_key_rotation_at") is null) { _explicitNullValueLastKeyRotationAt = default!; _explicitNullProperties?.Remove("last_key_rotation_at"); }
+            else if (parseNode.GetChildNode("last_key_rotation_at") is { } nullNodeLastKeyRotationAt && nullNodeLastKeyRotationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastKeyRotationAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,10 +28,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The number of days until the next key rotation.</summary>
         public double? DaysUntilNextRotation { get; private set; }
         /// <summary>The number of days between key rotations.</summary>
-        public double? KeyRotationIntervalDays { get => _explicitNullValueKeyRotationIntervalDays; set { _explicitNullValueKeyRotationIntervalDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_rotation_interval_days"); else _explicitNullProperties?.Remove("key_rotation_interval_days"); } }
+        public double? KeyRotationIntervalDays { get => _explicitNullValueKeyRotationIntervalDays; set { _explicitNullValueKeyRotationIntervalDays = value; AdditionalData?.Remove("key_rotation_interval_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_rotation_interval_days"); else _explicitNullProperties?.Remove("key_rotation_interval_days"); } }
         private double? _explicitNullValueKeyRotationIntervalDays = default!;
         /// <summary>The timestamp of the previous key rotation.</summary>
-        public DateTimeOffset? LastKeyRotationAt { get => _explicitNullValueLastKeyRotationAt; set { _explicitNullValueLastKeyRotationAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_key_rotation_at"); else _explicitNullProperties?.Remove("last_key_rotation_at"); } }
+        public DateTimeOffset? LastKeyRotationAt { get => _explicitNullValueLastKeyRotationAt; set { _explicitNullValueLastKeyRotationAt = value; AdditionalData?.Remove("last_key_rotation_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_key_rotation_at"); else _explicitNullProperties?.Remove("last_key_rotation_at"); } }
         private DateTimeOffset? _explicitNullValueLastKeyRotationAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessKeyConfig"/> and sets the default values.

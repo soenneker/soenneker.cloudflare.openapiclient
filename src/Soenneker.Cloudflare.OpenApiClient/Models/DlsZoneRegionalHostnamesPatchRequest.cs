@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("region_key") is { } nullNodeRegionKey && nullNodeRegionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionKey = null;
+            if (parseNode.GetChildNode("region_key") is null) { _explicitNullValueRegionKey = default!; _explicitNullProperties?.Remove("region_key"); }
+            else if (parseNode.GetChildNode("region_key") is { } nullNodeRegionKey && nullNodeRegionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifying key for the region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
+        public string? RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; AdditionalData?.Remove("region_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
         private string? _explicitNullValueRegionKey = default!;
 #nullable restore
 #else
-        public string RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
+        public string RegionKey { get => _explicitNullValueRegionKey; set { _explicitNullValueRegionKey = value; AdditionalData?.Remove("region_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_key"); else _explicitNullProperties?.Remove("region_key"); } }
         private string _explicitNullValueRegionKey = default!;
 #endif
         /// <summary>

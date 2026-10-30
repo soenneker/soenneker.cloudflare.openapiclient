@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("webhook_config_id") is { } nullNodeWebhookConfigId && nullNodeWebhookConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookConfigId = null;
+            if (parseNode.GetChildNode("webhook_config_id") is null) { _explicitNullValueWebhookConfigId = default!; _explicitNullProperties?.Remove("webhook_config_id"); }
+            else if (parseNode.GetChildNode("webhook_config_id") is { } nullNodeWebhookConfigId && nullNodeWebhookConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookConfigId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the webhook configuration to use.</summary>
-        public Guid? WebhookConfigId { get => _explicitNullValueWebhookConfigId; set { _explicitNullValueWebhookConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_config_id"); else _explicitNullProperties?.Remove("webhook_config_id"); } }
+        public Guid? WebhookConfigId { get => _explicitNullValueWebhookConfigId; set { _explicitNullValueWebhookConfigId = value; AdditionalData?.Remove("webhook_config_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_config_id"); else _explicitNullProperties?.Remove("webhook_config_id"); } }
         private Guid? _explicitNullValueWebhookConfigId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyWebhookActionInput"/> and sets the default values.

@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("total_queries") is { } nullNodeTotalQueries && nullNodeTotalQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalQueries = null;
+            if (parseNode.GetChildNode("total_queries") is null) { _explicitNullValueTotalQueries = default!; _explicitNullProperties?.Remove("total_queries"); }
+            else if (parseNode.GetChildNode("total_queries") is { } nullNodeTotalQueries && nullNodeTotalQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalQueries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total_queries property</summary>
-        public int? TotalQueries { get => _explicitNullValueTotalQueries; set { _explicitNullValueTotalQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_queries"); else _explicitNullProperties?.Remove("total_queries"); } }
+        public int? TotalQueries { get => _explicitNullValueTotalQueries; set { _explicitNullValueTotalQueries = value; AdditionalData?.Remove("total_queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_queries"); else _explicitNullProperties?.Remove("total_queries"); } }
         private int? _explicitNullValueTotalQueries = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetTotalQueries200ResponseSchemaItem"/> and sets the default values.

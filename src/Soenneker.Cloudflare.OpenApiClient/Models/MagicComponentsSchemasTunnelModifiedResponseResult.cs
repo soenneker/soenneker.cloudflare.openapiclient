@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
-            if (parseNode.GetChildNode("modified_interconnect") is { } nullNodeModifiedInterconnect && nullNodeModifiedInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedInterconnect = null;
+            if (parseNode.GetChildNode("modified") is null) { _explicitNullValueModified = default!; _explicitNullProperties?.Remove("modified"); }
+            else if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("modified_interconnect") is null) { _explicitNullValueModifiedInterconnect = default!; _explicitNullProperties?.Remove("modified_interconnect"); }
+            else if (parseNode.GetChildNode("modified_interconnect") is { } nullNodeModifiedInterconnect && nullNodeModifiedInterconnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedInterconnect = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The modified property</summary>
-        public bool? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public bool? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private bool? _explicitNullValueModified = default!;
         /// <summary>The modified_interconnect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect? ModifiedInterconnect { get => _explicitNullValueModifiedInterconnect; set { _explicitNullValueModifiedInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_interconnect"); else _explicitNullProperties?.Remove("modified_interconnect"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect? ModifiedInterconnect { get => _explicitNullValueModifiedInterconnect; set { _explicitNullValueModifiedInterconnect = value; AdditionalData?.Remove("modified_interconnect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_interconnect"); else _explicitNullProperties?.Remove("modified_interconnect"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect? _explicitNullValueModifiedInterconnect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect ModifiedInterconnect { get => _explicitNullValueModifiedInterconnect; set { _explicitNullValueModifiedInterconnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_interconnect"); else _explicitNullProperties?.Remove("modified_interconnect"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect ModifiedInterconnect { get => _explicitNullValueModifiedInterconnect; set { _explicitNullValueModifiedInterconnect = value; AdditionalData?.Remove("modified_interconnect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_interconnect"); else _explicitNullProperties?.Remove("modified_interconnect"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnect _explicitNullValueModifiedInterconnect = default!;
 #endif
         /// <summary>

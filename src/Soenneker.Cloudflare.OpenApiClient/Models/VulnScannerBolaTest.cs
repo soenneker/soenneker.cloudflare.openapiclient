@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("preflight_errors") is { } nullNodePreflightErrors && nullNodePreflightErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreflightErrors = null;
-            if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
-            if (parseNode.GetChildNode("verdict") is { } nullNodeVerdict && nullNodeVerdict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verdict = null;
+            if (parseNode.GetChildNode("preflight_errors") is null) { _explicitNullValuePreflightErrors = default!; _explicitNullProperties?.Remove("preflight_errors"); }
+            else if (parseNode.GetChildNode("preflight_errors") is { } nullNodePreflightErrors && nullNodePreflightErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreflightErrors = null;
+            if (parseNode.GetChildNode("steps") is null) { _explicitNullValueSteps = default!; _explicitNullProperties?.Remove("steps"); }
+            else if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
+            if (parseNode.GetChildNode("verdict") is null) { _explicitNullValueVerdict = default!; _explicitNullProperties?.Remove("verdict"); }
+            else if (parseNode.GetChildNode("verdict") is { } nullNodeVerdict && nullNodeVerdict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verdict = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Errors that prevented step execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>? PreflightErrors { get => _explicitNullValuePreflightErrors; set { _explicitNullValuePreflightErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preflight_errors"); else _explicitNullProperties?.Remove("preflight_errors"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>? PreflightErrors { get => _explicitNullValuePreflightErrors; set { _explicitNullValuePreflightErrors = value; AdditionalData?.Remove("preflight_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preflight_errors"); else _explicitNullProperties?.Remove("preflight_errors"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>? _explicitNullValuePreflightErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError> PreflightErrors { get => _explicitNullValuePreflightErrors; set { _explicitNullValuePreflightErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preflight_errors"); else _explicitNullProperties?.Remove("preflight_errors"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError> PreflightErrors { get => _explicitNullValuePreflightErrors; set { _explicitNullValuePreflightErrors = value; AdditionalData?.Remove("preflight_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preflight_errors"); else _explicitNullProperties?.Remove("preflight_errors"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError> _explicitNullValuePreflightErrors = default!;
 #endif
         /// <summary>Steps that were executed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; AdditionalData?.Remove("steps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep>? _explicitNullValueSteps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; AdditionalData?.Remove("steps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep> _explicitNullValueSteps = default!;
 #endif
         /// <summary>A verdict. `ok` means the scan passed, `warning` means the scan detected issues, `inconclusive` means errors prevented the scanner from reaching an accurate verdict.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict? Verdict { get => _explicitNullValueVerdict; set { _explicitNullValueVerdict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verdict"); else _explicitNullProperties?.Remove("verdict"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict? Verdict { get => _explicitNullValueVerdict; set { _explicitNullValueVerdict = value; AdditionalData?.Remove("verdict"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verdict"); else _explicitNullProperties?.Remove("verdict"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict? _explicitNullValueVerdict = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTest"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "preflight_errors", n => { PreflightErrors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "verdict", n => { Verdict = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict>(); } },
+                { "verdict", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVerdict = default; _explicitNullProperties?.Remove("verdict"); AdditionalData["verdict"] = unknown; } else { Verdict = parsed; AdditionalData.Remove("verdict"); } } },
             };
         }
         /// <summary>

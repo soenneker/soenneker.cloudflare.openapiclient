@@ -18,19 +18,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("immutable") is { } nullNodeImmutable && nullNodeImmutable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Immutable = null;
-            if (parseNode.GetChildNode("max-age") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
-            if (parseNode.GetChildNode("must-revalidate") is { } nullNodeMustRevalidate && nullNodeMustRevalidate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MustRevalidate = null;
-            if (parseNode.GetChildNode("must-understand") is { } nullNodeMustUnderstand && nullNodeMustUnderstand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MustUnderstand = null;
-            if (parseNode.GetChildNode("no-cache") is { } nullNodeNoCache && nullNodeNoCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoCache = null;
-            if (parseNode.GetChildNode("no-store") is { } nullNodeNoStore && nullNodeNoStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoStore = null;
-            if (parseNode.GetChildNode("no-transform") is { } nullNodeNoTransform && nullNodeNoTransform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoTransform = null;
-            if (parseNode.GetChildNode("private") is { } nullNodePrivate && nullNodePrivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Private = null;
-            if (parseNode.GetChildNode("proxy-revalidate") is { } nullNodeProxyRevalidate && nullNodeProxyRevalidate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyRevalidate = null;
-            if (parseNode.GetChildNode("public") is { } nullNodePublic && nullNodePublic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Public = null;
-            if (parseNode.GetChildNode("s-maxage") is { } nullNodeSMaxage && nullNodeSMaxage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SMaxage = null;
-            if (parseNode.GetChildNode("stale-if-error") is { } nullNodeStaleIfError && nullNodeStaleIfError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaleIfError = null;
-            if (parseNode.GetChildNode("stale-while-revalidate") is { } nullNodeStaleWhileRevalidate && nullNodeStaleWhileRevalidate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaleWhileRevalidate = null;
+            if (parseNode.GetChildNode("immutable") is null) { _explicitNullValueImmutable = default!; _explicitNullProperties?.Remove("immutable"); }
+            else if (parseNode.GetChildNode("immutable") is { } nullNodeImmutable && nullNodeImmutable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Immutable = null;
+            if (parseNode.GetChildNode("max-age") is null) { _explicitNullValueMaxAge = default!; _explicitNullProperties?.Remove("max-age"); }
+            else if (parseNode.GetChildNode("max-age") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
+            if (parseNode.GetChildNode("must-revalidate") is null) { _explicitNullValueMustRevalidate = default!; _explicitNullProperties?.Remove("must-revalidate"); }
+            else if (parseNode.GetChildNode("must-revalidate") is { } nullNodeMustRevalidate && nullNodeMustRevalidate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MustRevalidate = null;
+            if (parseNode.GetChildNode("must-understand") is null) { _explicitNullValueMustUnderstand = default!; _explicitNullProperties?.Remove("must-understand"); }
+            else if (parseNode.GetChildNode("must-understand") is { } nullNodeMustUnderstand && nullNodeMustUnderstand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MustUnderstand = null;
+            if (parseNode.GetChildNode("no-cache") is null) { _explicitNullValueNoCache = default!; _explicitNullProperties?.Remove("no-cache"); }
+            else if (parseNode.GetChildNode("no-cache") is { } nullNodeNoCache && nullNodeNoCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoCache = null;
+            if (parseNode.GetChildNode("no-store") is null) { _explicitNullValueNoStore = default!; _explicitNullProperties?.Remove("no-store"); }
+            else if (parseNode.GetChildNode("no-store") is { } nullNodeNoStore && nullNodeNoStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoStore = null;
+            if (parseNode.GetChildNode("no-transform") is null) { _explicitNullValueNoTransform = default!; _explicitNullProperties?.Remove("no-transform"); }
+            else if (parseNode.GetChildNode("no-transform") is { } nullNodeNoTransform && nullNodeNoTransform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoTransform = null;
+            if (parseNode.GetChildNode("private") is null) { _explicitNullValuePrivate = default!; _explicitNullProperties?.Remove("private"); }
+            else if (parseNode.GetChildNode("private") is { } nullNodePrivate && nullNodePrivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Private = null;
+            if (parseNode.GetChildNode("proxy-revalidate") is null) { _explicitNullValueProxyRevalidate = default!; _explicitNullProperties?.Remove("proxy-revalidate"); }
+            else if (parseNode.GetChildNode("proxy-revalidate") is { } nullNodeProxyRevalidate && nullNodeProxyRevalidate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyRevalidate = null;
+            if (parseNode.GetChildNode("public") is null) { _explicitNullValuePublic = default!; _explicitNullProperties?.Remove("public"); }
+            else if (parseNode.GetChildNode("public") is { } nullNodePublic && nullNodePublic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Public = null;
+            if (parseNode.GetChildNode("s-maxage") is null) { _explicitNullValueSMaxage = default!; _explicitNullProperties?.Remove("s-maxage"); }
+            else if (parseNode.GetChildNode("s-maxage") is { } nullNodeSMaxage && nullNodeSMaxage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SMaxage = null;
+            if (parseNode.GetChildNode("stale-if-error") is null) { _explicitNullValueStaleIfError = default!; _explicitNullProperties?.Remove("stale-if-error"); }
+            else if (parseNode.GetChildNode("stale-if-error") is { } nullNodeStaleIfError && nullNodeStaleIfError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaleIfError = null;
+            if (parseNode.GetChildNode("stale-while-revalidate") is null) { _explicitNullValueStaleWhileRevalidate = default!; _explicitNullProperties?.Remove("stale-while-revalidate"); }
+            else if (parseNode.GetChildNode("stale-while-revalidate") is { } nullNodeStaleWhileRevalidate && nullNodeStaleWhileRevalidate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaleWhileRevalidate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,131 +51,131 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A cache-control directive configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? Immutable { get => _explicitNullValueImmutable; set { _explicitNullValueImmutable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("immutable"); else _explicitNullProperties?.Remove("immutable"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? Immutable { get => _explicitNullValueImmutable; set { _explicitNullValueImmutable = value; AdditionalData?.Remove("immutable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("immutable"); else _explicitNullProperties?.Remove("immutable"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? _explicitNullValueImmutable = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective Immutable { get => _explicitNullValueImmutable; set { _explicitNullValueImmutable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("immutable"); else _explicitNullProperties?.Remove("immutable"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective Immutable { get => _explicitNullValueImmutable; set { _explicitNullValueImmutable = value; AdditionalData?.Remove("immutable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("immutable"); else _explicitNullProperties?.Remove("immutable"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective _explicitNullValueImmutable = default!;
 #endif
         /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max-age"); else _explicitNullProperties?.Remove("max-age"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; AdditionalData?.Remove("max-age"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max-age"); else _explicitNullProperties?.Remove("max-age"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? _explicitNullValueMaxAge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max-age"); else _explicitNullProperties?.Remove("max-age"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; AdditionalData?.Remove("max-age"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max-age"); else _explicitNullProperties?.Remove("max-age"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue _explicitNullValueMaxAge = default!;
 #endif
         /// <summary>A cache-control directive configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? MustRevalidate { get => _explicitNullValueMustRevalidate; set { _explicitNullValueMustRevalidate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-revalidate"); else _explicitNullProperties?.Remove("must-revalidate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? MustRevalidate { get => _explicitNullValueMustRevalidate; set { _explicitNullValueMustRevalidate = value; AdditionalData?.Remove("must-revalidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-revalidate"); else _explicitNullProperties?.Remove("must-revalidate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? _explicitNullValueMustRevalidate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective MustRevalidate { get => _explicitNullValueMustRevalidate; set { _explicitNullValueMustRevalidate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-revalidate"); else _explicitNullProperties?.Remove("must-revalidate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective MustRevalidate { get => _explicitNullValueMustRevalidate; set { _explicitNullValueMustRevalidate = value; AdditionalData?.Remove("must-revalidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-revalidate"); else _explicitNullProperties?.Remove("must-revalidate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective _explicitNullValueMustRevalidate = default!;
 #endif
         /// <summary>A cache-control directive configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? MustUnderstand { get => _explicitNullValueMustUnderstand; set { _explicitNullValueMustUnderstand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-understand"); else _explicitNullProperties?.Remove("must-understand"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? MustUnderstand { get => _explicitNullValueMustUnderstand; set { _explicitNullValueMustUnderstand = value; AdditionalData?.Remove("must-understand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-understand"); else _explicitNullProperties?.Remove("must-understand"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? _explicitNullValueMustUnderstand = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective MustUnderstand { get => _explicitNullValueMustUnderstand; set { _explicitNullValueMustUnderstand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-understand"); else _explicitNullProperties?.Remove("must-understand"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective MustUnderstand { get => _explicitNullValueMustUnderstand; set { _explicitNullValueMustUnderstand = value; AdditionalData?.Remove("must-understand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must-understand"); else _explicitNullProperties?.Remove("must-understand"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective _explicitNullValueMustUnderstand = default!;
 #endif
         /// <summary>A cache-control directive configuration that accepts optional qualifiers (header names).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? NoCache { get => _explicitNullValueNoCache; set { _explicitNullValueNoCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-cache"); else _explicitNullProperties?.Remove("no-cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? NoCache { get => _explicitNullValueNoCache; set { _explicitNullValueNoCache = value; AdditionalData?.Remove("no-cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-cache"); else _explicitNullProperties?.Remove("no-cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? _explicitNullValueNoCache = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers NoCache { get => _explicitNullValueNoCache; set { _explicitNullValueNoCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-cache"); else _explicitNullProperties?.Remove("no-cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers NoCache { get => _explicitNullValueNoCache; set { _explicitNullValueNoCache = value; AdditionalData?.Remove("no-cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-cache"); else _explicitNullProperties?.Remove("no-cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers _explicitNullValueNoCache = default!;
 #endif
         /// <summary>A cache-control directive configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? NoStore { get => _explicitNullValueNoStore; set { _explicitNullValueNoStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-store"); else _explicitNullProperties?.Remove("no-store"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? NoStore { get => _explicitNullValueNoStore; set { _explicitNullValueNoStore = value; AdditionalData?.Remove("no-store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-store"); else _explicitNullProperties?.Remove("no-store"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? _explicitNullValueNoStore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective NoStore { get => _explicitNullValueNoStore; set { _explicitNullValueNoStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-store"); else _explicitNullProperties?.Remove("no-store"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective NoStore { get => _explicitNullValueNoStore; set { _explicitNullValueNoStore = value; AdditionalData?.Remove("no-store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-store"); else _explicitNullProperties?.Remove("no-store"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective _explicitNullValueNoStore = default!;
 #endif
         /// <summary>A cache-control directive configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? NoTransform { get => _explicitNullValueNoTransform; set { _explicitNullValueNoTransform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-transform"); else _explicitNullProperties?.Remove("no-transform"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? NoTransform { get => _explicitNullValueNoTransform; set { _explicitNullValueNoTransform = value; AdditionalData?.Remove("no-transform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-transform"); else _explicitNullProperties?.Remove("no-transform"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? _explicitNullValueNoTransform = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective NoTransform { get => _explicitNullValueNoTransform; set { _explicitNullValueNoTransform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-transform"); else _explicitNullProperties?.Remove("no-transform"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective NoTransform { get => _explicitNullValueNoTransform; set { _explicitNullValueNoTransform = value; AdditionalData?.Remove("no-transform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no-transform"); else _explicitNullProperties?.Remove("no-transform"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective _explicitNullValueNoTransform = default!;
 #endif
         /// <summary>A cache-control directive configuration that accepts optional qualifiers (header names).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? Private { get => _explicitNullValuePrivate; set { _explicitNullValuePrivate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private"); else _explicitNullProperties?.Remove("private"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? Private { get => _explicitNullValuePrivate; set { _explicitNullValuePrivate = value; AdditionalData?.Remove("private"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private"); else _explicitNullProperties?.Remove("private"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? _explicitNullValuePrivate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers Private { get => _explicitNullValuePrivate; set { _explicitNullValuePrivate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private"); else _explicitNullProperties?.Remove("private"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers Private { get => _explicitNullValuePrivate; set { _explicitNullValuePrivate = value; AdditionalData?.Remove("private"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private"); else _explicitNullProperties?.Remove("private"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers _explicitNullValuePrivate = default!;
 #endif
         /// <summary>A cache-control directive configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? ProxyRevalidate { get => _explicitNullValueProxyRevalidate; set { _explicitNullValueProxyRevalidate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy-revalidate"); else _explicitNullProperties?.Remove("proxy-revalidate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? ProxyRevalidate { get => _explicitNullValueProxyRevalidate; set { _explicitNullValueProxyRevalidate = value; AdditionalData?.Remove("proxy-revalidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy-revalidate"); else _explicitNullProperties?.Remove("proxy-revalidate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? _explicitNullValueProxyRevalidate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective ProxyRevalidate { get => _explicitNullValueProxyRevalidate; set { _explicitNullValueProxyRevalidate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy-revalidate"); else _explicitNullProperties?.Remove("proxy-revalidate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective ProxyRevalidate { get => _explicitNullValueProxyRevalidate; set { _explicitNullValueProxyRevalidate = value; AdditionalData?.Remove("proxy-revalidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy-revalidate"); else _explicitNullProperties?.Remove("proxy-revalidate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective _explicitNullValueProxyRevalidate = default!;
 #endif
         /// <summary>A cache-control directive configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; AdditionalData?.Remove("public"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? _explicitNullValuePublic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; AdditionalData?.Remove("public"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective _explicitNullValuePublic = default!;
 #endif
         /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? SMaxage { get => _explicitNullValueSMaxage; set { _explicitNullValueSMaxage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s-maxage"); else _explicitNullProperties?.Remove("s-maxage"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? SMaxage { get => _explicitNullValueSMaxage; set { _explicitNullValueSMaxage = value; AdditionalData?.Remove("s-maxage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s-maxage"); else _explicitNullProperties?.Remove("s-maxage"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? _explicitNullValueSMaxage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue SMaxage { get => _explicitNullValueSMaxage; set { _explicitNullValueSMaxage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s-maxage"); else _explicitNullProperties?.Remove("s-maxage"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue SMaxage { get => _explicitNullValueSMaxage; set { _explicitNullValueSMaxage = value; AdditionalData?.Remove("s-maxage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s-maxage"); else _explicitNullProperties?.Remove("s-maxage"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue _explicitNullValueSMaxage = default!;
 #endif
         /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? StaleIfError { get => _explicitNullValueStaleIfError; set { _explicitNullValueStaleIfError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-if-error"); else _explicitNullProperties?.Remove("stale-if-error"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? StaleIfError { get => _explicitNullValueStaleIfError; set { _explicitNullValueStaleIfError = value; AdditionalData?.Remove("stale-if-error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-if-error"); else _explicitNullProperties?.Remove("stale-if-error"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? _explicitNullValueStaleIfError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue StaleIfError { get => _explicitNullValueStaleIfError; set { _explicitNullValueStaleIfError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-if-error"); else _explicitNullProperties?.Remove("stale-if-error"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue StaleIfError { get => _explicitNullValueStaleIfError; set { _explicitNullValueStaleIfError = value; AdditionalData?.Remove("stale-if-error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-if-error"); else _explicitNullProperties?.Remove("stale-if-error"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue _explicitNullValueStaleIfError = default!;
 #endif
         /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? StaleWhileRevalidate { get => _explicitNullValueStaleWhileRevalidate; set { _explicitNullValueStaleWhileRevalidate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-while-revalidate"); else _explicitNullProperties?.Remove("stale-while-revalidate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? StaleWhileRevalidate { get => _explicitNullValueStaleWhileRevalidate; set { _explicitNullValueStaleWhileRevalidate = value; AdditionalData?.Remove("stale-while-revalidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-while-revalidate"); else _explicitNullProperties?.Remove("stale-while-revalidate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? _explicitNullValueStaleWhileRevalidate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue StaleWhileRevalidate { get => _explicitNullValueStaleWhileRevalidate; set { _explicitNullValueStaleWhileRevalidate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-while-revalidate"); else _explicitNullProperties?.Remove("stale-while-revalidate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue StaleWhileRevalidate { get => _explicitNullValueStaleWhileRevalidate; set { _explicitNullValueStaleWhileRevalidate = value; AdditionalData?.Remove("stale-while-revalidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale-while-revalidate"); else _explicitNullProperties?.Remove("stale-while-revalidate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue _explicitNullValueStaleWhileRevalidate = default!;
 #endif
         /// <summary>

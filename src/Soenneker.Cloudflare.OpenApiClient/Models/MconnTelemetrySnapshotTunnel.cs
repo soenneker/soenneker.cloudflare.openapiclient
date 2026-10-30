@@ -18,18 +18,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("health_state") is { } nullNodeHealthState && nullNodeHealthState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthState = null;
-            if (parseNode.GetChildNode("health_value") is { } nullNodeHealthValue && nullNodeHealthValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthValue = null;
-            if (parseNode.GetChildNode("interface_name") is { } nullNodeInterfaceName && nullNodeInterfaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceName = null;
-            if (parseNode.GetChildNode("jitter_ms") is { } nullNodeJitterMs && nullNodeJitterMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterMs = null;
-            if (parseNode.GetChildNode("latency_ms") is { } nullNodeLatencyMs && nullNodeLatencyMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyMs = null;
-            if (parseNode.GetChildNode("natd_result") is { } nullNodeNatdResult && nullNodeNatdResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdResult = null;
-            if (parseNode.GetChildNode("natd_state") is { } nullNodeNatdState && nullNodeNatdState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdState = null;
-            if (parseNode.GetChildNode("natd_target") is { } nullNodeNatdTarget && nullNodeNatdTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdTarget = null;
-            if (parseNode.GetChildNode("probed_mtu") is { } nullNodeProbedMtu && nullNodeProbedMtu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProbedMtu = null;
-            if (parseNode.GetChildNode("recent_healthy_pings") is { } nullNodeRecentHealthyPings && nullNodeRecentHealthyPings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentHealthyPings = null;
-            if (parseNode.GetChildNode("recent_unhealthy_pings") is { } nullNodeRecentUnhealthyPings && nullNodeRecentUnhealthyPings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentUnhealthyPings = null;
-            if (parseNode.GetChildNode("tunnel_id") is { } nullNodeTunnelId && nullNodeTunnelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelId = null;
+            if (parseNode.GetChildNode("health_state") is null) { _explicitNullValueHealthState = default!; _explicitNullProperties?.Remove("health_state"); }
+            else if (parseNode.GetChildNode("health_state") is { } nullNodeHealthState && nullNodeHealthState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthState = null;
+            if (parseNode.GetChildNode("health_value") is null) { _explicitNullValueHealthValue = default!; _explicitNullProperties?.Remove("health_value"); }
+            else if (parseNode.GetChildNode("health_value") is { } nullNodeHealthValue && nullNodeHealthValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthValue = null;
+            if (parseNode.GetChildNode("interface_name") is null) { _explicitNullValueInterfaceName = default!; _explicitNullProperties?.Remove("interface_name"); }
+            else if (parseNode.GetChildNode("interface_name") is { } nullNodeInterfaceName && nullNodeInterfaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceName = null;
+            if (parseNode.GetChildNode("jitter_ms") is null) { _explicitNullValueJitterMs = default!; _explicitNullProperties?.Remove("jitter_ms"); }
+            else if (parseNode.GetChildNode("jitter_ms") is { } nullNodeJitterMs && nullNodeJitterMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterMs = null;
+            if (parseNode.GetChildNode("latency_ms") is null) { _explicitNullValueLatencyMs = default!; _explicitNullProperties?.Remove("latency_ms"); }
+            else if (parseNode.GetChildNode("latency_ms") is { } nullNodeLatencyMs && nullNodeLatencyMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyMs = null;
+            if (parseNode.GetChildNode("natd_result") is null) { _explicitNullValueNatdResult = default!; _explicitNullProperties?.Remove("natd_result"); }
+            else if (parseNode.GetChildNode("natd_result") is { } nullNodeNatdResult && nullNodeNatdResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdResult = null;
+            if (parseNode.GetChildNode("natd_state") is null) { _explicitNullValueNatdState = default!; _explicitNullProperties?.Remove("natd_state"); }
+            else if (parseNode.GetChildNode("natd_state") is { } nullNodeNatdState && nullNodeNatdState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdState = null;
+            if (parseNode.GetChildNode("natd_target") is null) { _explicitNullValueNatdTarget = default!; _explicitNullProperties?.Remove("natd_target"); }
+            else if (parseNode.GetChildNode("natd_target") is { } nullNodeNatdTarget && nullNodeNatdTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NatdTarget = null;
+            if (parseNode.GetChildNode("probed_mtu") is null) { _explicitNullValueProbedMtu = default!; _explicitNullProperties?.Remove("probed_mtu"); }
+            else if (parseNode.GetChildNode("probed_mtu") is { } nullNodeProbedMtu && nullNodeProbedMtu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProbedMtu = null;
+            if (parseNode.GetChildNode("recent_healthy_pings") is null) { _explicitNullValueRecentHealthyPings = default!; _explicitNullProperties?.Remove("recent_healthy_pings"); }
+            else if (parseNode.GetChildNode("recent_healthy_pings") is { } nullNodeRecentHealthyPings && nullNodeRecentHealthyPings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentHealthyPings = null;
+            if (parseNode.GetChildNode("recent_unhealthy_pings") is null) { _explicitNullValueRecentUnhealthyPings = default!; _explicitNullProperties?.Remove("recent_unhealthy_pings"); }
+            else if (parseNode.GetChildNode("recent_unhealthy_pings") is { } nullNodeRecentUnhealthyPings && nullNodeRecentUnhealthyPings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentUnhealthyPings = null;
+            if (parseNode.GetChildNode("tunnel_id") is null) { _explicitNullValueTunnelId = default!; _explicitNullProperties?.Remove("tunnel_id"); }
+            else if (parseNode.GetChildNode("tunnel_id") is { } nullNodeTunnelId && nullNodeTunnelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,72 +49,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Name of tunnel health state (unknown, healthy, degraded, down)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HealthState { get => _explicitNullValueHealthState; set { _explicitNullValueHealthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_state"); else _explicitNullProperties?.Remove("health_state"); } }
+        public string? HealthState { get => _explicitNullValueHealthState; set { _explicitNullValueHealthState = value; AdditionalData?.Remove("health_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_state"); else _explicitNullProperties?.Remove("health_state"); } }
         private string? _explicitNullValueHealthState = default!;
 #nullable restore
 #else
-        public string HealthState { get => _explicitNullValueHealthState; set { _explicitNullValueHealthState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_state"); else _explicitNullProperties?.Remove("health_state"); } }
+        public string HealthState { get => _explicitNullValueHealthState; set { _explicitNullValueHealthState = value; AdditionalData?.Remove("health_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_state"); else _explicitNullProperties?.Remove("health_state"); } }
         private string _explicitNullValueHealthState = default!;
 #endif
         /// <summary>Numeric value associated with tunnel state (0 = unknown, 1 = healthy, 2 = degraded, 3 = down)</summary>
-        public double? HealthValue { get => _explicitNullValueHealthValue; set { _explicitNullValueHealthValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_value"); else _explicitNullProperties?.Remove("health_value"); } }
+        public double? HealthValue { get => _explicitNullValueHealthValue; set { _explicitNullValueHealthValue = value; AdditionalData?.Remove("health_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_value"); else _explicitNullProperties?.Remove("health_value"); } }
         private double? _explicitNullValueHealthValue = default!;
         /// <summary>The tunnel interface name (i.e. xfrm1, xfrm3.99, etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceName { get => _explicitNullValueInterfaceName; set { _explicitNullValueInterfaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_name"); else _explicitNullProperties?.Remove("interface_name"); } }
+        public string? InterfaceName { get => _explicitNullValueInterfaceName; set { _explicitNullValueInterfaceName = value; AdditionalData?.Remove("interface_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_name"); else _explicitNullProperties?.Remove("interface_name"); } }
         private string? _explicitNullValueInterfaceName = default!;
 #nullable restore
 #else
-        public string InterfaceName { get => _explicitNullValueInterfaceName; set { _explicitNullValueInterfaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_name"); else _explicitNullProperties?.Remove("interface_name"); } }
+        public string InterfaceName { get => _explicitNullValueInterfaceName; set { _explicitNullValueInterfaceName = value; AdditionalData?.Remove("interface_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_name"); else _explicitNullProperties?.Remove("interface_name"); } }
         private string _explicitNullValueInterfaceName = default!;
 #endif
         /// <summary>Tunnel round-trip latency variation in milliseconds</summary>
-        public double? JitterMs { get => _explicitNullValueJitterMs; set { _explicitNullValueJitterMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_ms"); else _explicitNullProperties?.Remove("jitter_ms"); } }
+        public double? JitterMs { get => _explicitNullValueJitterMs; set { _explicitNullValueJitterMs = value; AdditionalData?.Remove("jitter_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_ms"); else _explicitNullProperties?.Remove("jitter_ms"); } }
         private double? _explicitNullValueJitterMs = default!;
         /// <summary>50th percentile tunnel round-trip latency in milliseconds</summary>
-        public double? LatencyMs { get => _explicitNullValueLatencyMs; set { _explicitNullValueLatencyMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency_ms"); else _explicitNullProperties?.Remove("latency_ms"); } }
+        public double? LatencyMs { get => _explicitNullValueLatencyMs; set { _explicitNullValueLatencyMs = value; AdditionalData?.Remove("latency_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency_ms"); else _explicitNullProperties?.Remove("latency_ms"); } }
         private double? _explicitNullValueLatencyMs = default!;
         /// <summary>Public socket address returned by the NAT detector</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatdResult { get => _explicitNullValueNatdResult; set { _explicitNullValueNatdResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_result"); else _explicitNullProperties?.Remove("natd_result"); } }
+        public string? NatdResult { get => _explicitNullValueNatdResult; set { _explicitNullValueNatdResult = value; AdditionalData?.Remove("natd_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_result"); else _explicitNullProperties?.Remove("natd_result"); } }
         private string? _explicitNullValueNatdResult = default!;
 #nullable restore
 #else
-        public string NatdResult { get => _explicitNullValueNatdResult; set { _explicitNullValueNatdResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_result"); else _explicitNullProperties?.Remove("natd_result"); } }
+        public string NatdResult { get => _explicitNullValueNatdResult; set { _explicitNullValueNatdResult = value; AdditionalData?.Remove("natd_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_result"); else _explicitNullProperties?.Remove("natd_result"); } }
         private string _explicitNullValueNatdResult = default!;
 #endif
         /// <summary>Numeric NAT detector state (0 = detected, 1 = missing result, 2 = stale result)</summary>
-        public double? NatdState { get => _explicitNullValueNatdState; set { _explicitNullValueNatdState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_state"); else _explicitNullProperties?.Remove("natd_state"); } }
+        public double? NatdState { get => _explicitNullValueNatdState; set { _explicitNullValueNatdState = value; AdditionalData?.Remove("natd_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_state"); else _explicitNullProperties?.Remove("natd_state"); } }
         private double? _explicitNullValueNatdState = default!;
         /// <summary>Target socket address probed by the NAT detector, using the detector source port</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatdTarget { get => _explicitNullValueNatdTarget; set { _explicitNullValueNatdTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_target"); else _explicitNullProperties?.Remove("natd_target"); } }
+        public string? NatdTarget { get => _explicitNullValueNatdTarget; set { _explicitNullValueNatdTarget = value; AdditionalData?.Remove("natd_target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_target"); else _explicitNullProperties?.Remove("natd_target"); } }
         private string? _explicitNullValueNatdTarget = default!;
 #nullable restore
 #else
-        public string NatdTarget { get => _explicitNullValueNatdTarget; set { _explicitNullValueNatdTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_target"); else _explicitNullProperties?.Remove("natd_target"); } }
+        public string NatdTarget { get => _explicitNullValueNatdTarget; set { _explicitNullValueNatdTarget = value; AdditionalData?.Remove("natd_target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("natd_target"); else _explicitNullProperties?.Remove("natd_target"); } }
         private string _explicitNullValueNatdTarget = default!;
 #endif
         /// <summary>MTU as measured between the two ends of the tunnel</summary>
-        public double? ProbedMtu { get => _explicitNullValueProbedMtu; set { _explicitNullValueProbedMtu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("probed_mtu"); else _explicitNullProperties?.Remove("probed_mtu"); } }
+        public double? ProbedMtu { get => _explicitNullValueProbedMtu; set { _explicitNullValueProbedMtu = value; AdditionalData?.Remove("probed_mtu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("probed_mtu"); else _explicitNullProperties?.Remove("probed_mtu"); } }
         private double? _explicitNullValueProbedMtu = default!;
         /// <summary>Number of recent healthy pings for this tunnel</summary>
-        public double? RecentHealthyPings { get => _explicitNullValueRecentHealthyPings; set { _explicitNullValueRecentHealthyPings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_healthy_pings"); else _explicitNullProperties?.Remove("recent_healthy_pings"); } }
+        public double? RecentHealthyPings { get => _explicitNullValueRecentHealthyPings; set { _explicitNullValueRecentHealthyPings = value; AdditionalData?.Remove("recent_healthy_pings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_healthy_pings"); else _explicitNullProperties?.Remove("recent_healthy_pings"); } }
         private double? _explicitNullValueRecentHealthyPings = default!;
         /// <summary>Number of recent unhealthy pings for this tunnel</summary>
-        public double? RecentUnhealthyPings { get => _explicitNullValueRecentUnhealthyPings; set { _explicitNullValueRecentUnhealthyPings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_unhealthy_pings"); else _explicitNullProperties?.Remove("recent_unhealthy_pings"); } }
+        public double? RecentUnhealthyPings { get => _explicitNullValueRecentUnhealthyPings; set { _explicitNullValueRecentUnhealthyPings = value; AdditionalData?.Remove("recent_unhealthy_pings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_unhealthy_pings"); else _explicitNullProperties?.Remove("recent_unhealthy_pings"); } }
         private double? _explicitNullValueRecentUnhealthyPings = default!;
         /// <summary>Tunnel identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
+        public string? TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; AdditionalData?.Remove("tunnel_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
         private string? _explicitNullValueTunnelId = default!;
 #nullable restore
 #else
-        public string TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
+        public string TunnelId { get => _explicitNullValueTunnelId; set { _explicitNullValueTunnelId = value; AdditionalData?.Remove("tunnel_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_id"); else _explicitNullProperties?.Remove("tunnel_id"); } }
         private string _explicitNullValueTunnelId = default!;
 #endif
         /// <summary>

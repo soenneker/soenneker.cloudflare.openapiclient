@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("secrets") is { } nullNodeSecrets && nullNodeSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secrets = null;
-            if (parseNode.GetChildNode("version_tags") is { } nullNodeVersionTags && nullNodeVersionTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionTags = null;
+            if (parseNode.GetChildNode("secrets") is null) { _explicitNullValueSecrets = default!; _explicitNullProperties?.Remove("secrets"); }
+            else if (parseNode.GetChildNode("secrets") is { } nullNodeSecrets && nullNodeSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secrets = null;
+            if (parseNode.GetChildNode("version_tags") is null) { _explicitNullValueVersionTags = default!; _explicitNullProperties?.Remove("version_tags"); }
+            else if (parseNode.GetChildNode("version_tags") is { } nullNodeVersionTags && nullNodeVersionTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionTags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Map of secret names to secret values:- Set to a secret object to create or update.- Set to `null` to delete.- Omit to leave unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty? Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty? Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; AdditionalData?.Remove("secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty? _explicitNullValueSecrets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; AdditionalData?.Remove("secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty _explicitNullValueSecrets = default!;
 #endif
         /// <summary>Optional version tags to apply to the new script version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty? VersionTags { get => _explicitNullValueVersionTags; set { _explicitNullValueVersionTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_tags"); else _explicitNullProperties?.Remove("version_tags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty? VersionTags { get => _explicitNullValueVersionTags; set { _explicitNullValueVersionTags = value; AdditionalData?.Remove("version_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_tags"); else _explicitNullProperties?.Remove("version_tags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty? _explicitNullValueVersionTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty VersionTags { get => _explicitNullValueVersionTags; set { _explicitNullValueVersionTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_tags"); else _explicitNullProperties?.Remove("version_tags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty VersionTags { get => _explicitNullValueVersionTags; set { _explicitNullValueVersionTags = value; AdditionalData?.Remove("version_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_tags"); else _explicitNullProperties?.Remove("version_tags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty _explicitNullValueVersionTags = default!;
 #endif
         /// <summary>

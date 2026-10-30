@@ -17,25 +17,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dataLength") is { } nullNodeDataLength && nullNodeDataLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataLength = null;
-            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
-            if (parseNode.GetChildNode("uniqCountries") is { } nullNodeUniqCountries && nullNodeUniqCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqCountries = null;
-            if (parseNode.GetChildNode("uniqIPs") is { } nullNodeUniqIPs && nullNodeUniqIPs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqIPs = null;
+            if (parseNode.GetChildNode("dataLength") is null) { _explicitNullValueDataLength = default!; _explicitNullProperties?.Remove("dataLength"); }
+            else if (parseNode.GetChildNode("dataLength") is { } nullNodeDataLength && nullNodeDataLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataLength = null;
+            if (parseNode.GetChildNode("requests") is null) { _explicitNullValueRequests = default!; _explicitNullProperties?.Remove("requests"); }
+            else if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("uniqCountries") is null) { _explicitNullValueUniqCountries = default!; _explicitNullProperties?.Remove("uniqCountries"); }
+            else if (parseNode.GetChildNode("uniqCountries") is { } nullNodeUniqCountries && nullNodeUniqCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqCountries = null;
+            if (parseNode.GetChildNode("uniqIPs") is null) { _explicitNullValueUniqIPs = default!; _explicitNullProperties?.Remove("uniqIPs"); }
+            else if (parseNode.GetChildNode("uniqIPs") is { } nullNodeUniqIPs && nullNodeUniqIPs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqIPs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dataLength property</summary>
-        public double? DataLength { get => _explicitNullValueDataLength; set { _explicitNullValueDataLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataLength"); else _explicitNullProperties?.Remove("dataLength"); } }
+        public double? DataLength { get => _explicitNullValueDataLength; set { _explicitNullValueDataLength = value; AdditionalData?.Remove("dataLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataLength"); else _explicitNullProperties?.Remove("dataLength"); } }
         private double? _explicitNullValueDataLength = default!;
         /// <summary>The requests property</summary>
-        public double? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        public double? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
         private double? _explicitNullValueRequests = default!;
         /// <summary>The uniqCountries property</summary>
-        public double? UniqCountries { get => _explicitNullValueUniqCountries; set { _explicitNullValueUniqCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqCountries"); else _explicitNullProperties?.Remove("uniqCountries"); } }
+        public double? UniqCountries { get => _explicitNullValueUniqCountries; set { _explicitNullValueUniqCountries = value; AdditionalData?.Remove("uniqCountries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqCountries"); else _explicitNullProperties?.Remove("uniqCountries"); } }
         private double? _explicitNullValueUniqCountries = default!;
         /// <summary>The uniqIPs property</summary>
-        public double? UniqIPs { get => _explicitNullValueUniqIPs; set { _explicitNullValueUniqIPs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqIPs"); else _explicitNullProperties?.Remove("uniqIPs"); } }
+        public double? UniqIPs { get => _explicitNullValueUniqIPs; set { _explicitNullValueUniqIPs = value; AdditionalData?.Remove("uniqIPs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqIPs"); else _explicitNullProperties?.Remove("uniqIPs"); } }
         private double? _explicitNullValueUniqIPs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2200ResponseResultsItemStats"/> and sets the default values.

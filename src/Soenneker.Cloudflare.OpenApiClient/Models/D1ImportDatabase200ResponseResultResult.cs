@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("final_bookmark") is { } nullNodeFinalBookmark && nullNodeFinalBookmark.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinalBookmark = null;
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
-            if (parseNode.GetChildNode("num_queries") is { } nullNodeNumQueries && nullNodeNumQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumQueries = null;
+            if (parseNode.GetChildNode("final_bookmark") is null) { _explicitNullValueFinalBookmark = default!; _explicitNullProperties?.Remove("final_bookmark"); }
+            else if (parseNode.GetChildNode("final_bookmark") is { } nullNodeFinalBookmark && nullNodeFinalBookmark.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinalBookmark = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("num_queries") is null) { _explicitNullValueNumQueries = default!; _explicitNullProperties?.Remove("num_queries"); }
+            else if (parseNode.GetChildNode("num_queries") is { } nullNodeNumQueries && nullNodeNumQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumQueries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The time-travel bookmark if you need restore your D1 to directly after the import succeeded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinalBookmark { get => _explicitNullValueFinalBookmark; set { _explicitNullValueFinalBookmark = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("final_bookmark"); else _explicitNullProperties?.Remove("final_bookmark"); } }
+        public string? FinalBookmark { get => _explicitNullValueFinalBookmark; set { _explicitNullValueFinalBookmark = value; AdditionalData?.Remove("final_bookmark"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("final_bookmark"); else _explicitNullProperties?.Remove("final_bookmark"); } }
         private string? _explicitNullValueFinalBookmark = default!;
 #nullable restore
 #else
-        public string FinalBookmark { get => _explicitNullValueFinalBookmark; set { _explicitNullValueFinalBookmark = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("final_bookmark"); else _explicitNullProperties?.Remove("final_bookmark"); } }
+        public string FinalBookmark { get => _explicitNullValueFinalBookmark; set { _explicitNullValueFinalBookmark = value; AdditionalData?.Remove("final_bookmark"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("final_bookmark"); else _explicitNullProperties?.Remove("final_bookmark"); } }
         private string _explicitNullValueFinalBookmark = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.D1QueryMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The total number of queries that were executed during the import.</summary>
-        public double? NumQueries { get => _explicitNullValueNumQueries; set { _explicitNullValueNumQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_queries"); else _explicitNullProperties?.Remove("num_queries"); } }
+        public double? NumQueries { get => _explicitNullValueNumQueries; set { _explicitNullValueNumQueries = value; AdditionalData?.Remove("num_queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_queries"); else _explicitNullProperties?.Remove("num_queries"); } }
         private double? _explicitNullValueNumQueries = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabase200ResponseResultResult"/> and sets the default values.

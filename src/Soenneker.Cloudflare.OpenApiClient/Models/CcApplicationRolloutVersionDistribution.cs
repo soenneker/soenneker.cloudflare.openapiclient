@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("current_version_percentage") is { } nullNodeCurrentVersionPercentage && nullNodeCurrentVersionPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersionPercentage = null;
-            if (parseNode.GetChildNode("target_version_percentage") is { } nullNodeTargetVersionPercentage && nullNodeTargetVersionPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetVersionPercentage = null;
+            if (parseNode.GetChildNode("current_version_percentage") is null) { _explicitNullValueCurrentVersionPercentage = default!; _explicitNullProperties?.Remove("current_version_percentage"); }
+            else if (parseNode.GetChildNode("current_version_percentage") is { } nullNodeCurrentVersionPercentage && nullNodeCurrentVersionPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersionPercentage = null;
+            if (parseNode.GetChildNode("target_version_percentage") is null) { _explicitNullValueTargetVersionPercentage = default!; _explicitNullProperties?.Remove("target_version_percentage"); }
+            else if (parseNode.GetChildNode("target_version_percentage") is { } nullNodeTargetVersionPercentage && nullNodeTargetVersionPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetVersionPercentage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Percentage of instances on the current (old) version.</summary>
-        public int? CurrentVersionPercentage { get => _explicitNullValueCurrentVersionPercentage; set { _explicitNullValueCurrentVersionPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_version_percentage"); else _explicitNullProperties?.Remove("current_version_percentage"); } }
+        public int? CurrentVersionPercentage { get => _explicitNullValueCurrentVersionPercentage; set { _explicitNullValueCurrentVersionPercentage = value; AdditionalData?.Remove("current_version_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_version_percentage"); else _explicitNullProperties?.Remove("current_version_percentage"); } }
         private int? _explicitNullValueCurrentVersionPercentage = default!;
         /// <summary>Percentage of instances on the target (new) version.</summary>
-        public int? TargetVersionPercentage { get => _explicitNullValueTargetVersionPercentage; set { _explicitNullValueTargetVersionPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_version_percentage"); else _explicitNullProperties?.Remove("target_version_percentage"); } }
+        public int? TargetVersionPercentage { get => _explicitNullValueTargetVersionPercentage; set { _explicitNullValueTargetVersionPercentage = value; AdditionalData?.Remove("target_version_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_version_percentage"); else _explicitNullProperties?.Remove("target_version_percentage"); } }
         private int? _explicitNullValueTargetVersionPercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationRolloutVersionDistribution"/> and sets the default values.

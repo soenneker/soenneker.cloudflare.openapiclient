@@ -17,38 +17,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("jurisdiction") is { } nullNodeJurisdiction && nullNodeJurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jurisdiction = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("primary_location_hint") is { } nullNodePrimaryLocationHint && nullNodePrimaryLocationHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryLocationHint = null;
-            if (parseNode.GetChildNode("read_replication") is { } nullNodeReadReplication && nullNodeReadReplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadReplication = null;
+            if (parseNode.GetChildNode("jurisdiction") is null) { _explicitNullValueJurisdiction = default!; _explicitNullProperties?.Remove("jurisdiction"); }
+            else if (parseNode.GetChildNode("jurisdiction") is { } nullNodeJurisdiction && nullNodeJurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jurisdiction = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("primary_location_hint") is null) { _explicitNullValuePrimaryLocationHint = default!; _explicitNullProperties?.Remove("primary_location_hint"); }
+            else if (parseNode.GetChildNode("primary_location_hint") is { } nullNodePrimaryLocationHint && nullNodePrimaryLocationHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryLocationHint = null;
+            if (parseNode.GetChildNode("read_replication") is null) { _explicitNullValueReadReplication = default!; _explicitNullProperties?.Remove("read_replication"); }
+            else if (parseNode.GetChildNode("read_replication") is { } nullNodeReadReplication && nullNodeReadReplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadReplication = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1Jurisdiction? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1Jurisdiction? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; AdditionalData?.Remove("jurisdiction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.D1Jurisdiction? _explicitNullValueJurisdiction = default!;
         /// <summary>D1 database name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1PrimaryLocationHint? PrimaryLocationHint { get => _explicitNullValuePrimaryLocationHint; set { _explicitNullValuePrimaryLocationHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_location_hint"); else _explicitNullProperties?.Remove("primary_location_hint"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1PrimaryLocationHint? PrimaryLocationHint { get => _explicitNullValuePrimaryLocationHint; set { _explicitNullValuePrimaryLocationHint = value; AdditionalData?.Remove("primary_location_hint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_location_hint"); else _explicitNullProperties?.Remove("primary_location_hint"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.D1PrimaryLocationHint? _explicitNullValuePrimaryLocationHint = default!;
         /// <summary>Configuration for D1 read replication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest? ReadReplication { get => _explicitNullValueReadReplication; set { _explicitNullValueReadReplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_replication"); else _explicitNullProperties?.Remove("read_replication"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest? ReadReplication { get => _explicitNullValueReadReplication; set { _explicitNullValueReadReplication = value; AdditionalData?.Remove("read_replication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_replication"); else _explicitNullProperties?.Remove("read_replication"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest? _explicitNullValueReadReplication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest ReadReplication { get => _explicitNullValueReadReplication; set { _explicitNullValueReadReplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_replication"); else _explicitNullProperties?.Remove("read_replication"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest ReadReplication { get => _explicitNullValueReadReplication; set { _explicitNullValueReadReplication = value; AdditionalData?.Remove("read_replication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_replication"); else _explicitNullProperties?.Remove("read_replication"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest _explicitNullValueReadReplication = default!;
 #endif
         /// <summary>
@@ -76,9 +80,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1Jurisdiction>(); } },
+                { "jurisdiction", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1Jurisdiction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueJurisdiction = default; _explicitNullProperties?.Remove("jurisdiction"); AdditionalData["jurisdiction"] = unknown; } else { Jurisdiction = parsed; AdditionalData.Remove("jurisdiction"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "primary_location_hint", n => { PrimaryLocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1PrimaryLocationHint>(); } },
+                { "primary_location_hint", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1PrimaryLocationHint>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePrimaryLocationHint = default; _explicitNullProperties?.Remove("primary_location_hint"); AdditionalData["primary_location_hint"] = unknown; } else { PrimaryLocationHint = parsed; AdditionalData.Remove("primary_location_hint"); } } },
                 { "read_replication", n => { ReadReplication = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest.CreateFromDiscriminatorValue); } },
             };
         }

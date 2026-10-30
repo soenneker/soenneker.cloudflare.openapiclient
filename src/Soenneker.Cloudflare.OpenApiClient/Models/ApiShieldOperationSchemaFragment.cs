@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
-            if (parseNode.GetChildNode("requestBody") is { } nullNodeRequestBody && nullNodeRequestBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestBody = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("requestBody") is null) { _explicitNullValueRequestBody = default!; _explicitNullProperties?.Remove("requestBody"); }
+            else if (parseNode.GetChildNode("requestBody") is { } nullNodeRequestBody && nullNodeRequestBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestBody = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>OpenAPI parameter objects describing path, query, header, or cookie parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty>? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty>? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty>? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty> Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty> Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty> _explicitNullValueParameters = default!;
 #endif
         /// <summary>OpenAPI request body object describing the expected request payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty? RequestBody { get => _explicitNullValueRequestBody; set { _explicitNullValueRequestBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestBody"); else _explicitNullProperties?.Remove("requestBody"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty? RequestBody { get => _explicitNullValueRequestBody; set { _explicitNullValueRequestBody = value; AdditionalData?.Remove("requestBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestBody"); else _explicitNullProperties?.Remove("requestBody"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty? _explicitNullValueRequestBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty RequestBody { get => _explicitNullValueRequestBody; set { _explicitNullValueRequestBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestBody"); else _explicitNullProperties?.Remove("requestBody"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty RequestBody { get => _explicitNullValueRequestBody; set { _explicitNullValueRequestBody = value; AdditionalData?.Remove("requestBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestBody"); else _explicitNullProperties?.Remove("requestBody"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty _explicitNullValueRequestBody = default!;
 #endif
         /// <summary>

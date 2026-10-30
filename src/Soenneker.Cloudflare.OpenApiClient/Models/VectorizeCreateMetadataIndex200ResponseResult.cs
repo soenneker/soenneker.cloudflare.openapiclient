@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mutationId") is { } nullNodeMutationId && nullNodeMutationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MutationId = null;
+            if (parseNode.GetChildNode("mutationId") is null) { _explicitNullValueMutationId = default!; _explicitNullProperties?.Remove("mutationId"); }
+            else if (parseNode.GetChildNode("mutationId") is { } nullNodeMutationId && nullNodeMutationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MutationId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier for the async mutation operation containing the changeset.</summary>
-        public Guid? MutationId { get => _explicitNullValueMutationId; set { _explicitNullValueMutationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutationId"); else _explicitNullProperties?.Remove("mutationId"); } }
+        public Guid? MutationId { get => _explicitNullValueMutationId; set { _explicitNullValueMutationId = value; AdditionalData?.Remove("mutationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutationId"); else _explicitNullProperties?.Remove("mutationId"); } }
         private Guid? _explicitNullValueMutationId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndex200ResponseResult"/> and sets the default values.

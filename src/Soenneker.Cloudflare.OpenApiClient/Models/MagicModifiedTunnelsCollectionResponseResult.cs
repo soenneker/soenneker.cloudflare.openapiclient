@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
-            if (parseNode.GetChildNode("modified_gre_tunnels") is { } nullNodeModifiedGreTunnels && nullNodeModifiedGreTunnels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedGreTunnels = null;
+            if (parseNode.GetChildNode("modified") is null) { _explicitNullValueModified = default!; _explicitNullProperties?.Remove("modified"); }
+            else if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("modified_gre_tunnels") is null) { _explicitNullValueModifiedGreTunnels = default!; _explicitNullProperties?.Remove("modified_gre_tunnels"); }
+            else if (parseNode.GetChildNode("modified_gre_tunnels") is { } nullNodeModifiedGreTunnels && nullNodeModifiedGreTunnels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedGreTunnels = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The modified property</summary>
-        public bool? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public bool? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private bool? _explicitNullValueModified = default!;
         /// <summary>The modified_gre_tunnels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel>? ModifiedGreTunnels { get => _explicitNullValueModifiedGreTunnels; set { _explicitNullValueModifiedGreTunnels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_gre_tunnels"); else _explicitNullProperties?.Remove("modified_gre_tunnels"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel>? ModifiedGreTunnels { get => _explicitNullValueModifiedGreTunnels; set { _explicitNullValueModifiedGreTunnels = value; AdditionalData?.Remove("modified_gre_tunnels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_gre_tunnels"); else _explicitNullProperties?.Remove("modified_gre_tunnels"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel>? _explicitNullValueModifiedGreTunnels = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel> ModifiedGreTunnels { get => _explicitNullValueModifiedGreTunnels; set { _explicitNullValueModifiedGreTunnels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_gre_tunnels"); else _explicitNullProperties?.Remove("modified_gre_tunnels"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel> ModifiedGreTunnels { get => _explicitNullValueModifiedGreTunnels; set { _explicitNullValueModifiedGreTunnels = value; AdditionalData?.Remove("modified_gre_tunnels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_gre_tunnels"); else _explicitNullProperties?.Remove("modified_gre_tunnels"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnel> _explicitNullValueModifiedGreTunnels = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destination_conf") is { } nullNodeDestinationConf && nullNodeDestinationConf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationConf = null;
-            if (parseNode.GetChildNode("ownership_challenge") is { } nullNodeOwnershipChallenge && nullNodeOwnershipChallenge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipChallenge = null;
+            if (parseNode.GetChildNode("destination_conf") is null) { _explicitNullValueDestinationConf = default!; _explicitNullProperties?.Remove("destination_conf"); }
+            else if (parseNode.GetChildNode("destination_conf") is { } nullNodeDestinationConf && nullNodeDestinationConf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationConf = null;
+            if (parseNode.GetChildNode("ownership_challenge") is null) { _explicitNullValueOwnershipChallenge = default!; _explicitNullProperties?.Remove("ownership_challenge"); }
+            else if (parseNode.GetChildNode("ownership_challenge") is { } nullNodeOwnershipChallenge && nullNodeOwnershipChallenge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipChallenge = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The full URI for the bucket. This field only applies to `full` packet captures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
+        public string? DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; AdditionalData?.Remove("destination_conf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
         private string? _explicitNullValueDestinationConf = default!;
 #nullable restore
 #else
-        public string DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
+        public string DestinationConf { get => _explicitNullValueDestinationConf; set { _explicitNullValueDestinationConf = value; AdditionalData?.Remove("destination_conf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_conf"); else _explicitNullProperties?.Remove("destination_conf"); } }
         private string _explicitNullValueDestinationConf = default!;
 #endif
         /// <summary>The ownership challenge filename stored in the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnershipChallenge { get => _explicitNullValueOwnershipChallenge; set { _explicitNullValueOwnershipChallenge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_challenge"); else _explicitNullProperties?.Remove("ownership_challenge"); } }
+        public string? OwnershipChallenge { get => _explicitNullValueOwnershipChallenge; set { _explicitNullValueOwnershipChallenge = value; AdditionalData?.Remove("ownership_challenge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_challenge"); else _explicitNullProperties?.Remove("ownership_challenge"); } }
         private string? _explicitNullValueOwnershipChallenge = default!;
 #nullable restore
 #else
-        public string OwnershipChallenge { get => _explicitNullValueOwnershipChallenge; set { _explicitNullValueOwnershipChallenge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_challenge"); else _explicitNullProperties?.Remove("ownership_challenge"); } }
+        public string OwnershipChallenge { get => _explicitNullValueOwnershipChallenge; set { _explicitNullValueOwnershipChallenge = value; AdditionalData?.Remove("ownership_challenge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_challenge"); else _explicitNullProperties?.Remove("ownership_challenge"); } }
         private string _explicitNullValueOwnershipChallenge = default!;
 #endif
         /// <summary>

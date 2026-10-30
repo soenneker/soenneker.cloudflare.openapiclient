@@ -17,28 +17,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("eventIndex") is { } nullNodeEventIndex && nullNodeEventIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIndex = null;
-            if (parseNode.GetChildNode("shardId") is { } nullNodeShardId && nullNodeShardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardId = null;
-            if (parseNode.GetChildNode("uuid") is { } nullNodeUuid && nullNodeUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuid = null;
+            if (parseNode.GetChildNode("eventIndex") is null) { _explicitNullValueEventIndex = default!; _explicitNullProperties?.Remove("eventIndex"); }
+            else if (parseNode.GetChildNode("eventIndex") is { } nullNodeEventIndex && nullNodeEventIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIndex = null;
+            if (parseNode.GetChildNode("shardId") is null) { _explicitNullValueShardId = default!; _explicitNullProperties?.Remove("shardId"); }
+            else if (parseNode.GetChildNode("shardId") is { } nullNodeShardId && nullNodeShardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardId = null;
+            if (parseNode.GetChildNode("uuid") is null) { _explicitNullValueUuid = default!; _explicitNullProperties?.Remove("uuid"); }
+            else if (parseNode.GetChildNode("uuid") is { } nullNodeUuid && nullNodeUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Original index in the input data array</summary>
-        public double? EventIndex { get => _explicitNullValueEventIndex; set { _explicitNullValueEventIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIndex"); else _explicitNullProperties?.Remove("eventIndex"); } }
+        public double? EventIndex { get => _explicitNullValueEventIndex; set { _explicitNullValueEventIndex = value; AdditionalData?.Remove("eventIndex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventIndex"); else _explicitNullProperties?.Remove("eventIndex"); } }
         private double? _explicitNullValueEventIndex = default!;
         /// <summary>Dataset ID of the shard where the event was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
+        public string? ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; AdditionalData?.Remove("shardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
         private string? _explicitNullValueShardId = default!;
 #nullable restore
 #else
-        public string ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
+        public string ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; AdditionalData?.Remove("shardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
         private string _explicitNullValueShardId = default!;
 #endif
         /// <summary>UUID of the created event</summary>
-        public Guid? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        public Guid? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
         private Guid? _explicitNullValueUuid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCreateBulk202ResponseCreatedEventsItem"/> and sets the default values.

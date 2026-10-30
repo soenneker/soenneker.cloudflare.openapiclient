@@ -18,27 +18,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("include_context") is { } nullNodeIncludeContext && nullNodeIncludeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeContext = null;
-            if (parseNode.GetChildNode("preserve_path_and_query") is { } nullNodePreservePathAndQuery && nullNodePreservePathAndQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreservePathAndQuery = null;
-            if (parseNode.GetChildNode("target_uri") is { } nullNodeTargetUri && nullNodeTargetUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUri = null;
+            if (parseNode.GetChildNode("include_context") is null) { _explicitNullValueIncludeContext = default!; _explicitNullProperties?.Remove("include_context"); }
+            else if (parseNode.GetChildNode("include_context") is { } nullNodeIncludeContext && nullNodeIncludeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeContext = null;
+            if (parseNode.GetChildNode("preserve_path_and_query") is null) { _explicitNullValuePreservePathAndQuery = default!; _explicitNullProperties?.Remove("preserve_path_and_query"); }
+            else if (parseNode.GetChildNode("preserve_path_and_query") is { } nullNodePreservePathAndQuery && nullNodePreservePathAndQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreservePathAndQuery = null;
+            if (parseNode.GetChildNode("target_uri") is null) { _explicitNullValueTargetUri = default!; _explicitNullProperties?.Remove("target_uri"); }
+            else if (parseNode.GetChildNode("target_uri") is { } nullNodeTargetUri && nullNodeTargetUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUri = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to pass the context information as query parameters.</summary>
-        public bool? IncludeContext { get => _explicitNullValueIncludeContext; set { _explicitNullValueIncludeContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_context"); else _explicitNullProperties?.Remove("include_context"); } }
+        public bool? IncludeContext { get => _explicitNullValueIncludeContext; set { _explicitNullValueIncludeContext = value; AdditionalData?.Remove("include_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_context"); else _explicitNullProperties?.Remove("include_context"); } }
         private bool? _explicitNullValueIncludeContext = default!;
         /// <summary>Specify whether to append the path and query parameters from the original request to target_uri.</summary>
-        public bool? PreservePathAndQuery { get => _explicitNullValuePreservePathAndQuery; set { _explicitNullValuePreservePathAndQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_path_and_query"); else _explicitNullProperties?.Remove("preserve_path_and_query"); } }
+        public bool? PreservePathAndQuery { get => _explicitNullValuePreservePathAndQuery; set { _explicitNullValuePreservePathAndQuery = value; AdditionalData?.Remove("preserve_path_and_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_path_and_query"); else _explicitNullProperties?.Remove("preserve_path_and_query"); } }
         private bool? _explicitNullValuePreservePathAndQuery = default!;
         /// <summary>Specify the URI to which the user is redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
+        public string? TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; AdditionalData?.Remove("target_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
         private string? _explicitNullValueTargetUri = default!;
 #nullable restore
 #else
-        public string TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
+        public string TargetUri { get => _explicitNullValueTargetUri; set { _explicitNullValueTargetUri = value; AdditionalData?.Remove("target_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_uri"); else _explicitNullProperties?.Remove("target_uri"); } }
         private string _explicitNullValueTargetUri = default!;
 #endif
         /// <summary>

@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("jobStatus") is { } nullNodeJobStatus && nullNodeJobStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobStatus = null;
-            if (parseNode.GetChildNode("logpushDataset") is { } nullNodeLogpushDataset && nullNodeLogpushDataset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogpushDataset = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("jobStatus") is null) { _explicitNullValueJobStatus = default!; _explicitNullProperties?.Remove("jobStatus"); }
+            else if (parseNode.GetChildNode("jobStatus") is { } nullNodeJobStatus && nullNodeJobStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobStatus = null;
+            if (parseNode.GetChildNode("logpushDataset") is null) { _explicitNullValueLogpushDataset = default!; _explicitNullProperties?.Remove("logpushDataset"); }
+            else if (parseNode.GetChildNode("logpushDataset") is { } nullNodeLogpushDataset && nullNodeLogpushDataset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogpushDataset = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,37 +34,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The jobStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus? JobStatus { get => _explicitNullValueJobStatus; set { _explicitNullValueJobStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobStatus"); else _explicitNullProperties?.Remove("jobStatus"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus? JobStatus { get => _explicitNullValueJobStatus; set { _explicitNullValueJobStatus = value; AdditionalData?.Remove("jobStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobStatus"); else _explicitNullProperties?.Remove("jobStatus"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus? _explicitNullValueJobStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus JobStatus { get => _explicitNullValueJobStatus; set { _explicitNullValueJobStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobStatus"); else _explicitNullProperties?.Remove("jobStatus"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus JobStatus { get => _explicitNullValueJobStatus; set { _explicitNullValueJobStatus = value; AdditionalData?.Remove("jobStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobStatus"); else _explicitNullProperties?.Remove("jobStatus"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus _explicitNullValueJobStatus = default!;
 #endif
         /// <summary>The logpushDataset property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset? LogpushDataset { get => _explicitNullValueLogpushDataset; set { _explicitNullValueLogpushDataset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpushDataset"); else _explicitNullProperties?.Remove("logpushDataset"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset? LogpushDataset { get => _explicitNullValueLogpushDataset; set { _explicitNullValueLogpushDataset = value; AdditionalData?.Remove("logpushDataset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpushDataset"); else _explicitNullProperties?.Remove("logpushDataset"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset? _explicitNullValueLogpushDataset = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType? _explicitNullValueType = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -89,8 +94,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders.CreateFromDiscriminatorValue); } },
                 { "jobStatus", n => { JobStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus.CreateFromDiscriminatorValue); } },
-                { "logpushDataset", n => { LogpushDataset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType>(); } },
+                { "logpushDataset", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLogpushDataset = default; _explicitNullProperties?.Remove("logpushDataset"); AdditionalData["logpushDataset"] = unknown; } else { LogpushDataset = parsed; AdditionalData.Remove("logpushDataset"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }

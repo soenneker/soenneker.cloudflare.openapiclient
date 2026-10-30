@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("methods") is { } nullNodeMethods && nullNodeMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Methods = null;
-            if (parseNode.GetChildNode("schemes") is { } nullNodeSchemes && nullNodeSchemes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schemes = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("methods") is null) { _explicitNullValueMethods = default!; _explicitNullProperties?.Remove("methods"); }
+            else if (parseNode.GetChildNode("methods") is { } nullNodeMethods && nullNodeMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Methods = null;
+            if (parseNode.GetChildNode("schemes") is null) { _explicitNullValueSchemes = default!; _explicitNullProperties?.Remove("schemes"); }
+            else if (parseNode.GetChildNode("schemes") is { } nullNodeSchemes && nullNodeSchemes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schemes = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTP methods to match. You can specify a subset (for example, `[&apos;POST&apos;,&apos;PUT&apos;]`) or all methods (`[&apos;_ALL_&apos;]`). This field is optional when creating a rate limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?>? Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?>? Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; AdditionalData?.Remove("methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?>? _explicitNullValueMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?> Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?> Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; AdditionalData?.Remove("methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?> _explicitNullValueMethods = default!;
 #endif
         /// <summary>The HTTP schemes to match. You can specify one scheme (`[&apos;HTTPS&apos;]`), both schemes (`[&apos;HTTP&apos;,&apos;HTTPS&apos;]`), or all schemes (`[&apos;_ALL_&apos;]`). This field is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Schemes { get => _explicitNullValueSchemes; set { _explicitNullValueSchemes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemes"); else _explicitNullProperties?.Remove("schemes"); } }
+        public List<string>? Schemes { get => _explicitNullValueSchemes; set { _explicitNullValueSchemes = value; AdditionalData?.Remove("schemes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemes"); else _explicitNullProperties?.Remove("schemes"); } }
         private List<string>? _explicitNullValueSchemes = default!;
 #nullable restore
 #else
-        public List<string> Schemes { get => _explicitNullValueSchemes; set { _explicitNullValueSchemes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemes"); else _explicitNullProperties?.Remove("schemes"); } }
+        public List<string> Schemes { get => _explicitNullValueSchemes; set { _explicitNullValueSchemes = value; AdditionalData?.Remove("schemes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemes"); else _explicitNullProperties?.Remove("schemes"); } }
         private List<string> _explicitNullValueSchemes = default!;
 #endif
         /// <summary>The URL pattern to match, composed of a host and a path such as `example.org/path*`. Normalization is applied before the pattern is matched. `*` wildcards are expanded to match applicable traffic. Query strings are not matched. Set the value to `*` to match all traffic to your zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

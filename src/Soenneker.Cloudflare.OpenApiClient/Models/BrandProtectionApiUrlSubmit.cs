@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("skipped_urls") is { } nullNodeSkippedUrls && nullNodeSkippedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedUrls = null;
-            if (parseNode.GetChildNode("submitted_urls") is { } nullNodeSubmittedUrls && nullNodeSubmittedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmittedUrls = null;
+            if (parseNode.GetChildNode("skipped_urls") is null) { _explicitNullValueSkippedUrls = default!; _explicitNullProperties?.Remove("skipped_urls"); }
+            else if (parseNode.GetChildNode("skipped_urls") is { } nullNodeSkippedUrls && nullNodeSkippedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedUrls = null;
+            if (parseNode.GetChildNode("submitted_urls") is null) { _explicitNullValueSubmittedUrls = default!; _explicitNullProperties?.Remove("submitted_urls"); }
+            else if (parseNode.GetChildNode("submitted_urls") is { } nullNodeSubmittedUrls && nullNodeSubmittedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmittedUrls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The skipped_urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSkippedUrlsItemProperty>? SkippedUrls { get => _explicitNullValueSkippedUrls; set { _explicitNullValueSkippedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_urls"); else _explicitNullProperties?.Remove("skipped_urls"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSkippedUrlsItemProperty>? SkippedUrls { get => _explicitNullValueSkippedUrls; set { _explicitNullValueSkippedUrls = value; AdditionalData?.Remove("skipped_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_urls"); else _explicitNullProperties?.Remove("skipped_urls"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSkippedUrlsItemProperty>? _explicitNullValueSkippedUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSkippedUrlsItemProperty> SkippedUrls { get => _explicitNullValueSkippedUrls; set { _explicitNullValueSkippedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_urls"); else _explicitNullProperties?.Remove("skipped_urls"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSkippedUrlsItemProperty> SkippedUrls { get => _explicitNullValueSkippedUrls; set { _explicitNullValueSkippedUrls = value; AdditionalData?.Remove("skipped_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_urls"); else _explicitNullProperties?.Remove("skipped_urls"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSkippedUrlsItemProperty> _explicitNullValueSkippedUrls = default!;
 #endif
         /// <summary>The submitted_urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSubmittedUrlsItemProperty>? SubmittedUrls { get => _explicitNullValueSubmittedUrls; set { _explicitNullValueSubmittedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted_urls"); else _explicitNullProperties?.Remove("submitted_urls"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSubmittedUrlsItemProperty>? SubmittedUrls { get => _explicitNullValueSubmittedUrls; set { _explicitNullValueSubmittedUrls = value; AdditionalData?.Remove("submitted_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted_urls"); else _explicitNullProperties?.Remove("submitted_urls"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSubmittedUrlsItemProperty>? _explicitNullValueSubmittedUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSubmittedUrlsItemProperty> SubmittedUrls { get => _explicitNullValueSubmittedUrls; set { _explicitNullValueSubmittedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted_urls"); else _explicitNullProperties?.Remove("submitted_urls"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSubmittedUrlsItemProperty> SubmittedUrls { get => _explicitNullValueSubmittedUrls; set { _explicitNullValueSubmittedUrls = value; AdditionalData?.Remove("submitted_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted_urls"); else _explicitNullProperties?.Remove("submitted_urls"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiUrlSubmitSubmittedUrlsItemProperty> _explicitNullValueSubmittedUrls = default!;
 #endif
         /// <summary>

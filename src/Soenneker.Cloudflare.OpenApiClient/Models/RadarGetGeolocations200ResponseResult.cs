@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("geolocations") is { } nullNodeGeolocations && nullNodeGeolocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocations = null;
+            if (parseNode.GetChildNode("geolocations") is null) { _explicitNullValueGeolocations = default!; _explicitNullProperties?.Remove("geolocations"); }
+            else if (parseNode.GetChildNode("geolocations") is { } nullNodeGeolocations && nullNodeGeolocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The geolocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetGeolocations200ResponseResultGeolocationsItem>? Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetGeolocations200ResponseResultGeolocationsItem>? Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; AdditionalData?.Remove("geolocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetGeolocations200ResponseResultGeolocationsItem>? _explicitNullValueGeolocations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetGeolocations200ResponseResultGeolocationsItem> Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetGeolocations200ResponseResultGeolocationsItem> Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; AdditionalData?.Remove("geolocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetGeolocations200ResponseResultGeolocationsItem> _explicitNullValueGeolocations = default!;
 #endif
         /// <summary>

@@ -18,77 +18,87 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("available_bytes") is { } nullNodeAvailableBytes && nullNodeAvailableBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableBytes = null;
-            if (parseNode.GetChildNode("available_inodes") is { } nullNodeAvailableInodes && nullNodeAvailableInodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableInodes = null;
-            if (parseNode.GetChildNode("file_system") is { } nullNodeFileSystem && nullNodeFileSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSystem = null;
-            if (parseNode.GetChildNode("is_read_only") is { } nullNodeIsReadOnly && nullNodeIsReadOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReadOnly = null;
-            if (parseNode.GetChildNode("is_removable") is { } nullNodeIsRemovable && nullNodeIsRemovable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRemovable = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("mount_point") is { } nullNodeMountPoint && nullNodeMountPoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MountPoint = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("total_bytes") is { } nullNodeTotalBytes && nullNodeTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBytes = null;
-            if (parseNode.GetChildNode("total_inodes") is { } nullNodeTotalInodes && nullNodeTotalInodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInodes = null;
+            if (parseNode.GetChildNode("available_bytes") is null) { _explicitNullValueAvailableBytes = default!; _explicitNullProperties?.Remove("available_bytes"); }
+            else if (parseNode.GetChildNode("available_bytes") is { } nullNodeAvailableBytes && nullNodeAvailableBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableBytes = null;
+            if (parseNode.GetChildNode("available_inodes") is null) { _explicitNullValueAvailableInodes = default!; _explicitNullProperties?.Remove("available_inodes"); }
+            else if (parseNode.GetChildNode("available_inodes") is { } nullNodeAvailableInodes && nullNodeAvailableInodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableInodes = null;
+            if (parseNode.GetChildNode("file_system") is null) { _explicitNullValueFileSystem = default!; _explicitNullProperties?.Remove("file_system"); }
+            else if (parseNode.GetChildNode("file_system") is { } nullNodeFileSystem && nullNodeFileSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSystem = null;
+            if (parseNode.GetChildNode("is_read_only") is null) { _explicitNullValueIsReadOnly = default!; _explicitNullProperties?.Remove("is_read_only"); }
+            else if (parseNode.GetChildNode("is_read_only") is { } nullNodeIsReadOnly && nullNodeIsReadOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReadOnly = null;
+            if (parseNode.GetChildNode("is_removable") is null) { _explicitNullValueIsRemovable = default!; _explicitNullProperties?.Remove("is_removable"); }
+            else if (parseNode.GetChildNode("is_removable") is { } nullNodeIsRemovable && nullNodeIsRemovable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRemovable = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("mount_point") is null) { _explicitNullValueMountPoint = default!; _explicitNullProperties?.Remove("mount_point"); }
+            else if (parseNode.GetChildNode("mount_point") is { } nullNodeMountPoint && nullNodeMountPoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MountPoint = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("total_bytes") is null) { _explicitNullValueTotalBytes = default!; _explicitNullProperties?.Remove("total_bytes"); }
+            else if (parseNode.GetChildNode("total_bytes") is { } nullNodeTotalBytes && nullNodeTotalBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBytes = null;
+            if (parseNode.GetChildNode("total_inodes") is null) { _explicitNullValueTotalInodes = default!; _explicitNullProperties?.Remove("total_inodes"); }
+            else if (parseNode.GetChildNode("total_inodes") is { } nullNodeTotalInodes && nullNodeTotalInodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInodes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Available disk size (bytes)</summary>
-        public double? AvailableBytes { get => _explicitNullValueAvailableBytes; set { _explicitNullValueAvailableBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_bytes"); else _explicitNullProperties?.Remove("available_bytes"); } }
+        public double? AvailableBytes { get => _explicitNullValueAvailableBytes; set { _explicitNullValueAvailableBytes = value; AdditionalData?.Remove("available_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_bytes"); else _explicitNullProperties?.Remove("available_bytes"); } }
         private double? _explicitNullValueAvailableBytes = default!;
         /// <summary>Available inodes on filesystem</summary>
-        public double? AvailableInodes { get => _explicitNullValueAvailableInodes; set { _explicitNullValueAvailableInodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_inodes"); else _explicitNullProperties?.Remove("available_inodes"); } }
+        public double? AvailableInodes { get => _explicitNullValueAvailableInodes; set { _explicitNullValueAvailableInodes = value; AdditionalData?.Remove("available_inodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_inodes"); else _explicitNullProperties?.Remove("available_inodes"); } }
         private double? _explicitNullValueAvailableInodes = default!;
         /// <summary>File system on disk (EXT4, NTFS, etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileSystem { get => _explicitNullValueFileSystem; set { _explicitNullValueFileSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_system"); else _explicitNullProperties?.Remove("file_system"); } }
+        public string? FileSystem { get => _explicitNullValueFileSystem; set { _explicitNullValueFileSystem = value; AdditionalData?.Remove("file_system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_system"); else _explicitNullProperties?.Remove("file_system"); } }
         private string? _explicitNullValueFileSystem = default!;
 #nullable restore
 #else
-        public string FileSystem { get => _explicitNullValueFileSystem; set { _explicitNullValueFileSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_system"); else _explicitNullProperties?.Remove("file_system"); } }
+        public string FileSystem { get => _explicitNullValueFileSystem; set { _explicitNullValueFileSystem = value; AdditionalData?.Remove("file_system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_system"); else _explicitNullProperties?.Remove("file_system"); } }
         private string _explicitNullValueFileSystem = default!;
 #endif
         /// <summary>Determines whether the disk is read-only</summary>
-        public bool? IsReadOnly { get => _explicitNullValueIsReadOnly; set { _explicitNullValueIsReadOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_read_only"); else _explicitNullProperties?.Remove("is_read_only"); } }
+        public bool? IsReadOnly { get => _explicitNullValueIsReadOnly; set { _explicitNullValueIsReadOnly = value; AdditionalData?.Remove("is_read_only"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_read_only"); else _explicitNullProperties?.Remove("is_read_only"); } }
         private bool? _explicitNullValueIsReadOnly = default!;
         /// <summary>Determines whether the disk is removable</summary>
-        public bool? IsRemovable { get => _explicitNullValueIsRemovable; set { _explicitNullValueIsRemovable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_removable"); else _explicitNullProperties?.Remove("is_removable"); } }
+        public bool? IsRemovable { get => _explicitNullValueIsRemovable; set { _explicitNullValueIsRemovable = value; AdditionalData?.Remove("is_removable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_removable"); else _explicitNullProperties?.Remove("is_removable"); } }
         private bool? _explicitNullValueIsRemovable = default!;
         /// <summary>Kind of disk (HDD, SSD, etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private string _explicitNullValueKind = default!;
 #endif
         /// <summary>Path where disk is mounted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MountPoint { get => _explicitNullValueMountPoint; set { _explicitNullValueMountPoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mount_point"); else _explicitNullProperties?.Remove("mount_point"); } }
+        public string? MountPoint { get => _explicitNullValueMountPoint; set { _explicitNullValueMountPoint = value; AdditionalData?.Remove("mount_point"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mount_point"); else _explicitNullProperties?.Remove("mount_point"); } }
         private string? _explicitNullValueMountPoint = default!;
 #nullable restore
 #else
-        public string MountPoint { get => _explicitNullValueMountPoint; set { _explicitNullValueMountPoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mount_point"); else _explicitNullProperties?.Remove("mount_point"); } }
+        public string MountPoint { get => _explicitNullValueMountPoint; set { _explicitNullValueMountPoint = value; AdditionalData?.Remove("mount_point"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mount_point"); else _explicitNullProperties?.Remove("mount_point"); } }
         private string _explicitNullValueMountPoint = default!;
 #endif
         /// <summary>Name of the disk mount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Total disk size (bytes)</summary>
-        public double? TotalBytes { get => _explicitNullValueTotalBytes; set { _explicitNullValueTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_bytes"); else _explicitNullProperties?.Remove("total_bytes"); } }
+        public double? TotalBytes { get => _explicitNullValueTotalBytes; set { _explicitNullValueTotalBytes = value; AdditionalData?.Remove("total_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_bytes"); else _explicitNullProperties?.Remove("total_bytes"); } }
         private double? _explicitNullValueTotalBytes = default!;
         /// <summary>Total inodes on filesystem</summary>
-        public double? TotalInodes { get => _explicitNullValueTotalInodes; set { _explicitNullValueTotalInodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inodes"); else _explicitNullProperties?.Remove("total_inodes"); } }
+        public double? TotalInodes { get => _explicitNullValueTotalInodes; set { _explicitNullValueTotalInodes = value; AdditionalData?.Remove("total_inodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inodes"); else _explicitNullProperties?.Remove("total_inodes"); } }
         private double? _explicitNullValueTotalInodes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetrySnapshotMount"/> and sets the default values.

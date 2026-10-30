@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("origin_ip") is { } nullNodeOriginIp && nullNodeOriginIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginIp = null;
+            if (parseNode.GetChildNode("origin_ip") is null) { _explicitNullValueOriginIp = default!; _explicitNullProperties?.Remove("origin_ip"); }
+            else if (parseNode.GetChildNode("origin_ip") is { } nullNodeOriginIp && nullNodeOriginIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginIp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The origin IP address whose mapping was deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
+        public string? OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; AdditionalData?.Remove("origin_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
         private string? _explicitNullValueOriginIp = default!;
 #nullable restore
 #else
-        public string OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
+        public string OriginIp { get => _explicitNullValueOriginIp; set { _explicitNullValueOriginIp = value; AdditionalData?.Remove("origin_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_ip"); else _explicitNullProperties?.Remove("origin_ip"); } }
         private string _explicitNullValueOriginIp = default!;
 #endif
         /// <summary>

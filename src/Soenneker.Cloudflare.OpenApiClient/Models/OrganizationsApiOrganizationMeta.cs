@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hierarchy_tags") is { } nullNodeHierarchyTags && nullNodeHierarchyTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HierarchyTags = null;
-            if (parseNode.GetChildNode("managed_by") is { } nullNodeManagedBy && nullNodeManagedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedBy = null;
-            if (parseNode.GetChildNode("tenant_flags") is { } nullNodeTenantFlags && nullNodeTenantFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantFlags = null;
-            if (parseNode.GetChildNode("tenant_type") is { } nullNodeTenantType && nullNodeTenantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantType = null;
+            if (parseNode.GetChildNode("hierarchy_tags") is null) { _explicitNullValueHierarchyTags = default!; _explicitNullProperties?.Remove("hierarchy_tags"); }
+            else if (parseNode.GetChildNode("hierarchy_tags") is { } nullNodeHierarchyTags && nullNodeHierarchyTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HierarchyTags = null;
+            if (parseNode.GetChildNode("managed_by") is null) { _explicitNullValueManagedBy = default!; _explicitNullProperties?.Remove("managed_by"); }
+            else if (parseNode.GetChildNode("managed_by") is { } nullNodeManagedBy && nullNodeManagedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedBy = null;
+            if (parseNode.GetChildNode("tenant_flags") is null) { _explicitNullValueTenantFlags = default!; _explicitNullProperties?.Remove("tenant_flags"); }
+            else if (parseNode.GetChildNode("tenant_flags") is { } nullNodeTenantFlags && nullNodeTenantFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantFlags = null;
+            if (parseNode.GetChildNode("tenant_type") is null) { _explicitNullValueTenantType = default!; _explicitNullProperties?.Remove("tenant_type"); }
+            else if (parseNode.GetChildNode("tenant_type") is { } nullNodeTenantType && nullNodeTenantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,41 +34,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Ordered chain of organization tags from the root organization down to(and including) this organization itself. Root organizations return asingle-element array containing their own tag; sub-organizations return`[rootTag, ...intermediateTags, parentTag, selfTag]`. Useful forconstructing authorization scopes that need to cover every ancestorin the hierarchy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HierarchyTags { get => _explicitNullValueHierarchyTags; set { _explicitNullValueHierarchyTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchy_tags"); else _explicitNullProperties?.Remove("hierarchy_tags"); } }
+        public List<string>? HierarchyTags { get => _explicitNullValueHierarchyTags; set { _explicitNullValueHierarchyTags = value; AdditionalData?.Remove("hierarchy_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchy_tags"); else _explicitNullProperties?.Remove("hierarchy_tags"); } }
         private List<string>? _explicitNullValueHierarchyTags = default!;
 #nullable restore
 #else
-        public List<string> HierarchyTags { get => _explicitNullValueHierarchyTags; set { _explicitNullValueHierarchyTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchy_tags"); else _explicitNullProperties?.Remove("hierarchy_tags"); } }
+        public List<string> HierarchyTags { get => _explicitNullValueHierarchyTags; set { _explicitNullValueHierarchyTags = value; AdditionalData?.Remove("hierarchy_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchy_tags"); else _explicitNullProperties?.Remove("hierarchy_tags"); } }
         private List<string> _explicitNullValueHierarchyTags = default!;
 #endif
         /// <summary>The managed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_by"); else _explicitNullProperties?.Remove("managed_by"); } }
+        public string? ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; AdditionalData?.Remove("managed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_by"); else _explicitNullProperties?.Remove("managed_by"); } }
         private string? _explicitNullValueManagedBy = default!;
 #nullable restore
 #else
-        public string ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_by"); else _explicitNullProperties?.Remove("managed_by"); } }
+        public string ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; AdditionalData?.Remove("managed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed_by"); else _explicitNullProperties?.Remove("managed_by"); } }
         private string _explicitNullValueManagedBy = default!;
 #endif
         /// <summary>The tenant_flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags? TenantFlags { get => _explicitNullValueTenantFlags; set { _explicitNullValueTenantFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_flags"); else _explicitNullProperties?.Remove("tenant_flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags? TenantFlags { get => _explicitNullValueTenantFlags; set { _explicitNullValueTenantFlags = value; AdditionalData?.Remove("tenant_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_flags"); else _explicitNullProperties?.Remove("tenant_flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags? _explicitNullValueTenantFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags TenantFlags { get => _explicitNullValueTenantFlags; set { _explicitNullValueTenantFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_flags"); else _explicitNullProperties?.Remove("tenant_flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags TenantFlags { get => _explicitNullValueTenantFlags; set { _explicitNullValueTenantFlags = value; AdditionalData?.Remove("tenant_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_flags"); else _explicitNullProperties?.Remove("tenant_flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags _explicitNullValueTenantFlags = default!;
 #endif
         /// <summary>The tenant_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
+        public string? TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; AdditionalData?.Remove("tenant_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
         private string? _explicitNullValueTenantType = default!;
 #nullable restore
 #else
-        public string TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
+        public string TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; AdditionalData?.Remove("tenant_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_type"); else _explicitNullProperties?.Remove("tenant_type"); } }
         private string _explicitNullValueTenantType = default!;
 #endif
         /// <summary>

@@ -18,14 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("credential_health_status") is { } nullNodeCredentialHealthStatus && nullNodeCredentialHealthStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialHealthStatus = null;
-            if (parseNode.GetChildNode("credentials_expiry") is { } nullNodeCredentialsExpiry && nullNodeCredentialsExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialsExpiry = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("is_paused") is { } nullNodeIsPaused && nullNodeIsPaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPaused = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
-            if (parseNode.GetChildNode("upgrade_dismissed") is { } nullNodeUpgradeDismissed && nullNodeUpgradeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpgradeDismissed = null;
-            if (parseNode.GetChildNode("vendor") is { } nullNodeVendor && nullNodeVendor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendor = null;
+            if (parseNode.GetChildNode("credential_health_status") is null) { _explicitNullValueCredentialHealthStatus = default!; _explicitNullProperties?.Remove("credential_health_status"); }
+            else if (parseNode.GetChildNode("credential_health_status") is { } nullNodeCredentialHealthStatus && nullNodeCredentialHealthStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialHealthStatus = null;
+            if (parseNode.GetChildNode("credentials_expiry") is null) { _explicitNullValueCredentialsExpiry = default!; _explicitNullProperties?.Remove("credentials_expiry"); }
+            else if (parseNode.GetChildNode("credentials_expiry") is { } nullNodeCredentialsExpiry && nullNodeCredentialsExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialsExpiry = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_paused") is null) { _explicitNullValueIsPaused = default!; _explicitNullProperties?.Remove("is_paused"); }
+            else if (parseNode.GetChildNode("is_paused") is { } nullNodeIsPaused && nullNodeIsPaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPaused = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("policy") is null) { _explicitNullValuePolicy = default!; _explicitNullProperties?.Remove("policy"); }
+            else if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
+            if (parseNode.GetChildNode("upgrade_dismissed") is null) { _explicitNullValueUpgradeDismissed = default!; _explicitNullProperties?.Remove("upgrade_dismissed"); }
+            else if (parseNode.GetChildNode("upgrade_dismissed") is { } nullNodeUpgradeDismissed && nullNodeUpgradeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpgradeDismissed = null;
+            if (parseNode.GetChildNode("vendor") is null) { _explicitNullValueVendor = default!; _explicitNullProperties?.Remove("vendor"); }
+            else if (parseNode.GetChildNode("vendor") is { } nullNodeVendor && nullNodeVendor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,27 +41,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When entity was created.</summary>
         public DateTimeOffset? Created { get; private set; }
         /// <summary>Health status of integration credentials.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCredentialHealthStatusEnum? CredentialHealthStatus { get => _explicitNullValueCredentialHealthStatus; set { _explicitNullValueCredentialHealthStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_health_status"); else _explicitNullProperties?.Remove("credential_health_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCredentialHealthStatusEnum? CredentialHealthStatus { get => _explicitNullValueCredentialHealthStatus; set { _explicitNullValueCredentialHealthStatus = value; AdditionalData?.Remove("credential_health_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_health_status"); else _explicitNullProperties?.Remove("credential_health_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCredentialHealthStatusEnum? _explicitNullValueCredentialHealthStatus = default!;
         /// <summary>The date and time when the integration credentials will expire.</summary>
-        public DateTimeOffset? CredentialsExpiry { get => _explicitNullValueCredentialsExpiry; set { _explicitNullValueCredentialsExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials_expiry"); else _explicitNullProperties?.Remove("credentials_expiry"); } }
+        public DateTimeOffset? CredentialsExpiry { get => _explicitNullValueCredentialsExpiry; set { _explicitNullValueCredentialsExpiry = value; AdditionalData?.Remove("credentials_expiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials_expiry"); else _explicitNullProperties?.Remove("credentials_expiry"); } }
         private DateTimeOffset? _explicitNullValueCredentialsExpiry = default!;
         /// <summary>Integration ID.</summary>
-        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>Whether the given integration is paused by the user.</summary>
-        public bool? IsPaused { get => _explicitNullValueIsPaused; set { _explicitNullValueIsPaused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_paused"); else _explicitNullProperties?.Remove("is_paused"); } }
+        public bool? IsPaused { get => _explicitNullValueIsPaused; set { _explicitNullValueIsPaused = value; AdditionalData?.Remove("is_paused"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_paused"); else _explicitNullProperties?.Remove("is_paused"); } }
         private bool? _explicitNullValueIsPaused = default!;
         /// <summary>When were the integration credentials last updated.</summary>
         public DateTimeOffset? LastHydrated { get; private set; }
         /// <summary>Name of the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The vendor-specific permissions associated with the integration.</summary>
@@ -67,11 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Policy configuration for an integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationPolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationPolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationPolicy? _explicitNullValuePolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationPolicy Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationPolicy Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationPolicy _explicitNullValuePolicy = default!;
 #endif
         /// <summary>Current status of the integration.</summary>
@@ -87,16 +95,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether the integrations permissions can be updated.</summary>
         public bool? Upgradable { get; private set; }
         /// <summary>UI State as to whether a potential permissions upgrade has been dismissed.</summary>
-        public bool? UpgradeDismissed { get => _explicitNullValueUpgradeDismissed; set { _explicitNullValueUpgradeDismissed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upgrade_dismissed"); else _explicitNullProperties?.Remove("upgrade_dismissed"); } }
+        public bool? UpgradeDismissed { get => _explicitNullValueUpgradeDismissed; set { _explicitNullValueUpgradeDismissed = value; AdditionalData?.Remove("upgrade_dismissed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upgrade_dismissed"); else _explicitNullProperties?.Remove("upgrade_dismissed"); } }
         private bool? _explicitNullValueUpgradeDismissed = default!;
         /// <summary>Information about a vendor/service provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendor? Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendor? Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; AdditionalData?.Remove("vendor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendor? _explicitNullValueVendor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendor Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendor Vendor { get => _explicitNullValueVendor; set { _explicitNullValueVendor = value; AdditionalData?.Remove("vendor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendor"); else _explicitNullProperties?.Remove("vendor"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendor _explicitNullValueVendor = default!;
 #endif
         /// <summary>Zero Trust products associated with this integration.</summary>
@@ -135,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "credential_health_status", n => { CredentialHealthStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCredentialHealthStatusEnum>(); } },
+                { "credential_health_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCredentialHealthStatusEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCredentialHealthStatus = default; _explicitNullProperties?.Remove("credential_health_status"); AdditionalData["credential_health_status"] = unknown; } else { CredentialHealthStatus = parsed; AdditionalData.Remove("credential_health_status"); } } },
                 { "credentials_expiry", n => { CredentialsExpiry = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },

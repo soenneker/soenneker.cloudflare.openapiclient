@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cloudflare_endpoint") is { } nullNodeCloudflareEndpoint && nullNodeCloudflareEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareEndpoint = null;
+            if (parseNode.GetChildNode("cloudflare_endpoint") is null) { _explicitNullValueCloudflareEndpoint = default!; _explicitNullProperties?.Remove("cloudflare_endpoint"); }
+            else if (parseNode.GetChildNode("cloudflare_endpoint") is { } nullNodeCloudflareEndpoint && nullNodeCloudflareEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareEndpoint = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The IP address assigned to the Cloudflare side of the GRE tunnel created as part of the Interconnect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
+        public string? CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; AdditionalData?.Remove("cloudflare_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
         private string? _explicitNullValueCloudflareEndpoint = default!;
 #nullable restore
 #else
-        public string CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
+        public string CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; AdditionalData?.Remove("cloudflare_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
         private string _explicitNullValueCloudflareEndpoint = default!;
 #endif
         /// <summary>

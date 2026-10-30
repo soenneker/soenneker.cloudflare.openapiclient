@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("validation_method") is { } nullNodeValidationMethod && nullNodeValidationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationMethod = null;
+            if (parseNode.GetChildNode("validation_method") is null) { _explicitNullValueValidationMethod = default!; _explicitNullProperties?.Remove("validation_method"); }
+            else if (parseNode.GetChildNode("validation_method") is { } nullNodeValidationMethod && nullNodeValidationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationMethod = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Desired validation method.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethodDefinition? ValidationMethod { get => _explicitNullValueValidationMethod; set { _explicitNullValueValidationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_method"); else _explicitNullProperties?.Remove("validation_method"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethodDefinition? ValidationMethod { get => _explicitNullValueValidationMethod; set { _explicitNullValueValidationMethod = value; AdditionalData?.Remove("validation_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_method"); else _explicitNullProperties?.Remove("validation_method"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethodDefinition? _explicitNullValueValidationMethod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod3"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethodDefinition>(); } },
+                { "validation_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethodDefinition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueValidationMethod = default; _explicitNullProperties?.Remove("validation_method"); AdditionalData["validation_method"] = unknown; } else { ValidationMethod = parsed; AdditionalData.Remove("validation_method"); } } },
             };
         }
         /// <summary>

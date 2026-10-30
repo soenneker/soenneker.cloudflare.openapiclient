@@ -18,21 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("backlog_bytes") is { } nullNodeBacklogBytes && nullNodeBacklogBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BacklogBytes = null;
-            if (parseNode.GetChildNode("backlog_count") is { } nullNodeBacklogCount && nullNodeBacklogCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BacklogCount = null;
-            if (parseNode.GetChildNode("oldest_message_timestamp_ms") is { } nullNodeOldestMessageTimestampMs && nullNodeOldestMessageTimestampMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldestMessageTimestampMs = null;
+            if (parseNode.GetChildNode("backlog_bytes") is null) { _explicitNullValueBacklogBytes = default!; _explicitNullProperties?.Remove("backlog_bytes"); }
+            else if (parseNode.GetChildNode("backlog_bytes") is { } nullNodeBacklogBytes && nullNodeBacklogBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BacklogBytes = null;
+            if (parseNode.GetChildNode("backlog_count") is null) { _explicitNullValueBacklogCount = default!; _explicitNullProperties?.Remove("backlog_count"); }
+            else if (parseNode.GetChildNode("backlog_count") is { } nullNodeBacklogCount && nullNodeBacklogCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BacklogCount = null;
+            if (parseNode.GetChildNode("oldest_message_timestamp_ms") is null) { _explicitNullValueOldestMessageTimestampMs = default!; _explicitNullProperties?.Remove("oldest_message_timestamp_ms"); }
+            else if (parseNode.GetChildNode("oldest_message_timestamp_ms") is { } nullNodeOldestMessageTimestampMs && nullNodeOldestMessageTimestampMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldestMessageTimestampMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The size in bytes of unacknowledged messages in the queue.</summary>
-        public double? BacklogBytes { get => _explicitNullValueBacklogBytes; set { _explicitNullValueBacklogBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backlog_bytes"); else _explicitNullProperties?.Remove("backlog_bytes"); } }
+        public double? BacklogBytes { get => _explicitNullValueBacklogBytes; set { _explicitNullValueBacklogBytes = value; AdditionalData?.Remove("backlog_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backlog_bytes"); else _explicitNullProperties?.Remove("backlog_bytes"); } }
         private double? _explicitNullValueBacklogBytes = default!;
         /// <summary>The number of unacknowledged messages in the queue.</summary>
-        public double? BacklogCount { get => _explicitNullValueBacklogCount; set { _explicitNullValueBacklogCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backlog_count"); else _explicitNullProperties?.Remove("backlog_count"); } }
+        public double? BacklogCount { get => _explicitNullValueBacklogCount; set { _explicitNullValueBacklogCount = value; AdditionalData?.Remove("backlog_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backlog_count"); else _explicitNullProperties?.Remove("backlog_count"); } }
         private double? _explicitNullValueBacklogCount = default!;
         /// <summary>Unix timestamp in milliseconds of the oldest unacknowledged message in the queue. Returns 0 if unknown.</summary>
-        public double? OldestMessageTimestampMs { get => _explicitNullValueOldestMessageTimestampMs; set { _explicitNullValueOldestMessageTimestampMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldest_message_timestamp_ms"); else _explicitNullProperties?.Remove("oldest_message_timestamp_ms"); } }
+        public double? OldestMessageTimestampMs { get => _explicitNullValueOldestMessageTimestampMs; set { _explicitNullValueOldestMessageTimestampMs = value; AdditionalData?.Remove("oldest_message_timestamp_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldest_message_timestamp_ms"); else _explicitNullProperties?.Remove("oldest_message_timestamp_ms"); } }
         private double? _explicitNullValueOldestMessageTimestampMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMetrics"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("suspected_malware_family") is { } nullNodeSuspectedMalwareFamily && nullNodeSuspectedMalwareFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspectedMalwareFamily = null;
+            if (parseNode.GetChildNode("suspected_malware_family") is null) { _explicitNullValueSuspectedMalwareFamily = default!; _explicitNullProperties?.Remove("suspected_malware_family"); }
+            else if (parseNode.GetChildNode("suspected_malware_family") is { } nullNodeSuspectedMalwareFamily && nullNodeSuspectedMalwareFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspectedMalwareFamily = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Suspected DGA malware family.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SuspectedMalwareFamily { get => _explicitNullValueSuspectedMalwareFamily; set { _explicitNullValueSuspectedMalwareFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspected_malware_family"); else _explicitNullProperties?.Remove("suspected_malware_family"); } }
+        public string? SuspectedMalwareFamily { get => _explicitNullValueSuspectedMalwareFamily; set { _explicitNullValueSuspectedMalwareFamily = value; AdditionalData?.Remove("suspected_malware_family"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspected_malware_family"); else _explicitNullProperties?.Remove("suspected_malware_family"); } }
         private string? _explicitNullValueSuspectedMalwareFamily = default!;
 #nullable restore
 #else
-        public string SuspectedMalwareFamily { get => _explicitNullValueSuspectedMalwareFamily; set { _explicitNullValueSuspectedMalwareFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspected_malware_family"); else _explicitNullProperties?.Remove("suspected_malware_family"); } }
+        public string SuspectedMalwareFamily { get => _explicitNullValueSuspectedMalwareFamily; set { _explicitNullValueSuspectedMalwareFamily = value; AdditionalData?.Remove("suspected_malware_family"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspected_malware_family"); else _explicitNullProperties?.Remove("suspected_malware_family"); } }
         private string _explicitNullValueSuspectedMalwareFamily = default!;
 #endif
         /// <summary>

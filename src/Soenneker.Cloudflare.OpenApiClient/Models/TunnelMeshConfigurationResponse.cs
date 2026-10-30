@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
-            if (parseNode.GetChildNode("configuration_version") is { } nullNodeConfigurationVersion && nullNodeConfigurationVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationVersion = null;
-            if (parseNode.GetChildNode("ha_mode") is { } nullNodeHaMode && nullNodeHaMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HaMode = null;
+            if (parseNode.GetChildNode("config") is null) { _explicitNullValueConfig = default!; _explicitNullProperties?.Remove("config"); }
+            else if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("configuration_version") is null) { _explicitNullValueConfigurationVersion = default!; _explicitNullProperties?.Remove("configuration_version"); }
+            else if (parseNode.GetChildNode("configuration_version") is { } nullNodeConfigurationVersion && nullNodeConfigurationVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationVersion = null;
+            if (parseNode.GetChildNode("ha_mode") is null) { _explicitNullValueHaMode = default!; _explicitNullProperties?.Remove("ha_mode"); }
+            else if (parseNode.GetChildNode("ha_mode") is { } nullNodeHaMode && nullNodeHaMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HaMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,20 +30,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Provider-specific configuration. Present for `aws` and `local` modes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>Monotonically increasing configuration version, incremented on each PUT.</summary>
-        public int? ConfigurationVersion { get => _explicitNullValueConfigurationVersion; set { _explicitNullValueConfigurationVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_version"); else _explicitNullProperties?.Remove("configuration_version"); } }
+        public int? ConfigurationVersion { get => _explicitNullValueConfigurationVersion; set { _explicitNullValueConfigurationVersion = value; AdditionalData?.Remove("configuration_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_version"); else _explicitNullProperties?.Remove("configuration_version"); } }
         private int? _explicitNullValueConfigurationVersion = default!;
         /// <summary>Timestamp of when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>High-availability mode for the Mesh node. `none` means HA is enabled but no provider is configured yet (newly created nodes default to this). `disabled` means HA is explicitly turned off. `aws` uses AWS ENI move for failover. `local` uses virtual IPs (VIPs) on the local interface.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshHaMode? HaMode { get => _explicitNullValueHaMode; set { _explicitNullValueHaMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_mode"); else _explicitNullProperties?.Remove("ha_mode"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshHaMode? HaMode { get => _explicitNullValueHaMode; set { _explicitNullValueHaMode = value; AdditionalData?.Remove("ha_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_mode"); else _explicitNullProperties?.Remove("ha_mode"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshHaMode? _explicitNullValueHaMode = default!;
         /// <summary>UUID of the tunnel.</summary>
         public Guid? TunnelId { get; private set; }
@@ -74,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig.CreateFromDiscriminatorValue); } },
                 { "configuration_version", n => { ConfigurationVersion = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "ha_mode", n => { HaMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshHaMode>(); } },
+                { "ha_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshHaMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHaMode = default; _explicitNullProperties?.Remove("ha_mode"); AdditionalData["ha_mode"] = unknown; } else { HaMode = parsed; AdditionalData.Remove("ha_mode"); } } },
                 { "tunnel_id", n => { TunnelId = n.GetGuidValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };

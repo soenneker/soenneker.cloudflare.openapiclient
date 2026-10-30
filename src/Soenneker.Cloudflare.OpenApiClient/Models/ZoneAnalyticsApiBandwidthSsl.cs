@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("encrypted") is { } nullNodeEncrypted && nullNodeEncrypted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Encrypted = null;
-            if (parseNode.GetChildNode("unencrypted") is { } nullNodeUnencrypted && nullNodeUnencrypted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unencrypted = null;
+            if (parseNode.GetChildNode("encrypted") is null) { _explicitNullValueEncrypted = default!; _explicitNullProperties?.Remove("encrypted"); }
+            else if (parseNode.GetChildNode("encrypted") is { } nullNodeEncrypted && nullNodeEncrypted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Encrypted = null;
+            if (parseNode.GetChildNode("unencrypted") is null) { _explicitNullValueUnencrypted = default!; _explicitNullProperties?.Remove("unencrypted"); }
+            else if (parseNode.GetChildNode("unencrypted") is { } nullNodeUnencrypted && nullNodeUnencrypted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unencrypted = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of bytes served over HTTPS.</summary>
-        public int? Encrypted { get => _explicitNullValueEncrypted; set { _explicitNullValueEncrypted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted"); else _explicitNullProperties?.Remove("encrypted"); } }
+        public int? Encrypted { get => _explicitNullValueEncrypted; set { _explicitNullValueEncrypted = value; AdditionalData?.Remove("encrypted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted"); else _explicitNullProperties?.Remove("encrypted"); } }
         private int? _explicitNullValueEncrypted = default!;
         /// <summary>The number of bytes served over HTTP.</summary>
-        public int? Unencrypted { get => _explicitNullValueUnencrypted; set { _explicitNullValueUnencrypted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unencrypted"); else _explicitNullProperties?.Remove("unencrypted"); } }
+        public int? Unencrypted { get => _explicitNullValueUnencrypted; set { _explicitNullValueUnencrypted = value; AdditionalData?.Remove("unencrypted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unencrypted"); else _explicitNullProperties?.Remove("unencrypted"); } }
         private int? _explicitNullValueUnencrypted = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApiBandwidthSsl"/> and sets the default values.

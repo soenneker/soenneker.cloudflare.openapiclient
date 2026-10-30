@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
-            if (parseNode.GetChildNode("worker") is { } nullNodeWorker && nullNodeWorker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Worker = null;
+            if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
+            else if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("worker") is null) { _explicitNullValueWorker = default!; _explicitNullProperties?.Remove("worker"); }
+            else if (parseNode.GetChildNode("worker") is { } nullNodeWorker && nullNodeWorker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Worker = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Pass information from the Dispatch Worker to the Outbound Worker through the parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem>? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem>? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem>? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem> Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem> Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem> _explicitNullValueParams = default!;
 #endif
         /// <summary>Outbound worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker? Worker { get => _explicitNullValueWorker; set { _explicitNullValueWorker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker"); else _explicitNullProperties?.Remove("worker"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker? Worker { get => _explicitNullValueWorker; set { _explicitNullValueWorker = value; AdditionalData?.Remove("worker"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker"); else _explicitNullProperties?.Remove("worker"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker? _explicitNullValueWorker = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker Worker { get => _explicitNullValueWorker; set { _explicitNullValueWorker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker"); else _explicitNullProperties?.Remove("worker"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker Worker { get => _explicitNullValueWorker; set { _explicitNullValueWorker = value; AdditionalData?.Remove("worker"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker"); else _explicitNullProperties?.Remove("worker"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker _explicitNullValueWorker = default!;
 #endif
         /// <summary>

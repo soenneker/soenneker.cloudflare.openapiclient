@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lan_id") is { } nullNodeLanId && nullNodeLanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanId = null;
-            if (parseNode.GetChildNode("lan_name") is { } nullNodeLanName && nullNodeLanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanName = null;
-            if (parseNode.GetChildNode("port_ranges") is { } nullNodePortRanges && nullNodePortRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortRanges = null;
-            if (parseNode.GetChildNode("ports") is { } nullNodePorts && nullNodePorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ports = null;
-            if (parseNode.GetChildNode("subnets") is { } nullNodeSubnets && nullNodeSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subnets = null;
+            if (parseNode.GetChildNode("lan_id") is null) { _explicitNullValueLanId = default!; _explicitNullProperties?.Remove("lan_id"); }
+            else if (parseNode.GetChildNode("lan_id") is { } nullNodeLanId && nullNodeLanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanId = null;
+            if (parseNode.GetChildNode("lan_name") is null) { _explicitNullValueLanName = default!; _explicitNullProperties?.Remove("lan_name"); }
+            else if (parseNode.GetChildNode("lan_name") is { } nullNodeLanName && nullNodeLanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanName = null;
+            if (parseNode.GetChildNode("port_ranges") is null) { _explicitNullValuePortRanges = default!; _explicitNullProperties?.Remove("port_ranges"); }
+            else if (parseNode.GetChildNode("port_ranges") is { } nullNodePortRanges && nullNodePortRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortRanges = null;
+            if (parseNode.GetChildNode("ports") is null) { _explicitNullValuePorts = default!; _explicitNullProperties?.Remove("ports"); }
+            else if (parseNode.GetChildNode("ports") is { } nullNodePorts && nullNodePorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ports = null;
+            if (parseNode.GetChildNode("subnets") is null) { _explicitNullValueSubnets = default!; _explicitNullProperties?.Remove("subnets"); }
+            else if (parseNode.GetChildNode("subnets") is { } nullNodeSubnets && nullNodeSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subnets = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The identifier for the LAN you want to create an ACL policy with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanId { get => _explicitNullValueLanId; set { _explicitNullValueLanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_id"); else _explicitNullProperties?.Remove("lan_id"); } }
+        public string? LanId { get => _explicitNullValueLanId; set { _explicitNullValueLanId = value; AdditionalData?.Remove("lan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_id"); else _explicitNullProperties?.Remove("lan_id"); } }
         private string? _explicitNullValueLanId = default!;
 #nullable restore
 #else
-        public string LanId { get => _explicitNullValueLanId; set { _explicitNullValueLanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_id"); else _explicitNullProperties?.Remove("lan_id"); } }
+        public string LanId { get => _explicitNullValueLanId; set { _explicitNullValueLanId = value; AdditionalData?.Remove("lan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_id"); else _explicitNullProperties?.Remove("lan_id"); } }
         private string _explicitNullValueLanId = default!;
 #endif
         /// <summary>The name of the LAN based on the provided lan_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanName { get => _explicitNullValueLanName; set { _explicitNullValueLanName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_name"); else _explicitNullProperties?.Remove("lan_name"); } }
+        public string? LanName { get => _explicitNullValueLanName; set { _explicitNullValueLanName = value; AdditionalData?.Remove("lan_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_name"); else _explicitNullProperties?.Remove("lan_name"); } }
         private string? _explicitNullValueLanName = default!;
 #nullable restore
 #else
-        public string LanName { get => _explicitNullValueLanName; set { _explicitNullValueLanName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_name"); else _explicitNullProperties?.Remove("lan_name"); } }
+        public string LanName { get => _explicitNullValueLanName; set { _explicitNullValueLanName = value; AdditionalData?.Remove("lan_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lan_name"); else _explicitNullProperties?.Remove("lan_name"); } }
         private string _explicitNullValueLanName = default!;
 #endif
         /// <summary>Array of port ranges on the provided LAN that will be included in the ACL. If no ports or port rangess are provided, communication on any port on this LAN is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PortRanges { get => _explicitNullValuePortRanges; set { _explicitNullValuePortRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_ranges"); else _explicitNullProperties?.Remove("port_ranges"); } }
+        public List<string>? PortRanges { get => _explicitNullValuePortRanges; set { _explicitNullValuePortRanges = value; AdditionalData?.Remove("port_ranges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_ranges"); else _explicitNullProperties?.Remove("port_ranges"); } }
         private List<string>? _explicitNullValuePortRanges = default!;
 #nullable restore
 #else
-        public List<string> PortRanges { get => _explicitNullValuePortRanges; set { _explicitNullValuePortRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_ranges"); else _explicitNullProperties?.Remove("port_ranges"); } }
+        public List<string> PortRanges { get => _explicitNullValuePortRanges; set { _explicitNullValuePortRanges = value; AdditionalData?.Remove("port_ranges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_ranges"); else _explicitNullProperties?.Remove("port_ranges"); } }
         private List<string> _explicitNullValuePortRanges = default!;
 #endif
         /// <summary>Array of ports on the provided LAN that will be included in the ACL. If no ports or port ranges are provided, communication on any port on this LAN is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
+        public List<int?>? Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; AdditionalData?.Remove("ports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
         private List<int?>? _explicitNullValuePorts = default!;
 #nullable restore
 #else
-        public List<int?> Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
+        public List<int?> Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; AdditionalData?.Remove("ports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
         private List<int?> _explicitNullValuePorts = default!;
 #endif
         /// <summary>Array of subnet IPs within the LAN that will be included in the ACL. If no subnets are provided, communication on any subnets on this LAN are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Subnets { get => _explicitNullValueSubnets; set { _explicitNullValueSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnets"); else _explicitNullProperties?.Remove("subnets"); } }
+        public List<string>? Subnets { get => _explicitNullValueSubnets; set { _explicitNullValueSubnets = value; AdditionalData?.Remove("subnets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnets"); else _explicitNullProperties?.Remove("subnets"); } }
         private List<string>? _explicitNullValueSubnets = default!;
 #nullable restore
 #else
-        public List<string> Subnets { get => _explicitNullValueSubnets; set { _explicitNullValueSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnets"); else _explicitNullProperties?.Remove("subnets"); } }
+        public List<string> Subnets { get => _explicitNullValueSubnets; set { _explicitNullValueSubnets = value; AdditionalData?.Remove("subnets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnets"); else _explicitNullProperties?.Remove("subnets"); } }
         private List<string> _explicitNullValueSubnets = default!;
 #endif
         /// <summary>

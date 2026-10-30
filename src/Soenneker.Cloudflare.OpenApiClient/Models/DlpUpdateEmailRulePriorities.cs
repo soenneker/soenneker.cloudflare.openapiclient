@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_priorities") is { } nullNodeNewPriorities && nullNodeNewPriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewPriorities = null;
+            if (parseNode.GetChildNode("new_priorities") is null) { _explicitNullValueNewPriorities = default!; _explicitNullProperties?.Remove("new_priorities"); }
+            else if (parseNode.GetChildNode("new_priorities") is { } nullNodeNewPriorities && nullNodeNewPriorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewPriorities = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The new_priorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty? NewPriorities { get => _explicitNullValueNewPriorities; set { _explicitNullValueNewPriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_priorities"); else _explicitNullProperties?.Remove("new_priorities"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty? NewPriorities { get => _explicitNullValueNewPriorities; set { _explicitNullValueNewPriorities = value; AdditionalData?.Remove("new_priorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_priorities"); else _explicitNullProperties?.Remove("new_priorities"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty? _explicitNullValueNewPriorities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty NewPriorities { get => _explicitNullValueNewPriorities; set { _explicitNullValueNewPriorities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_priorities"); else _explicitNullProperties?.Remove("new_priorities"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty NewPriorities { get => _explicitNullValueNewPriorities; set { _explicitNullValueNewPriorities = value; AdditionalData?.Remove("new_priorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_priorities"); else _explicitNullProperties?.Remove("new_priorities"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty _explicitNullValueNewPriorities = default!;
 #endif
         /// <summary>

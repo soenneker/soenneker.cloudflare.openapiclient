@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("background_color") is { } nullNodeBackgroundColor && nullNodeBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundColor = null;
-            if (parseNode.GetChildNode("footer_text") is { } nullNodeFooterText && nullNodeFooterText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FooterText = null;
-            if (parseNode.GetChildNode("header_text") is { } nullNodeHeaderText && nullNodeHeaderText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderText = null;
-            if (parseNode.GetChildNode("logo_path") is { } nullNodeLogoPath && nullNodeLogoPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoPath = null;
-            if (parseNode.GetChildNode("text_color") is { } nullNodeTextColor && nullNodeTextColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextColor = null;
+            if (parseNode.GetChildNode("background_color") is null) { _explicitNullValueBackgroundColor = default!; _explicitNullProperties?.Remove("background_color"); }
+            else if (parseNode.GetChildNode("background_color") is { } nullNodeBackgroundColor && nullNodeBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundColor = null;
+            if (parseNode.GetChildNode("footer_text") is null) { _explicitNullValueFooterText = default!; _explicitNullProperties?.Remove("footer_text"); }
+            else if (parseNode.GetChildNode("footer_text") is { } nullNodeFooterText && nullNodeFooterText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FooterText = null;
+            if (parseNode.GetChildNode("header_text") is null) { _explicitNullValueHeaderText = default!; _explicitNullProperties?.Remove("header_text"); }
+            else if (parseNode.GetChildNode("header_text") is { } nullNodeHeaderText && nullNodeHeaderText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderText = null;
+            if (parseNode.GetChildNode("logo_path") is null) { _explicitNullValueLogoPath = default!; _explicitNullProperties?.Remove("logo_path"); }
+            else if (parseNode.GetChildNode("logo_path") is { } nullNodeLogoPath && nullNodeLogoPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoPath = null;
+            if (parseNode.GetChildNode("text_color") is null) { _explicitNullValueTextColor = default!; _explicitNullProperties?.Remove("text_color"); }
+            else if (parseNode.GetChildNode("text_color") is { } nullNodeTextColor && nullNodeTextColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextColor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The background color on your login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        public string? BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; AdditionalData?.Remove("background_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
         private string? _explicitNullValueBackgroundColor = default!;
 #nullable restore
 #else
-        public string BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        public string BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; AdditionalData?.Remove("background_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
         private string _explicitNullValueBackgroundColor = default!;
 #endif
         /// <summary>The text at the bottom of your login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FooterText { get => _explicitNullValueFooterText; set { _explicitNullValueFooterText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_text"); else _explicitNullProperties?.Remove("footer_text"); } }
+        public string? FooterText { get => _explicitNullValueFooterText; set { _explicitNullValueFooterText = value; AdditionalData?.Remove("footer_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_text"); else _explicitNullProperties?.Remove("footer_text"); } }
         private string? _explicitNullValueFooterText = default!;
 #nullable restore
 #else
-        public string FooterText { get => _explicitNullValueFooterText; set { _explicitNullValueFooterText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_text"); else _explicitNullProperties?.Remove("footer_text"); } }
+        public string FooterText { get => _explicitNullValueFooterText; set { _explicitNullValueFooterText = value; AdditionalData?.Remove("footer_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_text"); else _explicitNullProperties?.Remove("footer_text"); } }
         private string _explicitNullValueFooterText = default!;
 #endif
         /// <summary>The text at the top of your login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderText { get => _explicitNullValueHeaderText; set { _explicitNullValueHeaderText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_text"); else _explicitNullProperties?.Remove("header_text"); } }
+        public string? HeaderText { get => _explicitNullValueHeaderText; set { _explicitNullValueHeaderText = value; AdditionalData?.Remove("header_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_text"); else _explicitNullProperties?.Remove("header_text"); } }
         private string? _explicitNullValueHeaderText = default!;
 #nullable restore
 #else
-        public string HeaderText { get => _explicitNullValueHeaderText; set { _explicitNullValueHeaderText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_text"); else _explicitNullProperties?.Remove("header_text"); } }
+        public string HeaderText { get => _explicitNullValueHeaderText; set { _explicitNullValueHeaderText = value; AdditionalData?.Remove("header_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_text"); else _explicitNullProperties?.Remove("header_text"); } }
         private string _explicitNullValueHeaderText = default!;
 #endif
         /// <summary>The URL of the logo on your login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoPath { get => _explicitNullValueLogoPath; set { _explicitNullValueLogoPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_path"); else _explicitNullProperties?.Remove("logo_path"); } }
+        public string? LogoPath { get => _explicitNullValueLogoPath; set { _explicitNullValueLogoPath = value; AdditionalData?.Remove("logo_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_path"); else _explicitNullProperties?.Remove("logo_path"); } }
         private string? _explicitNullValueLogoPath = default!;
 #nullable restore
 #else
-        public string LogoPath { get => _explicitNullValueLogoPath; set { _explicitNullValueLogoPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_path"); else _explicitNullProperties?.Remove("logo_path"); } }
+        public string LogoPath { get => _explicitNullValueLogoPath; set { _explicitNullValueLogoPath = value; AdditionalData?.Remove("logo_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_path"); else _explicitNullProperties?.Remove("logo_path"); } }
         private string _explicitNullValueLogoPath = default!;
 #endif
         /// <summary>The text color on your login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
+        public string? TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; AdditionalData?.Remove("text_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
         private string? _explicitNullValueTextColor = default!;
 #nullable restore
 #else
-        public string TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
+        public string TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; AdditionalData?.Remove("text_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
         private string _explicitNullValueTextColor = default!;
 #endif
         /// <summary>

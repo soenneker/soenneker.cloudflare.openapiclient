@@ -17,24 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active_schema") is { } nullNodeActiveSchema && nullNodeActiveSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveSchema = null;
-            if (parseNode.GetChildNode("mitigation_action") is { } nullNodeMitigationAction && nullNodeMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationAction = null;
+            if (parseNode.GetChildNode("active_schema") is null) { _explicitNullValueActiveSchema = default!; _explicitNullProperties?.Remove("active_schema"); }
+            else if (parseNode.GetChildNode("active_schema") is { } nullNodeActiveSchema && nullNodeActiveSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveSchema = null;
+            if (parseNode.GetChildNode("mitigation_action") is null) { _explicitNullValueMitigationAction = default!; _explicitNullProperties?.Remove("mitigation_action"); }
+            else if (parseNode.GetChildNode("mitigation_action") is { } nullNodeMitigationAction && nullNodeMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationAction = null;
         }
 
         /// <summary>Schema active on endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema? ActiveSchema { get => _explicitNullValueActiveSchema; set { _explicitNullValueActiveSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_schema"); else _explicitNullProperties?.Remove("active_schema"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema? ActiveSchema { get => _explicitNullValueActiveSchema; set { _explicitNullValueActiveSchema = value; AdditionalData?.Remove("active_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_schema"); else _explicitNullProperties?.Remove("active_schema"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema? _explicitNullValueActiveSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema ActiveSchema { get => _explicitNullValueActiveSchema; set { _explicitNullValueActiveSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_schema"); else _explicitNullProperties?.Remove("active_schema"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema ActiveSchema { get => _explicitNullValueActiveSchema; set { _explicitNullValueActiveSchema = value; AdditionalData?.Remove("active_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_schema"); else _explicitNullProperties?.Remove("active_schema"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema _explicitNullValueActiveSchema = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Action taken on requests failing validation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction? MitigationAction { get => _explicitNullValueMitigationAction; set { _explicitNullValueMitigationAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_action"); else _explicitNullProperties?.Remove("mitigation_action"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction? MitigationAction { get => _explicitNullValueMitigationAction; set { _explicitNullValueMitigationAction = value; AdditionalData?.Remove("mitigation_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_action"); else _explicitNullProperties?.Remove("mitigation_action"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction? _explicitNullValueMitigationAction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfo"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active_schema", n => { ActiveSchema = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.CreateFromDiscriminatorValue); } },
-                { "mitigation_action", n => { MitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction>(); } },
+                { "mitigation_action", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMitigationAction = default; _explicitNullProperties?.Remove("mitigation_action"); AdditionalData["mitigation_action"] = unknown; } else { MitigationAction = parsed; AdditionalData.Remove("mitigation_action"); } } },
             };
         }
         /// <summary>

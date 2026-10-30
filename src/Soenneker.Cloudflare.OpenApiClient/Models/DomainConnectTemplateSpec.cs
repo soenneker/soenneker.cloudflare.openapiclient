@@ -17,28 +17,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountTags") is { } nullNodeAccountTags && nullNodeAccountTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountTags = null;
-            if (parseNode.GetChildNode("proxied") is { } nullNodeProxied && nullNodeProxied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxied = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("accountTags") is null) { _explicitNullValueAccountTags = default!; _explicitNullProperties?.Remove("accountTags"); }
+            else if (parseNode.GetChildNode("accountTags") is { } nullNodeAccountTags && nullNodeAccountTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountTags = null;
+            if (parseNode.GetChildNode("proxied") is null) { _explicitNullValueProxied = default!; _explicitNullProperties?.Remove("proxied"); }
+            else if (parseNode.GetChildNode("proxied") is { } nullNodeProxied && nullNodeProxied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxied = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>The accountTags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountTags { get => _explicitNullValueAccountTags; set { _explicitNullValueAccountTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTags"); else _explicitNullProperties?.Remove("accountTags"); } }
+        public List<string>? AccountTags { get => _explicitNullValueAccountTags; set { _explicitNullValueAccountTags = value; AdditionalData?.Remove("accountTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTags"); else _explicitNullProperties?.Remove("accountTags"); } }
         private List<string>? _explicitNullValueAccountTags = default!;
 #nullable restore
 #else
-        public List<string> AccountTags { get => _explicitNullValueAccountTags; set { _explicitNullValueAccountTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTags"); else _explicitNullProperties?.Remove("accountTags"); } }
+        public List<string> AccountTags { get => _explicitNullValueAccountTags; set { _explicitNullValueAccountTags = value; AdditionalData?.Remove("accountTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTags"); else _explicitNullProperties?.Remove("accountTags"); } }
         private List<string> _explicitNullValueAccountTags = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The proxied property</summary>
-        public bool? Proxied { get => _explicitNullValueProxied; set { _explicitNullValueProxied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxied"); else _explicitNullProperties?.Remove("proxied"); } }
+        public bool? Proxied { get => _explicitNullValueProxied; set { _explicitNullValueProxied = value; AdditionalData?.Remove("proxied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxied"); else _explicitNullProperties?.Remove("proxied"); } }
         private bool? _explicitNullValueProxied = default!;
         /// <summary>The status property</summary>
-        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private int? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DomainConnectTemplateSpec"/> and sets the default values.

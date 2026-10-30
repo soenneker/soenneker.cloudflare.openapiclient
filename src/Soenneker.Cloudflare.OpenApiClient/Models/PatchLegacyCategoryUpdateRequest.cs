@@ -17,56 +17,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("killChain") is { } nullNodeKillChain && nullNodeKillChain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KillChain = null;
-            if (parseNode.GetChildNode("mitreAttack") is { } nullNodeMitreAttack && nullNodeMitreAttack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitreAttack = null;
-            if (parseNode.GetChildNode("mitreCapec") is { } nullNodeMitreCapec && nullNodeMitreCapec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitreCapec = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("shortname") is { } nullNodeShortname && nullNodeShortname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shortname = null;
+            if (parseNode.GetChildNode("killChain") is null) { _explicitNullValueKillChain = default!; _explicitNullProperties?.Remove("killChain"); }
+            else if (parseNode.GetChildNode("killChain") is { } nullNodeKillChain && nullNodeKillChain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KillChain = null;
+            if (parseNode.GetChildNode("mitreAttack") is null) { _explicitNullValueMitreAttack = default!; _explicitNullProperties?.Remove("mitreAttack"); }
+            else if (parseNode.GetChildNode("mitreAttack") is { } nullNodeMitreAttack && nullNodeMitreAttack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitreAttack = null;
+            if (parseNode.GetChildNode("mitreCapec") is null) { _explicitNullValueMitreCapec = default!; _explicitNullProperties?.Remove("mitreCapec"); }
+            else if (parseNode.GetChildNode("mitreCapec") is { } nullNodeMitreCapec && nullNodeMitreCapec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitreCapec = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("shortname") is null) { _explicitNullValueShortname = default!; _explicitNullProperties?.Remove("shortname"); }
+            else if (parseNode.GetChildNode("shortname") is { } nullNodeShortname && nullNodeShortname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shortname = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The killChain property</summary>
-        public double? KillChain { get => _explicitNullValueKillChain; set { _explicitNullValueKillChain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("killChain"); else _explicitNullProperties?.Remove("killChain"); } }
+        public double? KillChain { get => _explicitNullValueKillChain; set { _explicitNullValueKillChain = value; AdditionalData?.Remove("killChain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("killChain"); else _explicitNullProperties?.Remove("killChain"); } }
         private double? _explicitNullValueKillChain = default!;
         /// <summary>The mitreAttack property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MitreAttack { get => _explicitNullValueMitreAttack; set { _explicitNullValueMitreAttack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreAttack"); else _explicitNullProperties?.Remove("mitreAttack"); } }
+        public List<string>? MitreAttack { get => _explicitNullValueMitreAttack; set { _explicitNullValueMitreAttack = value; AdditionalData?.Remove("mitreAttack"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreAttack"); else _explicitNullProperties?.Remove("mitreAttack"); } }
         private List<string>? _explicitNullValueMitreAttack = default!;
 #nullable restore
 #else
-        public List<string> MitreAttack { get => _explicitNullValueMitreAttack; set { _explicitNullValueMitreAttack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreAttack"); else _explicitNullProperties?.Remove("mitreAttack"); } }
+        public List<string> MitreAttack { get => _explicitNullValueMitreAttack; set { _explicitNullValueMitreAttack = value; AdditionalData?.Remove("mitreAttack"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreAttack"); else _explicitNullProperties?.Remove("mitreAttack"); } }
         private List<string> _explicitNullValueMitreAttack = default!;
 #endif
         /// <summary>The mitreCapec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MitreCapec { get => _explicitNullValueMitreCapec; set { _explicitNullValueMitreCapec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreCapec"); else _explicitNullProperties?.Remove("mitreCapec"); } }
+        public List<string>? MitreCapec { get => _explicitNullValueMitreCapec; set { _explicitNullValueMitreCapec = value; AdditionalData?.Remove("mitreCapec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreCapec"); else _explicitNullProperties?.Remove("mitreCapec"); } }
         private List<string>? _explicitNullValueMitreCapec = default!;
 #nullable restore
 #else
-        public List<string> MitreCapec { get => _explicitNullValueMitreCapec; set { _explicitNullValueMitreCapec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreCapec"); else _explicitNullProperties?.Remove("mitreCapec"); } }
+        public List<string> MitreCapec { get => _explicitNullValueMitreCapec; set { _explicitNullValueMitreCapec = value; AdditionalData?.Remove("mitreCapec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitreCapec"); else _explicitNullProperties?.Remove("mitreCapec"); } }
         private List<string> _explicitNullValueMitreCapec = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The shortname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Shortname { get => _explicitNullValueShortname; set { _explicitNullValueShortname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortname"); else _explicitNullProperties?.Remove("shortname"); } }
+        public string? Shortname { get => _explicitNullValueShortname; set { _explicitNullValueShortname = value; AdditionalData?.Remove("shortname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortname"); else _explicitNullProperties?.Remove("shortname"); } }
         private string? _explicitNullValueShortname = default!;
 #nullable restore
 #else
-        public string Shortname { get => _explicitNullValueShortname; set { _explicitNullValueShortname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortname"); else _explicitNullProperties?.Remove("shortname"); } }
+        public string Shortname { get => _explicitNullValueShortname; set { _explicitNullValueShortname = value; AdditionalData?.Remove("shortname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortname"); else _explicitNullProperties?.Remove("shortname"); } }
         private string _explicitNullValueShortname = default!;
 #endif
         /// <summary>

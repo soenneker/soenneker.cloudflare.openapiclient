@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cache_threshold") is { } nullNodeCacheThreshold && nullNodeCacheThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheThreshold = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("cache_threshold") is null) { _explicitNullValueCacheThreshold = default!; _explicitNullProperties?.Remove("cache_threshold"); }
+            else if (parseNode.GetChildNode("cache_threshold") is { } nullNodeCacheThreshold && nullNodeCacheThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheThreshold = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cache_threshold property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearchRequestAiSearchOptionsCacheCacheThreshold? CacheThreshold { get => _explicitNullValueCacheThreshold; set { _explicitNullValueCacheThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_threshold"); else _explicitNullProperties?.Remove("cache_threshold"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearchRequestAiSearchOptionsCacheCacheThreshold? CacheThreshold { get => _explicitNullValueCacheThreshold; set { _explicitNullValueCacheThreshold = value; AdditionalData?.Remove("cache_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_threshold"); else _explicitNullProperties?.Remove("cache_threshold"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearchRequestAiSearchOptionsCacheCacheThreshold? _explicitNullValueCacheThreshold = default!;
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearchRequestAiSearchOptionsCache"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearchRequestAiSearchOptionsCacheCacheThreshold>(); } },
+                { "cache_threshold", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceSearchRequestAiSearchOptionsCacheCacheThreshold>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCacheThreshold = default; _explicitNullProperties?.Remove("cache_threshold"); AdditionalData["cache_threshold"] = unknown; } else { CacheThreshold = parsed; AdditionalData.Remove("cache_threshold"); } } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }

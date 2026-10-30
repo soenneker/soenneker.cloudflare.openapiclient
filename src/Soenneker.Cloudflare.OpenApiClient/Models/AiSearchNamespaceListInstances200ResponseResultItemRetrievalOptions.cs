@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("boost_by") is { } nullNodeBoostBy && nullNodeBoostBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoostBy = null;
-            if (parseNode.GetChildNode("keyword_match_mode") is { } nullNodeKeywordMatchMode && nullNodeKeywordMatchMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordMatchMode = null;
+            if (parseNode.GetChildNode("boost_by") is null) { _explicitNullValueBoostBy = default!; _explicitNullProperties?.Remove("boost_by"); }
+            else if (parseNode.GetChildNode("boost_by") is { } nullNodeBoostBy && nullNodeBoostBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoostBy = null;
+            if (parseNode.GetChildNode("keyword_match_mode") is null) { _explicitNullValueKeywordMatchMode = default!; _explicitNullProperties?.Remove("keyword_match_mode"); }
+            else if (parseNode.GetChildNode("keyword_match_mode") is { } nullNodeKeywordMatchMode && nullNodeKeywordMatchMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordMatchMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The boost_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem>? BoostBy { get => _explicitNullValueBoostBy; set { _explicitNullValueBoostBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boost_by"); else _explicitNullProperties?.Remove("boost_by"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem>? BoostBy { get => _explicitNullValueBoostBy; set { _explicitNullValueBoostBy = value; AdditionalData?.Remove("boost_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boost_by"); else _explicitNullProperties?.Remove("boost_by"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem>? _explicitNullValueBoostBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem> BoostBy { get => _explicitNullValueBoostBy; set { _explicitNullValueBoostBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boost_by"); else _explicitNullProperties?.Remove("boost_by"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem> BoostBy { get => _explicitNullValueBoostBy; set { _explicitNullValueBoostBy = value; AdditionalData?.Remove("boost_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boost_by"); else _explicitNullProperties?.Remove("boost_by"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem> _explicitNullValueBoostBy = default!;
 #endif
         /// <summary>The keyword_match_mode property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsKeywordMatchMode? KeywordMatchMode { get => _explicitNullValueKeywordMatchMode; set { _explicitNullValueKeywordMatchMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_match_mode"); else _explicitNullProperties?.Remove("keyword_match_mode"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsKeywordMatchMode? KeywordMatchMode { get => _explicitNullValueKeywordMatchMode; set { _explicitNullValueKeywordMatchMode = value; AdditionalData?.Remove("keyword_match_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_match_mode"); else _explicitNullProperties?.Remove("keyword_match_mode"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsKeywordMatchMode? _explicitNullValueKeywordMatchMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptions"/> and sets the default values.
@@ -64,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "boost_by", n => { BoostBy = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsBoostByItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "keyword_match_mode", n => { KeywordMatchMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsKeywordMatchMode>(); } },
+                { "keyword_match_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemRetrievalOptionsKeywordMatchMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKeywordMatchMode = default; _explicitNullProperties?.Remove("keyword_match_mode"); AdditionalData["keyword_match_mode"] = unknown; } else { KeywordMatchMode = parsed; AdditionalData.Remove("keyword_match_mode"); } } },
             };
         }
         /// <summary>

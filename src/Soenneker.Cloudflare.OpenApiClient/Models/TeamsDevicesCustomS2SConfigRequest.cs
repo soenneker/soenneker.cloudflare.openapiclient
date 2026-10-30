@@ -17,29 +17,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_client_id") is { } nullNodeAccessClientId && nullNodeAccessClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessClientId = null;
-            if (parseNode.GetChildNode("access_client_secret") is { } nullNodeAccessClientSecret && nullNodeAccessClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessClientSecret = null;
-            if (parseNode.GetChildNode("api_url") is { } nullNodeApiUrl && nullNodeApiUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiUrl = null;
+            if (parseNode.GetChildNode("access_client_id") is null) { _explicitNullValueAccessClientId = default!; _explicitNullProperties?.Remove("access_client_id"); }
+            else if (parseNode.GetChildNode("access_client_id") is { } nullNodeAccessClientId && nullNodeAccessClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessClientId = null;
+            if (parseNode.GetChildNode("access_client_secret") is null) { _explicitNullValueAccessClientSecret = default!; _explicitNullProperties?.Remove("access_client_secret"); }
+            else if (parseNode.GetChildNode("access_client_secret") is { } nullNodeAccessClientSecret && nullNodeAccessClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessClientSecret = null;
+            if (parseNode.GetChildNode("api_url") is null) { _explicitNullValueApiUrl = default!; _explicitNullProperties?.Remove("api_url"); }
+            else if (parseNode.GetChildNode("api_url") is { } nullNodeApiUrl && nullNodeApiUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiUrl = null;
         }
 
         /// <summary>This id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessClientId { get => _explicitNullValueAccessClientId; set { _explicitNullValueAccessClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_id"); else _explicitNullProperties?.Remove("access_client_id"); } }
+        public string? AccessClientId { get => _explicitNullValueAccessClientId; set { _explicitNullValueAccessClientId = value; AdditionalData?.Remove("access_client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_id"); else _explicitNullProperties?.Remove("access_client_id"); } }
         private string? _explicitNullValueAccessClientId = default!;
 #nullable restore
 #else
-        public string AccessClientId { get => _explicitNullValueAccessClientId; set { _explicitNullValueAccessClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_id"); else _explicitNullProperties?.Remove("access_client_id"); } }
+        public string AccessClientId { get => _explicitNullValueAccessClientId; set { _explicitNullValueAccessClientId = value; AdditionalData?.Remove("access_client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_id"); else _explicitNullProperties?.Remove("access_client_id"); } }
         private string _explicitNullValueAccessClientId = default!;
 #endif
         /// <summary>This secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessClientSecret { get => _explicitNullValueAccessClientSecret; set { _explicitNullValueAccessClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_secret"); else _explicitNullProperties?.Remove("access_client_secret"); } }
+        public string? AccessClientSecret { get => _explicitNullValueAccessClientSecret; set { _explicitNullValueAccessClientSecret = value; AdditionalData?.Remove("access_client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_secret"); else _explicitNullProperties?.Remove("access_client_secret"); } }
         private string? _explicitNullValueAccessClientSecret = default!;
 #nullable restore
 #else
-        public string AccessClientSecret { get => _explicitNullValueAccessClientSecret; set { _explicitNullValueAccessClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_secret"); else _explicitNullProperties?.Remove("access_client_secret"); } }
+        public string AccessClientSecret { get => _explicitNullValueAccessClientSecret; set { _explicitNullValueAccessClientSecret = value; AdditionalData?.Remove("access_client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_client_secret"); else _explicitNullProperties?.Remove("access_client_secret"); } }
         private string _explicitNullValueAccessClientSecret = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,11 +50,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Custom Device Posture Integration  API URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiUrl { get => _explicitNullValueApiUrl; set { _explicitNullValueApiUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_url"); else _explicitNullProperties?.Remove("api_url"); } }
+        public string? ApiUrl { get => _explicitNullValueApiUrl; set { _explicitNullValueApiUrl = value; AdditionalData?.Remove("api_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_url"); else _explicitNullProperties?.Remove("api_url"); } }
         private string? _explicitNullValueApiUrl = default!;
 #nullable restore
 #else
-        public string ApiUrl { get => _explicitNullValueApiUrl; set { _explicitNullValueApiUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_url"); else _explicitNullProperties?.Remove("api_url"); } }
+        public string ApiUrl { get => _explicitNullValueApiUrl; set { _explicitNullValueApiUrl = value; AdditionalData?.Remove("api_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_url"); else _explicitNullProperties?.Remove("api_url"); } }
         private string _explicitNullValueApiUrl = default!;
 #endif
         /// <summary>

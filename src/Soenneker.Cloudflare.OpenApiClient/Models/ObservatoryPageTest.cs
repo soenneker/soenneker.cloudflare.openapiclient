@@ -17,71 +17,78 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
-            if (parseNode.GetChildNode("desktopReport") is { } nullNodeDesktopReport && nullNodeDesktopReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesktopReport = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("mobileReport") is { } nullNodeMobileReport && nullNodeMobileReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileReport = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("scheduleFrequency") is { } nullNodeScheduleFrequency && nullNodeScheduleFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleFrequency = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("date") is null) { _explicitNullValueDate = default!; _explicitNullProperties?.Remove("date"); }
+            else if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("desktopReport") is null) { _explicitNullValueDesktopReport = default!; _explicitNullProperties?.Remove("desktopReport"); }
+            else if (parseNode.GetChildNode("desktopReport") is { } nullNodeDesktopReport && nullNodeDesktopReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesktopReport = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("mobileReport") is null) { _explicitNullValueMobileReport = default!; _explicitNullProperties?.Remove("mobileReport"); }
+            else if (parseNode.GetChildNode("mobileReport") is { } nullNodeMobileReport && nullNodeMobileReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileReport = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("scheduleFrequency") is null) { _explicitNullValueScheduleFrequency = default!; _explicitNullProperties?.Remove("scheduleFrequency"); }
+            else if (parseNode.GetChildNode("scheduleFrequency") is { } nullNodeScheduleFrequency && nullNodeScheduleFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleFrequency = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date property</summary>
-        public DateTimeOffset? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        public DateTimeOffset? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
         private DateTimeOffset? _explicitNullValueDate = default!;
         /// <summary>The Lighthouse report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport? DesktopReport { get => _explicitNullValueDesktopReport; set { _explicitNullValueDesktopReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopReport"); else _explicitNullProperties?.Remove("desktopReport"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport? DesktopReport { get => _explicitNullValueDesktopReport; set { _explicitNullValueDesktopReport = value; AdditionalData?.Remove("desktopReport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopReport"); else _explicitNullProperties?.Remove("desktopReport"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport? _explicitNullValueDesktopReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport DesktopReport { get => _explicitNullValueDesktopReport; set { _explicitNullValueDesktopReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopReport"); else _explicitNullProperties?.Remove("desktopReport"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport DesktopReport { get => _explicitNullValueDesktopReport; set { _explicitNullValueDesktopReport = value; AdditionalData?.Remove("desktopReport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopReport"); else _explicitNullProperties?.Remove("desktopReport"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport _explicitNullValueDesktopReport = default!;
 #endif
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The Lighthouse report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport? MobileReport { get => _explicitNullValueMobileReport; set { _explicitNullValueMobileReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileReport"); else _explicitNullProperties?.Remove("mobileReport"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport? MobileReport { get => _explicitNullValueMobileReport; set { _explicitNullValueMobileReport = value; AdditionalData?.Remove("mobileReport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileReport"); else _explicitNullProperties?.Remove("mobileReport"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport? _explicitNullValueMobileReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport MobileReport { get => _explicitNullValueMobileReport; set { _explicitNullValueMobileReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileReport"); else _explicitNullProperties?.Remove("mobileReport"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport MobileReport { get => _explicitNullValueMobileReport; set { _explicitNullValueMobileReport = value; AdditionalData?.Remove("mobileReport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileReport"); else _explicitNullProperties?.Remove("mobileReport"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport _explicitNullValueMobileReport = default!;
 #endif
         /// <summary>A test region with a label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion _explicitNullValueRegion = default!;
 #endif
         /// <summary>The frequency of the test.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryScheduleFrequency? ScheduleFrequency { get => _explicitNullValueScheduleFrequency; set { _explicitNullValueScheduleFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleFrequency"); else _explicitNullProperties?.Remove("scheduleFrequency"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryScheduleFrequency? ScheduleFrequency { get => _explicitNullValueScheduleFrequency; set { _explicitNullValueScheduleFrequency = value; AdditionalData?.Remove("scheduleFrequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleFrequency"); else _explicitNullProperties?.Remove("scheduleFrequency"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryScheduleFrequency? _explicitNullValueScheduleFrequency = default!;
         /// <summary>A URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -114,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "mobileReport", n => { MobileReport = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport>(global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLighthouseReport.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>(global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion.CreateFromDiscriminatorValue); } },
-                { "scheduleFrequency", n => { ScheduleFrequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryScheduleFrequency>(); } },
+                { "scheduleFrequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryScheduleFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScheduleFrequency = default; _explicitNullProperties?.Remove("scheduleFrequency"); AdditionalData["scheduleFrequency"] = unknown; } else { ScheduleFrequency = parsed; AdditionalData.Remove("scheduleFrequency"); } } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }

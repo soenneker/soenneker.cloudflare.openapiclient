@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_origins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
-            if (parseNode.GetChildNode("c2pa") is { } nullNodeC2pa && nullNodeC2pa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) C2pa = null;
-            if (parseNode.GetChildNode("transformations") is { } nullNodeTransformations && nullNodeTransformations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transformations = null;
+            if (parseNode.GetChildNode("allowed_origins") is null) { _explicitNullValueAllowedOrigins = default!; _explicitNullProperties?.Remove("allowed_origins"); }
+            else if (parseNode.GetChildNode("allowed_origins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
+            if (parseNode.GetChildNode("c2pa") is null) { _explicitNullValueC2pa = default!; _explicitNullProperties?.Remove("c2pa"); }
+            else if (parseNode.GetChildNode("c2pa") is { } nullNodeC2pa && nullNodeC2pa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) C2pa = null;
+            if (parseNode.GetChildNode("transformations") is null) { _explicitNullValueTransformations = default!; _explicitNullProperties?.Remove("transformations"); }
+            else if (parseNode.GetChildNode("transformations") is { } nullNodeTransformations && nullNodeTransformations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transformations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Comma-separated list of allowed origin domains for image and video transformations.Use &quot;*&quot; to allow all origins (default).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_origins"); else _explicitNullProperties?.Remove("allowed_origins"); } }
+        public string? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; AdditionalData?.Remove("allowed_origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_origins"); else _explicitNullProperties?.Remove("allowed_origins"); } }
         private string? _explicitNullValueAllowedOrigins = default!;
 #nullable restore
 #else
-        public string AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_origins"); else _explicitNullProperties?.Remove("allowed_origins"); } }
+        public string AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; AdditionalData?.Remove("allowed_origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_origins"); else _explicitNullProperties?.Remove("allowed_origins"); } }
         private string _explicitNullValueAllowedOrigins = default!;
 #endif
         /// <summary>Whether C2PA signing is enabled for image transformations.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueC2Pa? C2pa { get => _explicitNullValueC2pa; set { _explicitNullValueC2pa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("c2pa"); else _explicitNullProperties?.Remove("c2pa"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueC2Pa? C2pa { get => _explicitNullValueC2pa; set { _explicitNullValueC2pa = value; AdditionalData?.Remove("c2pa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("c2pa"); else _explicitNullProperties?.Remove("c2pa"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueC2Pa? _explicitNullValueC2pa = default!;
         /// <summary>Controls Image Transformations behavior:- &quot;off&quot;: Feature disabled.- &quot;on&quot;: Transformations enabled for same-zone images only.- &quot;open&quot;: Transformations enabled for images from any origin.- &quot;latest&quot;: Transformations enabled using the latest version.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueTransformations? Transformations { get => _explicitNullValueTransformations; set { _explicitNullValueTransformations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformations"); else _explicitNullProperties?.Remove("transformations"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueTransformations? Transformations { get => _explicitNullValueTransformations; set { _explicitNullValueTransformations = value; AdditionalData?.Remove("transformations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformations"); else _explicitNullProperties?.Remove("transformations"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueTransformations? _explicitNullValueTransformations = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigResponseValue"/> and sets the default values.
@@ -67,8 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_origins", n => { AllowedOrigins = n.GetStringValue(); } },
-                { "c2pa", n => { C2pa = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueC2Pa>(); } },
-                { "transformations", n => { Transformations = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueTransformations>(); } },
+                { "c2pa", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueC2Pa>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueC2pa = default; _explicitNullProperties?.Remove("c2pa"); AdditionalData["c2pa"] = unknown; } else { C2pa = parsed; AdditionalData.Remove("c2pa"); } } },
+                { "transformations", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedTransformationsConfigValueTransformations>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransformations = default; _explicitNullProperties?.Remove("transformations"); AdditionalData["transformations"] = unknown; } else { Transformations = parsed; AdditionalData.Remove("transformations"); } } },
             };
         }
         /// <summary>

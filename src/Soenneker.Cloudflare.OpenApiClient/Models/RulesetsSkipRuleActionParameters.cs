@@ -18,60 +18,66 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("phase") is { } nullNodePhase && nullNodePhase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phase = null;
-            if (parseNode.GetChildNode("phases") is { } nullNodePhases && nullNodePhases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phases = null;
-            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
-            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
-            if (parseNode.GetChildNode("ruleset") is { } nullNodeRuleset && nullNodeRuleset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ruleset = null;
-            if (parseNode.GetChildNode("rulesets") is { } nullNodeRulesets && nullNodeRulesets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rulesets = null;
+            if (parseNode.GetChildNode("phase") is null) { _explicitNullValuePhase = default!; _explicitNullProperties?.Remove("phase"); }
+            else if (parseNode.GetChildNode("phase") is { } nullNodePhase && nullNodePhase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phase = null;
+            if (parseNode.GetChildNode("phases") is null) { _explicitNullValuePhases = default!; _explicitNullProperties?.Remove("phases"); }
+            else if (parseNode.GetChildNode("phases") is { } nullNodePhases && nullNodePhases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phases = null;
+            if (parseNode.GetChildNode("products") is null) { _explicitNullValueProducts = default!; _explicitNullProperties?.Remove("products"); }
+            else if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("rules") is null) { _explicitNullValueRules = default!; _explicitNullProperties?.Remove("rules"); }
+            else if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("ruleset") is null) { _explicitNullValueRuleset = default!; _explicitNullProperties?.Remove("ruleset"); }
+            else if (parseNode.GetChildNode("ruleset") is { } nullNodeRuleset && nullNodeRuleset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ruleset = null;
+            if (parseNode.GetChildNode("rulesets") is null) { _explicitNullValueRulesets = default!; _explicitNullProperties?.Remove("rulesets"); }
+            else if (parseNode.GetChildNode("rulesets") is { } nullNodeRulesets && nullNodeRulesets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rulesets = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A phase to skip the execution of. This option is only compatible with the products option.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhase? Phase { get => _explicitNullValuePhase; set { _explicitNullValuePhase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phase"); else _explicitNullProperties?.Remove("phase"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhase? Phase { get => _explicitNullValuePhase; set { _explicitNullValuePhase = value; AdditionalData?.Remove("phase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phase"); else _explicitNullProperties?.Remove("phase"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhase? _explicitNullValuePhase = default!;
         /// <summary>A list of phases to skip the execution of. This option is incompatible with the rulesets option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem?>? Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem?>? Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; AdditionalData?.Remove("phases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem?>? _explicitNullValuePhases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem?> Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem?> Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; AdditionalData?.Remove("phases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem?> _explicitNullValuePhases = default!;
 #endif
         /// <summary>A list of legacy security products to skip the execution of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersProductsItem?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersProductsItem?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; AdditionalData?.Remove("products"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersProductsItem?>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersProductsItem?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersProductsItem?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; AdditionalData?.Remove("products"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersProductsItem?> _explicitNullValueProducts = default!;
 #endif
         /// <summary>A mapping of ruleset IDs to a list of rule IDs in that ruleset to skip the execution of. This option is incompatible with the ruleset option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules _explicitNullValueRules = default!;
 #endif
         /// <summary>A ruleset to skip the execution of. This option is incompatible with the rulesets option.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleset? Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleset? Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; AdditionalData?.Remove("ruleset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleset? _explicitNullValueRuleset = default!;
         /// <summary>A list of ruleset IDs to skip the execution of. This option is incompatible with the ruleset and phases options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
+        public List<string>? Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; AdditionalData?.Remove("rulesets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
         private List<string>? _explicitNullValueRulesets = default!;
 #nullable restore
 #else
-        public List<string> Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
+        public List<string> Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; AdditionalData?.Remove("rulesets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
         private List<string> _explicitNullValueRulesets = default!;
 #endif
         /// <summary>
@@ -99,11 +105,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhase>(); } },
+                { "phase", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhase>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePhase = default; _explicitNullProperties?.Remove("phase"); AdditionalData["phase"] = unknown; } else { Phase = parsed; AdditionalData.Remove("phase"); } } },
                 { "phases", n => { Phases = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipPhasesItem>()?.AsList(); } },
                 { "products", n => { Products = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersProductsItem>()?.AsList(); } },
                 { "rules", n => { Rules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleSkipRuleActionParametersRules.CreateFromDiscriminatorValue); } },
-                { "ruleset", n => { Ruleset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleset>(); } },
+                { "ruleset", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleset>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRuleset = default; _explicitNullProperties?.Remove("ruleset"); AdditionalData["ruleset"] = unknown; } else { Ruleset = parsed; AdditionalData.Remove("ruleset"); } } },
                 { "rulesets", n => { Rulesets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

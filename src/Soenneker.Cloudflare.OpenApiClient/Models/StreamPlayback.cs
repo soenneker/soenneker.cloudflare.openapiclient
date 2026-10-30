@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dash") is { } nullNodeDash && nullNodeDash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dash = null;
-            if (parseNode.GetChildNode("hls") is { } nullNodeHls && nullNodeHls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hls = null;
+            if (parseNode.GetChildNode("dash") is null) { _explicitNullValueDash = default!; _explicitNullProperties?.Remove("dash"); }
+            else if (parseNode.GetChildNode("dash") is { } nullNodeDash && nullNodeDash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dash = null;
+            if (parseNode.GetChildNode("hls") is null) { _explicitNullValueHls = default!; _explicitNullProperties?.Remove("hls"); }
+            else if (parseNode.GetChildNode("hls") is { } nullNodeHls && nullNodeHls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>DASH Media Presentation Description for the video.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dash { get => _explicitNullValueDash; set { _explicitNullValueDash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dash"); else _explicitNullProperties?.Remove("dash"); } }
+        public string? Dash { get => _explicitNullValueDash; set { _explicitNullValueDash = value; AdditionalData?.Remove("dash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dash"); else _explicitNullProperties?.Remove("dash"); } }
         private string? _explicitNullValueDash = default!;
 #nullable restore
 #else
-        public string Dash { get => _explicitNullValueDash; set { _explicitNullValueDash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dash"); else _explicitNullProperties?.Remove("dash"); } }
+        public string Dash { get => _explicitNullValueDash; set { _explicitNullValueDash = value; AdditionalData?.Remove("dash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dash"); else _explicitNullProperties?.Remove("dash"); } }
         private string _explicitNullValueDash = default!;
 #endif
         /// <summary>The HLS manifest for the video.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hls { get => _explicitNullValueHls; set { _explicitNullValueHls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hls"); else _explicitNullProperties?.Remove("hls"); } }
+        public string? Hls { get => _explicitNullValueHls; set { _explicitNullValueHls = value; AdditionalData?.Remove("hls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hls"); else _explicitNullProperties?.Remove("hls"); } }
         private string? _explicitNullValueHls = default!;
 #nullable restore
 #else
-        public string Hls { get => _explicitNullValueHls; set { _explicitNullValueHls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hls"); else _explicitNullProperties?.Remove("hls"); } }
+        public string Hls { get => _explicitNullValueHls; set { _explicitNullValueHls = value; AdditionalData?.Remove("hls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hls"); else _explicitNullProperties?.Remove("hls"); } }
         private string _explicitNullValueHls = default!;
 #endif
         /// <summary>

@@ -17,69 +17,77 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("border_radius") is { } nullNodeBorderRadius && nullNodeBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderRadius = null;
-            if (parseNode.GetChildNode("border_width") is { } nullNodeBorderWidth && nullNodeBorderWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderWidth = null;
-            if (parseNode.GetChildNode("colors") is { } nullNodeColors && nullNodeColors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colors = null;
-            if (parseNode.GetChildNode("font_family") is { } nullNodeFontFamily && nullNodeFontFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontFamily = null;
-            if (parseNode.GetChildNode("google_font") is { } nullNodeGoogleFont && nullNodeGoogleFont.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoogleFont = null;
-            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
-            if (parseNode.GetChildNode("spacing_base") is { } nullNodeSpacingBase && nullNodeSpacingBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpacingBase = null;
-            if (parseNode.GetChildNode("theme") is { } nullNodeTheme && nullNodeTheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Theme = null;
+            if (parseNode.GetChildNode("border_radius") is null) { _explicitNullValueBorderRadius = default!; _explicitNullProperties?.Remove("border_radius"); }
+            else if (parseNode.GetChildNode("border_radius") is { } nullNodeBorderRadius && nullNodeBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderRadius = null;
+            if (parseNode.GetChildNode("border_width") is null) { _explicitNullValueBorderWidth = default!; _explicitNullProperties?.Remove("border_width"); }
+            else if (parseNode.GetChildNode("border_width") is { } nullNodeBorderWidth && nullNodeBorderWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderWidth = null;
+            if (parseNode.GetChildNode("colors") is null) { _explicitNullValueColors = default!; _explicitNullProperties?.Remove("colors"); }
+            else if (parseNode.GetChildNode("colors") is { } nullNodeColors && nullNodeColors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Colors = null;
+            if (parseNode.GetChildNode("font_family") is null) { _explicitNullValueFontFamily = default!; _explicitNullProperties?.Remove("font_family"); }
+            else if (parseNode.GetChildNode("font_family") is { } nullNodeFontFamily && nullNodeFontFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontFamily = null;
+            if (parseNode.GetChildNode("google_font") is null) { _explicitNullValueGoogleFont = default!; _explicitNullProperties?.Remove("google_font"); }
+            else if (parseNode.GetChildNode("google_font") is { } nullNodeGoogleFont && nullNodeGoogleFont.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoogleFont = null;
+            if (parseNode.GetChildNode("logo") is null) { _explicitNullValueLogo = default!; _explicitNullProperties?.Remove("logo"); }
+            else if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("spacing_base") is null) { _explicitNullValueSpacingBase = default!; _explicitNullProperties?.Remove("spacing_base"); }
+            else if (parseNode.GetChildNode("spacing_base") is { } nullNodeSpacingBase && nullNodeSpacingBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpacingBase = null;
+            if (parseNode.GetChildNode("theme") is null) { _explicitNullValueTheme = default!; _explicitNullProperties?.Remove("theme"); }
+            else if (parseNode.GetChildNode("theme") is { } nullNodeTheme && nullNodeTheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Theme = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The border_radius property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius? BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("border_radius"); else _explicitNullProperties?.Remove("border_radius"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius? BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; AdditionalData?.Remove("border_radius"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("border_radius"); else _explicitNullProperties?.Remove("border_radius"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius? _explicitNullValueBorderRadius = default!;
         /// <summary>The border_width property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth? BorderWidth { get => _explicitNullValueBorderWidth; set { _explicitNullValueBorderWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("border_width"); else _explicitNullProperties?.Remove("border_width"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth? BorderWidth { get => _explicitNullValueBorderWidth; set { _explicitNullValueBorderWidth = value; AdditionalData?.Remove("border_width"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("border_width"); else _explicitNullProperties?.Remove("border_width"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth? _explicitNullValueBorderWidth = default!;
         /// <summary>The colors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors? Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors? Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; AdditionalData?.Remove("colors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors? _explicitNullValueColors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors Colors { get => _explicitNullValueColors; set { _explicitNullValueColors = value; AdditionalData?.Remove("colors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colors"); else _explicitNullProperties?.Remove("colors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors _explicitNullValueColors = default!;
 #endif
         /// <summary>The font_family property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FontFamily { get => _explicitNullValueFontFamily; set { _explicitNullValueFontFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("font_family"); else _explicitNullProperties?.Remove("font_family"); } }
+        public string? FontFamily { get => _explicitNullValueFontFamily; set { _explicitNullValueFontFamily = value; AdditionalData?.Remove("font_family"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("font_family"); else _explicitNullProperties?.Remove("font_family"); } }
         private string? _explicitNullValueFontFamily = default!;
 #nullable restore
 #else
-        public string FontFamily { get => _explicitNullValueFontFamily; set { _explicitNullValueFontFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("font_family"); else _explicitNullProperties?.Remove("font_family"); } }
+        public string FontFamily { get => _explicitNullValueFontFamily; set { _explicitNullValueFontFamily = value; AdditionalData?.Remove("font_family"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("font_family"); else _explicitNullProperties?.Remove("font_family"); } }
         private string _explicitNullValueFontFamily = default!;
 #endif
         /// <summary>The google_font property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GoogleFont { get => _explicitNullValueGoogleFont; set { _explicitNullValueGoogleFont = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_font"); else _explicitNullProperties?.Remove("google_font"); } }
+        public string? GoogleFont { get => _explicitNullValueGoogleFont; set { _explicitNullValueGoogleFont = value; AdditionalData?.Remove("google_font"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_font"); else _explicitNullProperties?.Remove("google_font"); } }
         private string? _explicitNullValueGoogleFont = default!;
 #nullable restore
 #else
-        public string GoogleFont { get => _explicitNullValueGoogleFont; set { _explicitNullValueGoogleFont = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_font"); else _explicitNullProperties?.Remove("google_font"); } }
+        public string GoogleFont { get => _explicitNullValueGoogleFont; set { _explicitNullValueGoogleFont = value; AdditionalData?.Remove("google_font"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_font"); else _explicitNullProperties?.Remove("google_font"); } }
         private string _explicitNullValueGoogleFont = default!;
 #endif
         /// <summary>The logo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>The spacing_base property</summary>
-        public double? SpacingBase { get => _explicitNullValueSpacingBase; set { _explicitNullValueSpacingBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spacing_base"); else _explicitNullProperties?.Remove("spacing_base"); } }
+        public double? SpacingBase { get => _explicitNullValueSpacingBase; set { _explicitNullValueSpacingBase = value; AdditionalData?.Remove("spacing_base"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spacing_base"); else _explicitNullProperties?.Remove("spacing_base"); } }
         private double? _explicitNullValueSpacingBase = default!;
         /// <summary>The theme property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme? Theme { get => _explicitNullValueTheme; set { _explicitNullValueTheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("theme"); else _explicitNullProperties?.Remove("theme"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme? Theme { get => _explicitNullValueTheme; set { _explicitNullValueTheme = value; AdditionalData?.Remove("theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("theme"); else _explicitNullProperties?.Remove("theme"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme? _explicitNullValueTheme = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens"/> and sets the default values.
@@ -106,14 +114,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "border_radius", n => { BorderRadius = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius>(); } },
-                { "border_width", n => { BorderWidth = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth>(); } },
+                { "border_radius", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBorderRadius = default; _explicitNullProperties?.Remove("border_radius"); AdditionalData["border_radius"] = unknown; } else { BorderRadius = parsed; AdditionalData.Remove("border_radius"); } } },
+                { "border_width", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBorderWidth = default; _explicitNullProperties?.Remove("border_width"); AdditionalData["border_width"] = unknown; } else { BorderWidth = parsed; AdditionalData.Remove("border_width"); } } },
                 { "colors", n => { Colors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors.CreateFromDiscriminatorValue); } },
                 { "font_family", n => { FontFamily = n.GetStringValue(); } },
                 { "google_font", n => { GoogleFont = n.GetStringValue(); } },
                 { "logo", n => { Logo = n.GetStringValue(); } },
                 { "spacing_base", n => { SpacingBase = n.GetDoubleValue(); } },
-                { "theme", n => { Theme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme>(); } },
+                { "theme", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTheme = default; _explicitNullProperties?.Remove("theme"); AdditionalData["theme"] = unknown; } else { Theme = parsed; AdditionalData.Remove("theme"); } } },
             };
         }
         /// <summary>

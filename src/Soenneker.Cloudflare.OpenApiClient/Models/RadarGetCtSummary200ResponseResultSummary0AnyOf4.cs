@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("CERTIFICATE") is { } nullNodeCERTIFICATE && nullNodeCERTIFICATE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CERTIFICATE = null;
-            if (parseNode.GetChildNode("PRECERTIFICATE") is { } nullNodePRECERTIFICATE && nullNodePRECERTIFICATE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PRECERTIFICATE = null;
+            if (parseNode.GetChildNode("CERTIFICATE") is null) { _explicitNullValueCERTIFICATE = default!; _explicitNullProperties?.Remove("CERTIFICATE"); }
+            else if (parseNode.GetChildNode("CERTIFICATE") is { } nullNodeCERTIFICATE && nullNodeCERTIFICATE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CERTIFICATE = null;
+            if (parseNode.GetChildNode("PRECERTIFICATE") is null) { _explicitNullValuePRECERTIFICATE = default!; _explicitNullProperties?.Remove("PRECERTIFICATE"); }
+            else if (parseNode.GetChildNode("PRECERTIFICATE") is { } nullNodePRECERTIFICATE && nullNodePRECERTIFICATE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PRECERTIFICATE = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The CERTIFICATE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CERTIFICATE { get => _explicitNullValueCERTIFICATE; set { _explicitNullValueCERTIFICATE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CERTIFICATE"); else _explicitNullProperties?.Remove("CERTIFICATE"); } }
+        public string? CERTIFICATE { get => _explicitNullValueCERTIFICATE; set { _explicitNullValueCERTIFICATE = value; AdditionalData?.Remove("CERTIFICATE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CERTIFICATE"); else _explicitNullProperties?.Remove("CERTIFICATE"); } }
         private string? _explicitNullValueCERTIFICATE = default!;
 #nullable restore
 #else
-        public string CERTIFICATE { get => _explicitNullValueCERTIFICATE; set { _explicitNullValueCERTIFICATE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CERTIFICATE"); else _explicitNullProperties?.Remove("CERTIFICATE"); } }
+        public string CERTIFICATE { get => _explicitNullValueCERTIFICATE; set { _explicitNullValueCERTIFICATE = value; AdditionalData?.Remove("CERTIFICATE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CERTIFICATE"); else _explicitNullProperties?.Remove("CERTIFICATE"); } }
         private string _explicitNullValueCERTIFICATE = default!;
 #endif
         /// <summary>The PRECERTIFICATE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PRECERTIFICATE { get => _explicitNullValuePRECERTIFICATE; set { _explicitNullValuePRECERTIFICATE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PRECERTIFICATE"); else _explicitNullProperties?.Remove("PRECERTIFICATE"); } }
+        public string? PRECERTIFICATE { get => _explicitNullValuePRECERTIFICATE; set { _explicitNullValuePRECERTIFICATE = value; AdditionalData?.Remove("PRECERTIFICATE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PRECERTIFICATE"); else _explicitNullProperties?.Remove("PRECERTIFICATE"); } }
         private string? _explicitNullValuePRECERTIFICATE = default!;
 #nullable restore
 #else
-        public string PRECERTIFICATE { get => _explicitNullValuePRECERTIFICATE; set { _explicitNullValuePRECERTIFICATE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PRECERTIFICATE"); else _explicitNullProperties?.Remove("PRECERTIFICATE"); } }
+        public string PRECERTIFICATE { get => _explicitNullValuePRECERTIFICATE; set { _explicitNullValuePRECERTIFICATE = value; AdditionalData?.Remove("PRECERTIFICATE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PRECERTIFICATE"); else _explicitNullProperties?.Remove("PRECERTIFICATE"); } }
         private string _explicitNullValuePRECERTIFICATE = default!;
 #endif
         /// <summary>

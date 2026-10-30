@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificateLog") is { } nullNodeCertificateLog && nullNodeCertificateLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateLog = null;
+            if (parseNode.GetChildNode("certificateLog") is null) { _explicitNullValueCertificateLog = default!; _explicitNullProperties?.Remove("certificateLog"); }
+            else if (parseNode.GetChildNode("certificateLog") is { } nullNodeCertificateLog && nullNodeCertificateLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateLog = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The certificateLog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog? CertificateLog { get => _explicitNullValueCertificateLog; set { _explicitNullValueCertificateLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateLog"); else _explicitNullProperties?.Remove("certificateLog"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog? CertificateLog { get => _explicitNullValueCertificateLog; set { _explicitNullValueCertificateLog = value; AdditionalData?.Remove("certificateLog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateLog"); else _explicitNullProperties?.Remove("certificateLog"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog? _explicitNullValueCertificateLog = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog CertificateLog { get => _explicitNullValueCertificateLog; set { _explicitNullValueCertificateLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateLog"); else _explicitNullProperties?.Remove("certificateLog"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog CertificateLog { get => _explicitNullValueCertificateLog; set { _explicitNullValueCertificateLog = value; AdditionalData?.Remove("certificateLog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateLog"); else _explicitNullProperties?.Remove("certificateLog"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLog _explicitNullValueCertificateLog = default!;
 #endif
         /// <summary>

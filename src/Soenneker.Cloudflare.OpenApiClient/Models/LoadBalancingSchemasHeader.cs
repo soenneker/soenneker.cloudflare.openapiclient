@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("Host") is null) { _explicitNullValueHost = default!; _explicitNullProperties?.Remove("Host"); }
+            else if (parseNode.GetChildNode("Host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The &apos;Host&apos; header allows to override the hostname set in the HTTP request. Current support is 1 &apos;Host&apos; header override per origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Host"); else _explicitNullProperties?.Remove("Host"); } }
+        public List<string>? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("Host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Host"); else _explicitNullProperties?.Remove("Host"); } }
         private List<string>? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public List<string> Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Host"); else _explicitNullProperties?.Remove("Host"); } }
+        public List<string> Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("Host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Host"); else _explicitNullProperties?.Remove("Host"); } }
         private List<string> _explicitNullValueHost = default!;
 #endif
         /// <summary>

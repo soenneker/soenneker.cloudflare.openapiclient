@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("NOT_SPAM") is { } nullNodeNOTSPAM && nullNodeNOTSPAM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSPAM = null;
-            if (parseNode.GetChildNode("SPAM") is { } nullNodeSPAM && nullNodeSPAM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SPAM = null;
+            if (parseNode.GetChildNode("NOT_SPAM") is null) { _explicitNullValueNOTSPAM = default!; _explicitNullProperties?.Remove("NOT_SPAM"); }
+            else if (parseNode.GetChildNode("NOT_SPAM") is { } nullNodeNOTSPAM && nullNodeNOTSPAM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSPAM = null;
+            if (parseNode.GetChildNode("SPAM") is null) { _explicitNullValueSPAM = default!; _explicitNullProperties?.Remove("SPAM"); }
+            else if (parseNode.GetChildNode("SPAM") is { } nullNodeSPAM && nullNodeSPAM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SPAM = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The NOT_SPAM property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NOTSPAM { get => _explicitNullValueNOTSPAM; set { _explicitNullValueNOTSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPAM"); else _explicitNullProperties?.Remove("NOT_SPAM"); } }
+        public List<string>? NOTSPAM { get => _explicitNullValueNOTSPAM; set { _explicitNullValueNOTSPAM = value; AdditionalData?.Remove("NOT_SPAM"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPAM"); else _explicitNullProperties?.Remove("NOT_SPAM"); } }
         private List<string>? _explicitNullValueNOTSPAM = default!;
 #nullable restore
 #else
-        public List<string> NOTSPAM { get => _explicitNullValueNOTSPAM; set { _explicitNullValueNOTSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPAM"); else _explicitNullProperties?.Remove("NOT_SPAM"); } }
+        public List<string> NOTSPAM { get => _explicitNullValueNOTSPAM; set { _explicitNullValueNOTSPAM = value; AdditionalData?.Remove("NOT_SPAM"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPAM"); else _explicitNullProperties?.Remove("NOT_SPAM"); } }
         private List<string> _explicitNullValueNOTSPAM = default!;
 #endif
         /// <summary>The SPAM property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SPAM { get => _explicitNullValueSPAM; set { _explicitNullValueSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPAM"); else _explicitNullProperties?.Remove("SPAM"); } }
+        public List<string>? SPAM { get => _explicitNullValueSPAM; set { _explicitNullValueSPAM = value; AdditionalData?.Remove("SPAM"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPAM"); else _explicitNullProperties?.Remove("SPAM"); } }
         private List<string>? _explicitNullValueSPAM = default!;
 #nullable restore
 #else
-        public List<string> SPAM { get => _explicitNullValueSPAM; set { _explicitNullValueSPAM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPAM"); else _explicitNullProperties?.Remove("SPAM"); } }
+        public List<string> SPAM { get => _explicitNullValueSPAM; set { _explicitNullValueSPAM = value; AdditionalData?.Remove("SPAM"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPAM"); else _explicitNullProperties?.Remove("SPAM"); } }
         private List<string> _explicitNullValueSPAM = default!;
 #endif
         /// <summary>

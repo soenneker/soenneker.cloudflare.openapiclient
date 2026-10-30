@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contentSignals") is { } nullNodeContentSignals && nullNodeContentSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSignals = null;
-            if (parseNode.GetChildNode("robotsTxtAiRules") is { } nullNodeRobotsTxtAiRules && nullNodeRobotsTxtAiRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RobotsTxtAiRules = null;
-            if (parseNode.GetChildNode("webBotAuth") is { } nullNodeWebBotAuth && nullNodeWebBotAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebBotAuth = null;
+            if (parseNode.GetChildNode("contentSignals") is null) { _explicitNullValueContentSignals = default!; _explicitNullProperties?.Remove("contentSignals"); }
+            else if (parseNode.GetChildNode("contentSignals") is { } nullNodeContentSignals && nullNodeContentSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSignals = null;
+            if (parseNode.GetChildNode("robotsTxtAiRules") is null) { _explicitNullValueRobotsTxtAiRules = default!; _explicitNullProperties?.Remove("robotsTxtAiRules"); }
+            else if (parseNode.GetChildNode("robotsTxtAiRules") is { } nullNodeRobotsTxtAiRules && nullNodeRobotsTxtAiRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RobotsTxtAiRules = null;
+            if (parseNode.GetChildNode("webBotAuth") is null) { _explicitNullValueWebBotAuth = default!; _explicitNullProperties?.Remove("webBotAuth"); }
+            else if (parseNode.GetChildNode("webBotAuth") is { } nullNodeWebBotAuth && nullNodeWebBotAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebBotAuth = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The contentSignals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlContentSignals? ContentSignals { get => _explicitNullValueContentSignals; set { _explicitNullValueContentSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentSignals"); else _explicitNullProperties?.Remove("contentSignals"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlContentSignals? ContentSignals { get => _explicitNullValueContentSignals; set { _explicitNullValueContentSignals = value; AdditionalData?.Remove("contentSignals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentSignals"); else _explicitNullProperties?.Remove("contentSignals"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlContentSignals? _explicitNullValueContentSignals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlContentSignals ContentSignals { get => _explicitNullValueContentSignals; set { _explicitNullValueContentSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentSignals"); else _explicitNullProperties?.Remove("contentSignals"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlContentSignals ContentSignals { get => _explicitNullValueContentSignals; set { _explicitNullValueContentSignals = value; AdditionalData?.Remove("contentSignals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentSignals"); else _explicitNullProperties?.Remove("contentSignals"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlContentSignals _explicitNullValueContentSignals = default!;
 #endif
         /// <summary>The robotsTxtAiRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlRobotsTxtAiRules? RobotsTxtAiRules { get => _explicitNullValueRobotsTxtAiRules; set { _explicitNullValueRobotsTxtAiRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxtAiRules"); else _explicitNullProperties?.Remove("robotsTxtAiRules"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlRobotsTxtAiRules? RobotsTxtAiRules { get => _explicitNullValueRobotsTxtAiRules; set { _explicitNullValueRobotsTxtAiRules = value; AdditionalData?.Remove("robotsTxtAiRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxtAiRules"); else _explicitNullProperties?.Remove("robotsTxtAiRules"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlRobotsTxtAiRules? _explicitNullValueRobotsTxtAiRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlRobotsTxtAiRules RobotsTxtAiRules { get => _explicitNullValueRobotsTxtAiRules; set { _explicitNullValueRobotsTxtAiRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxtAiRules"); else _explicitNullProperties?.Remove("robotsTxtAiRules"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlRobotsTxtAiRules RobotsTxtAiRules { get => _explicitNullValueRobotsTxtAiRules; set { _explicitNullValueRobotsTxtAiRules = value; AdditionalData?.Remove("robotsTxtAiRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsTxtAiRules"); else _explicitNullProperties?.Remove("robotsTxtAiRules"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlRobotsTxtAiRules _explicitNullValueRobotsTxtAiRules = default!;
 #endif
         /// <summary>The webBotAuth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlWebBotAuth? WebBotAuth { get => _explicitNullValueWebBotAuth; set { _explicitNullValueWebBotAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webBotAuth"); else _explicitNullProperties?.Remove("webBotAuth"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlWebBotAuth? WebBotAuth { get => _explicitNullValueWebBotAuth; set { _explicitNullValueWebBotAuth = value; AdditionalData?.Remove("webBotAuth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webBotAuth"); else _explicitNullProperties?.Remove("webBotAuth"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlWebBotAuth? _explicitNullValueWebBotAuth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlWebBotAuth WebBotAuth { get => _explicitNullValueWebBotAuth; set { _explicitNullValueWebBotAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webBotAuth"); else _explicitNullProperties?.Remove("webBotAuth"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlWebBotAuth WebBotAuth { get => _explicitNullValueWebBotAuth; set { _explicitNullValueWebBotAuth = value; AdditionalData?.Remove("webBotAuth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webBotAuth"); else _explicitNullProperties?.Remove("webBotAuth"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksBotAccessControlWebBotAuth _explicitNullValueWebBotAuth = default!;
 #endif
         /// <summary>

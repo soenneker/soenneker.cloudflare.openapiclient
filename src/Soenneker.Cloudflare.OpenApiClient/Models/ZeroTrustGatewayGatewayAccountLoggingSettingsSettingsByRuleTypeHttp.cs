@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("log_all") is { } nullNodeLogAll && nullNodeLogAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogAll = null;
-            if (parseNode.GetChildNode("log_blocks") is { } nullNodeLogBlocks && nullNodeLogBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogBlocks = null;
+            if (parseNode.GetChildNode("log_all") is null) { _explicitNullValueLogAll = default!; _explicitNullProperties?.Remove("log_all"); }
+            else if (parseNode.GetChildNode("log_all") is { } nullNodeLogAll && nullNodeLogAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogAll = null;
+            if (parseNode.GetChildNode("log_blocks") is null) { _explicitNullValueLogBlocks = default!; _explicitNullProperties?.Remove("log_blocks"); }
+            else if (parseNode.GetChildNode("log_blocks") is { } nullNodeLogBlocks && nullNodeLogBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogBlocks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to log all requests to this service.</summary>
-        public bool? LogAll { get => _explicitNullValueLogAll; set { _explicitNullValueLogAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_all"); else _explicitNullProperties?.Remove("log_all"); } }
+        public bool? LogAll { get => _explicitNullValueLogAll; set { _explicitNullValueLogAll = value; AdditionalData?.Remove("log_all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_all"); else _explicitNullProperties?.Remove("log_all"); } }
         private bool? _explicitNullValueLogAll = default!;
         /// <summary>Specify whether to log only blocking requests to this service.</summary>
-        public bool? LogBlocks { get => _explicitNullValueLogBlocks; set { _explicitNullValueLogBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_blocks"); else _explicitNullProperties?.Remove("log_blocks"); } }
+        public bool? LogBlocks { get => _explicitNullValueLogBlocks; set { _explicitNullValueLogBlocks = value; AdditionalData?.Remove("log_blocks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_blocks"); else _explicitNullProperties?.Remove("log_blocks"); } }
         private bool? _explicitNullValueLogBlocks = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp"/> and sets the default values.

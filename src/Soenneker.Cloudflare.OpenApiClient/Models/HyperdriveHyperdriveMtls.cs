@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ca_certificate_id") is { } nullNodeCaCertificateId && nullNodeCaCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaCertificateId = null;
-            if (parseNode.GetChildNode("mtls_certificate_id") is { } nullNodeMtlsCertificateId && nullNodeMtlsCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MtlsCertificateId = null;
-            if (parseNode.GetChildNode("sslmode") is { } nullNodeSslmode && nullNodeSslmode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sslmode = null;
+            if (parseNode.GetChildNode("ca_certificate_id") is null) { _explicitNullValueCaCertificateId = default!; _explicitNullProperties?.Remove("ca_certificate_id"); }
+            else if (parseNode.GetChildNode("ca_certificate_id") is { } nullNodeCaCertificateId && nullNodeCaCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaCertificateId = null;
+            if (parseNode.GetChildNode("mtls_certificate_id") is null) { _explicitNullValueMtlsCertificateId = default!; _explicitNullProperties?.Remove("mtls_certificate_id"); }
+            else if (parseNode.GetChildNode("mtls_certificate_id") is { } nullNodeMtlsCertificateId && nullNodeMtlsCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MtlsCertificateId = null;
+            if (parseNode.GetChildNode("sslmode") is null) { _explicitNullValueSslmode = default!; _explicitNullProperties?.Remove("sslmode"); }
+            else if (parseNode.GetChildNode("sslmode") is { } nullNodeSslmode && nullNodeSslmode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sslmode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Define CA certificate ID obtained after uploading CA cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CaCertificateId { get => _explicitNullValueCaCertificateId; set { _explicitNullValueCaCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ca_certificate_id"); else _explicitNullProperties?.Remove("ca_certificate_id"); } }
+        public string? CaCertificateId { get => _explicitNullValueCaCertificateId; set { _explicitNullValueCaCertificateId = value; AdditionalData?.Remove("ca_certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ca_certificate_id"); else _explicitNullProperties?.Remove("ca_certificate_id"); } }
         private string? _explicitNullValueCaCertificateId = default!;
 #nullable restore
 #else
-        public string CaCertificateId { get => _explicitNullValueCaCertificateId; set { _explicitNullValueCaCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ca_certificate_id"); else _explicitNullProperties?.Remove("ca_certificate_id"); } }
+        public string CaCertificateId { get => _explicitNullValueCaCertificateId; set { _explicitNullValueCaCertificateId = value; AdditionalData?.Remove("ca_certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ca_certificate_id"); else _explicitNullProperties?.Remove("ca_certificate_id"); } }
         private string _explicitNullValueCaCertificateId = default!;
 #endif
         /// <summary>Define mTLS certificate ID obtained after uploading client cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MtlsCertificateId { get => _explicitNullValueMtlsCertificateId; set { _explicitNullValueMtlsCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_certificate_id"); else _explicitNullProperties?.Remove("mtls_certificate_id"); } }
+        public string? MtlsCertificateId { get => _explicitNullValueMtlsCertificateId; set { _explicitNullValueMtlsCertificateId = value; AdditionalData?.Remove("mtls_certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_certificate_id"); else _explicitNullProperties?.Remove("mtls_certificate_id"); } }
         private string? _explicitNullValueMtlsCertificateId = default!;
 #nullable restore
 #else
-        public string MtlsCertificateId { get => _explicitNullValueMtlsCertificateId; set { _explicitNullValueMtlsCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_certificate_id"); else _explicitNullProperties?.Remove("mtls_certificate_id"); } }
+        public string MtlsCertificateId { get => _explicitNullValueMtlsCertificateId; set { _explicitNullValueMtlsCertificateId = value; AdditionalData?.Remove("mtls_certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_certificate_id"); else _explicitNullProperties?.Remove("mtls_certificate_id"); } }
         private string _explicitNullValueMtlsCertificateId = default!;
 #endif
         /// <summary>PostgreSQL accepts `require`, `verify-ca`, and `verify-full`. MySQL accepts `REQUIRED`, `VERIFY_CA`, and `VERIFY_IDENTITY`. The verify modes require a CA certificate; the require modes cannot be used with a CA certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sslmode { get => _explicitNullValueSslmode; set { _explicitNullValueSslmode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sslmode"); else _explicitNullProperties?.Remove("sslmode"); } }
+        public string? Sslmode { get => _explicitNullValueSslmode; set { _explicitNullValueSslmode = value; AdditionalData?.Remove("sslmode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sslmode"); else _explicitNullProperties?.Remove("sslmode"); } }
         private string? _explicitNullValueSslmode = default!;
 #nullable restore
 #else
-        public string Sslmode { get => _explicitNullValueSslmode; set { _explicitNullValueSslmode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sslmode"); else _explicitNullProperties?.Remove("sslmode"); } }
+        public string Sslmode { get => _explicitNullValueSslmode; set { _explicitNullValueSslmode = value; AdditionalData?.Remove("sslmode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sslmode"); else _explicitNullProperties?.Remove("sslmode"); } }
         private string _explicitNullValueSslmode = default!;
 #endif
         /// <summary>

@@ -17,49 +17,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_disabled") is { } nullNodeDefaultDisabled && nullNodeDefaultDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDisabled = null;
-            if (parseNode.GetChildNode("on_behalf") is { } nullNodeOnBehalf && nullNodeOnBehalf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnBehalf = null;
-            if (parseNode.GetChildNode("server_id") is { } nullNodeServerId && nullNodeServerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerId = null;
-            if (parseNode.GetChildNode("updated_prompts") is { } nullNodeUpdatedPrompts && nullNodeUpdatedPrompts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedPrompts = null;
-            if (parseNode.GetChildNode("updated_tools") is { } nullNodeUpdatedTools && nullNodeUpdatedTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedTools = null;
+            if (parseNode.GetChildNode("default_disabled") is null) { _explicitNullValueDefaultDisabled = default!; _explicitNullProperties?.Remove("default_disabled"); }
+            else if (parseNode.GetChildNode("default_disabled") is { } nullNodeDefaultDisabled && nullNodeDefaultDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDisabled = null;
+            if (parseNode.GetChildNode("on_behalf") is null) { _explicitNullValueOnBehalf = default!; _explicitNullProperties?.Remove("on_behalf"); }
+            else if (parseNode.GetChildNode("on_behalf") is { } nullNodeOnBehalf && nullNodeOnBehalf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnBehalf = null;
+            if (parseNode.GetChildNode("server_id") is null) { _explicitNullValueServerId = default!; _explicitNullProperties?.Remove("server_id"); }
+            else if (parseNode.GetChildNode("server_id") is { } nullNodeServerId && nullNodeServerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerId = null;
+            if (parseNode.GetChildNode("updated_prompts") is null) { _explicitNullValueUpdatedPrompts = default!; _explicitNullProperties?.Remove("updated_prompts"); }
+            else if (parseNode.GetChildNode("updated_prompts") is { } nullNodeUpdatedPrompts && nullNodeUpdatedPrompts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedPrompts = null;
+            if (parseNode.GetChildNode("updated_tools") is null) { _explicitNullValueUpdatedTools = default!; _explicitNullProperties?.Remove("updated_tools"); }
+            else if (parseNode.GetChildNode("updated_tools") is { } nullNodeUpdatedTools && nullNodeUpdatedTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedTools = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Hide this server&apos;s tools and prompts by default. To expose specific capabilities, set enabled: true for them in this server entry&apos;s updated_tools or updated_prompts fields when creating or updating the portal.</summary>
-        public bool? DefaultDisabled { get => _explicitNullValueDefaultDisabled; set { _explicitNullValueDefaultDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_disabled"); else _explicitNullProperties?.Remove("default_disabled"); } }
+        public bool? DefaultDisabled { get => _explicitNullValueDefaultDisabled; set { _explicitNullValueDefaultDisabled = value; AdditionalData?.Remove("default_disabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_disabled"); else _explicitNullProperties?.Remove("default_disabled"); } }
         private bool? _explicitNullValueDefaultDisabled = default!;
         /// <summary>Use end-user OAuth credentials when connecting this server to the portal.</summary>
-        public bool? OnBehalf { get => _explicitNullValueOnBehalf; set { _explicitNullValueOnBehalf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_behalf"); else _explicitNullProperties?.Remove("on_behalf"); } }
+        public bool? OnBehalf { get => _explicitNullValueOnBehalf; set { _explicitNullValueOnBehalf = value; AdditionalData?.Remove("on_behalf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_behalf"); else _explicitNullProperties?.Remove("on_behalf"); } }
         private bool? _explicitNullValueOnBehalf = default!;
         /// <summary>Unique identifier for the MCP server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerId { get => _explicitNullValueServerId; set { _explicitNullValueServerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_id"); else _explicitNullProperties?.Remove("server_id"); } }
+        public string? ServerId { get => _explicitNullValueServerId; set { _explicitNullValueServerId = value; AdditionalData?.Remove("server_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_id"); else _explicitNullProperties?.Remove("server_id"); } }
         private string? _explicitNullValueServerId = default!;
 #nullable restore
 #else
-        public string ServerId { get => _explicitNullValueServerId; set { _explicitNullValueServerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_id"); else _explicitNullProperties?.Remove("server_id"); } }
+        public string ServerId { get => _explicitNullValueServerId; set { _explicitNullValueServerId = value; AdditionalData?.Remove("server_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_id"); else _explicitNullProperties?.Remove("server_id"); } }
         private string _explicitNullValueServerId = default!;
 #endif
         /// <summary>Portal-specific prompt overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedPromptsItem>? UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedPromptsItem>? UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; AdditionalData?.Remove("updated_prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedPromptsItem>? _explicitNullValueUpdatedPrompts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedPromptsItem> UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedPromptsItem> UpdatedPrompts { get => _explicitNullValueUpdatedPrompts; set { _explicitNullValueUpdatedPrompts = value; AdditionalData?.Remove("updated_prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_prompts"); else _explicitNullProperties?.Remove("updated_prompts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedPromptsItem> _explicitNullValueUpdatedPrompts = default!;
 #endif
         /// <summary>Portal-specific tool overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedToolsItem>? UpdatedTools { get => _explicitNullValueUpdatedTools; set { _explicitNullValueUpdatedTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_tools"); else _explicitNullProperties?.Remove("updated_tools"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedToolsItem>? UpdatedTools { get => _explicitNullValueUpdatedTools; set { _explicitNullValueUpdatedTools = value; AdditionalData?.Remove("updated_tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_tools"); else _explicitNullProperties?.Remove("updated_tools"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedToolsItem>? _explicitNullValueUpdatedTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedToolsItem> UpdatedTools { get => _explicitNullValueUpdatedTools; set { _explicitNullValueUpdatedTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_tools"); else _explicitNullProperties?.Remove("updated_tools"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedToolsItem> UpdatedTools { get => _explicitNullValueUpdatedTools; set { _explicitNullValueUpdatedTools = value; AdditionalData?.Remove("updated_tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_tools"); else _explicitNullProperties?.Remove("updated_tools"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.McpPortalsApiCreatePortalsRequestServersItemUpdatedToolsItem> _explicitNullValueUpdatedTools = default!;
 #endif
         /// <summary>

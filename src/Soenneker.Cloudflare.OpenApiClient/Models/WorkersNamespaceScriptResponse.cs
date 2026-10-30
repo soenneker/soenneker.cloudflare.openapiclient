@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dispatch_namespace") is { } nullNodeDispatchNamespace && nullNodeDispatchNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespace = null;
-            if (parseNode.GetChildNode("script") is { } nullNodeScript && nullNodeScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Script = null;
+            if (parseNode.GetChildNode("dispatch_namespace") is null) { _explicitNullValueDispatchNamespace = default!; _explicitNullProperties?.Remove("dispatch_namespace"); }
+            else if (parseNode.GetChildNode("dispatch_namespace") is { } nullNodeDispatchNamespace && nullNodeDispatchNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespace = null;
+            if (parseNode.GetChildNode("script") is null) { _explicitNullValueScript = default!; _explicitNullProperties?.Remove("script"); }
+            else if (parseNode.GetChildNode("script") is { } nullNodeScript && nullNodeScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Script = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,11 +31,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Name of the Workers for Platforms dispatch namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace"); else _explicitNullProperties?.Remove("dispatch_namespace"); } }
+        public string? DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; AdditionalData?.Remove("dispatch_namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace"); else _explicitNullProperties?.Remove("dispatch_namespace"); } }
         private string? _explicitNullValueDispatchNamespace = default!;
 #nullable restore
 #else
-        public string DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace"); else _explicitNullProperties?.Remove("dispatch_namespace"); } }
+        public string DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; AdditionalData?.Remove("dispatch_namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatch_namespace"); else _explicitNullProperties?.Remove("dispatch_namespace"); } }
         private string _explicitNullValueDispatchNamespace = default!;
 #endif
         /// <summary>When the script was last modified.</summary>
@@ -41,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The script property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponse? Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponse? Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; AdditionalData?.Remove("script"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponse? _explicitNullValueScript = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponse Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponse Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; AdditionalData?.Remove("script"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponse _explicitNullValueScript = default!;
 #endif
         /// <summary>

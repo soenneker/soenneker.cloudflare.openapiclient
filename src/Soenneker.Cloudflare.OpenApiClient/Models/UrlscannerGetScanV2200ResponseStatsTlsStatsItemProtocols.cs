@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("TLS 1.3 / AES_128_GCM") is { } nullNodeTLS13AES128GCM && nullNodeTLS13AES128GCM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS13AES128GCM = null;
+            if (parseNode.GetChildNode("TLS 1.3 / AES_128_GCM") is null) { _explicitNullValueTLS13AES128GCM = default!; _explicitNullProperties?.Remove("TLS 1.3 / AES_128_GCM"); }
+            else if (parseNode.GetChildNode("TLS 1.3 / AES_128_GCM") is { } nullNodeTLS13AES128GCM && nullNodeTLS13AES128GCM.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS13AES128GCM = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The TLS13AES_128_GCM property</summary>
-        public double? TLS13AES128GCM { get => _explicitNullValueTLS13AES128GCM; set { _explicitNullValueTLS13AES128GCM = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3 / AES_128_GCM"); else _explicitNullProperties?.Remove("TLS 1.3 / AES_128_GCM"); } }
+        public double? TLS13AES128GCM { get => _explicitNullValueTLS13AES128GCM; set { _explicitNullValueTLS13AES128GCM = value; AdditionalData?.Remove("TLS 1.3 / AES_128_GCM"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS 1.3 / AES_128_GCM"); else _explicitNullProperties?.Remove("TLS 1.3 / AES_128_GCM"); } }
         private double? _explicitNullValueTLS13AES128GCM = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseStatsTlsStatsItemProtocols"/> and sets the default values.

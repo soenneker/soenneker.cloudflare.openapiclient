@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("annotation") is { } nullNodeAnnotation && nullNodeAnnotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annotation = null;
+            if (parseNode.GetChildNode("annotation") is null) { _explicitNullValueAnnotation = default!; _explicitNullProperties?.Remove("annotation"); }
+            else if (parseNode.GetChildNode("annotation") is { } nullNodeAnnotation && nullNodeAnnotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annotation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The annotation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotation? Annotation { get => _explicitNullValueAnnotation; set { _explicitNullValueAnnotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotation"); else _explicitNullProperties?.Remove("annotation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotation? Annotation { get => _explicitNullValueAnnotation; set { _explicitNullValueAnnotation = value; AdditionalData?.Remove("annotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotation"); else _explicitNullProperties?.Remove("annotation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotation? _explicitNullValueAnnotation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotation Annotation { get => _explicitNullValueAnnotation; set { _explicitNullValueAnnotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotation"); else _explicitNullProperties?.Remove("annotation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotation Annotation { get => _explicitNullValueAnnotation; set { _explicitNullValueAnnotation = value; AdditionalData?.Remove("annotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotation"); else _explicitNullProperties?.Remove("annotation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationById200ResponseResultAnnotation _explicitNullValueAnnotation = default!;
 #endif
         /// <summary>

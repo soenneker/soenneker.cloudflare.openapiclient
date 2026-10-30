@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cursors") is { } nullNodeCursors && nullNodeCursors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursors = null;
+            if (parseNode.GetChildNode("cursors") is null) { _explicitNullValueCursors = default!; _explicitNullProperties?.Remove("cursors"); }
+            else if (parseNode.GetChildNode("cursors") is { } nullNodeCursors && nullNodeCursors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The set of cursors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors? Cursors { get => _explicitNullValueCursors; set { _explicitNullValueCursors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursors"); else _explicitNullProperties?.Remove("cursors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors? Cursors { get => _explicitNullValueCursors; set { _explicitNullValueCursors = value; AdditionalData?.Remove("cursors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursors"); else _explicitNullProperties?.Remove("cursors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors? _explicitNullValueCursors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors Cursors { get => _explicitNullValueCursors; set { _explicitNullValueCursors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursors"); else _explicitNullProperties?.Remove("cursors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors Cursors { get => _explicitNullValueCursors; set { _explicitNullValueCursors = value; AdditionalData?.Remove("cursors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursors"); else _explicitNullProperties?.Remove("cursors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors _explicitNullValueCursors = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_secrets") is { } nullNodeClientSecrets && nullNodeClientSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecrets = null;
-            if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
+            if (parseNode.GetChildNode("client_secrets") is null) { _explicitNullValueClientSecrets = default!; _explicitNullProperties?.Remove("client_secrets"); }
+            else if (parseNode.GetChildNode("client_secrets") is { } nullNodeClientSecrets && nullNodeClientSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecrets = null;
+            if (parseNode.GetChildNode("subscriptions") is null) { _explicitNullValueSubscriptions = default!; _explicitNullProperties?.Remove("subscriptions"); }
+            else if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The client_secrets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ClientSecrets { get => _explicitNullValueClientSecrets; set { _explicitNullValueClientSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secrets"); else _explicitNullProperties?.Remove("client_secrets"); } }
+        public List<string>? ClientSecrets { get => _explicitNullValueClientSecrets; set { _explicitNullValueClientSecrets = value; AdditionalData?.Remove("client_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secrets"); else _explicitNullProperties?.Remove("client_secrets"); } }
         private List<string>? _explicitNullValueClientSecrets = default!;
 #nullable restore
 #else
-        public List<string> ClientSecrets { get => _explicitNullValueClientSecrets; set { _explicitNullValueClientSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secrets"); else _explicitNullProperties?.Remove("client_secrets"); } }
+        public List<string> ClientSecrets { get => _explicitNullValueClientSecrets; set { _explicitNullValueClientSecrets = value; AdditionalData?.Remove("client_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secrets"); else _explicitNullProperties?.Remove("client_secrets"); } }
         private List<string> _explicitNullValueClientSecrets = default!;
 #endif
         /// <summary>The subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription>? _explicitNullValueSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; AdditionalData?.Remove("subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscription> _explicitNullValueSubscriptions = default!;
 #endif
         /// <summary>

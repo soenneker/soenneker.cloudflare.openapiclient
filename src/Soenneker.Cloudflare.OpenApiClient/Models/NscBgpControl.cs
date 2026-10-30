@@ -17,34 +17,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customer_asn") is { } nullNodeCustomerAsn && nullNodeCustomerAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAsn = null;
-            if (parseNode.GetChildNode("extra_prefixes") is { } nullNodeExtraPrefixes && nullNodeExtraPrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraPrefixes = null;
-            if (parseNode.GetChildNode("md5_key") is { } nullNodeMd5Key && nullNodeMd5Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Md5Key = null;
+            if (parseNode.GetChildNode("customer_asn") is null) { _explicitNullValueCustomerAsn = default!; _explicitNullProperties?.Remove("customer_asn"); }
+            else if (parseNode.GetChildNode("customer_asn") is { } nullNodeCustomerAsn && nullNodeCustomerAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAsn = null;
+            if (parseNode.GetChildNode("extra_prefixes") is null) { _explicitNullValueExtraPrefixes = default!; _explicitNullProperties?.Remove("extra_prefixes"); }
+            else if (parseNode.GetChildNode("extra_prefixes") is { } nullNodeExtraPrefixes && nullNodeExtraPrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraPrefixes = null;
+            if (parseNode.GetChildNode("md5_key") is null) { _explicitNullValueMd5Key = default!; _explicitNullProperties?.Remove("md5_key"); }
+            else if (parseNode.GetChildNode("md5_key") is { } nullNodeMd5Key && nullNodeMd5Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Md5Key = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ASN used on the customer end of the BGP session</summary>
-        public int? CustomerAsn { get => _explicitNullValueCustomerAsn; set { _explicitNullValueCustomerAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_asn"); else _explicitNullProperties?.Remove("customer_asn"); } }
+        public int? CustomerAsn { get => _explicitNullValueCustomerAsn; set { _explicitNullValueCustomerAsn = value; AdditionalData?.Remove("customer_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_asn"); else _explicitNullProperties?.Remove("customer_asn"); } }
         private int? _explicitNullValueCustomerAsn = default!;
         /// <summary>Extra set of static prefixes to advertise to the customer&apos;s end of the sessionPrefixes containing host bits will be normalized to contain network bits only.Duplicates are not allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
+        public List<string>? ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; AdditionalData?.Remove("extra_prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
         private List<string>? _explicitNullValueExtraPrefixes = default!;
 #nullable restore
 #else
-        public List<string> ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
+        public List<string> ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; AdditionalData?.Remove("extra_prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
         private List<string> _explicitNullValueExtraPrefixes = default!;
 #endif
         /// <summary>MD5 key to use for session authentication.Note that *this is not a security measure*. MD5 is not a valid security mechanism, and thekey is not treated as a secret value. This is *only* supported for preventingmisconfiguration, not for defending against malicious attacks.The MD5 key, if set, must be of non-zero length and consist only of the following types ofcharacter:* ASCII alphanumerics: `[a-zA-Z0-9]`* Special characters in the set `&apos;!@#$%^&amp;*()+[]{}&lt;&gt;/.,;:_-~`= \|`In other words, MD5 keys may contain any printable ASCII character aside from newline(0x0A), quotation mark (`&quot;`), vertical tab (0x0B), carriage return (0x0D), tab (0x09),form feed (0x0C), and the question mark (`?`). Requests specifying an MD5 key with oneor more of these disallowed characters will be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
+        public string? Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; AdditionalData?.Remove("md5_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
         private string? _explicitNullValueMd5Key = default!;
 #nullable restore
 #else
-        public string Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
+        public string Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; AdditionalData?.Remove("md5_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
         private string _explicitNullValueMd5Key = default!;
 #endif
         /// <summary>

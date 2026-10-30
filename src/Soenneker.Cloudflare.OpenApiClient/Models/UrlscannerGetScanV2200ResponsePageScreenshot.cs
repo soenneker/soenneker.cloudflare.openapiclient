@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dhash") is { } nullNodeDhash && nullNodeDhash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dhash = null;
-            if (parseNode.GetChildNode("mm3Hash") is { } nullNodeMm3Hash && nullNodeMm3Hash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mm3Hash = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("phash") is { } nullNodePhash && nullNodePhash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phash = null;
+            if (parseNode.GetChildNode("dhash") is null) { _explicitNullValueDhash = default!; _explicitNullProperties?.Remove("dhash"); }
+            else if (parseNode.GetChildNode("dhash") is { } nullNodeDhash && nullNodeDhash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dhash = null;
+            if (parseNode.GetChildNode("mm3Hash") is null) { _explicitNullValueMm3Hash = default!; _explicitNullProperties?.Remove("mm3Hash"); }
+            else if (parseNode.GetChildNode("mm3Hash") is { } nullNodeMm3Hash && nullNodeMm3Hash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mm3Hash = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("phash") is null) { _explicitNullValuePhash = default!; _explicitNullProperties?.Remove("phash"); }
+            else if (parseNode.GetChildNode("phash") is { } nullNodePhash && nullNodePhash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phash = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The dhash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dhash { get => _explicitNullValueDhash; set { _explicitNullValueDhash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhash"); else _explicitNullProperties?.Remove("dhash"); } }
+        public string? Dhash { get => _explicitNullValueDhash; set { _explicitNullValueDhash = value; AdditionalData?.Remove("dhash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhash"); else _explicitNullProperties?.Remove("dhash"); } }
         private string? _explicitNullValueDhash = default!;
 #nullable restore
 #else
-        public string Dhash { get => _explicitNullValueDhash; set { _explicitNullValueDhash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhash"); else _explicitNullProperties?.Remove("dhash"); } }
+        public string Dhash { get => _explicitNullValueDhash; set { _explicitNullValueDhash = value; AdditionalData?.Remove("dhash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dhash"); else _explicitNullProperties?.Remove("dhash"); } }
         private string _explicitNullValueDhash = default!;
 #endif
         /// <summary>The mm3Hash property</summary>
-        public double? Mm3Hash { get => _explicitNullValueMm3Hash; set { _explicitNullValueMm3Hash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mm3Hash"); else _explicitNullProperties?.Remove("mm3Hash"); } }
+        public double? Mm3Hash { get => _explicitNullValueMm3Hash; set { _explicitNullValueMm3Hash = value; AdditionalData?.Remove("mm3Hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mm3Hash"); else _explicitNullProperties?.Remove("mm3Hash"); } }
         private double? _explicitNullValueMm3Hash = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The phash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phash { get => _explicitNullValuePhash; set { _explicitNullValuePhash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phash"); else _explicitNullProperties?.Remove("phash"); } }
+        public string? Phash { get => _explicitNullValuePhash; set { _explicitNullValuePhash = value; AdditionalData?.Remove("phash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phash"); else _explicitNullProperties?.Remove("phash"); } }
         private string? _explicitNullValuePhash = default!;
 #nullable restore
 #else
-        public string Phash { get => _explicitNullValuePhash; set { _explicitNullValuePhash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phash"); else _explicitNullProperties?.Remove("phash"); } }
+        public string Phash { get => _explicitNullValuePhash; set { _explicitNullValuePhash = value; AdditionalData?.Remove("phash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phash"); else _explicitNullProperties?.Remove("phash"); } }
         private string _explicitNullValuePhash = default!;
 #endif
         /// <summary>

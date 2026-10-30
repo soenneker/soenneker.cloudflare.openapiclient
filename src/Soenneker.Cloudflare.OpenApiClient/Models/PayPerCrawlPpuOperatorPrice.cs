@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("current_price") is { } nullNodeCurrentPrice && nullNodeCurrentPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentPrice = null;
-            if (parseNode.GetChildNode("default_price_usd_microcents") is { } nullNodeDefaultPriceUsdMicrocents && nullNodeDefaultPriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultPriceUsdMicrocents = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("operator_id") is { } nullNodeOperatorId && nullNodeOperatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorId = null;
-            if (parseNode.GetChildNode("proposed_price") is { } nullNodeProposedPrice && nullNodeProposedPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProposedPrice = null;
-            if (parseNode.GetChildNode("scheduled_price") is { } nullNodeScheduledPrice && nullNodeScheduledPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledPrice = null;
+            if (parseNode.GetChildNode("current_price") is null) { _explicitNullValueCurrentPrice = default!; _explicitNullProperties?.Remove("current_price"); }
+            else if (parseNode.GetChildNode("current_price") is { } nullNodeCurrentPrice && nullNodeCurrentPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentPrice = null;
+            if (parseNode.GetChildNode("default_price_usd_microcents") is null) { _explicitNullValueDefaultPriceUsdMicrocents = default!; _explicitNullProperties?.Remove("default_price_usd_microcents"); }
+            else if (parseNode.GetChildNode("default_price_usd_microcents") is { } nullNodeDefaultPriceUsdMicrocents && nullNodeDefaultPriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultPriceUsdMicrocents = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("operator_id") is null) { _explicitNullValueOperatorId = default!; _explicitNullProperties?.Remove("operator_id"); }
+            else if (parseNode.GetChildNode("operator_id") is { } nullNodeOperatorId && nullNodeOperatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorId = null;
+            if (parseNode.GetChildNode("proposed_price") is null) { _explicitNullValueProposedPrice = default!; _explicitNullProperties?.Remove("proposed_price"); }
+            else if (parseNode.GetChildNode("proposed_price") is { } nullNodeProposedPrice && nullNodeProposedPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProposedPrice = null;
+            if (parseNode.GetChildNode("scheduled_price") is null) { _explicitNullValueScheduledPrice = default!; _explicitNullProperties?.Remove("scheduled_price"); }
+            else if (parseNode.GetChildNode("scheduled_price") is { } nullNodeScheduledPrice && nullNodeScheduledPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledPrice = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,24 +36,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Accepted price active at the current time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice? CurrentPrice { get => _explicitNullValueCurrentPrice; set { _explicitNullValueCurrentPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_price"); else _explicitNullProperties?.Remove("current_price"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice? CurrentPrice { get => _explicitNullValueCurrentPrice; set { _explicitNullValueCurrentPrice = value; AdditionalData?.Remove("current_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_price"); else _explicitNullProperties?.Remove("current_price"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice? _explicitNullValueCurrentPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice CurrentPrice { get => _explicitNullValueCurrentPrice; set { _explicitNullValueCurrentPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_price"); else _explicitNullProperties?.Remove("current_price"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice CurrentPrice { get => _explicitNullValueCurrentPrice; set { _explicitNullValueCurrentPrice = value; AdditionalData?.Remove("current_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_price"); else _explicitNullProperties?.Remove("current_price"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceCurrentPrice _explicitNullValueCurrentPrice = default!;
 #endif
         /// <summary>The default_price_usd_microcents property</summary>
-        public int? DefaultPriceUsdMicrocents { get => _explicitNullValueDefaultPriceUsdMicrocents; set { _explicitNullValueDefaultPriceUsdMicrocents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_price_usd_microcents"); else _explicitNullProperties?.Remove("default_price_usd_microcents"); } }
+        public int? DefaultPriceUsdMicrocents { get => _explicitNullValueDefaultPriceUsdMicrocents; set { _explicitNullValueDefaultPriceUsdMicrocents = value; AdditionalData?.Remove("default_price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_price_usd_microcents"); else _explicitNullProperties?.Remove("default_price_usd_microcents"); } }
         private int? _explicitNullValueDefaultPriceUsdMicrocents = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>When this operator was classified for local-only, non-billable settlement. Null for billable operators. Always matches the requesting zone&apos;s classification.</summary>
@@ -55,31 +61,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stable pay-per-use operator identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatorId { get => _explicitNullValueOperatorId; set { _explicitNullValueOperatorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_id"); else _explicitNullProperties?.Remove("operator_id"); } }
+        public string? OperatorId { get => _explicitNullValueOperatorId; set { _explicitNullValueOperatorId = value; AdditionalData?.Remove("operator_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_id"); else _explicitNullProperties?.Remove("operator_id"); } }
         private string? _explicitNullValueOperatorId = default!;
 #nullable restore
 #else
-        public string OperatorId { get => _explicitNullValueOperatorId; set { _explicitNullValueOperatorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_id"); else _explicitNullProperties?.Remove("operator_id"); } }
+        public string OperatorId { get => _explicitNullValueOperatorId; set { _explicitNullValueOperatorId = value; AdditionalData?.Remove("operator_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator_id"); else _explicitNullProperties?.Remove("operator_id"); } }
         private string _explicitNullValueOperatorId = default!;
 #endif
         /// <summary>Price proposal awaiting operator acceptance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice? ProposedPrice { get => _explicitNullValueProposedPrice; set { _explicitNullValueProposedPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_price"); else _explicitNullProperties?.Remove("proposed_price"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice? ProposedPrice { get => _explicitNullValueProposedPrice; set { _explicitNullValueProposedPrice = value; AdditionalData?.Remove("proposed_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_price"); else _explicitNullProperties?.Remove("proposed_price"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice? _explicitNullValueProposedPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice ProposedPrice { get => _explicitNullValueProposedPrice; set { _explicitNullValueProposedPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_price"); else _explicitNullProperties?.Remove("proposed_price"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice ProposedPrice { get => _explicitNullValueProposedPrice; set { _explicitNullValueProposedPrice = value; AdditionalData?.Remove("proposed_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_price"); else _explicitNullProperties?.Remove("proposed_price"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceProposedPrice _explicitNullValueProposedPrice = default!;
 #endif
         /// <summary>Accepted replacement with a future effective_at.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice? ScheduledPrice { get => _explicitNullValueScheduledPrice; set { _explicitNullValueScheduledPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_price"); else _explicitNullProperties?.Remove("scheduled_price"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice? ScheduledPrice { get => _explicitNullValueScheduledPrice; set { _explicitNullValueScheduledPrice = value; AdditionalData?.Remove("scheduled_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_price"); else _explicitNullProperties?.Remove("scheduled_price"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice? _explicitNullValueScheduledPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice ScheduledPrice { get => _explicitNullValueScheduledPrice; set { _explicitNullValueScheduledPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_price"); else _explicitNullProperties?.Remove("scheduled_price"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice ScheduledPrice { get => _explicitNullValueScheduledPrice; set { _explicitNullValueScheduledPrice = value; AdditionalData?.Remove("scheduled_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_price"); else _explicitNullProperties?.Remove("scheduled_price"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuOperatorPriceScheduledPrice _explicitNullValueScheduledPrice = default!;
 #endif
         /// <summary>

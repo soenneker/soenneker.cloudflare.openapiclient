@@ -18,13 +18,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
-            if (parseNode.GetChildNode("permission_groups") is { } nullNodePermissionGroups && nullNodePermissionGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionGroups = null;
-            if (parseNode.GetChildNode("resource_groups") is { } nullNodeResourceGroups && nullNodeResourceGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceGroups = null;
+            if (parseNode.GetChildNode("access") is null) { _explicitNullValueAccess = default!; _explicitNullProperties?.Remove("access"); }
+            else if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
+            if (parseNode.GetChildNode("permission_groups") is null) { _explicitNullValuePermissionGroups = default!; _explicitNullProperties?.Remove("permission_groups"); }
+            else if (parseNode.GetChildNode("permission_groups") is { } nullNodePermissionGroups && nullNodePermissionGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionGroups = null;
+            if (parseNode.GetChildNode("resource_groups") is null) { _explicitNullValueResourceGroups = default!; _explicitNullProperties?.Remove("resource_groups"); }
+            else if (parseNode.GetChildNode("resource_groups") is { } nullNodeResourceGroups && nullNodeResourceGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceGroups = null;
         }
 
         /// <summary>Allow or deny operations against the resources.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccess? _explicitNullValueAccess = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -39,21 +42,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A set of permission groups that are specified to the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup>? PermissionGroups { get => _explicitNullValuePermissionGroups; set { _explicitNullValuePermissionGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_groups"); else _explicitNullProperties?.Remove("permission_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup>? PermissionGroups { get => _explicitNullValuePermissionGroups; set { _explicitNullValuePermissionGroups = value; AdditionalData?.Remove("permission_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_groups"); else _explicitNullProperties?.Remove("permission_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup>? _explicitNullValuePermissionGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup> PermissionGroups { get => _explicitNullValuePermissionGroups; set { _explicitNullValuePermissionGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_groups"); else _explicitNullProperties?.Remove("permission_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup> PermissionGroups { get => _explicitNullValuePermissionGroups; set { _explicitNullValuePermissionGroups = value; AdditionalData?.Remove("permission_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_groups"); else _explicitNullProperties?.Remove("permission_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup> _explicitNullValuePermissionGroups = default!;
 #endif
         /// <summary>A list of resource groups that the policy applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup>? ResourceGroups { get => _explicitNullValueResourceGroups; set { _explicitNullValueResourceGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_groups"); else _explicitNullProperties?.Remove("resource_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup>? ResourceGroups { get => _explicitNullValueResourceGroups; set { _explicitNullValueResourceGroups = value; AdditionalData?.Remove("resource_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_groups"); else _explicitNullProperties?.Remove("resource_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup>? _explicitNullValueResourceGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup> ResourceGroups { get => _explicitNullValueResourceGroups; set { _explicitNullValueResourceGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_groups"); else _explicitNullProperties?.Remove("resource_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup> ResourceGroups { get => _explicitNullValueResourceGroups; set { _explicitNullValueResourceGroups = value; AdditionalData?.Remove("resource_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_groups"); else _explicitNullProperties?.Remove("resource_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup> _explicitNullValueResourceGroups = default!;
 #endif
         /// <summary>
@@ -81,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccess>(); } },
+                { "access", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccess>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccess = default; _explicitNullProperties?.Remove("access"); AdditionalData["access"] = unknown; } else { Access = parsed; AdditionalData.Remove("access"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "permission_groups", n => { PermissionGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resource_groups", n => { ResourceGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup.CreateFromDiscriminatorValue)?.AsList(); } },

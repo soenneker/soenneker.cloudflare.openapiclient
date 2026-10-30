@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("remediation_type_id") is { } nullNodeRemediationTypeId && nullNodeRemediationTypeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemediationTypeId = null;
+            if (parseNode.GetChildNode("remediation_type_id") is null) { _explicitNullValueRemediationTypeId = default!; _explicitNullProperties?.Remove("remediation_type_id"); }
+            else if (parseNode.GetChildNode("remediation_type_id") is { } nullNodeRemediationTypeId && nullNodeRemediationTypeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemediationTypeId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the remediation type to execute.</summary>
-        public Guid? RemediationTypeId { get => _explicitNullValueRemediationTypeId; set { _explicitNullValueRemediationTypeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation_type_id"); else _explicitNullProperties?.Remove("remediation_type_id"); } }
+        public Guid? RemediationTypeId { get => _explicitNullValueRemediationTypeId; set { _explicitNullValueRemediationTypeId = value; AdditionalData?.Remove("remediation_type_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation_type_id"); else _explicitNullProperties?.Remove("remediation_type_id"); } }
         private Guid? _explicitNullValueRemediationTypeId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyRemediationActionInput"/> and sets the default values.

@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fight_mode") is { } nullNodeFightMode && nullNodeFightMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FightMode = null;
+            if (parseNode.GetChildNode("fight_mode") is null) { _explicitNullValueFightMode = default!; _explicitNullProperties?.Remove("fight_mode"); }
+            else if (parseNode.GetChildNode("fight_mode") is { } nullNodeFightMode && nullNodeFightMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FightMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that the zone&apos;s Bot Fight Mode is turned on.</summary>
-        public bool? FightMode { get => _explicitNullValueFightMode; set { _explicitNullValueFightMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fight_mode"); else _explicitNullProperties?.Remove("fight_mode"); } }
+        public bool? FightMode { get => _explicitNullValueFightMode; set { _explicitNullValueFightMode = value; AdditionalData?.Remove("fight_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fight_mode"); else _explicitNullProperties?.Remove("fight_mode"); } }
         private bool? _explicitNullValueFightMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmLikelyConfigAllOf2StaleZoneConfiguration"/> and sets the default values.

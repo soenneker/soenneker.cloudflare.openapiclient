@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_usage_model") is { } nullNodeDefaultUsageModel && nullNodeDefaultUsageModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultUsageModel = null;
-            if (parseNode.GetChildNode("green_compute") is { } nullNodeGreenCompute && nullNodeGreenCompute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GreenCompute = null;
+            if (parseNode.GetChildNode("default_usage_model") is null) { _explicitNullValueDefaultUsageModel = default!; _explicitNullProperties?.Remove("default_usage_model"); }
+            else if (parseNode.GetChildNode("default_usage_model") is { } nullNodeDefaultUsageModel && nullNodeDefaultUsageModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultUsageModel = null;
+            if (parseNode.GetChildNode("green_compute") is null) { _explicitNullValueGreenCompute = default!; _explicitNullProperties?.Remove("green_compute"); }
+            else if (parseNode.GetChildNode("green_compute") is { } nullNodeGreenCompute && nullNodeGreenCompute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GreenCompute = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The default_usage_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultUsageModel { get => _explicitNullValueDefaultUsageModel; set { _explicitNullValueDefaultUsageModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_usage_model"); else _explicitNullProperties?.Remove("default_usage_model"); } }
+        public string? DefaultUsageModel { get => _explicitNullValueDefaultUsageModel; set { _explicitNullValueDefaultUsageModel = value; AdditionalData?.Remove("default_usage_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_usage_model"); else _explicitNullProperties?.Remove("default_usage_model"); } }
         private string? _explicitNullValueDefaultUsageModel = default!;
 #nullable restore
 #else
-        public string DefaultUsageModel { get => _explicitNullValueDefaultUsageModel; set { _explicitNullValueDefaultUsageModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_usage_model"); else _explicitNullProperties?.Remove("default_usage_model"); } }
+        public string DefaultUsageModel { get => _explicitNullValueDefaultUsageModel; set { _explicitNullValueDefaultUsageModel = value; AdditionalData?.Remove("default_usage_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_usage_model"); else _explicitNullProperties?.Remove("default_usage_model"); } }
         private string _explicitNullValueDefaultUsageModel = default!;
 #endif
         /// <summary>The green_compute property</summary>
-        public bool? GreenCompute { get => _explicitNullValueGreenCompute; set { _explicitNullValueGreenCompute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("green_compute"); else _explicitNullProperties?.Remove("green_compute"); } }
+        public bool? GreenCompute { get => _explicitNullValueGreenCompute; set { _explicitNullValueGreenCompute = value; AdditionalData?.Remove("green_compute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("green_compute"); else _explicitNullProperties?.Remove("green_compute"); } }
         private bool? _explicitNullValueGreenCompute = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAccountSettings"/> and sets the default values.

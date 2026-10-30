@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rfc6962") is { } nullNodeRfc6962 && nullNodeRfc6962.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rfc6962 = null;
-            if (parseNode.GetChildNode("static") is { } nullNodeStatic && nullNodeStatic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Static = null;
+            if (parseNode.GetChildNode("rfc6962") is null) { _explicitNullValueRfc6962 = default!; _explicitNullProperties?.Remove("rfc6962"); }
+            else if (parseNode.GetChildNode("rfc6962") is { } nullNodeRfc6962 && nullNodeRfc6962.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rfc6962 = null;
+            if (parseNode.GetChildNode("static") is null) { _explicitNullValueStatic = default!; _explicitNullProperties?.Remove("static"); }
+            else if (parseNode.GetChildNode("static") is { } nullNodeStatic && nullNodeStatic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Static = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rfc6962 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rfc6962 { get => _explicitNullValueRfc6962; set { _explicitNullValueRfc6962 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfc6962"); else _explicitNullProperties?.Remove("rfc6962"); } }
+        public string? Rfc6962 { get => _explicitNullValueRfc6962; set { _explicitNullValueRfc6962 = value; AdditionalData?.Remove("rfc6962"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfc6962"); else _explicitNullProperties?.Remove("rfc6962"); } }
         private string? _explicitNullValueRfc6962 = default!;
 #nullable restore
 #else
-        public string Rfc6962 { get => _explicitNullValueRfc6962; set { _explicitNullValueRfc6962 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfc6962"); else _explicitNullProperties?.Remove("rfc6962"); } }
+        public string Rfc6962 { get => _explicitNullValueRfc6962; set { _explicitNullValueRfc6962 = value; AdditionalData?.Remove("rfc6962"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfc6962"); else _explicitNullProperties?.Remove("rfc6962"); } }
         private string _explicitNullValueRfc6962 = default!;
 #endif
         /// <summary>The static property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Static { get => _explicitNullValueStatic; set { _explicitNullValueStatic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static"); else _explicitNullProperties?.Remove("static"); } }
+        public string? Static { get => _explicitNullValueStatic; set { _explicitNullValueStatic = value; AdditionalData?.Remove("static"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static"); else _explicitNullProperties?.Remove("static"); } }
         private string? _explicitNullValueStatic = default!;
 #nullable restore
 #else
-        public string Static { get => _explicitNullValueStatic; set { _explicitNullValueStatic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static"); else _explicitNullProperties?.Remove("static"); } }
+        public string Static { get => _explicitNullValueStatic; set { _explicitNullValueStatic = value; AdditionalData?.Remove("static"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static"); else _explicitNullProperties?.Remove("static"); } }
         private string _explicitNullValueStatic = default!;
 #endif
         /// <summary>

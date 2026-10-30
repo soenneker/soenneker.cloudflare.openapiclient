@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("remediation_types") is { } nullNodeRemediationTypes && nullNodeRemediationTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemediationTypes = null;
-            if (parseNode.GetChildNode("webhook_configs") is { } nullNodeWebhookConfigs && nullNodeWebhookConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookConfigs = null;
+            if (parseNode.GetChildNode("remediation_types") is null) { _explicitNullValueRemediationTypes = default!; _explicitNullProperties?.Remove("remediation_types"); }
+            else if (parseNode.GetChildNode("remediation_types") is { } nullNodeRemediationTypes && nullNodeRemediationTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemediationTypes = null;
+            if (parseNode.GetChildNode("webhook_configs") is null) { _explicitNullValueWebhookConfigs = default!; _explicitNullProperties?.Remove("webhook_configs"); }
+            else if (parseNode.GetChildNode("webhook_configs") is { } nullNodeWebhookConfigs && nullNodeWebhookConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookConfigs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Remediation actions to execute (at most one).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyRemediationActionInput>? RemediationTypes { get => _explicitNullValueRemediationTypes; set { _explicitNullValueRemediationTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation_types"); else _explicitNullProperties?.Remove("remediation_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyRemediationActionInput>? RemediationTypes { get => _explicitNullValueRemediationTypes; set { _explicitNullValueRemediationTypes = value; AdditionalData?.Remove("remediation_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation_types"); else _explicitNullProperties?.Remove("remediation_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyRemediationActionInput>? _explicitNullValueRemediationTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyRemediationActionInput> RemediationTypes { get => _explicitNullValueRemediationTypes; set { _explicitNullValueRemediationTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation_types"); else _explicitNullProperties?.Remove("remediation_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyRemediationActionInput> RemediationTypes { get => _explicitNullValueRemediationTypes; set { _explicitNullValueRemediationTypes = value; AdditionalData?.Remove("remediation_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediation_types"); else _explicitNullProperties?.Remove("remediation_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyRemediationActionInput> _explicitNullValueRemediationTypes = default!;
 #endif
         /// <summary>Webhook actions to execute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyWebhookActionInput>? WebhookConfigs { get => _explicitNullValueWebhookConfigs; set { _explicitNullValueWebhookConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_configs"); else _explicitNullProperties?.Remove("webhook_configs"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyWebhookActionInput>? WebhookConfigs { get => _explicitNullValueWebhookConfigs; set { _explicitNullValueWebhookConfigs = value; AdditionalData?.Remove("webhook_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_configs"); else _explicitNullProperties?.Remove("webhook_configs"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyWebhookActionInput>? _explicitNullValueWebhookConfigs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyWebhookActionInput> WebhookConfigs { get => _explicitNullValueWebhookConfigs; set { _explicitNullValueWebhookConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_configs"); else _explicitNullProperties?.Remove("webhook_configs"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyWebhookActionInput> WebhookConfigs { get => _explicitNullValueWebhookConfigs; set { _explicitNullValueWebhookConfigs = value; AdditionalData?.Remove("webhook_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_configs"); else _explicitNullProperties?.Remove("webhook_configs"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyWebhookActionInput> _explicitNullValueWebhookConfigs = default!;
 #endif
         /// <summary>

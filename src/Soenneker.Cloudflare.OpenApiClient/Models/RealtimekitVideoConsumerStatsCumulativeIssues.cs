@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lag_fraction") is { } nullNodeLagFraction && nullNodeLagFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LagFraction = null;
-            if (parseNode.GetChildNode("no_video_fraction") is { } nullNodeNoVideoFraction && nullNodeNoVideoFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoVideoFraction = null;
-            if (parseNode.GetChildNode("poor_resolution_fraction") is { } nullNodePoorResolutionFraction && nullNodePoorResolutionFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoorResolutionFraction = null;
+            if (parseNode.GetChildNode("lag_fraction") is null) { _explicitNullValueLagFraction = default!; _explicitNullProperties?.Remove("lag_fraction"); }
+            else if (parseNode.GetChildNode("lag_fraction") is { } nullNodeLagFraction && nullNodeLagFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LagFraction = null;
+            if (parseNode.GetChildNode("no_video_fraction") is null) { _explicitNullValueNoVideoFraction = default!; _explicitNullProperties?.Remove("no_video_fraction"); }
+            else if (parseNode.GetChildNode("no_video_fraction") is { } nullNodeNoVideoFraction && nullNodeNoVideoFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoVideoFraction = null;
+            if (parseNode.GetChildNode("poor_resolution_fraction") is null) { _explicitNullValuePoorResolutionFraction = default!; _explicitNullProperties?.Remove("poor_resolution_fraction"); }
+            else if (parseNode.GetChildNode("poor_resolution_fraction") is { } nullNodePoorResolutionFraction && nullNodePoorResolutionFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoorResolutionFraction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The lag_fraction property</summary>
-        public double? LagFraction { get => _explicitNullValueLagFraction; set { _explicitNullValueLagFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lag_fraction"); else _explicitNullProperties?.Remove("lag_fraction"); } }
+        public double? LagFraction { get => _explicitNullValueLagFraction; set { _explicitNullValueLagFraction = value; AdditionalData?.Remove("lag_fraction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lag_fraction"); else _explicitNullProperties?.Remove("lag_fraction"); } }
         private double? _explicitNullValueLagFraction = default!;
         /// <summary>The no_video_fraction property</summary>
-        public double? NoVideoFraction { get => _explicitNullValueNoVideoFraction; set { _explicitNullValueNoVideoFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_video_fraction"); else _explicitNullProperties?.Remove("no_video_fraction"); } }
+        public double? NoVideoFraction { get => _explicitNullValueNoVideoFraction; set { _explicitNullValueNoVideoFraction = value; AdditionalData?.Remove("no_video_fraction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_video_fraction"); else _explicitNullProperties?.Remove("no_video_fraction"); } }
         private double? _explicitNullValueNoVideoFraction = default!;
         /// <summary>The poor_resolution_fraction property</summary>
-        public double? PoorResolutionFraction { get => _explicitNullValuePoorResolutionFraction; set { _explicitNullValuePoorResolutionFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poor_resolution_fraction"); else _explicitNullProperties?.Remove("poor_resolution_fraction"); } }
+        public double? PoorResolutionFraction { get => _explicitNullValuePoorResolutionFraction; set { _explicitNullValuePoorResolutionFraction = value; AdditionalData?.Remove("poor_resolution_fraction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poor_resolution_fraction"); else _explicitNullProperties?.Remove("poor_resolution_fraction"); } }
         private double? _explicitNullValuePoorResolutionFraction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulativeIssues"/> and sets the default values.

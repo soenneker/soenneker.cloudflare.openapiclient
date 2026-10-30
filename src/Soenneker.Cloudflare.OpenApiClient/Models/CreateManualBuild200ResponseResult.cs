@@ -17,95 +17,108 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("build_outcome") is { } nullNodeBuildOutcome && nullNodeBuildOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildOutcome = null;
-            if (parseNode.GetChildNode("build_trigger_metadata") is { } nullNodeBuildTriggerMetadata && nullNodeBuildTriggerMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTriggerMetadata = null;
-            if (parseNode.GetChildNode("build_uuid") is { } nullNodeBuildUuid && nullNodeBuildUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildUuid = null;
-            if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
-            if (parseNode.GetChildNode("deploy_hook") is { } nullNodeDeployHook && nullNodeDeployHook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployHook = null;
-            if (parseNode.GetChildNode("initializing_on") is { } nullNodeInitializingOn && nullNodeInitializingOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitializingOn = null;
-            if (parseNode.GetChildNode("modified_on") is { } nullNodeModifiedOn && nullNodeModifiedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedOn = null;
-            if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
-            if (parseNode.GetChildNode("pull_request") is { } nullNodePullRequest && nullNodePullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequest = null;
-            if (parseNode.GetChildNode("running_on") is { } nullNodeRunningOn && nullNodeRunningOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunningOn = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("stopped_on") is { } nullNodeStoppedOn && nullNodeStoppedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppedOn = null;
-            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+            if (parseNode.GetChildNode("build_outcome") is null) { _explicitNullValueBuildOutcome = default!; _explicitNullProperties?.Remove("build_outcome"); }
+            else if (parseNode.GetChildNode("build_outcome") is { } nullNodeBuildOutcome && nullNodeBuildOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildOutcome = null;
+            if (parseNode.GetChildNode("build_trigger_metadata") is null) { _explicitNullValueBuildTriggerMetadata = default!; _explicitNullProperties?.Remove("build_trigger_metadata"); }
+            else if (parseNode.GetChildNode("build_trigger_metadata") is { } nullNodeBuildTriggerMetadata && nullNodeBuildTriggerMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTriggerMetadata = null;
+            if (parseNode.GetChildNode("build_uuid") is null) { _explicitNullValueBuildUuid = default!; _explicitNullProperties?.Remove("build_uuid"); }
+            else if (parseNode.GetChildNode("build_uuid") is { } nullNodeBuildUuid && nullNodeBuildUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildUuid = null;
+            if (parseNode.GetChildNode("created_on") is null) { _explicitNullValueCreatedOn = default!; _explicitNullProperties?.Remove("created_on"); }
+            else if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
+            if (parseNode.GetChildNode("deploy_hook") is null) { _explicitNullValueDeployHook = default!; _explicitNullProperties?.Remove("deploy_hook"); }
+            else if (parseNode.GetChildNode("deploy_hook") is { } nullNodeDeployHook && nullNodeDeployHook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployHook = null;
+            if (parseNode.GetChildNode("initializing_on") is null) { _explicitNullValueInitializingOn = default!; _explicitNullProperties?.Remove("initializing_on"); }
+            else if (parseNode.GetChildNode("initializing_on") is { } nullNodeInitializingOn && nullNodeInitializingOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitializingOn = null;
+            if (parseNode.GetChildNode("modified_on") is null) { _explicitNullValueModifiedOn = default!; _explicitNullProperties?.Remove("modified_on"); }
+            else if (parseNode.GetChildNode("modified_on") is { } nullNodeModifiedOn && nullNodeModifiedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedOn = null;
+            if (parseNode.GetChildNode("preview_url") is null) { _explicitNullValuePreviewUrl = default!; _explicitNullProperties?.Remove("preview_url"); }
+            else if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
+            if (parseNode.GetChildNode("pull_request") is null) { _explicitNullValuePullRequest = default!; _explicitNullProperties?.Remove("pull_request"); }
+            else if (parseNode.GetChildNode("pull_request") is { } nullNodePullRequest && nullNodePullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequest = null;
+            if (parseNode.GetChildNode("running_on") is null) { _explicitNullValueRunningOn = default!; _explicitNullProperties?.Remove("running_on"); }
+            else if (parseNode.GetChildNode("running_on") is { } nullNodeRunningOn && nullNodeRunningOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunningOn = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("stopped_on") is null) { _explicitNullValueStoppedOn = default!; _explicitNullProperties?.Remove("stopped_on"); }
+            else if (parseNode.GetChildNode("stopped_on") is { } nullNodeStoppedOn && nullNodeStoppedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppedOn = null;
+            if (parseNode.GetChildNode("trigger") is null) { _explicitNullValueTrigger = default!; _explicitNullProperties?.Remove("trigger"); }
+            else if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The build_outcome property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome? BuildOutcome { get => _explicitNullValueBuildOutcome; set { _explicitNullValueBuildOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_outcome"); else _explicitNullProperties?.Remove("build_outcome"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome? BuildOutcome { get => _explicitNullValueBuildOutcome; set { _explicitNullValueBuildOutcome = value; AdditionalData?.Remove("build_outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_outcome"); else _explicitNullProperties?.Remove("build_outcome"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome? _explicitNullValueBuildOutcome = default!;
         /// <summary>The build_trigger_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse? BuildTriggerMetadata { get => _explicitNullValueBuildTriggerMetadata; set { _explicitNullValueBuildTriggerMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_trigger_metadata"); else _explicitNullProperties?.Remove("build_trigger_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse? BuildTriggerMetadata { get => _explicitNullValueBuildTriggerMetadata; set { _explicitNullValueBuildTriggerMetadata = value; AdditionalData?.Remove("build_trigger_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_trigger_metadata"); else _explicitNullProperties?.Remove("build_trigger_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse? _explicitNullValueBuildTriggerMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse BuildTriggerMetadata { get => _explicitNullValueBuildTriggerMetadata; set { _explicitNullValueBuildTriggerMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_trigger_metadata"); else _explicitNullProperties?.Remove("build_trigger_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse BuildTriggerMetadata { get => _explicitNullValueBuildTriggerMetadata; set { _explicitNullValueBuildTriggerMetadata = value; AdditionalData?.Remove("build_trigger_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_trigger_metadata"); else _explicitNullProperties?.Remove("build_trigger_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse _explicitNullValueBuildTriggerMetadata = default!;
 #endif
         /// <summary>Build UUID.</summary>
-        public Guid? BuildUuid { get => _explicitNullValueBuildUuid; set { _explicitNullValueBuildUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_uuid"); else _explicitNullProperties?.Remove("build_uuid"); } }
+        public Guid? BuildUuid { get => _explicitNullValueBuildUuid; set { _explicitNullValueBuildUuid = value; AdditionalData?.Remove("build_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_uuid"); else _explicitNullProperties?.Remove("build_uuid"); } }
         private Guid? _explicitNullValueBuildUuid = default!;
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
+        public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; AdditionalData?.Remove("created_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
         private DateTimeOffset? _explicitNullValueCreatedOn = default!;
         /// <summary>The deploy_hook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook? DeployHook { get => _explicitNullValueDeployHook; set { _explicitNullValueDeployHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_hook"); else _explicitNullProperties?.Remove("deploy_hook"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook? DeployHook { get => _explicitNullValueDeployHook; set { _explicitNullValueDeployHook = value; AdditionalData?.Remove("deploy_hook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_hook"); else _explicitNullProperties?.Remove("deploy_hook"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook? _explicitNullValueDeployHook = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook DeployHook { get => _explicitNullValueDeployHook; set { _explicitNullValueDeployHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_hook"); else _explicitNullProperties?.Remove("deploy_hook"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook DeployHook { get => _explicitNullValueDeployHook; set { _explicitNullValueDeployHook = value; AdditionalData?.Remove("deploy_hook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_hook"); else _explicitNullProperties?.Remove("deploy_hook"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook _explicitNullValueDeployHook = default!;
 #endif
         /// <summary>The initializing_on property</summary>
-        public DateTimeOffset? InitializingOn { get => _explicitNullValueInitializingOn; set { _explicitNullValueInitializingOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializing_on"); else _explicitNullProperties?.Remove("initializing_on"); } }
+        public DateTimeOffset? InitializingOn { get => _explicitNullValueInitializingOn; set { _explicitNullValueInitializingOn = value; AdditionalData?.Remove("initializing_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializing_on"); else _explicitNullProperties?.Remove("initializing_on"); } }
         private DateTimeOffset? _explicitNullValueInitializingOn = default!;
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get => _explicitNullValueModifiedOn; set { _explicitNullValueModifiedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_on"); else _explicitNullProperties?.Remove("modified_on"); } }
+        public DateTimeOffset? ModifiedOn { get => _explicitNullValueModifiedOn; set { _explicitNullValueModifiedOn = value; AdditionalData?.Remove("modified_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_on"); else _explicitNullProperties?.Remove("modified_on"); } }
         private DateTimeOffset? _explicitNullValueModifiedOn = default!;
         /// <summary>URL serving the Worker version this build deployed. Only returned by Get build by UUID, and only once the build has produced a preview artifact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string? _explicitNullValuePreviewUrl = default!;
 #nullable restore
 #else
-        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string _explicitNullValuePreviewUrl = default!;
 #endif
         /// <summary>The pull_request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest? PullRequest { get => _explicitNullValuePullRequest; set { _explicitNullValuePullRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request"); else _explicitNullProperties?.Remove("pull_request"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest? PullRequest { get => _explicitNullValuePullRequest; set { _explicitNullValuePullRequest = value; AdditionalData?.Remove("pull_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request"); else _explicitNullProperties?.Remove("pull_request"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest? _explicitNullValuePullRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest PullRequest { get => _explicitNullValuePullRequest; set { _explicitNullValuePullRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request"); else _explicitNullProperties?.Remove("pull_request"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest PullRequest { get => _explicitNullValuePullRequest; set { _explicitNullValuePullRequest = value; AdditionalData?.Remove("pull_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request"); else _explicitNullProperties?.Remove("pull_request"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest _explicitNullValuePullRequest = default!;
 #endif
         /// <summary>The running_on property</summary>
-        public DateTimeOffset? RunningOn { get => _explicitNullValueRunningOn; set { _explicitNullValueRunningOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running_on"); else _explicitNullProperties?.Remove("running_on"); } }
+        public DateTimeOffset? RunningOn { get => _explicitNullValueRunningOn; set { _explicitNullValueRunningOn = value; AdditionalData?.Remove("running_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running_on"); else _explicitNullProperties?.Remove("running_on"); } }
         private DateTimeOffset? _explicitNullValueRunningOn = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus? _explicitNullValueStatus = default!;
         /// <summary>The stopped_on property</summary>
-        public DateTimeOffset? StoppedOn { get => _explicitNullValueStoppedOn; set { _explicitNullValueStoppedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped_on"); else _explicitNullProperties?.Remove("stopped_on"); } }
+        public DateTimeOffset? StoppedOn { get => _explicitNullValueStoppedOn; set { _explicitNullValueStoppedOn = value; AdditionalData?.Remove("stopped_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped_on"); else _explicitNullProperties?.Remove("stopped_on"); } }
         private DateTimeOffset? _explicitNullValueStoppedOn = default!;
         /// <summary>Trigger information without build_token_uuid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger? _explicitNullValueTrigger = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger _explicitNullValueTrigger = default!;
 #endif
         /// <summary>
@@ -133,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "build_outcome", n => { BuildOutcome = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome>(); } },
+                { "build_outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuildOutcome = default; _explicitNullProperties?.Remove("build_outcome"); AdditionalData["build_outcome"] = unknown; } else { BuildOutcome = parsed; AdditionalData.Remove("build_outcome"); } } },
                 { "build_trigger_metadata", n => { BuildTriggerMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse.CreateFromDiscriminatorValue); } },
                 { "build_uuid", n => { BuildUuid = n.GetGuidValue(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
@@ -143,7 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
                 { "pull_request", n => { PullRequest = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest.CreateFromDiscriminatorValue); } },
                 { "running_on", n => { RunningOn = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "stopped_on", n => { StoppedOn = n.GetDateTimeOffsetValue(); } },
                 { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger.CreateFromDiscriminatorValue); } },
             };

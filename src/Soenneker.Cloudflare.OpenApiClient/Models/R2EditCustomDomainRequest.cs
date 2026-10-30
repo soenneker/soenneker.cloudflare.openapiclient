@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ciphers") is { } nullNodeCiphers && nullNodeCiphers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ciphers = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("minTLS") is { } nullNodeMinTLS && nullNodeMinTLS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTLS = null;
+            if (parseNode.GetChildNode("ciphers") is null) { _explicitNullValueCiphers = default!; _explicitNullProperties?.Remove("ciphers"); }
+            else if (parseNode.GetChildNode("ciphers") is { } nullNodeCiphers && nullNodeCiphers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ciphers = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("minTLS") is null) { _explicitNullValueMinTLS = default!; _explicitNullProperties?.Remove("minTLS"); }
+            else if (parseNode.GetChildNode("minTLS") is { } nullNodeMinTLS && nullNodeMinTLS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTLS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
+        public List<string>? Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; AdditionalData?.Remove("ciphers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
         private List<string>? _explicitNullValueCiphers = default!;
 #nullable restore
 #else
-        public List<string> Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
+        public List<string> Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; AdditionalData?.Remove("ciphers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
         private List<string> _explicitNullValueCiphers = default!;
 #endif
         /// <summary>Whether to enable public bucket access at the specified custom domain.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to previous value.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls? MinTLS { get => _explicitNullValueMinTLS; set { _explicitNullValueMinTLS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minTLS"); else _explicitNullProperties?.Remove("minTLS"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls? MinTLS { get => _explicitNullValueMinTLS; set { _explicitNullValueMinTLS = value; AdditionalData?.Remove("minTLS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minTLS"); else _explicitNullProperties?.Remove("minTLS"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls? _explicitNullValueMinTLS = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequest"/> and sets the default values.
@@ -67,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "ciphers", n => { Ciphers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "minTLS", n => { MinTLS = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls>(); } },
+                { "minTLS", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMinTLS = default; _explicitNullProperties?.Remove("minTLS"); AdditionalData["minTLS"] = unknown; } else { MinTLS = parsed; AdditionalData.Remove("minTLS"); } } },
             };
         }
         /// <summary>

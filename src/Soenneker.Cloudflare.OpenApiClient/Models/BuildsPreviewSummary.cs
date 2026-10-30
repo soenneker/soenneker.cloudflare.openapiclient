@@ -18,38 +18,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auto_build") is { } nullNodeAutoBuild && nullNodeAutoBuild.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoBuild = null;
-            if (parseNode.GetChildNode("auto_delete") is { } nullNodeAutoDelete && nullNodeAutoDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoDelete = null;
-            if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
-            if (parseNode.GetChildNode("preview_id") is { } nullNodePreviewId && nullNodePreviewId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewId = null;
+            if (parseNode.GetChildNode("auto_build") is null) { _explicitNullValueAutoBuild = default!; _explicitNullProperties?.Remove("auto_build"); }
+            else if (parseNode.GetChildNode("auto_build") is { } nullNodeAutoBuild && nullNodeAutoBuild.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoBuild = null;
+            if (parseNode.GetChildNode("auto_delete") is null) { _explicitNullValueAutoDelete = default!; _explicitNullProperties?.Remove("auto_delete"); }
+            else if (parseNode.GetChildNode("auto_delete") is { } nullNodeAutoDelete && nullNodeAutoDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoDelete = null;
+            if (parseNode.GetChildNode("branch") is null) { _explicitNullValueBranch = default!; _explicitNullProperties?.Remove("branch"); }
+            else if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
+            if (parseNode.GetChildNode("preview_id") is null) { _explicitNullValuePreviewId = default!; _explicitNullProperties?.Remove("preview_id"); }
+            else if (parseNode.GetChildNode("preview_id") is { } nullNodePreviewId && nullNodePreviewId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether pushes to the git branch build this Preview. Deploy hooks, manual builds, and retries run regardless of this setting.</summary>
-        public bool? AutoBuild { get => _explicitNullValueAutoBuild; set { _explicitNullValueAutoBuild = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_build"); else _explicitNullProperties?.Remove("auto_build"); } }
+        public bool? AutoBuild { get => _explicitNullValueAutoBuild; set { _explicitNullValueAutoBuild = value; AdditionalData?.Remove("auto_build"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_build"); else _explicitNullProperties?.Remove("auto_build"); } }
         private bool? _explicitNullValueAutoBuild = default!;
         /// <summary>Whether deleting the git branch also deletes this Preview.</summary>
-        public bool? AutoDelete { get => _explicitNullValueAutoDelete; set { _explicitNullValueAutoDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_delete"); else _explicitNullProperties?.Remove("auto_delete"); } }
+        public bool? AutoDelete { get => _explicitNullValueAutoDelete; set { _explicitNullValueAutoDelete = value; AdditionalData?.Remove("auto_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_delete"); else _explicitNullProperties?.Remove("auto_delete"); } }
         private bool? _explicitNullValueAutoDelete = default!;
         /// <summary>Git branch name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string _explicitNullValueBranch = default!;
 #endif
         /// <summary>System-generated tag of the Worker. This is not the Worker name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
+        public string? PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; AdditionalData?.Remove("preview_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
         private string? _explicitNullValuePreviewId = default!;
 #nullable restore
 #else
-        public string PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
+        public string PreviewId { get => _explicitNullValuePreviewId; set { _explicitNullValuePreviewId = value; AdditionalData?.Remove("preview_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_id"); else _explicitNullProperties?.Remove("preview_id"); } }
         private string _explicitNullValuePreviewId = default!;
 #endif
         /// <summary>

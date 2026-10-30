@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("passphrase") is { } nullNodePassphrase && nullNodePassphrase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passphrase = null;
-            if (parseNode.GetChildNode("streamId") is { } nullNodeStreamId && nullNodeStreamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamId = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("passphrase") is null) { _explicitNullValuePassphrase = default!; _explicitNullProperties?.Remove("passphrase"); }
+            else if (parseNode.GetChildNode("passphrase") is { } nullNodePassphrase && nullNodePassphrase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passphrase = null;
+            if (parseNode.GetChildNode("streamId") is null) { _explicitNullValueStreamId = default!; _explicitNullProperties?.Remove("streamId"); }
+            else if (parseNode.GetChildNode("streamId") is { } nullNodeStreamId && nullNodeStreamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamId = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The secret key to use for playback via SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
+        public string? Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; AdditionalData?.Remove("passphrase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
         private string? _explicitNullValuePassphrase = default!;
 #nullable restore
 #else
-        public string Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
+        public string Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; AdditionalData?.Remove("passphrase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
         private string _explicitNullValuePassphrase = default!;
 #endif
         /// <summary>The identifier of the live input to use for playback via SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streamId"); else _explicitNullProperties?.Remove("streamId"); } }
+        public string? StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; AdditionalData?.Remove("streamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streamId"); else _explicitNullProperties?.Remove("streamId"); } }
         private string? _explicitNullValueStreamId = default!;
 #nullable restore
 #else
-        public string StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streamId"); else _explicitNullProperties?.Remove("streamId"); } }
+        public string StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; AdditionalData?.Remove("streamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streamId"); else _explicitNullProperties?.Remove("streamId"); } }
         private string _explicitNullValueStreamId = default!;
 #endif
         /// <summary>The URL used to play live video over SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

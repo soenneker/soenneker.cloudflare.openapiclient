@@ -17,72 +17,79 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agentReadiness") is { } nullNodeAgentReadiness && nullNodeAgentReadiness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentReadiness = null;
-            if (parseNode.GetChildNode("customagent") is { } nullNodeCustomagent && nullNodeCustomagent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Customagent = null;
-            if (parseNode.GetChildNode("customHeaders") is { } nullNodeCustomHeaders && nullNodeCustomHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomHeaders = null;
-            if (parseNode.GetChildNode("referer") is { } nullNodeReferer && nullNodeReferer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referer = null;
-            if (parseNode.GetChildNode("screenshotsResolutions") is { } nullNodeScreenshotsResolutions && nullNodeScreenshotsResolutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshotsResolutions = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
-            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+            if (parseNode.GetChildNode("agentReadiness") is null) { _explicitNullValueAgentReadiness = default!; _explicitNullProperties?.Remove("agentReadiness"); }
+            else if (parseNode.GetChildNode("agentReadiness") is { } nullNodeAgentReadiness && nullNodeAgentReadiness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentReadiness = null;
+            if (parseNode.GetChildNode("customagent") is null) { _explicitNullValueCustomagent = default!; _explicitNullProperties?.Remove("customagent"); }
+            else if (parseNode.GetChildNode("customagent") is { } nullNodeCustomagent && nullNodeCustomagent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Customagent = null;
+            if (parseNode.GetChildNode("customHeaders") is null) { _explicitNullValueCustomHeaders = default!; _explicitNullProperties?.Remove("customHeaders"); }
+            else if (parseNode.GetChildNode("customHeaders") is { } nullNodeCustomHeaders && nullNodeCustomHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomHeaders = null;
+            if (parseNode.GetChildNode("referer") is null) { _explicitNullValueReferer = default!; _explicitNullProperties?.Remove("referer"); }
+            else if (parseNode.GetChildNode("referer") is { } nullNodeReferer && nullNodeReferer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referer = null;
+            if (parseNode.GetChildNode("screenshotsResolutions") is null) { _explicitNullValueScreenshotsResolutions = default!; _explicitNullProperties?.Remove("screenshotsResolutions"); }
+            else if (parseNode.GetChildNode("screenshotsResolutions") is { } nullNodeScreenshotsResolutions && nullNodeScreenshotsResolutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenshotsResolutions = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("visibility") is null) { _explicitNullValueVisibility = default!; _explicitNullProperties?.Remove("visibility"); }
+            else if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable agent readiness checks.</summary>
-        public bool? AgentReadiness { get => _explicitNullValueAgentReadiness; set { _explicitNullValueAgentReadiness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentReadiness"); else _explicitNullProperties?.Remove("agentReadiness"); } }
+        public bool? AgentReadiness { get => _explicitNullValueAgentReadiness; set { _explicitNullValueAgentReadiness = value; AdditionalData?.Remove("agentReadiness"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentReadiness"); else _explicitNullProperties?.Remove("agentReadiness"); } }
         private bool? _explicitNullValueAgentReadiness = default!;
         /// <summary>The customagent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Customagent { get => _explicitNullValueCustomagent; set { _explicitNullValueCustomagent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customagent"); else _explicitNullProperties?.Remove("customagent"); } }
+        public string? Customagent { get => _explicitNullValueCustomagent; set { _explicitNullValueCustomagent = value; AdditionalData?.Remove("customagent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customagent"); else _explicitNullProperties?.Remove("customagent"); } }
         private string? _explicitNullValueCustomagent = default!;
 #nullable restore
 #else
-        public string Customagent { get => _explicitNullValueCustomagent; set { _explicitNullValueCustomagent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customagent"); else _explicitNullProperties?.Remove("customagent"); } }
+        public string Customagent { get => _explicitNullValueCustomagent; set { _explicitNullValueCustomagent = value; AdditionalData?.Remove("customagent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customagent"); else _explicitNullProperties?.Remove("customagent"); } }
         private string _explicitNullValueCustomagent = default!;
 #endif
         /// <summary>Set custom headers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders? CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customHeaders"); else _explicitNullProperties?.Remove("customHeaders"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders? CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; AdditionalData?.Remove("customHeaders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customHeaders"); else _explicitNullProperties?.Remove("customHeaders"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders? _explicitNullValueCustomHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customHeaders"); else _explicitNullProperties?.Remove("customHeaders"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; AdditionalData?.Remove("customHeaders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customHeaders"); else _explicitNullProperties?.Remove("customHeaders"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders _explicitNullValueCustomHeaders = default!;
 #endif
         /// <summary>The referer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
+        public string? Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; AdditionalData?.Remove("referer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
         private string? _explicitNullValueReferer = default!;
 #nullable restore
 #else
-        public string Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
+        public string Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; AdditionalData?.Remove("referer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
         private string _explicitNullValueReferer = default!;
 #endif
         /// <summary>Take multiple screenshots targeting different device types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem?>? ScreenshotsResolutions { get => _explicitNullValueScreenshotsResolutions; set { _explicitNullValueScreenshotsResolutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshotsResolutions"); else _explicitNullProperties?.Remove("screenshotsResolutions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem?>? ScreenshotsResolutions { get => _explicitNullValueScreenshotsResolutions; set { _explicitNullValueScreenshotsResolutions = value; AdditionalData?.Remove("screenshotsResolutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshotsResolutions"); else _explicitNullProperties?.Remove("screenshotsResolutions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem?>? _explicitNullValueScreenshotsResolutions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem?> ScreenshotsResolutions { get => _explicitNullValueScreenshotsResolutions; set { _explicitNullValueScreenshotsResolutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshotsResolutions"); else _explicitNullProperties?.Remove("screenshotsResolutions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem?> ScreenshotsResolutions { get => _explicitNullValueScreenshotsResolutions; set { _explicitNullValueScreenshotsResolutions = value; AdditionalData?.Remove("screenshotsResolutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshotsResolutions"); else _explicitNullProperties?.Remove("screenshotsResolutions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem?> _explicitNullValueScreenshotsResolutions = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan&apos;s ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemVisibility? _explicitNullValueVisibility = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItem"/> and sets the default values.
@@ -115,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "referer", n => { Referer = n.GetStringValue(); } },
                 { "screenshotsResolutions", n => { ScreenshotsResolutions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem>()?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemVisibility>(); } },
+                { "visibility", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemVisibility>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVisibility = default; _explicitNullProperties?.Remove("visibility"); AdditionalData["visibility"] = unknown; } else { Visibility = parsed; AdditionalData.Remove("visibility"); } } },
             };
         }
         /// <summary>

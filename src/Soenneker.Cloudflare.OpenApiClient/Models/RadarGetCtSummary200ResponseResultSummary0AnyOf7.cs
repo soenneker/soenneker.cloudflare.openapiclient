@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DSA") is { } nullNodeDSA && nullNodeDSA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DSA = null;
-            if (parseNode.GetChildNode("ECDSA") is { } nullNodeECDSA && nullNodeECDSA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ECDSA = null;
-            if (parseNode.GetChildNode("RSA") is { } nullNodeRSA && nullNodeRSA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RSA = null;
+            if (parseNode.GetChildNode("DSA") is null) { _explicitNullValueDSA = default!; _explicitNullProperties?.Remove("DSA"); }
+            else if (parseNode.GetChildNode("DSA") is { } nullNodeDSA && nullNodeDSA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DSA = null;
+            if (parseNode.GetChildNode("ECDSA") is null) { _explicitNullValueECDSA = default!; _explicitNullProperties?.Remove("ECDSA"); }
+            else if (parseNode.GetChildNode("ECDSA") is { } nullNodeECDSA && nullNodeECDSA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ECDSA = null;
+            if (parseNode.GetChildNode("RSA") is null) { _explicitNullValueRSA = default!; _explicitNullProperties?.Remove("RSA"); }
+            else if (parseNode.GetChildNode("RSA") is { } nullNodeRSA && nullNodeRSA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RSA = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The DSA property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DSA { get => _explicitNullValueDSA; set { _explicitNullValueDSA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DSA"); else _explicitNullProperties?.Remove("DSA"); } }
+        public string? DSA { get => _explicitNullValueDSA; set { _explicitNullValueDSA = value; AdditionalData?.Remove("DSA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DSA"); else _explicitNullProperties?.Remove("DSA"); } }
         private string? _explicitNullValueDSA = default!;
 #nullable restore
 #else
-        public string DSA { get => _explicitNullValueDSA; set { _explicitNullValueDSA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DSA"); else _explicitNullProperties?.Remove("DSA"); } }
+        public string DSA { get => _explicitNullValueDSA; set { _explicitNullValueDSA = value; AdditionalData?.Remove("DSA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DSA"); else _explicitNullProperties?.Remove("DSA"); } }
         private string _explicitNullValueDSA = default!;
 #endif
         /// <summary>The ECDSA property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ECDSA { get => _explicitNullValueECDSA; set { _explicitNullValueECDSA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ECDSA"); else _explicitNullProperties?.Remove("ECDSA"); } }
+        public string? ECDSA { get => _explicitNullValueECDSA; set { _explicitNullValueECDSA = value; AdditionalData?.Remove("ECDSA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ECDSA"); else _explicitNullProperties?.Remove("ECDSA"); } }
         private string? _explicitNullValueECDSA = default!;
 #nullable restore
 #else
-        public string ECDSA { get => _explicitNullValueECDSA; set { _explicitNullValueECDSA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ECDSA"); else _explicitNullProperties?.Remove("ECDSA"); } }
+        public string ECDSA { get => _explicitNullValueECDSA; set { _explicitNullValueECDSA = value; AdditionalData?.Remove("ECDSA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ECDSA"); else _explicitNullProperties?.Remove("ECDSA"); } }
         private string _explicitNullValueECDSA = default!;
 #endif
         /// <summary>The RSA property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RSA { get => _explicitNullValueRSA; set { _explicitNullValueRSA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RSA"); else _explicitNullProperties?.Remove("RSA"); } }
+        public string? RSA { get => _explicitNullValueRSA; set { _explicitNullValueRSA = value; AdditionalData?.Remove("RSA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RSA"); else _explicitNullProperties?.Remove("RSA"); } }
         private string? _explicitNullValueRSA = default!;
 #nullable restore
 #else
-        public string RSA { get => _explicitNullValueRSA; set { _explicitNullValueRSA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RSA"); else _explicitNullProperties?.Remove("RSA"); } }
+        public string RSA { get => _explicitNullValueRSA; set { _explicitNullValueRSA = value; AdditionalData?.Remove("RSA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RSA"); else _explicitNullProperties?.Remove("RSA"); } }
         private string _explicitNullValueRSA = default!;
 #endif
         /// <summary>

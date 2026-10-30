@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("site_tag") is { } nullNodeSiteTag && nullNodeSiteTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteTag = null;
+            if (parseNode.GetChildNode("site_tag") is null) { _explicitNullValueSiteTag = default!; _explicitNullProperties?.Remove("site_tag"); }
+            else if (parseNode.GetChildNode("site_tag") is { } nullNodeSiteTag && nullNodeSiteTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Web Analytics site identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
+        public string? SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; AdditionalData?.Remove("site_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
         private string? _explicitNullValueSiteTag = default!;
 #nullable restore
 #else
-        public string SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
+        public string SiteTag { get => _explicitNullValueSiteTag; set { _explicitNullValueSiteTag = value; AdditionalData?.Remove("site_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_tag"); else _explicitNullProperties?.Remove("site_tag"); } }
         private string _explicitNullValueSiteTag = default!;
 #endif
         /// <summary>

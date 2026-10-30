@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("p25") is { } nullNodeP25 && nullNodeP25.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P25 = null;
-            if (parseNode.GetChildNode("p50") is { } nullNodeP50 && nullNodeP50.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P50 = null;
-            if (parseNode.GetChildNode("p75") is { } nullNodeP75 && nullNodeP75.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P75 = null;
+            if (parseNode.GetChildNode("p25") is null) { _explicitNullValueP25 = default!; _explicitNullProperties?.Remove("p25"); }
+            else if (parseNode.GetChildNode("p25") is { } nullNodeP25 && nullNodeP25.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P25 = null;
+            if (parseNode.GetChildNode("p50") is null) { _explicitNullValueP50 = default!; _explicitNullProperties?.Remove("p50"); }
+            else if (parseNode.GetChildNode("p50") is { } nullNodeP50 && nullNodeP50.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P50 = null;
+            if (parseNode.GetChildNode("p75") is null) { _explicitNullValueP75 = default!; _explicitNullProperties?.Remove("p75"); }
+            else if (parseNode.GetChildNode("p75") is { } nullNodeP75 && nullNodeP75.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P75 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? P25 { get => _explicitNullValueP25; set { _explicitNullValueP25 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p25"); else _explicitNullProperties?.Remove("p25"); } }
+        public string? P25 { get => _explicitNullValueP25; set { _explicitNullValueP25 = value; AdditionalData?.Remove("p25"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p25"); else _explicitNullProperties?.Remove("p25"); } }
         private string? _explicitNullValueP25 = default!;
 #nullable restore
 #else
-        public string P25 { get => _explicitNullValueP25; set { _explicitNullValueP25 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p25"); else _explicitNullProperties?.Remove("p25"); } }
+        public string P25 { get => _explicitNullValueP25; set { _explicitNullValueP25 = value; AdditionalData?.Remove("p25"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p25"); else _explicitNullProperties?.Remove("p25"); } }
         private string _explicitNullValueP25 = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? P50 { get => _explicitNullValueP50; set { _explicitNullValueP50 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p50"); else _explicitNullProperties?.Remove("p50"); } }
+        public string? P50 { get => _explicitNullValueP50; set { _explicitNullValueP50 = value; AdditionalData?.Remove("p50"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p50"); else _explicitNullProperties?.Remove("p50"); } }
         private string? _explicitNullValueP50 = default!;
 #nullable restore
 #else
-        public string P50 { get => _explicitNullValueP50; set { _explicitNullValueP50 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p50"); else _explicitNullProperties?.Remove("p50"); } }
+        public string P50 { get => _explicitNullValueP50; set { _explicitNullValueP50 = value; AdditionalData?.Remove("p50"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p50"); else _explicitNullProperties?.Remove("p50"); } }
         private string _explicitNullValueP50 = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? P75 { get => _explicitNullValueP75; set { _explicitNullValueP75 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p75"); else _explicitNullProperties?.Remove("p75"); } }
+        public string? P75 { get => _explicitNullValueP75; set { _explicitNullValueP75 = value; AdditionalData?.Remove("p75"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p75"); else _explicitNullProperties?.Remove("p75"); } }
         private string? _explicitNullValueP75 = default!;
 #nullable restore
 #else
-        public string P75 { get => _explicitNullValueP75; set { _explicitNullValueP75 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p75"); else _explicitNullProperties?.Remove("p75"); } }
+        public string P75 { get => _explicitNullValueP75; set { _explicitNullValueP75 = value; AdditionalData?.Remove("p75"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p75"); else _explicitNullProperties?.Remove("p75"); } }
         private string _explicitNullValueP75 = default!;
 #endif
         /// <summary>

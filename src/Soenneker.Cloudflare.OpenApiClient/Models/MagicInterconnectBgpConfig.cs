@@ -17,85 +17,93 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("as_no") is { } nullNodeAsNo && nullNodeAsNo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsNo = null;
-            if (parseNode.GetChildNode("cloudflare_endpoint") is { } nullNodeCloudflareEndpoint && nullNodeCloudflareEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareEndpoint = null;
-            if (parseNode.GetChildNode("customer_asn") is { } nullNodeCustomerAsn && nullNodeCustomerAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAsn = null;
-            if (parseNode.GetChildNode("customer_endpoint") is { } nullNodeCustomerEndpoint && nullNodeCustomerEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerEndpoint = null;
-            if (parseNode.GetChildNode("export_filter_id") is { } nullNodeExportFilterId && nullNodeExportFilterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExportFilterId = null;
-            if (parseNode.GetChildNode("extra_prefixes") is { } nullNodeExtraPrefixes && nullNodeExtraPrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraPrefixes = null;
-            if (parseNode.GetChildNode("import_filter_id") is { } nullNodeImportFilterId && nullNodeImportFilterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportFilterId = null;
-            if (parseNode.GetChildNode("md5_key") is { } nullNodeMd5Key && nullNodeMd5Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Md5Key = null;
+            if (parseNode.GetChildNode("as_no") is null) { _explicitNullValueAsNo = default!; _explicitNullProperties?.Remove("as_no"); }
+            else if (parseNode.GetChildNode("as_no") is { } nullNodeAsNo && nullNodeAsNo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsNo = null;
+            if (parseNode.GetChildNode("cloudflare_endpoint") is null) { _explicitNullValueCloudflareEndpoint = default!; _explicitNullProperties?.Remove("cloudflare_endpoint"); }
+            else if (parseNode.GetChildNode("cloudflare_endpoint") is { } nullNodeCloudflareEndpoint && nullNodeCloudflareEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareEndpoint = null;
+            if (parseNode.GetChildNode("customer_asn") is null) { _explicitNullValueCustomerAsn = default!; _explicitNullProperties?.Remove("customer_asn"); }
+            else if (parseNode.GetChildNode("customer_asn") is { } nullNodeCustomerAsn && nullNodeCustomerAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAsn = null;
+            if (parseNode.GetChildNode("customer_endpoint") is null) { _explicitNullValueCustomerEndpoint = default!; _explicitNullProperties?.Remove("customer_endpoint"); }
+            else if (parseNode.GetChildNode("customer_endpoint") is { } nullNodeCustomerEndpoint && nullNodeCustomerEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerEndpoint = null;
+            if (parseNode.GetChildNode("export_filter_id") is null) { _explicitNullValueExportFilterId = default!; _explicitNullProperties?.Remove("export_filter_id"); }
+            else if (parseNode.GetChildNode("export_filter_id") is { } nullNodeExportFilterId && nullNodeExportFilterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExportFilterId = null;
+            if (parseNode.GetChildNode("extra_prefixes") is null) { _explicitNullValueExtraPrefixes = default!; _explicitNullProperties?.Remove("extra_prefixes"); }
+            else if (parseNode.GetChildNode("extra_prefixes") is { } nullNodeExtraPrefixes && nullNodeExtraPrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraPrefixes = null;
+            if (parseNode.GetChildNode("import_filter_id") is null) { _explicitNullValueImportFilterId = default!; _explicitNullProperties?.Remove("import_filter_id"); }
+            else if (parseNode.GetChildNode("import_filter_id") is { } nullNodeImportFilterId && nullNodeImportFilterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportFilterId = null;
+            if (parseNode.GetChildNode("md5_key") is null) { _explicitNullValueMd5Key = default!; _explicitNullProperties?.Remove("md5_key"); }
+            else if (parseNode.GetChildNode("md5_key") is { } nullNodeMd5Key && nullNodeMd5Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Md5Key = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deprecated. Use customer_asn.</summary>
         [Obsolete("")]
-        public int? AsNo { get => _explicitNullValueAsNo; set { _explicitNullValueAsNo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_no"); else _explicitNullProperties?.Remove("as_no"); } }
+        public int? AsNo { get => _explicitNullValueAsNo; set { _explicitNullValueAsNo = value; AdditionalData?.Remove("as_no"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("as_no"); else _explicitNullProperties?.Remove("as_no"); } }
         private int? _explicitNullValueAsNo = default!;
         /// <summary>Read-only for v1.5; derived from interface_address.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
+        public string? CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; AdditionalData?.Remove("cloudflare_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
         private string? _explicitNullValueCloudflareEndpoint = default!;
 #nullable restore
 #else
-        public string CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
+        public string CloudflareEndpoint { get => _explicitNullValueCloudflareEndpoint; set { _explicitNullValueCloudflareEndpoint = value; AdditionalData?.Remove("cloudflare_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_endpoint"); else _explicitNullProperties?.Remove("cloudflare_endpoint"); } }
         private string _explicitNullValueCloudflareEndpoint = default!;
 #endif
         /// <summary>ASN used on the customer end of the BGP session.</summary>
-        public int? CustomerAsn { get => _explicitNullValueCustomerAsn; set { _explicitNullValueCustomerAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_asn"); else _explicitNullProperties?.Remove("customer_asn"); } }
+        public int? CustomerAsn { get => _explicitNullValueCustomerAsn; set { _explicitNullValueCustomerAsn = value; AdditionalData?.Remove("customer_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_asn"); else _explicitNullProperties?.Remove("customer_asn"); } }
         private int? _explicitNullValueCustomerAsn = default!;
         /// <summary>Read-only for v1.5; derived from interface_address.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
+        public string? CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; AdditionalData?.Remove("customer_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
         private string? _explicitNullValueCustomerEndpoint = default!;
 #nullable restore
 #else
-        public string CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
+        public string CustomerEndpoint { get => _explicitNullValueCustomerEndpoint; set { _explicitNullValueCustomerEndpoint = value; AdditionalData?.Remove("customer_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_endpoint"); else _explicitNullProperties?.Remove("customer_endpoint"); } }
         private string _explicitNullValueCustomerEndpoint = default!;
 #endif
         /// <summary>ID of the BGP filter profile applied to routes advertised to the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExportFilterId { get => _explicitNullValueExportFilterId; set { _explicitNullValueExportFilterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("export_filter_id"); else _explicitNullProperties?.Remove("export_filter_id"); } }
+        public string? ExportFilterId { get => _explicitNullValueExportFilterId; set { _explicitNullValueExportFilterId = value; AdditionalData?.Remove("export_filter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("export_filter_id"); else _explicitNullProperties?.Remove("export_filter_id"); } }
         private string? _explicitNullValueExportFilterId = default!;
 #nullable restore
 #else
-        public string ExportFilterId { get => _explicitNullValueExportFilterId; set { _explicitNullValueExportFilterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("export_filter_id"); else _explicitNullProperties?.Remove("export_filter_id"); } }
+        public string ExportFilterId { get => _explicitNullValueExportFilterId; set { _explicitNullValueExportFilterId = value; AdditionalData?.Remove("export_filter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("export_filter_id"); else _explicitNullProperties?.Remove("export_filter_id"); } }
         private string _explicitNullValueExportFilterId = default!;
 #endif
         /// <summary>IPv4 prefixes in this list will be advertised to the customer device, in addition to the routes in the Magicrouting table. Each entry must be a network address in CIDR notation with no host bits set (for example`192.0.2.0/24`, not `192.0.2.1/24`) and must not repeat another entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
+        public List<string>? ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; AdditionalData?.Remove("extra_prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
         private List<string>? _explicitNullValueExtraPrefixes = default!;
 #nullable restore
 #else
-        public List<string> ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
+        public List<string> ExtraPrefixes { get => _explicitNullValueExtraPrefixes; set { _explicitNullValueExtraPrefixes = value; AdditionalData?.Remove("extra_prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_prefixes"); else _explicitNullProperties?.Remove("extra_prefixes"); } }
         private List<string> _explicitNullValueExtraPrefixes = default!;
 #endif
         /// <summary>ID of the BGP filter profile applied to routes received from the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportFilterId { get => _explicitNullValueImportFilterId; set { _explicitNullValueImportFilterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_filter_id"); else _explicitNullProperties?.Remove("import_filter_id"); } }
+        public string? ImportFilterId { get => _explicitNullValueImportFilterId; set { _explicitNullValueImportFilterId = value; AdditionalData?.Remove("import_filter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_filter_id"); else _explicitNullProperties?.Remove("import_filter_id"); } }
         private string? _explicitNullValueImportFilterId = default!;
 #nullable restore
 #else
-        public string ImportFilterId { get => _explicitNullValueImportFilterId; set { _explicitNullValueImportFilterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_filter_id"); else _explicitNullProperties?.Remove("import_filter_id"); } }
+        public string ImportFilterId { get => _explicitNullValueImportFilterId; set { _explicitNullValueImportFilterId = value; AdditionalData?.Remove("import_filter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_filter_id"); else _explicitNullProperties?.Remove("import_filter_id"); } }
         private string _explicitNullValueImportFilterId = default!;
 #endif
         /// <summary>MD5 key to use for session authentication.Note that *this is not a security measure*. MD5 is not a valid security mechanism, and thekey is not treated as a secret value. This is *only* supported for preventingmisconfiguration, not for defending against malicious attacks.The MD5 key, if set, must be of non-zero length and consist only of the following types ofcharacter:* ASCII alphanumerics: `[a-zA-Z0-9]`* Special characters in the set `&apos;!@#$%^&amp;*()+[]{}&lt;&gt;/.,;:_-~`= \|`In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A),quotation mark (`&quot;`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed(0x0C), and the question mark (`?`). Requests specifying an MD5 key with one or more ofthese disallowed characters will be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
+        public string? Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; AdditionalData?.Remove("md5_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
         private string? _explicitNullValueMd5Key = default!;
 #nullable restore
 #else
-        public string Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
+        public string Md5Key { get => _explicitNullValueMd5Key; set { _explicitNullValueMd5Key = value; AdditionalData?.Remove("md5_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("md5_key"); else _explicitNullProperties?.Remove("md5_key"); } }
         private string _explicitNullValueMd5Key = default!;
 #endif
         /// <summary>

@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("license_expires_at") is { } nullNodeLicenseExpiresAt && nullNodeLicenseExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseExpiresAt = null;
-            if (parseNode.GetChildNode("license_status") is { } nullNodeLicenseStatus && nullNodeLicenseStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseStatus = null;
-            if (parseNode.GetChildNode("non_billable_since") is { } nullNodeNonBillableSince && nullNodeNonBillableSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonBillableSince = null;
-            if (parseNode.GetChildNode("price_usd_microcents") is { } nullNodePriceUsdMicrocents && nullNodePriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriceUsdMicrocents = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("license_expires_at") is null) { _explicitNullValueLicenseExpiresAt = default!; _explicitNullProperties?.Remove("license_expires_at"); }
+            else if (parseNode.GetChildNode("license_expires_at") is { } nullNodeLicenseExpiresAt && nullNodeLicenseExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseExpiresAt = null;
+            if (parseNode.GetChildNode("license_status") is null) { _explicitNullValueLicenseStatus = default!; _explicitNullProperties?.Remove("license_status"); }
+            else if (parseNode.GetChildNode("license_status") is { } nullNodeLicenseStatus && nullNodeLicenseStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseStatus = null;
+            if (parseNode.GetChildNode("non_billable_since") is null) { _explicitNullValueNonBillableSince = default!; _explicitNullProperties?.Remove("non_billable_since"); }
+            else if (parseNode.GetChildNode("non_billable_since") is { } nullNodeNonBillableSince && nullNodeNonBillableSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonBillableSince = null;
+            if (parseNode.GetChildNode("price_usd_microcents") is null) { _explicitNullValuePriceUsdMicrocents = default!; _explicitNullProperties?.Remove("price_usd_microcents"); }
+            else if (parseNode.GetChildNode("price_usd_microcents") is { } nullNodePriceUsdMicrocents && nullNodePriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriceUsdMicrocents = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,24 +34,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Earlier non-null exclusive expiration from the accepted price agreement and publisher zone lifecycles, or null when neither expires</summary>
-        public DateTimeOffset? LicenseExpiresAt { get => _explicitNullValueLicenseExpiresAt; set { _explicitNullValueLicenseExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license_expires_at"); else _explicitNullProperties?.Remove("license_expires_at"); } }
+        public DateTimeOffset? LicenseExpiresAt { get => _explicitNullValueLicenseExpiresAt; set { _explicitNullValueLicenseExpiresAt = value; AdditionalData?.Remove("license_expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license_expires_at"); else _explicitNullProperties?.Remove("license_expires_at"); } }
         private DateTimeOffset? _explicitNullValueLicenseExpiresAt = default!;
         /// <summary>Whether the selected accepted price agreement is currently active or retained after expiration</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus? LicenseStatus { get => _explicitNullValueLicenseStatus; set { _explicitNullValueLicenseStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license_status"); else _explicitNullProperties?.Remove("license_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus? LicenseStatus { get => _explicitNullValueLicenseStatus; set { _explicitNullValueLicenseStatus = value; AdditionalData?.Remove("license_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license_status"); else _explicitNullProperties?.Remove("license_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus? _explicitNullValueLicenseStatus = default!;
         /// <summary>When the publisher zone was classified for local-only, non-billable settlement. Null for billable zones.</summary>
-        public DateTimeOffset? NonBillableSince { get => _explicitNullValueNonBillableSince; set { _explicitNullValueNonBillableSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_billable_since"); else _explicitNullProperties?.Remove("non_billable_since"); } }
+        public DateTimeOffset? NonBillableSince { get => _explicitNullValueNonBillableSince; set { _explicitNullValueNonBillableSince = value; AdditionalData?.Remove("non_billable_since"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_billable_since"); else _explicitNullProperties?.Remove("non_billable_since"); } }
         private DateTimeOffset? _explicitNullValueNonBillableSince = default!;
         /// <summary>Price of the selected accepted agreement in microcents. For an active license this is the price currently in effect; for an expired license it is the last accepted price.</summary>
-        public long? PriceUsdMicrocents { get => _explicitNullValuePriceUsdMicrocents; set { _explicitNullValuePriceUsdMicrocents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_usd_microcents"); else _explicitNullProperties?.Remove("price_usd_microcents"); } }
+        public long? PriceUsdMicrocents { get => _explicitNullValuePriceUsdMicrocents; set { _explicitNullValuePriceUsdMicrocents = value; AdditionalData?.Remove("price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_usd_microcents"); else _explicitNullProperties?.Remove("price_usd_microcents"); } }
         private long? _explicitNullValuePriceUsdMicrocents = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomain"/> and sets the default values.
@@ -75,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "license_expires_at", n => { LicenseExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "license_status", n => { LicenseStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus>(); } },
+                { "license_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlEnabledDomainLicenseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLicenseStatus = default; _explicitNullProperties?.Remove("license_status"); AdditionalData["license_status"] = unknown; } else { LicenseStatus = parsed; AdditionalData.Remove("license_status"); } } },
                 { "non_billable_since", n => { NonBillableSince = n.GetDateTimeOffsetValue(); } },
                 { "price_usd_microcents", n => { PriceUsdMicrocents = n.GetLongValue(); } },
             };

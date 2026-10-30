@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("refs") is { } nullNodeRefs && nullNodeRefs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refs = null;
+            if (parseNode.GetChildNode("refs") is null) { _explicitNullValueRefs = default!; _explicitNullProperties?.Remove("refs"); }
+            else if (parseNode.GetChildNode("refs") is { } nullNodeRefs && nullNodeRefs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The refs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPurgeMessagesRequestRefsItem>? Refs { get => _explicitNullValueRefs; set { _explicitNullValueRefs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refs"); else _explicitNullProperties?.Remove("refs"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPurgeMessagesRequestRefsItem>? Refs { get => _explicitNullValueRefs; set { _explicitNullValueRefs = value; AdditionalData?.Remove("refs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refs"); else _explicitNullProperties?.Remove("refs"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPurgeMessagesRequestRefsItem>? _explicitNullValueRefs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPurgeMessagesRequestRefsItem> Refs { get => _explicitNullValueRefs; set { _explicitNullValueRefs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refs"); else _explicitNullProperties?.Remove("refs"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPurgeMessagesRequestRefsItem> Refs { get => _explicitNullValueRefs; set { _explicitNullValueRefs = value; AdditionalData?.Remove("refs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refs"); else _explicitNullProperties?.Remove("refs"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPurgeMessagesRequestRefsItem> _explicitNullValueRefs = default!;
 #endif
         /// <summary>

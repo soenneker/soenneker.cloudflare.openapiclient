@@ -17,13 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("billing_account_type") is { } nullNodeBillingAccountType && nullNodeBillingAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAccountType = null;
-            if (parseNode.GetChildNode("configuration_account") is { } nullNodeConfigurationAccount && nullNodeConfigurationAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationAccount = null;
-            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
-            if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
-            if (parseNode.GetChildNode("flags") is { } nullNodeFlags && nullNodeFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flags = null;
-            if (parseNode.GetChildNode("innate_account_entitlements") is { } nullNodeInnateAccountEntitlements && nullNodeInnateAccountEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InnateAccountEntitlements = null;
-            if (parseNode.GetChildNode("tenant_entitlements") is { } nullNodeTenantEntitlements && nullNodeTenantEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantEntitlements = null;
+            if (parseNode.GetChildNode("billing_account_type") is null) { _explicitNullValueBillingAccountType = default!; _explicitNullProperties?.Remove("billing_account_type"); }
+            else if (parseNode.GetChildNode("billing_account_type") is { } nullNodeBillingAccountType && nullNodeBillingAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAccountType = null;
+            if (parseNode.GetChildNode("configuration_account") is null) { _explicitNullValueConfigurationAccount = default!; _explicitNullProperties?.Remove("configuration_account"); }
+            else if (parseNode.GetChildNode("configuration_account") is { } nullNodeConfigurationAccount && nullNodeConfigurationAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationAccount = null;
+            if (parseNode.GetChildNode("created_by") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("created_by"); }
+            else if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("dns") is null) { _explicitNullValueDns = default!; _explicitNullProperties?.Remove("dns"); }
+            else if (parseNode.GetChildNode("dns") is { } nullNodeDns && nullNodeDns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dns = null;
+            if (parseNode.GetChildNode("flags") is null) { _explicitNullValueFlags = default!; _explicitNullProperties?.Remove("flags"); }
+            else if (parseNode.GetChildNode("flags") is { } nullNodeFlags && nullNodeFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flags = null;
+            if (parseNode.GetChildNode("innate_account_entitlements") is null) { _explicitNullValueInnateAccountEntitlements = default!; _explicitNullProperties?.Remove("innate_account_entitlements"); }
+            else if (parseNode.GetChildNode("innate_account_entitlements") is { } nullNodeInnateAccountEntitlements && nullNodeInnateAccountEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InnateAccountEntitlements = null;
+            if (parseNode.GetChildNode("tenant_entitlements") is null) { _explicitNullValueTenantEntitlements = default!; _explicitNullProperties?.Remove("tenant_entitlements"); }
+            else if (parseNode.GetChildNode("tenant_entitlements") is { } nullNodeTenantEntitlements && nullNodeTenantEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantEntitlements = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The billing_account_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAccountType { get => _explicitNullValueBillingAccountType; set { _explicitNullValueBillingAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_account_type"); else _explicitNullProperties?.Remove("billing_account_type"); } }
+        public string? BillingAccountType { get => _explicitNullValueBillingAccountType; set { _explicitNullValueBillingAccountType = value; AdditionalData?.Remove("billing_account_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_account_type"); else _explicitNullProperties?.Remove("billing_account_type"); } }
         private string? _explicitNullValueBillingAccountType = default!;
 #nullable restore
 #else
-        public string BillingAccountType { get => _explicitNullValueBillingAccountType; set { _explicitNullValueBillingAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_account_type"); else _explicitNullProperties?.Remove("billing_account_type"); } }
+        public string BillingAccountType { get => _explicitNullValueBillingAccountType; set { _explicitNullValueBillingAccountType = value; AdditionalData?.Remove("billing_account_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_account_type"); else _explicitNullProperties?.Remove("billing_account_type"); } }
         private string _explicitNullValueBillingAccountType = default!;
 #endif
         /// <summary>The configuration_account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationAccount { get => _explicitNullValueConfigurationAccount; set { _explicitNullValueConfigurationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_account"); else _explicitNullProperties?.Remove("configuration_account"); } }
+        public string? ConfigurationAccount { get => _explicitNullValueConfigurationAccount; set { _explicitNullValueConfigurationAccount = value; AdditionalData?.Remove("configuration_account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_account"); else _explicitNullProperties?.Remove("configuration_account"); } }
         private string? _explicitNullValueConfigurationAccount = default!;
 #nullable restore
 #else
-        public string ConfigurationAccount { get => _explicitNullValueConfigurationAccount; set { _explicitNullValueConfigurationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_account"); else _explicitNullProperties?.Remove("configuration_account"); } }
+        public string ConfigurationAccount { get => _explicitNullValueConfigurationAccount; set { _explicitNullValueConfigurationAccount = value; AdditionalData?.Remove("configuration_account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration_account"); else _explicitNullProperties?.Remove("configuration_account"); } }
         private string _explicitNullValueConfigurationAccount = default!;
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private string? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDns? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDns? Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; AdditionalData?.Remove("dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDns? _explicitNullValueDns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDns Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDns Dns { get => _explicitNullValueDns; set { _explicitNullValueDns = value; AdditionalData?.Remove("dns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns"); else _explicitNullProperties?.Remove("dns"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataDns _explicitNullValueDns = default!;
 #endif
         /// <summary>The flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataFlagsProperty? Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataFlagsProperty? Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataFlagsProperty? _explicitNullValueFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataFlagsProperty Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataFlagsProperty Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiLegacyTenantTenantMetadataFlagsProperty _explicitNullValueFlags = default!;
 #endif
         /// <summary>The innate_account_entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement>? InnateAccountEntitlements { get => _explicitNullValueInnateAccountEntitlements; set { _explicitNullValueInnateAccountEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("innate_account_entitlements"); else _explicitNullProperties?.Remove("innate_account_entitlements"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement>? InnateAccountEntitlements { get => _explicitNullValueInnateAccountEntitlements; set { _explicitNullValueInnateAccountEntitlements = value; AdditionalData?.Remove("innate_account_entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("innate_account_entitlements"); else _explicitNullProperties?.Remove("innate_account_entitlements"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement>? _explicitNullValueInnateAccountEntitlements = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement> InnateAccountEntitlements { get => _explicitNullValueInnateAccountEntitlements; set { _explicitNullValueInnateAccountEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("innate_account_entitlements"); else _explicitNullProperties?.Remove("innate_account_entitlements"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement> InnateAccountEntitlements { get => _explicitNullValueInnateAccountEntitlements; set { _explicitNullValueInnateAccountEntitlements = value; AdditionalData?.Remove("innate_account_entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("innate_account_entitlements"); else _explicitNullProperties?.Remove("innate_account_entitlements"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement> _explicitNullValueInnateAccountEntitlements = default!;
 #endif
         /// <summary>The tenant_entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement>? TenantEntitlements { get => _explicitNullValueTenantEntitlements; set { _explicitNullValueTenantEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_entitlements"); else _explicitNullProperties?.Remove("tenant_entitlements"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement>? TenantEntitlements { get => _explicitNullValueTenantEntitlements; set { _explicitNullValueTenantEntitlements = value; AdditionalData?.Remove("tenant_entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_entitlements"); else _explicitNullProperties?.Remove("tenant_entitlements"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement>? _explicitNullValueTenantEntitlements = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement> TenantEntitlements { get => _explicitNullValueTenantEntitlements; set { _explicitNullValueTenantEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_entitlements"); else _explicitNullProperties?.Remove("tenant_entitlements"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement> TenantEntitlements { get => _explicitNullValueTenantEntitlements; set { _explicitNullValueTenantEntitlements = value; AdditionalData?.Remove("tenant_entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_entitlements"); else _explicitNullProperties?.Remove("tenant_entitlements"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiUserTenantEntitlement> _explicitNullValueTenantEntitlements = default!;
 #endif
         /// <summary>

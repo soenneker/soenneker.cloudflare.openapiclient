@@ -17,19 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conflictBehaviour") is { } nullNodeConflictBehaviour && nullNodeConflictBehaviour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConflictBehaviour = null;
-            if (parseNode.GetChildNode("excludedContentTypes") is { } nullNodeExcludedContentTypes && nullNodeExcludedContentTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedContentTypes = null;
-            if (parseNode.GetChildNode("imagesPathPrefix") is { } nullNodeImagesPathPrefix && nullNodeImagesPathPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImagesPathPrefix = null;
-            if (parseNode.GetChildNode("pathPrefix") is { } nullNodePathPrefix && nullNodePathPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPrefix = null;
-            if (parseNode.GetChildNode("rootDirectory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
-            if (parseNode.GetChildNode("sourceId") is { } nullNodeSourceId && nullNodeSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceId = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("conflictBehaviour") is null) { _explicitNullValueConflictBehaviour = default!; _explicitNullProperties?.Remove("conflictBehaviour"); }
+            else if (parseNode.GetChildNode("conflictBehaviour") is { } nullNodeConflictBehaviour && nullNodeConflictBehaviour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConflictBehaviour = null;
+            if (parseNode.GetChildNode("excludedContentTypes") is null) { _explicitNullValueExcludedContentTypes = default!; _explicitNullProperties?.Remove("excludedContentTypes"); }
+            else if (parseNode.GetChildNode("excludedContentTypes") is { } nullNodeExcludedContentTypes && nullNodeExcludedContentTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedContentTypes = null;
+            if (parseNode.GetChildNode("imagesPathPrefix") is null) { _explicitNullValueImagesPathPrefix = default!; _explicitNullProperties?.Remove("imagesPathPrefix"); }
+            else if (parseNode.GetChildNode("imagesPathPrefix") is { } nullNodeImagesPathPrefix && nullNodeImagesPathPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImagesPathPrefix = null;
+            if (parseNode.GetChildNode("pathPrefix") is null) { _explicitNullValuePathPrefix = default!; _explicitNullProperties?.Remove("pathPrefix"); }
+            else if (parseNode.GetChildNode("pathPrefix") is { } nullNodePathPrefix && nullNodePathPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPrefix = null;
+            if (parseNode.GetChildNode("rootDirectory") is null) { _explicitNullValueRootDirectory = default!; _explicitNullProperties?.Remove("rootDirectory"); }
+            else if (parseNode.GetChildNode("rootDirectory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
+            if (parseNode.GetChildNode("sourceId") is null) { _explicitNullValueSourceId = default!; _explicitNullProperties?.Remove("sourceId"); }
+            else if (parseNode.GetChildNode("sourceId") is { } nullNodeSourceId && nullNodeSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceId = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How to handle objects that already exist at the destination.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour? ConflictBehaviour { get => _explicitNullValueConflictBehaviour; set { _explicitNullValueConflictBehaviour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflictBehaviour"); else _explicitNullProperties?.Remove("conflictBehaviour"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour? ConflictBehaviour { get => _explicitNullValueConflictBehaviour; set { _explicitNullValueConflictBehaviour = value; AdditionalData?.Remove("conflictBehaviour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflictBehaviour"); else _explicitNullProperties?.Remove("conflictBehaviour"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour? _explicitNullValueConflictBehaviour = default!;
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
@@ -38,11 +45,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Content types to skip during migration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?>? ExcludedContentTypes { get => _explicitNullValueExcludedContentTypes; set { _explicitNullValueExcludedContentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedContentTypes"); else _explicitNullProperties?.Remove("excludedContentTypes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?>? ExcludedContentTypes { get => _explicitNullValueExcludedContentTypes; set { _explicitNullValueExcludedContentTypes = value; AdditionalData?.Remove("excludedContentTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedContentTypes"); else _explicitNullProperties?.Remove("excludedContentTypes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?>? _explicitNullValueExcludedContentTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?> ExcludedContentTypes { get => _explicitNullValueExcludedContentTypes; set { _explicitNullValueExcludedContentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedContentTypes"); else _explicitNullProperties?.Remove("excludedContentTypes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?> ExcludedContentTypes { get => _explicitNullValueExcludedContentTypes; set { _explicitNullValueExcludedContentTypes = value; AdditionalData?.Remove("excludedContentTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedContentTypes"); else _explicitNullProperties?.Remove("excludedContentTypes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType?> _explicitNullValueExcludedContentTypes = default!;
 #endif
         /// <summary>Migration unique identifier.</summary>
@@ -50,11 +57,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Alias for pathPrefix (deprecated).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImagesPathPrefix { get => _explicitNullValueImagesPathPrefix; set { _explicitNullValueImagesPathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imagesPathPrefix"); else _explicitNullProperties?.Remove("imagesPathPrefix"); } }
+        public string? ImagesPathPrefix { get => _explicitNullValueImagesPathPrefix; set { _explicitNullValueImagesPathPrefix = value; AdditionalData?.Remove("imagesPathPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imagesPathPrefix"); else _explicitNullProperties?.Remove("imagesPathPrefix"); } }
         private string? _explicitNullValueImagesPathPrefix = default!;
 #nullable restore
 #else
-        public string ImagesPathPrefix { get => _explicitNullValueImagesPathPrefix; set { _explicitNullValueImagesPathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imagesPathPrefix"); else _explicitNullProperties?.Remove("imagesPathPrefix"); } }
+        public string ImagesPathPrefix { get => _explicitNullValueImagesPathPrefix; set { _explicitNullValueImagesPathPrefix = value; AdditionalData?.Remove("imagesPathPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imagesPathPrefix"); else _explicitNullProperties?.Remove("imagesPathPrefix"); } }
         private string _explicitNullValueImagesPathPrefix = default!;
 #endif
         /// <summary>Whether logging was stopped due to excessive log volume.</summary>
@@ -62,30 +69,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Prefix to prepend to image custom IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathPrefix"); else _explicitNullProperties?.Remove("pathPrefix"); } }
+        public string? PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; AdditionalData?.Remove("pathPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathPrefix"); else _explicitNullProperties?.Remove("pathPrefix"); } }
         private string? _explicitNullValuePathPrefix = default!;
 #nullable restore
 #else
-        public string PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathPrefix"); else _explicitNullProperties?.Remove("pathPrefix"); } }
+        public string PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; AdditionalData?.Remove("pathPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathPrefix"); else _explicitNullProperties?.Remove("pathPrefix"); } }
         private string _explicitNullValuePathPrefix = default!;
 #endif
         /// <summary>Only import objects under this prefix in the source bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; AdditionalData?.Remove("rootDirectory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
         private string? _explicitNullValueRootDirectory = default!;
 #nullable restore
 #else
-        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; AdditionalData?.Remove("rootDirectory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
         private string _explicitNullValueRootDirectory = default!;
 #endif
         /// <summary>The source this migration imports from.</summary>
-        public Guid? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceId"); else _explicitNullProperties?.Remove("sourceId"); } }
+        public Guid? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; AdditionalData?.Remove("sourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceId"); else _explicitNullProperties?.Remove("sourceId"); } }
         private Guid? _explicitNullValueSourceId = default!;
         /// <summary>The startedAt property</summary>
         public DateTimeOffset? StartedAt { get; private set; }
         /// <summary>Current status of the migration.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigration"/> and sets the default values.
@@ -112,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conflictBehaviour", n => { ConflictBehaviour = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour>(); } },
+                { "conflictBehaviour", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitConflictBehaviour>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConflictBehaviour = default; _explicitNullProperties?.Remove("conflictBehaviour"); AdditionalData["conflictBehaviour"] = unknown; } else { ConflictBehaviour = parsed; AdditionalData.Remove("conflictBehaviour"); } } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "endedAt", n => { EndedAt = n.GetDateTimeOffsetValue(); } },
                 { "excludedContentTypes", n => { ExcludedContentTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitAcceptableContentType>()?.AsList(); } },
@@ -123,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
                 { "sourceId", n => { SourceId = n.GetGuidValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesSourcingkitMigrationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

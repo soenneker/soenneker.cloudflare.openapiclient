@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("key_rotation_interval_days") is { } nullNodeKeyRotationIntervalDays && nullNodeKeyRotationIntervalDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyRotationIntervalDays = null;
+            if (parseNode.GetChildNode("key_rotation_interval_days") is null) { _explicitNullValueKeyRotationIntervalDays = default!; _explicitNullProperties?.Remove("key_rotation_interval_days"); }
+            else if (parseNode.GetChildNode("key_rotation_interval_days") is { } nullNodeKeyRotationIntervalDays && nullNodeKeyRotationIntervalDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyRotationIntervalDays = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of days between key rotations.</summary>
-        public double? KeyRotationIntervalDays { get => _explicitNullValueKeyRotationIntervalDays; set { _explicitNullValueKeyRotationIntervalDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_rotation_interval_days"); else _explicitNullProperties?.Remove("key_rotation_interval_days"); } }
+        public double? KeyRotationIntervalDays { get => _explicitNullValueKeyRotationIntervalDays; set { _explicitNullValueKeyRotationIntervalDays = value; AdditionalData?.Remove("key_rotation_interval_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_rotation_interval_days"); else _explicitNullProperties?.Remove("key_rotation_interval_days"); } }
         private double? _explicitNullValueKeyRotationIntervalDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest"/> and sets the default values.

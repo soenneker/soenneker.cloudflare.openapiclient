@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notices") is { } nullNodeNotices && nullNodeNotices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notices = null;
+            if (parseNode.GetChildNode("notices") is null) { _explicitNullValueNotices = default!; _explicitNullProperties?.Remove("notices"); }
+            else if (parseNode.GetChildNode("notices") is { } nullNodeNotices && nullNodeNotices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notices = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The notices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownNoticeList200ResponseNoticesItem>? Notices { get => _explicitNullValueNotices; set { _explicitNullValueNotices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notices"); else _explicitNullProperties?.Remove("notices"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownNoticeList200ResponseNoticesItem>? Notices { get => _explicitNullValueNotices; set { _explicitNullValueNotices = value; AdditionalData?.Remove("notices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notices"); else _explicitNullProperties?.Remove("notices"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownNoticeList200ResponseNoticesItem>? _explicitNullValueNotices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownNoticeList200ResponseNoticesItem> Notices { get => _explicitNullValueNotices; set { _explicitNullValueNotices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notices"); else _explicitNullProperties?.Remove("notices"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownNoticeList200ResponseNoticesItem> Notices { get => _explicitNullValueNotices; set { _explicitNullValueNotices = value; AdditionalData?.Remove("notices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notices"); else _explicitNullProperties?.Remove("notices"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTakedownNoticeList200ResponseNoticesItem> _explicitNullValueNotices = default!;
 #endif
         /// <summary>

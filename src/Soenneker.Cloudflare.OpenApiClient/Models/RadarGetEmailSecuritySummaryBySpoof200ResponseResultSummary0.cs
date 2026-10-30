@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("NOT_SPOOF") is { } nullNodeNOTSPOOF && nullNodeNOTSPOOF.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSPOOF = null;
-            if (parseNode.GetChildNode("SPOOF") is { } nullNodeSPOOF && nullNodeSPOOF.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SPOOF = null;
+            if (parseNode.GetChildNode("NOT_SPOOF") is null) { _explicitNullValueNOTSPOOF = default!; _explicitNullProperties?.Remove("NOT_SPOOF"); }
+            else if (parseNode.GetChildNode("NOT_SPOOF") is { } nullNodeNOTSPOOF && nullNodeNOTSPOOF.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSPOOF = null;
+            if (parseNode.GetChildNode("SPOOF") is null) { _explicitNullValueSPOOF = default!; _explicitNullProperties?.Remove("SPOOF"); }
+            else if (parseNode.GetChildNode("SPOOF") is { } nullNodeSPOOF && nullNodeSPOOF.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SPOOF = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NOTSPOOF { get => _explicitNullValueNOTSPOOF; set { _explicitNullValueNOTSPOOF = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPOOF"); else _explicitNullProperties?.Remove("NOT_SPOOF"); } }
+        public string? NOTSPOOF { get => _explicitNullValueNOTSPOOF; set { _explicitNullValueNOTSPOOF = value; AdditionalData?.Remove("NOT_SPOOF"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPOOF"); else _explicitNullProperties?.Remove("NOT_SPOOF"); } }
         private string? _explicitNullValueNOTSPOOF = default!;
 #nullable restore
 #else
-        public string NOTSPOOF { get => _explicitNullValueNOTSPOOF; set { _explicitNullValueNOTSPOOF = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPOOF"); else _explicitNullProperties?.Remove("NOT_SPOOF"); } }
+        public string NOTSPOOF { get => _explicitNullValueNOTSPOOF; set { _explicitNullValueNOTSPOOF = value; AdditionalData?.Remove("NOT_SPOOF"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SPOOF"); else _explicitNullProperties?.Remove("NOT_SPOOF"); } }
         private string _explicitNullValueNOTSPOOF = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SPOOF { get => _explicitNullValueSPOOF; set { _explicitNullValueSPOOF = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPOOF"); else _explicitNullProperties?.Remove("SPOOF"); } }
+        public string? SPOOF { get => _explicitNullValueSPOOF; set { _explicitNullValueSPOOF = value; AdditionalData?.Remove("SPOOF"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPOOF"); else _explicitNullProperties?.Remove("SPOOF"); } }
         private string? _explicitNullValueSPOOF = default!;
 #nullable restore
 #else
-        public string SPOOF { get => _explicitNullValueSPOOF; set { _explicitNullValueSPOOF = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPOOF"); else _explicitNullProperties?.Remove("SPOOF"); } }
+        public string SPOOF { get => _explicitNullValueSPOOF; set { _explicitNullValueSPOOF = value; AdditionalData?.Remove("SPOOF"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SPOOF"); else _explicitNullProperties?.Remove("SPOOF"); } }
         private string _explicitNullValueSPOOF = default!;
 #endif
         /// <summary>

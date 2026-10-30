@@ -17,35 +17,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
-            if (parseNode.GetChildNode("approval_groups") is { } nullNodeApprovalGroups && nullNodeApprovalGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalGroups = null;
-            if (parseNode.GetChildNode("approval_required") is { } nullNodeApprovalRequired && nullNodeApprovalRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalRequired = null;
-            if (parseNode.GetChildNode("connection_rules") is { } nullNodeConnectionRules && nullNodeConnectionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionRules = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
-            if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
-            if (parseNode.GetChildNode("isolation_required") is { } nullNodeIsolationRequired && nullNodeIsolationRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsolationRequired = null;
-            if (parseNode.GetChildNode("mfa_config") is { } nullNodeMfaConfig && nullNodeMfaConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaConfig = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("policy_resolution_account_id") is { } nullNodePolicyResolutionAccountId && nullNodePolicyResolutionAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyResolutionAccountId = null;
-            if (parseNode.GetChildNode("precedence") is { } nullNodePrecedence && nullNodePrecedence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Precedence = null;
-            if (parseNode.GetChildNode("purpose_justification_prompt") is { } nullNodePurposeJustificationPrompt && nullNodePurposeJustificationPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurposeJustificationPrompt = null;
-            if (parseNode.GetChildNode("purpose_justification_required") is { } nullNodePurposeJustificationRequired && nullNodePurposeJustificationRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurposeJustificationRequired = null;
-            if (parseNode.GetChildNode("require") is { } nullNodeRequire && nullNodeRequire.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Require = null;
-            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
-            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("account_id") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("account_id"); }
+            else if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("approval_groups") is null) { _explicitNullValueApprovalGroups = default!; _explicitNullProperties?.Remove("approval_groups"); }
+            else if (parseNode.GetChildNode("approval_groups") is { } nullNodeApprovalGroups && nullNodeApprovalGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalGroups = null;
+            if (parseNode.GetChildNode("approval_required") is null) { _explicitNullValueApprovalRequired = default!; _explicitNullProperties?.Remove("approval_required"); }
+            else if (parseNode.GetChildNode("approval_required") is { } nullNodeApprovalRequired && nullNodeApprovalRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalRequired = null;
+            if (parseNode.GetChildNode("connection_rules") is null) { _explicitNullValueConnectionRules = default!; _explicitNullProperties?.Remove("connection_rules"); }
+            else if (parseNode.GetChildNode("connection_rules") is { } nullNodeConnectionRules && nullNodeConnectionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionRules = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("decision") is null) { _explicitNullValueDecision = default!; _explicitNullProperties?.Remove("decision"); }
+            else if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
+            if (parseNode.GetChildNode("exclude") is null) { _explicitNullValueExclude = default!; _explicitNullProperties?.Remove("exclude"); }
+            else if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("include") is null) { _explicitNullValueInclude = default!; _explicitNullProperties?.Remove("include"); }
+            else if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
+            if (parseNode.GetChildNode("isolation_required") is null) { _explicitNullValueIsolationRequired = default!; _explicitNullProperties?.Remove("isolation_required"); }
+            else if (parseNode.GetChildNode("isolation_required") is { } nullNodeIsolationRequired && nullNodeIsolationRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsolationRequired = null;
+            if (parseNode.GetChildNode("mfa_config") is null) { _explicitNullValueMfaConfig = default!; _explicitNullProperties?.Remove("mfa_config"); }
+            else if (parseNode.GetChildNode("mfa_config") is { } nullNodeMfaConfig && nullNodeMfaConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaConfig = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("policy_resolution_account_id") is null) { _explicitNullValuePolicyResolutionAccountId = default!; _explicitNullProperties?.Remove("policy_resolution_account_id"); }
+            else if (parseNode.GetChildNode("policy_resolution_account_id") is { } nullNodePolicyResolutionAccountId && nullNodePolicyResolutionAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyResolutionAccountId = null;
+            if (parseNode.GetChildNode("precedence") is null) { _explicitNullValuePrecedence = default!; _explicitNullProperties?.Remove("precedence"); }
+            else if (parseNode.GetChildNode("precedence") is { } nullNodePrecedence && nullNodePrecedence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Precedence = null;
+            if (parseNode.GetChildNode("purpose_justification_prompt") is null) { _explicitNullValuePurposeJustificationPrompt = default!; _explicitNullProperties?.Remove("purpose_justification_prompt"); }
+            else if (parseNode.GetChildNode("purpose_justification_prompt") is { } nullNodePurposeJustificationPrompt && nullNodePurposeJustificationPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurposeJustificationPrompt = null;
+            if (parseNode.GetChildNode("purpose_justification_required") is null) { _explicitNullValuePurposeJustificationRequired = default!; _explicitNullProperties?.Remove("purpose_justification_required"); }
+            else if (parseNode.GetChildNode("purpose_justification_required") is { } nullNodePurposeJustificationRequired && nullNodePurposeJustificationRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurposeJustificationRequired = null;
+            if (parseNode.GetChildNode("require") is null) { _explicitNullValueRequire = default!; _explicitNullProperties?.Remove("require"); }
+            else if (parseNode.GetChildNode("require") is { } nullNodeRequire && nullNodeRequire.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Require = null;
+            if (parseNode.GetChildNode("session_duration") is null) { _explicitNullValueSessionDuration = default!; _explicitNullProperties?.Remove("session_duration"); }
+            else if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,133 +72,133 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Administrators who can approve a temporary authentication request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup>? ApprovalGroups { get => _explicitNullValueApprovalGroups; set { _explicitNullValueApprovalGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_groups"); else _explicitNullProperties?.Remove("approval_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup>? ApprovalGroups { get => _explicitNullValueApprovalGroups; set { _explicitNullValueApprovalGroups = value; AdditionalData?.Remove("approval_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_groups"); else _explicitNullProperties?.Remove("approval_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup>? _explicitNullValueApprovalGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup> ApprovalGroups { get => _explicitNullValueApprovalGroups; set { _explicitNullValueApprovalGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_groups"); else _explicitNullProperties?.Remove("approval_groups"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup> ApprovalGroups { get => _explicitNullValueApprovalGroups; set { _explicitNullValueApprovalGroups = value; AdditionalData?.Remove("approval_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_groups"); else _explicitNullProperties?.Remove("approval_groups"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup> _explicitNullValueApprovalGroups = default!;
 #endif
         /// <summary>Requires the user to request access from an administrator at the start of each session.</summary>
-        public bool? ApprovalRequired { get => _explicitNullValueApprovalRequired; set { _explicitNullValueApprovalRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_required"); else _explicitNullProperties?.Remove("approval_required"); } }
+        public bool? ApprovalRequired { get => _explicitNullValueApprovalRequired; set { _explicitNullValueApprovalRequired = value; AdditionalData?.Remove("approval_required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_required"); else _explicitNullProperties?.Remove("approval_required"); } }
         private bool? _explicitNullValueApprovalRequired = default!;
         /// <summary>The rules that define how users may connect to targets secured by your application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules? ConnectionRules { get => _explicitNullValueConnectionRules; set { _explicitNullValueConnectionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_rules"); else _explicitNullProperties?.Remove("connection_rules"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules? ConnectionRules { get => _explicitNullValueConnectionRules; set { _explicitNullValueConnectionRules = value; AdditionalData?.Remove("connection_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_rules"); else _explicitNullProperties?.Remove("connection_rules"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules? _explicitNullValueConnectionRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules ConnectionRules { get => _explicitNullValueConnectionRules; set { _explicitNullValueConnectionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_rules"); else _explicitNullProperties?.Remove("connection_rules"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules ConnectionRules { get => _explicitNullValueConnectionRules; set { _explicitNullValueConnectionRules = value; AdditionalData?.Remove("connection_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_rules"); else _explicitNullProperties?.Remove("connection_rules"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules _explicitNullValueConnectionRules = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; AdditionalData?.Remove("decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision? _explicitNullValueDecision = default!;
         /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? _explicitNullValueExclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> _explicitNullValueExclude = default!;
 #endif
         /// <summary>The UUID of the policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? _explicitNullValueInclude = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> _explicitNullValueInclude = default!;
 #endif
         /// <summary>Require this application to be served in an isolated browser for users matching this policy. &apos;Client Web Isolation&apos; must be on for the account in order to use this feature.</summary>
-        public bool? IsolationRequired { get => _explicitNullValueIsolationRequired; set { _explicitNullValueIsolationRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isolation_required"); else _explicitNullProperties?.Remove("isolation_required"); } }
+        public bool? IsolationRequired { get => _explicitNullValueIsolationRequired; set { _explicitNullValueIsolationRequired = value; AdditionalData?.Remove("isolation_required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isolation_required"); else _explicitNullProperties?.Remove("isolation_required"); } }
         private bool? _explicitNullValueIsolationRequired = default!;
         /// <summary>Configures multi-factor authentication (MFA) settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig? MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig? MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; AdditionalData?.Remove("mfa_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig? _explicitNullValueMfaConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig MfaConfig { get => _explicitNullValueMfaConfig; set { _explicitNullValueMfaConfig = value; AdditionalData?.Remove("mfa_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_config"); else _explicitNullProperties?.Remove("mfa_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig _explicitNullValueMfaConfig = default!;
 #endif
         /// <summary>The name of the Access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The account ID used to resolve policy resources and identity for cross-account WARP authentication. The account must be trusted by the account that owns this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyResolutionAccountId { get => _explicitNullValuePolicyResolutionAccountId; set { _explicitNullValuePolicyResolutionAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_resolution_account_id"); else _explicitNullProperties?.Remove("policy_resolution_account_id"); } }
+        public string? PolicyResolutionAccountId { get => _explicitNullValuePolicyResolutionAccountId; set { _explicitNullValuePolicyResolutionAccountId = value; AdditionalData?.Remove("policy_resolution_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_resolution_account_id"); else _explicitNullProperties?.Remove("policy_resolution_account_id"); } }
         private string? _explicitNullValuePolicyResolutionAccountId = default!;
 #nullable restore
 #else
-        public string PolicyResolutionAccountId { get => _explicitNullValuePolicyResolutionAccountId; set { _explicitNullValuePolicyResolutionAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_resolution_account_id"); else _explicitNullProperties?.Remove("policy_resolution_account_id"); } }
+        public string PolicyResolutionAccountId { get => _explicitNullValuePolicyResolutionAccountId; set { _explicitNullValuePolicyResolutionAccountId = value; AdditionalData?.Remove("policy_resolution_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_resolution_account_id"); else _explicitNullProperties?.Remove("policy_resolution_account_id"); } }
         private string _explicitNullValuePolicyResolutionAccountId = default!;
 #endif
         /// <summary>The order of execution for this policy. Must be unique for each policy within an app.</summary>
-        public int? Precedence { get => _explicitNullValuePrecedence; set { _explicitNullValuePrecedence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precedence"); else _explicitNullProperties?.Remove("precedence"); } }
+        public int? Precedence { get => _explicitNullValuePrecedence; set { _explicitNullValuePrecedence = value; AdditionalData?.Remove("precedence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precedence"); else _explicitNullProperties?.Remove("precedence"); } }
         private int? _explicitNullValuePrecedence = default!;
         /// <summary>A custom message that will appear on the purpose justification screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurposeJustificationPrompt { get => _explicitNullValuePurposeJustificationPrompt; set { _explicitNullValuePurposeJustificationPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification_prompt"); else _explicitNullProperties?.Remove("purpose_justification_prompt"); } }
+        public string? PurposeJustificationPrompt { get => _explicitNullValuePurposeJustificationPrompt; set { _explicitNullValuePurposeJustificationPrompt = value; AdditionalData?.Remove("purpose_justification_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification_prompt"); else _explicitNullProperties?.Remove("purpose_justification_prompt"); } }
         private string? _explicitNullValuePurposeJustificationPrompt = default!;
 #nullable restore
 #else
-        public string PurposeJustificationPrompt { get => _explicitNullValuePurposeJustificationPrompt; set { _explicitNullValuePurposeJustificationPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification_prompt"); else _explicitNullProperties?.Remove("purpose_justification_prompt"); } }
+        public string PurposeJustificationPrompt { get => _explicitNullValuePurposeJustificationPrompt; set { _explicitNullValuePurposeJustificationPrompt = value; AdditionalData?.Remove("purpose_justification_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification_prompt"); else _explicitNullProperties?.Remove("purpose_justification_prompt"); } }
         private string _explicitNullValuePurposeJustificationPrompt = default!;
 #endif
         /// <summary>Require users to enter a justification when they log in to the application.</summary>
-        public bool? PurposeJustificationRequired { get => _explicitNullValuePurposeJustificationRequired; set { _explicitNullValuePurposeJustificationRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification_required"); else _explicitNullProperties?.Remove("purpose_justification_required"); } }
+        public bool? PurposeJustificationRequired { get => _explicitNullValuePurposeJustificationRequired; set { _explicitNullValuePurposeJustificationRequired = value; AdditionalData?.Remove("purpose_justification_required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose_justification_required"); else _explicitNullProperties?.Remove("purpose_justification_required"); } }
         private bool? _explicitNullValuePurposeJustificationRequired = default!;
         /// <summary>Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Require { get => _explicitNullValueRequire; set { _explicitNullValueRequire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require"); else _explicitNullProperties?.Remove("require"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Require { get => _explicitNullValueRequire; set { _explicitNullValueRequire = value; AdditionalData?.Remove("require"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require"); else _explicitNullProperties?.Remove("require"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? _explicitNullValueRequire = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Require { get => _explicitNullValueRequire; set { _explicitNullValueRequire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require"); else _explicitNullProperties?.Remove("require"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Require { get => _explicitNullValueRequire; set { _explicitNullValueRequire = value; AdditionalData?.Remove("require"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require"); else _explicitNullProperties?.Remove("require"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> _explicitNullValueRequire = default!;
 #endif
         /// <summary>The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; AdditionalData?.Remove("session_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
         private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; AdditionalData?.Remove("session_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
         private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppPolicyResponse"/> and sets the default values.
@@ -211,7 +230,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "approval_required", n => { ApprovalRequired = n.GetBoolValue(); } },
                 { "connection_rules", n => { ConnectionRules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision>(); } },
+                { "decision", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecision = default; _explicitNullProperties?.Remove("decision"); AdditionalData["decision"] = unknown; } else { Decision = parsed; AdditionalData.Remove("decision"); } } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule.CreateFromDiscriminatorValue)?.AsList(); } },

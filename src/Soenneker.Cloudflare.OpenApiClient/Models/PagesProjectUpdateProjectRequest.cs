@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("build_config") is { } nullNodeBuildConfig && nullNodeBuildConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildConfig = null;
-            if (parseNode.GetChildNode("deployment_configs") is { } nullNodeDeploymentConfigs && nullNodeDeploymentConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentConfigs = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("production_branch") is { } nullNodeProductionBranch && nullNodeProductionBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductionBranch = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("build_config") is null) { _explicitNullValueBuildConfig = default!; _explicitNullProperties?.Remove("build_config"); }
+            else if (parseNode.GetChildNode("build_config") is { } nullNodeBuildConfig && nullNodeBuildConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildConfig = null;
+            if (parseNode.GetChildNode("deployment_configs") is null) { _explicitNullValueDeploymentConfigs = default!; _explicitNullProperties?.Remove("deployment_configs"); }
+            else if (parseNode.GetChildNode("deployment_configs") is { } nullNodeDeploymentConfigs && nullNodeDeploymentConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentConfigs = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("production_branch") is null) { _explicitNullValueProductionBranch = default!; _explicitNullProperties?.Remove("production_branch"); }
+            else if (parseNode.GetChildNode("production_branch") is { } nullNodeProductionBranch && nullNodeProductionBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductionBranch = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configs for the project build process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestBuildConfig? BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_config"); else _explicitNullProperties?.Remove("build_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestBuildConfig? BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; AdditionalData?.Remove("build_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_config"); else _explicitNullProperties?.Remove("build_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestBuildConfig? _explicitNullValueBuildConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestBuildConfig BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_config"); else _explicitNullProperties?.Remove("build_config"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestBuildConfig BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; AdditionalData?.Remove("build_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_config"); else _explicitNullProperties?.Remove("build_config"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestBuildConfig _explicitNullValueBuildConfig = default!;
 #endif
         /// <summary>Configs for deployments in a project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs? DeploymentConfigs { get => _explicitNullValueDeploymentConfigs; set { _explicitNullValueDeploymentConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_configs"); else _explicitNullProperties?.Remove("deployment_configs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs? DeploymentConfigs { get => _explicitNullValueDeploymentConfigs; set { _explicitNullValueDeploymentConfigs = value; AdditionalData?.Remove("deployment_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_configs"); else _explicitNullProperties?.Remove("deployment_configs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs? _explicitNullValueDeploymentConfigs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs DeploymentConfigs { get => _explicitNullValueDeploymentConfigs; set { _explicitNullValueDeploymentConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_configs"); else _explicitNullProperties?.Remove("deployment_configs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs DeploymentConfigs { get => _explicitNullValueDeploymentConfigs; set { _explicitNullValueDeploymentConfigs = value; AdditionalData?.Remove("deployment_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_configs"); else _explicitNullProperties?.Remove("deployment_configs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestDeploymentConfigs _explicitNullValueDeploymentConfigs = default!;
 #endif
         /// <summary>Name for the Pages project. Must begin with a lowercase letter or digit and contain only lowercase letters, digits, and hyphens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Production branch of the project. Used to identify production deployments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductionBranch { get => _explicitNullValueProductionBranch; set { _explicitNullValueProductionBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_branch"); else _explicitNullProperties?.Remove("production_branch"); } }
+        public string? ProductionBranch { get => _explicitNullValueProductionBranch; set { _explicitNullValueProductionBranch = value; AdditionalData?.Remove("production_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_branch"); else _explicitNullProperties?.Remove("production_branch"); } }
         private string? _explicitNullValueProductionBranch = default!;
 #nullable restore
 #else
-        public string ProductionBranch { get => _explicitNullValueProductionBranch; set { _explicitNullValueProductionBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_branch"); else _explicitNullProperties?.Remove("production_branch"); } }
+        public string ProductionBranch { get => _explicitNullValueProductionBranch; set { _explicitNullValueProductionBranch = value; AdditionalData?.Remove("production_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_branch"); else _explicitNullProperties?.Remove("production_branch"); } }
         private string _explicitNullValueProductionBranch = default!;
 #endif
         /// <summary>Configs for the project source control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestSource? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectUpdateProjectRequestSource _explicitNullValueSource = default!;
 #endif
         /// <summary>

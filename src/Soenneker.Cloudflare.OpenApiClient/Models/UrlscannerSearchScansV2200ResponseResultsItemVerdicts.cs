@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("malicious") is { } nullNodeMalicious && nullNodeMalicious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Malicious = null;
+            if (parseNode.GetChildNode("malicious") is null) { _explicitNullValueMalicious = default!; _explicitNullProperties?.Remove("malicious"); }
+            else if (parseNode.GetChildNode("malicious") is { } nullNodeMalicious && nullNodeMalicious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Malicious = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The malicious property</summary>
-        public bool? Malicious { get => _explicitNullValueMalicious; set { _explicitNullValueMalicious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious"); else _explicitNullProperties?.Remove("malicious"); } }
+        public bool? Malicious { get => _explicitNullValueMalicious; set { _explicitNullValueMalicious = value; AdditionalData?.Remove("malicious"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("malicious"); else _explicitNullProperties?.Remove("malicious"); } }
         private bool? _explicitNullValueMalicious = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2200ResponseResultsItemVerdicts"/> and sets the default values.

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("NOT_SUPPORTED") is { } nullNodeNOTSUPPORTED && nullNodeNOTSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSUPPORTED = null;
-            if (parseNode.GetChildNode("SUPPORTED") is { } nullNodeSUPPORTED && nullNodeSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SUPPORTED = null;
-            if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
+            if (parseNode.GetChildNode("NOT_SUPPORTED") is null) { _explicitNullValueNOTSUPPORTED = default!; _explicitNullProperties?.Remove("NOT_SUPPORTED"); }
+            else if (parseNode.GetChildNode("NOT_SUPPORTED") is { } nullNodeNOTSUPPORTED && nullNodeNOTSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NOTSUPPORTED = null;
+            if (parseNode.GetChildNode("SUPPORTED") is null) { _explicitNullValueSUPPORTED = default!; _explicitNullProperties?.Remove("SUPPORTED"); }
+            else if (parseNode.GetChildNode("SUPPORTED") is { } nullNodeSUPPORTED && nullNodeSUPPORTED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SUPPORTED = null;
+            if (parseNode.GetChildNode("timestamps") is null) { _explicitNullValueTimestamps = default!; _explicitNullProperties?.Remove("timestamps"); }
+            else if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The NOT_SUPPORTED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
+        public List<string>? NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; AdditionalData?.Remove("NOT_SUPPORTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
         private List<string>? _explicitNullValueNOTSUPPORTED = default!;
 #nullable restore
 #else
-        public List<string> NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
+        public List<string> NOTSUPPORTED { get => _explicitNullValueNOTSUPPORTED; set { _explicitNullValueNOTSUPPORTED = value; AdditionalData?.Remove("NOT_SUPPORTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NOT_SUPPORTED"); else _explicitNullProperties?.Remove("NOT_SUPPORTED"); } }
         private List<string> _explicitNullValueNOTSUPPORTED = default!;
 #endif
         /// <summary>The SUPPORTED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
+        public List<string>? SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; AdditionalData?.Remove("SUPPORTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
         private List<string>? _explicitNullValueSUPPORTED = default!;
 #nullable restore
 #else
-        public List<string> SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
+        public List<string> SUPPORTED { get => _explicitNullValueSUPPORTED; set { _explicitNullValueSUPPORTED = value; AdditionalData?.Remove("SUPPORTED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SUPPORTED"); else _explicitNullProperties?.Remove("SUPPORTED"); } }
         private List<string> _explicitNullValueSUPPORTED = default!;
 #endif
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?>? _explicitNullValueTimestamps = default!;
 #nullable restore
 #else
-        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?> _explicitNullValueTimestamps = default!;
 #endif
         /// <summary>

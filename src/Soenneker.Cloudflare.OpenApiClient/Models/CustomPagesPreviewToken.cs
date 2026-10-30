@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cep_jwt") is { } nullNodeCepJwt && nullNodeCepJwt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CepJwt = null;
+            if (parseNode.GetChildNode("cep_jwt") is null) { _explicitNullValueCepJwt = default!; _explicitNullProperties?.Remove("cep_jwt"); }
+            else if (parseNode.GetChildNode("cep_jwt") is { } nullNodeCepJwt && nullNodeCepJwt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CepJwt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A signed JWT token used to authenticate the preview request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CepJwt { get => _explicitNullValueCepJwt; set { _explicitNullValueCepJwt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cep_jwt"); else _explicitNullProperties?.Remove("cep_jwt"); } }
+        public string? CepJwt { get => _explicitNullValueCepJwt; set { _explicitNullValueCepJwt = value; AdditionalData?.Remove("cep_jwt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cep_jwt"); else _explicitNullProperties?.Remove("cep_jwt"); } }
         private string? _explicitNullValueCepJwt = default!;
 #nullable restore
 #else
-        public string CepJwt { get => _explicitNullValueCepJwt; set { _explicitNullValueCepJwt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cep_jwt"); else _explicitNullProperties?.Remove("cep_jwt"); } }
+        public string CepJwt { get => _explicitNullValueCepJwt; set { _explicitNullValueCepJwt = value; AdditionalData?.Remove("cep_jwt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cep_jwt"); else _explicitNullProperties?.Remove("cep_jwt"); } }
         private string _explicitNullValueCepJwt = default!;
 #endif
         /// <summary>

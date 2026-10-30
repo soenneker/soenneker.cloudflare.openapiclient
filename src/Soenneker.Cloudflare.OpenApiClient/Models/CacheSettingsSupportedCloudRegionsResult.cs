@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("obtained_codes") is { } nullNodeObtainedCodes && nullNodeObtainedCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObtainedCodes = null;
-            if (parseNode.GetChildNode("vendors") is { } nullNodeVendors && nullNodeVendors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendors = null;
+            if (parseNode.GetChildNode("obtained_codes") is null) { _explicitNullValueObtainedCodes = default!; _explicitNullProperties?.Remove("obtained_codes"); }
+            else if (parseNode.GetChildNode("obtained_codes") is { } nullNodeObtainedCodes && nullNodeObtainedCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObtainedCodes = null;
+            if (parseNode.GetChildNode("vendors") is null) { _explicitNullValueVendors = default!; _explicitNullProperties?.Remove("vendors"); }
+            else if (parseNode.GetChildNode("vendors") is { } nullNodeVendors && nullNodeVendors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether Cloudflare airport codes (IATA colo identifiers) were successfully resolved for the `upper_tier_colos` field on each region. When `false`, the `upper_tier_colos` arrays may be empty or incomplete.</summary>
-        public bool? ObtainedCodes { get => _explicitNullValueObtainedCodes; set { _explicitNullValueObtainedCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("obtained_codes"); else _explicitNullProperties?.Remove("obtained_codes"); } }
+        public bool? ObtainedCodes { get => _explicitNullValueObtainedCodes; set { _explicitNullValueObtainedCodes = value; AdditionalData?.Remove("obtained_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("obtained_codes"); else _explicitNullProperties?.Remove("obtained_codes"); } }
         private bool? _explicitNullValueObtainedCodes = default!;
         /// <summary>Map of vendor name to list of supported regions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsSupportedCloudRegionsResultVendorsProperty? Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsSupportedCloudRegionsResultVendorsProperty? Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; AdditionalData?.Remove("vendors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsSupportedCloudRegionsResultVendorsProperty? _explicitNullValueVendors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsSupportedCloudRegionsResultVendorsProperty Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsSupportedCloudRegionsResultVendorsProperty Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; AdditionalData?.Remove("vendors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsSupportedCloudRegionsResultVendorsProperty _explicitNullValueVendors = default!;
 #endif
         /// <summary>

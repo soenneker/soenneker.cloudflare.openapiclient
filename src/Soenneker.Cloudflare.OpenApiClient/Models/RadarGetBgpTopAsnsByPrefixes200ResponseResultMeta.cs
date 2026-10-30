@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data_time") is { } nullNodeDataTime && nullNodeDataTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataTime = null;
-            if (parseNode.GetChildNode("query_time") is { } nullNodeQueryTime && nullNodeQueryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTime = null;
-            if (parseNode.GetChildNode("total_peers") is { } nullNodeTotalPeers && nullNodeTotalPeers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPeers = null;
+            if (parseNode.GetChildNode("data_time") is null) { _explicitNullValueDataTime = default!; _explicitNullProperties?.Remove("data_time"); }
+            else if (parseNode.GetChildNode("data_time") is { } nullNodeDataTime && nullNodeDataTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataTime = null;
+            if (parseNode.GetChildNode("query_time") is null) { _explicitNullValueQueryTime = default!; _explicitNullProperties?.Remove("query_time"); }
+            else if (parseNode.GetChildNode("query_time") is { } nullNodeQueryTime && nullNodeQueryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryTime = null;
+            if (parseNode.GetChildNode("total_peers") is null) { _explicitNullValueTotalPeers = default!; _explicitNullProperties?.Remove("total_peers"); }
+            else if (parseNode.GetChildNode("total_peers") is { } nullNodeTotalPeers && nullNodeTotalPeers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPeers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The data_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_time"); else _explicitNullProperties?.Remove("data_time"); } }
+        public string? DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; AdditionalData?.Remove("data_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_time"); else _explicitNullProperties?.Remove("data_time"); } }
         private string? _explicitNullValueDataTime = default!;
 #nullable restore
 #else
-        public string DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_time"); else _explicitNullProperties?.Remove("data_time"); } }
+        public string DataTime { get => _explicitNullValueDataTime; set { _explicitNullValueDataTime = value; AdditionalData?.Remove("data_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_time"); else _explicitNullProperties?.Remove("data_time"); } }
         private string _explicitNullValueDataTime = default!;
 #endif
         /// <summary>The query_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_time"); else _explicitNullProperties?.Remove("query_time"); } }
+        public string? QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; AdditionalData?.Remove("query_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_time"); else _explicitNullProperties?.Remove("query_time"); } }
         private string? _explicitNullValueQueryTime = default!;
 #nullable restore
 #else
-        public string QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_time"); else _explicitNullProperties?.Remove("query_time"); } }
+        public string QueryTime { get => _explicitNullValueQueryTime; set { _explicitNullValueQueryTime = value; AdditionalData?.Remove("query_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_time"); else _explicitNullProperties?.Remove("query_time"); } }
         private string _explicitNullValueQueryTime = default!;
 #endif
         /// <summary>The total_peers property</summary>
-        public int? TotalPeers { get => _explicitNullValueTotalPeers; set { _explicitNullValueTotalPeers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_peers"); else _explicitNullProperties?.Remove("total_peers"); } }
+        public int? TotalPeers { get => _explicitNullValueTotalPeers; set { _explicitNullValueTotalPeers = value; AdditionalData?.Remove("total_peers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_peers"); else _explicitNullProperties?.Remove("total_peers"); } }
         private int? _explicitNullValueTotalPeers = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpTopAsnsByPrefixes200ResponseResultMeta"/> and sets the default values.

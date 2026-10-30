@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
-            if (parseNode.GetChildNode("pir_id") is { } nullNodePirId && nullNodePirId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PirId = null;
+            if (parseNode.GetChildNode("band") is null) { _explicitNullValueBand = default!; _explicitNullProperties?.Remove("band"); }
+            else if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
+            if (parseNode.GetChildNode("pir_id") is null) { _explicitNullValuePirId = default!; _explicitNullProperties?.Remove("pir_id"); }
+            else if (parseNode.GetChildNode("pir_id") is { } nullNodePirId && nullNodePirId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PirId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Beta. How relevant the article is to a Priority Intelligence Requirement: high, medium, or low. Cloudflare may change the scores behind each band as relevance scoring is calibrated.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemBand? Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemBand? Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; AdditionalData?.Remove("band"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemBand? _explicitNullValueBand = default!;
         /// <summary>The pir_id property</summary>
-        public Guid? PirId { get => _explicitNullValuePirId; set { _explicitNullValuePirId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pir_id"); else _explicitNullProperties?.Remove("pir_id"); } }
+        public Guid? PirId { get => _explicitNullValuePirId; set { _explicitNullValuePirId = value; AdditionalData?.Remove("pir_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pir_id"); else _explicitNullProperties?.Remove("pir_id"); } }
         private Guid? _explicitNullValuePirId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItem"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "band", n => { Band = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemBand>(); } },
+                { "band", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevancePirsItemBand>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBand = default; _explicitNullProperties?.Remove("band"); AdditionalData["band"] = unknown; } else { Band = parsed; AdditionalData.Remove("band"); } } },
                 { "pir_id", n => { PirId = n.GetGuidValue(); } },
             };
         }

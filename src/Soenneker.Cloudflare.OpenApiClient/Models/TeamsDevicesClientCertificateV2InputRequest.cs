@@ -17,13 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificate_id") is { } nullNodeCertificateId && nullNodeCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateId = null;
-            if (parseNode.GetChildNode("check_private_key") is { } nullNodeCheckPrivateKey && nullNodeCheckPrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckPrivateKey = null;
-            if (parseNode.GetChildNode("cn") is { } nullNodeCn && nullNodeCn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cn = null;
-            if (parseNode.GetChildNode("extended_key_usage") is { } nullNodeExtendedKeyUsage && nullNodeExtendedKeyUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedKeyUsage = null;
-            if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
-            if (parseNode.GetChildNode("operating_system") is { } nullNodeOperatingSystem && nullNodeOperatingSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatingSystem = null;
-            if (parseNode.GetChildNode("subject_alternative_names") is { } nullNodeSubjectAlternativeNames && nullNodeSubjectAlternativeNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectAlternativeNames = null;
+            if (parseNode.GetChildNode("certificate_id") is null) { _explicitNullValueCertificateId = default!; _explicitNullProperties?.Remove("certificate_id"); }
+            else if (parseNode.GetChildNode("certificate_id") is { } nullNodeCertificateId && nullNodeCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateId = null;
+            if (parseNode.GetChildNode("check_private_key") is null) { _explicitNullValueCheckPrivateKey = default!; _explicitNullProperties?.Remove("check_private_key"); }
+            else if (parseNode.GetChildNode("check_private_key") is { } nullNodeCheckPrivateKey && nullNodeCheckPrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckPrivateKey = null;
+            if (parseNode.GetChildNode("cn") is null) { _explicitNullValueCn = default!; _explicitNullProperties?.Remove("cn"); }
+            else if (parseNode.GetChildNode("cn") is { } nullNodeCn && nullNodeCn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cn = null;
+            if (parseNode.GetChildNode("extended_key_usage") is null) { _explicitNullValueExtendedKeyUsage = default!; _explicitNullProperties?.Remove("extended_key_usage"); }
+            else if (parseNode.GetChildNode("extended_key_usage") is { } nullNodeExtendedKeyUsage && nullNodeExtendedKeyUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedKeyUsage = null;
+            if (parseNode.GetChildNode("locations") is null) { _explicitNullValueLocations = default!; _explicitNullProperties?.Remove("locations"); }
+            else if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
+            if (parseNode.GetChildNode("operating_system") is null) { _explicitNullValueOperatingSystem = default!; _explicitNullProperties?.Remove("operating_system"); }
+            else if (parseNode.GetChildNode("operating_system") is { } nullNodeOperatingSystem && nullNodeOperatingSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatingSystem = null;
+            if (parseNode.GetChildNode("subject_alternative_names") is null) { _explicitNullValueSubjectAlternativeNames = default!; _explicitNullProperties?.Remove("subject_alternative_names"); }
+            else if (parseNode.GetChildNode("subject_alternative_names") is { } nullNodeSubjectAlternativeNames && nullNodeSubjectAlternativeNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectAlternativeNames = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,57 +38,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>UUID of Cloudflare managed certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
+        public string? CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; AdditionalData?.Remove("certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
         private string? _explicitNullValueCertificateId = default!;
 #nullable restore
 #else
-        public string CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
+        public string CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; AdditionalData?.Remove("certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
         private string _explicitNullValueCertificateId = default!;
 #endif
         /// <summary>Confirm the certificate was not imported from another device. We recommend keeping this enabled unless the certificate was deployed without a private key.</summary>
-        public bool? CheckPrivateKey { get => _explicitNullValueCheckPrivateKey; set { _explicitNullValueCheckPrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_private_key"); else _explicitNullProperties?.Remove("check_private_key"); } }
+        public bool? CheckPrivateKey { get => _explicitNullValueCheckPrivateKey; set { _explicitNullValueCheckPrivateKey = value; AdditionalData?.Remove("check_private_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_private_key"); else _explicitNullProperties?.Remove("check_private_key"); } }
         private bool? _explicitNullValueCheckPrivateKey = default!;
         /// <summary>Certificate Common Name. This may include one or more variables in the ${ } notation. Only ${serial_number} and ${hostname} are valid variables.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
+        public string? Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; AdditionalData?.Remove("cn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
         private string? _explicitNullValueCn = default!;
 #nullable restore
 #else
-        public string Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
+        public string Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; AdditionalData?.Remove("cn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
         private string _explicitNullValueCn = default!;
 #endif
         /// <summary>List of values indicating purposes for which the certificate public key can be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum?>? ExtendedKeyUsage { get => _explicitNullValueExtendedKeyUsage; set { _explicitNullValueExtendedKeyUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_key_usage"); else _explicitNullProperties?.Remove("extended_key_usage"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum?>? ExtendedKeyUsage { get => _explicitNullValueExtendedKeyUsage; set { _explicitNullValueExtendedKeyUsage = value; AdditionalData?.Remove("extended_key_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_key_usage"); else _explicitNullProperties?.Remove("extended_key_usage"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum?>? _explicitNullValueExtendedKeyUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum?> ExtendedKeyUsage { get => _explicitNullValueExtendedKeyUsage; set { _explicitNullValueExtendedKeyUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_key_usage"); else _explicitNullProperties?.Remove("extended_key_usage"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum?> ExtendedKeyUsage { get => _explicitNullValueExtendedKeyUsage; set { _explicitNullValueExtendedKeyUsage = value; AdditionalData?.Remove("extended_key_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_key_usage"); else _explicitNullProperties?.Remove("extended_key_usage"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum?> _explicitNullValueExtendedKeyUsage = default!;
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations? _explicitNullValueLocations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations _explicitNullValueLocations = default!;
 #endif
         /// <summary>Operating System.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem? OperatingSystem { get => _explicitNullValueOperatingSystem; set { _explicitNullValueOperatingSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_system"); else _explicitNullProperties?.Remove("operating_system"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem? OperatingSystem { get => _explicitNullValueOperatingSystem; set { _explicitNullValueOperatingSystem = value; AdditionalData?.Remove("operating_system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_system"); else _explicitNullProperties?.Remove("operating_system"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem? _explicitNullValueOperatingSystem = default!;
         /// <summary>List of certificate Subject Alternative Names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SubjectAlternativeNames { get => _explicitNullValueSubjectAlternativeNames; set { _explicitNullValueSubjectAlternativeNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_alternative_names"); else _explicitNullProperties?.Remove("subject_alternative_names"); } }
+        public List<string>? SubjectAlternativeNames { get => _explicitNullValueSubjectAlternativeNames; set { _explicitNullValueSubjectAlternativeNames = value; AdditionalData?.Remove("subject_alternative_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_alternative_names"); else _explicitNullProperties?.Remove("subject_alternative_names"); } }
         private List<string>? _explicitNullValueSubjectAlternativeNames = default!;
 #nullable restore
 #else
-        public List<string> SubjectAlternativeNames { get => _explicitNullValueSubjectAlternativeNames; set { _explicitNullValueSubjectAlternativeNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_alternative_names"); else _explicitNullProperties?.Remove("subject_alternative_names"); } }
+        public List<string> SubjectAlternativeNames { get => _explicitNullValueSubjectAlternativeNames; set { _explicitNullValueSubjectAlternativeNames = value; AdditionalData?.Remove("subject_alternative_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_alternative_names"); else _explicitNullProperties?.Remove("subject_alternative_names"); } }
         private List<string> _explicitNullValueSubjectAlternativeNames = default!;
 #endif
         /// <summary>
@@ -114,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cn", n => { Cn = n.GetStringValue(); } },
                 { "extended_key_usage", n => { ExtendedKeyUsage = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum>()?.AsList(); } },
                 { "locations", n => { Locations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations.CreateFromDiscriminatorValue); } },
-                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem>(); } },
+                { "operating_system", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperatingSystem = default; _explicitNullProperties?.Remove("operating_system"); AdditionalData["operating_system"] = unknown; } else { OperatingSystem = parsed; AdditionalData.Remove("operating_system"); } } },
                 { "subject_alternative_names", n => { SubjectAlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

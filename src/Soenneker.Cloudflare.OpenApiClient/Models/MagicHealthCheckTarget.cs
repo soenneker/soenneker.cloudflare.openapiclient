@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("saved") is { } nullNodeSaved && nullNodeSaved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Saved = null;
+            if (parseNode.GetChildNode("saved") is null) { _explicitNullValueSaved = default!; _explicitNullProperties?.Remove("saved"); }
+            else if (parseNode.GetChildNode("saved") is { } nullNodeSaved && nullNodeSaved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Saved = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,11 +35,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The saved health check target. Setting the value to the empty string indicates that the calculated default value will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Saved { get => _explicitNullValueSaved; set { _explicitNullValueSaved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved"); else _explicitNullProperties?.Remove("saved"); } }
+        public string? Saved { get => _explicitNullValueSaved; set { _explicitNullValueSaved = value; AdditionalData?.Remove("saved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved"); else _explicitNullProperties?.Remove("saved"); } }
         private string? _explicitNullValueSaved = default!;
 #nullable restore
 #else
-        public string Saved { get => _explicitNullValueSaved; set { _explicitNullValueSaved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved"); else _explicitNullProperties?.Remove("saved"); } }
+        public string Saved { get => _explicitNullValueSaved; set { _explicitNullValueSaved = value; AdditionalData?.Remove("saved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved"); else _explicitNullProperties?.Remove("saved"); } }
         private string _explicitNullValueSaved = default!;
 #endif
         /// <summary>

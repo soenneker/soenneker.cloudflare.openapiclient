@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_state") is { } nullNodeAppState && nullNodeAppState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppState = null;
-            if (parseNode.GetChildNode("user_identity") is { } nullNodeUserIdentity && nullNodeUserIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIdentity = null;
+            if (parseNode.GetChildNode("app_state") is null) { _explicitNullValueAppState = default!; _explicitNullProperties?.Remove("app_state"); }
+            else if (parseNode.GetChildNode("app_state") is { } nullNodeAppState && nullNodeAppState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppState = null;
+            if (parseNode.GetChildNode("user_identity") is null) { _explicitNullValueUserIdentity = default!; _explicitNullProperties?.Remove("user_identity"); }
+            else if (parseNode.GetChildNode("user_identity") is { } nullNodeUserIdentity && nullNodeUserIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIdentity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The app_state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultAppState? AppState { get => _explicitNullValueAppState; set { _explicitNullValueAppState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_state"); else _explicitNullProperties?.Remove("app_state"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultAppState? AppState { get => _explicitNullValueAppState; set { _explicitNullValueAppState = value; AdditionalData?.Remove("app_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_state"); else _explicitNullProperties?.Remove("app_state"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultAppState? _explicitNullValueAppState = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultAppState AppState { get => _explicitNullValueAppState; set { _explicitNullValueAppState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_state"); else _explicitNullProperties?.Remove("app_state"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultAppState AppState { get => _explicitNullValueAppState; set { _explicitNullValueAppState = value; AdditionalData?.Remove("app_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_state"); else _explicitNullProperties?.Remove("app_state"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultAppState _explicitNullValueAppState = default!;
 #endif
         /// <summary>The user_identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultUserIdentity? UserIdentity { get => _explicitNullValueUserIdentity; set { _explicitNullValueUserIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_identity"); else _explicitNullProperties?.Remove("user_identity"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultUserIdentity? UserIdentity { get => _explicitNullValueUserIdentity; set { _explicitNullValueUserIdentity = value; AdditionalData?.Remove("user_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_identity"); else _explicitNullProperties?.Remove("user_identity"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultUserIdentity? _explicitNullValueUserIdentity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultUserIdentity UserIdentity { get => _explicitNullValueUserIdentity; set { _explicitNullValueUserIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_identity"); else _explicitNullProperties?.Remove("user_identity"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultUserIdentity UserIdentity { get => _explicitNullValueUserIdentity; set { _explicitNullValueUserIdentity = value; AdditionalData?.Remove("user_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_identity"); else _explicitNullProperties?.Remove("user_identity"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyCheckResponse2AllOf2ResultUserIdentity _explicitNullValueUserIdentity = default!;
 #endif
         /// <summary>

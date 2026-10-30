@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mitigation_action") is { } nullNodeMitigationAction && nullNodeMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationAction = null;
+            if (parseNode.GetChildNode("mitigation_action") is null) { _explicitNullValueMitigationAction = default!; _explicitNullProperties?.Remove("mitigation_action"); }
+            else if (parseNode.GetChildNode("mitigation_action") is { } nullNodeMitigationAction && nullNodeMitigationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MitigationAction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set, this applies a mitigation action to this operation  - `log` log request when request does not conform to schema for this operation  - `block` deny access to the site when request does not conform to schema for this operation  - `none` will skip mitigation for this operation  - `null` indicates that no operation level mitigation is in place, see Zone Level Schema Validation Settings for mitigation action that will be applied</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction? MitigationAction { get => _explicitNullValueMitigationAction; set { _explicitNullValueMitigationAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_action"); else _explicitNullProperties?.Remove("mitigation_action"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction? MitigationAction { get => _explicitNullValueMitigationAction; set { _explicitNullValueMitigationAction = value; AdditionalData?.Remove("mitigation_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigation_action"); else _explicitNullProperties?.Remove("mitigation_action"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction? _explicitNullValueMitigationAction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationSchemaValidationSettingsModifyRequest"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mitigation_action", n => { MitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction>(); } },
+                { "mitigation_action", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOldOperationMitigationAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMitigationAction = default; _explicitNullProperties?.Remove("mitigation_action"); AdditionalData["mitigation_action"] = unknown; } else { MitigationAction = parsed; AdditionalData.Remove("mitigation_action"); } } },
             };
         }
         /// <summary>

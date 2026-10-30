@@ -17,20 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_idps") is { } nullNodeAllowedIdps && nullNodeAllowedIdps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIdps = null;
-            if (parseNode.GetChildNode("app_launcher_logo_url") is { } nullNodeAppLauncherLogoUrl && nullNodeAppLauncherLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppLauncherLogoUrl = null;
-            if (parseNode.GetChildNode("auto_redirect_to_identity") is { } nullNodeAutoRedirectToIdentity && nullNodeAutoRedirectToIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRedirectToIdentity = null;
-            if (parseNode.GetChildNode("bg_color") is { } nullNodeBgColor && nullNodeBgColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BgColor = null;
-            if (parseNode.GetChildNode("custom_deny_url") is { } nullNodeCustomDenyUrl && nullNodeCustomDenyUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDenyUrl = null;
-            if (parseNode.GetChildNode("custom_non_identity_deny_url") is { } nullNodeCustomNonIdentityDenyUrl && nullNodeCustomNonIdentityDenyUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomNonIdentityDenyUrl = null;
-            if (parseNode.GetChildNode("custom_pages") is { } nullNodeCustomPages && nullNodeCustomPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomPages = null;
-            if (parseNode.GetChildNode("footer_links") is { } nullNodeFooterLinks && nullNodeFooterLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FooterLinks = null;
-            if (parseNode.GetChildNode("header_bg_color") is { } nullNodeHeaderBgColor && nullNodeHeaderBgColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderBgColor = null;
-            if (parseNode.GetChildNode("landing_page_design") is { } nullNodeLandingPageDesign && nullNodeLandingPageDesign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPageDesign = null;
-            if (parseNode.GetChildNode("policies") is { } nullNodePolicies && nullNodePolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policies = null;
-            if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
-            if (parseNode.GetChildNode("skip_app_launcher_login_page") is { } nullNodeSkipAppLauncherLoginPage && nullNodeSkipAppLauncherLoginPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipAppLauncherLoginPage = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("allowed_idps") is null) { _explicitNullValueAllowedIdps = default!; _explicitNullProperties?.Remove("allowed_idps"); }
+            else if (parseNode.GetChildNode("allowed_idps") is { } nullNodeAllowedIdps && nullNodeAllowedIdps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIdps = null;
+            if (parseNode.GetChildNode("app_launcher_logo_url") is null) { _explicitNullValueAppLauncherLogoUrl = default!; _explicitNullProperties?.Remove("app_launcher_logo_url"); }
+            else if (parseNode.GetChildNode("app_launcher_logo_url") is { } nullNodeAppLauncherLogoUrl && nullNodeAppLauncherLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppLauncherLogoUrl = null;
+            if (parseNode.GetChildNode("auto_redirect_to_identity") is null) { _explicitNullValueAutoRedirectToIdentity = default!; _explicitNullProperties?.Remove("auto_redirect_to_identity"); }
+            else if (parseNode.GetChildNode("auto_redirect_to_identity") is { } nullNodeAutoRedirectToIdentity && nullNodeAutoRedirectToIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRedirectToIdentity = null;
+            if (parseNode.GetChildNode("bg_color") is null) { _explicitNullValueBgColor = default!; _explicitNullProperties?.Remove("bg_color"); }
+            else if (parseNode.GetChildNode("bg_color") is { } nullNodeBgColor && nullNodeBgColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BgColor = null;
+            if (parseNode.GetChildNode("custom_deny_url") is null) { _explicitNullValueCustomDenyUrl = default!; _explicitNullProperties?.Remove("custom_deny_url"); }
+            else if (parseNode.GetChildNode("custom_deny_url") is { } nullNodeCustomDenyUrl && nullNodeCustomDenyUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomDenyUrl = null;
+            if (parseNode.GetChildNode("custom_non_identity_deny_url") is null) { _explicitNullValueCustomNonIdentityDenyUrl = default!; _explicitNullProperties?.Remove("custom_non_identity_deny_url"); }
+            else if (parseNode.GetChildNode("custom_non_identity_deny_url") is { } nullNodeCustomNonIdentityDenyUrl && nullNodeCustomNonIdentityDenyUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomNonIdentityDenyUrl = null;
+            if (parseNode.GetChildNode("custom_pages") is null) { _explicitNullValueCustomPages = default!; _explicitNullProperties?.Remove("custom_pages"); }
+            else if (parseNode.GetChildNode("custom_pages") is { } nullNodeCustomPages && nullNodeCustomPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomPages = null;
+            if (parseNode.GetChildNode("footer_links") is null) { _explicitNullValueFooterLinks = default!; _explicitNullProperties?.Remove("footer_links"); }
+            else if (parseNode.GetChildNode("footer_links") is { } nullNodeFooterLinks && nullNodeFooterLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FooterLinks = null;
+            if (parseNode.GetChildNode("header_bg_color") is null) { _explicitNullValueHeaderBgColor = default!; _explicitNullProperties?.Remove("header_bg_color"); }
+            else if (parseNode.GetChildNode("header_bg_color") is { } nullNodeHeaderBgColor && nullNodeHeaderBgColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderBgColor = null;
+            if (parseNode.GetChildNode("landing_page_design") is null) { _explicitNullValueLandingPageDesign = default!; _explicitNullProperties?.Remove("landing_page_design"); }
+            else if (parseNode.GetChildNode("landing_page_design") is { } nullNodeLandingPageDesign && nullNodeLandingPageDesign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPageDesign = null;
+            if (parseNode.GetChildNode("policies") is null) { _explicitNullValuePolicies = default!; _explicitNullProperties?.Remove("policies"); }
+            else if (parseNode.GetChildNode("policies") is { } nullNodePolicies && nullNodePolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policies = null;
+            if (parseNode.GetChildNode("session_duration") is null) { _explicitNullValueSessionDuration = default!; _explicitNullProperties?.Remove("session_duration"); }
+            else if (parseNode.GetChildNode("session_duration") is { } nullNodeSessionDuration && nullNodeSessionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDuration = null;
+            if (parseNode.GetChildNode("skip_app_launcher_login_page") is null) { _explicitNullValueSkipAppLauncherLoginPage = default!; _explicitNullProperties?.Remove("skip_app_launcher_login_page"); }
+            else if (parseNode.GetChildNode("skip_app_launcher_login_page") is { } nullNodeSkipAppLauncherLoginPage && nullNodeSkipAppLauncherLoginPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipAppLauncherLoginPage = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,64 +52,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
+        public List<string>? AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; AdditionalData?.Remove("allowed_idps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
         private List<string>? _explicitNullValueAllowedIdps = default!;
 #nullable restore
 #else
-        public List<string> AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
+        public List<string> AllowedIdps { get => _explicitNullValueAllowedIdps; set { _explicitNullValueAllowedIdps = value; AdditionalData?.Remove("allowed_idps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_idps"); else _explicitNullProperties?.Remove("allowed_idps"); } }
         private List<string> _explicitNullValueAllowedIdps = default!;
 #endif
         /// <summary>The image URL of the logo shown in the App Launcher header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppLauncherLogoUrl { get => _explicitNullValueAppLauncherLogoUrl; set { _explicitNullValueAppLauncherLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_launcher_logo_url"); else _explicitNullProperties?.Remove("app_launcher_logo_url"); } }
+        public string? AppLauncherLogoUrl { get => _explicitNullValueAppLauncherLogoUrl; set { _explicitNullValueAppLauncherLogoUrl = value; AdditionalData?.Remove("app_launcher_logo_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_launcher_logo_url"); else _explicitNullProperties?.Remove("app_launcher_logo_url"); } }
         private string? _explicitNullValueAppLauncherLogoUrl = default!;
 #nullable restore
 #else
-        public string AppLauncherLogoUrl { get => _explicitNullValueAppLauncherLogoUrl; set { _explicitNullValueAppLauncherLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_launcher_logo_url"); else _explicitNullProperties?.Remove("app_launcher_logo_url"); } }
+        public string AppLauncherLogoUrl { get => _explicitNullValueAppLauncherLogoUrl; set { _explicitNullValueAppLauncherLogoUrl = value; AdditionalData?.Remove("app_launcher_logo_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_launcher_logo_url"); else _explicitNullProperties?.Remove("app_launcher_logo_url"); } }
         private string _explicitNullValueAppLauncherLogoUrl = default!;
 #endif
         /// <summary>When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.</summary>
-        public bool? AutoRedirectToIdentity { get => _explicitNullValueAutoRedirectToIdentity; set { _explicitNullValueAutoRedirectToIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_redirect_to_identity"); else _explicitNullProperties?.Remove("auto_redirect_to_identity"); } }
+        public bool? AutoRedirectToIdentity { get => _explicitNullValueAutoRedirectToIdentity; set { _explicitNullValueAutoRedirectToIdentity = value; AdditionalData?.Remove("auto_redirect_to_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_redirect_to_identity"); else _explicitNullProperties?.Remove("auto_redirect_to_identity"); } }
         private bool? _explicitNullValueAutoRedirectToIdentity = default!;
         /// <summary>The background color of the App Launcher page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BgColor { get => _explicitNullValueBgColor; set { _explicitNullValueBgColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bg_color"); else _explicitNullProperties?.Remove("bg_color"); } }
+        public string? BgColor { get => _explicitNullValueBgColor; set { _explicitNullValueBgColor = value; AdditionalData?.Remove("bg_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bg_color"); else _explicitNullProperties?.Remove("bg_color"); } }
         private string? _explicitNullValueBgColor = default!;
 #nullable restore
 #else
-        public string BgColor { get => _explicitNullValueBgColor; set { _explicitNullValueBgColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bg_color"); else _explicitNullProperties?.Remove("bg_color"); } }
+        public string BgColor { get => _explicitNullValueBgColor; set { _explicitNullValueBgColor = value; AdditionalData?.Remove("bg_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bg_color"); else _explicitNullProperties?.Remove("bg_color"); } }
         private string _explicitNullValueBgColor = default!;
 #endif
         /// <summary>The custom URL a user is redirected to when they are denied access to the application when failing identity-based rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomDenyUrl { get => _explicitNullValueCustomDenyUrl; set { _explicitNullValueCustomDenyUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_url"); else _explicitNullProperties?.Remove("custom_deny_url"); } }
+        public string? CustomDenyUrl { get => _explicitNullValueCustomDenyUrl; set { _explicitNullValueCustomDenyUrl = value; AdditionalData?.Remove("custom_deny_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_url"); else _explicitNullProperties?.Remove("custom_deny_url"); } }
         private string? _explicitNullValueCustomDenyUrl = default!;
 #nullable restore
 #else
-        public string CustomDenyUrl { get => _explicitNullValueCustomDenyUrl; set { _explicitNullValueCustomDenyUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_url"); else _explicitNullProperties?.Remove("custom_deny_url"); } }
+        public string CustomDenyUrl { get => _explicitNullValueCustomDenyUrl; set { _explicitNullValueCustomDenyUrl = value; AdditionalData?.Remove("custom_deny_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_deny_url"); else _explicitNullProperties?.Remove("custom_deny_url"); } }
         private string _explicitNullValueCustomDenyUrl = default!;
 #endif
         /// <summary>The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomNonIdentityDenyUrl { get => _explicitNullValueCustomNonIdentityDenyUrl; set { _explicitNullValueCustomNonIdentityDenyUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_non_identity_deny_url"); else _explicitNullProperties?.Remove("custom_non_identity_deny_url"); } }
+        public string? CustomNonIdentityDenyUrl { get => _explicitNullValueCustomNonIdentityDenyUrl; set { _explicitNullValueCustomNonIdentityDenyUrl = value; AdditionalData?.Remove("custom_non_identity_deny_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_non_identity_deny_url"); else _explicitNullProperties?.Remove("custom_non_identity_deny_url"); } }
         private string? _explicitNullValueCustomNonIdentityDenyUrl = default!;
 #nullable restore
 #else
-        public string CustomNonIdentityDenyUrl { get => _explicitNullValueCustomNonIdentityDenyUrl; set { _explicitNullValueCustomNonIdentityDenyUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_non_identity_deny_url"); else _explicitNullProperties?.Remove("custom_non_identity_deny_url"); } }
+        public string CustomNonIdentityDenyUrl { get => _explicitNullValueCustomNonIdentityDenyUrl; set { _explicitNullValueCustomNonIdentityDenyUrl = value; AdditionalData?.Remove("custom_non_identity_deny_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_non_identity_deny_url"); else _explicitNullProperties?.Remove("custom_non_identity_deny_url"); } }
         private string _explicitNullValueCustomNonIdentityDenyUrl = default!;
 #endif
         /// <summary>The custom pages that will be displayed when applicable for this application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomPages { get => _explicitNullValueCustomPages; set { _explicitNullValueCustomPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_pages"); else _explicitNullProperties?.Remove("custom_pages"); } }
+        public List<string>? CustomPages { get => _explicitNullValueCustomPages; set { _explicitNullValueCustomPages = value; AdditionalData?.Remove("custom_pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_pages"); else _explicitNullProperties?.Remove("custom_pages"); } }
         private List<string>? _explicitNullValueCustomPages = default!;
 #nullable restore
 #else
-        public List<string> CustomPages { get => _explicitNullValueCustomPages; set { _explicitNullValueCustomPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_pages"); else _explicitNullProperties?.Remove("custom_pages"); } }
+        public List<string> CustomPages { get => _explicitNullValueCustomPages; set { _explicitNullValueCustomPages = value; AdditionalData?.Remove("custom_pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_pages"); else _explicitNullProperties?.Remove("custom_pages"); } }
         private List<string> _explicitNullValueCustomPages = default!;
 #endif
         /// <summary>The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.</summary>
@@ -109,31 +123,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The links in the App Launcher footer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessFooterLinksItem>? FooterLinks { get => _explicitNullValueFooterLinks; set { _explicitNullValueFooterLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_links"); else _explicitNullProperties?.Remove("footer_links"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessFooterLinksItem>? FooterLinks { get => _explicitNullValueFooterLinks; set { _explicitNullValueFooterLinks = value; AdditionalData?.Remove("footer_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_links"); else _explicitNullProperties?.Remove("footer_links"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessFooterLinksItem>? _explicitNullValueFooterLinks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessFooterLinksItem> FooterLinks { get => _explicitNullValueFooterLinks; set { _explicitNullValueFooterLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_links"); else _explicitNullProperties?.Remove("footer_links"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessFooterLinksItem> FooterLinks { get => _explicitNullValueFooterLinks; set { _explicitNullValueFooterLinks = value; AdditionalData?.Remove("footer_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("footer_links"); else _explicitNullProperties?.Remove("footer_links"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessFooterLinksItem> _explicitNullValueFooterLinks = default!;
 #endif
         /// <summary>The background color of the App Launcher header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderBgColor { get => _explicitNullValueHeaderBgColor; set { _explicitNullValueHeaderBgColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_bg_color"); else _explicitNullProperties?.Remove("header_bg_color"); } }
+        public string? HeaderBgColor { get => _explicitNullValueHeaderBgColor; set { _explicitNullValueHeaderBgColor = value; AdditionalData?.Remove("header_bg_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_bg_color"); else _explicitNullProperties?.Remove("header_bg_color"); } }
         private string? _explicitNullValueHeaderBgColor = default!;
 #nullable restore
 #else
-        public string HeaderBgColor { get => _explicitNullValueHeaderBgColor; set { _explicitNullValueHeaderBgColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_bg_color"); else _explicitNullProperties?.Remove("header_bg_color"); } }
+        public string HeaderBgColor { get => _explicitNullValueHeaderBgColor; set { _explicitNullValueHeaderBgColor = value; AdditionalData?.Remove("header_bg_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_bg_color"); else _explicitNullProperties?.Remove("header_bg_color"); } }
         private string _explicitNullValueHeaderBgColor = default!;
 #endif
         /// <summary>The design of the App Launcher landing page shown to users when they log in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLandingPageDesign? LandingPageDesign { get => _explicitNullValueLandingPageDesign; set { _explicitNullValueLandingPageDesign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landing_page_design"); else _explicitNullProperties?.Remove("landing_page_design"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLandingPageDesign? LandingPageDesign { get => _explicitNullValueLandingPageDesign; set { _explicitNullValueLandingPageDesign = value; AdditionalData?.Remove("landing_page_design"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landing_page_design"); else _explicitNullProperties?.Remove("landing_page_design"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLandingPageDesign? _explicitNullValueLandingPageDesign = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLandingPageDesign LandingPageDesign { get => _explicitNullValueLandingPageDesign; set { _explicitNullValueLandingPageDesign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landing_page_design"); else _explicitNullProperties?.Remove("landing_page_design"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLandingPageDesign LandingPageDesign { get => _explicitNullValueLandingPageDesign; set { _explicitNullValueLandingPageDesign = value; AdditionalData?.Remove("landing_page_design"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landing_page_design"); else _explicitNullProperties?.Remove("landing_page_design"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLandingPageDesign _explicitNullValueLandingPageDesign = default!;
 #endif
         /// <summary>The name of the application.</summary>
@@ -147,28 +161,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application. Reusable and inline policies are mutually exclusive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; AdditionalData?.Remove("policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValuePolicies = default!;
 #nullable restore
 #else
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Policies { get => _explicitNullValuePolicies; set { _explicitNullValuePolicies = value; AdditionalData?.Remove("policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policies"); else _explicitNullProperties?.Remove("policies"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValuePolicies = default!;
 #endif
         /// <summary>The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        public string? SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; AdditionalData?.Remove("session_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
         private string? _explicitNullValueSessionDuration = default!;
 #nullable restore
 #else
-        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
+        public string SessionDuration { get => _explicitNullValueSessionDuration; set { _explicitNullValueSessionDuration = value; AdditionalData?.Remove("session_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_duration"); else _explicitNullProperties?.Remove("session_duration"); } }
         private string _explicitNullValueSessionDuration = default!;
 #endif
         /// <summary>Determines when to skip the App Launcher landing page.</summary>
-        public bool? SkipAppLauncherLoginPage { get => _explicitNullValueSkipAppLauncherLoginPage; set { _explicitNullValueSkipAppLauncherLoginPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_app_launcher_login_page"); else _explicitNullProperties?.Remove("skip_app_launcher_login_page"); } }
+        public bool? SkipAppLauncherLoginPage { get => _explicitNullValueSkipAppLauncherLoginPage; set { _explicitNullValueSkipAppLauncherLoginPage = value; AdditionalData?.Remove("skip_app_launcher_login_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_app_launcher_login_page"); else _explicitNullProperties?.Remove("skip_app_launcher_login_page"); } }
         private bool? _explicitNullValueSkipAppLauncherLoginPage = default!;
         /// <summary>The application type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppLauncherPropsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppLauncherPropsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppLauncherPropsType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppRequestAppLauncherApplication"/> and sets the default values.
@@ -214,7 +228,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
                 { "skip_app_launcher_login_page", n => { SkipAppLauncherLoginPage = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppLauncherPropsType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppLauncherPropsType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

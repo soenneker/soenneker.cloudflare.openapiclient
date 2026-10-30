@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
-            if (parseNode.GetChildNode("dkim") is { } nullNodeDkim && nullNodeDkim.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dkim = null;
-            if (parseNode.GetChildNode("dmarc") is { } nullNodeDmarc && nullNodeDmarc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dmarc = null;
-            if (parseNode.GetChildNode("spf") is { } nullNodeSpf && nullNodeSpf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spf = null;
+            if (parseNode.GetChildNode("comment") is null) { _explicitNullValueComment = default!; _explicitNullProperties?.Remove("comment"); }
+            else if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("dkim") is null) { _explicitNullValueDkim = default!; _explicitNullProperties?.Remove("dkim"); }
+            else if (parseNode.GetChildNode("dkim") is { } nullNodeDkim && nullNodeDkim.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dkim = null;
+            if (parseNode.GetChildNode("dmarc") is null) { _explicitNullValueDmarc = default!; _explicitNullProperties?.Remove("dmarc"); }
+            else if (parseNode.GetChildNode("dmarc") is { } nullNodeDmarc && nullNodeDmarc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dmarc = null;
+            if (parseNode.GetChildNode("spf") is null) { _explicitNullValueSpf = default!; _explicitNullProperties?.Remove("spf"); }
+            else if (parseNode.GetChildNode("spf") is { } nullNodeSpf && nullNodeSpf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spf = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +32,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; AdditionalData?.Remove("comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
         private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; AdditionalData?.Remove("comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
         private string _explicitNullValueComment = default!;
 #endif
         /// <summary>The dkim property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim? Dkim { get => _explicitNullValueDkim; set { _explicitNullValueDkim = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim"); else _explicitNullProperties?.Remove("dkim"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim? Dkim { get => _explicitNullValueDkim; set { _explicitNullValueDkim = value; AdditionalData?.Remove("dkim"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dkim"); else _explicitNullProperties?.Remove("dkim"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim? _explicitNullValueDkim = default!;
         /// <summary>The dmarc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc? Dmarc { get => _explicitNullValueDmarc; set { _explicitNullValueDmarc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc"); else _explicitNullProperties?.Remove("dmarc"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc? Dmarc { get => _explicitNullValueDmarc; set { _explicitNullValueDmarc = value; AdditionalData?.Remove("dmarc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmarc"); else _explicitNullProperties?.Remove("dmarc"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc? _explicitNullValueDmarc = default!;
         /// <summary>The spf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf? Spf { get => _explicitNullValueSpf; set { _explicitNullValueSpf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf"); else _explicitNullProperties?.Remove("spf"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf? Spf { get => _explicitNullValueSpf; set { _explicitNullValueSpf = value; AdditionalData?.Remove("spf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spf"); else _explicitNullProperties?.Remove("spf"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf? _explicitNullValueSpf = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation"/> and sets the default values.
@@ -70,9 +74,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "dkim", n => { Dkim = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim>(); } },
-                { "dmarc", n => { Dmarc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc>(); } },
-                { "spf", n => { Spf = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf>(); } },
+                { "dkim", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDkim = default; _explicitNullProperties?.Remove("dkim"); AdditionalData["dkim"] = unknown; } else { Dkim = parsed; AdditionalData.Remove("dkim"); } } },
+                { "dmarc", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDmarc = default; _explicitNullProperties?.Remove("dmarc"); AdditionalData["dmarc"] = unknown; } else { Dmarc = parsed; AdditionalData.Remove("dmarc"); } } },
+                { "spf", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSpf = default; _explicitNullProperties?.Remove("spf"); AdditionalData["spf"] = unknown; } else { Spf = parsed; AdditionalData.Remove("spf"); } } },
             };
         }
         /// <summary>

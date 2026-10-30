@@ -18,79 +18,88 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ignored") is { } nullNodeIgnored && nullNodeIgnored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ignored = null;
-            if (parseNode.GetChildNode("integration_id") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
-            if (parseNode.GetChildNode("max_affliction_date") is { } nullNodeMaxAfflictionDate && nullNodeMaxAfflictionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAfflictionDate = null;
-            if (parseNode.GetChildNode("min_affliction_date") is { } nullNodeMinAfflictionDate && nullNodeMinAfflictionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAfflictionDate = null;
-            if (parseNode.GetChildNode("orders") is { } nullNodeOrders && nullNodeOrders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Orders = null;
-            if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
-            if (parseNode.GetChildNode("search") is { } nullNodeSearch && nullNodeSearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Search = null;
-            if (parseNode.GetChildNode("severities") is { } nullNodeSeverities && nullNodeSeverities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severities = null;
-            if (parseNode.GetChildNode("vendors") is { } nullNodeVendors && nullNodeVendors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendors = null;
+            if (parseNode.GetChildNode("ignored") is null) { _explicitNullValueIgnored = default!; _explicitNullProperties?.Remove("ignored"); }
+            else if (parseNode.GetChildNode("ignored") is { } nullNodeIgnored && nullNodeIgnored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ignored = null;
+            if (parseNode.GetChildNode("integration_id") is null) { _explicitNullValueIntegrationId = default!; _explicitNullProperties?.Remove("integration_id"); }
+            else if (parseNode.GetChildNode("integration_id") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
+            if (parseNode.GetChildNode("max_affliction_date") is null) { _explicitNullValueMaxAfflictionDate = default!; _explicitNullProperties?.Remove("max_affliction_date"); }
+            else if (parseNode.GetChildNode("max_affliction_date") is { } nullNodeMaxAfflictionDate && nullNodeMaxAfflictionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAfflictionDate = null;
+            if (parseNode.GetChildNode("min_affliction_date") is null) { _explicitNullValueMinAfflictionDate = default!; _explicitNullProperties?.Remove("min_affliction_date"); }
+            else if (parseNode.GetChildNode("min_affliction_date") is { } nullNodeMinAfflictionDate && nullNodeMinAfflictionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAfflictionDate = null;
+            if (parseNode.GetChildNode("orders") is null) { _explicitNullValueOrders = default!; _explicitNullProperties?.Remove("orders"); }
+            else if (parseNode.GetChildNode("orders") is { } nullNodeOrders && nullNodeOrders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Orders = null;
+            if (parseNode.GetChildNode("product") is null) { _explicitNullValueProduct = default!; _explicitNullProperties?.Remove("product"); }
+            else if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
+            if (parseNode.GetChildNode("search") is null) { _explicitNullValueSearch = default!; _explicitNullProperties?.Remove("search"); }
+            else if (parseNode.GetChildNode("search") is { } nullNodeSearch && nullNodeSearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Search = null;
+            if (parseNode.GetChildNode("severities") is null) { _explicitNullValueSeverities = default!; _explicitNullProperties?.Remove("severities"); }
+            else if (parseNode.GetChildNode("severities") is { } nullNodeSeverities && nullNodeSeverities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severities = null;
+            if (parseNode.GetChildNode("vendors") is null) { _explicitNullValueVendors = default!; _explicitNullProperties?.Remove("vendors"); }
+            else if (parseNode.GetChildNode("vendors") is { } nullNodeVendors && nullNodeVendors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vendors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Filter for only the ignored findings. Set to false to only see active items.</summary>
-        public bool? Ignored { get => _explicitNullValueIgnored; set { _explicitNullValueIgnored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignored"); else _explicitNullProperties?.Remove("ignored"); } }
+        public bool? Ignored { get => _explicitNullValueIgnored; set { _explicitNullValueIgnored = value; AdditionalData?.Remove("ignored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignored"); else _explicitNullProperties?.Remove("ignored"); } }
         private bool? _explicitNullValueIgnored = default!;
         /// <summary>Filter by multiple integration IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
+        public List<Guid?>? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
         private List<Guid?>? _explicitNullValueIntegrationId = default!;
 #nullable restore
 #else
-        public List<Guid?> IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
+        public List<Guid?> IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
         private List<Guid?> _explicitNullValueIntegrationId = default!;
 #endif
         /// <summary>Filter to view findings that occurred on or before the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.</summary>
-        public DateTimeOffset? MaxAfflictionDate { get => _explicitNullValueMaxAfflictionDate; set { _explicitNullValueMaxAfflictionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_affliction_date"); else _explicitNullProperties?.Remove("max_affliction_date"); } }
+        public DateTimeOffset? MaxAfflictionDate { get => _explicitNullValueMaxAfflictionDate; set { _explicitNullValueMaxAfflictionDate = value; AdditionalData?.Remove("max_affliction_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_affliction_date"); else _explicitNullProperties?.Remove("max_affliction_date"); } }
         private DateTimeOffset? _explicitNullValueMaxAfflictionDate = default!;
         /// <summary>Filter to view findings that occurred on or after the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.</summary>
-        public DateTimeOffset? MinAfflictionDate { get => _explicitNullValueMinAfflictionDate; set { _explicitNullValueMinAfflictionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_affliction_date"); else _explicitNullProperties?.Remove("min_affliction_date"); } }
+        public DateTimeOffset? MinAfflictionDate { get => _explicitNullValueMinAfflictionDate; set { _explicitNullValueMinAfflictionDate = value; AdditionalData?.Remove("min_affliction_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_affliction_date"); else _explicitNullProperties?.Remove("min_affliction_date"); } }
         private DateTimeOffset? _explicitNullValueMinAfflictionDate = default!;
         /// <summary>Which fields to use when ordering the findings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest>? Orders { get => _explicitNullValueOrders; set { _explicitNullValueOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orders"); else _explicitNullProperties?.Remove("orders"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest>? Orders { get => _explicitNullValueOrders; set { _explicitNullValueOrders = value; AdditionalData?.Remove("orders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orders"); else _explicitNullProperties?.Remove("orders"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest>? _explicitNullValueOrders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest> Orders { get => _explicitNullValueOrders; set { _explicitNullValueOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orders"); else _explicitNullProperties?.Remove("orders"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest> Orders { get => _explicitNullValueOrders; set { _explicitNullValueOrders = value; AdditionalData?.Remove("orders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orders"); else _explicitNullProperties?.Remove("orders"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest> _explicitNullValueOrders = default!;
 #endif
         /// <summary>Filter by finding&apos;s category product.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; AdditionalData?.Remove("product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct? _explicitNullValueProduct = default!;
         /// <summary>A search term.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
+        public string? Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; AdditionalData?.Remove("search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
         private string? _explicitNullValueSearch = default!;
 #nullable restore
 #else
-        public string Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
+        public string Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; AdditionalData?.Remove("search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
         private string _explicitNullValueSearch = default!;
 #endif
         /// <summary>Filter by severity levels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum?>? Severities { get => _explicitNullValueSeverities; set { _explicitNullValueSeverities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severities"); else _explicitNullProperties?.Remove("severities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum?>? Severities { get => _explicitNullValueSeverities; set { _explicitNullValueSeverities = value; AdditionalData?.Remove("severities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severities"); else _explicitNullProperties?.Remove("severities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum?>? _explicitNullValueSeverities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum?> Severities { get => _explicitNullValueSeverities; set { _explicitNullValueSeverities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severities"); else _explicitNullProperties?.Remove("severities"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum?> Severities { get => _explicitNullValueSeverities; set { _explicitNullValueSeverities = value; AdditionalData?.Remove("severities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severities"); else _explicitNullProperties?.Remove("severities"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum?> _explicitNullValueSeverities = default!;
 #endif
         /// <summary>Filter by vendor types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum?>? Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum?>? Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; AdditionalData?.Remove("vendors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum?>? _explicitNullValueVendors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum?> Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum?> Vendors { get => _explicitNullValueVendors; set { _explicitNullValueVendors = value; AdditionalData?.Remove("vendors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vendors"); else _explicitNullProperties?.Remove("vendors"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum?> _explicitNullValueVendors = default!;
 #endif
         /// <summary>
@@ -123,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "max_affliction_date", n => { MaxAfflictionDate = n.GetDateTimeOffsetValue(); } },
                 { "min_affliction_date", n => { MinAfflictionDate = n.GetDateTimeOffsetValue(); } },
                 { "orders", n => { Orders = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "product", n => { Product = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct>(); } },
+                { "product", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProduct = default; _explicitNullProperties?.Remove("product"); AdditionalData["product"] = unknown; } else { Product = parsed; AdditionalData.Remove("product"); } } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "severities", n => { Severities = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum>()?.AsList(); } },
                 { "vendors", n => { Vendors = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum>()?.AsList(); } },

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("CLEAN") is { } nullNodeCLEAN && nullNodeCLEAN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CLEAN = null;
-            if (parseNode.GetChildNode("COMPROMISED") is { } nullNodeCOMPROMISED && nullNodeCOMPROMISED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) COMPROMISED = null;
-            if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
+            if (parseNode.GetChildNode("CLEAN") is null) { _explicitNullValueCLEAN = default!; _explicitNullProperties?.Remove("CLEAN"); }
+            else if (parseNode.GetChildNode("CLEAN") is { } nullNodeCLEAN && nullNodeCLEAN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CLEAN = null;
+            if (parseNode.GetChildNode("COMPROMISED") is null) { _explicitNullValueCOMPROMISED = default!; _explicitNullProperties?.Remove("COMPROMISED"); }
+            else if (parseNode.GetChildNode("COMPROMISED") is { } nullNodeCOMPROMISED && nullNodeCOMPROMISED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) COMPROMISED = null;
+            if (parseNode.GetChildNode("timestamps") is null) { _explicitNullValueTimestamps = default!; _explicitNullProperties?.Remove("timestamps"); }
+            else if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The CLEAN property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
+        public List<string>? CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; AdditionalData?.Remove("CLEAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
         private List<string>? _explicitNullValueCLEAN = default!;
 #nullable restore
 #else
-        public List<string> CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
+        public List<string> CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; AdditionalData?.Remove("CLEAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
         private List<string> _explicitNullValueCLEAN = default!;
 #endif
         /// <summary>The COMPROMISED property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
+        public List<string>? COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; AdditionalData?.Remove("COMPROMISED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
         private List<string>? _explicitNullValueCOMPROMISED = default!;
 #nullable restore
 #else
-        public List<string> COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
+        public List<string> COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; AdditionalData?.Remove("COMPROMISED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
         private List<string> _explicitNullValueCOMPROMISED = default!;
 #endif
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?>? _explicitNullValueTimestamps = default!;
 #nullable restore
 #else
-        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?> _explicitNullValueTimestamps = default!;
 #endif
         /// <summary>

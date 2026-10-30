@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("batch_size") is { } nullNodeBatchSize && nullNodeBatchSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchSize = null;
-            if (parseNode.GetChildNode("visibility_timeout_ms") is { } nullNodeVisibilityTimeoutMs && nullNodeVisibilityTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisibilityTimeoutMs = null;
+            if (parseNode.GetChildNode("batch_size") is null) { _explicitNullValueBatchSize = default!; _explicitNullProperties?.Remove("batch_size"); }
+            else if (parseNode.GetChildNode("batch_size") is { } nullNodeBatchSize && nullNodeBatchSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchSize = null;
+            if (parseNode.GetChildNode("visibility_timeout_ms") is null) { _explicitNullValueVisibilityTimeoutMs = default!; _explicitNullProperties?.Remove("visibility_timeout_ms"); }
+            else if (parseNode.GetChildNode("visibility_timeout_ms") is { } nullNodeVisibilityTimeoutMs && nullNodeVisibilityTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisibilityTimeoutMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of messages to include in a batch.</summary>
-        public double? BatchSize { get => _explicitNullValueBatchSize; set { _explicitNullValueBatchSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_size"); else _explicitNullProperties?.Remove("batch_size"); } }
+        public double? BatchSize { get => _explicitNullValueBatchSize; set { _explicitNullValueBatchSize = value; AdditionalData?.Remove("batch_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_size"); else _explicitNullProperties?.Remove("batch_size"); } }
         private double? _explicitNullValueBatchSize = default!;
         /// <summary>The number of milliseconds that a message is exclusively leased. After the timeout, the message becomes available for another attempt.</summary>
-        public double? VisibilityTimeoutMs { get => _explicitNullValueVisibilityTimeoutMs; set { _explicitNullValueVisibilityTimeoutMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility_timeout_ms"); else _explicitNullProperties?.Remove("visibility_timeout_ms"); } }
+        public double? VisibilityTimeoutMs { get => _explicitNullValueVisibilityTimeoutMs; set { _explicitNullValueVisibilityTimeoutMs = value; AdditionalData?.Remove("visibility_timeout_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility_timeout_ms"); else _explicitNullProperties?.Remove("visibility_timeout_ms"); } }
         private double? _explicitNullValueVisibilityTimeoutMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPullMessagesRequest"/> and sets the default values.

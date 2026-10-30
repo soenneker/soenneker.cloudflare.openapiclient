@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("useragent") is { } nullNodeUseragent && nullNodeUseragent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Useragent = null;
+            if (parseNode.GetChildNode("useragent") is null) { _explicitNullValueUseragent = default!; _explicitNullProperties?.Remove("useragent"); }
+            else if (parseNode.GetChildNode("useragent") is { } nullNodeUseragent && nullNodeUseragent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Useragent = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The useragent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Useragent { get => _explicitNullValueUseragent; set { _explicitNullValueUseragent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useragent"); else _explicitNullProperties?.Remove("useragent"); } }
+        public string? Useragent { get => _explicitNullValueUseragent; set { _explicitNullValueUseragent = value; AdditionalData?.Remove("useragent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useragent"); else _explicitNullProperties?.Remove("useragent"); } }
         private string? _explicitNullValueUseragent = default!;
 #nullable restore
 #else
-        public string Useragent { get => _explicitNullValueUseragent; set { _explicitNullValueUseragent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useragent"); else _explicitNullProperties?.Remove("useragent"); } }
+        public string Useragent { get => _explicitNullValueUseragent; set { _explicitNullValueUseragent = value; AdditionalData?.Remove("useragent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useragent"); else _explicitNullProperties?.Remove("useragent"); } }
         private string _explicitNullValueUseragent = default!;
 #endif
         /// <summary>

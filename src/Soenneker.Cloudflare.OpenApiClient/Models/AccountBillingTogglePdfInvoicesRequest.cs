@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("toggle") is { } nullNodeToggle && nullNodeToggle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Toggle = null;
+            if (parseNode.GetChildNode("toggle") is null) { _explicitNullValueToggle = default!; _explicitNullProperties?.Remove("toggle"); }
+            else if (parseNode.GetChildNode("toggle") is { } nullNodeToggle && nullNodeToggle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Toggle = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to enable or disable PDF invoice generation.</summary>
-        public bool? Toggle { get => _explicitNullValueToggle; set { _explicitNullValueToggle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toggle"); else _explicitNullProperties?.Remove("toggle"); } }
+        public bool? Toggle { get => _explicitNullValueToggle; set { _explicitNullValueToggle = value; AdditionalData?.Remove("toggle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toggle"); else _explicitNullProperties?.Remove("toggle"); } }
         private bool? _explicitNullValueToggle = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountBillingTogglePdfInvoicesRequest"/> and sets the default values.

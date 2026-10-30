@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("uploadURL") is { } nullNodeUploadURL && nullNodeUploadURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadURL = null;
+            if (parseNode.GetChildNode("uploadURL") is null) { _explicitNullValueUploadURL = default!; _explicitNullProperties?.Remove("uploadURL"); }
+            else if (parseNode.GetChildNode("uploadURL") is { } nullNodeUploadURL && nullNodeUploadURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadURL = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,11 +34,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The URL the unauthenticated upload can be performed to using a single HTTP POST (multipart/form-data) request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadURL { get => _explicitNullValueUploadURL; set { _explicitNullValueUploadURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadURL"); else _explicitNullProperties?.Remove("uploadURL"); } }
+        public string? UploadURL { get => _explicitNullValueUploadURL; set { _explicitNullValueUploadURL = value; AdditionalData?.Remove("uploadURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadURL"); else _explicitNullProperties?.Remove("uploadURL"); } }
         private string? _explicitNullValueUploadURL = default!;
 #nullable restore
 #else
-        public string UploadURL { get => _explicitNullValueUploadURL; set { _explicitNullValueUploadURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadURL"); else _explicitNullProperties?.Remove("uploadURL"); } }
+        public string UploadURL { get => _explicitNullValueUploadURL; set { _explicitNullValueUploadURL = value; AdditionalData?.Remove("uploadURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadURL"); else _explicitNullProperties?.Remove("uploadURL"); } }
         private string _explicitNullValueUploadURL = default!;
 #endif
         /// <summary>

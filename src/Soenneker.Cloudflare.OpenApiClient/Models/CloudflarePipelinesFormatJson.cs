@@ -17,25 +17,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("decimal_encoding") is { } nullNodeDecimalEncoding && nullNodeDecimalEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecimalEncoding = null;
-            if (parseNode.GetChildNode("timestamp_format") is { } nullNodeTimestampFormat && nullNodeTimestampFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampFormat = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("unstructured") is { } nullNodeUnstructured && nullNodeUnstructured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unstructured = null;
+            if (parseNode.GetChildNode("decimal_encoding") is null) { _explicitNullValueDecimalEncoding = default!; _explicitNullProperties?.Remove("decimal_encoding"); }
+            else if (parseNode.GetChildNode("decimal_encoding") is { } nullNodeDecimalEncoding && nullNodeDecimalEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecimalEncoding = null;
+            if (parseNode.GetChildNode("timestamp_format") is null) { _explicitNullValueTimestampFormat = default!; _explicitNullProperties?.Remove("timestamp_format"); }
+            else if (parseNode.GetChildNode("timestamp_format") is { } nullNodeTimestampFormat && nullNodeTimestampFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampFormat = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("unstructured") is null) { _explicitNullValueUnstructured = default!; _explicitNullProperties?.Remove("unstructured"); }
+            else if (parseNode.GetChildNode("unstructured") is { } nullNodeUnstructured && nullNodeUnstructured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unstructured = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The decimal_encoding property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding? DecimalEncoding { get => _explicitNullValueDecimalEncoding; set { _explicitNullValueDecimalEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimal_encoding"); else _explicitNullProperties?.Remove("decimal_encoding"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding? DecimalEncoding { get => _explicitNullValueDecimalEncoding; set { _explicitNullValueDecimalEncoding = value; AdditionalData?.Remove("decimal_encoding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimal_encoding"); else _explicitNullProperties?.Remove("decimal_encoding"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding? _explicitNullValueDecimalEncoding = default!;
         /// <summary>The timestamp_format property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat? TimestampFormat { get => _explicitNullValueTimestampFormat; set { _explicitNullValueTimestampFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_format"); else _explicitNullProperties?.Remove("timestamp_format"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat? TimestampFormat { get => _explicitNullValueTimestampFormat; set { _explicitNullValueTimestampFormat = value; AdditionalData?.Remove("timestamp_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_format"); else _explicitNullProperties?.Remove("timestamp_format"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat? _explicitNullValueTimestampFormat = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType? _explicitNullValueType = default!;
         /// <summary>The unstructured property</summary>
-        public bool? Unstructured { get => _explicitNullValueUnstructured; set { _explicitNullValueUnstructured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unstructured"); else _explicitNullProperties?.Remove("unstructured"); } }
+        public bool? Unstructured { get => _explicitNullValueUnstructured; set { _explicitNullValueUnstructured = value; AdditionalData?.Remove("unstructured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unstructured"); else _explicitNullProperties?.Remove("unstructured"); } }
         private bool? _explicitNullValueUnstructured = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatJson"/> and sets the default values.
@@ -62,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "decimal_encoding", n => { DecimalEncoding = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding>(); } },
-                { "timestamp_format", n => { TimestampFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType>(); } },
+                { "decimal_encoding", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecimalEncoding = default; _explicitNullProperties?.Remove("decimal_encoding"); AdditionalData["decimal_encoding"] = unknown; } else { DecimalEncoding = parsed; AdditionalData.Remove("decimal_encoding"); } } },
+                { "timestamp_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTimestampFormat = default; _explicitNullProperties?.Remove("timestamp_format"); AdditionalData["timestamp_format"] = unknown; } else { TimestampFormat = parsed; AdditionalData.Remove("timestamp_format"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "unstructured", n => { Unstructured = n.GetBoolValue(); } },
             };
         }

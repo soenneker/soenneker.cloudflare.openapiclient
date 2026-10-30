@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("config_file") is { } nullNodeConfigFile && nullNodeConfigFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigFile = null;
-            if (parseNode.GetChildNode("default_worker_name") is { } nullNodeDefaultWorkerName && nullNodeDefaultWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultWorkerName = null;
-            if (parseNode.GetChildNode("env_worker_names") is { } nullNodeEnvWorkerNames && nullNodeEnvWorkerNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvWorkerNames = null;
-            if (parseNode.GetChildNode("package_manager") is { } nullNodePackageManager && nullNodePackageManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageManager = null;
-            if (parseNode.GetChildNode("scripts") is { } nullNodeScripts && nullNodeScripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scripts = null;
+            if (parseNode.GetChildNode("config_file") is null) { _explicitNullValueConfigFile = default!; _explicitNullProperties?.Remove("config_file"); }
+            else if (parseNode.GetChildNode("config_file") is { } nullNodeConfigFile && nullNodeConfigFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigFile = null;
+            if (parseNode.GetChildNode("default_worker_name") is null) { _explicitNullValueDefaultWorkerName = default!; _explicitNullProperties?.Remove("default_worker_name"); }
+            else if (parseNode.GetChildNode("default_worker_name") is { } nullNodeDefaultWorkerName && nullNodeDefaultWorkerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultWorkerName = null;
+            if (parseNode.GetChildNode("env_worker_names") is null) { _explicitNullValueEnvWorkerNames = default!; _explicitNullProperties?.Remove("env_worker_names"); }
+            else if (parseNode.GetChildNode("env_worker_names") is { } nullNodeEnvWorkerNames && nullNodeEnvWorkerNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvWorkerNames = null;
+            if (parseNode.GetChildNode("package_manager") is null) { _explicitNullValuePackageManager = default!; _explicitNullProperties?.Remove("package_manager"); }
+            else if (parseNode.GetChildNode("package_manager") is { } nullNodePackageManager && nullNodePackageManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageManager = null;
+            if (parseNode.GetChildNode("scripts") is null) { _explicitNullValueScripts = default!; _explicitNullProperties?.Remove("scripts"); }
+            else if (parseNode.GetChildNode("scripts") is { } nullNodeScripts && nullNodeScripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scripts = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The config_file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigFile { get => _explicitNullValueConfigFile; set { _explicitNullValueConfigFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_file"); else _explicitNullProperties?.Remove("config_file"); } }
+        public string? ConfigFile { get => _explicitNullValueConfigFile; set { _explicitNullValueConfigFile = value; AdditionalData?.Remove("config_file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_file"); else _explicitNullProperties?.Remove("config_file"); } }
         private string? _explicitNullValueConfigFile = default!;
 #nullable restore
 #else
-        public string ConfigFile { get => _explicitNullValueConfigFile; set { _explicitNullValueConfigFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_file"); else _explicitNullProperties?.Remove("config_file"); } }
+        public string ConfigFile { get => _explicitNullValueConfigFile; set { _explicitNullValueConfigFile = value; AdditionalData?.Remove("config_file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_file"); else _explicitNullProperties?.Remove("config_file"); } }
         private string _explicitNullValueConfigFile = default!;
 #endif
         /// <summary>The default_worker_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultWorkerName { get => _explicitNullValueDefaultWorkerName; set { _explicitNullValueDefaultWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_worker_name"); else _explicitNullProperties?.Remove("default_worker_name"); } }
+        public string? DefaultWorkerName { get => _explicitNullValueDefaultWorkerName; set { _explicitNullValueDefaultWorkerName = value; AdditionalData?.Remove("default_worker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_worker_name"); else _explicitNullProperties?.Remove("default_worker_name"); } }
         private string? _explicitNullValueDefaultWorkerName = default!;
 #nullable restore
 #else
-        public string DefaultWorkerName { get => _explicitNullValueDefaultWorkerName; set { _explicitNullValueDefaultWorkerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_worker_name"); else _explicitNullProperties?.Remove("default_worker_name"); } }
+        public string DefaultWorkerName { get => _explicitNullValueDefaultWorkerName; set { _explicitNullValueDefaultWorkerName = value; AdditionalData?.Remove("default_worker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_worker_name"); else _explicitNullProperties?.Remove("default_worker_name"); } }
         private string _explicitNullValueDefaultWorkerName = default!;
 #endif
         /// <summary>The env_worker_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty? EnvWorkerNames { get => _explicitNullValueEnvWorkerNames; set { _explicitNullValueEnvWorkerNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_worker_names"); else _explicitNullProperties?.Remove("env_worker_names"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty? EnvWorkerNames { get => _explicitNullValueEnvWorkerNames; set { _explicitNullValueEnvWorkerNames = value; AdditionalData?.Remove("env_worker_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_worker_names"); else _explicitNullProperties?.Remove("env_worker_names"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty? _explicitNullValueEnvWorkerNames = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty EnvWorkerNames { get => _explicitNullValueEnvWorkerNames; set { _explicitNullValueEnvWorkerNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_worker_names"); else _explicitNullProperties?.Remove("env_worker_names"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty EnvWorkerNames { get => _explicitNullValueEnvWorkerNames; set { _explicitNullValueEnvWorkerNames = value; AdditionalData?.Remove("env_worker_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_worker_names"); else _explicitNullProperties?.Remove("env_worker_names"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty _explicitNullValueEnvWorkerNames = default!;
 #endif
         /// <summary>Package manager inferred from repository lockfiles; defaults to npm when none is detected.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager? PackageManager { get => _explicitNullValuePackageManager; set { _explicitNullValuePackageManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package_manager"); else _explicitNullProperties?.Remove("package_manager"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager? PackageManager { get => _explicitNullValuePackageManager; set { _explicitNullValuePackageManager = value; AdditionalData?.Remove("package_manager"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package_manager"); else _explicitNullProperties?.Remove("package_manager"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager? _explicitNullValuePackageManager = default!;
         /// <summary>The scripts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty? Scripts { get => _explicitNullValueScripts; set { _explicitNullValueScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scripts"); else _explicitNullProperties?.Remove("scripts"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty? Scripts { get => _explicitNullValueScripts; set { _explicitNullValueScripts = value; AdditionalData?.Remove("scripts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scripts"); else _explicitNullProperties?.Remove("scripts"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty? _explicitNullValueScripts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty Scripts { get => _explicitNullValueScripts; set { _explicitNullValueScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scripts"); else _explicitNullProperties?.Remove("scripts"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty Scripts { get => _explicitNullValueScripts; set { _explicitNullValueScripts = value; AdditionalData?.Remove("scripts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scripts"); else _explicitNullProperties?.Remove("scripts"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty _explicitNullValueScripts = default!;
 #endif
         /// <summary>
@@ -97,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "config_file", n => { ConfigFile = n.GetStringValue(); } },
                 { "default_worker_name", n => { DefaultWorkerName = n.GetStringValue(); } },
                 { "env_worker_names", n => { EnvWorkerNames = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty.CreateFromDiscriminatorValue); } },
-                { "package_manager", n => { PackageManager = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager>(); } },
+                { "package_manager", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePackageManager = default; _explicitNullProperties?.Remove("package_manager"); AdditionalData["package_manager"] = unknown; } else { PackageManager = parsed; AdditionalData.Remove("package_manager"); } } },
                 { "scripts", n => { Scripts = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty.CreateFromDiscriminatorValue); } },
             };
         }

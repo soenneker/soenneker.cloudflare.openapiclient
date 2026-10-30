@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failover_across_pools") is { } nullNodeFailoverAcrossPools && nullNodeFailoverAcrossPools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailoverAcrossPools = null;
+            if (parseNode.GetChildNode("failover_across_pools") is null) { _explicitNullValueFailoverAcrossPools = default!; _explicitNullProperties?.Remove("failover_across_pools"); }
+            else if (parseNode.GetChildNode("failover_across_pools") is { } nullNodeFailoverAcrossPools && nullNodeFailoverAcrossPools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailoverAcrossPools = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Extends zero-downtime failover of requests to healthy origins from alternate pools, when no healthy alternate exists in the same pool, according to the failover order defined by traffic and origin steering. When set false (the default) zero-downtime failover will only occur between origins within the same pool. See `session_affinity_attributes` for control over when sessions are broken or reassigned.</summary>
-        public bool? FailoverAcrossPools { get => _explicitNullValueFailoverAcrossPools; set { _explicitNullValueFailoverAcrossPools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failover_across_pools"); else _explicitNullProperties?.Remove("failover_across_pools"); } }
+        public bool? FailoverAcrossPools { get => _explicitNullValueFailoverAcrossPools; set { _explicitNullValueFailoverAcrossPools = value; AdditionalData?.Remove("failover_across_pools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failover_across_pools"); else _explicitNullProperties?.Remove("failover_across_pools"); } }
         private bool? _explicitNullValueFailoverAcrossPools = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting"/> and sets the default values.

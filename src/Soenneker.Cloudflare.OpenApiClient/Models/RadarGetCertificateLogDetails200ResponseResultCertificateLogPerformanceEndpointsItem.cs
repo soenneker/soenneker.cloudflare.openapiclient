@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
-            if (parseNode.GetChildNode("responseTime") is { } nullNodeResponseTime && nullNodeResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTime = null;
-            if (parseNode.GetChildNode("uptime") is { } nullNodeUptime && nullNodeUptime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uptime = null;
+            if (parseNode.GetChildNode("endpoint") is null) { _explicitNullValueEndpoint = default!; _explicitNullProperties?.Remove("endpoint"); }
+            else if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("responseTime") is null) { _explicitNullValueResponseTime = default!; _explicitNullProperties?.Remove("responseTime"); }
+            else if (parseNode.GetChildNode("responseTime") is { } nullNodeResponseTime && nullNodeResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTime = null;
+            if (parseNode.GetChildNode("uptime") is null) { _explicitNullValueUptime = default!; _explicitNullProperties?.Remove("uptime"); }
+            else if (parseNode.GetChildNode("uptime") is { } nullNodeUptime && nullNodeUptime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uptime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The certificate log endpoint names used in performance metrics.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint? _explicitNullValueEndpoint = default!;
         /// <summary>The responseTime property</summary>
-        public double? ResponseTime { get => _explicitNullValueResponseTime; set { _explicitNullValueResponseTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseTime"); else _explicitNullProperties?.Remove("responseTime"); } }
+        public double? ResponseTime { get => _explicitNullValueResponseTime; set { _explicitNullValueResponseTime = value; AdditionalData?.Remove("responseTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseTime"); else _explicitNullProperties?.Remove("responseTime"); } }
         private double? _explicitNullValueResponseTime = default!;
         /// <summary>The uptime property</summary>
-        public double? Uptime { get => _explicitNullValueUptime; set { _explicitNullValueUptime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uptime"); else _explicitNullProperties?.Remove("uptime"); } }
+        public double? Uptime { get => _explicitNullValueUptime; set { _explicitNullValueUptime = value; AdditionalData?.Remove("uptime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uptime"); else _explicitNullProperties?.Remove("uptime"); } }
         private double? _explicitNullValueUptime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItem"/> and sets the default values.
@@ -58,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endpoint", n => { Endpoint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint>(); } },
+                { "endpoint", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateLogDetails200ResponseResultCertificateLogPerformanceEndpointsItemEndpoint>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEndpoint = default; _explicitNullProperties?.Remove("endpoint"); AdditionalData["endpoint"] = unknown; } else { Endpoint = parsed; AdditionalData.Remove("endpoint"); } } },
                 { "responseTime", n => { ResponseTime = n.GetDoubleValue(); } },
                 { "uptime", n => { Uptime = n.GetDoubleValue(); } },
             };

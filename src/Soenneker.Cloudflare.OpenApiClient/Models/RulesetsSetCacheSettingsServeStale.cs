@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("disable_stale_while_updating") is { } nullNodeDisableStaleWhileUpdating && nullNodeDisableStaleWhileUpdating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableStaleWhileUpdating = null;
+            if (parseNode.GetChildNode("disable_stale_while_updating") is null) { _explicitNullValueDisableStaleWhileUpdating = default!; _explicitNullProperties?.Remove("disable_stale_while_updating"); }
+            else if (parseNode.GetChildNode("disable_stale_while_updating") is { } nullNodeDisableStaleWhileUpdating && nullNodeDisableStaleWhileUpdating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableStaleWhileUpdating = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether Cloudflare should disable serving stale content while getting the latest content from the origin.</summary>
-        public bool? DisableStaleWhileUpdating { get => _explicitNullValueDisableStaleWhileUpdating; set { _explicitNullValueDisableStaleWhileUpdating = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_stale_while_updating"); else _explicitNullProperties?.Remove("disable_stale_while_updating"); } }
+        public bool? DisableStaleWhileUpdating { get => _explicitNullValueDisableStaleWhileUpdating; set { _explicitNullValueDisableStaleWhileUpdating = value; AdditionalData?.Remove("disable_stale_while_updating"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_stale_while_updating"); else _explicitNullProperties?.Remove("disable_stale_while_updating"); } }
         private bool? _explicitNullValueDisableStaleWhileUpdating = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsServeStale"/> and sets the default values.

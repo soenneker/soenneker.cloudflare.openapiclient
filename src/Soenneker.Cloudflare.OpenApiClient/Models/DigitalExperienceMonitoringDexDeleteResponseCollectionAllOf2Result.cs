@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dex_tests") is { } nullNodeDexTests && nullNodeDexTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DexTests = null;
+            if (parseNode.GetChildNode("dex_tests") is null) { _explicitNullValueDexTests = default!; _explicitNullProperties?.Remove("dex_tests"); }
+            else if (parseNode.GetChildNode("dex_tests") is { } nullNodeDexTests && nullNodeDexTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DexTests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The dex_tests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasHttp>? DexTests { get => _explicitNullValueDexTests; set { _explicitNullValueDexTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dex_tests"); else _explicitNullProperties?.Remove("dex_tests"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasHttp>? DexTests { get => _explicitNullValueDexTests; set { _explicitNullValueDexTests = value; AdditionalData?.Remove("dex_tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dex_tests"); else _explicitNullProperties?.Remove("dex_tests"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasHttp>? _explicitNullValueDexTests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasHttp> DexTests { get => _explicitNullValueDexTests; set { _explicitNullValueDexTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dex_tests"); else _explicitNullProperties?.Remove("dex_tests"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasHttp> DexTests { get => _explicitNullValueDexTests; set { _explicitNullValueDexTests = value; AdditionalData?.Remove("dex_tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dex_tests"); else _explicitNullProperties?.Remove("dex_tests"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasHttp> _explicitNullValueDexTests = default!;
 #endif
         /// <summary>

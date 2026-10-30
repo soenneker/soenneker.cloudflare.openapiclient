@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tag_id") is { } nullNodeTagId && nullNodeTagId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagId = null;
+            if (parseNode.GetChildNode("tag_id") is null) { _explicitNullValueTagId = default!; _explicitNullProperties?.Remove("tag_id"); }
+            else if (parseNode.GetChildNode("tag_id") is { } nullNodeTagId && nullNodeTagId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UUID of a tag from the account&apos;s catalog to apply to the article.</summary>
-        public Guid? TagId { get => _explicitNullValueTagId; set { _explicitNullValueTagId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_id"); else _explicitNullProperties?.Remove("tag_id"); } }
+        public Guid? TagId { get => _explicitNullValueTagId; set { _explicitNullValueTagId = value; AdditionalData?.Remove("tag_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_id"); else _explicitNullProperties?.Remove("tag_id"); } }
         private Guid? _explicitNullValueTagId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleTagAddRequest"/> and sets the default values.

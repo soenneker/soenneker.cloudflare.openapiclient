@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("error_retention") is { } nullNodeErrorRetention && nullNodeErrorRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorRetention = null;
-            if (parseNode.GetChildNode("success_retention") is { } nullNodeSuccessRetention && nullNodeSuccessRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessRetention = null;
+            if (parseNode.GetChildNode("error_retention") is null) { _explicitNullValueErrorRetention = default!; _explicitNullProperties?.Remove("error_retention"); }
+            else if (parseNode.GetChildNode("error_retention") is { } nullNodeErrorRetention && nullNodeErrorRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorRetention = null;
+            if (parseNode.GetChildNode("success_retention") is null) { _explicitNullValueSuccessRetention = default!; _explicitNullProperties?.Remove("success_retention"); }
+            else if (parseNode.GetChildNode("success_retention") is { } nullNodeSuccessRetention && nullNodeSuccessRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessRetention = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Default error retention in milliseconds.</summary>
-        public int? ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
+        public int? ErrorRetention { get => _explicitNullValueErrorRetention; set { _explicitNullValueErrorRetention = value; AdditionalData?.Remove("error_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_retention"); else _explicitNullProperties?.Remove("error_retention"); } }
         private int? _explicitNullValueErrorRetention = default!;
         /// <summary>Default success retention in milliseconds.</summary>
-        public int? SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
+        public int? SuccessRetention { get => _explicitNullValueSuccessRetention; set { _explicitNullValueSuccessRetention = value; AdditionalData?.Remove("success_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_retention"); else _explicitNullProperties?.Remove("success_retention"); } }
         private int? _explicitNullValueSuccessRetention = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateWorkflowSettings200ResponseResultDefaultRetention"/> and sets the default values.

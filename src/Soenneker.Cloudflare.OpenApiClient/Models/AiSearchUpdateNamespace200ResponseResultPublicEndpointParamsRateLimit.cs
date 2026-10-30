@@ -17,21 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("period_ms") is { } nullNodePeriodMs && nullNodePeriodMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodMs = null;
-            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
-            if (parseNode.GetChildNode("technique") is { } nullNodeTechnique && nullNodeTechnique.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Technique = null;
+            if (parseNode.GetChildNode("period_ms") is null) { _explicitNullValuePeriodMs = default!; _explicitNullProperties?.Remove("period_ms"); }
+            else if (parseNode.GetChildNode("period_ms") is { } nullNodePeriodMs && nullNodePeriodMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodMs = null;
+            if (parseNode.GetChildNode("requests") is null) { _explicitNullValueRequests = default!; _explicitNullProperties?.Remove("requests"); }
+            else if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("technique") is null) { _explicitNullValueTechnique = default!; _explicitNullProperties?.Remove("technique"); }
+            else if (parseNode.GetChildNode("technique") is { } nullNodeTechnique && nullNodeTechnique.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Technique = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The period_ms property</summary>
-        public int? PeriodMs { get => _explicitNullValuePeriodMs; set { _explicitNullValuePeriodMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_ms"); else _explicitNullProperties?.Remove("period_ms"); } }
+        public int? PeriodMs { get => _explicitNullValuePeriodMs; set { _explicitNullValuePeriodMs = value; AdditionalData?.Remove("period_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_ms"); else _explicitNullProperties?.Remove("period_ms"); } }
         private int? _explicitNullValuePeriodMs = default!;
         /// <summary>The requests property</summary>
-        public int? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        public int? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
         private int? _explicitNullValueRequests = default!;
         /// <summary>The technique property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateNamespace200ResponseResultPublicEndpointParamsRateLimitTechnique? Technique { get => _explicitNullValueTechnique; set { _explicitNullValueTechnique = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technique"); else _explicitNullProperties?.Remove("technique"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateNamespace200ResponseResultPublicEndpointParamsRateLimitTechnique? Technique { get => _explicitNullValueTechnique; set { _explicitNullValueTechnique = value; AdditionalData?.Remove("technique"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technique"); else _explicitNullProperties?.Remove("technique"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateNamespace200ResponseResultPublicEndpointParamsRateLimitTechnique? _explicitNullValueTechnique = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateNamespace200ResponseResultPublicEndpointParamsRateLimit"/> and sets the default values.
@@ -60,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "period_ms", n => { PeriodMs = n.GetIntValue(); } },
                 { "requests", n => { Requests = n.GetIntValue(); } },
-                { "technique", n => { Technique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateNamespace200ResponseResultPublicEndpointParamsRateLimitTechnique>(); } },
+                { "technique", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateNamespace200ResponseResultPublicEndpointParamsRateLimitTechnique>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTechnique = default; _explicitNullProperties?.Remove("technique"); AdditionalData["technique"] = unknown; } else { Technique = parsed; AdditionalData.Remove("technique"); } } },
             };
         }
         /// <summary>

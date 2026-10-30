@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_participant_ids") is { } nullNodeCustomParticipantIds && nullNodeCustomParticipantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomParticipantIds = null;
-            if (parseNode.GetChildNode("participant_ids") is { } nullNodeParticipantIds && nullNodeParticipantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParticipantIds = null;
+            if (parseNode.GetChildNode("custom_participant_ids") is null) { _explicitNullValueCustomParticipantIds = default!; _explicitNullProperties?.Remove("custom_participant_ids"); }
+            else if (parseNode.GetChildNode("custom_participant_ids") is { } nullNodeCustomParticipantIds && nullNodeCustomParticipantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomParticipantIds = null;
+            if (parseNode.GetChildNode("participant_ids") is null) { _explicitNullValueParticipantIds = default!; _explicitNullProperties?.Remove("participant_ids"); }
+            else if (parseNode.GetChildNode("participant_ids") is { } nullNodeParticipantIds && nullNodeParticipantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParticipantIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The custom_participant_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomParticipantIds { get => _explicitNullValueCustomParticipantIds; set { _explicitNullValueCustomParticipantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_participant_ids"); else _explicitNullProperties?.Remove("custom_participant_ids"); } }
+        public List<string>? CustomParticipantIds { get => _explicitNullValueCustomParticipantIds; set { _explicitNullValueCustomParticipantIds = value; AdditionalData?.Remove("custom_participant_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_participant_ids"); else _explicitNullProperties?.Remove("custom_participant_ids"); } }
         private List<string>? _explicitNullValueCustomParticipantIds = default!;
 #nullable restore
 #else
-        public List<string> CustomParticipantIds { get => _explicitNullValueCustomParticipantIds; set { _explicitNullValueCustomParticipantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_participant_ids"); else _explicitNullProperties?.Remove("custom_participant_ids"); } }
+        public List<string> CustomParticipantIds { get => _explicitNullValueCustomParticipantIds; set { _explicitNullValueCustomParticipantIds = value; AdditionalData?.Remove("custom_participant_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_participant_ids"); else _explicitNullProperties?.Remove("custom_participant_ids"); } }
         private List<string> _explicitNullValueCustomParticipantIds = default!;
 #endif
         /// <summary>The participant_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ParticipantIds { get => _explicitNullValueParticipantIds; set { _explicitNullValueParticipantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_ids"); else _explicitNullProperties?.Remove("participant_ids"); } }
+        public List<Guid?>? ParticipantIds { get => _explicitNullValueParticipantIds; set { _explicitNullValueParticipantIds = value; AdditionalData?.Remove("participant_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_ids"); else _explicitNullProperties?.Remove("participant_ids"); } }
         private List<Guid?>? _explicitNullValueParticipantIds = default!;
 #nullable restore
 #else
-        public List<Guid?> ParticipantIds { get => _explicitNullValueParticipantIds; set { _explicitNullValueParticipantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_ids"); else _explicitNullProperties?.Remove("participant_ids"); } }
+        public List<Guid?> ParticipantIds { get => _explicitNullValueParticipantIds; set { _explicitNullValueParticipantIds = value; AdditionalData?.Remove("participant_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_ids"); else _explicitNullProperties?.Remove("participant_ids"); } }
         private List<Guid?> _explicitNullValueParticipantIds = default!;
 #endif
         /// <summary>

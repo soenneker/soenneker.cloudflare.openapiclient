@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failure_criteria") is { } nullNodeFailureCriteria && nullNodeFailureCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCriteria = null;
-            if (parseNode.GetChildNode("success_criteria") is { } nullNodeSuccessCriteria && nullNodeSuccessCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCriteria = null;
+            if (parseNode.GetChildNode("failure_criteria") is null) { _explicitNullValueFailureCriteria = default!; _explicitNullProperties?.Remove("failure_criteria"); }
+            else if (parseNode.GetChildNode("failure_criteria") is { } nullNodeFailureCriteria && nullNodeFailureCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCriteria = null;
+            if (parseNode.GetChildNode("success_criteria") is null) { _explicitNullValueSuccessCriteria = default!; _explicitNullProperties?.Remove("success_criteria"); }
+            else if (parseNode.GetChildNode("success_criteria") is { } nullNodeSuccessCriteria && nullNodeSuccessCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCriteria = null;
         }
 
         /// <summary>Criterion for identifying failed login responses.</summary>

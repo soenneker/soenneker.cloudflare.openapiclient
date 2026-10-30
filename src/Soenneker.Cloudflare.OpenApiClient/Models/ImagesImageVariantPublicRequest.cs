@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hero") is { } nullNodeHero && nullNodeHero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hero = null;
+            if (parseNode.GetChildNode("hero") is null) { _explicitNullValueHero = default!; _explicitNullProperties?.Remove("hero"); }
+            else if (parseNode.GetChildNode("hero") is { } nullNodeHero && nullNodeHero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hero = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The hero property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantPublicRequestHero? Hero { get => _explicitNullValueHero; set { _explicitNullValueHero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hero"); else _explicitNullProperties?.Remove("hero"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantPublicRequestHero? Hero { get => _explicitNullValueHero; set { _explicitNullValueHero = value; AdditionalData?.Remove("hero"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hero"); else _explicitNullProperties?.Remove("hero"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantPublicRequestHero? _explicitNullValueHero = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantPublicRequestHero Hero { get => _explicitNullValueHero; set { _explicitNullValueHero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hero"); else _explicitNullProperties?.Remove("hero"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantPublicRequestHero Hero { get => _explicitNullValueHero; set { _explicitNullValueHero = value; AdditionalData?.Remove("hero"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hero"); else _explicitNullProperties?.Remove("hero"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantPublicRequestHero _explicitNullValueHero = default!;
 #endif
         /// <summary>

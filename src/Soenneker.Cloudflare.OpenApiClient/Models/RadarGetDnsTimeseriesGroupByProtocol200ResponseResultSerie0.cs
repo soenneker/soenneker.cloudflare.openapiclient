@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("HTTPS") is { } nullNodeHTTPS && nullNodeHTTPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTPS = null;
-            if (parseNode.GetChildNode("TCP") is { } nullNodeTCP && nullNodeTCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TCP = null;
-            if (parseNode.GetChildNode("TLS") is { } nullNodeTLS && nullNodeTLS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS = null;
-            if (parseNode.GetChildNode("UDP") is { } nullNodeUDP && nullNodeUDP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UDP = null;
+            if (parseNode.GetChildNode("HTTPS") is null) { _explicitNullValueHTTPS = default!; _explicitNullProperties?.Remove("HTTPS"); }
+            else if (parseNode.GetChildNode("HTTPS") is { } nullNodeHTTPS && nullNodeHTTPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTPS = null;
+            if (parseNode.GetChildNode("TCP") is null) { _explicitNullValueTCP = default!; _explicitNullProperties?.Remove("TCP"); }
+            else if (parseNode.GetChildNode("TCP") is { } nullNodeTCP && nullNodeTCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TCP = null;
+            if (parseNode.GetChildNode("TLS") is null) { _explicitNullValueTLS = default!; _explicitNullProperties?.Remove("TLS"); }
+            else if (parseNode.GetChildNode("TLS") is { } nullNodeTLS && nullNodeTLS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TLS = null;
+            if (parseNode.GetChildNode("UDP") is null) { _explicitNullValueUDP = default!; _explicitNullProperties?.Remove("UDP"); }
+            else if (parseNode.GetChildNode("UDP") is { } nullNodeUDP && nullNodeUDP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UDP = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTPS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HTTPS { get => _explicitNullValueHTTPS; set { _explicitNullValueHTTPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTPS"); else _explicitNullProperties?.Remove("HTTPS"); } }
+        public List<string>? HTTPS { get => _explicitNullValueHTTPS; set { _explicitNullValueHTTPS = value; AdditionalData?.Remove("HTTPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTPS"); else _explicitNullProperties?.Remove("HTTPS"); } }
         private List<string>? _explicitNullValueHTTPS = default!;
 #nullable restore
 #else
-        public List<string> HTTPS { get => _explicitNullValueHTTPS; set { _explicitNullValueHTTPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTPS"); else _explicitNullProperties?.Remove("HTTPS"); } }
+        public List<string> HTTPS { get => _explicitNullValueHTTPS; set { _explicitNullValueHTTPS = value; AdditionalData?.Remove("HTTPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTPS"); else _explicitNullProperties?.Remove("HTTPS"); } }
         private List<string> _explicitNullValueHTTPS = default!;
 #endif
         /// <summary>The TCP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        public List<string>? TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; AdditionalData?.Remove("TCP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
         private List<string>? _explicitNullValueTCP = default!;
 #nullable restore
 #else
-        public List<string> TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        public List<string> TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; AdditionalData?.Remove("TCP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
         private List<string> _explicitNullValueTCP = default!;
 #endif
         /// <summary>The TLS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TLS { get => _explicitNullValueTLS; set { _explicitNullValueTLS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS"); else _explicitNullProperties?.Remove("TLS"); } }
+        public List<string>? TLS { get => _explicitNullValueTLS; set { _explicitNullValueTLS = value; AdditionalData?.Remove("TLS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS"); else _explicitNullProperties?.Remove("TLS"); } }
         private List<string>? _explicitNullValueTLS = default!;
 #nullable restore
 #else
-        public List<string> TLS { get => _explicitNullValueTLS; set { _explicitNullValueTLS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS"); else _explicitNullProperties?.Remove("TLS"); } }
+        public List<string> TLS { get => _explicitNullValueTLS; set { _explicitNullValueTLS = value; AdditionalData?.Remove("TLS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TLS"); else _explicitNullProperties?.Remove("TLS"); } }
         private List<string> _explicitNullValueTLS = default!;
 #endif
         /// <summary>The UDP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        public List<string>? UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; AdditionalData?.Remove("UDP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
         private List<string>? _explicitNullValueUDP = default!;
 #nullable restore
 #else
-        public List<string> UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        public List<string> UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; AdditionalData?.Remove("UDP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
         private List<string> _explicitNullValueUDP = default!;
 #endif
         /// <summary>

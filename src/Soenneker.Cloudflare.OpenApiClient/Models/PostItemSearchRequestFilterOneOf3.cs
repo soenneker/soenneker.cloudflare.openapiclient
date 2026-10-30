@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("or") is { } nullNodeOr && nullNodeOr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Or = null;
+            if (parseNode.GetChildNode("or") is null) { _explicitNullValueOr = default!; _explicitNullProperties?.Remove("or"); }
+            else if (parseNode.GetChildNode("or") is { } nullNodeOr && nullNodeOr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Or = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>At least one condition must match (OR logic). Each item can recursively contain more filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3OrItem>? Or { get => _explicitNullValueOr; set { _explicitNullValueOr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("or"); else _explicitNullProperties?.Remove("or"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3OrItem>? Or { get => _explicitNullValueOr; set { _explicitNullValueOr = value; AdditionalData?.Remove("or"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("or"); else _explicitNullProperties?.Remove("or"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3OrItem>? _explicitNullValueOr = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3OrItem> Or { get => _explicitNullValueOr; set { _explicitNullValueOr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("or"); else _explicitNullProperties?.Remove("or"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3OrItem> Or { get => _explicitNullValueOr; set { _explicitNullValueOr = value; AdditionalData?.Remove("or"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("or"); else _explicitNullProperties?.Remove("or"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3OrItem> _explicitNullValueOr = default!;
 #endif
         /// <summary>

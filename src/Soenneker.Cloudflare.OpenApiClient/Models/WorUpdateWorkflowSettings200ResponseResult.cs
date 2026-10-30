@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_retention") is { } nullNodeDefaultRetention && nullNodeDefaultRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRetention = null;
+            if (parseNode.GetChildNode("default_retention") is null) { _explicitNullValueDefaultRetention = default!; _explicitNullProperties?.Remove("default_retention"); }
+            else if (parseNode.GetChildNode("default_retention") is { } nullNodeDefaultRetention && nullNodeDefaultRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRetention = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The default_retention property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateWorkflowSettings200ResponseResultDefaultRetention? DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateWorkflowSettings200ResponseResultDefaultRetention? DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; AdditionalData?.Remove("default_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateWorkflowSettings200ResponseResultDefaultRetention? _explicitNullValueDefaultRetention = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateWorkflowSettings200ResponseResultDefaultRetention DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateWorkflowSettings200ResponseResultDefaultRetention DefaultRetention { get => _explicitNullValueDefaultRetention; set { _explicitNullValueDefaultRetention = value; AdditionalData?.Remove("default_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_retention"); else _explicitNullProperties?.Remove("default_retention"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorUpdateWorkflowSettings200ResponseResultDefaultRetention _explicitNullValueDefaultRetention = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("summary_type") is { } nullNodeSummaryType && nullNodeSummaryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryType = null;
-            if (parseNode.GetChildNode("text_format") is { } nullNodeTextFormat && nullNodeTextFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextFormat = null;
-            if (parseNode.GetChildNode("word_limit") is { } nullNodeWordLimit && nullNodeWordLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordLimit = null;
+            if (parseNode.GetChildNode("summary_type") is null) { _explicitNullValueSummaryType = default!; _explicitNullProperties?.Remove("summary_type"); }
+            else if (parseNode.GetChildNode("summary_type") is { } nullNodeSummaryType && nullNodeSummaryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryType = null;
+            if (parseNode.GetChildNode("text_format") is null) { _explicitNullValueTextFormat = default!; _explicitNullProperties?.Remove("text_format"); }
+            else if (parseNode.GetChildNode("text_format") is { } nullNodeTextFormat && nullNodeTextFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextFormat = null;
+            if (parseNode.GetChildNode("word_limit") is null) { _explicitNullValueWordLimit = default!; _explicitNullProperties?.Remove("word_limit"); }
+            else if (parseNode.GetChildNode("word_limit") is { } nullNodeWordLimit && nullNodeWordLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the style of the summary, such as general, team meeting, or sales call.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType? SummaryType { get => _explicitNullValueSummaryType; set { _explicitNullValueSummaryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_type"); else _explicitNullProperties?.Remove("summary_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType? SummaryType { get => _explicitNullValueSummaryType; set { _explicitNullValueSummaryType = value; AdditionalData?.Remove("summary_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_type"); else _explicitNullProperties?.Remove("summary_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType? _explicitNullValueSummaryType = default!;
         /// <summary>Determines the text format of the summary, such as plain text or markdown.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat? TextFormat { get => _explicitNullValueTextFormat; set { _explicitNullValueTextFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_format"); else _explicitNullProperties?.Remove("text_format"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat? TextFormat { get => _explicitNullValueTextFormat; set { _explicitNullValueTextFormat = value; AdditionalData?.Remove("text_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_format"); else _explicitNullProperties?.Remove("text_format"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat? _explicitNullValueTextFormat = default!;
         /// <summary>Sets the maximum number of words in the meeting summary.</summary>
-        public int? WordLimit { get => _explicitNullValueWordLimit; set { _explicitNullValueWordLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_limit"); else _explicitNullProperties?.Remove("word_limit"); } }
+        public int? WordLimit { get => _explicitNullValueWordLimit; set { _explicitNullValueWordLimit = value; AdditionalData?.Remove("word_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_limit"); else _explicitNullProperties?.Remove("word_limit"); } }
         private int? _explicitNullValueWordLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig"/> and sets the default values.
@@ -60,8 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "summary_type", n => { SummaryType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType>(); } },
-                { "text_format", n => { TextFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat>(); } },
+                { "summary_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSummaryType = default; _explicitNullProperties?.Remove("summary_type"); AdditionalData["summary_type"] = unknown; } else { SummaryType = parsed; AdditionalData.Remove("summary_type"); } } },
+                { "text_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTextFormat = default; _explicitNullProperties?.Remove("text_format"); AdditionalData["text_format"] = unknown; } else { TextFormat = parsed; AdditionalData.Remove("text_format"); } } },
                 { "word_limit", n => { WordLimit = n.GetIntValue(); } },
             };
         }

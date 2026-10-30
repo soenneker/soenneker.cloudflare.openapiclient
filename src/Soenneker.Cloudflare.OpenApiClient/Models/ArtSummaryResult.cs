@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currentTotal") is { } nullNodeCurrentTotal && nullNodeCurrentTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentTotal = null;
-            if (parseNode.GetChildNode("previousTotal") is { } nullNodePreviousTotal && nullNodePreviousTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTotal = null;
+            if (parseNode.GetChildNode("currentTotal") is null) { _explicitNullValueCurrentTotal = default!; _explicitNullProperties?.Remove("currentTotal"); }
+            else if (parseNode.GetChildNode("currentTotal") is { } nullNodeCurrentTotal && nullNodeCurrentTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentTotal = null;
+            if (parseNode.GetChildNode("previousTotal") is null) { _explicitNullValuePreviousTotal = default!; _explicitNullProperties?.Remove("previousTotal"); }
+            else if (parseNode.GetChildNode("previousTotal") is { } nullNodePreviousTotal && nullNodePreviousTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTotal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Aggregated stats for the requested time range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultCurrentTotalItem>? CurrentTotal { get => _explicitNullValueCurrentTotal; set { _explicitNullValueCurrentTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentTotal"); else _explicitNullProperties?.Remove("currentTotal"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultCurrentTotalItem>? CurrentTotal { get => _explicitNullValueCurrentTotal; set { _explicitNullValueCurrentTotal = value; AdditionalData?.Remove("currentTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentTotal"); else _explicitNullProperties?.Remove("currentTotal"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultCurrentTotalItem>? _explicitNullValueCurrentTotal = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultCurrentTotalItem> CurrentTotal { get => _explicitNullValueCurrentTotal; set { _explicitNullValueCurrentTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentTotal"); else _explicitNullProperties?.Remove("currentTotal"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultCurrentTotalItem> CurrentTotal { get => _explicitNullValueCurrentTotal; set { _explicitNullValueCurrentTotal = value; AdditionalData?.Remove("currentTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentTotal"); else _explicitNullProperties?.Remove("currentTotal"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultCurrentTotalItem> _explicitNullValueCurrentTotal = default!;
 #endif
         /// <summary>Aggregated stats for the equivalent preceding time range, for trend comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultPreviousTotalItem>? PreviousTotal { get => _explicitNullValuePreviousTotal; set { _explicitNullValuePreviousTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTotal"); else _explicitNullProperties?.Remove("previousTotal"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultPreviousTotalItem>? PreviousTotal { get => _explicitNullValuePreviousTotal; set { _explicitNullValuePreviousTotal = value; AdditionalData?.Remove("previousTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTotal"); else _explicitNullProperties?.Remove("previousTotal"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultPreviousTotalItem>? _explicitNullValuePreviousTotal = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultPreviousTotalItem> PreviousTotal { get => _explicitNullValuePreviousTotal; set { _explicitNullValuePreviousTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTotal"); else _explicitNullProperties?.Remove("previousTotal"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultPreviousTotalItem> PreviousTotal { get => _explicitNullValuePreviousTotal; set { _explicitNullValuePreviousTotal = value; AdditionalData?.Remove("previousTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTotal"); else _explicitNullProperties?.Remove("previousTotal"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtSummaryResultPreviousTotalItem> _explicitNullValuePreviousTotal = default!;
 #endif
         /// <summary>

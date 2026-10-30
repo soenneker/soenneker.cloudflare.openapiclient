@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("external_evaluation") is { } nullNodeExternalEvaluation && nullNodeExternalEvaluation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalEvaluation = null;
+            if (parseNode.GetChildNode("external_evaluation") is null) { _explicitNullValueExternalEvaluation = default!; _explicitNullProperties?.Remove("external_evaluation"); }
+            else if (parseNode.GetChildNode("external_evaluation") is { } nullNodeExternalEvaluation && nullNodeExternalEvaluation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalEvaluation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The external_evaluation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation? ExternalEvaluation { get => _explicitNullValueExternalEvaluation; set { _explicitNullValueExternalEvaluation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_evaluation"); else _explicitNullProperties?.Remove("external_evaluation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation? ExternalEvaluation { get => _explicitNullValueExternalEvaluation; set { _explicitNullValueExternalEvaluation = value; AdditionalData?.Remove("external_evaluation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_evaluation"); else _explicitNullProperties?.Remove("external_evaluation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation? _explicitNullValueExternalEvaluation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation ExternalEvaluation { get => _explicitNullValueExternalEvaluation; set { _explicitNullValueExternalEvaluation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_evaluation"); else _explicitNullProperties?.Remove("external_evaluation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation ExternalEvaluation { get => _explicitNullValueExternalEvaluation; set { _explicitNullValueExternalEvaluation = value; AdditionalData?.Remove("external_evaluation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_evaluation"); else _explicitNullProperties?.Remove("external_evaluation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRuleExternalEvaluation _explicitNullValueExternalEvaluation = default!;
 #endif
         /// <summary>

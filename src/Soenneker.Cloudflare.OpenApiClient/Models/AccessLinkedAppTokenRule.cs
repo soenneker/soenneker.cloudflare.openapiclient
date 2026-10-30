@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("linked_app_token") is { } nullNodeLinkedAppToken && nullNodeLinkedAppToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedAppToken = null;
+            if (parseNode.GetChildNode("linked_app_token") is null) { _explicitNullValueLinkedAppToken = default!; _explicitNullProperties?.Remove("linked_app_token"); }
+            else if (parseNode.GetChildNode("linked_app_token") is { } nullNodeLinkedAppToken && nullNodeLinkedAppToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedAppToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The linked_app_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken? LinkedAppToken { get => _explicitNullValueLinkedAppToken; set { _explicitNullValueLinkedAppToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_app_token"); else _explicitNullProperties?.Remove("linked_app_token"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken? LinkedAppToken { get => _explicitNullValueLinkedAppToken; set { _explicitNullValueLinkedAppToken = value; AdditionalData?.Remove("linked_app_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_app_token"); else _explicitNullProperties?.Remove("linked_app_token"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken? _explicitNullValueLinkedAppToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken LinkedAppToken { get => _explicitNullValueLinkedAppToken; set { _explicitNullValueLinkedAppToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_app_token"); else _explicitNullProperties?.Remove("linked_app_token"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken LinkedAppToken { get => _explicitNullValueLinkedAppToken; set { _explicitNullValueLinkedAppToken = value; AdditionalData?.Remove("linked_app_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_app_token"); else _explicitNullProperties?.Remove("linked_app_token"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRuleLinkedAppToken _explicitNullValueLinkedAppToken = default!;
 #endif
         /// <summary>

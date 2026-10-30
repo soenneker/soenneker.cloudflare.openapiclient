@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cache") is { } nullNodeCache && nullNodeCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cache = null;
-            if (parseNode.GetChildNode("custom_metadata") is { } nullNodeCustomMetadata && nullNodeCustomMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomMetadata = null;
-            if (parseNode.GetChildNode("instance_ids") is { } nullNodeInstanceIds && nullNodeInstanceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceIds = null;
-            if (parseNode.GetChildNode("query_rewrite") is { } nullNodeQueryRewrite && nullNodeQueryRewrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryRewrite = null;
-            if (parseNode.GetChildNode("reranking") is { } nullNodeReranking && nullNodeReranking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reranking = null;
-            if (parseNode.GetChildNode("retrieval") is { } nullNodeRetrieval && nullNodeRetrieval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retrieval = null;
+            if (parseNode.GetChildNode("cache") is null) { _explicitNullValueCache = default!; _explicitNullProperties?.Remove("cache"); }
+            else if (parseNode.GetChildNode("cache") is { } nullNodeCache && nullNodeCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cache = null;
+            if (parseNode.GetChildNode("custom_metadata") is null) { _explicitNullValueCustomMetadata = default!; _explicitNullProperties?.Remove("custom_metadata"); }
+            else if (parseNode.GetChildNode("custom_metadata") is { } nullNodeCustomMetadata && nullNodeCustomMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomMetadata = null;
+            if (parseNode.GetChildNode("instance_ids") is null) { _explicitNullValueInstanceIds = default!; _explicitNullProperties?.Remove("instance_ids"); }
+            else if (parseNode.GetChildNode("instance_ids") is { } nullNodeInstanceIds && nullNodeInstanceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceIds = null;
+            if (parseNode.GetChildNode("query_rewrite") is null) { _explicitNullValueQueryRewrite = default!; _explicitNullProperties?.Remove("query_rewrite"); }
+            else if (parseNode.GetChildNode("query_rewrite") is { } nullNodeQueryRewrite && nullNodeQueryRewrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryRewrite = null;
+            if (parseNode.GetChildNode("reranking") is null) { _explicitNullValueReranking = default!; _explicitNullProperties?.Remove("reranking"); }
+            else if (parseNode.GetChildNode("reranking") is { } nullNodeReranking && nullNodeReranking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reranking = null;
+            if (parseNode.GetChildNode("retrieval") is null) { _explicitNullValueRetrieval = default!; _explicitNullProperties?.Remove("retrieval"); }
+            else if (parseNode.GetChildNode("retrieval") is { } nullNodeRetrieval && nullNodeRetrieval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retrieval = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cache property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCache? Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCache? Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; AdditionalData?.Remove("cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCache? _explicitNullValueCache = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCache Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCache Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; AdditionalData?.Remove("cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCache _explicitNullValueCache = default!;
 #endif
         /// <summary>Metadata added to AI Gateway logs for requests this operation triggers. Accepts up to 2 string, number, or boolean entries. Reserved keys: &apos;ai-search&apos;, &apos;task&apos;, &apos;origin&apos;, and any key beginning with &apos;cf.&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCustomMetadata? CustomMetadata { get => _explicitNullValueCustomMetadata; set { _explicitNullValueCustomMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_metadata"); else _explicitNullProperties?.Remove("custom_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCustomMetadata? CustomMetadata { get => _explicitNullValueCustomMetadata; set { _explicitNullValueCustomMetadata = value; AdditionalData?.Remove("custom_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_metadata"); else _explicitNullProperties?.Remove("custom_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCustomMetadata? _explicitNullValueCustomMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCustomMetadata CustomMetadata { get => _explicitNullValueCustomMetadata; set { _explicitNullValueCustomMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_metadata"); else _explicitNullProperties?.Remove("custom_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCustomMetadata CustomMetadata { get => _explicitNullValueCustomMetadata; set { _explicitNullValueCustomMetadata = value; AdditionalData?.Remove("custom_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_metadata"); else _explicitNullProperties?.Remove("custom_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsCustomMetadata _explicitNullValueCustomMetadata = default!;
 #endif
         /// <summary>The instance_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InstanceIds { get => _explicitNullValueInstanceIds; set { _explicitNullValueInstanceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_ids"); else _explicitNullProperties?.Remove("instance_ids"); } }
+        public List<string>? InstanceIds { get => _explicitNullValueInstanceIds; set { _explicitNullValueInstanceIds = value; AdditionalData?.Remove("instance_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_ids"); else _explicitNullProperties?.Remove("instance_ids"); } }
         private List<string>? _explicitNullValueInstanceIds = default!;
 #nullable restore
 #else
-        public List<string> InstanceIds { get => _explicitNullValueInstanceIds; set { _explicitNullValueInstanceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_ids"); else _explicitNullProperties?.Remove("instance_ids"); } }
+        public List<string> InstanceIds { get => _explicitNullValueInstanceIds; set { _explicitNullValueInstanceIds = value; AdditionalData?.Remove("instance_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_ids"); else _explicitNullProperties?.Remove("instance_ids"); } }
         private List<string> _explicitNullValueInstanceIds = default!;
 #endif
         /// <summary>The query_rewrite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsQueryRewrite? QueryRewrite { get => _explicitNullValueQueryRewrite; set { _explicitNullValueQueryRewrite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_rewrite"); else _explicitNullProperties?.Remove("query_rewrite"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsQueryRewrite? QueryRewrite { get => _explicitNullValueQueryRewrite; set { _explicitNullValueQueryRewrite = value; AdditionalData?.Remove("query_rewrite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_rewrite"); else _explicitNullProperties?.Remove("query_rewrite"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsQueryRewrite? _explicitNullValueQueryRewrite = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsQueryRewrite QueryRewrite { get => _explicitNullValueQueryRewrite; set { _explicitNullValueQueryRewrite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_rewrite"); else _explicitNullProperties?.Remove("query_rewrite"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsQueryRewrite QueryRewrite { get => _explicitNullValueQueryRewrite; set { _explicitNullValueQueryRewrite = value; AdditionalData?.Remove("query_rewrite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_rewrite"); else _explicitNullProperties?.Remove("query_rewrite"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsQueryRewrite _explicitNullValueQueryRewrite = default!;
 #endif
         /// <summary>The reranking property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsReranking? Reranking { get => _explicitNullValueReranking; set { _explicitNullValueReranking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranking"); else _explicitNullProperties?.Remove("reranking"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsReranking? Reranking { get => _explicitNullValueReranking; set { _explicitNullValueReranking = value; AdditionalData?.Remove("reranking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranking"); else _explicitNullProperties?.Remove("reranking"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsReranking? _explicitNullValueReranking = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsReranking Reranking { get => _explicitNullValueReranking; set { _explicitNullValueReranking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranking"); else _explicitNullProperties?.Remove("reranking"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsReranking Reranking { get => _explicitNullValueReranking; set { _explicitNullValueReranking = value; AdditionalData?.Remove("reranking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranking"); else _explicitNullProperties?.Remove("reranking"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsReranking _explicitNullValueReranking = default!;
 #endif
         /// <summary>The retrieval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsRetrieval? Retrieval { get => _explicitNullValueRetrieval; set { _explicitNullValueRetrieval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval"); else _explicitNullProperties?.Remove("retrieval"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsRetrieval? Retrieval { get => _explicitNullValueRetrieval; set { _explicitNullValueRetrieval = value; AdditionalData?.Remove("retrieval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval"); else _explicitNullProperties?.Remove("retrieval"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsRetrieval? _explicitNullValueRetrieval = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsRetrieval Retrieval { get => _explicitNullValueRetrieval; set { _explicitNullValueRetrieval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval"); else _explicitNullProperties?.Remove("retrieval"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsRetrieval Retrieval { get => _explicitNullValueRetrieval; set { _explicitNullValueRetrieval = value; AdditionalData?.Remove("retrieval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval"); else _explicitNullProperties?.Remove("retrieval"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestAiSearchOptionsRetrieval _explicitNullValueRetrieval = default!;
 #endif
         /// <summary>

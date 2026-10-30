@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("record_name") is { } nullNodeRecordName && nullNodeRecordName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordName = null;
-            if (parseNode.GetChildNode("record_target") is { } nullNodeRecordTarget && nullNodeRecordTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordTarget = null;
+            if (parseNode.GetChildNode("record_name") is null) { _explicitNullValueRecordName = default!; _explicitNullProperties?.Remove("record_name"); }
+            else if (parseNode.GetChildNode("record_name") is { } nullNodeRecordName && nullNodeRecordName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordName = null;
+            if (parseNode.GetChildNode("record_target") is null) { _explicitNullValueRecordTarget = default!; _explicitNullProperties?.Remove("record_target"); }
+            else if (parseNode.GetChildNode("record_target") is { } nullNodeRecordTarget && nullNodeRecordTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordTarget = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of CNAME record.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordName? RecordName { get => _explicitNullValueRecordName; set { _explicitNullValueRecordName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_name"); else _explicitNullProperties?.Remove("record_name"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordName? RecordName { get => _explicitNullValueRecordName; set { _explicitNullValueRecordName = value; AdditionalData?.Remove("record_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_name"); else _explicitNullProperties?.Remove("record_name"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordName? _explicitNullValueRecordName = default!;
         /// <summary>Target of CNAME record.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordTarget? RecordTarget { get => _explicitNullValueRecordTarget; set { _explicitNullValueRecordTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_target"); else _explicitNullProperties?.Remove("record_target"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordTarget? RecordTarget { get => _explicitNullValueRecordTarget; set { _explicitNullValueRecordTarget = value; AdditionalData?.Remove("record_target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_target"); else _explicitNullProperties?.Remove("record_target"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordTarget? _explicitNullValueRecordTarget = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfo"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "record_name", n => { RecordName = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordName>(); } },
-                { "record_target", n => { RecordTarget = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordTarget>(); } },
+                { "record_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecordName = default; _explicitNullProperties?.Remove("record_name"); AdditionalData["record_name"] = unknown; } else { RecordName = parsed; AdditionalData.Remove("record_name"); } } },
+                { "record_target", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfoRecordTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecordTarget = default; _explicitNullProperties?.Remove("record_target"); AdditionalData["record_target"] = unknown; } else { RecordTarget = parsed; AdditionalData.Remove("record_target"); } } },
             };
         }
         /// <summary>

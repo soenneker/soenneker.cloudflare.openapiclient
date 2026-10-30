@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("can_produce") is { } nullNodeCanProduce && nullNodeCanProduce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanProduce = null;
+            if (parseNode.GetChildNode("can_produce") is null) { _explicitNullValueCanProduce = default!; _explicitNullProperties?.Remove("can_produce"); }
+            else if (parseNode.GetChildNode("can_produce") is { } nullNodeCanProduce && nullNodeCanProduce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanProduce = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Can produce video</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMediaVideoCanProduce? CanProduce { get => _explicitNullValueCanProduce; set { _explicitNullValueCanProduce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_produce"); else _explicitNullProperties?.Remove("can_produce"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMediaVideoCanProduce? CanProduce { get => _explicitNullValueCanProduce; set { _explicitNullValueCanProduce = value; AdditionalData?.Remove("can_produce"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_produce"); else _explicitNullProperties?.Remove("can_produce"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMediaVideoCanProduce? _explicitNullValueCanProduce = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMediaVideo"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "can_produce", n => { CanProduce = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMediaVideoCanProduce>(); } },
+                { "can_produce", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsMediaVideoCanProduce>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCanProduce = default; _explicitNullProperties?.Remove("can_produce"); AdditionalData["can_produce"] = unknown; } else { CanProduce = parsed; AdditionalData.Remove("can_produce"); } } },
             };
         }
         /// <summary>

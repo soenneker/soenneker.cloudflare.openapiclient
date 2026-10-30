@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("durable_object_id") is { } nullNodeDurableObjectId && nullNodeDurableObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurableObjectId = null;
-            if (parseNode.GetChildNode("queries") is { } nullNodeQueries && nullNodeQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queries = null;
+            if (parseNode.GetChildNode("durable_object_id") is null) { _explicitNullValueDurableObjectId = default!; _explicitNullProperties?.Remove("durable_object_id"); }
+            else if (parseNode.GetChildNode("durable_object_id") is { } nullNodeDurableObjectId && nullNodeDurableObjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurableObjectId = null;
+            if (parseNode.GetChildNode("queries") is null) { _explicitNullValueQueries = default!; _explicitNullProperties?.Remove("queries"); }
+            else if (parseNode.GetChildNode("queries") is { } nullNodeQueries && nullNodeQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The durable_object_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DurableObjectId { get => _explicitNullValueDurableObjectId; set { _explicitNullValueDurableObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_object_id"); else _explicitNullProperties?.Remove("durable_object_id"); } }
+        public string? DurableObjectId { get => _explicitNullValueDurableObjectId; set { _explicitNullValueDurableObjectId = value; AdditionalData?.Remove("durable_object_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_object_id"); else _explicitNullProperties?.Remove("durable_object_id"); } }
         private string? _explicitNullValueDurableObjectId = default!;
 #nullable restore
 #else
-        public string DurableObjectId { get => _explicitNullValueDurableObjectId; set { _explicitNullValueDurableObjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_object_id"); else _explicitNullProperties?.Remove("durable_object_id"); } }
+        public string DurableObjectId { get => _explicitNullValueDurableObjectId; set { _explicitNullValueDurableObjectId = value; AdditionalData?.Remove("durable_object_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durable_object_id"); else _explicitNullProperties?.Remove("durable_object_id"); } }
         private string _explicitNullValueDurableObjectId = default!;
 #endif
         /// <summary>The queries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersQuery>? Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersQuery>? Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; AdditionalData?.Remove("queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersQuery>? _explicitNullValueQueries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersQuery> Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersQuery> Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; AdditionalData?.Remove("queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersQuery> _explicitNullValueQueries = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("approved_apps") is { } nullNodeApprovedApps && nullNodeApprovedApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovedApps = null;
-            if (parseNode.GetChildNode("in_review_apps") is { } nullNodeInReviewApps && nullNodeInReviewApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InReviewApps = null;
-            if (parseNode.GetChildNode("unapproved_apps") is { } nullNodeUnapprovedApps && nullNodeUnapprovedApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnapprovedApps = null;
+            if (parseNode.GetChildNode("approved_apps") is null) { _explicitNullValueApprovedApps = default!; _explicitNullProperties?.Remove("approved_apps"); }
+            else if (parseNode.GetChildNode("approved_apps") is { } nullNodeApprovedApps && nullNodeApprovedApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovedApps = null;
+            if (parseNode.GetChildNode("in_review_apps") is null) { _explicitNullValueInReviewApps = default!; _explicitNullProperties?.Remove("in_review_apps"); }
+            else if (parseNode.GetChildNode("in_review_apps") is { } nullNodeInReviewApps && nullNodeInReviewApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InReviewApps = null;
+            if (parseNode.GetChildNode("unapproved_apps") is null) { _explicitNullValueUnapprovedApps = default!; _explicitNullProperties?.Remove("unapproved_apps"); }
+            else if (parseNode.GetChildNode("unapproved_apps") is { } nullNodeUnapprovedApps && nullNodeUnapprovedApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnapprovedApps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contains the ids of the approved applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? ApprovedApps { get => _explicitNullValueApprovedApps; set { _explicitNullValueApprovedApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_apps"); else _explicitNullProperties?.Remove("approved_apps"); } }
+        public List<long?>? ApprovedApps { get => _explicitNullValueApprovedApps; set { _explicitNullValueApprovedApps = value; AdditionalData?.Remove("approved_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_apps"); else _explicitNullProperties?.Remove("approved_apps"); } }
         private List<long?>? _explicitNullValueApprovedApps = default!;
 #nullable restore
 #else
-        public List<long?> ApprovedApps { get => _explicitNullValueApprovedApps; set { _explicitNullValueApprovedApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_apps"); else _explicitNullProperties?.Remove("approved_apps"); } }
+        public List<long?> ApprovedApps { get => _explicitNullValueApprovedApps; set { _explicitNullValueApprovedApps = value; AdditionalData?.Remove("approved_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_apps"); else _explicitNullProperties?.Remove("approved_apps"); } }
         private List<long?> _explicitNullValueApprovedApps = default!;
 #endif
         /// <summary>The created_at property</summary>
@@ -39,21 +42,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contains the ids of the applications in review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? InReviewApps { get => _explicitNullValueInReviewApps; set { _explicitNullValueInReviewApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_review_apps"); else _explicitNullProperties?.Remove("in_review_apps"); } }
+        public List<long?>? InReviewApps { get => _explicitNullValueInReviewApps; set { _explicitNullValueInReviewApps = value; AdditionalData?.Remove("in_review_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_review_apps"); else _explicitNullProperties?.Remove("in_review_apps"); } }
         private List<long?>? _explicitNullValueInReviewApps = default!;
 #nullable restore
 #else
-        public List<long?> InReviewApps { get => _explicitNullValueInReviewApps; set { _explicitNullValueInReviewApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_review_apps"); else _explicitNullProperties?.Remove("in_review_apps"); } }
+        public List<long?> InReviewApps { get => _explicitNullValueInReviewApps; set { _explicitNullValueInReviewApps = value; AdditionalData?.Remove("in_review_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_review_apps"); else _explicitNullProperties?.Remove("in_review_apps"); } }
         private List<long?> _explicitNullValueInReviewApps = default!;
 #endif
         /// <summary>Contains the ids of the unapproved applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? UnapprovedApps { get => _explicitNullValueUnapprovedApps; set { _explicitNullValueUnapprovedApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unapproved_apps"); else _explicitNullProperties?.Remove("unapproved_apps"); } }
+        public List<long?>? UnapprovedApps { get => _explicitNullValueUnapprovedApps; set { _explicitNullValueUnapprovedApps = value; AdditionalData?.Remove("unapproved_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unapproved_apps"); else _explicitNullProperties?.Remove("unapproved_apps"); } }
         private List<long?>? _explicitNullValueUnapprovedApps = default!;
 #nullable restore
 #else
-        public List<long?> UnapprovedApps { get => _explicitNullValueUnapprovedApps; set { _explicitNullValueUnapprovedApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unapproved_apps"); else _explicitNullProperties?.Remove("unapproved_apps"); } }
+        public List<long?> UnapprovedApps { get => _explicitNullValueUnapprovedApps; set { _explicitNullValueUnapprovedApps = value; AdditionalData?.Remove("unapproved_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unapproved_apps"); else _explicitNullProperties?.Remove("unapproved_apps"); } }
         private List<long?> _explicitNullValueUnapprovedApps = default!;
 #endif
         /// <summary>The updated_at property</summary>

@@ -18,10 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
-            if (parseNode.GetChildNode("ip_subnets") is { } nullNodeIpSubnets && nullNodeIpSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSubnets = null;
-            if (parseNode.GetChildNode("port_protocols") is { } nullNodePortProtocols && nullNodePortProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortProtocols = null;
-            if (parseNode.GetChildNode("support_domains") is { } nullNodeSupportDomains && nullNodeSupportDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportDomains = null;
+            if (parseNode.GetChildNode("hostnames") is null) { _explicitNullValueHostnames = default!; _explicitNullProperties?.Remove("hostnames"); }
+            else if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
+            if (parseNode.GetChildNode("ip_subnets") is null) { _explicitNullValueIpSubnets = default!; _explicitNullProperties?.Remove("ip_subnets"); }
+            else if (parseNode.GetChildNode("ip_subnets") is { } nullNodeIpSubnets && nullNodeIpSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSubnets = null;
+            if (parseNode.GetChildNode("port_protocols") is null) { _explicitNullValuePortProtocols = default!; _explicitNullProperties?.Remove("port_protocols"); }
+            else if (parseNode.GetChildNode("port_protocols") is { } nullNodePortProtocols && nullNodePortProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortProtocols = null;
+            if (parseNode.GetChildNode("support_domains") is null) { _explicitNullValueSupportDomains = default!; _explicitNullProperties?.Remove("support_domains"); }
+            else if (parseNode.GetChildNode("support_domains") is { } nullNodeSupportDomains && nullNodeSupportDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportDomains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Hostnames matched by the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; AdditionalData?.Remove("hostnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
         private List<string>? _explicitNullValueHostnames = default!;
 #nullable restore
 #else
-        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; AdditionalData?.Remove("hostnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
         private List<string> _explicitNullValueHostnames = default!;
 #endif
         /// <summary>IP subnets for this application. Custom application create and update requests accept IPv4 prefix lengths /8 through /32 and IPv6 prefix lengths /32 through /128.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        public List<string>? IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; AdditionalData?.Remove("ip_subnets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
         private List<string>? _explicitNullValueIpSubnets = default!;
 #nullable restore
 #else
-        public List<string> IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        public List<string> IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; AdditionalData?.Remove("ip_subnets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
         private List<string> _explicitNullValueIpSubnets = default!;
 #endif
         /// <summary>Ports matched by the application, in `protocol/port` or inclusive `protocol/start-end` format (for example, `tcp/443` or `udp/10000-20000`). TCP and UDP ports must be between 0 and 65535.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PortProtocols { get => _explicitNullValuePortProtocols; set { _explicitNullValuePortProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_protocols"); else _explicitNullProperties?.Remove("port_protocols"); } }
+        public List<string>? PortProtocols { get => _explicitNullValuePortProtocols; set { _explicitNullValuePortProtocols = value; AdditionalData?.Remove("port_protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_protocols"); else _explicitNullProperties?.Remove("port_protocols"); } }
         private List<string>? _explicitNullValuePortProtocols = default!;
 #nullable restore
 #else
-        public List<string> PortProtocols { get => _explicitNullValuePortProtocols; set { _explicitNullValuePortProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_protocols"); else _explicitNullProperties?.Remove("port_protocols"); } }
+        public List<string> PortProtocols { get => _explicitNullValuePortProtocols; set { _explicitNullValuePortProtocols = value; AdditionalData?.Remove("port_protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_protocols"); else _explicitNullProperties?.Remove("port_protocols"); } }
         private List<string> _explicitNullValuePortProtocols = default!;
 #endif
         /// <summary>Support domains matched by the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportDomains { get => _explicitNullValueSupportDomains; set { _explicitNullValueSupportDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_domains"); else _explicitNullProperties?.Remove("support_domains"); } }
+        public List<string>? SupportDomains { get => _explicitNullValueSupportDomains; set { _explicitNullValueSupportDomains = value; AdditionalData?.Remove("support_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_domains"); else _explicitNullProperties?.Remove("support_domains"); } }
         private List<string>? _explicitNullValueSupportDomains = default!;
 #nullable restore
 #else
-        public List<string> SupportDomains { get => _explicitNullValueSupportDomains; set { _explicitNullValueSupportDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_domains"); else _explicitNullProperties?.Remove("support_domains"); } }
+        public List<string> SupportDomains { get => _explicitNullValueSupportDomains; set { _explicitNullValueSupportDomains = value; AdditionalData?.Remove("support_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("support_domains"); else _explicitNullProperties?.Remove("support_domains"); } }
         private List<string> _explicitNullValueSupportDomains = default!;
 #endif
         /// <summary>

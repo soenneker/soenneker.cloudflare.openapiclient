@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sample_json") is { } nullNodeSampleJson && nullNodeSampleJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleJson = null;
+            if (parseNode.GetChildNode("sample_json") is null) { _explicitNullValueSampleJson = default!; _explicitNullProperties?.Remove("sample_json"); }
+            else if (parseNode.GetChildNode("sample_json") is { } nullNodeSampleJson && nullNodeSampleJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleJson = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The sample_json property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SampleJson { get => _explicitNullValueSampleJson; set { _explicitNullValueSampleJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_json"); else _explicitNullProperties?.Remove("sample_json"); } }
+        public string? SampleJson { get => _explicitNullValueSampleJson; set { _explicitNullValueSampleJson = value; AdditionalData?.Remove("sample_json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_json"); else _explicitNullProperties?.Remove("sample_json"); } }
         private string? _explicitNullValueSampleJson = default!;
 #nullable restore
 #else
-        public string SampleJson { get => _explicitNullValueSampleJson; set { _explicitNullValueSampleJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_json"); else _explicitNullProperties?.Remove("sample_json"); } }
+        public string SampleJson { get => _explicitNullValueSampleJson; set { _explicitNullValueSampleJson = value; AdditionalData?.Remove("sample_json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_json"); else _explicitNullProperties?.Remove("sample_json"); } }
         private string _explicitNullValueSampleJson = default!;
 #endif
         /// <summary>

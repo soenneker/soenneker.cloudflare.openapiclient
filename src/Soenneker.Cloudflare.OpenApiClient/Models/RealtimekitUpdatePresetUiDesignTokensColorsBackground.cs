@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("800") is { } nullNodeEightZeroZero && nullNodeEightZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EightZeroZero = null;
-            if (parseNode.GetChildNode("900") is { } nullNodeNineZeroZero && nullNodeNineZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NineZeroZero = null;
-            if (parseNode.GetChildNode("1000") is { } nullNodeOneZeroZeroZero && nullNodeOneZeroZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroZeroZero = null;
-            if (parseNode.GetChildNode("700") is { } nullNodeSevenZeroZero && nullNodeSevenZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenZeroZero = null;
-            if (parseNode.GetChildNode("600") is { } nullNodeSixZeroZero && nullNodeSixZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SixZeroZero = null;
+            if (parseNode.GetChildNode("800") is null) { _explicitNullValueEightZeroZero = default!; _explicitNullProperties?.Remove("800"); }
+            else if (parseNode.GetChildNode("800") is { } nullNodeEightZeroZero && nullNodeEightZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EightZeroZero = null;
+            if (parseNode.GetChildNode("900") is null) { _explicitNullValueNineZeroZero = default!; _explicitNullProperties?.Remove("900"); }
+            else if (parseNode.GetChildNode("900") is { } nullNodeNineZeroZero && nullNodeNineZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NineZeroZero = null;
+            if (parseNode.GetChildNode("1000") is null) { _explicitNullValueOneZeroZeroZero = default!; _explicitNullProperties?.Remove("1000"); }
+            else if (parseNode.GetChildNode("1000") is { } nullNodeOneZeroZeroZero && nullNodeOneZeroZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroZeroZero = null;
+            if (parseNode.GetChildNode("700") is null) { _explicitNullValueSevenZeroZero = default!; _explicitNullProperties?.Remove("700"); }
+            else if (parseNode.GetChildNode("700") is { } nullNodeSevenZeroZero && nullNodeSevenZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenZeroZero = null;
+            if (parseNode.GetChildNode("600") is null) { _explicitNullValueSixZeroZero = default!; _explicitNullProperties?.Remove("600"); }
+            else if (parseNode.GetChildNode("600") is { } nullNodeSixZeroZero && nullNodeSixZeroZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SixZeroZero = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The EightZeroZero property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EightZeroZero { get => _explicitNullValueEightZeroZero; set { _explicitNullValueEightZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("800"); else _explicitNullProperties?.Remove("800"); } }
+        public string? EightZeroZero { get => _explicitNullValueEightZeroZero; set { _explicitNullValueEightZeroZero = value; AdditionalData?.Remove("800"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("800"); else _explicitNullProperties?.Remove("800"); } }
         private string? _explicitNullValueEightZeroZero = default!;
 #nullable restore
 #else
-        public string EightZeroZero { get => _explicitNullValueEightZeroZero; set { _explicitNullValueEightZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("800"); else _explicitNullProperties?.Remove("800"); } }
+        public string EightZeroZero { get => _explicitNullValueEightZeroZero; set { _explicitNullValueEightZeroZero = value; AdditionalData?.Remove("800"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("800"); else _explicitNullProperties?.Remove("800"); } }
         private string _explicitNullValueEightZeroZero = default!;
 #endif
         /// <summary>The NineZeroZero property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NineZeroZero { get => _explicitNullValueNineZeroZero; set { _explicitNullValueNineZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("900"); else _explicitNullProperties?.Remove("900"); } }
+        public string? NineZeroZero { get => _explicitNullValueNineZeroZero; set { _explicitNullValueNineZeroZero = value; AdditionalData?.Remove("900"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("900"); else _explicitNullProperties?.Remove("900"); } }
         private string? _explicitNullValueNineZeroZero = default!;
 #nullable restore
 #else
-        public string NineZeroZero { get => _explicitNullValueNineZeroZero; set { _explicitNullValueNineZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("900"); else _explicitNullProperties?.Remove("900"); } }
+        public string NineZeroZero { get => _explicitNullValueNineZeroZero; set { _explicitNullValueNineZeroZero = value; AdditionalData?.Remove("900"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("900"); else _explicitNullProperties?.Remove("900"); } }
         private string _explicitNullValueNineZeroZero = default!;
 #endif
         /// <summary>The OneZeroZeroZero property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OneZeroZeroZero { get => _explicitNullValueOneZeroZeroZero; set { _explicitNullValueOneZeroZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1000"); else _explicitNullProperties?.Remove("1000"); } }
+        public string? OneZeroZeroZero { get => _explicitNullValueOneZeroZeroZero; set { _explicitNullValueOneZeroZeroZero = value; AdditionalData?.Remove("1000"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1000"); else _explicitNullProperties?.Remove("1000"); } }
         private string? _explicitNullValueOneZeroZeroZero = default!;
 #nullable restore
 #else
-        public string OneZeroZeroZero { get => _explicitNullValueOneZeroZeroZero; set { _explicitNullValueOneZeroZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1000"); else _explicitNullProperties?.Remove("1000"); } }
+        public string OneZeroZeroZero { get => _explicitNullValueOneZeroZeroZero; set { _explicitNullValueOneZeroZeroZero = value; AdditionalData?.Remove("1000"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1000"); else _explicitNullProperties?.Remove("1000"); } }
         private string _explicitNullValueOneZeroZeroZero = default!;
 #endif
         /// <summary>The SevenZeroZero property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SevenZeroZero { get => _explicitNullValueSevenZeroZero; set { _explicitNullValueSevenZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("700"); else _explicitNullProperties?.Remove("700"); } }
+        public string? SevenZeroZero { get => _explicitNullValueSevenZeroZero; set { _explicitNullValueSevenZeroZero = value; AdditionalData?.Remove("700"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("700"); else _explicitNullProperties?.Remove("700"); } }
         private string? _explicitNullValueSevenZeroZero = default!;
 #nullable restore
 #else
-        public string SevenZeroZero { get => _explicitNullValueSevenZeroZero; set { _explicitNullValueSevenZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("700"); else _explicitNullProperties?.Remove("700"); } }
+        public string SevenZeroZero { get => _explicitNullValueSevenZeroZero; set { _explicitNullValueSevenZeroZero = value; AdditionalData?.Remove("700"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("700"); else _explicitNullProperties?.Remove("700"); } }
         private string _explicitNullValueSevenZeroZero = default!;
 #endif
         /// <summary>The SixZeroZero property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SixZeroZero { get => _explicitNullValueSixZeroZero; set { _explicitNullValueSixZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("600"); else _explicitNullProperties?.Remove("600"); } }
+        public string? SixZeroZero { get => _explicitNullValueSixZeroZero; set { _explicitNullValueSixZeroZero = value; AdditionalData?.Remove("600"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("600"); else _explicitNullProperties?.Remove("600"); } }
         private string? _explicitNullValueSixZeroZero = default!;
 #nullable restore
 #else
-        public string SixZeroZero { get => _explicitNullValueSixZeroZero; set { _explicitNullValueSixZeroZero = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("600"); else _explicitNullProperties?.Remove("600"); } }
+        public string SixZeroZero { get => _explicitNullValueSixZeroZero; set { _explicitNullValueSixZeroZero = value; AdditionalData?.Remove("600"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("600"); else _explicitNullProperties?.Remove("600"); } }
         private string _explicitNullValueSixZeroZero = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("remediations") is { } nullNodeRemediations && nullNodeRemediations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remediations = null;
-            if (parseNode.GetChildNode("webhooks") is { } nullNodeWebhooks && nullNodeWebhooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhooks = null;
+            if (parseNode.GetChildNode("remediations") is null) { _explicitNullValueRemediations = default!; _explicitNullProperties?.Remove("remediations"); }
+            else if (parseNode.GetChildNode("remediations") is { } nullNodeRemediations && nullNodeRemediations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remediations = null;
+            if (parseNode.GetChildNode("webhooks") is null) { _explicitNullValueWebhooks = default!; _explicitNullProperties?.Remove("webhooks"); }
+            else if (parseNode.GetChildNode("webhooks") is { } nullNodeWebhooks && nullNodeWebhooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhooks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Remediation jobs spawned by this policy invocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogRemediationResponse>? Remediations { get => _explicitNullValueRemediations; set { _explicitNullValueRemediations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediations"); else _explicitNullProperties?.Remove("remediations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogRemediationResponse>? Remediations { get => _explicitNullValueRemediations; set { _explicitNullValueRemediations = value; AdditionalData?.Remove("remediations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediations"); else _explicitNullProperties?.Remove("remediations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogRemediationResponse>? _explicitNullValueRemediations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogRemediationResponse> Remediations { get => _explicitNullValueRemediations; set { _explicitNullValueRemediations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediations"); else _explicitNullProperties?.Remove("remediations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogRemediationResponse> Remediations { get => _explicitNullValueRemediations; set { _explicitNullValueRemediations = value; AdditionalData?.Remove("remediations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediations"); else _explicitNullProperties?.Remove("remediations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogRemediationResponse> _explicitNullValueRemediations = default!;
 #endif
         /// <summary>Webhook jobs dispatched by this policy invocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogWebhookResponse>? Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogWebhookResponse>? Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; AdditionalData?.Remove("webhooks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogWebhookResponse>? _explicitNullValueWebhooks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogWebhookResponse> Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogWebhookResponse> Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; AdditionalData?.Remove("webhooks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPolicyLogWebhookResponse> _explicitNullValueWebhooks = default!;
 #endif
         /// <summary>

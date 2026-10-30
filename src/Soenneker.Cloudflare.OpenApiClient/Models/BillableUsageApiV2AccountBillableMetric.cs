@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DimensionKeys") is { } nullNodeDimensionKeys && nullNodeDimensionKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionKeys = null;
-            if (parseNode.GetChildNode("Id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("Name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("ProductCategory") is { } nullNodeProductCategory && nullNodeProductCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductCategory = null;
-            if (parseNode.GetChildNode("ProductFamily") is { } nullNodeProductFamily && nullNodeProductFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductFamily = null;
+            if (parseNode.GetChildNode("DimensionKeys") is null) { _explicitNullValueDimensionKeys = default!; _explicitNullProperties?.Remove("DimensionKeys"); }
+            else if (parseNode.GetChildNode("DimensionKeys") is { } nullNodeDimensionKeys && nullNodeDimensionKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionKeys = null;
+            if (parseNode.GetChildNode("Id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("Id"); }
+            else if (parseNode.GetChildNode("Id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("Name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("Name"); }
+            else if (parseNode.GetChildNode("Name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("ProductCategory") is null) { _explicitNullValueProductCategory = default!; _explicitNullProperties?.Remove("ProductCategory"); }
+            else if (parseNode.GetChildNode("ProductCategory") is { } nullNodeProductCategory && nullNodeProductCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductCategory = null;
+            if (parseNode.GetChildNode("ProductFamily") is null) { _explicitNullValueProductFamily = default!; _explicitNullProperties?.Remove("ProductFamily"); }
+            else if (parseNode.GetChildNode("ProductFamily") is { } nullNodeProductFamily && nullNodeProductFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductFamily = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The DimensionKeys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DimensionKeys { get => _explicitNullValueDimensionKeys; set { _explicitNullValueDimensionKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DimensionKeys"); else _explicitNullProperties?.Remove("DimensionKeys"); } }
+        public List<string>? DimensionKeys { get => _explicitNullValueDimensionKeys; set { _explicitNullValueDimensionKeys = value; AdditionalData?.Remove("DimensionKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DimensionKeys"); else _explicitNullProperties?.Remove("DimensionKeys"); } }
         private List<string>? _explicitNullValueDimensionKeys = default!;
 #nullable restore
 #else
-        public List<string> DimensionKeys { get => _explicitNullValueDimensionKeys; set { _explicitNullValueDimensionKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DimensionKeys"); else _explicitNullProperties?.Remove("DimensionKeys"); } }
+        public List<string> DimensionKeys { get => _explicitNullValueDimensionKeys; set { _explicitNullValueDimensionKeys = value; AdditionalData?.Remove("DimensionKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DimensionKeys"); else _explicitNullProperties?.Remove("DimensionKeys"); } }
         private List<string> _explicitNullValueDimensionKeys = default!;
 #endif
         /// <summary>Public catalog identifier of the billable metric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Id"); else _explicitNullProperties?.Remove("Id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("Id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Id"); else _explicitNullProperties?.Remove("Id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Id"); else _explicitNullProperties?.Remove("Id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("Id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Id"); else _explicitNullProperties?.Remove("Id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Human-readable billable metric name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The ProductCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory>? ProductCategory { get => _explicitNullValueProductCategory; set { _explicitNullValueProductCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductCategory"); else _explicitNullProperties?.Remove("ProductCategory"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory>? ProductCategory { get => _explicitNullValueProductCategory; set { _explicitNullValueProductCategory = value; AdditionalData?.Remove("ProductCategory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductCategory"); else _explicitNullProperties?.Remove("ProductCategory"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory>? _explicitNullValueProductCategory = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory> ProductCategory { get => _explicitNullValueProductCategory; set { _explicitNullValueProductCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductCategory"); else _explicitNullProperties?.Remove("ProductCategory"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory> ProductCategory { get => _explicitNullValueProductCategory; set { _explicitNullValueProductCategory = value; AdditionalData?.Remove("ProductCategory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductCategory"); else _explicitNullProperties?.Remove("ProductCategory"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductCategory> _explicitNullValueProductCategory = default!;
 #endif
         /// <summary>The ProductFamily property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily>? ProductFamily { get => _explicitNullValueProductFamily; set { _explicitNullValueProductFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductFamily"); else _explicitNullProperties?.Remove("ProductFamily"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily>? ProductFamily { get => _explicitNullValueProductFamily; set { _explicitNullValueProductFamily = value; AdditionalData?.Remove("ProductFamily"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductFamily"); else _explicitNullProperties?.Remove("ProductFamily"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily>? _explicitNullValueProductFamily = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily> ProductFamily { get => _explicitNullValueProductFamily; set { _explicitNullValueProductFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductFamily"); else _explicitNullProperties?.Remove("ProductFamily"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily> ProductFamily { get => _explicitNullValueProductFamily; set { _explicitNullValueProductFamily = value; AdditionalData?.Remove("ProductFamily"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProductFamily"); else _explicitNullProperties?.Remove("ProductFamily"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiV2ProductFamily> _explicitNullValueProductFamily = default!;
 #endif
         /// <summary>

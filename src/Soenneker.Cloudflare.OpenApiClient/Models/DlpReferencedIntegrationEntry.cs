@@ -18,45 +18,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("referenced_by_data_classes") is { } nullNodeReferencedByDataClasses && nullNodeReferencedByDataClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedByDataClasses = null;
-            if (parseNode.GetChildNode("referenced_by_profiles") is { } nullNodeReferencedByProfiles && nullNodeReferencedByProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedByProfiles = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("referenced_by_data_classes") is null) { _explicitNullValueReferencedByDataClasses = default!; _explicitNullProperties?.Remove("referenced_by_data_classes"); }
+            else if (parseNode.GetChildNode("referenced_by_data_classes") is { } nullNodeReferencedByDataClasses && nullNodeReferencedByDataClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedByDataClasses = null;
+            if (parseNode.GetChildNode("referenced_by_profiles") is null) { _explicitNullValueReferencedByProfiles = default!; _explicitNullProperties?.Remove("referenced_by_profiles"); }
+            else if (parseNode.GetChildNode("referenced_by_profiles") is { } nullNodeReferencedByProfiles && nullNodeReferencedByProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedByProfiles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the entry.</summary>
-        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>The name of the entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Data classes that reference this entry, sorted by ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDataClassRef>? ReferencedByDataClasses { get => _explicitNullValueReferencedByDataClasses; set { _explicitNullValueReferencedByDataClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_data_classes"); else _explicitNullProperties?.Remove("referenced_by_data_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDataClassRef>? ReferencedByDataClasses { get => _explicitNullValueReferencedByDataClasses; set { _explicitNullValueReferencedByDataClasses = value; AdditionalData?.Remove("referenced_by_data_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_data_classes"); else _explicitNullProperties?.Remove("referenced_by_data_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDataClassRef>? _explicitNullValueReferencedByDataClasses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDataClassRef> ReferencedByDataClasses { get => _explicitNullValueReferencedByDataClasses; set { _explicitNullValueReferencedByDataClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_data_classes"); else _explicitNullProperties?.Remove("referenced_by_data_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDataClassRef> ReferencedByDataClasses { get => _explicitNullValueReferencedByDataClasses; set { _explicitNullValueReferencedByDataClasses = value; AdditionalData?.Remove("referenced_by_data_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_data_classes"); else _explicitNullProperties?.Remove("referenced_by_data_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDataClassRef> _explicitNullValueReferencedByDataClasses = default!;
 #endif
         /// <summary>Other profiles that share this entry, sorted by ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile>? ReferencedByProfiles { get => _explicitNullValueReferencedByProfiles; set { _explicitNullValueReferencedByProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_profiles"); else _explicitNullProperties?.Remove("referenced_by_profiles"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile>? ReferencedByProfiles { get => _explicitNullValueReferencedByProfiles; set { _explicitNullValueReferencedByProfiles = value; AdditionalData?.Remove("referenced_by_profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_profiles"); else _explicitNullProperties?.Remove("referenced_by_profiles"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile>? _explicitNullValueReferencedByProfiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile> ReferencedByProfiles { get => _explicitNullValueReferencedByProfiles; set { _explicitNullValueReferencedByProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_profiles"); else _explicitNullProperties?.Remove("referenced_by_profiles"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile> ReferencedByProfiles { get => _explicitNullValueReferencedByProfiles; set { _explicitNullValueReferencedByProfiles = value; AdditionalData?.Remove("referenced_by_profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_by_profiles"); else _explicitNullProperties?.Remove("referenced_by_profiles"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile> _explicitNullValueReferencedByProfiles = default!;
 #endif
         /// <summary>

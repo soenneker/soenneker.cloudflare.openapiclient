@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
-            if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
-            if (parseNode.GetChildNode("l4_protocol") is { } nullNodeL4Protocol && nullNodeL4Protocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) L4Protocol = null;
-            if (parseNode.GetChildNode("port_range") is { } nullNodePortRange && nullNodePortRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortRange = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("vnet_id") is { } nullNodeVnetId && nullNodeVnetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VnetId = null;
+            if (parseNode.GetChildNode("cidr") is null) { _explicitNullValueCidr = default!; _explicitNullProperties?.Remove("cidr"); }
+            else if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
+            if (parseNode.GetChildNode("hostname") is null) { _explicitNullValueHostname = default!; _explicitNullProperties?.Remove("hostname"); }
+            else if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("l4_protocol") is null) { _explicitNullValueL4Protocol = default!; _explicitNullProperties?.Remove("l4_protocol"); }
+            else if (parseNode.GetChildNode("l4_protocol") is { } nullNodeL4Protocol && nullNodeL4Protocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) L4Protocol = null;
+            if (parseNode.GetChildNode("port_range") is null) { _explicitNullValuePortRange = default!; _explicitNullProperties?.Remove("port_range"); }
+            else if (parseNode.GetChildNode("port_range") is { } nullNodePortRange && nullNodePortRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortRange = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("vnet_id") is null) { _explicitNullValueVnetId = default!; _explicitNullProperties?.Remove("vnet_id"); }
+            else if (parseNode.GetChildNode("vnet_id") is { } nullNodeVnetId && nullNodeVnetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VnetId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,47 +36,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The CIDR range of the destination. Single IPs will be computed as /32.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        public string? Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; AdditionalData?.Remove("cidr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
         private string? _explicitNullValueCidr = default!;
 #nullable restore
 #else
-        public string Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        public string Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; AdditionalData?.Remove("cidr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
         private string _explicitNullValueCidr = default!;
 #endif
         /// <summary>The hostname of the destination. Matches a valid SNI served by an HTTPS origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string? _explicitNullValueHostname = default!;
 #nullable restore
 #else
-        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>The L4 protocol of the destination. When omitted, both UDP and TCP traffic will match.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDestinationsItemPrivateDestinationL4Protocol? L4Protocol { get => _explicitNullValueL4Protocol; set { _explicitNullValueL4Protocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l4_protocol"); else _explicitNullProperties?.Remove("l4_protocol"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDestinationsItemPrivateDestinationL4Protocol? L4Protocol { get => _explicitNullValueL4Protocol; set { _explicitNullValueL4Protocol = value; AdditionalData?.Remove("l4_protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l4_protocol"); else _explicitNullProperties?.Remove("l4_protocol"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDestinationsItemPrivateDestinationL4Protocol? _explicitNullValueL4Protocol = default!;
         /// <summary>The port range of the destination. Can be a single port or a range of ports. When omitted, all ports will match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PortRange { get => _explicitNullValuePortRange; set { _explicitNullValuePortRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_range"); else _explicitNullProperties?.Remove("port_range"); } }
+        public string? PortRange { get => _explicitNullValuePortRange; set { _explicitNullValuePortRange = value; AdditionalData?.Remove("port_range"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_range"); else _explicitNullProperties?.Remove("port_range"); } }
         private string? _explicitNullValuePortRange = default!;
 #nullable restore
 #else
-        public string PortRange { get => _explicitNullValuePortRange; set { _explicitNullValuePortRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_range"); else _explicitNullProperties?.Remove("port_range"); } }
+        public string PortRange { get => _explicitNullValuePortRange; set { _explicitNullValuePortRange = value; AdditionalData?.Remove("port_range"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port_range"); else _explicitNullProperties?.Remove("port_range"); } }
         private string _explicitNullValuePortRange = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PrivateValueType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PrivateValueType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PrivateValueType? _explicitNullValueType = default!;
         /// <summary>The VNET ID to match the destination. When omitted, all VNETs will match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
+        public string? VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; AdditionalData?.Remove("vnet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
         private string? _explicitNullValueVnetId = default!;
 #nullable restore
 #else
-        public string VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
+        public string VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; AdditionalData?.Remove("vnet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
         private string _explicitNullValueVnetId = default!;
 #endif
         /// <summary>
@@ -100,9 +106,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
-                { "l4_protocol", n => { L4Protocol = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDestinationsItemPrivateDestinationL4Protocol>(); } },
+                { "l4_protocol", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDestinationsItemPrivateDestinationL4Protocol>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueL4Protocol = default; _explicitNullProperties?.Remove("l4_protocol"); AdditionalData["l4_protocol"] = unknown; } else { L4Protocol = parsed; AdditionalData.Remove("l4_protocol"); } } },
                 { "port_range", n => { PortRange = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PrivateValueType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PrivateValueType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "vnet_id", n => { VnetId = n.GetStringValue(); } },
             };
         }

@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("jitter_buffer_delay") is { } nullNodeJitterBufferDelay && nullNodeJitterBufferDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterBufferDelay = null;
-            if (parseNode.GetChildNode("packet_loss") is { } nullNodePacketLoss && nullNodePacketLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLoss = null;
-            if (parseNode.GetChildNode("quality_mos") is { } nullNodeQualityMos && nullNodeQualityMos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualityMos = null;
+            if (parseNode.GetChildNode("jitter_buffer_delay") is null) { _explicitNullValueJitterBufferDelay = default!; _explicitNullProperties?.Remove("jitter_buffer_delay"); }
+            else if (parseNode.GetChildNode("jitter_buffer_delay") is { } nullNodeJitterBufferDelay && nullNodeJitterBufferDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterBufferDelay = null;
+            if (parseNode.GetChildNode("packet_loss") is null) { _explicitNullValuePacketLoss = default!; _explicitNullProperties?.Remove("packet_loss"); }
+            else if (parseNode.GetChildNode("packet_loss") is { } nullNodePacketLoss && nullNodePacketLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLoss = null;
+            if (parseNode.GetChildNode("quality_mos") is null) { _explicitNullValueQualityMos = default!; _explicitNullProperties?.Remove("quality_mos"); }
+            else if (parseNode.GetChildNode("quality_mos") is { } nullNodeQualityMos && nullNodeQualityMos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualityMos = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cumulative latency distribution (milliseconds-based thresholds).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative? JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative? JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; AdditionalData?.Remove("jitter_buffer_delay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative? _explicitNullValueJitterBufferDelay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; AdditionalData?.Remove("jitter_buffer_delay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative _explicitNullValueJitterBufferDelay = default!;
 #endif
         /// <summary>Cumulative packet loss distribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative? PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative? PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; AdditionalData?.Remove("packet_loss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative? _explicitNullValuePacketLoss = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; AdditionalData?.Remove("packet_loss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative _explicitNullValuePacketLoss = default!;
 #endif
         /// <summary>Distribution summary with average and percentiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; AdditionalData?.Remove("quality_mos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? _explicitNullValueQualityMos = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; AdditionalData?.Remove("quality_mos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats _explicitNullValueQualityMos = default!;
 #endif
         /// <summary>

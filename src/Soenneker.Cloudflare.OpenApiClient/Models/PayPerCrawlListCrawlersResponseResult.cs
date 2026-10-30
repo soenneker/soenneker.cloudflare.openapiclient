@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("crawlers") is { } nullNodeCrawlers && nullNodeCrawlers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crawlers = null;
+            if (parseNode.GetChildNode("crawlers") is null) { _explicitNullValueCrawlers = default!; _explicitNullProperties?.Remove("crawlers"); }
+            else if (parseNode.GetChildNode("crawlers") is { } nullNodeCrawlers && nullNodeCrawlers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crawlers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The crawlers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlCrawlerEntry>? Crawlers { get => _explicitNullValueCrawlers; set { _explicitNullValueCrawlers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlers"); else _explicitNullProperties?.Remove("crawlers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlCrawlerEntry>? Crawlers { get => _explicitNullValueCrawlers; set { _explicitNullValueCrawlers = value; AdditionalData?.Remove("crawlers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlers"); else _explicitNullProperties?.Remove("crawlers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlCrawlerEntry>? _explicitNullValueCrawlers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlCrawlerEntry> Crawlers { get => _explicitNullValueCrawlers; set { _explicitNullValueCrawlers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlers"); else _explicitNullProperties?.Remove("crawlers"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlCrawlerEntry> Crawlers { get => _explicitNullValueCrawlers; set { _explicitNullValueCrawlers = value; AdditionalData?.Remove("crawlers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlers"); else _explicitNullProperties?.Remove("crawlers"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlCrawlerEntry> _explicitNullValueCrawlers = default!;
 #endif
         /// <summary>

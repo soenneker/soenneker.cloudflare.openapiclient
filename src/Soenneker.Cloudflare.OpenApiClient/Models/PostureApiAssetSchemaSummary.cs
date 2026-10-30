@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asset_class") is { } nullNodeAssetClass && nullNodeAssetClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetClass = null;
+            if (parseNode.GetChildNode("asset_class") is null) { _explicitNullValueAssetClass = default!; _explicitNullProperties?.Remove("asset_class"); }
+            else if (parseNode.GetChildNode("asset_class") is { } nullNodeAssetClass && nullNodeAssetClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetClass = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Asset class identifier (PascalCase), e.g. AnthropicUser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetClass { get => _explicitNullValueAssetClass; set { _explicitNullValueAssetClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_class"); else _explicitNullProperties?.Remove("asset_class"); } }
+        public string? AssetClass { get => _explicitNullValueAssetClass; set { _explicitNullValueAssetClass = value; AdditionalData?.Remove("asset_class"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_class"); else _explicitNullProperties?.Remove("asset_class"); } }
         private string? _explicitNullValueAssetClass = default!;
 #nullable restore
 #else
-        public string AssetClass { get => _explicitNullValueAssetClass; set { _explicitNullValueAssetClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_class"); else _explicitNullProperties?.Remove("asset_class"); } }
+        public string AssetClass { get => _explicitNullValueAssetClass; set { _explicitNullValueAssetClass = value; AdditionalData?.Remove("asset_class"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_class"); else _explicitNullProperties?.Remove("asset_class"); } }
         private string _explicitNullValueAssetClass = default!;
 #endif
         /// <summary>

@@ -17,36 +17,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("report") is { } nullNodeReport && nullNodeReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Report = null;
-            if (parseNode.GetChildNode("scan_type") is { } nullNodeScanType && nullNodeScanType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScanType = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("target_environment_id") is { } nullNodeTargetEnvironmentId && nullNodeTargetEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetEnvironmentId = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("report") is null) { _explicitNullValueReport = default!; _explicitNullProperties?.Remove("report"); }
+            else if (parseNode.GetChildNode("report") is { } nullNodeReport && nullNodeReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Report = null;
+            if (parseNode.GetChildNode("scan_type") is null) { _explicitNullValueScanType = default!; _explicitNullProperties?.Remove("scan_type"); }
+            else if (parseNode.GetChildNode("scan_type") is { } nullNodeScanType && nullNodeScanType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScanType = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("target_environment_id") is null) { _explicitNullValueTargetEnvironmentId = default!; _explicitNullProperties?.Remove("target_environment_id"); }
+            else if (parseNode.GetChildNode("target_environment_id") is { } nullNodeTargetEnvironmentId && nullNodeTargetEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetEnvironmentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Scan identifier.</summary>
-        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>Vulnerability report produced after the scan completes. The shape depends on the scan type. Present only for finished scans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport? Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport? Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; AdditionalData?.Remove("report"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport? _explicitNullValueReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; AdditionalData?.Remove("report"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport _explicitNullValueReport = default!;
 #endif
         /// <summary>The scan_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType? ScanType { get => _explicitNullValueScanType; set { _explicitNullValueScanType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_type"); else _explicitNullProperties?.Remove("scan_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType? ScanType { get => _explicitNullValueScanType; set { _explicitNullValueScanType = value; AdditionalData?.Remove("scan_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_type"); else _explicitNullProperties?.Remove("scan_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType? _explicitNullValueScanType = default!;
         /// <summary>Current lifecycle status of the scan.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus? _explicitNullValueStatus = default!;
         /// <summary>The target environment this scan runs against.</summary>
-        public Guid? TargetEnvironmentId { get => _explicitNullValueTargetEnvironmentId; set { _explicitNullValueTargetEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_environment_id"); else _explicitNullProperties?.Remove("target_environment_id"); } }
+        public Guid? TargetEnvironmentId { get => _explicitNullValueTargetEnvironmentId; set { _explicitNullValueTargetEnvironmentId = value; AdditionalData?.Remove("target_environment_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_environment_id"); else _explicitNullProperties?.Remove("target_environment_id"); } }
         private Guid? _explicitNullValueTargetEnvironmentId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan"/> and sets the default values.
@@ -75,8 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "report", n => { Report = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport.CreateFromDiscriminatorValue); } },
-                { "scan_type", n => { ScanType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus>(); } },
+                { "scan_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScanType = default; _explicitNullProperties?.Remove("scan_type"); AdditionalData["scan_type"] = unknown; } else { ScanType = parsed; AdditionalData.Remove("scan_type"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "target_environment_id", n => { TargetEnvironmentId = n.GetGuidValue(); } },
             };
         }

@@ -17,67 +17,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("portal_alias") is { } nullNodePortalAlias && nullNodePortalAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalAlias = null;
-            if (parseNode.GetChildNode("portal_description") is { } nullNodePortalDescription && nullNodePortalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalDescription = null;
-            if (parseNode.GetChildNode("server_alias") is { } nullNodeServerAlias && nullNodeServerAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerAlias = null;
-            if (parseNode.GetChildNode("server_description") is { } nullNodeServerDescription && nullNodeServerDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerDescription = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("portal_alias") is null) { _explicitNullValuePortalAlias = default!; _explicitNullProperties?.Remove("portal_alias"); }
+            else if (parseNode.GetChildNode("portal_alias") is { } nullNodePortalAlias && nullNodePortalAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalAlias = null;
+            if (parseNode.GetChildNode("portal_description") is null) { _explicitNullValuePortalDescription = default!; _explicitNullProperties?.Remove("portal_description"); }
+            else if (parseNode.GetChildNode("portal_description") is { } nullNodePortalDescription && nullNodePortalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalDescription = null;
+            if (parseNode.GetChildNode("server_alias") is null) { _explicitNullValueServerAlias = default!; _explicitNullProperties?.Remove("server_alias"); }
+            else if (parseNode.GetChildNode("server_alias") is { } nullNodeServerAlias && nullNodeServerAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerAlias = null;
+            if (parseNode.GetChildNode("server_description") is null) { _explicitNullValueServerDescription = default!; _explicitNullProperties?.Remove("server_description"); }
+            else if (parseNode.GetChildNode("server_description") is { } nullNodeServerDescription && nullNodeServerDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The portal_alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PortalAlias { get => _explicitNullValuePortalAlias; set { _explicitNullValuePortalAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_alias"); else _explicitNullProperties?.Remove("portal_alias"); } }
+        public string? PortalAlias { get => _explicitNullValuePortalAlias; set { _explicitNullValuePortalAlias = value; AdditionalData?.Remove("portal_alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_alias"); else _explicitNullProperties?.Remove("portal_alias"); } }
         private string? _explicitNullValuePortalAlias = default!;
 #nullable restore
 #else
-        public string PortalAlias { get => _explicitNullValuePortalAlias; set { _explicitNullValuePortalAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_alias"); else _explicitNullProperties?.Remove("portal_alias"); } }
+        public string PortalAlias { get => _explicitNullValuePortalAlias; set { _explicitNullValuePortalAlias = value; AdditionalData?.Remove("portal_alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_alias"); else _explicitNullProperties?.Remove("portal_alias"); } }
         private string _explicitNullValuePortalAlias = default!;
 #endif
         /// <summary>The portal_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PortalDescription { get => _explicitNullValuePortalDescription; set { _explicitNullValuePortalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_description"); else _explicitNullProperties?.Remove("portal_description"); } }
+        public string? PortalDescription { get => _explicitNullValuePortalDescription; set { _explicitNullValuePortalDescription = value; AdditionalData?.Remove("portal_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_description"); else _explicitNullProperties?.Remove("portal_description"); } }
         private string? _explicitNullValuePortalDescription = default!;
 #nullable restore
 #else
-        public string PortalDescription { get => _explicitNullValuePortalDescription; set { _explicitNullValuePortalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_description"); else _explicitNullProperties?.Remove("portal_description"); } }
+        public string PortalDescription { get => _explicitNullValuePortalDescription; set { _explicitNullValuePortalDescription = value; AdditionalData?.Remove("portal_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_description"); else _explicitNullProperties?.Remove("portal_description"); } }
         private string _explicitNullValuePortalDescription = default!;
 #endif
         /// <summary>The server_alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerAlias { get => _explicitNullValueServerAlias; set { _explicitNullValueServerAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_alias"); else _explicitNullProperties?.Remove("server_alias"); } }
+        public string? ServerAlias { get => _explicitNullValueServerAlias; set { _explicitNullValueServerAlias = value; AdditionalData?.Remove("server_alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_alias"); else _explicitNullProperties?.Remove("server_alias"); } }
         private string? _explicitNullValueServerAlias = default!;
 #nullable restore
 #else
-        public string ServerAlias { get => _explicitNullValueServerAlias; set { _explicitNullValueServerAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_alias"); else _explicitNullProperties?.Remove("server_alias"); } }
+        public string ServerAlias { get => _explicitNullValueServerAlias; set { _explicitNullValueServerAlias = value; AdditionalData?.Remove("server_alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_alias"); else _explicitNullProperties?.Remove("server_alias"); } }
         private string _explicitNullValueServerAlias = default!;
 #endif
         /// <summary>The server_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerDescription { get => _explicitNullValueServerDescription; set { _explicitNullValueServerDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_description"); else _explicitNullProperties?.Remove("server_description"); } }
+        public string? ServerDescription { get => _explicitNullValueServerDescription; set { _explicitNullValueServerDescription = value; AdditionalData?.Remove("server_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_description"); else _explicitNullProperties?.Remove("server_description"); } }
         private string? _explicitNullValueServerDescription = default!;
 #nullable restore
 #else
-        public string ServerDescription { get => _explicitNullValueServerDescription; set { _explicitNullValueServerDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_description"); else _explicitNullProperties?.Remove("server_description"); } }
+        public string ServerDescription { get => _explicitNullValueServerDescription; set { _explicitNullValueServerDescription = value; AdditionalData?.Remove("server_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_description"); else _explicitNullProperties?.Remove("server_description"); } }
         private string _explicitNullValueServerDescription = default!;
 #endif
         /// <summary>

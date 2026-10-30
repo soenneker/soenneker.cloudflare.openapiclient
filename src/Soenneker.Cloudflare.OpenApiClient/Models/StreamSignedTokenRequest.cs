@@ -17,64 +17,71 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accessRules") is { } nullNodeAccessRules && nullNodeAccessRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessRules = null;
-            if (parseNode.GetChildNode("downloadable") is { } nullNodeDownloadable && nullNodeDownloadable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Downloadable = null;
-            if (parseNode.GetChildNode("exp") is { } nullNodeExp && nullNodeExp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exp = null;
-            if (parseNode.GetChildNode("flags") is { } nullNodeFlags && nullNodeFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flags = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("nbf") is { } nullNodeNbf && nullNodeNbf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nbf = null;
-            if (parseNode.GetChildNode("pem") is { } nullNodePem && nullNodePem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pem = null;
+            if (parseNode.GetChildNode("accessRules") is null) { _explicitNullValueAccessRules = default!; _explicitNullProperties?.Remove("accessRules"); }
+            else if (parseNode.GetChildNode("accessRules") is { } nullNodeAccessRules && nullNodeAccessRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessRules = null;
+            if (parseNode.GetChildNode("downloadable") is null) { _explicitNullValueDownloadable = default!; _explicitNullProperties?.Remove("downloadable"); }
+            else if (parseNode.GetChildNode("downloadable") is { } nullNodeDownloadable && nullNodeDownloadable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Downloadable = null;
+            if (parseNode.GetChildNode("exp") is null) { _explicitNullValueExp = default!; _explicitNullProperties?.Remove("exp"); }
+            else if (parseNode.GetChildNode("exp") is { } nullNodeExp && nullNodeExp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exp = null;
+            if (parseNode.GetChildNode("flags") is null) { _explicitNullValueFlags = default!; _explicitNullProperties?.Remove("flags"); }
+            else if (parseNode.GetChildNode("flags") is { } nullNodeFlags && nullNodeFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flags = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("nbf") is null) { _explicitNullValueNbf = default!; _explicitNullProperties?.Remove("nbf"); }
+            else if (parseNode.GetChildNode("nbf") is { } nullNodeNbf && nullNodeNbf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nbf = null;
+            if (parseNode.GetChildNode("pem") is null) { _explicitNullValuePem = default!; _explicitNullProperties?.Remove("pem"); }
+            else if (parseNode.GetChildNode("pem") is { } nullNodePem && nullNodePem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pem = null;
         }
 
         /// <summary>The optional list of access rule constraints on the token. Access can be blocked or allowed based on an IP, IP range, or by country. Access rules are evaluated from first to last. If a rule matches, the associated action is applied and no further rules are evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules>? AccessRules { get => _explicitNullValueAccessRules; set { _explicitNullValueAccessRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessRules"); else _explicitNullProperties?.Remove("accessRules"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules>? AccessRules { get => _explicitNullValueAccessRules; set { _explicitNullValueAccessRules = value; AdditionalData?.Remove("accessRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessRules"); else _explicitNullProperties?.Remove("accessRules"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules>? _explicitNullValueAccessRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules> AccessRules { get => _explicitNullValueAccessRules; set { _explicitNullValueAccessRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessRules"); else _explicitNullProperties?.Remove("accessRules"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules> AccessRules { get => _explicitNullValueAccessRules; set { _explicitNullValueAccessRules = value; AdditionalData?.Remove("accessRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessRules"); else _explicitNullProperties?.Remove("accessRules"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules> _explicitNullValueAccessRules = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The optional boolean value that enables using signed tokens to access MP4 download links for a video.</summary>
-        public bool? Downloadable { get => _explicitNullValueDownloadable; set { _explicitNullValueDownloadable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadable"); else _explicitNullProperties?.Remove("downloadable"); } }
+        public bool? Downloadable { get => _explicitNullValueDownloadable; set { _explicitNullValueDownloadable = value; AdditionalData?.Remove("downloadable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadable"); else _explicitNullProperties?.Remove("downloadable"); } }
         private bool? _explicitNullValueDownloadable = default!;
         /// <summary>The optional unix epoch timestamp that specficies the time after a token is not accepted. The maximum time specification is 24 hours from issuing time. If this field is not set, the default is one hour after issuing.</summary>
-        public int? Exp { get => _explicitNullValueExp; set { _explicitNullValueExp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exp"); else _explicitNullProperties?.Remove("exp"); } }
+        public int? Exp { get => _explicitNullValueExp; set { _explicitNullValueExp = value; AdditionalData?.Remove("exp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exp"); else _explicitNullProperties?.Remove("exp"); } }
         private int? _explicitNullValueExp = default!;
         /// <summary>Optional flags for the signed token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamSignedTokenRequestFlags? Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamSignedTokenRequestFlags? Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamSignedTokenRequestFlags? _explicitNullValueFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamSignedTokenRequestFlags Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamSignedTokenRequestFlags Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.StreamSignedTokenRequestFlags _explicitNullValueFlags = default!;
 #endif
         /// <summary>The optional ID of a Stream signing key. If present, the `pem` field is also required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The optional unix epoch timestamp that specifies the time before a the token is not accepted. If this field is not set, the default is one hour before issuing.</summary>
-        public int? Nbf { get => _explicitNullValueNbf; set { _explicitNullValueNbf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbf"); else _explicitNullProperties?.Remove("nbf"); } }
+        public int? Nbf { get => _explicitNullValueNbf; set { _explicitNullValueNbf = value; AdditionalData?.Remove("nbf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbf"); else _explicitNullProperties?.Remove("nbf"); } }
         private int? _explicitNullValueNbf = default!;
         /// <summary>The optional base64 encoded private key in PEM format associated with a Stream signing key. If present, the `id` field is also required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pem { get => _explicitNullValuePem; set { _explicitNullValuePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pem"); else _explicitNullProperties?.Remove("pem"); } }
+        public string? Pem { get => _explicitNullValuePem; set { _explicitNullValuePem = value; AdditionalData?.Remove("pem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pem"); else _explicitNullProperties?.Remove("pem"); } }
         private string? _explicitNullValuePem = default!;
 #nullable restore
 #else
-        public string Pem { get => _explicitNullValuePem; set { _explicitNullValuePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pem"); else _explicitNullProperties?.Remove("pem"); } }
+        public string Pem { get => _explicitNullValuePem; set { _explicitNullValuePem = value; AdditionalData?.Remove("pem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pem"); else _explicitNullProperties?.Remove("pem"); } }
         private string _explicitNullValuePem = default!;
 #endif
         /// <summary>

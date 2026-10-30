@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("backup_ip") is { } nullNodeBackupIp && nullNodeBackupIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackupIp = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("pair_type") is { } nullNodePairType && nullNodePairType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PairType = null;
-            if (parseNode.GetChildNode("primary_ip") is { } nullNodePrimaryIp && nullNodePrimaryIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryIp = null;
+            if (parseNode.GetChildNode("backup_ip") is null) { _explicitNullValueBackupIp = default!; _explicitNullProperties?.Remove("backup_ip"); }
+            else if (parseNode.GetChildNode("backup_ip") is { } nullNodeBackupIp && nullNodeBackupIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackupIp = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("pair_type") is null) { _explicitNullValuePairType = default!; _explicitNullProperties?.Remove("pair_type"); }
+            else if (parseNode.GetChildNode("pair_type") is { } nullNodePairType && nullNodePairType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PairType = null;
+            if (parseNode.GetChildNode("primary_ip") is null) { _explicitNullValuePrimaryIp = default!; _explicitNullProperties?.Remove("primary_ip"); }
+            else if (parseNode.GetChildNode("primary_ip") is { } nullNodePrimaryIp && nullNodePrimaryIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryIp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The backup_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackupIp { get => _explicitNullValueBackupIp; set { _explicitNullValueBackupIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_ip"); else _explicitNullProperties?.Remove("backup_ip"); } }
+        public string? BackupIp { get => _explicitNullValueBackupIp; set { _explicitNullValueBackupIp = value; AdditionalData?.Remove("backup_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_ip"); else _explicitNullProperties?.Remove("backup_ip"); } }
         private string? _explicitNullValueBackupIp = default!;
 #nullable restore
 #else
-        public string BackupIp { get => _explicitNullValueBackupIp; set { _explicitNullValueBackupIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_ip"); else _explicitNullProperties?.Remove("backup_ip"); } }
+        public string BackupIp { get => _explicitNullValueBackupIp; set { _explicitNullValueBackupIp = value; AdditionalData?.Remove("backup_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_ip"); else _explicitNullProperties?.Remove("backup_ip"); } }
         private string _explicitNullValueBackupIp = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Specify whether the pair shared across multiple accounts (shared) or available exclusively to this account. Non-shared pairs can contain Cloudflare-owned IPs (dedicated) or customer-provided IPs (byoip).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType? PairType { get => _explicitNullValuePairType; set { _explicitNullValuePairType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pair_type"); else _explicitNullProperties?.Remove("pair_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType? PairType { get => _explicitNullValuePairType; set { _explicitNullValuePairType = value; AdditionalData?.Remove("pair_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pair_type"); else _explicitNullProperties?.Remove("pair_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType? _explicitNullValuePairType = default!;
         /// <summary>The primary_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryIp { get => _explicitNullValuePrimaryIp; set { _explicitNullValuePrimaryIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_ip"); else _explicitNullProperties?.Remove("primary_ip"); } }
+        public string? PrimaryIp { get => _explicitNullValuePrimaryIp; set { _explicitNullValuePrimaryIp = value; AdditionalData?.Remove("primary_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_ip"); else _explicitNullProperties?.Remove("primary_ip"); } }
         private string? _explicitNullValuePrimaryIp = default!;
 #nullable restore
 #else
-        public string PrimaryIp { get => _explicitNullValuePrimaryIp; set { _explicitNullValuePrimaryIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_ip"); else _explicitNullProperties?.Remove("primary_ip"); } }
+        public string PrimaryIp { get => _explicitNullValuePrimaryIp; set { _explicitNullValuePrimaryIp = value; AdditionalData?.Remove("primary_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_ip"); else _explicitNullProperties?.Remove("primary_ip"); } }
         private string _explicitNullValuePrimaryIp = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "backup_ip", n => { BackupIp = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "pair_type", n => { PairType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType>(); } },
+                { "pair_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePairType = default; _explicitNullProperties?.Remove("pair_type"); AdditionalData["pair_type"] = unknown; } else { PairType = parsed; AdditionalData.Remove("pair_type"); } } },
                 { "primary_ip", n => { PrimaryIp = n.GetStringValue(); } },
             };
         }

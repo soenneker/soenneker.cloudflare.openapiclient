@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("prefer_ecs") is { } nullNodePreferEcs && nullNodePreferEcs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferEcs = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("prefer_ecs") is null) { _explicitNullValuePreferEcs = default!; _explicitNullProperties?.Remove("prefer_ecs"); }
+            else if (parseNode.GetChildNode("prefer_ecs") is { } nullNodePreferEcs && nullNodePreferEcs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferEcs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.- `&quot;pop&quot;`: Use the Cloudflare PoP location.- `&quot;resolver_ip&quot;`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode? _explicitNullValueMode = default!;
         /// <summary>Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.- `&quot;always&quot;`: Always prefer ECS.- `&quot;never&quot;`: Never prefer ECS.- `&quot;proximity&quot;`: Prefer ECS only when `steering_policy=&quot;proximity&quot;`.- `&quot;geo&quot;`: Prefer ECS only when `steering_policy=&quot;geo&quot;`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs? PreferEcs { get => _explicitNullValuePreferEcs; set { _explicitNullValuePreferEcs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefer_ecs"); else _explicitNullProperties?.Remove("prefer_ecs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs? PreferEcs { get => _explicitNullValuePreferEcs; set { _explicitNullValuePreferEcs = value; AdditionalData?.Remove("prefer_ecs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefer_ecs"); else _explicitNullProperties?.Remove("prefer_ecs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs? _explicitNullValuePreferEcs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode>(); } },
-                { "prefer_ecs", n => { PreferEcs = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs>(); } },
+                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
+                { "prefer_ecs", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreferEcs = default; _explicitNullProperties?.Remove("prefer_ecs"); AdditionalData["prefer_ecs"] = unknown; } else { PreferEcs = parsed; AdditionalData.Remove("prefer_ecs"); } } },
             };
         }
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("registration_cost") is { } nullNodeRegistrationCost && nullNodeRegistrationCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationCost = null;
-            if (parseNode.GetChildNode("renewal_cost") is { } nullNodeRenewalCost && nullNodeRenewalCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewalCost = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("registration_cost") is null) { _explicitNullValueRegistrationCost = default!; _explicitNullProperties?.Remove("registration_cost"); }
+            else if (parseNode.GetChildNode("registration_cost") is { } nullNodeRegistrationCost && nullNodeRegistrationCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationCost = null;
+            if (parseNode.GetChildNode("renewal_cost") is null) { _explicitNullValueRenewalCost = default!; _explicitNullProperties?.Remove("renewal_cost"); }
+            else if (parseNode.GetChildNode("renewal_cost") is { } nullNodeRenewalCost && nullNodeRenewalCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewalCost = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>ISO-4217 currency code for the prices (e.g., &quot;USD&quot;, &quot;EUR&quot;, &quot;GBP&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The first-year cost to register this domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationCost { get => _explicitNullValueRegistrationCost; set { _explicitNullValueRegistrationCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_cost"); else _explicitNullProperties?.Remove("registration_cost"); } }
+        public string? RegistrationCost { get => _explicitNullValueRegistrationCost; set { _explicitNullValueRegistrationCost = value; AdditionalData?.Remove("registration_cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_cost"); else _explicitNullProperties?.Remove("registration_cost"); } }
         private string? _explicitNullValueRegistrationCost = default!;
 #nullable restore
 #else
-        public string RegistrationCost { get => _explicitNullValueRegistrationCost; set { _explicitNullValueRegistrationCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_cost"); else _explicitNullProperties?.Remove("registration_cost"); } }
+        public string RegistrationCost { get => _explicitNullValueRegistrationCost; set { _explicitNullValueRegistrationCost = value; AdditionalData?.Remove("registration_cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_cost"); else _explicitNullProperties?.Remove("registration_cost"); } }
         private string _explicitNullValueRegistrationCost = default!;
 #endif
         /// <summary>Per-year renewal cost for this domain. Applied to each year beyondthe first year of a multi-year registration, and to each annualauto-renewal thereafter. May differ from `registration_cost`,especially for premium domains where initial registration oftencosts more than renewals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RenewalCost { get => _explicitNullValueRenewalCost; set { _explicitNullValueRenewalCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewal_cost"); else _explicitNullProperties?.Remove("renewal_cost"); } }
+        public string? RenewalCost { get => _explicitNullValueRenewalCost; set { _explicitNullValueRenewalCost = value; AdditionalData?.Remove("renewal_cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewal_cost"); else _explicitNullProperties?.Remove("renewal_cost"); } }
         private string? _explicitNullValueRenewalCost = default!;
 #nullable restore
 #else
-        public string RenewalCost { get => _explicitNullValueRenewalCost; set { _explicitNullValueRenewalCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewal_cost"); else _explicitNullProperties?.Remove("renewal_cost"); } }
+        public string RenewalCost { get => _explicitNullValueRenewalCost; set { _explicitNullValueRenewalCost = value; AdditionalData?.Remove("renewal_cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewal_cost"); else _explicitNullProperties?.Remove("renewal_cost"); } }
         private string _explicitNullValueRenewalCost = default!;
 #endif
         /// <summary>

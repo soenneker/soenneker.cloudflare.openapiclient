@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("body_part") is { } nullNodeBodyPart && nullNodeBodyPart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodyPart = null;
-            if (parseNode.GetChildNode("main_module") is { } nullNodeMainModule && nullNodeMainModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainModule = null;
+            if (parseNode.GetChildNode("body_part") is null) { _explicitNullValueBodyPart = default!; _explicitNullProperties?.Remove("body_part"); }
+            else if (parseNode.GetChildNode("body_part") is { } nullNodeBodyPart && nullNodeBodyPart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodyPart = null;
+            if (parseNode.GetChildNode("main_module") is null) { _explicitNullValueMainModule = default!; _explicitNullProperties?.Remove("main_module"); }
+            else if (parseNode.GetChildNode("main_module") is { } nullNodeMainModule && nullNodeMainModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainModule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Name of the uploaded file that contains the Worker script (e.g. the file adding a listener to the `fetch` event). Indicates a `service worker syntax` Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BodyPart { get => _explicitNullValueBodyPart; set { _explicitNullValueBodyPart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_part"); else _explicitNullProperties?.Remove("body_part"); } }
+        public string? BodyPart { get => _explicitNullValueBodyPart; set { _explicitNullValueBodyPart = value; AdditionalData?.Remove("body_part"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_part"); else _explicitNullProperties?.Remove("body_part"); } }
         private string? _explicitNullValueBodyPart = default!;
 #nullable restore
 #else
-        public string BodyPart { get => _explicitNullValueBodyPart; set { _explicitNullValueBodyPart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_part"); else _explicitNullProperties?.Remove("body_part"); } }
+        public string BodyPart { get => _explicitNullValueBodyPart; set { _explicitNullValueBodyPart = value; AdditionalData?.Remove("body_part"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_part"); else _explicitNullProperties?.Remove("body_part"); } }
         private string _explicitNullValueBodyPart = default!;
 #endif
         /// <summary>Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
+        public string? MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; AdditionalData?.Remove("main_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
         private string? _explicitNullValueMainModule = default!;
 #nullable restore
 #else
-        public string MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
+        public string MainModule { get => _explicitNullValueMainModule; set { _explicitNullValueMainModule = value; AdditionalData?.Remove("main_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_module"); else _explicitNullProperties?.Remove("main_module"); } }
         private string _explicitNullValueMainModule = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("approval") is { } nullNodeApproval && nullNodeApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approval = null;
+            if (parseNode.GetChildNode("approval") is null) { _explicitNullValueApproval = default!; _explicitNullProperties?.Remove("approval"); }
+            else if (parseNode.GetChildNode("approval") is { } nullNodeApproval && nullNodeApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approval = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The approval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEditApprovalResponseApproval? Approval { get => _explicitNullValueApproval; set { _explicitNullValueApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval"); else _explicitNullProperties?.Remove("approval"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEditApprovalResponseApproval? Approval { get => _explicitNullValueApproval; set { _explicitNullValueApproval = value; AdditionalData?.Remove("approval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval"); else _explicitNullProperties?.Remove("approval"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEditApprovalResponseApproval? _explicitNullValueApproval = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEditApprovalResponseApproval Approval { get => _explicitNullValueApproval; set { _explicitNullValueApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval"); else _explicitNullProperties?.Remove("approval"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEditApprovalResponseApproval Approval { get => _explicitNullValueApproval; set { _explicitNullValueApproval = value; AdditionalData?.Remove("approval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval"); else _explicitNullProperties?.Remove("approval"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEditApprovalResponseApproval _explicitNullValueApproval = default!;
 #endif
         /// <summary>

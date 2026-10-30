@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dispatchNamespace") is { } nullNodeDispatchNamespace && nullNodeDispatchNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespace = null;
-            if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
-            if (parseNode.GetChildNode("executionModel") is { } nullNodeExecutionModel && nullNodeExecutionModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionModel = null;
-            if (parseNode.GetChildNode("scriptName") is { } nullNodeScriptName && nullNodeScriptName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptName = null;
-            if (parseNode.GetChildNode("scriptTags") is { } nullNodeScriptTags && nullNodeScriptTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptTags = null;
-            if (parseNode.GetChildNode("scriptVersion") is { } nullNodeScriptVersion && nullNodeScriptVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptVersion = null;
+            if (parseNode.GetChildNode("dispatchNamespace") is null) { _explicitNullValueDispatchNamespace = default!; _explicitNullProperties?.Remove("dispatchNamespace"); }
+            else if (parseNode.GetChildNode("dispatchNamespace") is { } nullNodeDispatchNamespace && nullNodeDispatchNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispatchNamespace = null;
+            if (parseNode.GetChildNode("entrypoint") is null) { _explicitNullValueEntrypoint = default!; _explicitNullProperties?.Remove("entrypoint"); }
+            else if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
+            if (parseNode.GetChildNode("executionModel") is null) { _explicitNullValueExecutionModel = default!; _explicitNullProperties?.Remove("executionModel"); }
+            else if (parseNode.GetChildNode("executionModel") is { } nullNodeExecutionModel && nullNodeExecutionModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionModel = null;
+            if (parseNode.GetChildNode("scriptName") is null) { _explicitNullValueScriptName = default!; _explicitNullProperties?.Remove("scriptName"); }
+            else if (parseNode.GetChildNode("scriptName") is { } nullNodeScriptName && nullNodeScriptName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptName = null;
+            if (parseNode.GetChildNode("scriptTags") is null) { _explicitNullValueScriptTags = default!; _explicitNullProperties?.Remove("scriptTags"); }
+            else if (parseNode.GetChildNode("scriptTags") is { } nullNodeScriptTags && nullNodeScriptTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptTags = null;
+            if (parseNode.GetChildNode("scriptVersion") is null) { _explicitNullValueScriptVersion = default!; _explicitNullProperties?.Remove("scriptVersion"); }
+            else if (parseNode.GetChildNode("scriptVersion") is { } nullNodeScriptVersion && nullNodeScriptVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The dispatchNamespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
+        public string? DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; AdditionalData?.Remove("dispatchNamespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
         private string? _explicitNullValueDispatchNamespace = default!;
 #nullable restore
 #else
-        public string DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
+        public string DispatchNamespace { get => _explicitNullValueDispatchNamespace; set { _explicitNullValueDispatchNamespace = value; AdditionalData?.Remove("dispatchNamespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispatchNamespace"); else _explicitNullProperties?.Remove("dispatchNamespace"); } }
         private string _explicitNullValueDispatchNamespace = default!;
 #endif
         /// <summary>The entrypoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        public string? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; AdditionalData?.Remove("entrypoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
         private string? _explicitNullValueEntrypoint = default!;
 #nullable restore
 #else
-        public string Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        public string Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; AdditionalData?.Remove("entrypoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
         private string _explicitNullValueEntrypoint = default!;
 #endif
         /// <summary>The executionModel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
+        public string? ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; AdditionalData?.Remove("executionModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
         private string? _explicitNullValueExecutionModel = default!;
 #nullable restore
 #else
-        public string ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
+        public string ExecutionModel { get => _explicitNullValueExecutionModel; set { _explicitNullValueExecutionModel = value; AdditionalData?.Remove("executionModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionModel"); else _explicitNullProperties?.Remove("executionModel"); } }
         private string _explicitNullValueExecutionModel = default!;
 #endif
         /// <summary>The scriptName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
+        public string? ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; AdditionalData?.Remove("scriptName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
         private string? _explicitNullValueScriptName = default!;
 #nullable restore
 #else
-        public string ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
+        public string ScriptName { get => _explicitNullValueScriptName; set { _explicitNullValueScriptName = value; AdditionalData?.Remove("scriptName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptName"); else _explicitNullProperties?.Remove("scriptName"); } }
         private string _explicitNullValueScriptName = default!;
 #endif
         /// <summary>The scriptTags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScriptTags { get => _explicitNullValueScriptTags; set { _explicitNullValueScriptTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptTags"); else _explicitNullProperties?.Remove("scriptTags"); } }
+        public List<string>? ScriptTags { get => _explicitNullValueScriptTags; set { _explicitNullValueScriptTags = value; AdditionalData?.Remove("scriptTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptTags"); else _explicitNullProperties?.Remove("scriptTags"); } }
         private List<string>? _explicitNullValueScriptTags = default!;
 #nullable restore
 #else
-        public List<string> ScriptTags { get => _explicitNullValueScriptTags; set { _explicitNullValueScriptTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptTags"); else _explicitNullProperties?.Remove("scriptTags"); } }
+        public List<string> ScriptTags { get => _explicitNullValueScriptTags; set { _explicitNullValueScriptTags = value; AdditionalData?.Remove("scriptTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptTags"); else _explicitNullProperties?.Remove("scriptTags"); } }
         private List<string> _explicitNullValueScriptTags = default!;
 #endif
         /// <summary>The scriptVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion? ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion? ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; AdditionalData?.Remove("scriptVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion? _explicitNullValueScriptVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion ScriptVersion { get => _explicitNullValueScriptVersion; set { _explicitNullValueScriptVersion = value; AdditionalData?.Remove("scriptVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptVersion"); else _explicitNullProperties?.Remove("scriptVersion"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceWorkerScriptVersion _explicitNullValueScriptVersion = default!;
 #endif
         /// <summary>

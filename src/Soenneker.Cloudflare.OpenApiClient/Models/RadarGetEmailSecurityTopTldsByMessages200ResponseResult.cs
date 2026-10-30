@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
-            if (parseNode.GetChildNode("top_0") is { } nullNodeTop0 && nullNodeTop0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Top0 = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("top_0") is null) { _explicitNullValueTop0 = default!; _explicitNullProperties?.Remove("top_0"); }
+            else if (parseNode.GetChildNode("top_0") is { } nullNodeTop0 && nullNodeTop0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Top0 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Metadata for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The top_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultTop0Item>? Top0 { get => _explicitNullValueTop0; set { _explicitNullValueTop0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_0"); else _explicitNullProperties?.Remove("top_0"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultTop0Item>? Top0 { get => _explicitNullValueTop0; set { _explicitNullValueTop0 = value; AdditionalData?.Remove("top_0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_0"); else _explicitNullProperties?.Remove("top_0"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultTop0Item>? _explicitNullValueTop0 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultTop0Item> Top0 { get => _explicitNullValueTop0; set { _explicitNullValueTop0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_0"); else _explicitNullProperties?.Remove("top_0"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultTop0Item> Top0 { get => _explicitNullValueTop0; set { _explicitNullValueTop0 = value; AdditionalData?.Remove("top_0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_0"); else _explicitNullProperties?.Remove("top_0"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsByMessages200ResponseResultTop0Item> _explicitNullValueTop0 = default!;
 #endif
         /// <summary>

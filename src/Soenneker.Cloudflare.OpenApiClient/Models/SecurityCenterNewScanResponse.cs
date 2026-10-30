@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scan_id") is { } nullNodeScanId && nullNodeScanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScanId = null;
+            if (parseNode.GetChildNode("scan_id") is null) { _explicitNullValueScanId = default!; _explicitNullProperties?.Remove("scan_id"); }
+            else if (parseNode.GetChildNode("scan_id") is { } nullNodeScanId && nullNodeScanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScanId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An opaque identifier for the initiated scan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScanId { get => _explicitNullValueScanId; set { _explicitNullValueScanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_id"); else _explicitNullProperties?.Remove("scan_id"); } }
+        public string? ScanId { get => _explicitNullValueScanId; set { _explicitNullValueScanId = value; AdditionalData?.Remove("scan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_id"); else _explicitNullProperties?.Remove("scan_id"); } }
         private string? _explicitNullValueScanId = default!;
 #nullable restore
 #else
-        public string ScanId { get => _explicitNullValueScanId; set { _explicitNullValueScanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_id"); else _explicitNullProperties?.Remove("scan_id"); } }
+        public string ScanId { get => _explicitNullValueScanId; set { _explicitNullValueScanId = value; AdditionalData?.Remove("scan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scan_id"); else _explicitNullProperties?.Remove("scan_id"); } }
         private string _explicitNullValueScanId = default!;
 #endif
         /// <summary>

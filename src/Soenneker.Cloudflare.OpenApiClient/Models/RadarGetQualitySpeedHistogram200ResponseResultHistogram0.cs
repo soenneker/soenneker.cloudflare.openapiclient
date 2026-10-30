@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bandwidthDownload") is { } nullNodeBandwidthDownload && nullNodeBandwidthDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthDownload = null;
-            if (parseNode.GetChildNode("bandwidthUpload") is { } nullNodeBandwidthUpload && nullNodeBandwidthUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthUpload = null;
-            if (parseNode.GetChildNode("bucketMin") is { } nullNodeBucketMin && nullNodeBucketMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketMin = null;
+            if (parseNode.GetChildNode("bandwidthDownload") is null) { _explicitNullValueBandwidthDownload = default!; _explicitNullProperties?.Remove("bandwidthDownload"); }
+            else if (parseNode.GetChildNode("bandwidthDownload") is { } nullNodeBandwidthDownload && nullNodeBandwidthDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthDownload = null;
+            if (parseNode.GetChildNode("bandwidthUpload") is null) { _explicitNullValueBandwidthUpload = default!; _explicitNullProperties?.Remove("bandwidthUpload"); }
+            else if (parseNode.GetChildNode("bandwidthUpload") is { } nullNodeBandwidthUpload && nullNodeBandwidthUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BandwidthUpload = null;
+            if (parseNode.GetChildNode("bucketMin") is null) { _explicitNullValueBucketMin = default!; _explicitNullProperties?.Remove("bucketMin"); }
+            else if (parseNode.GetChildNode("bucketMin") is { } nullNodeBucketMin && nullNodeBucketMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketMin = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The bandwidthDownload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
+        public List<string>? BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; AdditionalData?.Remove("bandwidthDownload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
         private List<string>? _explicitNullValueBandwidthDownload = default!;
 #nullable restore
 #else
-        public List<string> BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
+        public List<string> BandwidthDownload { get => _explicitNullValueBandwidthDownload; set { _explicitNullValueBandwidthDownload = value; AdditionalData?.Remove("bandwidthDownload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthDownload"); else _explicitNullProperties?.Remove("bandwidthDownload"); } }
         private List<string> _explicitNullValueBandwidthDownload = default!;
 #endif
         /// <summary>The bandwidthUpload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
+        public List<string>? BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; AdditionalData?.Remove("bandwidthUpload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
         private List<string>? _explicitNullValueBandwidthUpload = default!;
 #nullable restore
 #else
-        public List<string> BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
+        public List<string> BandwidthUpload { get => _explicitNullValueBandwidthUpload; set { _explicitNullValueBandwidthUpload = value; AdditionalData?.Remove("bandwidthUpload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidthUpload"); else _explicitNullProperties?.Remove("bandwidthUpload"); } }
         private List<string> _explicitNullValueBandwidthUpload = default!;
 #endif
         /// <summary>The bucketMin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BucketMin { get => _explicitNullValueBucketMin; set { _explicitNullValueBucketMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketMin"); else _explicitNullProperties?.Remove("bucketMin"); } }
+        public List<string>? BucketMin { get => _explicitNullValueBucketMin; set { _explicitNullValueBucketMin = value; AdditionalData?.Remove("bucketMin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketMin"); else _explicitNullProperties?.Remove("bucketMin"); } }
         private List<string>? _explicitNullValueBucketMin = default!;
 #nullable restore
 #else
-        public List<string> BucketMin { get => _explicitNullValueBucketMin; set { _explicitNullValueBucketMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketMin"); else _explicitNullProperties?.Remove("bucketMin"); } }
+        public List<string> BucketMin { get => _explicitNullValueBucketMin; set { _explicitNullValueBucketMin = value; AdditionalData?.Remove("bucketMin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketMin"); else _explicitNullProperties?.Remove("bucketMin"); } }
         private List<string> _explicitNullValueBucketMin = default!;
 #endif
         /// <summary>

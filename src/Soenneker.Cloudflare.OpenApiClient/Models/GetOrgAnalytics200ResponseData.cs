@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("recording_stats") is { } nullNodeRecordingStats && nullNodeRecordingStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingStats = null;
-            if (parseNode.GetChildNode("session_stats") is { } nullNodeSessionStats && nullNodeSessionStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionStats = null;
+            if (parseNode.GetChildNode("recording_stats") is null) { _explicitNullValueRecordingStats = default!; _explicitNullProperties?.Remove("recording_stats"); }
+            else if (parseNode.GetChildNode("recording_stats") is { } nullNodeRecordingStats && nullNodeRecordingStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingStats = null;
+            if (parseNode.GetChildNode("session_stats") is null) { _explicitNullValueSessionStats = default!; _explicitNullProperties?.Remove("session_stats"); }
+            else if (parseNode.GetChildNode("session_stats") is { } nullNodeSessionStats && nullNodeSessionStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionStats = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Recording statistics of an App during the range specified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStats? RecordingStats { get => _explicitNullValueRecordingStats; set { _explicitNullValueRecordingStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_stats"); else _explicitNullProperties?.Remove("recording_stats"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStats? RecordingStats { get => _explicitNullValueRecordingStats; set { _explicitNullValueRecordingStats = value; AdditionalData?.Remove("recording_stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_stats"); else _explicitNullProperties?.Remove("recording_stats"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStats? _explicitNullValueRecordingStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStats RecordingStats { get => _explicitNullValueRecordingStats; set { _explicitNullValueRecordingStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_stats"); else _explicitNullProperties?.Remove("recording_stats"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStats RecordingStats { get => _explicitNullValueRecordingStats; set { _explicitNullValueRecordingStats = value; AdditionalData?.Remove("recording_stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_stats"); else _explicitNullProperties?.Remove("recording_stats"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataRecordingStats _explicitNullValueRecordingStats = default!;
 #endif
         /// <summary>Session statistics of an App during the range specified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataSessionStats? SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_stats"); else _explicitNullProperties?.Remove("session_stats"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataSessionStats? SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("session_stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_stats"); else _explicitNullProperties?.Remove("session_stats"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataSessionStats? _explicitNullValueSessionStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataSessionStats SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_stats"); else _explicitNullProperties?.Remove("session_stats"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataSessionStats SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("session_stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_stats"); else _explicitNullProperties?.Remove("session_stats"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetOrgAnalytics200ResponseDataSessionStats _explicitNullValueSessionStats = default!;
 #endif
         /// <summary>

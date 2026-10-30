@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
-            if (parseNode.GetChildNode("patches") is { } nullNodePatches && nullNodePatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patches = null;
-            if (parseNode.GetChildNode("posts") is { } nullNodePosts && nullNodePosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Posts = null;
-            if (parseNode.GetChildNode("puts") is { } nullNodePuts && nullNodePuts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Puts = null;
+            if (parseNode.GetChildNode("deletes") is null) { _explicitNullValueDeletes = default!; _explicitNullProperties?.Remove("deletes"); }
+            else if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
+            if (parseNode.GetChildNode("patches") is null) { _explicitNullValuePatches = default!; _explicitNullProperties?.Remove("patches"); }
+            else if (parseNode.GetChildNode("patches") is { } nullNodePatches && nullNodePatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patches = null;
+            if (parseNode.GetChildNode("posts") is null) { _explicitNullValuePosts = default!; _explicitNullProperties?.Remove("posts"); }
+            else if (parseNode.GetChildNode("posts") is { } nullNodePosts && nullNodePosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Posts = null;
+            if (parseNode.GetChildNode("puts") is null) { _explicitNullValuePuts = default!; _explicitNullProperties?.Remove("puts"); }
+            else if (parseNode.GetChildNode("puts") is { } nullNodePuts && nullNodePuts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Puts = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The deletes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeletedBlockedSender>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeletedBlockedSender>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; AdditionalData?.Remove("deletes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeletedBlockedSender>? _explicitNullValueDeletes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeletedBlockedSender> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeletedBlockedSender> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; AdditionalData?.Remove("deletes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeletedBlockedSender> _explicitNullValueDeletes = default!;
 #endif
         /// <summary>The patches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? Patches { get => _explicitNullValuePatches; set { _explicitNullValuePatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patches"); else _explicitNullProperties?.Remove("patches"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? Patches { get => _explicitNullValuePatches; set { _explicitNullValuePatches = value; AdditionalData?.Remove("patches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patches"); else _explicitNullProperties?.Remove("patches"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? _explicitNullValuePatches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> Patches { get => _explicitNullValuePatches; set { _explicitNullValuePatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patches"); else _explicitNullProperties?.Remove("patches"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> Patches { get => _explicitNullValuePatches; set { _explicitNullValuePatches = value; AdditionalData?.Remove("patches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patches"); else _explicitNullProperties?.Remove("patches"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> _explicitNullValuePatches = default!;
 #endif
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; AdditionalData?.Remove("posts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? _explicitNullValuePosts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; AdditionalData?.Remove("posts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> _explicitNullValuePosts = default!;
 #endif
         /// <summary>The puts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? Puts { get => _explicitNullValuePuts; set { _explicitNullValuePuts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("puts"); else _explicitNullProperties?.Remove("puts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? Puts { get => _explicitNullValuePuts; set { _explicitNullValuePuts = value; AdditionalData?.Remove("puts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("puts"); else _explicitNullProperties?.Remove("puts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender>? _explicitNullValuePuts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> Puts { get => _explicitNullValuePuts; set { _explicitNullValuePuts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("puts"); else _explicitNullProperties?.Remove("puts"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> Puts { get => _explicitNullValuePuts; set { _explicitNullValuePuts = value; AdditionalData?.Remove("puts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("puts"); else _explicitNullProperties?.Remove("puts"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBlockedSender> _explicitNullValuePuts = default!;
 #endif
         /// <summary>

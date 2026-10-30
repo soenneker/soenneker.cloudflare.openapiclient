@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("r2_bucket") is { } nullNodeR2Bucket && nullNodeR2Bucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Bucket = null;
-            if (parseNode.GetChildNode("r2_id") is { } nullNodeR2Id && nullNodeR2Id.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Id = null;
-            if (parseNode.GetChildNode("r2_secret") is { } nullNodeR2Secret && nullNodeR2Secret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Secret = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("r2_bucket") is null) { _explicitNullValueR2Bucket = default!; _explicitNullProperties?.Remove("r2_bucket"); }
+            else if (parseNode.GetChildNode("r2_bucket") is { } nullNodeR2Bucket && nullNodeR2Bucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Bucket = null;
+            if (parseNode.GetChildNode("r2_id") is null) { _explicitNullValueR2Id = default!; _explicitNullProperties?.Remove("r2_id"); }
+            else if (parseNode.GetChildNode("r2_id") is { } nullNodeR2Id && nullNodeR2Id.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Id = null;
+            if (parseNode.GetChildNode("r2_secret") is null) { _explicitNullValueR2Secret = default!; _explicitNullProperties?.Remove("r2_secret"); }
+            else if (parseNode.GetChildNode("r2_secret") is { } nullNodeR2Secret && nullNodeR2Secret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R2Secret = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of the sinkhole.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The name of the R2 bucket to store results. Required if you want to store large request bodies in R2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? R2Bucket { get => _explicitNullValueR2Bucket; set { _explicitNullValueR2Bucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_bucket"); else _explicitNullProperties?.Remove("r2_bucket"); } }
+        public string? R2Bucket { get => _explicitNullValueR2Bucket; set { _explicitNullValueR2Bucket = value; AdditionalData?.Remove("r2_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_bucket"); else _explicitNullProperties?.Remove("r2_bucket"); } }
         private string? _explicitNullValueR2Bucket = default!;
 #nullable restore
 #else
-        public string R2Bucket { get => _explicitNullValueR2Bucket; set { _explicitNullValueR2Bucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_bucket"); else _explicitNullProperties?.Remove("r2_bucket"); } }
+        public string R2Bucket { get => _explicitNullValueR2Bucket; set { _explicitNullValueR2Bucket = value; AdditionalData?.Remove("r2_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_bucket"); else _explicitNullProperties?.Remove("r2_bucket"); } }
         private string _explicitNullValueR2Bucket = default!;
 #endif
         /// <summary>The id of the R2 instance. Required if you want to store large request bodies in R2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? R2Id { get => _explicitNullValueR2Id; set { _explicitNullValueR2Id = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_id"); else _explicitNullProperties?.Remove("r2_id"); } }
+        public string? R2Id { get => _explicitNullValueR2Id; set { _explicitNullValueR2Id = value; AdditionalData?.Remove("r2_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_id"); else _explicitNullProperties?.Remove("r2_id"); } }
         private string? _explicitNullValueR2Id = default!;
 #nullable restore
 #else
-        public string R2Id { get => _explicitNullValueR2Id; set { _explicitNullValueR2Id = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_id"); else _explicitNullProperties?.Remove("r2_id"); } }
+        public string R2Id { get => _explicitNullValueR2Id; set { _explicitNullValueR2Id = value; AdditionalData?.Remove("r2_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_id"); else _explicitNullProperties?.Remove("r2_id"); } }
         private string _explicitNullValueR2Id = default!;
 #endif
         /// <summary>The secret key for the R2 API token. Required if you want to store large request bodies in R2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? R2Secret { get => _explicitNullValueR2Secret; set { _explicitNullValueR2Secret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_secret"); else _explicitNullProperties?.Remove("r2_secret"); } }
+        public string? R2Secret { get => _explicitNullValueR2Secret; set { _explicitNullValueR2Secret = value; AdditionalData?.Remove("r2_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_secret"); else _explicitNullProperties?.Remove("r2_secret"); } }
         private string? _explicitNullValueR2Secret = default!;
 #nullable restore
 #else
-        public string R2Secret { get => _explicitNullValueR2Secret; set { _explicitNullValueR2Secret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_secret"); else _explicitNullProperties?.Remove("r2_secret"); } }
+        public string R2Secret { get => _explicitNullValueR2Secret; set { _explicitNullValueR2Secret = value; AdditionalData?.Remove("r2_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r2_secret"); else _explicitNullProperties?.Remove("r2_secret"); } }
         private string _explicitNullValueR2Secret = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("psk") is { } nullNodePsk && nullNodePsk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Psk = null;
-            if (parseNode.GetChildNode("psk_metadata") is { } nullNodePskMetadata && nullNodePskMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PskMetadata = null;
+            if (parseNode.GetChildNode("psk") is null) { _explicitNullValuePsk = default!; _explicitNullProperties?.Remove("psk"); }
+            else if (parseNode.GetChildNode("psk") is { } nullNodePsk && nullNodePsk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Psk = null;
+            if (parseNode.GetChildNode("psk_metadata") is null) { _explicitNullValuePskMetadata = default!; _explicitNullProperties?.Remove("psk_metadata"); }
+            else if (parseNode.GetChildNode("psk_metadata") is { } nullNodePskMetadata && nullNodePskMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PskMetadata = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,21 +36,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A randomly generated or provided string for use in the IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
+        public string? Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; AdditionalData?.Remove("psk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
         private string? _explicitNullValuePsk = default!;
 #nullable restore
 #else
-        public string Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
+        public string Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; AdditionalData?.Remove("psk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
         private string _explicitNullValuePsk = default!;
 #endif
         /// <summary>The PSK metadata that includes when the PSK was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata? PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata? PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; AdditionalData?.Remove("psk_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata? _explicitNullValuePskMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata PskMetadata { get => _explicitNullValuePskMetadata; set { _explicitNullValuePskMetadata = value; AdditionalData?.Remove("psk_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk_metadata"); else _explicitNullProperties?.Remove("psk_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicPskMetadata _explicitNullValuePskMetadata = default!;
 #endif
         /// <summary>

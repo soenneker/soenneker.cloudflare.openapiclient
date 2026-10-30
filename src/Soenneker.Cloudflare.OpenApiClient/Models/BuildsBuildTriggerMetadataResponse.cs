@@ -17,20 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
-            if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
-            if (parseNode.GetChildNode("build_command") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
-            if (parseNode.GetChildNode("build_token_name") is { } nullNodeBuildTokenName && nullNodeBuildTokenName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenName = null;
-            if (parseNode.GetChildNode("build_token_uuid") is { } nullNodeBuildTokenUuid && nullNodeBuildTokenUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenUuid = null;
-            if (parseNode.GetChildNode("build_trigger_source") is { } nullNodeBuildTriggerSource && nullNodeBuildTriggerSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTriggerSource = null;
-            if (parseNode.GetChildNode("commit_hash") is { } nullNodeCommitHash && nullNodeCommitHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitHash = null;
-            if (parseNode.GetChildNode("commit_message") is { } nullNodeCommitMessage && nullNodeCommitMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitMessage = null;
-            if (parseNode.GetChildNode("deploy_command") is { } nullNodeDeployCommand && nullNodeDeployCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployCommand = null;
-            if (parseNode.GetChildNode("environment_variables") is { } nullNodeEnvironmentVariables && nullNodeEnvironmentVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentVariables = null;
-            if (parseNode.GetChildNode("provider_account_name") is { } nullNodeProviderAccountName && nullNodeProviderAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderAccountName = null;
-            if (parseNode.GetChildNode("provider_type") is { } nullNodeProviderType && nullNodeProviderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderType = null;
-            if (parseNode.GetChildNode("repo_name") is { } nullNodeRepoName && nullNodeRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoName = null;
-            if (parseNode.GetChildNode("root_directory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
+            if (parseNode.GetChildNode("author") is null) { _explicitNullValueAuthor = default!; _explicitNullProperties?.Remove("author"); }
+            else if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("branch") is null) { _explicitNullValueBranch = default!; _explicitNullProperties?.Remove("branch"); }
+            else if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
+            if (parseNode.GetChildNode("build_command") is null) { _explicitNullValueBuildCommand = default!; _explicitNullProperties?.Remove("build_command"); }
+            else if (parseNode.GetChildNode("build_command") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("build_token_name") is null) { _explicitNullValueBuildTokenName = default!; _explicitNullProperties?.Remove("build_token_name"); }
+            else if (parseNode.GetChildNode("build_token_name") is { } nullNodeBuildTokenName && nullNodeBuildTokenName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenName = null;
+            if (parseNode.GetChildNode("build_token_uuid") is null) { _explicitNullValueBuildTokenUuid = default!; _explicitNullProperties?.Remove("build_token_uuid"); }
+            else if (parseNode.GetChildNode("build_token_uuid") is { } nullNodeBuildTokenUuid && nullNodeBuildTokenUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTokenUuid = null;
+            if (parseNode.GetChildNode("build_trigger_source") is null) { _explicitNullValueBuildTriggerSource = default!; _explicitNullProperties?.Remove("build_trigger_source"); }
+            else if (parseNode.GetChildNode("build_trigger_source") is { } nullNodeBuildTriggerSource && nullNodeBuildTriggerSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildTriggerSource = null;
+            if (parseNode.GetChildNode("commit_hash") is null) { _explicitNullValueCommitHash = default!; _explicitNullProperties?.Remove("commit_hash"); }
+            else if (parseNode.GetChildNode("commit_hash") is { } nullNodeCommitHash && nullNodeCommitHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitHash = null;
+            if (parseNode.GetChildNode("commit_message") is null) { _explicitNullValueCommitMessage = default!; _explicitNullProperties?.Remove("commit_message"); }
+            else if (parseNode.GetChildNode("commit_message") is { } nullNodeCommitMessage && nullNodeCommitMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitMessage = null;
+            if (parseNode.GetChildNode("deploy_command") is null) { _explicitNullValueDeployCommand = default!; _explicitNullProperties?.Remove("deploy_command"); }
+            else if (parseNode.GetChildNode("deploy_command") is { } nullNodeDeployCommand && nullNodeDeployCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployCommand = null;
+            if (parseNode.GetChildNode("environment_variables") is null) { _explicitNullValueEnvironmentVariables = default!; _explicitNullProperties?.Remove("environment_variables"); }
+            else if (parseNode.GetChildNode("environment_variables") is { } nullNodeEnvironmentVariables && nullNodeEnvironmentVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentVariables = null;
+            if (parseNode.GetChildNode("provider_account_name") is null) { _explicitNullValueProviderAccountName = default!; _explicitNullProperties?.Remove("provider_account_name"); }
+            else if (parseNode.GetChildNode("provider_account_name") is { } nullNodeProviderAccountName && nullNodeProviderAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderAccountName = null;
+            if (parseNode.GetChildNode("provider_type") is null) { _explicitNullValueProviderType = default!; _explicitNullProperties?.Remove("provider_type"); }
+            else if (parseNode.GetChildNode("provider_type") is { } nullNodeProviderType && nullNodeProviderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderType = null;
+            if (parseNode.GetChildNode("repo_name") is null) { _explicitNullValueRepoName = default!; _explicitNullProperties?.Remove("repo_name"); }
+            else if (parseNode.GetChildNode("repo_name") is { } nullNodeRepoName && nullNodeRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoName = null;
+            if (parseNode.GetChildNode("root_directory") is null) { _explicitNullValueRootDirectory = default!; _explicitNullProperties?.Remove("root_directory"); }
+            else if (parseNode.GetChildNode("root_directory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,120 +52,120 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
         private string? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
         private string _explicitNullValueAuthor = default!;
 #endif
         /// <summary>Git branch name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string _explicitNullValueBranch = default!;
 #endif
         /// <summary>Command to build the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("build_command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
         private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("build_command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_command"); else _explicitNullProperties?.Remove("build_command"); } }
         private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>The build_token_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
+        public string? BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; AdditionalData?.Remove("build_token_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
         private string? _explicitNullValueBuildTokenName = default!;
 #nullable restore
 #else
-        public string BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
+        public string BuildTokenName { get => _explicitNullValueBuildTokenName; set { _explicitNullValueBuildTokenName = value; AdditionalData?.Remove("build_token_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_name"); else _explicitNullProperties?.Remove("build_token_name"); } }
         private string _explicitNullValueBuildTokenName = default!;
 #endif
         /// <summary>UUID of the build token used when deploying the Worker.</summary>
-        public Guid? BuildTokenUuid { get => _explicitNullValueBuildTokenUuid; set { _explicitNullValueBuildTokenUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_uuid"); else _explicitNullProperties?.Remove("build_token_uuid"); } }
+        public Guid? BuildTokenUuid { get => _explicitNullValueBuildTokenUuid; set { _explicitNullValueBuildTokenUuid = value; AdditionalData?.Remove("build_token_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_token_uuid"); else _explicitNullProperties?.Remove("build_token_uuid"); } }
         private Guid? _explicitNullValueBuildTokenUuid = default!;
         /// <summary>The build_trigger_source property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerSource? BuildTriggerSource { get => _explicitNullValueBuildTriggerSource; set { _explicitNullValueBuildTriggerSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_trigger_source"); else _explicitNullProperties?.Remove("build_trigger_source"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerSource? BuildTriggerSource { get => _explicitNullValueBuildTriggerSource; set { _explicitNullValueBuildTriggerSource = value; AdditionalData?.Remove("build_trigger_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_trigger_source"); else _explicitNullProperties?.Remove("build_trigger_source"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerSource? _explicitNullValueBuildTriggerSource = default!;
         /// <summary>Git commit hash</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitHash { get => _explicitNullValueCommitHash; set { _explicitNullValueCommitHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_hash"); else _explicitNullProperties?.Remove("commit_hash"); } }
+        public string? CommitHash { get => _explicitNullValueCommitHash; set { _explicitNullValueCommitHash = value; AdditionalData?.Remove("commit_hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_hash"); else _explicitNullProperties?.Remove("commit_hash"); } }
         private string? _explicitNullValueCommitHash = default!;
 #nullable restore
 #else
-        public string CommitHash { get => _explicitNullValueCommitHash; set { _explicitNullValueCommitHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_hash"); else _explicitNullProperties?.Remove("commit_hash"); } }
+        public string CommitHash { get => _explicitNullValueCommitHash; set { _explicitNullValueCommitHash = value; AdditionalData?.Remove("commit_hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_hash"); else _explicitNullProperties?.Remove("commit_hash"); } }
         private string _explicitNullValueCommitHash = default!;
 #endif
         /// <summary>The commit_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_message"); else _explicitNullProperties?.Remove("commit_message"); } }
+        public string? CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; AdditionalData?.Remove("commit_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_message"); else _explicitNullProperties?.Remove("commit_message"); } }
         private string? _explicitNullValueCommitMessage = default!;
 #nullable restore
 #else
-        public string CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_message"); else _explicitNullProperties?.Remove("commit_message"); } }
+        public string CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; AdditionalData?.Remove("commit_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit_message"); else _explicitNullProperties?.Remove("commit_message"); } }
         private string _explicitNullValueCommitMessage = default!;
 #endif
         /// <summary>Command to deploy the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
+        public string? DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; AdditionalData?.Remove("deploy_command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
         private string? _explicitNullValueDeployCommand = default!;
 #nullable restore
 #else
-        public string DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
+        public string DeployCommand { get => _explicitNullValueDeployCommand; set { _explicitNullValueDeployCommand = value; AdditionalData?.Remove("deploy_command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_command"); else _explicitNullProperties?.Remove("deploy_command"); } }
         private string _explicitNullValueDeployCommand = default!;
 #endif
         /// <summary>The environment_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty? EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty? EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; AdditionalData?.Remove("environment_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty? _explicitNullValueEnvironmentVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; AdditionalData?.Remove("environment_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_variables"); else _explicitNullProperties?.Remove("environment_variables"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty _explicitNullValueEnvironmentVariables = default!;
 #endif
         /// <summary>Human-readable name of the account or namespace that owns the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
+        public string? ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; AdditionalData?.Remove("provider_account_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
         private string? _explicitNullValueProviderAccountName = default!;
 #nullable restore
 #else
-        public string ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
+        public string ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; AdditionalData?.Remove("provider_account_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
         private string _explicitNullValueProviderAccountName = default!;
 #endif
         /// <summary>Source control provider.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType? ProviderType { get => _explicitNullValueProviderType; set { _explicitNullValueProviderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_type"); else _explicitNullProperties?.Remove("provider_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType? ProviderType { get => _explicitNullValueProviderType; set { _explicitNullValueProviderType = value; AdditionalData?.Remove("provider_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_type"); else _explicitNullProperties?.Remove("provider_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType? _explicitNullValueProviderType = default!;
         /// <summary>Human-readable repository name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
+        public string? RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; AdditionalData?.Remove("repo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
         private string? _explicitNullValueRepoName = default!;
 #nullable restore
 #else
-        public string RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
+        public string RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; AdditionalData?.Remove("repo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
         private string _explicitNullValueRepoName = default!;
 #endif
         /// <summary>Repository directory in which build and deploy commands run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_directory"); else _explicitNullProperties?.Remove("root_directory"); } }
+        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; AdditionalData?.Remove("root_directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_directory"); else _explicitNullProperties?.Remove("root_directory"); } }
         private string? _explicitNullValueRootDirectory = default!;
 #nullable restore
 #else
-        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_directory"); else _explicitNullProperties?.Remove("root_directory"); } }
+        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; AdditionalData?.Remove("root_directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_directory"); else _explicitNullProperties?.Remove("root_directory"); } }
         private string _explicitNullValueRootDirectory = default!;
 #endif
         /// <summary>
@@ -184,13 +198,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "build_command", n => { BuildCommand = n.GetStringValue(); } },
                 { "build_token_name", n => { BuildTokenName = n.GetStringValue(); } },
                 { "build_token_uuid", n => { BuildTokenUuid = n.GetGuidValue(); } },
-                { "build_trigger_source", n => { BuildTriggerSource = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerSource>(); } },
+                { "build_trigger_source", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuildTriggerSource = default; _explicitNullProperties?.Remove("build_trigger_source"); AdditionalData["build_trigger_source"] = unknown; } else { BuildTriggerSource = parsed; AdditionalData.Remove("build_trigger_source"); } } },
                 { "commit_hash", n => { CommitHash = n.GetStringValue(); } },
                 { "commit_message", n => { CommitMessage = n.GetStringValue(); } },
                 { "deploy_command", n => { DeployCommand = n.GetStringValue(); } },
                 { "environment_variables", n => { EnvironmentVariables = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponseEnvironmentVariablesProperty.CreateFromDiscriminatorValue); } },
                 { "provider_account_name", n => { ProviderAccountName = n.GetStringValue(); } },
-                { "provider_type", n => { ProviderType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType>(); } },
+                { "provider_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProviderType = default; _explicitNullProperties?.Remove("provider_type"); AdditionalData["provider_type"] = unknown; } else { ProviderType = parsed; AdditionalData.Remove("provider_type"); } } },
                 { "repo_name", n => { RepoName = n.GetStringValue(); } },
                 { "root_directory", n => { RootDirectory = n.GetStringValue(); } },
             };

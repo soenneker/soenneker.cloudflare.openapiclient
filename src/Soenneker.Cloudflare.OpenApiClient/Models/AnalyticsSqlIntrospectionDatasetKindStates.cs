@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sampling") is { } nullNodeSampling && nullNodeSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sampling = null;
-            if (parseNode.GetChildNode("valid_aggregations") is { } nullNodeValidAggregations && nullNodeValidAggregations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidAggregations = null;
+            if (parseNode.GetChildNode("sampling") is null) { _explicitNullValueSampling = default!; _explicitNullProperties?.Remove("sampling"); }
+            else if (parseNode.GetChildNode("sampling") is { } nullNodeSampling && nullNodeSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sampling = null;
+            if (parseNode.GetChildNode("valid_aggregations") is null) { _explicitNullValueValidAggregations = default!; _explicitNullProperties?.Remove("valid_aggregations"); }
+            else if (parseNode.GetChildNode("valid_aggregations") is { } nullNodeValidAggregations && nullNodeValidAggregations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidAggregations = null;
         }
 
         /// <summary>Whether the dataset is sampled. `unsampled` means every row is recorded. `adaptive` means Adaptive Bit Rate (ABR) sampling is applied, and aggregates must be weighted accordingly.</summary>

@@ -18,32 +18,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_any_on_localhost") is { } nullNodeAllowAnyOnLocalhost && nullNodeAllowAnyOnLocalhost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAnyOnLocalhost = null;
-            if (parseNode.GetChildNode("allow_any_on_loopback") is { } nullNodeAllowAnyOnLoopback && nullNodeAllowAnyOnLoopback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAnyOnLoopback = null;
-            if (parseNode.GetChildNode("allowed_uris") is { } nullNodeAllowedUris && nullNodeAllowedUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedUris = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("allow_any_on_localhost") is null) { _explicitNullValueAllowAnyOnLocalhost = default!; _explicitNullProperties?.Remove("allow_any_on_localhost"); }
+            else if (parseNode.GetChildNode("allow_any_on_localhost") is { } nullNodeAllowAnyOnLocalhost && nullNodeAllowAnyOnLocalhost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAnyOnLocalhost = null;
+            if (parseNode.GetChildNode("allow_any_on_loopback") is null) { _explicitNullValueAllowAnyOnLoopback = default!; _explicitNullProperties?.Remove("allow_any_on_loopback"); }
+            else if (parseNode.GetChildNode("allow_any_on_loopback") is { } nullNodeAllowAnyOnLoopback && nullNodeAllowAnyOnLoopback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAnyOnLoopback = null;
+            if (parseNode.GetChildNode("allowed_uris") is null) { _explicitNullValueAllowedUris = default!; _explicitNullProperties?.Remove("allowed_uris"); }
+            else if (parseNode.GetChildNode("allowed_uris") is { } nullNodeAllowedUris && nullNodeAllowedUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedUris = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allows any client with redirect URIs on localhost.</summary>
-        public bool? AllowAnyOnLocalhost { get => _explicitNullValueAllowAnyOnLocalhost; set { _explicitNullValueAllowAnyOnLocalhost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_any_on_localhost"); else _explicitNullProperties?.Remove("allow_any_on_localhost"); } }
+        public bool? AllowAnyOnLocalhost { get => _explicitNullValueAllowAnyOnLocalhost; set { _explicitNullValueAllowAnyOnLocalhost = value; AdditionalData?.Remove("allow_any_on_localhost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_any_on_localhost"); else _explicitNullProperties?.Remove("allow_any_on_localhost"); } }
         private bool? _explicitNullValueAllowAnyOnLocalhost = default!;
         /// <summary>Allows any client with redirect URIs on 127.0.0.1.</summary>
-        public bool? AllowAnyOnLoopback { get => _explicitNullValueAllowAnyOnLoopback; set { _explicitNullValueAllowAnyOnLoopback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_any_on_loopback"); else _explicitNullProperties?.Remove("allow_any_on_loopback"); } }
+        public bool? AllowAnyOnLoopback { get => _explicitNullValueAllowAnyOnLoopback; set { _explicitNullValueAllowAnyOnLoopback = value; AdditionalData?.Remove("allow_any_on_loopback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_any_on_loopback"); else _explicitNullProperties?.Remove("allow_any_on_loopback"); } }
         private bool? _explicitNullValueAllowAnyOnLoopback = default!;
         /// <summary>The URIs that are allowed as redirect URIs for dynamically registered clients. HTTP and HTTPS paths may end in `/*` to match all sub-paths. Custom-scheme URIs must be explicitly configured and match exactly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedUris { get => _explicitNullValueAllowedUris; set { _explicitNullValueAllowedUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_uris"); else _explicitNullProperties?.Remove("allowed_uris"); } }
+        public List<string>? AllowedUris { get => _explicitNullValueAllowedUris; set { _explicitNullValueAllowedUris = value; AdditionalData?.Remove("allowed_uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_uris"); else _explicitNullProperties?.Remove("allowed_uris"); } }
         private List<string>? _explicitNullValueAllowedUris = default!;
 #nullable restore
 #else
-        public List<string> AllowedUris { get => _explicitNullValueAllowedUris; set { _explicitNullValueAllowedUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_uris"); else _explicitNullProperties?.Remove("allowed_uris"); } }
+        public List<string> AllowedUris { get => _explicitNullValueAllowedUris; set { _explicitNullValueAllowedUris = value; AdditionalData?.Remove("allowed_uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_uris"); else _explicitNullProperties?.Remove("allowed_uris"); } }
         private List<string> _explicitNullValueAllowedUris = default!;
 #endif
         /// <summary>Whether dynamic client registration is enabled.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration"/> and sets the default values.

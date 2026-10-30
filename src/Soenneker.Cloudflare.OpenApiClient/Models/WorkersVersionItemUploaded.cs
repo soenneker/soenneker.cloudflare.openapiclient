@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("exports_reconciliation") is { } nullNodeExportsReconciliation && nullNodeExportsReconciliation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExportsReconciliation = null;
-            if (parseNode.GetChildNode("startup_time_ms") is { } nullNodeStartupTimeMs && nullNodeStartupTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartupTimeMs = null;
+            if (parseNode.GetChildNode("exports_reconciliation") is null) { _explicitNullValueExportsReconciliation = default!; _explicitNullProperties?.Remove("exports_reconciliation"); }
+            else if (parseNode.GetChildNode("exports_reconciliation") is { } nullNodeExportsReconciliation && nullNodeExportsReconciliation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExportsReconciliation = null;
+            if (parseNode.GetChildNode("startup_time_ms") is null) { _explicitNullValueStartupTimeMs = default!; _explicitNullProperties?.Remove("startup_time_ms"); }
+            else if (parseNode.GetChildNode("startup_time_ms") is { } nullNodeStartupTimeMs && nullNodeStartupTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartupTimeMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +28,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Summary of the declarative exports reconciliation thatran on this upload. Populated only when the uploadedmetadata included an `exports` block. Durable Objectentries drive reconciliation; `type: worker` entries donot contribute to this summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation? ExportsReconciliation { get => _explicitNullValueExportsReconciliation; set { _explicitNullValueExportsReconciliation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exports_reconciliation"); else _explicitNullProperties?.Remove("exports_reconciliation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation? ExportsReconciliation { get => _explicitNullValueExportsReconciliation; set { _explicitNullValueExportsReconciliation = value; AdditionalData?.Remove("exports_reconciliation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exports_reconciliation"); else _explicitNullProperties?.Remove("exports_reconciliation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation? _explicitNullValueExportsReconciliation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation ExportsReconciliation { get => _explicitNullValueExportsReconciliation; set { _explicitNullValueExportsReconciliation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exports_reconciliation"); else _explicitNullProperties?.Remove("exports_reconciliation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation ExportsReconciliation { get => _explicitNullValueExportsReconciliation; set { _explicitNullValueExportsReconciliation = value; AdditionalData?.Remove("exports_reconciliation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exports_reconciliation"); else _explicitNullProperties?.Remove("exports_reconciliation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation _explicitNullValueExportsReconciliation = default!;
 #endif
         /// <summary>Unique identifier for the version.</summary>
@@ -60,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources Resources { get; private set; }
 #endif
         /// <summary>Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).</summary>
-        public int? StartupTimeMs { get => _explicitNullValueStartupTimeMs; set { _explicitNullValueStartupTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startup_time_ms"); else _explicitNullProperties?.Remove("startup_time_ms"); } }
+        public int? StartupTimeMs { get => _explicitNullValueStartupTimeMs; set { _explicitNullValueStartupTimeMs = value; AdditionalData?.Remove("startup_time_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startup_time_ms"); else _explicitNullProperties?.Remove("startup_time_ms"); } }
         private int? _explicitNullValueStartupTimeMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploaded"/> and sets the default values.

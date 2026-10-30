@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_namespace") is { } nullNodeNewNamespace && nullNodeNewNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewNamespace = null;
+            if (parseNode.GetChildNode("new_namespace") is null) { _explicitNullValueNewNamespace = default!; _explicitNullProperties?.Remove("new_namespace"); }
+            else if (parseNode.GetChildNode("new_namespace") is { } nullNodeNewNamespace && nullNodeNewNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewNamespace = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Target namespace to move the instance into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewNamespace { get => _explicitNullValueNewNamespace; set { _explicitNullValueNewNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_namespace"); else _explicitNullProperties?.Remove("new_namespace"); } }
+        public string? NewNamespace { get => _explicitNullValueNewNamespace; set { _explicitNullValueNewNamespace = value; AdditionalData?.Remove("new_namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_namespace"); else _explicitNullProperties?.Remove("new_namespace"); } }
         private string? _explicitNullValueNewNamespace = default!;
 #nullable restore
 #else
-        public string NewNamespace { get => _explicitNullValueNewNamespace; set { _explicitNullValueNewNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_namespace"); else _explicitNullProperties?.Remove("new_namespace"); } }
+        public string NewNamespace { get => _explicitNullValueNewNamespace; set { _explicitNullValueNewNamespace = value; AdditionalData?.Remove("new_namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_namespace"); else _explicitNullProperties?.Remove("new_namespace"); } }
         private string _explicitNullValueNewNamespace = default!;
 #endif
         /// <summary>

@@ -17,22 +17,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("abortMultipartUploadsTransition") is { } nullNodeAbortMultipartUploadsTransition && nullNodeAbortMultipartUploadsTransition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbortMultipartUploadsTransition = null;
-            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
-            if (parseNode.GetChildNode("deleteObjectsTransition") is { } nullNodeDeleteObjectsTransition && nullNodeDeleteObjectsTransition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteObjectsTransition = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("storageClassTransitions") is { } nullNodeStorageClassTransitions && nullNodeStorageClassTransitions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageClassTransitions = null;
+            if (parseNode.GetChildNode("abortMultipartUploadsTransition") is null) { _explicitNullValueAbortMultipartUploadsTransition = default!; _explicitNullProperties?.Remove("abortMultipartUploadsTransition"); }
+            else if (parseNode.GetChildNode("abortMultipartUploadsTransition") is { } nullNodeAbortMultipartUploadsTransition && nullNodeAbortMultipartUploadsTransition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbortMultipartUploadsTransition = null;
+            if (parseNode.GetChildNode("conditions") is null) { _explicitNullValueConditions = default!; _explicitNullProperties?.Remove("conditions"); }
+            else if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("deleteObjectsTransition") is null) { _explicitNullValueDeleteObjectsTransition = default!; _explicitNullProperties?.Remove("deleteObjectsTransition"); }
+            else if (parseNode.GetChildNode("deleteObjectsTransition") is { } nullNodeDeleteObjectsTransition && nullNodeDeleteObjectsTransition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteObjectsTransition = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("storageClassTransitions") is null) { _explicitNullValueStorageClassTransitions = default!; _explicitNullProperties?.Remove("storageClassTransitions"); }
+            else if (parseNode.GetChildNode("storageClassTransitions") is { } nullNodeStorageClassTransitions && nullNodeStorageClassTransitions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageClassTransitions = null;
         }
 
         /// <summary>Transition to abort ongoing multipart uploads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleAbortMultipartUploadsTransition? AbortMultipartUploadsTransition { get => _explicitNullValueAbortMultipartUploadsTransition; set { _explicitNullValueAbortMultipartUploadsTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abortMultipartUploadsTransition"); else _explicitNullProperties?.Remove("abortMultipartUploadsTransition"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleAbortMultipartUploadsTransition? AbortMultipartUploadsTransition { get => _explicitNullValueAbortMultipartUploadsTransition; set { _explicitNullValueAbortMultipartUploadsTransition = value; AdditionalData?.Remove("abortMultipartUploadsTransition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abortMultipartUploadsTransition"); else _explicitNullProperties?.Remove("abortMultipartUploadsTransition"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleAbortMultipartUploadsTransition? _explicitNullValueAbortMultipartUploadsTransition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleAbortMultipartUploadsTransition AbortMultipartUploadsTransition { get => _explicitNullValueAbortMultipartUploadsTransition; set { _explicitNullValueAbortMultipartUploadsTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abortMultipartUploadsTransition"); else _explicitNullProperties?.Remove("abortMultipartUploadsTransition"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleAbortMultipartUploadsTransition AbortMultipartUploadsTransition { get => _explicitNullValueAbortMultipartUploadsTransition; set { _explicitNullValueAbortMultipartUploadsTransition = value; AdditionalData?.Remove("abortMultipartUploadsTransition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abortMultipartUploadsTransition"); else _explicitNullProperties?.Remove("abortMultipartUploadsTransition"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleAbortMultipartUploadsTransition _explicitNullValueAbortMultipartUploadsTransition = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,44 +46,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Conditions that apply to all transitions of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleConditions? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleConditions? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleConditions? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleConditions Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleConditions Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleConditions _explicitNullValueConditions = default!;
 #endif
         /// <summary>Transition to delete objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleDeleteObjectsTransition? DeleteObjectsTransition { get => _explicitNullValueDeleteObjectsTransition; set { _explicitNullValueDeleteObjectsTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleteObjectsTransition"); else _explicitNullProperties?.Remove("deleteObjectsTransition"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleDeleteObjectsTransition? DeleteObjectsTransition { get => _explicitNullValueDeleteObjectsTransition; set { _explicitNullValueDeleteObjectsTransition = value; AdditionalData?.Remove("deleteObjectsTransition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleteObjectsTransition"); else _explicitNullProperties?.Remove("deleteObjectsTransition"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleDeleteObjectsTransition? _explicitNullValueDeleteObjectsTransition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleDeleteObjectsTransition DeleteObjectsTransition { get => _explicitNullValueDeleteObjectsTransition; set { _explicitNullValueDeleteObjectsTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleteObjectsTransition"); else _explicitNullProperties?.Remove("deleteObjectsTransition"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleDeleteObjectsTransition DeleteObjectsTransition { get => _explicitNullValueDeleteObjectsTransition; set { _explicitNullValueDeleteObjectsTransition = value; AdditionalData?.Remove("deleteObjectsTransition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleteObjectsTransition"); else _explicitNullProperties?.Remove("deleteObjectsTransition"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleDeleteObjectsTransition _explicitNullValueDeleteObjectsTransition = default!;
 #endif
         /// <summary>Whether or not this rule is in effect.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Unique identifier for this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Transitions to change the storage class of objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleStorageClassTransitionsItem>? StorageClassTransitions { get => _explicitNullValueStorageClassTransitions; set { _explicitNullValueStorageClassTransitions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageClassTransitions"); else _explicitNullProperties?.Remove("storageClassTransitions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleStorageClassTransitionsItem>? StorageClassTransitions { get => _explicitNullValueStorageClassTransitions; set { _explicitNullValueStorageClassTransitions = value; AdditionalData?.Remove("storageClassTransitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageClassTransitions"); else _explicitNullProperties?.Remove("storageClassTransitions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleStorageClassTransitionsItem>? _explicitNullValueStorageClassTransitions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleStorageClassTransitionsItem> StorageClassTransitions { get => _explicitNullValueStorageClassTransitions; set { _explicitNullValueStorageClassTransitions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageClassTransitions"); else _explicitNullProperties?.Remove("storageClassTransitions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleStorageClassTransitionsItem> StorageClassTransitions { get => _explicitNullValueStorageClassTransitions; set { _explicitNullValueStorageClassTransitions = value; AdditionalData?.Remove("storageClassTransitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageClassTransitions"); else _explicitNullProperties?.Remove("storageClassTransitions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleRuleStorageClassTransitionsItem> _explicitNullValueStorageClassTransitions = default!;
 #endif
         /// <summary>

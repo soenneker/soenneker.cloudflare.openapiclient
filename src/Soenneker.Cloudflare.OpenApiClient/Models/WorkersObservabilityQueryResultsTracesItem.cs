@@ -17,15 +17,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
-            if (parseNode.GetChildNode("rootSpanName") is { } nullNodeRootSpanName && nullNodeRootSpanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootSpanName = null;
-            if (parseNode.GetChildNode("rootTransactionName") is { } nullNodeRootTransactionName && nullNodeRootTransactionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootTransactionName = null;
-            if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
-            if (parseNode.GetChildNode("spans") is { } nullNodeSpans && nullNodeSpans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spans = null;
-            if (parseNode.GetChildNode("traceDurationMs") is { } nullNodeTraceDurationMs && nullNodeTraceDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceDurationMs = null;
-            if (parseNode.GetChildNode("traceEndMs") is { } nullNodeTraceEndMs && nullNodeTraceEndMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceEndMs = null;
-            if (parseNode.GetChildNode("traceId") is { } nullNodeTraceId && nullNodeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceId = null;
-            if (parseNode.GetChildNode("traceStartMs") is { } nullNodeTraceStartMs && nullNodeTraceStartMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceStartMs = null;
+            if (parseNode.GetChildNode("errors") is null) { _explicitNullValueErrors = default!; _explicitNullProperties?.Remove("errors"); }
+            else if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("rootSpanName") is null) { _explicitNullValueRootSpanName = default!; _explicitNullProperties?.Remove("rootSpanName"); }
+            else if (parseNode.GetChildNode("rootSpanName") is { } nullNodeRootSpanName && nullNodeRootSpanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootSpanName = null;
+            if (parseNode.GetChildNode("rootTransactionName") is null) { _explicitNullValueRootTransactionName = default!; _explicitNullProperties?.Remove("rootTransactionName"); }
+            else if (parseNode.GetChildNode("rootTransactionName") is { } nullNodeRootTransactionName && nullNodeRootTransactionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootTransactionName = null;
+            if (parseNode.GetChildNode("service") is null) { _explicitNullValueService = default!; _explicitNullProperties?.Remove("service"); }
+            else if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
+            if (parseNode.GetChildNode("spans") is null) { _explicitNullValueSpans = default!; _explicitNullProperties?.Remove("spans"); }
+            else if (parseNode.GetChildNode("spans") is { } nullNodeSpans && nullNodeSpans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spans = null;
+            if (parseNode.GetChildNode("traceDurationMs") is null) { _explicitNullValueTraceDurationMs = default!; _explicitNullProperties?.Remove("traceDurationMs"); }
+            else if (parseNode.GetChildNode("traceDurationMs") is { } nullNodeTraceDurationMs && nullNodeTraceDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceDurationMs = null;
+            if (parseNode.GetChildNode("traceEndMs") is null) { _explicitNullValueTraceEndMs = default!; _explicitNullProperties?.Remove("traceEndMs"); }
+            else if (parseNode.GetChildNode("traceEndMs") is { } nullNodeTraceEndMs && nullNodeTraceEndMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceEndMs = null;
+            if (parseNode.GetChildNode("traceId") is null) { _explicitNullValueTraceId = default!; _explicitNullProperties?.Remove("traceId"); }
+            else if (parseNode.GetChildNode("traceId") is { } nullNodeTraceId && nullNodeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceId = null;
+            if (parseNode.GetChildNode("traceStartMs") is null) { _explicitNullValueTraceStartMs = default!; _explicitNullProperties?.Remove("traceStartMs"); }
+            else if (parseNode.GetChildNode("traceStartMs") is { } nullNodeTraceStartMs && nullNodeTraceStartMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceStartMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,64 +42,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Error messages encountered during the trace, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<string>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<string>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<string> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<string> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<string> _explicitNullValueErrors = default!;
 #endif
         /// <summary>Name of the root span that initiated the trace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootSpanName { get => _explicitNullValueRootSpanName; set { _explicitNullValueRootSpanName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootSpanName"); else _explicitNullProperties?.Remove("rootSpanName"); } }
+        public string? RootSpanName { get => _explicitNullValueRootSpanName; set { _explicitNullValueRootSpanName = value; AdditionalData?.Remove("rootSpanName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootSpanName"); else _explicitNullProperties?.Remove("rootSpanName"); } }
         private string? _explicitNullValueRootSpanName = default!;
 #nullable restore
 #else
-        public string RootSpanName { get => _explicitNullValueRootSpanName; set { _explicitNullValueRootSpanName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootSpanName"); else _explicitNullProperties?.Remove("rootSpanName"); } }
+        public string RootSpanName { get => _explicitNullValueRootSpanName; set { _explicitNullValueRootSpanName = value; AdditionalData?.Remove("rootSpanName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootSpanName"); else _explicitNullProperties?.Remove("rootSpanName"); } }
         private string _explicitNullValueRootSpanName = default!;
 #endif
         /// <summary>Logical transaction name for the root span.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootTransactionName { get => _explicitNullValueRootTransactionName; set { _explicitNullValueRootTransactionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootTransactionName"); else _explicitNullProperties?.Remove("rootTransactionName"); } }
+        public string? RootTransactionName { get => _explicitNullValueRootTransactionName; set { _explicitNullValueRootTransactionName = value; AdditionalData?.Remove("rootTransactionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootTransactionName"); else _explicitNullProperties?.Remove("rootTransactionName"); } }
         private string? _explicitNullValueRootTransactionName = default!;
 #nullable restore
 #else
-        public string RootTransactionName { get => _explicitNullValueRootTransactionName; set { _explicitNullValueRootTransactionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootTransactionName"); else _explicitNullProperties?.Remove("rootTransactionName"); } }
+        public string RootTransactionName { get => _explicitNullValueRootTransactionName; set { _explicitNullValueRootTransactionName = value; AdditionalData?.Remove("rootTransactionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootTransactionName"); else _explicitNullProperties?.Remove("rootTransactionName"); } }
         private string _explicitNullValueRootTransactionName = default!;
 #endif
         /// <summary>List of Worker services involved in the trace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        public List<string>? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
         private List<string>? _explicitNullValueService = default!;
 #nullable restore
 #else
-        public List<string> Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        public List<string> Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
         private List<string> _explicitNullValueService = default!;
 #endif
         /// <summary>Total number of spans in the trace.</summary>
-        public double? Spans { get => _explicitNullValueSpans; set { _explicitNullValueSpans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spans"); else _explicitNullProperties?.Remove("spans"); } }
+        public double? Spans { get => _explicitNullValueSpans; set { _explicitNullValueSpans = value; AdditionalData?.Remove("spans"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spans"); else _explicitNullProperties?.Remove("spans"); } }
         private double? _explicitNullValueSpans = default!;
         /// <summary>Total duration of the trace in milliseconds.</summary>
-        public double? TraceDurationMs { get => _explicitNullValueTraceDurationMs; set { _explicitNullValueTraceDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceDurationMs"); else _explicitNullProperties?.Remove("traceDurationMs"); } }
+        public double? TraceDurationMs { get => _explicitNullValueTraceDurationMs; set { _explicitNullValueTraceDurationMs = value; AdditionalData?.Remove("traceDurationMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceDurationMs"); else _explicitNullProperties?.Remove("traceDurationMs"); } }
         private double? _explicitNullValueTraceDurationMs = default!;
         /// <summary>Trace end time as a Unix epoch in milliseconds.</summary>
-        public double? TraceEndMs { get => _explicitNullValueTraceEndMs; set { _explicitNullValueTraceEndMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceEndMs"); else _explicitNullProperties?.Remove("traceEndMs"); } }
+        public double? TraceEndMs { get => _explicitNullValueTraceEndMs; set { _explicitNullValueTraceEndMs = value; AdditionalData?.Remove("traceEndMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceEndMs"); else _explicitNullProperties?.Remove("traceEndMs"); } }
         private double? _explicitNullValueTraceEndMs = default!;
         /// <summary>Unique identifier for the distributed trace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
+        public string? TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; AdditionalData?.Remove("traceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
         private string? _explicitNullValueTraceId = default!;
 #nullable restore
 #else
-        public string TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
+        public string TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; AdditionalData?.Remove("traceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
         private string _explicitNullValueTraceId = default!;
 #endif
         /// <summary>Trace start time as a Unix epoch in milliseconds.</summary>
-        public double? TraceStartMs { get => _explicitNullValueTraceStartMs; set { _explicitNullValueTraceStartMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceStartMs"); else _explicitNullProperties?.Remove("traceStartMs"); } }
+        public double? TraceStartMs { get => _explicitNullValueTraceStartMs; set { _explicitNullValueTraceStartMs = value; AdditionalData?.Remove("traceStartMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceStartMs"); else _explicitNullProperties?.Remove("traceStartMs"); } }
         private double? _explicitNullValueTraceStartMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem"/> and sets the default values.

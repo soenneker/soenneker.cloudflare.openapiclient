@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("check_instances") is { } nullNodeCheckInstances && nullNodeCheckInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckInstances = null;
+            if (parseNode.GetChildNode("check_instances") is null) { _explicitNullValueCheckInstances = default!; _explicitNullProperties?.Remove("check_instances"); }
+            else if (parseNode.GetChildNode("check_instances") is { } nullNodeCheckInstances && nullNodeCheckInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckInstances = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of finding instance IDs to pass along.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? CheckInstances { get => _explicitNullValueCheckInstances; set { _explicitNullValueCheckInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_instances"); else _explicitNullProperties?.Remove("check_instances"); } }
+        public List<Guid?>? CheckInstances { get => _explicitNullValueCheckInstances; set { _explicitNullValueCheckInstances = value; AdditionalData?.Remove("check_instances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_instances"); else _explicitNullProperties?.Remove("check_instances"); } }
         private List<Guid?>? _explicitNullValueCheckInstances = default!;
 #nullable restore
 #else
-        public List<Guid?> CheckInstances { get => _explicitNullValueCheckInstances; set { _explicitNullValueCheckInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_instances"); else _explicitNullProperties?.Remove("check_instances"); } }
+        public List<Guid?> CheckInstances { get => _explicitNullValueCheckInstances; set { _explicitNullValueCheckInstances = value; AdditionalData?.Remove("check_instances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_instances"); else _explicitNullProperties?.Remove("check_instances"); } }
         private List<Guid?> _explicitNullValueCheckInstances = default!;
 #endif
         /// <summary>

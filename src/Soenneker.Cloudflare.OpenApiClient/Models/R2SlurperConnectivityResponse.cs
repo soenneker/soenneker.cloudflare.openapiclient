@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connectivityStatus") is { } nullNodeConnectivityStatus && nullNodeConnectivityStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectivityStatus = null;
+            if (parseNode.GetChildNode("connectivityStatus") is null) { _explicitNullValueConnectivityStatus = default!; _explicitNullProperties?.Remove("connectivityStatus"); }
+            else if (parseNode.GetChildNode("connectivityStatus") is { } nullNodeConnectivityStatus && nullNodeConnectivityStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectivityStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The connectivityStatus property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperConnectivityResponseConnectivityStatus? ConnectivityStatus { get => _explicitNullValueConnectivityStatus; set { _explicitNullValueConnectivityStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivityStatus"); else _explicitNullProperties?.Remove("connectivityStatus"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperConnectivityResponseConnectivityStatus? ConnectivityStatus { get => _explicitNullValueConnectivityStatus; set { _explicitNullValueConnectivityStatus = value; AdditionalData?.Remove("connectivityStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivityStatus"); else _explicitNullProperties?.Remove("connectivityStatus"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperConnectivityResponseConnectivityStatus? _explicitNullValueConnectivityStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperConnectivityResponse"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connectivityStatus", n => { ConnectivityStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperConnectivityResponseConnectivityStatus>(); } },
+                { "connectivityStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperConnectivityResponseConnectivityStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConnectivityStatus = default; _explicitNullProperties?.Remove("connectivityStatus"); AdditionalData["connectivityStatus"] = unknown; } else { ConnectivityStatus = parsed; AdditionalData.Remove("connectivityStatus"); } } },
             };
         }
         /// <summary>

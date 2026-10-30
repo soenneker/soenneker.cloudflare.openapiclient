@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("wsUrl") is { } nullNodeWsUrl && nullNodeWsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WsUrl = null;
+            if (parseNode.GetChildNode("wsUrl") is null) { _explicitNullValueWsUrl = default!; _explicitNullProperties?.Remove("wsUrl"); }
+            else if (parseNode.GetChildNode("wsUrl") is { } nullNodeWsUrl && nullNodeWsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WsUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>WebSocket URL clients connect to in order to stream live tail events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WsUrl { get => _explicitNullValueWsUrl; set { _explicitNullValueWsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsUrl"); else _explicitNullProperties?.Remove("wsUrl"); } }
+        public string? WsUrl { get => _explicitNullValueWsUrl; set { _explicitNullValueWsUrl = value; AdditionalData?.Remove("wsUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsUrl"); else _explicitNullProperties?.Remove("wsUrl"); } }
         private string? _explicitNullValueWsUrl = default!;
 #nullable restore
 #else
-        public string WsUrl { get => _explicitNullValueWsUrl; set { _explicitNullValueWsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsUrl"); else _explicitNullProperties?.Remove("wsUrl"); } }
+        public string WsUrl { get => _explicitNullValueWsUrl; set { _explicitNullValueWsUrl = value; AdditionalData?.Remove("wsUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsUrl"); else _explicitNullProperties?.Remove("wsUrl"); } }
         private string _explicitNullValueWsUrl = default!;
 #endif
         /// <summary>

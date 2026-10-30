@@ -17,19 +17,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
-            if (parseNode.GetChildNode("destination_organization_id") is { } nullNodeDestinationOrganizationId && nullNodeDestinationOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationOrganizationId = null;
-            if (parseNode.GetChildNode("source_organization_id") is { } nullNodeSourceOrganizationId && nullNodeSourceOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceOrganizationId = null;
+            if (parseNode.GetChildNode("account_id") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("account_id"); }
+            else if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("destination_organization_id") is null) { _explicitNullValueDestinationOrganizationId = default!; _explicitNullProperties?.Remove("destination_organization_id"); }
+            else if (parseNode.GetChildNode("destination_organization_id") is { } nullNodeDestinationOrganizationId && nullNodeDestinationOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationOrganizationId = null;
+            if (parseNode.GetChildNode("source_organization_id") is null) { _explicitNullValueSourceOrganizationId = default!; _explicitNullProperties?.Remove("source_organization_id"); }
+            else if (parseNode.GetChildNode("source_organization_id") is { } nullNodeSourceOrganizationId && nullNodeSourceOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceOrganizationId = null;
         }
 
         /// <summary>The account_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,21 +40,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The destination_organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationOrganizationId { get => _explicitNullValueDestinationOrganizationId; set { _explicitNullValueDestinationOrganizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_organization_id"); else _explicitNullProperties?.Remove("destination_organization_id"); } }
+        public string? DestinationOrganizationId { get => _explicitNullValueDestinationOrganizationId; set { _explicitNullValueDestinationOrganizationId = value; AdditionalData?.Remove("destination_organization_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_organization_id"); else _explicitNullProperties?.Remove("destination_organization_id"); } }
         private string? _explicitNullValueDestinationOrganizationId = default!;
 #nullable restore
 #else
-        public string DestinationOrganizationId { get => _explicitNullValueDestinationOrganizationId; set { _explicitNullValueDestinationOrganizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_organization_id"); else _explicitNullProperties?.Remove("destination_organization_id"); } }
+        public string DestinationOrganizationId { get => _explicitNullValueDestinationOrganizationId; set { _explicitNullValueDestinationOrganizationId = value; AdditionalData?.Remove("destination_organization_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_organization_id"); else _explicitNullProperties?.Remove("destination_organization_id"); } }
         private string _explicitNullValueDestinationOrganizationId = default!;
 #endif
         /// <summary>The source_organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceOrganizationId { get => _explicitNullValueSourceOrganizationId; set { _explicitNullValueSourceOrganizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_organization_id"); else _explicitNullProperties?.Remove("source_organization_id"); } }
+        public string? SourceOrganizationId { get => _explicitNullValueSourceOrganizationId; set { _explicitNullValueSourceOrganizationId = value; AdditionalData?.Remove("source_organization_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_organization_id"); else _explicitNullProperties?.Remove("source_organization_id"); } }
         private string? _explicitNullValueSourceOrganizationId = default!;
 #nullable restore
 #else
-        public string SourceOrganizationId { get => _explicitNullValueSourceOrganizationId; set { _explicitNullValueSourceOrganizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_organization_id"); else _explicitNullProperties?.Remove("source_organization_id"); } }
+        public string SourceOrganizationId { get => _explicitNullValueSourceOrganizationId; set { _explicitNullValueSourceOrganizationId = value; AdditionalData?.Remove("source_organization_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_organization_id"); else _explicitNullProperties?.Remove("source_organization_id"); } }
         private string _explicitNullValueSourceOrganizationId = default!;
 #endif
         /// <summary>

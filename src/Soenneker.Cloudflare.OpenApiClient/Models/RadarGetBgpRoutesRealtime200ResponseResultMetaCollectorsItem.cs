@@ -17,13 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("collector") is { } nullNodeCollector && nullNodeCollector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collector = null;
-            if (parseNode.GetChildNode("latest_realtime_ts") is { } nullNodeLatestRealtimeTs && nullNodeLatestRealtimeTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestRealtimeTs = null;
-            if (parseNode.GetChildNode("latest_rib_ts") is { } nullNodeLatestRibTs && nullNodeLatestRibTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestRibTs = null;
-            if (parseNode.GetChildNode("latest_updates_ts") is { } nullNodeLatestUpdatesTs && nullNodeLatestUpdatesTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestUpdatesTs = null;
-            if (parseNode.GetChildNode("peers_count") is { } nullNodePeersCount && nullNodePeersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersCount = null;
-            if (parseNode.GetChildNode("peers_v4_count") is { } nullNodePeersV4Count && nullNodePeersV4Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersV4Count = null;
-            if (parseNode.GetChildNode("peers_v6_count") is { } nullNodePeersV6Count && nullNodePeersV6Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersV6Count = null;
+            if (parseNode.GetChildNode("collector") is null) { _explicitNullValueCollector = default!; _explicitNullProperties?.Remove("collector"); }
+            else if (parseNode.GetChildNode("collector") is { } nullNodeCollector && nullNodeCollector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collector = null;
+            if (parseNode.GetChildNode("latest_realtime_ts") is null) { _explicitNullValueLatestRealtimeTs = default!; _explicitNullProperties?.Remove("latest_realtime_ts"); }
+            else if (parseNode.GetChildNode("latest_realtime_ts") is { } nullNodeLatestRealtimeTs && nullNodeLatestRealtimeTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestRealtimeTs = null;
+            if (parseNode.GetChildNode("latest_rib_ts") is null) { _explicitNullValueLatestRibTs = default!; _explicitNullProperties?.Remove("latest_rib_ts"); }
+            else if (parseNode.GetChildNode("latest_rib_ts") is { } nullNodeLatestRibTs && nullNodeLatestRibTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestRibTs = null;
+            if (parseNode.GetChildNode("latest_updates_ts") is null) { _explicitNullValueLatestUpdatesTs = default!; _explicitNullProperties?.Remove("latest_updates_ts"); }
+            else if (parseNode.GetChildNode("latest_updates_ts") is { } nullNodeLatestUpdatesTs && nullNodeLatestUpdatesTs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestUpdatesTs = null;
+            if (parseNode.GetChildNode("peers_count") is null) { _explicitNullValuePeersCount = default!; _explicitNullProperties?.Remove("peers_count"); }
+            else if (parseNode.GetChildNode("peers_count") is { } nullNodePeersCount && nullNodePeersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersCount = null;
+            if (parseNode.GetChildNode("peers_v4_count") is null) { _explicitNullValuePeersV4Count = default!; _explicitNullProperties?.Remove("peers_v4_count"); }
+            else if (parseNode.GetChildNode("peers_v4_count") is { } nullNodePeersV4Count && nullNodePeersV4Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersV4Count = null;
+            if (parseNode.GetChildNode("peers_v6_count") is null) { _explicitNullValuePeersV6Count = default!; _explicitNullProperties?.Remove("peers_v6_count"); }
+            else if (parseNode.GetChildNode("peers_v6_count") is { } nullNodePeersV6Count && nullNodePeersV6Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeersV6Count = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,51 +38,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Public route collector ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Collector { get => _explicitNullValueCollector; set { _explicitNullValueCollector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collector"); else _explicitNullProperties?.Remove("collector"); } }
+        public string? Collector { get => _explicitNullValueCollector; set { _explicitNullValueCollector = value; AdditionalData?.Remove("collector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collector"); else _explicitNullProperties?.Remove("collector"); } }
         private string? _explicitNullValueCollector = default!;
 #nullable restore
 #else
-        public string Collector { get => _explicitNullValueCollector; set { _explicitNullValueCollector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collector"); else _explicitNullProperties?.Remove("collector"); } }
+        public string Collector { get => _explicitNullValueCollector; set { _explicitNullValueCollector = value; AdditionalData?.Remove("collector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collector"); else _explicitNullProperties?.Remove("collector"); } }
         private string _explicitNullValueCollector = default!;
 #endif
         /// <summary>Latest real-time stream timestamp for this collector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LatestRealtimeTs { get => _explicitNullValueLatestRealtimeTs; set { _explicitNullValueLatestRealtimeTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_realtime_ts"); else _explicitNullProperties?.Remove("latest_realtime_ts"); } }
+        public string? LatestRealtimeTs { get => _explicitNullValueLatestRealtimeTs; set { _explicitNullValueLatestRealtimeTs = value; AdditionalData?.Remove("latest_realtime_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_realtime_ts"); else _explicitNullProperties?.Remove("latest_realtime_ts"); } }
         private string? _explicitNullValueLatestRealtimeTs = default!;
 #nullable restore
 #else
-        public string LatestRealtimeTs { get => _explicitNullValueLatestRealtimeTs; set { _explicitNullValueLatestRealtimeTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_realtime_ts"); else _explicitNullProperties?.Remove("latest_realtime_ts"); } }
+        public string LatestRealtimeTs { get => _explicitNullValueLatestRealtimeTs; set { _explicitNullValueLatestRealtimeTs = value; AdditionalData?.Remove("latest_realtime_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_realtime_ts"); else _explicitNullProperties?.Remove("latest_realtime_ts"); } }
         private string _explicitNullValueLatestRealtimeTs = default!;
 #endif
         /// <summary>Latest RIB dump MRT file timestamp for this collector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LatestRibTs { get => _explicitNullValueLatestRibTs; set { _explicitNullValueLatestRibTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_rib_ts"); else _explicitNullProperties?.Remove("latest_rib_ts"); } }
+        public string? LatestRibTs { get => _explicitNullValueLatestRibTs; set { _explicitNullValueLatestRibTs = value; AdditionalData?.Remove("latest_rib_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_rib_ts"); else _explicitNullProperties?.Remove("latest_rib_ts"); } }
         private string? _explicitNullValueLatestRibTs = default!;
 #nullable restore
 #else
-        public string LatestRibTs { get => _explicitNullValueLatestRibTs; set { _explicitNullValueLatestRibTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_rib_ts"); else _explicitNullProperties?.Remove("latest_rib_ts"); } }
+        public string LatestRibTs { get => _explicitNullValueLatestRibTs; set { _explicitNullValueLatestRibTs = value; AdditionalData?.Remove("latest_rib_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_rib_ts"); else _explicitNullProperties?.Remove("latest_rib_ts"); } }
         private string _explicitNullValueLatestRibTs = default!;
 #endif
         /// <summary>Latest BGP updates MRT file timestamp for this collector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LatestUpdatesTs { get => _explicitNullValueLatestUpdatesTs; set { _explicitNullValueLatestUpdatesTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_updates_ts"); else _explicitNullProperties?.Remove("latest_updates_ts"); } }
+        public string? LatestUpdatesTs { get => _explicitNullValueLatestUpdatesTs; set { _explicitNullValueLatestUpdatesTs = value; AdditionalData?.Remove("latest_updates_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_updates_ts"); else _explicitNullProperties?.Remove("latest_updates_ts"); } }
         private string? _explicitNullValueLatestUpdatesTs = default!;
 #nullable restore
 #else
-        public string LatestUpdatesTs { get => _explicitNullValueLatestUpdatesTs; set { _explicitNullValueLatestUpdatesTs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_updates_ts"); else _explicitNullProperties?.Remove("latest_updates_ts"); } }
+        public string LatestUpdatesTs { get => _explicitNullValueLatestUpdatesTs; set { _explicitNullValueLatestUpdatesTs = value; AdditionalData?.Remove("latest_updates_ts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_updates_ts"); else _explicitNullProperties?.Remove("latest_updates_ts"); } }
         private string _explicitNullValueLatestUpdatesTs = default!;
 #endif
         /// <summary>Total number of collector peers used from this collector.</summary>
-        public int? PeersCount { get => _explicitNullValuePeersCount; set { _explicitNullValuePeersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peers_count"); else _explicitNullProperties?.Remove("peers_count"); } }
+        public int? PeersCount { get => _explicitNullValuePeersCount; set { _explicitNullValuePeersCount = value; AdditionalData?.Remove("peers_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peers_count"); else _explicitNullProperties?.Remove("peers_count"); } }
         private int? _explicitNullValuePeersCount = default!;
         /// <summary>Total number of collector peers used from this collector for IPv4 prefixes.</summary>
-        public int? PeersV4Count { get => _explicitNullValuePeersV4Count; set { _explicitNullValuePeersV4Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peers_v4_count"); else _explicitNullProperties?.Remove("peers_v4_count"); } }
+        public int? PeersV4Count { get => _explicitNullValuePeersV4Count; set { _explicitNullValuePeersV4Count = value; AdditionalData?.Remove("peers_v4_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peers_v4_count"); else _explicitNullProperties?.Remove("peers_v4_count"); } }
         private int? _explicitNullValuePeersV4Count = default!;
         /// <summary>Total number of collector peers used from this collector for IPv6 prefixes.</summary>
-        public int? PeersV6Count { get => _explicitNullValuePeersV6Count; set { _explicitNullValuePeersV6Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peers_v6_count"); else _explicitNullProperties?.Remove("peers_v6_count"); } }
+        public int? PeersV6Count { get => _explicitNullValuePeersV6Count; set { _explicitNullValuePeersV6Count = value; AdditionalData?.Remove("peers_v6_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peers_v6_count"); else _explicitNullProperties?.Remove("peers_v6_count"); } }
         private int? _explicitNullValuePeersV6Count = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesRealtime200ResponseResultMetaCollectorsItem"/> and sets the default values.

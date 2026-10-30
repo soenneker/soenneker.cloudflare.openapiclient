@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ptr") is { } nullNodePtr && nullNodePtr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ptr = null;
+            if (parseNode.GetChildNode("ptr") is null) { _explicitNullValuePtr = default!; _explicitNullProperties?.Remove("ptr"); }
+            else if (parseNode.GetChildNode("ptr") is { } nullNodePtr && nullNodePtr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ptr = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Map of cluster IP addresses to PTR record contents</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr? Ptr { get => _explicitNullValuePtr; set { _explicitNullValuePtr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ptr"); else _explicitNullProperties?.Remove("ptr"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr? Ptr { get => _explicitNullValuePtr; set { _explicitNullValuePtr = value; AdditionalData?.Remove("ptr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ptr"); else _explicitNullProperties?.Remove("ptr"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr? _explicitNullValuePtr = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr Ptr { get => _explicitNullValuePtr; set { _explicitNullValuePtr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ptr"); else _explicitNullProperties?.Remove("ptr"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr Ptr { get => _explicitNullValuePtr; set { _explicitNullValuePtr = value; AdditionalData?.Remove("ptr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ptr"); else _explicitNullProperties?.Remove("ptr"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr _explicitNullValuePtr = default!;
 #endif
         /// <summary>

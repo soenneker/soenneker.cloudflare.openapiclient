@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletedCount") is { } nullNodeDeletedCount && nullNodeDeletedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedCount = null;
-            if (parseNode.GetChildNode("missingUUIDs") is { } nullNodeMissingUUIDs && nullNodeMissingUUIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingUUIDs = null;
+            if (parseNode.GetChildNode("deletedCount") is null) { _explicitNullValueDeletedCount = default!; _explicitNullProperties?.Remove("deletedCount"); }
+            else if (parseNode.GetChildNode("deletedCount") is { } nullNodeDeletedCount && nullNodeDeletedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedCount = null;
+            if (parseNode.GetChildNode("missingUUIDs") is null) { _explicitNullValueMissingUUIDs = default!; _explicitNullProperties?.Remove("missingUUIDs"); }
+            else if (parseNode.GetChildNode("missingUUIDs") is { } nullNodeMissingUUIDs && nullNodeMissingUUIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingUUIDs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of indicators deleted.</summary>
-        public int? DeletedCount { get => _explicitNullValueDeletedCount; set { _explicitNullValueDeletedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedCount"); else _explicitNullProperties?.Remove("deletedCount"); } }
+        public int? DeletedCount { get => _explicitNullValueDeletedCount; set { _explicitNullValueDeletedCount = value; AdditionalData?.Remove("deletedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedCount"); else _explicitNullProperties?.Remove("deletedCount"); } }
         private int? _explicitNullValueDeletedCount = default!;
         /// <summary>Requested UUIDs that were not found in the dataset. Omitted when every UUID was deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingUUIDs { get => _explicitNullValueMissingUUIDs; set { _explicitNullValueMissingUUIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingUUIDs"); else _explicitNullProperties?.Remove("missingUUIDs"); } }
+        public List<string>? MissingUUIDs { get => _explicitNullValueMissingUUIDs; set { _explicitNullValueMissingUUIDs = value; AdditionalData?.Remove("missingUUIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingUUIDs"); else _explicitNullProperties?.Remove("missingUUIDs"); } }
         private List<string>? _explicitNullValueMissingUUIDs = default!;
 #nullable restore
 #else
-        public List<string> MissingUUIDs { get => _explicitNullValueMissingUUIDs; set { _explicitNullValueMissingUUIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingUUIDs"); else _explicitNullProperties?.Remove("missingUUIDs"); } }
+        public List<string> MissingUUIDs { get => _explicitNullValueMissingUUIDs; set { _explicitNullValueMissingUUIDs = value; AdditionalData?.Remove("missingUUIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingUUIDs"); else _explicitNullProperties?.Remove("missingUUIDs"); } }
         private List<string> _explicitNullValueMissingUUIDs = default!;
 #endif
         /// <summary>

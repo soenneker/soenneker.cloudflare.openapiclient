@@ -17,28 +17,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("locationHint") is { } nullNodeLocationHint && nullNodeLocationHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationHint = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("storageClass") is { } nullNodeStorageClass && nullNodeStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageClass = null;
+            if (parseNode.GetChildNode("locationHint") is null) { _explicitNullValueLocationHint = default!; _explicitNullProperties?.Remove("locationHint"); }
+            else if (parseNode.GetChildNode("locationHint") is { } nullNodeLocationHint && nullNodeLocationHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationHint = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("storageClass") is null) { _explicitNullValueStorageClass = default!; _explicitNullProperties?.Remove("storageClass"); }
+            else if (parseNode.GetChildNode("storageClass") is { } nullNodeStorageClass && nullNodeStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageClass = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Location of the bucket.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation? LocationHint { get => _explicitNullValueLocationHint; set { _explicitNullValueLocationHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationHint"); else _explicitNullProperties?.Remove("locationHint"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation? LocationHint { get => _explicitNullValueLocationHint; set { _explicitNullValueLocationHint = value; AdditionalData?.Remove("locationHint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationHint"); else _explicitNullProperties?.Remove("locationHint"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation? _explicitNullValueLocationHint = default!;
         /// <summary>Name of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Storage class for newly uploaded objects, unless specified otherwise.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass? StorageClass { get => _explicitNullValueStorageClass; set { _explicitNullValueStorageClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageClass"); else _explicitNullProperties?.Remove("storageClass"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass? StorageClass { get => _explicitNullValueStorageClass; set { _explicitNullValueStorageClass = value; AdditionalData?.Remove("storageClass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageClass"); else _explicitNullProperties?.Remove("storageClass"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass? _explicitNullValueStorageClass = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketRequest"/> and sets the default values.
@@ -65,9 +68,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "locationHint", n => { LocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation>(); } },
+                { "locationHint", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLocationHint = default; _explicitNullProperties?.Remove("locationHint"); AdditionalData["locationHint"] = unknown; } else { LocationHint = parsed; AdditionalData.Remove("locationHint"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "storageClass", n => { StorageClass = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass>(); } },
+                { "storageClass", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStorageClass = default; _explicitNullProperties?.Remove("storageClass"); AdditionalData["storageClass"] = unknown; } else { StorageClass = parsed; AdditionalData.Remove("storageClass"); } } },
             };
         }
         /// <summary>

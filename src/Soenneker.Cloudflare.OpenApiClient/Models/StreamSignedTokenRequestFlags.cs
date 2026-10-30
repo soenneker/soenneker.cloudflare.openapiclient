@@ -18,13 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("original") is { } nullNodeOriginal && nullNodeOriginal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Original = null;
+            if (parseNode.GetChildNode("original") is null) { _explicitNullValueOriginal = default!; _explicitNullProperties?.Remove("original"); }
+            else if (parseNode.GetChildNode("original") is { } nullNodeOriginal && nullNodeOriginal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Original = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to return the original video without transformations.</summary>
-        public bool? Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
+        public bool? Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; AdditionalData?.Remove("original"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
         private bool? _explicitNullValueOriginal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamSignedTokenRequestFlags"/> and sets the default values.

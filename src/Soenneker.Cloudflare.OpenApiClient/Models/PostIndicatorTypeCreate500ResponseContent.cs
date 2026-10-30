@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("application/json") is { } nullNodeApplicationJson && nullNodeApplicationJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationJson = null;
+            if (parseNode.GetChildNode("application/json") is null) { _explicitNullValueApplicationJson = default!; _explicitNullProperties?.Remove("application/json"); }
+            else if (parseNode.GetChildNode("application/json") is { } nullNodeApplicationJson && nullNodeApplicationJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationJson = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The applicationJson property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorTypeCreate500ResponseContentApplicationJson? ApplicationJson { get => _explicitNullValueApplicationJson; set { _explicitNullValueApplicationJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application/json"); else _explicitNullProperties?.Remove("application/json"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorTypeCreate500ResponseContentApplicationJson? ApplicationJson { get => _explicitNullValueApplicationJson; set { _explicitNullValueApplicationJson = value; AdditionalData?.Remove("application/json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application/json"); else _explicitNullProperties?.Remove("application/json"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorTypeCreate500ResponseContentApplicationJson? _explicitNullValueApplicationJson = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorTypeCreate500ResponseContentApplicationJson ApplicationJson { get => _explicitNullValueApplicationJson; set { _explicitNullValueApplicationJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application/json"); else _explicitNullProperties?.Remove("application/json"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorTypeCreate500ResponseContentApplicationJson ApplicationJson { get => _explicitNullValueApplicationJson; set { _explicitNullValueApplicationJson = value; AdditionalData?.Remove("application/json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application/json"); else _explicitNullProperties?.Remove("application/json"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorTypeCreate500ResponseContentApplicationJson _explicitNullValueApplicationJson = default!;
 #endif
         /// <summary>

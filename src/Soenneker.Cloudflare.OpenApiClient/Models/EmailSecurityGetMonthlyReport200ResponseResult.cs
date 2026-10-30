@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("by_month") is { } nullNodeByMonth && nullNodeByMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByMonth = null;
+            if (parseNode.GetChildNode("by_month") is null) { _explicitNullValueByMonth = default!; _explicitNullProperties?.Remove("by_month"); }
+            else if (parseNode.GetChildNode("by_month") is { } nullNodeByMonth && nullNodeByMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByMonth = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A map of month (YYYY-MM) to the disposition counts recorded for that month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMonthlyReport200ResponseResultByMonth? ByMonth { get => _explicitNullValueByMonth; set { _explicitNullValueByMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by_month"); else _explicitNullProperties?.Remove("by_month"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMonthlyReport200ResponseResultByMonth? ByMonth { get => _explicitNullValueByMonth; set { _explicitNullValueByMonth = value; AdditionalData?.Remove("by_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by_month"); else _explicitNullProperties?.Remove("by_month"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMonthlyReport200ResponseResultByMonth? _explicitNullValueByMonth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMonthlyReport200ResponseResultByMonth ByMonth { get => _explicitNullValueByMonth; set { _explicitNullValueByMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by_month"); else _explicitNullProperties?.Remove("by_month"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMonthlyReport200ResponseResultByMonth ByMonth { get => _explicitNullValueByMonth; set { _explicitNullValueByMonth = value; AdditionalData?.Remove("by_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by_month"); else _explicitNullProperties?.Remove("by_month"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityGetMonthlyReport200ResponseResultByMonth _explicitNullValueByMonth = default!;
 #endif
         /// <summary>

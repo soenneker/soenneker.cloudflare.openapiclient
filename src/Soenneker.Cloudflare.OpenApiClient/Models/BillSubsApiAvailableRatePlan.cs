@@ -17,16 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("can_subscribe") is { } nullNodeCanSubscribe && nullNodeCanSubscribe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanSubscribe = null;
-            if (parseNode.GetChildNode("externally_managed") is { } nullNodeExternallyManaged && nullNodeExternallyManaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternallyManaged = null;
-            if (parseNode.GetChildNode("is_subscribed") is { } nullNodeIsSubscribed && nullNodeIsSubscribed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSubscribed = null;
-            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("can_subscribe") is null) { _explicitNullValueCanSubscribe = default!; _explicitNullProperties?.Remove("can_subscribe"); }
+            else if (parseNode.GetChildNode("can_subscribe") is { } nullNodeCanSubscribe && nullNodeCanSubscribe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanSubscribe = null;
+            if (parseNode.GetChildNode("externally_managed") is null) { _explicitNullValueExternallyManaged = default!; _explicitNullProperties?.Remove("externally_managed"); }
+            else if (parseNode.GetChildNode("externally_managed") is { } nullNodeExternallyManaged && nullNodeExternallyManaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternallyManaged = null;
+            if (parseNode.GetChildNode("is_subscribed") is null) { _explicitNullValueIsSubscribed = default!; _explicitNullProperties?.Remove("is_subscribed"); }
+            else if (parseNode.GetChildNode("is_subscribed") is { } nullNodeIsSubscribed && nullNodeIsSubscribed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSubscribed = null;
+            if (parseNode.GetChildNode("price") is null) { _explicitNullValuePrice = default!; _explicitNullProperties?.Remove("price"); }
+            else if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether you can subscribe to this plan.</summary>
-        public bool? CanSubscribe { get => _explicitNullValueCanSubscribe; set { _explicitNullValueCanSubscribe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_subscribe"); else _explicitNullProperties?.Remove("can_subscribe"); } }
+        public bool? CanSubscribe { get => _explicitNullValueCanSubscribe; set { _explicitNullValueCanSubscribe = value; AdditionalData?.Remove("can_subscribe"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_subscribe"); else _explicitNullProperties?.Remove("can_subscribe"); } }
         private bool? _explicitNullValueCanSubscribe = default!;
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Currency { get; private set; }
 #endif
         /// <summary>Indicates whether this plan is managed externally.</summary>
-        public bool? ExternallyManaged { get => _explicitNullValueExternallyManaged; set { _explicitNullValueExternallyManaged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externally_managed"); else _explicitNullProperties?.Remove("externally_managed"); } }
+        public bool? ExternallyManaged { get => _explicitNullValueExternallyManaged; set { _explicitNullValueExternallyManaged = value; AdditionalData?.Remove("externally_managed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externally_managed"); else _explicitNullProperties?.Remove("externally_managed"); } }
         private bool? _explicitNullValueExternallyManaged = default!;
         /// <summary>The frequency at which you will be billed for this plan.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSchemasFrequency? Frequency { get; private set; }
@@ -50,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>Indicates whether you are currently subscribed to this plan.</summary>
-        public bool? IsSubscribed { get => _explicitNullValueIsSubscribed; set { _explicitNullValueIsSubscribed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_subscribed"); else _explicitNullProperties?.Remove("is_subscribed"); } }
+        public bool? IsSubscribed { get => _explicitNullValueIsSubscribed; set { _explicitNullValueIsSubscribed = value; AdditionalData?.Remove("is_subscribed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_subscribed"); else _explicitNullProperties?.Remove("is_subscribed"); } }
         private bool? _explicitNullValueIsSubscribed = default!;
         /// <summary>The legacy identifier for this rate plan, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; private set; }
 #endif
         /// <summary>The amount you will be billed for this plan.</summary>
-        public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
         private double? _explicitNullValuePrice = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiAvailableRatePlan"/> and sets the default values.

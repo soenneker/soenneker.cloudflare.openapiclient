@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("grant_trust_to_all_accounts_in_org") is { } nullNodeGrantTrustToAllAccountsInOrg && nullNodeGrantTrustToAllAccountsInOrg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantTrustToAllAccountsInOrg = null;
-            if (parseNode.GetChildNode("trusting_accounts") is { } nullNodeTrustingAccounts && nullNodeTrustingAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustingAccounts = null;
+            if (parseNode.GetChildNode("grant_trust_to_all_accounts_in_org") is null) { _explicitNullValueGrantTrustToAllAccountsInOrg = default!; _explicitNullProperties?.Remove("grant_trust_to_all_accounts_in_org"); }
+            else if (parseNode.GetChildNode("grant_trust_to_all_accounts_in_org") is { } nullNodeGrantTrustToAllAccountsInOrg && nullNodeGrantTrustToAllAccountsInOrg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantTrustToAllAccountsInOrg = null;
+            if (parseNode.GetChildNode("trusting_accounts") is null) { _explicitNullValueTrustingAccounts = default!; _explicitNullProperties?.Remove("trusting_accounts"); }
+            else if (parseNode.GetChildNode("trusting_accounts") is { } nullNodeTrustingAccounts && nullNodeTrustingAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustingAccounts = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether all accounts in the organization are trusted to use this account&apos;s cross-account Access resources.</summary>
-        public bool? GrantTrustToAllAccountsInOrg { get => _explicitNullValueGrantTrustToAllAccountsInOrg; set { _explicitNullValueGrantTrustToAllAccountsInOrg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_trust_to_all_accounts_in_org"); else _explicitNullProperties?.Remove("grant_trust_to_all_accounts_in_org"); } }
+        public bool? GrantTrustToAllAccountsInOrg { get => _explicitNullValueGrantTrustToAllAccountsInOrg; set { _explicitNullValueGrantTrustToAllAccountsInOrg = value; AdditionalData?.Remove("grant_trust_to_all_accounts_in_org"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_trust_to_all_accounts_in_org"); else _explicitNullProperties?.Remove("grant_trust_to_all_accounts_in_org"); } }
         private bool? _explicitNullValueGrantTrustToAllAccountsInOrg = default!;
         /// <summary>Explicit account IDs trusted to use this account&apos;s cross-account Access resources. At most 100 unique valid account IDs are accepted. Omitted from responses when empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TrustingAccounts { get => _explicitNullValueTrustingAccounts; set { _explicitNullValueTrustingAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trusting_accounts"); else _explicitNullProperties?.Remove("trusting_accounts"); } }
+        public List<string>? TrustingAccounts { get => _explicitNullValueTrustingAccounts; set { _explicitNullValueTrustingAccounts = value; AdditionalData?.Remove("trusting_accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trusting_accounts"); else _explicitNullProperties?.Remove("trusting_accounts"); } }
         private List<string>? _explicitNullValueTrustingAccounts = default!;
 #nullable restore
 #else
-        public List<string> TrustingAccounts { get => _explicitNullValueTrustingAccounts; set { _explicitNullValueTrustingAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trusting_accounts"); else _explicitNullProperties?.Remove("trusting_accounts"); } }
+        public List<string> TrustingAccounts { get => _explicitNullValueTrustingAccounts; set { _explicitNullValueTrustingAccounts = value; AdditionalData?.Remove("trusting_accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trusting_accounts"); else _explicitNullProperties?.Remove("trusting_accounts"); } }
         private List<string> _explicitNullValueTrustingAccounts = default!;
 #endif
         /// <summary>

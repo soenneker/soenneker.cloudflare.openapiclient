@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("queue_consumer_id") is { } nullNodeQueueConsumerId && nullNodeQueueConsumerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueConsumerId = null;
-            if (parseNode.GetChildNode("queue_id") is { } nullNodeQueueId && nullNodeQueueId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueId = null;
-            if (parseNode.GetChildNode("queue_name") is { } nullNodeQueueName && nullNodeQueueName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueName = null;
+            if (parseNode.GetChildNode("queue_consumer_id") is null) { _explicitNullValueQueueConsumerId = default!; _explicitNullProperties?.Remove("queue_consumer_id"); }
+            else if (parseNode.GetChildNode("queue_consumer_id") is { } nullNodeQueueConsumerId && nullNodeQueueConsumerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueConsumerId = null;
+            if (parseNode.GetChildNode("queue_id") is null) { _explicitNullValueQueueId = default!; _explicitNullProperties?.Remove("queue_id"); }
+            else if (parseNode.GetChildNode("queue_id") is { } nullNodeQueueId && nullNodeQueueId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueId = null;
+            if (parseNode.GetChildNode("queue_name") is null) { _explicitNullValueQueueName = default!; _explicitNullProperties?.Remove("queue_name"); }
+            else if (parseNode.GetChildNode("queue_name") is { } nullNodeQueueName && nullNodeQueueName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>ID of the queue consumer configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueueConsumerId { get => _explicitNullValueQueueConsumerId; set { _explicitNullValueQueueConsumerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_consumer_id"); else _explicitNullProperties?.Remove("queue_consumer_id"); } }
+        public string? QueueConsumerId { get => _explicitNullValueQueueConsumerId; set { _explicitNullValueQueueConsumerId = value; AdditionalData?.Remove("queue_consumer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_consumer_id"); else _explicitNullProperties?.Remove("queue_consumer_id"); } }
         private string? _explicitNullValueQueueConsumerId = default!;
 #nullable restore
 #else
-        public string QueueConsumerId { get => _explicitNullValueQueueConsumerId; set { _explicitNullValueQueueConsumerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_consumer_id"); else _explicitNullProperties?.Remove("queue_consumer_id"); } }
+        public string QueueConsumerId { get => _explicitNullValueQueueConsumerId; set { _explicitNullValueQueueConsumerId = value; AdditionalData?.Remove("queue_consumer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_consumer_id"); else _explicitNullProperties?.Remove("queue_consumer_id"); } }
         private string _explicitNullValueQueueConsumerId = default!;
 #endif
         /// <summary>ID of the queue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueueId { get => _explicitNullValueQueueId; set { _explicitNullValueQueueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_id"); else _explicitNullProperties?.Remove("queue_id"); } }
+        public string? QueueId { get => _explicitNullValueQueueId; set { _explicitNullValueQueueId = value; AdditionalData?.Remove("queue_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_id"); else _explicitNullProperties?.Remove("queue_id"); } }
         private string? _explicitNullValueQueueId = default!;
 #nullable restore
 #else
-        public string QueueId { get => _explicitNullValueQueueId; set { _explicitNullValueQueueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_id"); else _explicitNullProperties?.Remove("queue_id"); } }
+        public string QueueId { get => _explicitNullValueQueueId; set { _explicitNullValueQueueId = value; AdditionalData?.Remove("queue_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_id"); else _explicitNullProperties?.Remove("queue_id"); } }
         private string _explicitNullValueQueueId = default!;
 #endif
         /// <summary>Name of the queue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueueName { get => _explicitNullValueQueueName; set { _explicitNullValueQueueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_name"); else _explicitNullProperties?.Remove("queue_name"); } }
+        public string? QueueName { get => _explicitNullValueQueueName; set { _explicitNullValueQueueName = value; AdditionalData?.Remove("queue_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_name"); else _explicitNullProperties?.Remove("queue_name"); } }
         private string? _explicitNullValueQueueName = default!;
 #nullable restore
 #else
-        public string QueueName { get => _explicitNullValueQueueName; set { _explicitNullValueQueueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_name"); else _explicitNullProperties?.Remove("queue_name"); } }
+        public string QueueName { get => _explicitNullValueQueueName; set { _explicitNullValueQueueName = value; AdditionalData?.Remove("queue_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_name"); else _explicitNullProperties?.Remove("queue_name"); } }
         private string _explicitNullValueQueueName = default!;
 #endif
         /// <summary>

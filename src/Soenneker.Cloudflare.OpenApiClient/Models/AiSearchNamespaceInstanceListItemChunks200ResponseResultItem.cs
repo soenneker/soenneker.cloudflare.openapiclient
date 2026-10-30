@@ -17,61 +17,69 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("end_byte") is { } nullNodeEndByte && nullNodeEndByte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndByte = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("item") is { } nullNodeItem && nullNodeItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Item = null;
-            if (parseNode.GetChildNode("media_end_ms") is { } nullNodeMediaEndMs && nullNodeMediaEndMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaEndMs = null;
-            if (parseNode.GetChildNode("media_start_ms") is { } nullNodeMediaStartMs && nullNodeMediaStartMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaStartMs = null;
-            if (parseNode.GetChildNode("source_media_type") is { } nullNodeSourceMediaType && nullNodeSourceMediaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceMediaType = null;
-            if (parseNode.GetChildNode("start_byte") is { } nullNodeStartByte && nullNodeStartByte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartByte = null;
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("end_byte") is null) { _explicitNullValueEndByte = default!; _explicitNullProperties?.Remove("end_byte"); }
+            else if (parseNode.GetChildNode("end_byte") is { } nullNodeEndByte && nullNodeEndByte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndByte = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("item") is null) { _explicitNullValueItem = default!; _explicitNullProperties?.Remove("item"); }
+            else if (parseNode.GetChildNode("item") is { } nullNodeItem && nullNodeItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Item = null;
+            if (parseNode.GetChildNode("media_end_ms") is null) { _explicitNullValueMediaEndMs = default!; _explicitNullProperties?.Remove("media_end_ms"); }
+            else if (parseNode.GetChildNode("media_end_ms") is { } nullNodeMediaEndMs && nullNodeMediaEndMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaEndMs = null;
+            if (parseNode.GetChildNode("media_start_ms") is null) { _explicitNullValueMediaStartMs = default!; _explicitNullProperties?.Remove("media_start_ms"); }
+            else if (parseNode.GetChildNode("media_start_ms") is { } nullNodeMediaStartMs && nullNodeMediaStartMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaStartMs = null;
+            if (parseNode.GetChildNode("source_media_type") is null) { _explicitNullValueSourceMediaType = default!; _explicitNullProperties?.Remove("source_media_type"); }
+            else if (parseNode.GetChildNode("source_media_type") is { } nullNodeSourceMediaType && nullNodeSourceMediaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceMediaType = null;
+            if (parseNode.GetChildNode("start_byte") is null) { _explicitNullValueStartByte = default!; _explicitNullProperties?.Remove("start_byte"); }
+            else if (parseNode.GetChildNode("start_byte") is { } nullNodeStartByte && nullNodeStartByte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartByte = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end_byte property</summary>
-        public double? EndByte { get => _explicitNullValueEndByte; set { _explicitNullValueEndByte = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_byte"); else _explicitNullProperties?.Remove("end_byte"); } }
+        public double? EndByte { get => _explicitNullValueEndByte; set { _explicitNullValueEndByte = value; AdditionalData?.Remove("end_byte"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_byte"); else _explicitNullProperties?.Remove("end_byte"); } }
         private double? _explicitNullValueEndByte = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem? Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem? Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; AdditionalData?.Remove("item"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem? _explicitNullValueItem = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; AdditionalData?.Remove("item"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem _explicitNullValueItem = default!;
 #endif
         /// <summary>Audio/video transcript chunks only: end, in milliseconds from the start of the media (whole seconds), of the last transcript section the chunk covers.</summary>
-        public int? MediaEndMs { get => _explicitNullValueMediaEndMs; set { _explicitNullValueMediaEndMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_end_ms"); else _explicitNullProperties?.Remove("media_end_ms"); } }
+        public int? MediaEndMs { get => _explicitNullValueMediaEndMs; set { _explicitNullValueMediaEndMs = value; AdditionalData?.Remove("media_end_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_end_ms"); else _explicitNullProperties?.Remove("media_end_ms"); } }
         private int? _explicitNullValueMediaEndMs = default!;
         /// <summary>Audio/video transcript chunks only: start, in milliseconds from the start of the media (whole seconds), of the transcript section the chunk begins in.</summary>
-        public int? MediaStartMs { get => _explicitNullValueMediaStartMs; set { _explicitNullValueMediaStartMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_start_ms"); else _explicitNullProperties?.Remove("media_start_ms"); } }
+        public int? MediaStartMs { get => _explicitNullValueMediaStartMs; set { _explicitNullValueMediaStartMs = value; AdditionalData?.Remove("media_start_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_start_ms"); else _explicitNullProperties?.Remove("media_start_ms"); } }
         private int? _explicitNullValueMediaStartMs = default!;
         /// <summary>Audio/video transcript chunks only: type of the source media file. Omitted for all other chunks.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType? SourceMediaType { get => _explicitNullValueSourceMediaType; set { _explicitNullValueSourceMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_media_type"); else _explicitNullProperties?.Remove("source_media_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType? SourceMediaType { get => _explicitNullValueSourceMediaType; set { _explicitNullValueSourceMediaType = value; AdditionalData?.Remove("source_media_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_media_type"); else _explicitNullProperties?.Remove("source_media_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType? _explicitNullValueSourceMediaType = default!;
         /// <summary>The start_byte property</summary>
-        public double? StartByte { get => _explicitNullValueStartByte; set { _explicitNullValueStartByte = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_byte"); else _explicitNullProperties?.Remove("start_byte"); } }
+        public double? StartByte { get => _explicitNullValueStartByte; set { _explicitNullValueStartByte = value; AdditionalData?.Remove("start_byte"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_byte"); else _explicitNullProperties?.Remove("start_byte"); } }
         private double? _explicitNullValueStartByte = default!;
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>
@@ -104,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "item", n => { Item = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem.CreateFromDiscriminatorValue); } },
                 { "media_end_ms", n => { MediaEndMs = n.GetIntValue(); } },
                 { "media_start_ms", n => { MediaStartMs = n.GetIntValue(); } },
-                { "source_media_type", n => { SourceMediaType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType>(); } },
+                { "source_media_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSourceMediaType = default; _explicitNullProperties?.Remove("source_media_type"); AdditionalData["source_media_type"] = unknown; } else { SourceMediaType = parsed; AdditionalData.Remove("source_media_type"); } } },
                 { "start_byte", n => { StartByte = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };

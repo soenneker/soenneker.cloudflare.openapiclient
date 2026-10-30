@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("botCategory") is { } nullNodeBotCategory && nullNodeBotCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotCategory = null;
-            if (parseNode.GetChildNode("botName") is { } nullNodeBotName && nullNodeBotName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotName = null;
-            if (parseNode.GetChildNode("botOwner") is { } nullNodeBotOwner && nullNodeBotOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotOwner = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("botCategory") is null) { _explicitNullValueBotCategory = default!; _explicitNullProperties?.Remove("botCategory"); }
+            else if (parseNode.GetChildNode("botCategory") is { } nullNodeBotCategory && nullNodeBotCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotCategory = null;
+            if (parseNode.GetChildNode("botName") is null) { _explicitNullValueBotName = default!; _explicitNullProperties?.Remove("botName"); }
+            else if (parseNode.GetChildNode("botName") is { } nullNodeBotName && nullNodeBotName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotName = null;
+            if (parseNode.GetChildNode("botOwner") is null) { _explicitNullValueBotOwner = default!; _explicitNullProperties?.Remove("botOwner"); }
+            else if (parseNode.GetChildNode("botOwner") is { } nullNodeBotOwner && nullNodeBotOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotOwner = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The botCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BotCategory { get => _explicitNullValueBotCategory; set { _explicitNullValueBotCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botCategory"); else _explicitNullProperties?.Remove("botCategory"); } }
+        public string? BotCategory { get => _explicitNullValueBotCategory; set { _explicitNullValueBotCategory = value; AdditionalData?.Remove("botCategory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botCategory"); else _explicitNullProperties?.Remove("botCategory"); } }
         private string? _explicitNullValueBotCategory = default!;
 #nullable restore
 #else
-        public string BotCategory { get => _explicitNullValueBotCategory; set { _explicitNullValueBotCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botCategory"); else _explicitNullProperties?.Remove("botCategory"); } }
+        public string BotCategory { get => _explicitNullValueBotCategory; set { _explicitNullValueBotCategory = value; AdditionalData?.Remove("botCategory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botCategory"); else _explicitNullProperties?.Remove("botCategory"); } }
         private string _explicitNullValueBotCategory = default!;
 #endif
         /// <summary>The botName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BotName { get => _explicitNullValueBotName; set { _explicitNullValueBotName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botName"); else _explicitNullProperties?.Remove("botName"); } }
+        public string? BotName { get => _explicitNullValueBotName; set { _explicitNullValueBotName = value; AdditionalData?.Remove("botName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botName"); else _explicitNullProperties?.Remove("botName"); } }
         private string? _explicitNullValueBotName = default!;
 #nullable restore
 #else
-        public string BotName { get => _explicitNullValueBotName; set { _explicitNullValueBotName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botName"); else _explicitNullProperties?.Remove("botName"); } }
+        public string BotName { get => _explicitNullValueBotName; set { _explicitNullValueBotName = value; AdditionalData?.Remove("botName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botName"); else _explicitNullProperties?.Remove("botName"); } }
         private string _explicitNullValueBotName = default!;
 #endif
         /// <summary>The botOwner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BotOwner { get => _explicitNullValueBotOwner; set { _explicitNullValueBotOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botOwner"); else _explicitNullProperties?.Remove("botOwner"); } }
+        public string? BotOwner { get => _explicitNullValueBotOwner; set { _explicitNullValueBotOwner = value; AdditionalData?.Remove("botOwner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botOwner"); else _explicitNullProperties?.Remove("botOwner"); } }
         private string? _explicitNullValueBotOwner = default!;
 #nullable restore
 #else
-        public string BotOwner { get => _explicitNullValueBotOwner; set { _explicitNullValueBotOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botOwner"); else _explicitNullProperties?.Remove("botOwner"); } }
+        public string BotOwner { get => _explicitNullValueBotOwner; set { _explicitNullValueBotOwner = value; AdditionalData?.Remove("botOwner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botOwner"); else _explicitNullProperties?.Remove("botOwner"); } }
         private string _explicitNullValueBotOwner = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>

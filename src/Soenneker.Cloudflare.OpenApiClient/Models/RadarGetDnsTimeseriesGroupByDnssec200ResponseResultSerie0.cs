@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("INSECURE") is { } nullNodeINSECURE && nullNodeINSECURE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INSECURE = null;
-            if (parseNode.GetChildNode("INVALID") is { } nullNodeINVALID && nullNodeINVALID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INVALID = null;
-            if (parseNode.GetChildNode("OTHER") is { } nullNodeOTHER && nullNodeOTHER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OTHER = null;
-            if (parseNode.GetChildNode("SECURE") is { } nullNodeSECURE && nullNodeSECURE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SECURE = null;
+            if (parseNode.GetChildNode("INSECURE") is null) { _explicitNullValueINSECURE = default!; _explicitNullProperties?.Remove("INSECURE"); }
+            else if (parseNode.GetChildNode("INSECURE") is { } nullNodeINSECURE && nullNodeINSECURE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INSECURE = null;
+            if (parseNode.GetChildNode("INVALID") is null) { _explicitNullValueINVALID = default!; _explicitNullProperties?.Remove("INVALID"); }
+            else if (parseNode.GetChildNode("INVALID") is { } nullNodeINVALID && nullNodeINVALID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INVALID = null;
+            if (parseNode.GetChildNode("OTHER") is null) { _explicitNullValueOTHER = default!; _explicitNullProperties?.Remove("OTHER"); }
+            else if (parseNode.GetChildNode("OTHER") is { } nullNodeOTHER && nullNodeOTHER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OTHER = null;
+            if (parseNode.GetChildNode("SECURE") is null) { _explicitNullValueSECURE = default!; _explicitNullProperties?.Remove("SECURE"); }
+            else if (parseNode.GetChildNode("SECURE") is { } nullNodeSECURE && nullNodeSECURE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SECURE = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The INSECURE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? INSECURE { get => _explicitNullValueINSECURE; set { _explicitNullValueINSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSECURE"); else _explicitNullProperties?.Remove("INSECURE"); } }
+        public List<string>? INSECURE { get => _explicitNullValueINSECURE; set { _explicitNullValueINSECURE = value; AdditionalData?.Remove("INSECURE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSECURE"); else _explicitNullProperties?.Remove("INSECURE"); } }
         private List<string>? _explicitNullValueINSECURE = default!;
 #nullable restore
 #else
-        public List<string> INSECURE { get => _explicitNullValueINSECURE; set { _explicitNullValueINSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSECURE"); else _explicitNullProperties?.Remove("INSECURE"); } }
+        public List<string> INSECURE { get => _explicitNullValueINSECURE; set { _explicitNullValueINSECURE = value; AdditionalData?.Remove("INSECURE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSECURE"); else _explicitNullProperties?.Remove("INSECURE"); } }
         private List<string> _explicitNullValueINSECURE = default!;
 #endif
         /// <summary>The INVALID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? INVALID { get => _explicitNullValueINVALID; set { _explicitNullValueINVALID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INVALID"); else _explicitNullProperties?.Remove("INVALID"); } }
+        public List<string>? INVALID { get => _explicitNullValueINVALID; set { _explicitNullValueINVALID = value; AdditionalData?.Remove("INVALID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INVALID"); else _explicitNullProperties?.Remove("INVALID"); } }
         private List<string>? _explicitNullValueINVALID = default!;
 #nullable restore
 #else
-        public List<string> INVALID { get => _explicitNullValueINVALID; set { _explicitNullValueINVALID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INVALID"); else _explicitNullProperties?.Remove("INVALID"); } }
+        public List<string> INVALID { get => _explicitNullValueINVALID; set { _explicitNullValueINVALID = value; AdditionalData?.Remove("INVALID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INVALID"); else _explicitNullProperties?.Remove("INVALID"); } }
         private List<string> _explicitNullValueINVALID = default!;
 #endif
         /// <summary>The OTHER property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
+        public List<string>? OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; AdditionalData?.Remove("OTHER"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
         private List<string>? _explicitNullValueOTHER = default!;
 #nullable restore
 #else
-        public List<string> OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
+        public List<string> OTHER { get => _explicitNullValueOTHER; set { _explicitNullValueOTHER = value; AdditionalData?.Remove("OTHER"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OTHER"); else _explicitNullProperties?.Remove("OTHER"); } }
         private List<string> _explicitNullValueOTHER = default!;
 #endif
         /// <summary>The SECURE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SECURE { get => _explicitNullValueSECURE; set { _explicitNullValueSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SECURE"); else _explicitNullProperties?.Remove("SECURE"); } }
+        public List<string>? SECURE { get => _explicitNullValueSECURE; set { _explicitNullValueSECURE = value; AdditionalData?.Remove("SECURE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SECURE"); else _explicitNullProperties?.Remove("SECURE"); } }
         private List<string>? _explicitNullValueSECURE = default!;
 #nullable restore
 #else
-        public List<string> SECURE { get => _explicitNullValueSECURE; set { _explicitNullValueSECURE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SECURE"); else _explicitNullProperties?.Remove("SECURE"); } }
+        public List<string> SECURE { get => _explicitNullValueSECURE; set { _explicitNullValueSECURE = value; AdditionalData?.Remove("SECURE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SECURE"); else _explicitNullProperties?.Remove("SECURE"); } }
         private List<string> _explicitNullValueSECURE = default!;
 #endif
         /// <summary>

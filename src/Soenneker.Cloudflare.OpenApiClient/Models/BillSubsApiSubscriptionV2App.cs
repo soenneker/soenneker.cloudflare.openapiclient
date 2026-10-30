@@ -19,7 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("install_id") is { } nullNodeInstallId && nullNodeInstallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallId = null;
+            if (parseNode.GetChildNode("install_id") is null) { _explicitNullValueInstallId = default!; _explicitNullProperties?.Remove("install_id"); }
+            else if (parseNode.GetChildNode("install_id") is { } nullNodeInstallId && nullNodeInstallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,11 +29,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallId { get => _explicitNullValueInstallId; set { _explicitNullValueInstallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_id"); else _explicitNullProperties?.Remove("install_id"); } }
+        public string? InstallId { get => _explicitNullValueInstallId; set { _explicitNullValueInstallId = value; AdditionalData?.Remove("install_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_id"); else _explicitNullProperties?.Remove("install_id"); } }
         private string? _explicitNullValueInstallId = default!;
 #nullable restore
 #else
-        public string InstallId { get => _explicitNullValueInstallId; set { _explicitNullValueInstallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_id"); else _explicitNullProperties?.Remove("install_id"); } }
+        public string InstallId { get => _explicitNullValueInstallId; set { _explicitNullValueInstallId = value; AdditionalData?.Remove("install_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("install_id"); else _explicitNullProperties?.Remove("install_id"); } }
         private string _explicitNullValueInstallId = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificateAuthority") is { } nullNodeCertificateAuthority && nullNodeCertificateAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthority = null;
+            if (parseNode.GetChildNode("certificateAuthority") is null) { _explicitNullValueCertificateAuthority = default!; _explicitNullProperties?.Remove("certificateAuthority"); }
+            else if (parseNode.GetChildNode("certificateAuthority") is { } nullNodeCertificateAuthority && nullNodeCertificateAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthority = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The certificateAuthority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthority? CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthority"); else _explicitNullProperties?.Remove("certificateAuthority"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthority? CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; AdditionalData?.Remove("certificateAuthority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthority"); else _explicitNullProperties?.Remove("certificateAuthority"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthority? _explicitNullValueCertificateAuthority = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthority CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthority"); else _explicitNullProperties?.Remove("certificateAuthority"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthority CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; AdditionalData?.Remove("certificateAuthority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateAuthority"); else _explicitNullProperties?.Remove("certificateAuthority"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorityDetails200ResponseResultCertificateAuthority _explicitNullValueCertificateAuthority = default!;
 #endif
         /// <summary>

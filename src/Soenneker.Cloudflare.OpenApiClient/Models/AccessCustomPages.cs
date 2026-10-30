@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("forbidden") is { } nullNodeForbidden && nullNodeForbidden.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Forbidden = null;
-            if (parseNode.GetChildNode("identity_denied") is { } nullNodeIdentityDenied && nullNodeIdentityDenied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityDenied = null;
+            if (parseNode.GetChildNode("forbidden") is null) { _explicitNullValueForbidden = default!; _explicitNullProperties?.Remove("forbidden"); }
+            else if (parseNode.GetChildNode("forbidden") is { } nullNodeForbidden && nullNodeForbidden.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Forbidden = null;
+            if (parseNode.GetChildNode("identity_denied") is null) { _explicitNullValueIdentityDenied = default!; _explicitNullProperties?.Remove("identity_denied"); }
+            else if (parseNode.GetChildNode("identity_denied") is { } nullNodeIdentityDenied && nullNodeIdentityDenied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityDenied = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The uid of the custom page to use when a user is denied access after failing a non-identity rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Forbidden { get => _explicitNullValueForbidden; set { _explicitNullValueForbidden = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forbidden"); else _explicitNullProperties?.Remove("forbidden"); } }
+        public string? Forbidden { get => _explicitNullValueForbidden; set { _explicitNullValueForbidden = value; AdditionalData?.Remove("forbidden"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forbidden"); else _explicitNullProperties?.Remove("forbidden"); } }
         private string? _explicitNullValueForbidden = default!;
 #nullable restore
 #else
-        public string Forbidden { get => _explicitNullValueForbidden; set { _explicitNullValueForbidden = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forbidden"); else _explicitNullProperties?.Remove("forbidden"); } }
+        public string Forbidden { get => _explicitNullValueForbidden; set { _explicitNullValueForbidden = value; AdditionalData?.Remove("forbidden"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forbidden"); else _explicitNullProperties?.Remove("forbidden"); } }
         private string _explicitNullValueForbidden = default!;
 #endif
         /// <summary>The uid of the custom page to use when a user is denied access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityDenied { get => _explicitNullValueIdentityDenied; set { _explicitNullValueIdentityDenied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_denied"); else _explicitNullProperties?.Remove("identity_denied"); } }
+        public string? IdentityDenied { get => _explicitNullValueIdentityDenied; set { _explicitNullValueIdentityDenied = value; AdditionalData?.Remove("identity_denied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_denied"); else _explicitNullProperties?.Remove("identity_denied"); } }
         private string? _explicitNullValueIdentityDenied = default!;
 #nullable restore
 #else
-        public string IdentityDenied { get => _explicitNullValueIdentityDenied; set { _explicitNullValueIdentityDenied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_denied"); else _explicitNullProperties?.Remove("identity_denied"); } }
+        public string IdentityDenied { get => _explicitNullValueIdentityDenied; set { _explicitNullValueIdentityDenied = value; AdditionalData?.Remove("identity_denied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_denied"); else _explicitNullProperties?.Remove("identity_denied"); } }
         private string _explicitNullValueIdentityDenied = default!;
 #endif
         /// <summary>

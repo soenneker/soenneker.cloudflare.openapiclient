@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("advertised") is { } nullNodeAdvertised && nullNodeAdvertised.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advertised = null;
+            if (parseNode.GetChildNode("advertised") is null) { _explicitNullValueAdvertised = default!; _explicitNullProperties?.Remove("advertised"); }
+            else if (parseNode.GetChildNode("advertised") is { } nullNodeAdvertised && nullNodeAdvertised.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advertised = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The advertised property</summary>
-        public bool? Advertised { get => _explicitNullValueAdvertised; set { _explicitNullValueAdvertised = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised"); else _explicitNullProperties?.Remove("advertised"); } }
+        public bool? Advertised { get => _explicitNullValueAdvertised; set { _explicitNullValueAdvertised = value; AdditionalData?.Remove("advertised"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertised"); else _explicitNullProperties?.Remove("advertised"); } }
         private bool? _explicitNullValueAdvertised = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingBgpPrefixUpdateAdvertisementOnDemand"/> and sets the default values.

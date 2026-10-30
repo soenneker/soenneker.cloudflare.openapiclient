@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rows_read") is { } nullNodeRowsRead && nullNodeRowsRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsRead = null;
-            if (parseNode.GetChildNode("rows_written") is { } nullNodeRowsWritten && nullNodeRowsWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsWritten = null;
+            if (parseNode.GetChildNode("rows_read") is null) { _explicitNullValueRowsRead = default!; _explicitNullProperties?.Remove("rows_read"); }
+            else if (parseNode.GetChildNode("rows_read") is { } nullNodeRowsRead && nullNodeRowsRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsRead = null;
+            if (parseNode.GetChildNode("rows_written") is null) { _explicitNullValueRowsWritten = default!; _explicitNullProperties?.Remove("rows_written"); }
+            else if (parseNode.GetChildNode("rows_written") is { } nullNodeRowsWritten && nullNodeRowsWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsWritten = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The rows_read property</summary>
-        public double? RowsRead { get => _explicitNullValueRowsRead; set { _explicitNullValueRowsRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_read"); else _explicitNullProperties?.Remove("rows_read"); } }
+        public double? RowsRead { get => _explicitNullValueRowsRead; set { _explicitNullValueRowsRead = value; AdditionalData?.Remove("rows_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_read"); else _explicitNullProperties?.Remove("rows_read"); } }
         private double? _explicitNullValueRowsRead = default!;
         /// <summary>The rows_written property</summary>
-        public double? RowsWritten { get => _explicitNullValueRowsWritten; set { _explicitNullValueRowsWritten = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_written"); else _explicitNullProperties?.Remove("rows_written"); } }
+        public double? RowsWritten { get => _explicitNullValueRowsWritten; set { _explicitNullValueRowsWritten = value; AdditionalData?.Remove("rows_written"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_written"); else _explicitNullProperties?.Remove("rows_written"); } }
         private double? _explicitNullValueRowsWritten = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersQueryResultResultsItemMeta"/> and sets the default values.

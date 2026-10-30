@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("proposals") is { } nullNodeProposals && nullNodeProposals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proposals = null;
+            if (parseNode.GetChildNode("proposals") is null) { _explicitNullValueProposals = default!; _explicitNullProperties?.Remove("proposals"); }
+            else if (parseNode.GetChildNode("proposals") is { } nullNodeProposals && nullNodeProposals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proposals = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The proposals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuProposal>? Proposals { get => _explicitNullValueProposals; set { _explicitNullValueProposals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposals"); else _explicitNullProperties?.Remove("proposals"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuProposal>? Proposals { get => _explicitNullValueProposals; set { _explicitNullValueProposals = value; AdditionalData?.Remove("proposals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposals"); else _explicitNullProperties?.Remove("proposals"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuProposal>? _explicitNullValueProposals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuProposal> Proposals { get => _explicitNullValueProposals; set { _explicitNullValueProposals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposals"); else _explicitNullProperties?.Remove("proposals"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuProposal> Proposals { get => _explicitNullValueProposals; set { _explicitNullValueProposals = value; AdditionalData?.Remove("proposals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposals"); else _explicitNullProperties?.Remove("proposals"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuProposal> _explicitNullValueProposals = default!;
 #endif
         /// <summary>

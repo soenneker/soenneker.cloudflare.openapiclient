@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("successful_key_count") is { } nullNodeSuccessfulKeyCount && nullNodeSuccessfulKeyCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfulKeyCount = null;
-            if (parseNode.GetChildNode("unsuccessful_keys") is { } nullNodeUnsuccessfulKeys && nullNodeUnsuccessfulKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsuccessfulKeys = null;
+            if (parseNode.GetChildNode("successful_key_count") is null) { _explicitNullValueSuccessfulKeyCount = default!; _explicitNullProperties?.Remove("successful_key_count"); }
+            else if (parseNode.GetChildNode("successful_key_count") is { } nullNodeSuccessfulKeyCount && nullNodeSuccessfulKeyCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfulKeyCount = null;
+            if (parseNode.GetChildNode("unsuccessful_keys") is null) { _explicitNullValueUnsuccessfulKeys = default!; _explicitNullProperties?.Remove("unsuccessful_keys"); }
+            else if (parseNode.GetChildNode("unsuccessful_keys") is { } nullNodeUnsuccessfulKeys && nullNodeUnsuccessfulKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsuccessfulKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of keys successfully written or deleted by the bulk operation.</summary>
-        public double? SuccessfulKeyCount { get => _explicitNullValueSuccessfulKeyCount; set { _explicitNullValueSuccessfulKeyCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful_key_count"); else _explicitNullProperties?.Remove("successful_key_count"); } }
+        public double? SuccessfulKeyCount { get => _explicitNullValueSuccessfulKeyCount; set { _explicitNullValueSuccessfulKeyCount = value; AdditionalData?.Remove("successful_key_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful_key_count"); else _explicitNullProperties?.Remove("successful_key_count"); } }
         private double? _explicitNullValueSuccessfulKeyCount = default!;
         /// <summary>Names of keys that failed to be written or deleted. Retry the operation for these keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UnsuccessfulKeys { get => _explicitNullValueUnsuccessfulKeys; set { _explicitNullValueUnsuccessfulKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsuccessful_keys"); else _explicitNullProperties?.Remove("unsuccessful_keys"); } }
+        public List<string>? UnsuccessfulKeys { get => _explicitNullValueUnsuccessfulKeys; set { _explicitNullValueUnsuccessfulKeys = value; AdditionalData?.Remove("unsuccessful_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsuccessful_keys"); else _explicitNullProperties?.Remove("unsuccessful_keys"); } }
         private List<string>? _explicitNullValueUnsuccessfulKeys = default!;
 #nullable restore
 #else
-        public List<string> UnsuccessfulKeys { get => _explicitNullValueUnsuccessfulKeys; set { _explicitNullValueUnsuccessfulKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsuccessful_keys"); else _explicitNullProperties?.Remove("unsuccessful_keys"); } }
+        public List<string> UnsuccessfulKeys { get => _explicitNullValueUnsuccessfulKeys; set { _explicitNullValueUnsuccessfulKeys = value; AdditionalData?.Remove("unsuccessful_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsuccessful_keys"); else _explicitNullProperties?.Remove("unsuccessful_keys"); } }
         private List<string> _explicitNullValueUnsuccessfulKeys = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("colo_names") is { } nullNodeColoNames && nullNodeColoNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoNames = null;
-            if (parseNode.GetChildNode("colo_regions") is { } nullNodeColoRegions && nullNodeColoRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoRegions = null;
+            if (parseNode.GetChildNode("colo_names") is null) { _explicitNullValueColoNames = default!; _explicitNullProperties?.Remove("colo_names"); }
+            else if (parseNode.GetChildNode("colo_names") is { } nullNodeColoNames && nullNodeColoNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoNames = null;
+            if (parseNode.GetChildNode("colo_regions") is null) { _explicitNullValueColoRegions = default!; _explicitNullProperties?.Remove("colo_regions"); }
+            else if (parseNode.GetChildNode("colo_regions") is { } nullNodeColoRegions && nullNodeColoRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoRegions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of colo names for the ECMP scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ColoNames { get => _explicitNullValueColoNames; set { _explicitNullValueColoNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_names"); else _explicitNullProperties?.Remove("colo_names"); } }
+        public List<string>? ColoNames { get => _explicitNullValueColoNames; set { _explicitNullValueColoNames = value; AdditionalData?.Remove("colo_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_names"); else _explicitNullProperties?.Remove("colo_names"); } }
         private List<string>? _explicitNullValueColoNames = default!;
 #nullable restore
 #else
-        public List<string> ColoNames { get => _explicitNullValueColoNames; set { _explicitNullValueColoNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_names"); else _explicitNullProperties?.Remove("colo_names"); } }
+        public List<string> ColoNames { get => _explicitNullValueColoNames; set { _explicitNullValueColoNames = value; AdditionalData?.Remove("colo_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_names"); else _explicitNullProperties?.Remove("colo_names"); } }
         private List<string> _explicitNullValueColoNames = default!;
 #endif
         /// <summary>List of colo regions for the ECMP scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ColoRegions { get => _explicitNullValueColoRegions; set { _explicitNullValueColoRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_regions"); else _explicitNullProperties?.Remove("colo_regions"); } }
+        public List<string>? ColoRegions { get => _explicitNullValueColoRegions; set { _explicitNullValueColoRegions = value; AdditionalData?.Remove("colo_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_regions"); else _explicitNullProperties?.Remove("colo_regions"); } }
         private List<string>? _explicitNullValueColoRegions = default!;
 #nullable restore
 #else
-        public List<string> ColoRegions { get => _explicitNullValueColoRegions; set { _explicitNullValueColoRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_regions"); else _explicitNullProperties?.Remove("colo_regions"); } }
+        public List<string> ColoRegions { get => _explicitNullValueColoRegions; set { _explicitNullValueColoRegions = value; AdditionalData?.Remove("colo_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_regions"); else _explicitNullProperties?.Remove("colo_regions"); } }
         private List<string> _explicitNullValueColoRegions = default!;
 #endif
         /// <summary>

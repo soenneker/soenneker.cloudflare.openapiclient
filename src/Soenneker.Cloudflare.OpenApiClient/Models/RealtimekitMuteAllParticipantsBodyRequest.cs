@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_unmute") is { } nullNodeAllowUnmute && nullNodeAllowUnmute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowUnmute = null;
+            if (parseNode.GetChildNode("allow_unmute") is null) { _explicitNullValueAllowUnmute = default!; _explicitNullProperties?.Remove("allow_unmute"); }
+            else if (parseNode.GetChildNode("allow_unmute") is { } nullNodeAllowUnmute && nullNodeAllowUnmute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowUnmute = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>if false, participants won&apos;t be able to unmute themselves after they are muted</summary>
-        public bool? AllowUnmute { get => _explicitNullValueAllowUnmute; set { _explicitNullValueAllowUnmute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_unmute"); else _explicitNullProperties?.Remove("allow_unmute"); } }
+        public bool? AllowUnmute { get => _explicitNullValueAllowUnmute; set { _explicitNullValueAllowUnmute = value; AdditionalData?.Remove("allow_unmute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_unmute"); else _explicitNullProperties?.Remove("allow_unmute"); } }
         private bool? _explicitNullValueAllowUnmute = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMuteAllParticipantsBodyRequest"/> and sets the default values.

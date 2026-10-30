@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("nat") is { } nullNodeNat && nullNodeNat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nat = null;
-            if (parseNode.GetChildNode("next_hop") is { } nullNodeNextHop && nullNodeNextHop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextHop = null;
-            if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
+            if (parseNode.GetChildNode("nat") is null) { _explicitNullValueNat = default!; _explicitNullProperties?.Remove("nat"); }
+            else if (parseNode.GetChildNode("nat") is { } nullNodeNat && nullNodeNat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nat = null;
+            if (parseNode.GetChildNode("next_hop") is null) { _explicitNullValueNextHop = default!; _explicitNullProperties?.Remove("next_hop"); }
+            else if (parseNode.GetChildNode("next_hop") is { } nullNodeNextHop && nullNodeNextHop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextHop = null;
+            if (parseNode.GetChildNode("prefix") is null) { _explicitNullValuePrefix = default!; _explicitNullProperties?.Remove("prefix"); }
+            else if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The nat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat? Nat { get => _explicitNullValueNat; set { _explicitNullValueNat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nat"); else _explicitNullProperties?.Remove("nat"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat? Nat { get => _explicitNullValueNat; set { _explicitNullValueNat = value; AdditionalData?.Remove("nat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nat"); else _explicitNullProperties?.Remove("nat"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat? _explicitNullValueNat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat Nat { get => _explicitNullValueNat; set { _explicitNullValueNat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nat"); else _explicitNullProperties?.Remove("nat"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat Nat { get => _explicitNullValueNat; set { _explicitNullValueNat = value; AdditionalData?.Remove("nat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nat"); else _explicitNullProperties?.Remove("nat"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicNat _explicitNullValueNat = default!;
 #endif
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextHop { get => _explicitNullValueNextHop; set { _explicitNullValueNextHop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_hop"); else _explicitNullProperties?.Remove("next_hop"); } }
+        public string? NextHop { get => _explicitNullValueNextHop; set { _explicitNullValueNextHop = value; AdditionalData?.Remove("next_hop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_hop"); else _explicitNullProperties?.Remove("next_hop"); } }
         private string? _explicitNullValueNextHop = default!;
 #nullable restore
 #else
-        public string NextHop { get => _explicitNullValueNextHop; set { _explicitNullValueNextHop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_hop"); else _explicitNullProperties?.Remove("next_hop"); } }
+        public string NextHop { get => _explicitNullValueNextHop; set { _explicitNullValueNextHop = value; AdditionalData?.Remove("next_hop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_hop"); else _explicitNullProperties?.Remove("next_hop"); } }
         private string _explicitNullValueNextHop = default!;
 #endif
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string? _explicitNullValuePrefix = default!;
 #nullable restore
 #else
-        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string _explicitNullValuePrefix = default!;
 #endif
         /// <summary>

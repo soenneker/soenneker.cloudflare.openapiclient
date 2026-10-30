@@ -18,21 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("can_create") is { } nullNodeCanCreate && nullNodeCanCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanCreate = null;
-            if (parseNode.GetChildNode("can_view") is { } nullNodeCanView && nullNodeCanView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanView = null;
-            if (parseNode.GetChildNode("can_vote") is { } nullNodeCanVote && nullNodeCanVote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanVote = null;
+            if (parseNode.GetChildNode("can_create") is null) { _explicitNullValueCanCreate = default!; _explicitNullProperties?.Remove("can_create"); }
+            else if (parseNode.GetChildNode("can_create") is { } nullNodeCanCreate && nullNodeCanCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanCreate = null;
+            if (parseNode.GetChildNode("can_view") is null) { _explicitNullValueCanView = default!; _explicitNullProperties?.Remove("can_view"); }
+            else if (parseNode.GetChildNode("can_view") is { } nullNodeCanView && nullNodeCanView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanView = null;
+            if (parseNode.GetChildNode("can_vote") is null) { _explicitNullValueCanVote = default!; _explicitNullProperties?.Remove("can_vote"); }
+            else if (parseNode.GetChildNode("can_vote") is { } nullNodeCanVote && nullNodeCanVote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanVote = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Can create polls</summary>
-        public bool? CanCreate { get => _explicitNullValueCanCreate; set { _explicitNullValueCanCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_create"); else _explicitNullProperties?.Remove("can_create"); } }
+        public bool? CanCreate { get => _explicitNullValueCanCreate; set { _explicitNullValueCanCreate = value; AdditionalData?.Remove("can_create"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_create"); else _explicitNullProperties?.Remove("can_create"); } }
         private bool? _explicitNullValueCanCreate = default!;
         /// <summary>Can view polls</summary>
-        public bool? CanView { get => _explicitNullValueCanView; set { _explicitNullValueCanView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_view"); else _explicitNullProperties?.Remove("can_view"); } }
+        public bool? CanView { get => _explicitNullValueCanView; set { _explicitNullValueCanView = value; AdditionalData?.Remove("can_view"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_view"); else _explicitNullProperties?.Remove("can_view"); } }
         private bool? _explicitNullValueCanView = default!;
         /// <summary>Can vote on polls</summary>
-        public bool? CanVote { get => _explicitNullValueCanVote; set { _explicitNullValueCanVote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_vote"); else _explicitNullProperties?.Remove("can_vote"); } }
+        public bool? CanVote { get => _explicitNullValueCanVote; set { _explicitNullValueCanVote = value; AdditionalData?.Remove("can_vote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_vote"); else _explicitNullProperties?.Remove("can_vote"); } }
         private bool? _explicitNullValueCanVote = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsPolls"/> and sets the default values.

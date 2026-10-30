@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data_classes") is { } nullNodeDataClasses && nullNodeDataClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataClasses = null;
-            if (parseNode.GetChildNode("entries") is { } nullNodeEntries && nullNodeEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entries = null;
-            if (parseNode.GetChildNode("integration_exists") is { } nullNodeIntegrationExists && nullNodeIntegrationExists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationExists = null;
+            if (parseNode.GetChildNode("data_classes") is null) { _explicitNullValueDataClasses = default!; _explicitNullProperties?.Remove("data_classes"); }
+            else if (parseNode.GetChildNode("data_classes") is { } nullNodeDataClasses && nullNodeDataClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataClasses = null;
+            if (parseNode.GetChildNode("entries") is null) { _explicitNullValueEntries = default!; _explicitNullProperties?.Remove("entries"); }
+            else if (parseNode.GetChildNode("entries") is { } nullNodeEntries && nullNodeEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entries = null;
+            if (parseNode.GetChildNode("integration_exists") is null) { _explicitNullValueIntegrationExists = default!; _explicitNullProperties?.Remove("integration_exists"); }
+            else if (parseNode.GetChildNode("integration_exists") is { } nullNodeIntegrationExists && nullNodeIntegrationExists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationExists = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Data classes that reference entries owned by this profile, sorted by ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencingDataClass>? DataClasses { get => _explicitNullValueDataClasses; set { _explicitNullValueDataClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_classes"); else _explicitNullProperties?.Remove("data_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencingDataClass>? DataClasses { get => _explicitNullValueDataClasses; set { _explicitNullValueDataClasses = value; AdditionalData?.Remove("data_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_classes"); else _explicitNullProperties?.Remove("data_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencingDataClass>? _explicitNullValueDataClasses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencingDataClass> DataClasses { get => _explicitNullValueDataClasses; set { _explicitNullValueDataClasses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_classes"); else _explicitNullProperties?.Remove("data_classes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencingDataClass> DataClasses { get => _explicitNullValueDataClasses; set { _explicitNullValueDataClasses = value; AdditionalData?.Remove("data_classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_classes"); else _explicitNullProperties?.Remove("data_classes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencingDataClass> _explicitNullValueDataClasses = default!;
 #endif
         /// <summary>Entries owned by this profile, sorted by ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencedIntegrationEntry>? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencedIntegrationEntry>? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; AdditionalData?.Remove("entries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencedIntegrationEntry>? _explicitNullValueEntries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencedIntegrationEntry> Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencedIntegrationEntry> Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; AdditionalData?.Remove("entries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpReferencedIntegrationEntry> _explicitNullValueEntries = default!;
 #endif
         /// <summary>Whether the integration that manages this profile still exists in CASB. The profile cannotbe deleted while this is `true`.</summary>
-        public bool? IntegrationExists { get => _explicitNullValueIntegrationExists; set { _explicitNullValueIntegrationExists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_exists"); else _explicitNullProperties?.Remove("integration_exists"); } }
+        public bool? IntegrationExists { get => _explicitNullValueIntegrationExists; set { _explicitNullValueIntegrationExists = value; AdditionalData?.Remove("integration_exists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_exists"); else _explicitNullProperties?.Remove("integration_exists"); } }
         private bool? _explicitNullValueIntegrationExists = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpIntegrationProfileReferences"/> and sets the default values.

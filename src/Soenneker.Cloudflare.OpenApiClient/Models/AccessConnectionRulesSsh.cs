@@ -18,23 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_email_alias") is { } nullNodeAllowEmailAlias && nullNodeAllowEmailAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowEmailAlias = null;
-            if (parseNode.GetChildNode("usernames") is { } nullNodeUsernames && nullNodeUsernames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usernames = null;
+            if (parseNode.GetChildNode("allow_email_alias") is null) { _explicitNullValueAllowEmailAlias = default!; _explicitNullProperties?.Remove("allow_email_alias"); }
+            else if (parseNode.GetChildNode("allow_email_alias") is { } nullNodeAllowEmailAlias && nullNodeAllowEmailAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowEmailAlias = null;
+            if (parseNode.GetChildNode("usernames") is null) { _explicitNullValueUsernames = default!; _explicitNullProperties?.Remove("usernames"); }
+            else if (parseNode.GetChildNode("usernames") is { } nullNodeUsernames && nullNodeUsernames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usernames = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enables using Identity Provider email alias as SSH username.</summary>
-        public bool? AllowEmailAlias { get => _explicitNullValueAllowEmailAlias; set { _explicitNullValueAllowEmailAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_email_alias"); else _explicitNullProperties?.Remove("allow_email_alias"); } }
+        public bool? AllowEmailAlias { get => _explicitNullValueAllowEmailAlias; set { _explicitNullValueAllowEmailAlias = value; AdditionalData?.Remove("allow_email_alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_email_alias"); else _explicitNullProperties?.Remove("allow_email_alias"); } }
         private bool? _explicitNullValueAllowEmailAlias = default!;
         /// <summary>Contains the Unix usernames that may be used when connecting over SSH.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Usernames { get => _explicitNullValueUsernames; set { _explicitNullValueUsernames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usernames"); else _explicitNullProperties?.Remove("usernames"); } }
+        public List<string>? Usernames { get => _explicitNullValueUsernames; set { _explicitNullValueUsernames = value; AdditionalData?.Remove("usernames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usernames"); else _explicitNullProperties?.Remove("usernames"); } }
         private List<string>? _explicitNullValueUsernames = default!;
 #nullable restore
 #else
-        public List<string> Usernames { get => _explicitNullValueUsernames; set { _explicitNullValueUsernames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usernames"); else _explicitNullProperties?.Remove("usernames"); } }
+        public List<string> Usernames { get => _explicitNullValueUsernames; set { _explicitNullValueUsernames = value; AdditionalData?.Remove("usernames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usernames"); else _explicitNullProperties?.Remove("usernames"); } }
         private List<string> _explicitNullValueUsernames = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("vips") is { } nullNodeVips && nullNodeVips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vips = null;
-            if (parseNode.GetChildNode("vips_previous") is { } nullNodeVipsPrevious && nullNodeVipsPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VipsPrevious = null;
+            if (parseNode.GetChildNode("vips") is null) { _explicitNullValueVips = default!; _explicitNullProperties?.Remove("vips"); }
+            else if (parseNode.GetChildNode("vips") is { } nullNodeVips && nullNodeVips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vips = null;
+            if (parseNode.GetChildNode("vips_previous") is null) { _explicitNullValueVipsPrevious = default!; _explicitNullProperties?.Remove("vips_previous"); }
+            else if (parseNode.GetChildNode("vips_previous") is { } nullNodeVipsPrevious && nullNodeVipsPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VipsPrevious = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>VIPs to assign on the CloudflareWARP interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry>? Vips { get => _explicitNullValueVips; set { _explicitNullValueVips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips"); else _explicitNullProperties?.Remove("vips"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry>? Vips { get => _explicitNullValueVips; set { _explicitNullValueVips = value; AdditionalData?.Remove("vips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips"); else _explicitNullProperties?.Remove("vips"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry>? _explicitNullValueVips = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry> Vips { get => _explicitNullValueVips; set { _explicitNullValueVips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips"); else _explicitNullProperties?.Remove("vips"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry> Vips { get => _explicitNullValueVips; set { _explicitNullValueVips = value; AdditionalData?.Remove("vips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips"); else _explicitNullProperties?.Remove("vips"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry> _explicitNullValueVips = default!;
 #endif
         /// <summary>VIPs to clean up on demotion or version drift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry>? VipsPrevious { get => _explicitNullValueVipsPrevious; set { _explicitNullValueVipsPrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips_previous"); else _explicitNullProperties?.Remove("vips_previous"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry>? VipsPrevious { get => _explicitNullValueVipsPrevious; set { _explicitNullValueVipsPrevious = value; AdditionalData?.Remove("vips_previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips_previous"); else _explicitNullProperties?.Remove("vips_previous"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry>? _explicitNullValueVipsPrevious = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry> VipsPrevious { get => _explicitNullValueVipsPrevious; set { _explicitNullValueVipsPrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips_previous"); else _explicitNullProperties?.Remove("vips_previous"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry> VipsPrevious { get => _explicitNullValueVipsPrevious; set { _explicitNullValueVipsPrevious = value; AdditionalData?.Remove("vips_previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vips_previous"); else _explicitNullProperties?.Remove("vips_previous"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshVipEntry> _explicitNullValueVipsPrevious = default!;
 #endif
         /// <summary>

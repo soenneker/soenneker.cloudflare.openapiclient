@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destinationStorageClass") is { } nullNodeDestinationStorageClass && nullNodeDestinationStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationStorageClass = null;
-            if (parseNode.GetChildNode("jobType") is { } nullNodeJobType && nullNodeJobType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobType = null;
-            if (parseNode.GetChildNode("sourceStorageClass") is { } nullNodeSourceStorageClass && nullNodeSourceStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceStorageClass = null;
+            if (parseNode.GetChildNode("destinationStorageClass") is null) { _explicitNullValueDestinationStorageClass = default!; _explicitNullProperties?.Remove("destinationStorageClass"); }
+            else if (parseNode.GetChildNode("destinationStorageClass") is { } nullNodeDestinationStorageClass && nullNodeDestinationStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationStorageClass = null;
+            if (parseNode.GetChildNode("jobType") is null) { _explicitNullValueJobType = default!; _explicitNullProperties?.Remove("jobType"); }
+            else if (parseNode.GetChildNode("jobType") is { } nullNodeJobType && nullNodeJobType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobType = null;
+            if (parseNode.GetChildNode("sourceStorageClass") is null) { _explicitNullValueSourceStorageClass = default!; _explicitNullProperties?.Remove("sourceStorageClass"); }
+            else if (parseNode.GetChildNode("sourceStorageClass") is { } nullNodeSourceStorageClass && nullNodeSourceStorageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceStorageClass = null;
         }
 
         /// <summary>The destinationStorageClass property</summary>

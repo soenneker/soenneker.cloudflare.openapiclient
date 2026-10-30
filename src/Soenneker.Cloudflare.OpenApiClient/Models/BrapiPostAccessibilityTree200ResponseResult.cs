@@ -17,17 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accessibilityTree") is { } nullNodeAccessibilityTree && nullNodeAccessibilityTree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessibilityTree = null;
+            if (parseNode.GetChildNode("accessibilityTree") is null) { _explicitNullValueAccessibilityTree = default!; _explicitNullProperties?.Remove("accessibilityTree"); }
+            else if (parseNode.GetChildNode("accessibilityTree") is { } nullNodeAccessibilityTree && nullNodeAccessibilityTree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessibilityTree = null;
         }
 
         /// <summary>The accessibilityTree property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostAccessibilityTree200ResponseResultAccessibilityTree? AccessibilityTree { get => _explicitNullValueAccessibilityTree; set { _explicitNullValueAccessibilityTree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessibilityTree"); else _explicitNullProperties?.Remove("accessibilityTree"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostAccessibilityTree200ResponseResultAccessibilityTree? AccessibilityTree { get => _explicitNullValueAccessibilityTree; set { _explicitNullValueAccessibilityTree = value; AdditionalData?.Remove("accessibilityTree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessibilityTree"); else _explicitNullProperties?.Remove("accessibilityTree"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostAccessibilityTree200ResponseResultAccessibilityTree? _explicitNullValueAccessibilityTree = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostAccessibilityTree200ResponseResultAccessibilityTree AccessibilityTree { get => _explicitNullValueAccessibilityTree; set { _explicitNullValueAccessibilityTree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessibilityTree"); else _explicitNullProperties?.Remove("accessibilityTree"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostAccessibilityTree200ResponseResultAccessibilityTree AccessibilityTree { get => _explicitNullValueAccessibilityTree; set { _explicitNullValueAccessibilityTree = value; AdditionalData?.Remove("accessibilityTree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessibilityTree"); else _explicitNullProperties?.Remove("accessibilityTree"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostAccessibilityTree200ResponseResultAccessibilityTree _explicitNullValueAccessibilityTree = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

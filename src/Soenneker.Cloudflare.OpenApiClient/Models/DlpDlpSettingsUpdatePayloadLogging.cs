@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("masking_level") is { } nullNodeMaskingLevel && nullNodeMaskingLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaskingLevel = null;
-            if (parseNode.GetChildNode("public_key") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("masking_level") is null) { _explicitNullValueMaskingLevel = default!; _explicitNullProperties?.Remove("masking_level"); }
+            else if (parseNode.GetChildNode("masking_level") is { } nullNodeMaskingLevel && nullNodeMaskingLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaskingLevel = null;
+            if (parseNode.GetChildNode("public_key") is null) { _explicitNullValuePublicKey = default!; _explicitNullProperties?.Remove("public_key"); }
+            else if (parseNode.GetChildNode("public_key") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Masking level for payload logs.- `full`: The entire payload is masked.- `partial`: Only partial payload content is masked.- `clear`: No masking is applied to the payload content.- `default`: DLP uses its default masking behavior.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel? MaskingLevel { get => _explicitNullValueMaskingLevel; set { _explicitNullValueMaskingLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masking_level"); else _explicitNullProperties?.Remove("masking_level"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel? MaskingLevel { get => _explicitNullValueMaskingLevel; set { _explicitNullValueMaskingLevel = value; AdditionalData?.Remove("masking_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masking_level"); else _explicitNullProperties?.Remove("masking_level"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel? _explicitNullValueMaskingLevel = default!;
         /// <summary>Base64-encoded public key for encrypting payload logs.- Set to a non-empty base64 string to enable payload logging with the given key.- Set to an empty string to disable payload logging.- Omit or set to null to leave unchanged (PATCH) or reset to disabled (PUT).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
         private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
         private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "masking_level", n => { MaskingLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel>(); } },
+                { "masking_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMaskingLevel = default; _explicitNullProperties?.Remove("masking_level"); AdditionalData["masking_level"] = unknown; } else { MaskingLevel = parsed; AdditionalData.Remove("masking_level"); } } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
             };
         }

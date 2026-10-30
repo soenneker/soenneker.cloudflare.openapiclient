@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("validity_period_days") is { } nullNodeValidityPeriodDays && nullNodeValidityPeriodDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityPeriodDays = null;
+            if (parseNode.GetChildNode("validity_period_days") is null) { _explicitNullValueValidityPeriodDays = default!; _explicitNullProperties?.Remove("validity_period_days"); }
+            else if (parseNode.GetChildNode("validity_period_days") is { } nullNodeValidityPeriodDays && nullNodeValidityPeriodDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityPeriodDays = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation.  Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.</summary>
-        public int? ValidityPeriodDays { get => _explicitNullValueValidityPeriodDays; set { _explicitNullValueValidityPeriodDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_period_days"); else _explicitNullProperties?.Remove("validity_period_days"); } }
+        public int? ValidityPeriodDays { get => _explicitNullValueValidityPeriodDays; set { _explicitNullValueValidityPeriodDays = value; AdditionalData?.Remove("validity_period_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_period_days"); else _explicitNullProperties?.Remove("validity_period_days"); } }
         private int? _explicitNullValueValidityPeriodDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGenerateCertRequest"/> and sets the default values.

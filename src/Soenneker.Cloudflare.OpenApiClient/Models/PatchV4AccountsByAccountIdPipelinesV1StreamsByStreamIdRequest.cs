@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("http") is { } nullNodeHttp && nullNodeHttp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Http = null;
-            if (parseNode.GetChildNode("worker_binding") is { } nullNodeWorkerBinding && nullNodeWorkerBinding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerBinding = null;
+            if (parseNode.GetChildNode("http") is null) { _explicitNullValueHttp = default!; _explicitNullProperties?.Remove("http"); }
+            else if (parseNode.GetChildNode("http") is { } nullNodeHttp && nullNodeHttp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Http = null;
+            if (parseNode.GetChildNode("worker_binding") is null) { _explicitNullValueWorkerBinding = default!; _explicitNullProperties?.Remove("worker_binding"); }
+            else if (parseNode.GetChildNode("worker_binding") is { } nullNodeWorkerBinding && nullNodeWorkerBinding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkerBinding = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The http property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestHttp? Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestHttp? Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; AdditionalData?.Remove("http"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestHttp? _explicitNullValueHttp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestHttp Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestHttp Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; AdditionalData?.Remove("http"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestHttp _explicitNullValueHttp = default!;
 #endif
         /// <summary>The worker_binding property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestWorkerBinding? WorkerBinding { get => _explicitNullValueWorkerBinding; set { _explicitNullValueWorkerBinding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_binding"); else _explicitNullProperties?.Remove("worker_binding"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestWorkerBinding? WorkerBinding { get => _explicitNullValueWorkerBinding; set { _explicitNullValueWorkerBinding = value; AdditionalData?.Remove("worker_binding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_binding"); else _explicitNullProperties?.Remove("worker_binding"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestWorkerBinding? _explicitNullValueWorkerBinding = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestWorkerBinding WorkerBinding { get => _explicitNullValueWorkerBinding; set { _explicitNullValueWorkerBinding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_binding"); else _explicitNullProperties?.Remove("worker_binding"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestWorkerBinding WorkerBinding { get => _explicitNullValueWorkerBinding; set { _explicitNullValueWorkerBinding = value; AdditionalData?.Remove("worker_binding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("worker_binding"); else _explicitNullProperties?.Remove("worker_binding"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequestWorkerBinding _explicitNullValueWorkerBinding = default!;
 #endif
         /// <summary>

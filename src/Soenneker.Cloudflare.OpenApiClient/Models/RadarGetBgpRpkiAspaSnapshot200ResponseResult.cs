@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asnInfo") is { } nullNodeAsnInfo && nullNodeAsnInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnInfo = null;
-            if (parseNode.GetChildNode("aspaObjects") is { } nullNodeAspaObjects && nullNodeAspaObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspaObjects = null;
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("asnInfo") is null) { _explicitNullValueAsnInfo = default!; _explicitNullProperties?.Remove("asnInfo"); }
+            else if (parseNode.GetChildNode("asnInfo") is { } nullNodeAsnInfo && nullNodeAsnInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnInfo = null;
+            if (parseNode.GetChildNode("aspaObjects") is null) { _explicitNullValueAspaObjects = default!; _explicitNullProperties?.Remove("aspaObjects"); }
+            else if (parseNode.GetChildNode("aspaObjects") is { } nullNodeAspaObjects && nullNodeAspaObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspaObjects = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The asnInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAsnInfo? AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnInfo"); else _explicitNullProperties?.Remove("asnInfo"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAsnInfo? AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; AdditionalData?.Remove("asnInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnInfo"); else _explicitNullProperties?.Remove("asnInfo"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAsnInfo? _explicitNullValueAsnInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAsnInfo AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnInfo"); else _explicitNullProperties?.Remove("asnInfo"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAsnInfo AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; AdditionalData?.Remove("asnInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asnInfo"); else _explicitNullProperties?.Remove("asnInfo"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAsnInfo _explicitNullValueAsnInfo = default!;
 #endif
         /// <summary>The aspaObjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAspaObjectsItem>? AspaObjects { get => _explicitNullValueAspaObjects; set { _explicitNullValueAspaObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspaObjects"); else _explicitNullProperties?.Remove("aspaObjects"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAspaObjectsItem>? AspaObjects { get => _explicitNullValueAspaObjects; set { _explicitNullValueAspaObjects = value; AdditionalData?.Remove("aspaObjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspaObjects"); else _explicitNullProperties?.Remove("aspaObjects"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAspaObjectsItem>? _explicitNullValueAspaObjects = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAspaObjectsItem> AspaObjects { get => _explicitNullValueAspaObjects; set { _explicitNullValueAspaObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspaObjects"); else _explicitNullProperties?.Remove("aspaObjects"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAspaObjectsItem> AspaObjects { get => _explicitNullValueAspaObjects; set { _explicitNullValueAspaObjects = value; AdditionalData?.Remove("aspaObjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspaObjects"); else _explicitNullProperties?.Remove("aspaObjects"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultAspaObjectsItem> _explicitNullValueAspaObjects = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaSnapshot200ResponseResultMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>

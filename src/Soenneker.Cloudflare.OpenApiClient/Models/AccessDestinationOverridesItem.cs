@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("behavior") is { } nullNodeBehavior && nullNodeBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behavior = null;
-            if (parseNode.GetChildNode("path_pattern") is { } nullNodePathPattern && nullNodePathPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPattern = null;
+            if (parseNode.GetChildNode("behavior") is null) { _explicitNullValueBehavior = default!; _explicitNullProperties?.Remove("behavior"); }
+            else if (parseNode.GetChildNode("behavior") is { } nullNodeBehavior && nullNodeBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behavior = null;
+            if (parseNode.GetChildNode("path_pattern") is null) { _explicitNullValuePathPattern = default!; _explicitNullProperties?.Remove("path_pattern"); }
+            else if (parseNode.GetChildNode("path_pattern") is { } nullNodePathPattern && nullNodePathPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPattern = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The behavior to apply to matching requests.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PublicValueBehavior? Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PublicValueBehavior? Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; AdditionalData?.Remove("behavior"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PublicValueBehavior? _explicitNullValueBehavior = default!;
         /// <summary>The request path pattern to match. Wildcards (`*`) are supported, but each path segment may have at most one wildcard. Unlike the `uri` in public destinations, override path patterns do not implicitly cover subpaths; to do that, use a wildcard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PathPattern { get => _explicitNullValuePathPattern; set { _explicitNullValuePathPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_pattern"); else _explicitNullProperties?.Remove("path_pattern"); } }
+        public string? PathPattern { get => _explicitNullValuePathPattern; set { _explicitNullValuePathPattern = value; AdditionalData?.Remove("path_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_pattern"); else _explicitNullProperties?.Remove("path_pattern"); } }
         private string? _explicitNullValuePathPattern = default!;
 #nullable restore
 #else
-        public string PathPattern { get => _explicitNullValuePathPattern; set { _explicitNullValuePathPattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_pattern"); else _explicitNullProperties?.Remove("path_pattern"); } }
+        public string PathPattern { get => _explicitNullValuePathPattern; set { _explicitNullValuePathPattern = value; AdditionalData?.Remove("path_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_pattern"); else _explicitNullProperties?.Remove("path_pattern"); } }
         private string _explicitNullValuePathPattern = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "behavior", n => { Behavior = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PublicValueBehavior>(); } },
+                { "behavior", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PublicValueBehavior>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBehavior = default; _explicitNullProperties?.Remove("behavior"); AdditionalData["behavior"] = unknown; } else { Behavior = parsed; AdditionalData.Remove("behavior"); } } },
                 { "path_pattern", n => { PathPattern = n.GetStringValue(); } },
             };
         }

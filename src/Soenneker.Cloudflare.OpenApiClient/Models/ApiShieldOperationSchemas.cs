@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("learned") is { } nullNodeLearned && nullNodeLearned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Learned = null;
-            if (parseNode.GetChildNode("uploaded") is { } nullNodeUploaded && nullNodeUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uploaded = null;
+            if (parseNode.GetChildNode("learned") is null) { _explicitNullValueLearned = default!; _explicitNullProperties?.Remove("learned"); }
+            else if (parseNode.GetChildNode("learned") is { } nullNodeLearned && nullNodeLearned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Learned = null;
+            if (parseNode.GetChildNode("uploaded") is null) { _explicitNullValueUploaded = default!; _explicitNullProperties?.Remove("uploaded"); }
+            else if (parseNode.GetChildNode("uploaded") is { } nullNodeUploaded && nullNodeUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uploaded = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An OpenAPI operation object fragment containing schema information for an operation. May include parameter definitions, request body specifications, and a component schema extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment? Learned { get => _explicitNullValueLearned; set { _explicitNullValueLearned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("learned"); else _explicitNullProperties?.Remove("learned"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment? Learned { get => _explicitNullValueLearned; set { _explicitNullValueLearned = value; AdditionalData?.Remove("learned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("learned"); else _explicitNullProperties?.Remove("learned"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment? _explicitNullValueLearned = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment Learned { get => _explicitNullValueLearned; set { _explicitNullValueLearned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("learned"); else _explicitNullProperties?.Remove("learned"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment Learned { get => _explicitNullValueLearned; set { _explicitNullValueLearned = value; AdditionalData?.Remove("learned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("learned"); else _explicitNullProperties?.Remove("learned"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment _explicitNullValueLearned = default!;
 #endif
         /// <summary>An OpenAPI operation object fragment containing schema information for an operation. May include parameter definitions, request body specifications, and a component schema extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment? Uploaded { get => _explicitNullValueUploaded; set { _explicitNullValueUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded"); else _explicitNullProperties?.Remove("uploaded"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment? Uploaded { get => _explicitNullValueUploaded; set { _explicitNullValueUploaded = value; AdditionalData?.Remove("uploaded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded"); else _explicitNullProperties?.Remove("uploaded"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment? _explicitNullValueUploaded = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment Uploaded { get => _explicitNullValueUploaded; set { _explicitNullValueUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded"); else _explicitNullProperties?.Remove("uploaded"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment Uploaded { get => _explicitNullValueUploaded; set { _explicitNullValueUploaded = value; AdditionalData?.Remove("uploaded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded"); else _explicitNullProperties?.Remove("uploaded"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment _explicitNullValueUploaded = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authorized_keys") is { } nullNodeAuthorizedKeys && nullNodeAuthorizedKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedKeys = null;
-            if (parseNode.GetChildNode("wrangler_ssh") is { } nullNodeWranglerSsh && nullNodeWranglerSsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WranglerSsh = null;
+            if (parseNode.GetChildNode("authorized_keys") is null) { _explicitNullValueAuthorizedKeys = default!; _explicitNullProperties?.Remove("authorized_keys"); }
+            else if (parseNode.GetChildNode("authorized_keys") is { } nullNodeAuthorizedKeys && nullNodeAuthorizedKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedKeys = null;
+            if (parseNode.GetChildNode("wrangler_ssh") is null) { _explicitNullValueWranglerSsh = default!; _explicitNullProperties?.Remove("wrangler_ssh"); }
+            else if (parseNode.GetChildNode("wrangler_ssh") is { } nullNodeWranglerSsh && nullNodeWranglerSsh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WranglerSsh = null;
         }
 
         /// <summary>The authorized_keys property</summary>

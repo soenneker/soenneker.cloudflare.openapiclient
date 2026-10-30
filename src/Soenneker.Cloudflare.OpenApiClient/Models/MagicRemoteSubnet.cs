@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("local_alias_prefix") is { } nullNodeLocalAliasPrefix && nullNodeLocalAliasPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalAliasPrefix = null;
-            if (parseNode.GetChildNode("remote_prefix") is { } nullNodeRemotePrefix && nullNodeRemotePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemotePrefix = null;
+            if (parseNode.GetChildNode("local_alias_prefix") is null) { _explicitNullValueLocalAliasPrefix = default!; _explicitNullProperties?.Remove("local_alias_prefix"); }
+            else if (parseNode.GetChildNode("local_alias_prefix") is { } nullNodeLocalAliasPrefix && nullNodeLocalAliasPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalAliasPrefix = null;
+            if (parseNode.GetChildNode("remote_prefix") is null) { _explicitNullValueRemotePrefix = default!; _explicitNullProperties?.Remove("remote_prefix"); }
+            else if (parseNode.GetChildNode("remote_prefix") is { } nullNodeRemotePrefix && nullNodeRemotePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemotePrefix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalAliasPrefix { get => _explicitNullValueLocalAliasPrefix; set { _explicitNullValueLocalAliasPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_alias_prefix"); else _explicitNullProperties?.Remove("local_alias_prefix"); } }
+        public string? LocalAliasPrefix { get => _explicitNullValueLocalAliasPrefix; set { _explicitNullValueLocalAliasPrefix = value; AdditionalData?.Remove("local_alias_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_alias_prefix"); else _explicitNullProperties?.Remove("local_alias_prefix"); } }
         private string? _explicitNullValueLocalAliasPrefix = default!;
 #nullable restore
 #else
-        public string LocalAliasPrefix { get => _explicitNullValueLocalAliasPrefix; set { _explicitNullValueLocalAliasPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_alias_prefix"); else _explicitNullProperties?.Remove("local_alias_prefix"); } }
+        public string LocalAliasPrefix { get => _explicitNullValueLocalAliasPrefix; set { _explicitNullValueLocalAliasPrefix = value; AdditionalData?.Remove("local_alias_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_alias_prefix"); else _explicitNullProperties?.Remove("local_alias_prefix"); } }
         private string _explicitNullValueLocalAliasPrefix = default!;
 #endif
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemotePrefix { get => _explicitNullValueRemotePrefix; set { _explicitNullValueRemotePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_prefix"); else _explicitNullProperties?.Remove("remote_prefix"); } }
+        public string? RemotePrefix { get => _explicitNullValueRemotePrefix; set { _explicitNullValueRemotePrefix = value; AdditionalData?.Remove("remote_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_prefix"); else _explicitNullProperties?.Remove("remote_prefix"); } }
         private string? _explicitNullValueRemotePrefix = default!;
 #nullable restore
 #else
-        public string RemotePrefix { get => _explicitNullValueRemotePrefix; set { _explicitNullValueRemotePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_prefix"); else _explicitNullProperties?.Remove("remote_prefix"); } }
+        public string RemotePrefix { get => _explicitNullValueRemotePrefix; set { _explicitNullValueRemotePrefix = value; AdditionalData?.Remove("remote_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_prefix"); else _explicitNullProperties?.Remove("remote_prefix"); } }
         private string _explicitNullValueRemotePrefix = default!;
 #endif
         /// <summary>

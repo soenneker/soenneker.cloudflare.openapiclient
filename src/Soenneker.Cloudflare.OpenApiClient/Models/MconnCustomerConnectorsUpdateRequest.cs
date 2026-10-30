@@ -17,68 +17,76 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activated") is { } nullNodeActivated && nullNodeActivated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activated = null;
-            if (parseNode.GetChildNode("interrupt_window_days_of_week") is { } nullNodeInterruptWindowDaysOfWeek && nullNodeInterruptWindowDaysOfWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowDaysOfWeek = null;
-            if (parseNode.GetChildNode("interrupt_window_duration_hours") is { } nullNodeInterruptWindowDurationHours && nullNodeInterruptWindowDurationHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowDurationHours = null;
-            if (parseNode.GetChildNode("interrupt_window_embargo_dates") is { } nullNodeInterruptWindowEmbargoDates && nullNodeInterruptWindowEmbargoDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowEmbargoDates = null;
-            if (parseNode.GetChildNode("interrupt_window_hour_of_day") is { } nullNodeInterruptWindowHourOfDay && nullNodeInterruptWindowHourOfDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowHourOfDay = null;
-            if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
-            if (parseNode.GetChildNode("provision_license") is { } nullNodeProvisionLicense && nullNodeProvisionLicense.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionLicense = null;
-            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("activated") is null) { _explicitNullValueActivated = default!; _explicitNullProperties?.Remove("activated"); }
+            else if (parseNode.GetChildNode("activated") is { } nullNodeActivated && nullNodeActivated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activated = null;
+            if (parseNode.GetChildNode("interrupt_window_days_of_week") is null) { _explicitNullValueInterruptWindowDaysOfWeek = default!; _explicitNullProperties?.Remove("interrupt_window_days_of_week"); }
+            else if (parseNode.GetChildNode("interrupt_window_days_of_week") is { } nullNodeInterruptWindowDaysOfWeek && nullNodeInterruptWindowDaysOfWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowDaysOfWeek = null;
+            if (parseNode.GetChildNode("interrupt_window_duration_hours") is null) { _explicitNullValueInterruptWindowDurationHours = default!; _explicitNullProperties?.Remove("interrupt_window_duration_hours"); }
+            else if (parseNode.GetChildNode("interrupt_window_duration_hours") is { } nullNodeInterruptWindowDurationHours && nullNodeInterruptWindowDurationHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowDurationHours = null;
+            if (parseNode.GetChildNode("interrupt_window_embargo_dates") is null) { _explicitNullValueInterruptWindowEmbargoDates = default!; _explicitNullProperties?.Remove("interrupt_window_embargo_dates"); }
+            else if (parseNode.GetChildNode("interrupt_window_embargo_dates") is { } nullNodeInterruptWindowEmbargoDates && nullNodeInterruptWindowEmbargoDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowEmbargoDates = null;
+            if (parseNode.GetChildNode("interrupt_window_hour_of_day") is null) { _explicitNullValueInterruptWindowHourOfDay = default!; _explicitNullProperties?.Remove("interrupt_window_hour_of_day"); }
+            else if (parseNode.GetChildNode("interrupt_window_hour_of_day") is { } nullNodeInterruptWindowHourOfDay && nullNodeInterruptWindowHourOfDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptWindowHourOfDay = null;
+            if (parseNode.GetChildNode("notes") is null) { _explicitNullValueNotes = default!; _explicitNullProperties?.Remove("notes"); }
+            else if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
+            if (parseNode.GetChildNode("provision_license") is null) { _explicitNullValueProvisionLicense = default!; _explicitNullProperties?.Remove("provision_license"); }
+            else if (parseNode.GetChildNode("provision_license") is { } nullNodeProvisionLicense && nullNodeProvisionLicense.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionLicense = null;
+            if (parseNode.GetChildNode("timezone") is null) { _explicitNullValueTimezone = default!; _explicitNullProperties?.Remove("timezone"); }
+            else if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
         }
 
         /// <summary>The activated property</summary>
-        public bool? Activated { get => _explicitNullValueActivated; set { _explicitNullValueActivated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activated"); else _explicitNullProperties?.Remove("activated"); } }
+        public bool? Activated { get => _explicitNullValueActivated; set { _explicitNullValueActivated = value; AdditionalData?.Remove("activated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activated"); else _explicitNullProperties?.Remove("activated"); } }
         private bool? _explicitNullValueActivated = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allowed days of the week for upgrades. Default is all days.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?>? InterruptWindowDaysOfWeek { get => _explicitNullValueInterruptWindowDaysOfWeek; set { _explicitNullValueInterruptWindowDaysOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_days_of_week"); else _explicitNullProperties?.Remove("interrupt_window_days_of_week"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?>? InterruptWindowDaysOfWeek { get => _explicitNullValueInterruptWindowDaysOfWeek; set { _explicitNullValueInterruptWindowDaysOfWeek = value; AdditionalData?.Remove("interrupt_window_days_of_week"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_days_of_week"); else _explicitNullProperties?.Remove("interrupt_window_days_of_week"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?>? _explicitNullValueInterruptWindowDaysOfWeek = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?> InterruptWindowDaysOfWeek { get => _explicitNullValueInterruptWindowDaysOfWeek; set { _explicitNullValueInterruptWindowDaysOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_days_of_week"); else _explicitNullProperties?.Remove("interrupt_window_days_of_week"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?> InterruptWindowDaysOfWeek { get => _explicitNullValueInterruptWindowDaysOfWeek; set { _explicitNullValueInterruptWindowDaysOfWeek = value; AdditionalData?.Remove("interrupt_window_days_of_week"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_days_of_week"); else _explicitNullProperties?.Remove("interrupt_window_days_of_week"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnDayOfWeek?> _explicitNullValueInterruptWindowDaysOfWeek = default!;
 #endif
         /// <summary>The interrupt_window_duration_hours property</summary>
-        public double? InterruptWindowDurationHours { get => _explicitNullValueInterruptWindowDurationHours; set { _explicitNullValueInterruptWindowDurationHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_duration_hours"); else _explicitNullProperties?.Remove("interrupt_window_duration_hours"); } }
+        public double? InterruptWindowDurationHours { get => _explicitNullValueInterruptWindowDurationHours; set { _explicitNullValueInterruptWindowDurationHours = value; AdditionalData?.Remove("interrupt_window_duration_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_duration_hours"); else _explicitNullProperties?.Remove("interrupt_window_duration_hours"); } }
         private double? _explicitNullValueInterruptWindowDurationHours = default!;
         /// <summary>List of dates (YYYY-MM-DD) when upgrades are blocked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InterruptWindowEmbargoDates { get => _explicitNullValueInterruptWindowEmbargoDates; set { _explicitNullValueInterruptWindowEmbargoDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_embargo_dates"); else _explicitNullProperties?.Remove("interrupt_window_embargo_dates"); } }
+        public List<string>? InterruptWindowEmbargoDates { get => _explicitNullValueInterruptWindowEmbargoDates; set { _explicitNullValueInterruptWindowEmbargoDates = value; AdditionalData?.Remove("interrupt_window_embargo_dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_embargo_dates"); else _explicitNullProperties?.Remove("interrupt_window_embargo_dates"); } }
         private List<string>? _explicitNullValueInterruptWindowEmbargoDates = default!;
 #nullable restore
 #else
-        public List<string> InterruptWindowEmbargoDates { get => _explicitNullValueInterruptWindowEmbargoDates; set { _explicitNullValueInterruptWindowEmbargoDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_embargo_dates"); else _explicitNullProperties?.Remove("interrupt_window_embargo_dates"); } }
+        public List<string> InterruptWindowEmbargoDates { get => _explicitNullValueInterruptWindowEmbargoDates; set { _explicitNullValueInterruptWindowEmbargoDates = value; AdditionalData?.Remove("interrupt_window_embargo_dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_embargo_dates"); else _explicitNullProperties?.Remove("interrupt_window_embargo_dates"); } }
         private List<string> _explicitNullValueInterruptWindowEmbargoDates = default!;
 #endif
         /// <summary>The interrupt_window_hour_of_day property</summary>
-        public double? InterruptWindowHourOfDay { get => _explicitNullValueInterruptWindowHourOfDay; set { _explicitNullValueInterruptWindowHourOfDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_hour_of_day"); else _explicitNullProperties?.Remove("interrupt_window_hour_of_day"); } }
+        public double? InterruptWindowHourOfDay { get => _explicitNullValueInterruptWindowHourOfDay; set { _explicitNullValueInterruptWindowHourOfDay = value; AdditionalData?.Remove("interrupt_window_hour_of_day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_window_hour_of_day"); else _explicitNullProperties?.Remove("interrupt_window_hour_of_day"); } }
         private double? _explicitNullValueInterruptWindowHourOfDay = default!;
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
         private string? _explicitNullValueNotes = default!;
 #nullable restore
 #else
-        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
         private string _explicitNullValueNotes = default!;
 #endif
         /// <summary>When true, regenerate license key for the connector.</summary>
-        public bool? ProvisionLicense { get => _explicitNullValueProvisionLicense; set { _explicitNullValueProvisionLicense = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provision_license"); else _explicitNullProperties?.Remove("provision_license"); } }
+        public bool? ProvisionLicense { get => _explicitNullValueProvisionLicense; set { _explicitNullValueProvisionLicense = value; AdditionalData?.Remove("provision_license"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provision_license"); else _explicitNullProperties?.Remove("provision_license"); } }
         private bool? _explicitNullValueProvisionLicense = default!;
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; AdditionalData?.Remove("timezone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
         private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; AdditionalData?.Remove("timezone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
         private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>

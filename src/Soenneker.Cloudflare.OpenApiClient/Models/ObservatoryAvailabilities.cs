@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("quota") is { } nullNodeQuota && nullNodeQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quota = null;
-            if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
-            if (parseNode.GetChildNode("regionsPerPlan") is { } nullNodeRegionsPerPlan && nullNodeRegionsPerPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionsPerPlan = null;
+            if (parseNode.GetChildNode("quota") is null) { _explicitNullValueQuota = default!; _explicitNullProperties?.Remove("quota"); }
+            else if (parseNode.GetChildNode("quota") is { } nullNodeQuota && nullNodeQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quota = null;
+            if (parseNode.GetChildNode("regions") is null) { _explicitNullValueRegions = default!; _explicitNullProperties?.Remove("regions"); }
+            else if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
+            if (parseNode.GetChildNode("regionsPerPlan") is null) { _explicitNullValueRegionsPerPlan = default!; _explicitNullProperties?.Remove("regionsPerPlan"); }
+            else if (parseNode.GetChildNode("regionsPerPlan") is { } nullNodeRegionsPerPlan && nullNodeRegionsPerPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionsPerPlan = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuota? Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuota? Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; AdditionalData?.Remove("quota"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuota? _explicitNullValueQuota = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuota Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuota Quota { get => _explicitNullValueQuota; set { _explicitNullValueQuota = value; AdditionalData?.Remove("quota"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quota"); else _explicitNullProperties?.Remove("quota"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesQuota _explicitNullValueQuota = default!;
 #endif
         /// <summary>The regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion>? _explicitNullValueRegions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryLabeledRegion> _explicitNullValueRegions = default!;
 #endif
         /// <summary>Available regions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan? RegionsPerPlan { get => _explicitNullValueRegionsPerPlan; set { _explicitNullValueRegionsPerPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionsPerPlan"); else _explicitNullProperties?.Remove("regionsPerPlan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan? RegionsPerPlan { get => _explicitNullValueRegionsPerPlan; set { _explicitNullValueRegionsPerPlan = value; AdditionalData?.Remove("regionsPerPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionsPerPlan"); else _explicitNullProperties?.Remove("regionsPerPlan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan? _explicitNullValueRegionsPerPlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan RegionsPerPlan { get => _explicitNullValueRegionsPerPlan; set { _explicitNullValueRegionsPerPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionsPerPlan"); else _explicitNullProperties?.Remove("regionsPerPlan"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan RegionsPerPlan { get => _explicitNullValueRegionsPerPlan; set { _explicitNullValueRegionsPerPlan = value; AdditionalData?.Remove("regionsPerPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionsPerPlan"); else _explicitNullProperties?.Remove("regionsPerPlan"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryAvailabilitiesRegionsPerPlan _explicitNullValueRegionsPerPlan = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("login_method") is { } nullNodeLoginMethod && nullNodeLoginMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginMethod = null;
+            if (parseNode.GetChildNode("login_method") is null) { _explicitNullValueLoginMethod = default!; _explicitNullProperties?.Remove("login_method"); }
+            else if (parseNode.GetChildNode("login_method") is { } nullNodeLoginMethod && nullNodeLoginMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginMethod = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The login_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRuleLoginMethod? LoginMethod { get => _explicitNullValueLoginMethod; set { _explicitNullValueLoginMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_method"); else _explicitNullProperties?.Remove("login_method"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRuleLoginMethod? LoginMethod { get => _explicitNullValueLoginMethod; set { _explicitNullValueLoginMethod = value; AdditionalData?.Remove("login_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_method"); else _explicitNullProperties?.Remove("login_method"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRuleLoginMethod? _explicitNullValueLoginMethod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRuleLoginMethod LoginMethod { get => _explicitNullValueLoginMethod; set { _explicitNullValueLoginMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_method"); else _explicitNullProperties?.Remove("login_method"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRuleLoginMethod LoginMethod { get => _explicitNullValueLoginMethod; set { _explicitNullValueLoginMethod = value; AdditionalData?.Remove("login_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_method"); else _explicitNullProperties?.Remove("login_method"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRuleLoginMethod _explicitNullValueLoginMethod = default!;
 #endif
         /// <summary>

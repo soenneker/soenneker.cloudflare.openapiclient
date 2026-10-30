@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("_500_MBPS_TO_1_GBPS") is { } nullNodeFiveZeroZeroMBPSTO1GBPS && nullNodeFiveZeroZeroMBPSTO1GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiveZeroZeroMBPSTO1GBPS = null;
-            if (parseNode.GetChildNode("_1_GBPS_TO_10_GBPS") is { } nullNodeOneGBPSTO10GBPS && nullNodeOneGBPSTO10GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneGBPSTO10GBPS = null;
-            if (parseNode.GetChildNode("_10_GBPS_TO_100_GBPS") is { } nullNodeOneZeroGBPSTO100GBPS && nullNodeOneZeroGBPSTO100GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroGBPSTO100GBPS = null;
-            if (parseNode.GetChildNode("OVER_100_GBPS") is { } nullNodeOVER100GBPS && nullNodeOVER100GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OVER100GBPS = null;
-            if (parseNode.GetChildNode("UNDER_500_MBPS") is { } nullNodeUNDER500MBPS && nullNodeUNDER500MBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UNDER500MBPS = null;
+            if (parseNode.GetChildNode("_500_MBPS_TO_1_GBPS") is null) { _explicitNullValueFiveZeroZeroMBPSTO1GBPS = default!; _explicitNullProperties?.Remove("_500_MBPS_TO_1_GBPS"); }
+            else if (parseNode.GetChildNode("_500_MBPS_TO_1_GBPS") is { } nullNodeFiveZeroZeroMBPSTO1GBPS && nullNodeFiveZeroZeroMBPSTO1GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiveZeroZeroMBPSTO1GBPS = null;
+            if (parseNode.GetChildNode("_1_GBPS_TO_10_GBPS") is null) { _explicitNullValueOneGBPSTO10GBPS = default!; _explicitNullProperties?.Remove("_1_GBPS_TO_10_GBPS"); }
+            else if (parseNode.GetChildNode("_1_GBPS_TO_10_GBPS") is { } nullNodeOneGBPSTO10GBPS && nullNodeOneGBPSTO10GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneGBPSTO10GBPS = null;
+            if (parseNode.GetChildNode("_10_GBPS_TO_100_GBPS") is null) { _explicitNullValueOneZeroGBPSTO100GBPS = default!; _explicitNullProperties?.Remove("_10_GBPS_TO_100_GBPS"); }
+            else if (parseNode.GetChildNode("_10_GBPS_TO_100_GBPS") is { } nullNodeOneZeroGBPSTO100GBPS && nullNodeOneZeroGBPSTO100GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroGBPSTO100GBPS = null;
+            if (parseNode.GetChildNode("OVER_100_GBPS") is null) { _explicitNullValueOVER100GBPS = default!; _explicitNullProperties?.Remove("OVER_100_GBPS"); }
+            else if (parseNode.GetChildNode("OVER_100_GBPS") is { } nullNodeOVER100GBPS && nullNodeOVER100GBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OVER100GBPS = null;
+            if (parseNode.GetChildNode("UNDER_500_MBPS") is null) { _explicitNullValueUNDER500MBPS = default!; _explicitNullProperties?.Remove("UNDER_500_MBPS"); }
+            else if (parseNode.GetChildNode("UNDER_500_MBPS") is { } nullNodeUNDER500MBPS && nullNodeUNDER500MBPS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UNDER500MBPS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FiveZeroZeroMBPSTO1GBPS { get => _explicitNullValueFiveZeroZeroMBPSTO1GBPS; set { _explicitNullValueFiveZeroZeroMBPSTO1GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_500_MBPS_TO_1_GBPS"); else _explicitNullProperties?.Remove("_500_MBPS_TO_1_GBPS"); } }
+        public string? FiveZeroZeroMBPSTO1GBPS { get => _explicitNullValueFiveZeroZeroMBPSTO1GBPS; set { _explicitNullValueFiveZeroZeroMBPSTO1GBPS = value; AdditionalData?.Remove("_500_MBPS_TO_1_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_500_MBPS_TO_1_GBPS"); else _explicitNullProperties?.Remove("_500_MBPS_TO_1_GBPS"); } }
         private string? _explicitNullValueFiveZeroZeroMBPSTO1GBPS = default!;
 #nullable restore
 #else
-        public string FiveZeroZeroMBPSTO1GBPS { get => _explicitNullValueFiveZeroZeroMBPSTO1GBPS; set { _explicitNullValueFiveZeroZeroMBPSTO1GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_500_MBPS_TO_1_GBPS"); else _explicitNullProperties?.Remove("_500_MBPS_TO_1_GBPS"); } }
+        public string FiveZeroZeroMBPSTO1GBPS { get => _explicitNullValueFiveZeroZeroMBPSTO1GBPS; set { _explicitNullValueFiveZeroZeroMBPSTO1GBPS = value; AdditionalData?.Remove("_500_MBPS_TO_1_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_500_MBPS_TO_1_GBPS"); else _explicitNullProperties?.Remove("_500_MBPS_TO_1_GBPS"); } }
         private string _explicitNullValueFiveZeroZeroMBPSTO1GBPS = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OneGBPSTO10GBPS { get => _explicitNullValueOneGBPSTO10GBPS; set { _explicitNullValueOneGBPSTO10GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_GBPS_TO_10_GBPS"); else _explicitNullProperties?.Remove("_1_GBPS_TO_10_GBPS"); } }
+        public string? OneGBPSTO10GBPS { get => _explicitNullValueOneGBPSTO10GBPS; set { _explicitNullValueOneGBPSTO10GBPS = value; AdditionalData?.Remove("_1_GBPS_TO_10_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_GBPS_TO_10_GBPS"); else _explicitNullProperties?.Remove("_1_GBPS_TO_10_GBPS"); } }
         private string? _explicitNullValueOneGBPSTO10GBPS = default!;
 #nullable restore
 #else
-        public string OneGBPSTO10GBPS { get => _explicitNullValueOneGBPSTO10GBPS; set { _explicitNullValueOneGBPSTO10GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_GBPS_TO_10_GBPS"); else _explicitNullProperties?.Remove("_1_GBPS_TO_10_GBPS"); } }
+        public string OneGBPSTO10GBPS { get => _explicitNullValueOneGBPSTO10GBPS; set { _explicitNullValueOneGBPSTO10GBPS = value; AdditionalData?.Remove("_1_GBPS_TO_10_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_GBPS_TO_10_GBPS"); else _explicitNullProperties?.Remove("_1_GBPS_TO_10_GBPS"); } }
         private string _explicitNullValueOneGBPSTO10GBPS = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OneZeroGBPSTO100GBPS { get => _explicitNullValueOneZeroGBPSTO100GBPS; set { _explicitNullValueOneZeroGBPSTO100GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_GBPS_TO_100_GBPS"); else _explicitNullProperties?.Remove("_10_GBPS_TO_100_GBPS"); } }
+        public string? OneZeroGBPSTO100GBPS { get => _explicitNullValueOneZeroGBPSTO100GBPS; set { _explicitNullValueOneZeroGBPSTO100GBPS = value; AdditionalData?.Remove("_10_GBPS_TO_100_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_GBPS_TO_100_GBPS"); else _explicitNullProperties?.Remove("_10_GBPS_TO_100_GBPS"); } }
         private string? _explicitNullValueOneZeroGBPSTO100GBPS = default!;
 #nullable restore
 #else
-        public string OneZeroGBPSTO100GBPS { get => _explicitNullValueOneZeroGBPSTO100GBPS; set { _explicitNullValueOneZeroGBPSTO100GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_GBPS_TO_100_GBPS"); else _explicitNullProperties?.Remove("_10_GBPS_TO_100_GBPS"); } }
+        public string OneZeroGBPSTO100GBPS { get => _explicitNullValueOneZeroGBPSTO100GBPS; set { _explicitNullValueOneZeroGBPSTO100GBPS = value; AdditionalData?.Remove("_10_GBPS_TO_100_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_GBPS_TO_100_GBPS"); else _explicitNullProperties?.Remove("_10_GBPS_TO_100_GBPS"); } }
         private string _explicitNullValueOneZeroGBPSTO100GBPS = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OVER100GBPS { get => _explicitNullValueOVER100GBPS; set { _explicitNullValueOVER100GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_100_GBPS"); else _explicitNullProperties?.Remove("OVER_100_GBPS"); } }
+        public string? OVER100GBPS { get => _explicitNullValueOVER100GBPS; set { _explicitNullValueOVER100GBPS = value; AdditionalData?.Remove("OVER_100_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_100_GBPS"); else _explicitNullProperties?.Remove("OVER_100_GBPS"); } }
         private string? _explicitNullValueOVER100GBPS = default!;
 #nullable restore
 #else
-        public string OVER100GBPS { get => _explicitNullValueOVER100GBPS; set { _explicitNullValueOVER100GBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_100_GBPS"); else _explicitNullProperties?.Remove("OVER_100_GBPS"); } }
+        public string OVER100GBPS { get => _explicitNullValueOVER100GBPS; set { _explicitNullValueOVER100GBPS = value; AdditionalData?.Remove("OVER_100_GBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_100_GBPS"); else _explicitNullProperties?.Remove("OVER_100_GBPS"); } }
         private string _explicitNullValueOVER100GBPS = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UNDER500MBPS { get => _explicitNullValueUNDER500MBPS; set { _explicitNullValueUNDER500MBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_500_MBPS"); else _explicitNullProperties?.Remove("UNDER_500_MBPS"); } }
+        public string? UNDER500MBPS { get => _explicitNullValueUNDER500MBPS; set { _explicitNullValueUNDER500MBPS = value; AdditionalData?.Remove("UNDER_500_MBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_500_MBPS"); else _explicitNullProperties?.Remove("UNDER_500_MBPS"); } }
         private string? _explicitNullValueUNDER500MBPS = default!;
 #nullable restore
 #else
-        public string UNDER500MBPS { get => _explicitNullValueUNDER500MBPS; set { _explicitNullValueUNDER500MBPS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_500_MBPS"); else _explicitNullProperties?.Remove("UNDER_500_MBPS"); } }
+        public string UNDER500MBPS { get => _explicitNullValueUNDER500MBPS; set { _explicitNullValueUNDER500MBPS = value; AdditionalData?.Remove("UNDER_500_MBPS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_500_MBPS"); else _explicitNullProperties?.Remove("UNDER_500_MBPS"); } }
         private string _explicitNullValueUNDER500MBPS = default!;
 #endif
         /// <summary>

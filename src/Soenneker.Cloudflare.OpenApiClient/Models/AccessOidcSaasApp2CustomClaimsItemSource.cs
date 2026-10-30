@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("name_by_idp") is { } nullNodeNameByIdp && nullNodeNameByIdp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameByIdp = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("name_by_idp") is null) { _explicitNullValueNameByIdp = default!; _explicitNullProperties?.Remove("name_by_idp"); }
+            else if (parseNode.GetChildNode("name_by_idp") is { } nullNodeNameByIdp && nullNodeNameByIdp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameByIdp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of the IdP claim.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>A mapping from IdP ID to attribute name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp2CustomClaimsItemSourceNameByIdpItem>? NameByIdp { get => _explicitNullValueNameByIdp; set { _explicitNullValueNameByIdp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_by_idp"); else _explicitNullProperties?.Remove("name_by_idp"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp2CustomClaimsItemSourceNameByIdpItem>? NameByIdp { get => _explicitNullValueNameByIdp; set { _explicitNullValueNameByIdp = value; AdditionalData?.Remove("name_by_idp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_by_idp"); else _explicitNullProperties?.Remove("name_by_idp"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp2CustomClaimsItemSourceNameByIdpItem>? _explicitNullValueNameByIdp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp2CustomClaimsItemSourceNameByIdpItem> NameByIdp { get => _explicitNullValueNameByIdp; set { _explicitNullValueNameByIdp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_by_idp"); else _explicitNullProperties?.Remove("name_by_idp"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp2CustomClaimsItemSourceNameByIdpItem> NameByIdp { get => _explicitNullValueNameByIdp; set { _explicitNullValueNameByIdp = value; AdditionalData?.Remove("name_by_idp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_by_idp"); else _explicitNullProperties?.Remove("name_by_idp"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp2CustomClaimsItemSourceNameByIdpItem> _explicitNullValueNameByIdp = default!;
 #endif
         /// <summary>

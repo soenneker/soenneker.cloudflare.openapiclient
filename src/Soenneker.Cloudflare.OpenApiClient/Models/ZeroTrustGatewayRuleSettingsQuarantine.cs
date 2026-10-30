@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("file_types") is { } nullNodeFileTypes && nullNodeFileTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileTypes = null;
+            if (parseNode.GetChildNode("file_types") is null) { _explicitNullValueFileTypes = default!; _explicitNullProperties?.Remove("file_types"); }
+            else if (parseNode.GetChildNode("file_types") is { } nullNodeFileTypes && nullNodeFileTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the types of files to sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantineFileTypesItem?>? FileTypes { get => _explicitNullValueFileTypes; set { _explicitNullValueFileTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_types"); else _explicitNullProperties?.Remove("file_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantineFileTypesItem?>? FileTypes { get => _explicitNullValueFileTypes; set { _explicitNullValueFileTypes = value; AdditionalData?.Remove("file_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_types"); else _explicitNullProperties?.Remove("file_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantineFileTypesItem?>? _explicitNullValueFileTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantineFileTypesItem?> FileTypes { get => _explicitNullValueFileTypes; set { _explicitNullValueFileTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_types"); else _explicitNullProperties?.Remove("file_types"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantineFileTypesItem?> FileTypes { get => _explicitNullValueFileTypes; set { _explicitNullValueFileTypes = value; AdditionalData?.Remove("file_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_types"); else _explicitNullProperties?.Remove("file_types"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsQuarantineFileTypesItem?> _explicitNullValueFileTypes = default!;
 #endif
         /// <summary>

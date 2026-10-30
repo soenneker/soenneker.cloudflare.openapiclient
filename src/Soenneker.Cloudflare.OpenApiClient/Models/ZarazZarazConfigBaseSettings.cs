@@ -18,113 +18,127 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoInjectScript") is { } nullNodeAutoInjectScript && nullNodeAutoInjectScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoInjectScript = null;
-            if (parseNode.GetChildNode("contextEnricher") is { } nullNodeContextEnricher && nullNodeContextEnricher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextEnricher = null;
-            if (parseNode.GetChildNode("cookieDomain") is { } nullNodeCookieDomain && nullNodeCookieDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CookieDomain = null;
-            if (parseNode.GetChildNode("ecommerce") is { } nullNodeEcommerce && nullNodeEcommerce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ecommerce = null;
-            if (parseNode.GetChildNode("eventsApiPath") is { } nullNodeEventsApiPath && nullNodeEventsApiPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventsApiPath = null;
-            if (parseNode.GetChildNode("hideExternalReferer") is { } nullNodeHideExternalReferer && nullNodeHideExternalReferer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideExternalReferer = null;
-            if (parseNode.GetChildNode("hideIPAddress") is { } nullNodeHideIPAddress && nullNodeHideIPAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideIPAddress = null;
-            if (parseNode.GetChildNode("hideQueryParams") is { } nullNodeHideQueryParams && nullNodeHideQueryParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideQueryParams = null;
-            if (parseNode.GetChildNode("hideUserAgent") is { } nullNodeHideUserAgent && nullNodeHideUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideUserAgent = null;
-            if (parseNode.GetChildNode("initPath") is { } nullNodeInitPath && nullNodeInitPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitPath = null;
-            if (parseNode.GetChildNode("injectIframes") is { } nullNodeInjectIframes && nullNodeInjectIframes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectIframes = null;
-            if (parseNode.GetChildNode("mcRootPath") is { } nullNodeMcRootPath && nullNodeMcRootPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McRootPath = null;
-            if (parseNode.GetChildNode("scriptPath") is { } nullNodeScriptPath && nullNodeScriptPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptPath = null;
-            if (parseNode.GetChildNode("trackPath") is { } nullNodeTrackPath && nullNodeTrackPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackPath = null;
+            if (parseNode.GetChildNode("autoInjectScript") is null) { _explicitNullValueAutoInjectScript = default!; _explicitNullProperties?.Remove("autoInjectScript"); }
+            else if (parseNode.GetChildNode("autoInjectScript") is { } nullNodeAutoInjectScript && nullNodeAutoInjectScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoInjectScript = null;
+            if (parseNode.GetChildNode("contextEnricher") is null) { _explicitNullValueContextEnricher = default!; _explicitNullProperties?.Remove("contextEnricher"); }
+            else if (parseNode.GetChildNode("contextEnricher") is { } nullNodeContextEnricher && nullNodeContextEnricher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextEnricher = null;
+            if (parseNode.GetChildNode("cookieDomain") is null) { _explicitNullValueCookieDomain = default!; _explicitNullProperties?.Remove("cookieDomain"); }
+            else if (parseNode.GetChildNode("cookieDomain") is { } nullNodeCookieDomain && nullNodeCookieDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CookieDomain = null;
+            if (parseNode.GetChildNode("ecommerce") is null) { _explicitNullValueEcommerce = default!; _explicitNullProperties?.Remove("ecommerce"); }
+            else if (parseNode.GetChildNode("ecommerce") is { } nullNodeEcommerce && nullNodeEcommerce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ecommerce = null;
+            if (parseNode.GetChildNode("eventsApiPath") is null) { _explicitNullValueEventsApiPath = default!; _explicitNullProperties?.Remove("eventsApiPath"); }
+            else if (parseNode.GetChildNode("eventsApiPath") is { } nullNodeEventsApiPath && nullNodeEventsApiPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventsApiPath = null;
+            if (parseNode.GetChildNode("hideExternalReferer") is null) { _explicitNullValueHideExternalReferer = default!; _explicitNullProperties?.Remove("hideExternalReferer"); }
+            else if (parseNode.GetChildNode("hideExternalReferer") is { } nullNodeHideExternalReferer && nullNodeHideExternalReferer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideExternalReferer = null;
+            if (parseNode.GetChildNode("hideIPAddress") is null) { _explicitNullValueHideIPAddress = default!; _explicitNullProperties?.Remove("hideIPAddress"); }
+            else if (parseNode.GetChildNode("hideIPAddress") is { } nullNodeHideIPAddress && nullNodeHideIPAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideIPAddress = null;
+            if (parseNode.GetChildNode("hideQueryParams") is null) { _explicitNullValueHideQueryParams = default!; _explicitNullProperties?.Remove("hideQueryParams"); }
+            else if (parseNode.GetChildNode("hideQueryParams") is { } nullNodeHideQueryParams && nullNodeHideQueryParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideQueryParams = null;
+            if (parseNode.GetChildNode("hideUserAgent") is null) { _explicitNullValueHideUserAgent = default!; _explicitNullProperties?.Remove("hideUserAgent"); }
+            else if (parseNode.GetChildNode("hideUserAgent") is { } nullNodeHideUserAgent && nullNodeHideUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideUserAgent = null;
+            if (parseNode.GetChildNode("initPath") is null) { _explicitNullValueInitPath = default!; _explicitNullProperties?.Remove("initPath"); }
+            else if (parseNode.GetChildNode("initPath") is { } nullNodeInitPath && nullNodeInitPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitPath = null;
+            if (parseNode.GetChildNode("injectIframes") is null) { _explicitNullValueInjectIframes = default!; _explicitNullProperties?.Remove("injectIframes"); }
+            else if (parseNode.GetChildNode("injectIframes") is { } nullNodeInjectIframes && nullNodeInjectIframes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectIframes = null;
+            if (parseNode.GetChildNode("mcRootPath") is null) { _explicitNullValueMcRootPath = default!; _explicitNullProperties?.Remove("mcRootPath"); }
+            else if (parseNode.GetChildNode("mcRootPath") is { } nullNodeMcRootPath && nullNodeMcRootPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McRootPath = null;
+            if (parseNode.GetChildNode("scriptPath") is null) { _explicitNullValueScriptPath = default!; _explicitNullProperties?.Remove("scriptPath"); }
+            else if (parseNode.GetChildNode("scriptPath") is { } nullNodeScriptPath && nullNodeScriptPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptPath = null;
+            if (parseNode.GetChildNode("trackPath") is null) { _explicitNullValueTrackPath = default!; _explicitNullProperties?.Remove("trackPath"); }
+            else if (parseNode.GetChildNode("trackPath") is { } nullNodeTrackPath && nullNodeTrackPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackPath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Automatic injection of Zaraz scripts enabled.</summary>
-        public bool? AutoInjectScript { get => _explicitNullValueAutoInjectScript; set { _explicitNullValueAutoInjectScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoInjectScript"); else _explicitNullProperties?.Remove("autoInjectScript"); } }
+        public bool? AutoInjectScript { get => _explicitNullValueAutoInjectScript; set { _explicitNullValueAutoInjectScript = value; AdditionalData?.Remove("autoInjectScript"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoInjectScript"); else _explicitNullProperties?.Remove("autoInjectScript"); } }
         private bool? _explicitNullValueAutoInjectScript = default!;
         /// <summary>Details of the worker that receives and edits Zaraz Context object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher? ContextEnricher { get => _explicitNullValueContextEnricher; set { _explicitNullValueContextEnricher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextEnricher"); else _explicitNullProperties?.Remove("contextEnricher"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher? ContextEnricher { get => _explicitNullValueContextEnricher; set { _explicitNullValueContextEnricher = value; AdditionalData?.Remove("contextEnricher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextEnricher"); else _explicitNullProperties?.Remove("contextEnricher"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher? _explicitNullValueContextEnricher = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher ContextEnricher { get => _explicitNullValueContextEnricher; set { _explicitNullValueContextEnricher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextEnricher"); else _explicitNullProperties?.Remove("contextEnricher"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher ContextEnricher { get => _explicitNullValueContextEnricher; set { _explicitNullValueContextEnricher = value; AdditionalData?.Remove("contextEnricher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextEnricher"); else _explicitNullProperties?.Remove("contextEnricher"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettingsContextEnricher _explicitNullValueContextEnricher = default!;
 #endif
         /// <summary>The domain Zaraz will use for writing and reading its cookies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CookieDomain { get => _explicitNullValueCookieDomain; set { _explicitNullValueCookieDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookieDomain"); else _explicitNullProperties?.Remove("cookieDomain"); } }
+        public string? CookieDomain { get => _explicitNullValueCookieDomain; set { _explicitNullValueCookieDomain = value; AdditionalData?.Remove("cookieDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookieDomain"); else _explicitNullProperties?.Remove("cookieDomain"); } }
         private string? _explicitNullValueCookieDomain = default!;
 #nullable restore
 #else
-        public string CookieDomain { get => _explicitNullValueCookieDomain; set { _explicitNullValueCookieDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookieDomain"); else _explicitNullProperties?.Remove("cookieDomain"); } }
+        public string CookieDomain { get => _explicitNullValueCookieDomain; set { _explicitNullValueCookieDomain = value; AdditionalData?.Remove("cookieDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookieDomain"); else _explicitNullProperties?.Remove("cookieDomain"); } }
         private string _explicitNullValueCookieDomain = default!;
 #endif
         /// <summary>Ecommerce API enabled.</summary>
-        public bool? Ecommerce { get => _explicitNullValueEcommerce; set { _explicitNullValueEcommerce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ecommerce"); else _explicitNullProperties?.Remove("ecommerce"); } }
+        public bool? Ecommerce { get => _explicitNullValueEcommerce; set { _explicitNullValueEcommerce = value; AdditionalData?.Remove("ecommerce"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ecommerce"); else _explicitNullProperties?.Remove("ecommerce"); } }
         private bool? _explicitNullValueEcommerce = default!;
         /// <summary>Custom endpoint for server-side track events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventsApiPath { get => _explicitNullValueEventsApiPath; set { _explicitNullValueEventsApiPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventsApiPath"); else _explicitNullProperties?.Remove("eventsApiPath"); } }
+        public string? EventsApiPath { get => _explicitNullValueEventsApiPath; set { _explicitNullValueEventsApiPath = value; AdditionalData?.Remove("eventsApiPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventsApiPath"); else _explicitNullProperties?.Remove("eventsApiPath"); } }
         private string? _explicitNullValueEventsApiPath = default!;
 #nullable restore
 #else
-        public string EventsApiPath { get => _explicitNullValueEventsApiPath; set { _explicitNullValueEventsApiPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventsApiPath"); else _explicitNullProperties?.Remove("eventsApiPath"); } }
+        public string EventsApiPath { get => _explicitNullValueEventsApiPath; set { _explicitNullValueEventsApiPath = value; AdditionalData?.Remove("eventsApiPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventsApiPath"); else _explicitNullProperties?.Remove("eventsApiPath"); } }
         private string _explicitNullValueEventsApiPath = default!;
 #endif
         /// <summary>Hiding external referrer URL enabled.</summary>
-        public bool? HideExternalReferer { get => _explicitNullValueHideExternalReferer; set { _explicitNullValueHideExternalReferer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideExternalReferer"); else _explicitNullProperties?.Remove("hideExternalReferer"); } }
+        public bool? HideExternalReferer { get => _explicitNullValueHideExternalReferer; set { _explicitNullValueHideExternalReferer = value; AdditionalData?.Remove("hideExternalReferer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideExternalReferer"); else _explicitNullProperties?.Remove("hideExternalReferer"); } }
         private bool? _explicitNullValueHideExternalReferer = default!;
         /// <summary>Trimming IP address enabled.</summary>
-        public bool? HideIPAddress { get => _explicitNullValueHideIPAddress; set { _explicitNullValueHideIPAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideIPAddress"); else _explicitNullProperties?.Remove("hideIPAddress"); } }
+        public bool? HideIPAddress { get => _explicitNullValueHideIPAddress; set { _explicitNullValueHideIPAddress = value; AdditionalData?.Remove("hideIPAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideIPAddress"); else _explicitNullProperties?.Remove("hideIPAddress"); } }
         private bool? _explicitNullValueHideIPAddress = default!;
         /// <summary>Removing URL query params enabled.</summary>
-        public bool? HideQueryParams { get => _explicitNullValueHideQueryParams; set { _explicitNullValueHideQueryParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideQueryParams"); else _explicitNullProperties?.Remove("hideQueryParams"); } }
+        public bool? HideQueryParams { get => _explicitNullValueHideQueryParams; set { _explicitNullValueHideQueryParams = value; AdditionalData?.Remove("hideQueryParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideQueryParams"); else _explicitNullProperties?.Remove("hideQueryParams"); } }
         private bool? _explicitNullValueHideQueryParams = default!;
         /// <summary>Removing sensitive data from User Agent string enabled.</summary>
-        public bool? HideUserAgent { get => _explicitNullValueHideUserAgent; set { _explicitNullValueHideUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideUserAgent"); else _explicitNullProperties?.Remove("hideUserAgent"); } }
+        public bool? HideUserAgent { get => _explicitNullValueHideUserAgent; set { _explicitNullValueHideUserAgent = value; AdditionalData?.Remove("hideUserAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideUserAgent"); else _explicitNullProperties?.Remove("hideUserAgent"); } }
         private bool? _explicitNullValueHideUserAgent = default!;
         /// <summary>Custom endpoint for Zaraz init script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitPath { get => _explicitNullValueInitPath; set { _explicitNullValueInitPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initPath"); else _explicitNullProperties?.Remove("initPath"); } }
+        public string? InitPath { get => _explicitNullValueInitPath; set { _explicitNullValueInitPath = value; AdditionalData?.Remove("initPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initPath"); else _explicitNullProperties?.Remove("initPath"); } }
         private string? _explicitNullValueInitPath = default!;
 #nullable restore
 #else
-        public string InitPath { get => _explicitNullValueInitPath; set { _explicitNullValueInitPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initPath"); else _explicitNullProperties?.Remove("initPath"); } }
+        public string InitPath { get => _explicitNullValueInitPath; set { _explicitNullValueInitPath = value; AdditionalData?.Remove("initPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initPath"); else _explicitNullProperties?.Remove("initPath"); } }
         private string _explicitNullValueInitPath = default!;
 #endif
         /// <summary>Injection of Zaraz scripts into iframes enabled.</summary>
-        public bool? InjectIframes { get => _explicitNullValueInjectIframes; set { _explicitNullValueInjectIframes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectIframes"); else _explicitNullProperties?.Remove("injectIframes"); } }
+        public bool? InjectIframes { get => _explicitNullValueInjectIframes; set { _explicitNullValueInjectIframes = value; AdditionalData?.Remove("injectIframes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectIframes"); else _explicitNullProperties?.Remove("injectIframes"); } }
         private bool? _explicitNullValueInjectIframes = default!;
         /// <summary>Custom path for Managed Components server functionalities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? McRootPath { get => _explicitNullValueMcRootPath; set { _explicitNullValueMcRootPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcRootPath"); else _explicitNullProperties?.Remove("mcRootPath"); } }
+        public string? McRootPath { get => _explicitNullValueMcRootPath; set { _explicitNullValueMcRootPath = value; AdditionalData?.Remove("mcRootPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcRootPath"); else _explicitNullProperties?.Remove("mcRootPath"); } }
         private string? _explicitNullValueMcRootPath = default!;
 #nullable restore
 #else
-        public string McRootPath { get => _explicitNullValueMcRootPath; set { _explicitNullValueMcRootPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcRootPath"); else _explicitNullProperties?.Remove("mcRootPath"); } }
+        public string McRootPath { get => _explicitNullValueMcRootPath; set { _explicitNullValueMcRootPath = value; AdditionalData?.Remove("mcRootPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcRootPath"); else _explicitNullProperties?.Remove("mcRootPath"); } }
         private string _explicitNullValueMcRootPath = default!;
 #endif
         /// <summary>Custom endpoint for Zaraz main script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptPath { get => _explicitNullValueScriptPath; set { _explicitNullValueScriptPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptPath"); else _explicitNullProperties?.Remove("scriptPath"); } }
+        public string? ScriptPath { get => _explicitNullValueScriptPath; set { _explicitNullValueScriptPath = value; AdditionalData?.Remove("scriptPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptPath"); else _explicitNullProperties?.Remove("scriptPath"); } }
         private string? _explicitNullValueScriptPath = default!;
 #nullable restore
 #else
-        public string ScriptPath { get => _explicitNullValueScriptPath; set { _explicitNullValueScriptPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptPath"); else _explicitNullProperties?.Remove("scriptPath"); } }
+        public string ScriptPath { get => _explicitNullValueScriptPath; set { _explicitNullValueScriptPath = value; AdditionalData?.Remove("scriptPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptPath"); else _explicitNullProperties?.Remove("scriptPath"); } }
         private string _explicitNullValueScriptPath = default!;
 #endif
         /// <summary>Custom endpoint for Zaraz tracking requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrackPath { get => _explicitNullValueTrackPath; set { _explicitNullValueTrackPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackPath"); else _explicitNullProperties?.Remove("trackPath"); } }
+        public string? TrackPath { get => _explicitNullValueTrackPath; set { _explicitNullValueTrackPath = value; AdditionalData?.Remove("trackPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackPath"); else _explicitNullProperties?.Remove("trackPath"); } }
         private string? _explicitNullValueTrackPath = default!;
 #nullable restore
 #else
-        public string TrackPath { get => _explicitNullValueTrackPath; set { _explicitNullValueTrackPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackPath"); else _explicitNullProperties?.Remove("trackPath"); } }
+        public string TrackPath { get => _explicitNullValueTrackPath; set { _explicitNullValueTrackPath = value; AdditionalData?.Remove("trackPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackPath"); else _explicitNullProperties?.Remove("trackPath"); } }
         private string _explicitNullValueTrackPath = default!;
 #endif
         /// <summary>

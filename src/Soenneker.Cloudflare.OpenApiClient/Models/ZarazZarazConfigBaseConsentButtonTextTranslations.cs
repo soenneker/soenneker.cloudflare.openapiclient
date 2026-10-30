@@ -17,19 +17,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accept_all") is { } nullNodeAcceptAll && nullNodeAcceptAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptAll = null;
-            if (parseNode.GetChildNode("confirm_my_choices") is { } nullNodeConfirmMyChoices && nullNodeConfirmMyChoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfirmMyChoices = null;
-            if (parseNode.GetChildNode("reject_all") is { } nullNodeRejectAll && nullNodeRejectAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectAll = null;
+            if (parseNode.GetChildNode("accept_all") is null) { _explicitNullValueAcceptAll = default!; _explicitNullProperties?.Remove("accept_all"); }
+            else if (parseNode.GetChildNode("accept_all") is { } nullNodeAcceptAll && nullNodeAcceptAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptAll = null;
+            if (parseNode.GetChildNode("confirm_my_choices") is null) { _explicitNullValueConfirmMyChoices = default!; _explicitNullProperties?.Remove("confirm_my_choices"); }
+            else if (parseNode.GetChildNode("confirm_my_choices") is { } nullNodeConfirmMyChoices && nullNodeConfirmMyChoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfirmMyChoices = null;
+            if (parseNode.GetChildNode("reject_all") is null) { _explicitNullValueRejectAll = default!; _explicitNullProperties?.Remove("reject_all"); }
+            else if (parseNode.GetChildNode("reject_all") is { } nullNodeRejectAll && nullNodeRejectAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectAll = null;
         }
 
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty? AcceptAll { get => _explicitNullValueAcceptAll; set { _explicitNullValueAcceptAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_all"); else _explicitNullProperties?.Remove("accept_all"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty? AcceptAll { get => _explicitNullValueAcceptAll; set { _explicitNullValueAcceptAll = value; AdditionalData?.Remove("accept_all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_all"); else _explicitNullProperties?.Remove("accept_all"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty? _explicitNullValueAcceptAll = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty AcceptAll { get => _explicitNullValueAcceptAll; set { _explicitNullValueAcceptAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_all"); else _explicitNullProperties?.Remove("accept_all"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty AcceptAll { get => _explicitNullValueAcceptAll; set { _explicitNullValueAcceptAll = value; AdditionalData?.Remove("accept_all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_all"); else _explicitNullProperties?.Remove("accept_all"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty _explicitNullValueAcceptAll = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,21 +40,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty? ConfirmMyChoices { get => _explicitNullValueConfirmMyChoices; set { _explicitNullValueConfirmMyChoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirm_my_choices"); else _explicitNullProperties?.Remove("confirm_my_choices"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty? ConfirmMyChoices { get => _explicitNullValueConfirmMyChoices; set { _explicitNullValueConfirmMyChoices = value; AdditionalData?.Remove("confirm_my_choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirm_my_choices"); else _explicitNullProperties?.Remove("confirm_my_choices"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty? _explicitNullValueConfirmMyChoices = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty ConfirmMyChoices { get => _explicitNullValueConfirmMyChoices; set { _explicitNullValueConfirmMyChoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirm_my_choices"); else _explicitNullProperties?.Remove("confirm_my_choices"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty ConfirmMyChoices { get => _explicitNullValueConfirmMyChoices; set { _explicitNullValueConfirmMyChoices = value; AdditionalData?.Remove("confirm_my_choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirm_my_choices"); else _explicitNullProperties?.Remove("confirm_my_choices"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty _explicitNullValueConfirmMyChoices = default!;
 #endif
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty? RejectAll { get => _explicitNullValueRejectAll; set { _explicitNullValueRejectAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_all"); else _explicitNullProperties?.Remove("reject_all"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty? RejectAll { get => _explicitNullValueRejectAll; set { _explicitNullValueRejectAll = value; AdditionalData?.Remove("reject_all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_all"); else _explicitNullProperties?.Remove("reject_all"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty? _explicitNullValueRejectAll = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty RejectAll { get => _explicitNullValueRejectAll; set { _explicitNullValueRejectAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_all"); else _explicitNullProperties?.Remove("reject_all"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty RejectAll { get => _explicitNullValueRejectAll; set { _explicitNullValueRejectAll = value; AdditionalData?.Remove("reject_all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_all"); else _explicitNullProperties?.Remove("reject_all"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty _explicitNullValueRejectAll = default!;
 #endif
         /// <summary>

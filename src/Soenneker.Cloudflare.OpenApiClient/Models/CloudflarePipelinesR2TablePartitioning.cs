@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("time_pattern") is { } nullNodeTimePattern && nullNodeTimePattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimePattern = null;
+            if (parseNode.GetChildNode("time_pattern") is null) { _explicitNullValueTimePattern = default!; _explicitNullProperties?.Remove("time_pattern"); }
+            else if (parseNode.GetChildNode("time_pattern") is { } nullNodeTimePattern && nullNodeTimePattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimePattern = null;
         }
 
         /// <summary>The pattern of the date string</summary>

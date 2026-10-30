@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bots") is { } nullNodeBots && nullNodeBots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bots = null;
+            if (parseNode.GetChildNode("bots") is null) { _explicitNullValueBots = default!; _explicitNullProperties?.Remove("bots"); }
+            else if (parseNode.GetChildNode("bots") is { } nullNodeBots && nullNodeBots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bots = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The bots property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBots200ResponseResultBotsItem>? Bots { get => _explicitNullValueBots; set { _explicitNullValueBots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bots"); else _explicitNullProperties?.Remove("bots"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBots200ResponseResultBotsItem>? Bots { get => _explicitNullValueBots; set { _explicitNullValueBots = value; AdditionalData?.Remove("bots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bots"); else _explicitNullProperties?.Remove("bots"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBots200ResponseResultBotsItem>? _explicitNullValueBots = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBots200ResponseResultBotsItem> Bots { get => _explicitNullValueBots; set { _explicitNullValueBots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bots"); else _explicitNullProperties?.Remove("bots"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBots200ResponseResultBotsItem> Bots { get => _explicitNullValueBots; set { _explicitNullValueBots = value; AdditionalData?.Remove("bots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bots"); else _explicitNullProperties?.Remove("bots"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBots200ResponseResultBotsItem> _explicitNullValueBots = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("algorithms") is { } nullNodeAlgorithms && nullNodeAlgorithms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithms = null;
+            if (parseNode.GetChildNode("algorithms") is null) { _explicitNullValueAlgorithms = default!; _explicitNullProperties?.Remove("algorithms"); }
+            else if (parseNode.GetChildNode("algorithms") is { } nullNodeAlgorithms && nullNodeAlgorithms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithms = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Custom order for compression algorithms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRuleResponseCompressionRuleActionParametersAlgorithmsItem>? Algorithms { get => _explicitNullValueAlgorithms; set { _explicitNullValueAlgorithms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithms"); else _explicitNullProperties?.Remove("algorithms"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRuleResponseCompressionRuleActionParametersAlgorithmsItem>? Algorithms { get => _explicitNullValueAlgorithms; set { _explicitNullValueAlgorithms = value; AdditionalData?.Remove("algorithms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithms"); else _explicitNullProperties?.Remove("algorithms"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRuleResponseCompressionRuleActionParametersAlgorithmsItem>? _explicitNullValueAlgorithms = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRuleResponseCompressionRuleActionParametersAlgorithmsItem> Algorithms { get => _explicitNullValueAlgorithms; set { _explicitNullValueAlgorithms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithms"); else _explicitNullProperties?.Remove("algorithms"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRuleResponseCompressionRuleActionParametersAlgorithmsItem> Algorithms { get => _explicitNullValueAlgorithms; set { _explicitNullValueAlgorithms = value; AdditionalData?.Remove("algorithms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithms"); else _explicitNullProperties?.Remove("algorithms"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsCompressResponseRuleResponseCompressionRuleActionParametersAlgorithmsItem> _explicitNullValueAlgorithms = default!;
 #endif
         /// <summary>

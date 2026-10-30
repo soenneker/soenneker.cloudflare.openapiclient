@@ -18,53 +18,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_manual_override") is { } nullNodeAllowManualOverride && nullNodeAllowManualOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowManualOverride = null;
-            if (parseNode.GetChildNode("api_endpoints") is { } nullNodeApiEndpoints && nullNodeApiEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiEndpoints = null;
-            if (parseNode.GetChildNode("autoswitch") is { } nullNodeAutoswitch && nullNodeAutoswitch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autoswitch = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("masque_endpoints") is { } nullNodeMasqueEndpoints && nullNodeMasqueEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MasqueEndpoints = null;
-            if (parseNode.GetChildNode("wireguard_endpoints") is { } nullNodeWireguardEndpoints && nullNodeWireguardEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireguardEndpoints = null;
+            if (parseNode.GetChildNode("allow_manual_override") is null) { _explicitNullValueAllowManualOverride = default!; _explicitNullProperties?.Remove("allow_manual_override"); }
+            else if (parseNode.GetChildNode("allow_manual_override") is { } nullNodeAllowManualOverride && nullNodeAllowManualOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowManualOverride = null;
+            if (parseNode.GetChildNode("api_endpoints") is null) { _explicitNullValueApiEndpoints = default!; _explicitNullProperties?.Remove("api_endpoints"); }
+            else if (parseNode.GetChildNode("api_endpoints") is { } nullNodeApiEndpoints && nullNodeApiEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiEndpoints = null;
+            if (parseNode.GetChildNode("autoswitch") is null) { _explicitNullValueAutoswitch = default!; _explicitNullProperties?.Remove("autoswitch"); }
+            else if (parseNode.GetChildNode("autoswitch") is { } nullNodeAutoswitch && nullNodeAutoswitch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autoswitch = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("masque_endpoints") is null) { _explicitNullValueMasqueEndpoints = default!; _explicitNullProperties?.Remove("masque_endpoints"); }
+            else if (parseNode.GetChildNode("masque_endpoints") is { } nullNodeMasqueEndpoints && nullNodeMasqueEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MasqueEndpoints = null;
+            if (parseNode.GetChildNode("wireguard_endpoints") is null) { _explicitNullValueWireguardEndpoints = default!; _explicitNullProperties?.Remove("wireguard_endpoints"); }
+            else if (parseNode.GetChildNode("wireguard_endpoints") is { } nullNodeWireguardEndpoints && nullNodeWireguardEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireguardEndpoints = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether WARP users may manually override the automatic Global Acceleration decision. Defaults to true when not provided.</summary>
-        public bool? AllowManualOverride { get => _explicitNullValueAllowManualOverride; set { _explicitNullValueAllowManualOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_manual_override"); else _explicitNullProperties?.Remove("allow_manual_override"); } }
+        public bool? AllowManualOverride { get => _explicitNullValueAllowManualOverride; set { _explicitNullValueAllowManualOverride = value; AdditionalData?.Remove("allow_manual_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_manual_override"); else _explicitNullProperties?.Remove("allow_manual_override"); } }
         private bool? _explicitNullValueAllowManualOverride = default!;
         /// <summary>IP:port entries for the API endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ApiEndpoints { get => _explicitNullValueApiEndpoints; set { _explicitNullValueApiEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_endpoints"); else _explicitNullProperties?.Remove("api_endpoints"); } }
+        public List<string>? ApiEndpoints { get => _explicitNullValueApiEndpoints; set { _explicitNullValueApiEndpoints = value; AdditionalData?.Remove("api_endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_endpoints"); else _explicitNullProperties?.Remove("api_endpoints"); } }
         private List<string>? _explicitNullValueApiEndpoints = default!;
 #nullable restore
 #else
-        public List<string> ApiEndpoints { get => _explicitNullValueApiEndpoints; set { _explicitNullValueApiEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_endpoints"); else _explicitNullProperties?.Remove("api_endpoints"); } }
+        public List<string> ApiEndpoints { get => _explicitNullValueApiEndpoints; set { _explicitNullValueApiEndpoints = value; AdditionalData?.Remove("api_endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_endpoints"); else _explicitNullProperties?.Remove("api_endpoints"); } }
         private List<string> _explicitNullValueApiEndpoints = default!;
 #endif
         /// <summary>Automatically switch Global Acceleration regions based on device location. Defaults to false when not provided.</summary>
-        public bool? Autoswitch { get => _explicitNullValueAutoswitch; set { _explicitNullValueAutoswitch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoswitch"); else _explicitNullProperties?.Remove("autoswitch"); } }
+        public bool? Autoswitch { get => _explicitNullValueAutoswitch; set { _explicitNullValueAutoswitch = value; AdditionalData?.Remove("autoswitch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoswitch"); else _explicitNullProperties?.Remove("autoswitch"); } }
         private bool? _explicitNullValueAutoswitch = default!;
         /// <summary>Global acceleration settings are used only when &quot;enabled&quot;.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>IP:port entries for the MASQUE tunnel endpoints. Either wireguard_endpoints or masque_endpoints must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MasqueEndpoints { get => _explicitNullValueMasqueEndpoints; set { _explicitNullValueMasqueEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masque_endpoints"); else _explicitNullProperties?.Remove("masque_endpoints"); } }
+        public List<string>? MasqueEndpoints { get => _explicitNullValueMasqueEndpoints; set { _explicitNullValueMasqueEndpoints = value; AdditionalData?.Remove("masque_endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masque_endpoints"); else _explicitNullProperties?.Remove("masque_endpoints"); } }
         private List<string>? _explicitNullValueMasqueEndpoints = default!;
 #nullable restore
 #else
-        public List<string> MasqueEndpoints { get => _explicitNullValueMasqueEndpoints; set { _explicitNullValueMasqueEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masque_endpoints"); else _explicitNullProperties?.Remove("masque_endpoints"); } }
+        public List<string> MasqueEndpoints { get => _explicitNullValueMasqueEndpoints; set { _explicitNullValueMasqueEndpoints = value; AdditionalData?.Remove("masque_endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masque_endpoints"); else _explicitNullProperties?.Remove("masque_endpoints"); } }
         private List<string> _explicitNullValueMasqueEndpoints = default!;
 #endif
         /// <summary>IP:port entries for the WireGuard tunnel endpoints. Either wireguard_endpoints or masque_endpoints must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WireguardEndpoints { get => _explicitNullValueWireguardEndpoints; set { _explicitNullValueWireguardEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wireguard_endpoints"); else _explicitNullProperties?.Remove("wireguard_endpoints"); } }
+        public List<string>? WireguardEndpoints { get => _explicitNullValueWireguardEndpoints; set { _explicitNullValueWireguardEndpoints = value; AdditionalData?.Remove("wireguard_endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wireguard_endpoints"); else _explicitNullProperties?.Remove("wireguard_endpoints"); } }
         private List<string>? _explicitNullValueWireguardEndpoints = default!;
 #nullable restore
 #else
-        public List<string> WireguardEndpoints { get => _explicitNullValueWireguardEndpoints; set { _explicitNullValueWireguardEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wireguard_endpoints"); else _explicitNullProperties?.Remove("wireguard_endpoints"); } }
+        public List<string> WireguardEndpoints { get => _explicitNullValueWireguardEndpoints; set { _explicitNullValueWireguardEndpoints = value; AdditionalData?.Remove("wireguard_endpoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wireguard_endpoints"); else _explicitNullProperties?.Remove("wireguard_endpoints"); } }
         private List<string> _explicitNullValueWireguardEndpoints = default!;
 #endif
         /// <summary>

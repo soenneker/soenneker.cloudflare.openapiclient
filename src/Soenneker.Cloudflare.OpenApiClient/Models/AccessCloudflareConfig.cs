@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("restrict_to_account_members") is { } nullNodeRestrictToAccountMembers && nullNodeRestrictToAccountMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestrictToAccountMembers = null;
+            if (parseNode.GetChildNode("restrict_to_account_members") is null) { _explicitNullValueRestrictToAccountMembers = default!; _explicitNullProperties?.Remove("restrict_to_account_members"); }
+            else if (parseNode.GetChildNode("restrict_to_account_members") is { } nullNodeRestrictToAccountMembers && nullNodeRestrictToAccountMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestrictToAccountMembers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string RedirectUrl { get; private set; }
 #endif
         /// <summary>When enabled, only users who are members of your Cloudflare account can authenticate through this identity provider. When disabled, any user with a Cloudflare account can authenticate, subject to your Access policies.</summary>
-        public bool? RestrictToAccountMembers { get => _explicitNullValueRestrictToAccountMembers; set { _explicitNullValueRestrictToAccountMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrict_to_account_members"); else _explicitNullProperties?.Remove("restrict_to_account_members"); } }
+        public bool? RestrictToAccountMembers { get => _explicitNullValueRestrictToAccountMembers; set { _explicitNullValueRestrictToAccountMembers = value; AdditionalData?.Remove("restrict_to_account_members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrict_to_account_members"); else _explicitNullProperties?.Remove("restrict_to_account_members"); } }
         private bool? _explicitNullValueRestrictToAccountMembers = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareConfig"/> and sets the default values.

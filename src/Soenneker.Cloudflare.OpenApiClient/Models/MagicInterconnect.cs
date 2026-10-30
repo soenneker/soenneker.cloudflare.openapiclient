@@ -17,42 +17,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("automatic_return_routing") is { } nullNodeAutomaticReturnRouting && nullNodeAutomaticReturnRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticReturnRouting = null;
-            if (parseNode.GetChildNode("bgp") is { } nullNodeBgp && nullNodeBgp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bgp = null;
-            if (parseNode.GetChildNode("colo_name") is { } nullNodeColoName && nullNodeColoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoName = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("gre") is { } nullNodeGre && nullNodeGre.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gre = null;
-            if (parseNode.GetChildNode("health_check") is { } nullNodeHealthCheck && nullNodeHealthCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheck = null;
-            if (parseNode.GetChildNode("interface_address") is { } nullNodeInterfaceAddress && nullNodeInterfaceAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress = null;
-            if (parseNode.GetChildNode("interface_address6") is { } nullNodeInterfaceAddress6 && nullNodeInterfaceAddress6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress6 = null;
-            if (parseNode.GetChildNode("mtu") is { } nullNodeMtu && nullNodeMtu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mtu = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("automatic_return_routing") is null) { _explicitNullValueAutomaticReturnRouting = default!; _explicitNullProperties?.Remove("automatic_return_routing"); }
+            else if (parseNode.GetChildNode("automatic_return_routing") is { } nullNodeAutomaticReturnRouting && nullNodeAutomaticReturnRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticReturnRouting = null;
+            if (parseNode.GetChildNode("bgp") is null) { _explicitNullValueBgp = default!; _explicitNullProperties?.Remove("bgp"); }
+            else if (parseNode.GetChildNode("bgp") is { } nullNodeBgp && nullNodeBgp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bgp = null;
+            if (parseNode.GetChildNode("colo_name") is null) { _explicitNullValueColoName = default!; _explicitNullProperties?.Remove("colo_name"); }
+            else if (parseNode.GetChildNode("colo_name") is { } nullNodeColoName && nullNodeColoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColoName = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("gre") is null) { _explicitNullValueGre = default!; _explicitNullProperties?.Remove("gre"); }
+            else if (parseNode.GetChildNode("gre") is { } nullNodeGre && nullNodeGre.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gre = null;
+            if (parseNode.GetChildNode("health_check") is null) { _explicitNullValueHealthCheck = default!; _explicitNullProperties?.Remove("health_check"); }
+            else if (parseNode.GetChildNode("health_check") is { } nullNodeHealthCheck && nullNodeHealthCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheck = null;
+            if (parseNode.GetChildNode("interface_address") is null) { _explicitNullValueInterfaceAddress = default!; _explicitNullProperties?.Remove("interface_address"); }
+            else if (parseNode.GetChildNode("interface_address") is { } nullNodeInterfaceAddress && nullNodeInterfaceAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress = null;
+            if (parseNode.GetChildNode("interface_address6") is null) { _explicitNullValueInterfaceAddress6 = default!; _explicitNullProperties?.Remove("interface_address6"); }
+            else if (parseNode.GetChildNode("interface_address6") is { } nullNodeInterfaceAddress6 && nullNodeInterfaceAddress6.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceAddress6 = null;
+            if (parseNode.GetChildNode("mtu") is null) { _explicitNullValueMtu = default!; _explicitNullProperties?.Remove("mtu"); }
+            else if (parseNode.GetChildNode("mtu") is { } nullNodeMtu && nullNodeMtu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mtu = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected.</summary>
-        public bool? AutomaticReturnRouting { get => _explicitNullValueAutomaticReturnRouting; set { _explicitNullValueAutomaticReturnRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_return_routing"); else _explicitNullProperties?.Remove("automatic_return_routing"); } }
+        public bool? AutomaticReturnRouting { get => _explicitNullValueAutomaticReturnRouting; set { _explicitNullValueAutomaticReturnRouting = value; AdditionalData?.Remove("automatic_return_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_return_routing"); else _explicitNullProperties?.Remove("automatic_return_routing"); } }
         private bool? _explicitNullValueAutomaticReturnRouting = default!;
         /// <summary>The bgp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig? Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig? _explicitNullValueBgp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig Bgp { get => _explicitNullValueBgp; set { _explicitNullValueBgp = value; AdditionalData?.Remove("bgp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bgp"); else _explicitNullProperties?.Remove("bgp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig _explicitNullValueBgp = default!;
 #endif
         /// <summary>The name of the interconnect. The name cannot share a name with other tunnels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        public string? ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; AdditionalData?.Remove("colo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
         private string? _explicitNullValueColoName = default!;
 #nullable restore
 #else
-        public string ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
+        public string ColoName { get => _explicitNullValueColoName; set { _explicitNullValueColoName = value; AdditionalData?.Remove("colo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colo_name"); else _explicitNullProperties?.Remove("colo_name"); } }
         private string _explicitNullValueColoName = default!;
 #endif
         /// <summary>The date and time the tunnel was created.</summary>
@@ -60,31 +71,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An optional description of the interconnect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Omitted in responses for version 1.5 interconnects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectGre? Gre { get => _explicitNullValueGre; set { _explicitNullValueGre = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre"); else _explicitNullProperties?.Remove("gre"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectGre? Gre { get => _explicitNullValueGre; set { _explicitNullValueGre = value; AdditionalData?.Remove("gre"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre"); else _explicitNullProperties?.Remove("gre"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectGre? _explicitNullValueGre = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectGre Gre { get => _explicitNullValueGre; set { _explicitNullValueGre = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre"); else _explicitNullProperties?.Remove("gre"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectGre Gre { get => _explicitNullValueGre; set { _explicitNullValueGre = value; AdditionalData?.Remove("gre"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gre"); else _explicitNullProperties?.Remove("gre"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectGre _explicitNullValueGre = default!;
 #endif
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck? HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck? HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck? _explicitNullValueHealthCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check"); else _explicitNullProperties?.Remove("health_check"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck _explicitNullValueHealthCheck = default!;
 #endif
         /// <summary>Identifier</summary>
@@ -98,46 +109,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The IPv4 interface address for the interconnect. For MPLS Interconnects,use a /30 or /31 prefix. For GRE Interconnects, a /30 or /31 prefixmay be used. Version 1.5 interconnects require a /31 prefix and mayalso use a prefix from the account&apos;s authorized prefixes; otherwise,select the subnet from RFC 1918 or the approved link-local ranges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
+        public string? InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; AdditionalData?.Remove("interface_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
         private string? _explicitNullValueInterfaceAddress = default!;
 #nullable restore
 #else
-        public string InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
+        public string InterfaceAddress { get => _explicitNullValueInterfaceAddress; set { _explicitNullValueInterfaceAddress = value; AdditionalData?.Remove("interface_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address"); else _explicitNullProperties?.Remove("interface_address"); } }
         private string _explicitNullValueInterfaceAddress = default!;
 #endif
         /// <summary>A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
+        public string? InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; AdditionalData?.Remove("interface_address6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
         private string? _explicitNullValueInterfaceAddress6 = default!;
 #nullable restore
 #else
-        public string InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
+        public string InterfaceAddress6 { get => _explicitNullValueInterfaceAddress6; set { _explicitNullValueInterfaceAddress6 = value; AdditionalData?.Remove("interface_address6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interface_address6"); else _explicitNullProperties?.Remove("interface_address6"); } }
         private string _explicitNullValueInterfaceAddress6 = default!;
 #endif
         /// <summary>The date and time the tunnel was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The Maximum Transmission Unit (MTU) in bytes for the interconnect. The minimum value is 576.</summary>
-        public int? Mtu { get => _explicitNullValueMtu; set { _explicitNullValueMtu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtu"); else _explicitNullProperties?.Remove("mtu"); } }
+        public int? Mtu { get => _explicitNullValueMtu; set { _explicitNullValueMtu = value; AdditionalData?.Remove("mtu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtu"); else _explicitNullProperties?.Remove("mtu"); } }
         private int? _explicitNullValueMtu = default!;
         /// <summary>The name of the interconnect. The name cannot share a name with other tunnels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Immutable interconnect version configured at creation time. One of:- &quot;1&quot;- &quot;1.5&quot;- &quot;2&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>Identifier</summary>

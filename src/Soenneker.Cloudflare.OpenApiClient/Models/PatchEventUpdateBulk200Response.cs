@@ -17,28 +17,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failedCount") is { } nullNodeFailedCount && nullNodeFailedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedCount = null;
-            if (parseNode.GetChildNode("failures") is { } nullNodeFailures && nullNodeFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Failures = null;
-            if (parseNode.GetChildNode("updatedCount") is { } nullNodeUpdatedCount && nullNodeUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedCount = null;
+            if (parseNode.GetChildNode("failedCount") is null) { _explicitNullValueFailedCount = default!; _explicitNullProperties?.Remove("failedCount"); }
+            else if (parseNode.GetChildNode("failedCount") is { } nullNodeFailedCount && nullNodeFailedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedCount = null;
+            if (parseNode.GetChildNode("failures") is null) { _explicitNullValueFailures = default!; _explicitNullProperties?.Remove("failures"); }
+            else if (parseNode.GetChildNode("failures") is { } nullNodeFailures && nullNodeFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Failures = null;
+            if (parseNode.GetChildNode("updatedCount") is null) { _explicitNullValueUpdatedCount = default!; _explicitNullProperties?.Remove("updatedCount"); }
+            else if (parseNode.GetChildNode("updatedCount") is { } nullNodeUpdatedCount && nullNodeUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The failedCount property</summary>
-        public double? FailedCount { get => _explicitNullValueFailedCount; set { _explicitNullValueFailedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedCount"); else _explicitNullProperties?.Remove("failedCount"); } }
+        public double? FailedCount { get => _explicitNullValueFailedCount; set { _explicitNullValueFailedCount = value; AdditionalData?.Remove("failedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedCount"); else _explicitNullProperties?.Remove("failedCount"); } }
         private double? _explicitNullValueFailedCount = default!;
         /// <summary>List of events that failed to update with error messages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulk200ResponseFailuresItem>? Failures { get => _explicitNullValueFailures; set { _explicitNullValueFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failures"); else _explicitNullProperties?.Remove("failures"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulk200ResponseFailuresItem>? Failures { get => _explicitNullValueFailures; set { _explicitNullValueFailures = value; AdditionalData?.Remove("failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failures"); else _explicitNullProperties?.Remove("failures"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulk200ResponseFailuresItem>? _explicitNullValueFailures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulk200ResponseFailuresItem> Failures { get => _explicitNullValueFailures; set { _explicitNullValueFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failures"); else _explicitNullProperties?.Remove("failures"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulk200ResponseFailuresItem> Failures { get => _explicitNullValueFailures; set { _explicitNullValueFailures = value; AdditionalData?.Remove("failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failures"); else _explicitNullProperties?.Remove("failures"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulk200ResponseFailuresItem> _explicitNullValueFailures = default!;
 #endif
         /// <summary>The updatedCount property</summary>
-        public double? UpdatedCount { get => _explicitNullValueUpdatedCount; set { _explicitNullValueUpdatedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedCount"); else _explicitNullProperties?.Remove("updatedCount"); } }
+        public double? UpdatedCount { get => _explicitNullValueUpdatedCount; set { _explicitNullValueUpdatedCount = value; AdditionalData?.Remove("updatedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedCount"); else _explicitNullProperties?.Remove("updatedCount"); } }
         private double? _explicitNullValueUpdatedCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchEventUpdateBulk200Response"/> and sets the default values.

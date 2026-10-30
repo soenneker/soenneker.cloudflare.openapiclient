@@ -8,6 +8,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public enum AutoragConfigSearchRequestRerankingModel
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "@cf/baai/bge-reranker-base")]
         #pragma warning disable CS1591
         AtCfBaaiBgeRerankerBase,

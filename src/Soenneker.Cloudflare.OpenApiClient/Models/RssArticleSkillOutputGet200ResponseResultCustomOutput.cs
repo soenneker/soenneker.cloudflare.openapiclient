@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item> rssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => ((((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal))) || (((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean))) || (((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString) || ((item == null || item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)))) || (((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject))))) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item> rssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6ItemValue)
             {
                 result.RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item = rssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6ItemValue;
             }
@@ -85,6 +85,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(RssArticleSkillOutputGet200ResponseResultCustomOutputMember1 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RssArticleSkillOutputGet200ResponseResultCustomOutputMember1);
@@ -99,7 +101,13 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (Boolean == null && Double == null && RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item == null && RssArticleSkillOutputGet200ResponseResultCustomOutputMember1 == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (RssArticleSkillOutputGet200ResponseResultCustomOutputMember1 != null && Boolean == null && Double == null && RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item == null && String == null) { if (RssArticleSkillOutputGet200ResponseResultCustomOutputMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RssArticleSkillOutputGet200ResponseResultCustomOutputMember1); return; }
+            int selectedUnionBranches = 0;
+            if (Boolean != null) selectedUnionBranches++;
+            if (Double != null) selectedUnionBranches++;
+            if (RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item != null) selectedUnionBranches++;
+            if (RssArticleSkillOutputGet200ResponseResultCustomOutputMember1 != null) selectedUnionBranches++;
+            if (String != null) selectedUnionBranches++;
+            if (RssArticleSkillOutputGet200ResponseResultCustomOutputMember1 != null && selectedUnionBranches == 1) { if (RssArticleSkillOutputGet200ResponseResultCustomOutputMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RssArticleSkillOutputGet200ResponseResultCustomOutputMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Boolean != null)

@@ -18,43 +18,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pin_policy") is { } nullNodePinPolicy && nullNodePinPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinPolicy = null;
-            if (parseNode.GetChildNode("require_fips_device") is { } nullNodeRequireFipsDevice && nullNodeRequireFipsDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireFipsDevice = null;
-            if (parseNode.GetChildNode("ssh_key_size") is { } nullNodeSshKeySize && nullNodeSshKeySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SshKeySize = null;
-            if (parseNode.GetChildNode("ssh_key_type") is { } nullNodeSshKeyType && nullNodeSshKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SshKeyType = null;
-            if (parseNode.GetChildNode("touch_policy") is { } nullNodeTouchPolicy && nullNodeTouchPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TouchPolicy = null;
+            if (parseNode.GetChildNode("pin_policy") is null) { _explicitNullValuePinPolicy = default!; _explicitNullProperties?.Remove("pin_policy"); }
+            else if (parseNode.GetChildNode("pin_policy") is { } nullNodePinPolicy && nullNodePinPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinPolicy = null;
+            if (parseNode.GetChildNode("require_fips_device") is null) { _explicitNullValueRequireFipsDevice = default!; _explicitNullProperties?.Remove("require_fips_device"); }
+            else if (parseNode.GetChildNode("require_fips_device") is { } nullNodeRequireFipsDevice && nullNodeRequireFipsDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireFipsDevice = null;
+            if (parseNode.GetChildNode("ssh_key_size") is null) { _explicitNullValueSshKeySize = default!; _explicitNullProperties?.Remove("ssh_key_size"); }
+            else if (parseNode.GetChildNode("ssh_key_size") is { } nullNodeSshKeySize && nullNodeSshKeySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SshKeySize = null;
+            if (parseNode.GetChildNode("ssh_key_type") is null) { _explicitNullValueSshKeyType = default!; _explicitNullProperties?.Remove("ssh_key_type"); }
+            else if (parseNode.GetChildNode("ssh_key_type") is { } nullNodeSshKeyType && nullNodeSshKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SshKeyType = null;
+            if (parseNode.GetChildNode("touch_policy") is null) { _explicitNullValueTouchPolicy = default!; _explicitNullProperties?.Remove("touch_policy"); }
+            else if (parseNode.GetChildNode("touch_policy") is { } nullNodeTouchPolicy && nullNodeTouchPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TouchPolicy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines when a PIN is required to use the SSH key. Valid values: `never` (no PIN required), `once` (PIN required once per session), `always` (PIN required for each use).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsPinPolicy? PinPolicy { get => _explicitNullValuePinPolicy; set { _explicitNullValuePinPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pin_policy"); else _explicitNullProperties?.Remove("pin_policy"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsPinPolicy? PinPolicy { get => _explicitNullValuePinPolicy; set { _explicitNullValuePinPolicy = value; AdditionalData?.Remove("pin_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pin_policy"); else _explicitNullProperties?.Remove("pin_policy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsPinPolicy? _explicitNullValuePinPolicy = default!;
         /// <summary>Requires the PIV key to be stored on a FIPS 140-2 Level 1 or higher validated device.</summary>
-        public bool? RequireFipsDevice { get => _explicitNullValueRequireFipsDevice; set { _explicitNullValueRequireFipsDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_fips_device"); else _explicitNullProperties?.Remove("require_fips_device"); } }
+        public bool? RequireFipsDevice { get => _explicitNullValueRequireFipsDevice; set { _explicitNullValueRequireFipsDevice = value; AdditionalData?.Remove("require_fips_device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_fips_device"); else _explicitNullProperties?.Remove("require_fips_device"); } }
         private bool? _explicitNullValueRequireFipsDevice = default!;
         /// <summary>Specifies the allowed SSH key sizes in bits. Valid sizes depend on key type. Ed25519 has a fixed key size and does not accept this parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SshKeySize { get => _explicitNullValueSshKeySize; set { _explicitNullValueSshKeySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_size"); else _explicitNullProperties?.Remove("ssh_key_size"); } }
+        public List<int?>? SshKeySize { get => _explicitNullValueSshKeySize; set { _explicitNullValueSshKeySize = value; AdditionalData?.Remove("ssh_key_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_size"); else _explicitNullProperties?.Remove("ssh_key_size"); } }
         private List<int?>? _explicitNullValueSshKeySize = default!;
 #nullable restore
 #else
-        public List<int?> SshKeySize { get => _explicitNullValueSshKeySize; set { _explicitNullValueSshKeySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_size"); else _explicitNullProperties?.Remove("ssh_key_size"); } }
+        public List<int?> SshKeySize { get => _explicitNullValueSshKeySize; set { _explicitNullValueSshKeySize = value; AdditionalData?.Remove("ssh_key_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_size"); else _explicitNullProperties?.Remove("ssh_key_size"); } }
         private List<int?> _explicitNullValueSshKeySize = default!;
 #endif
         /// <summary>Specifies the allowed SSH key types. Valid values are `ecdsa`, `ed25519`, and `rsa`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsSshKeyTypeItem?>? SshKeyType { get => _explicitNullValueSshKeyType; set { _explicitNullValueSshKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_type"); else _explicitNullProperties?.Remove("ssh_key_type"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsSshKeyTypeItem?>? SshKeyType { get => _explicitNullValueSshKeyType; set { _explicitNullValueSshKeyType = value; AdditionalData?.Remove("ssh_key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_type"); else _explicitNullProperties?.Remove("ssh_key_type"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsSshKeyTypeItem?>? _explicitNullValueSshKeyType = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsSshKeyTypeItem?> SshKeyType { get => _explicitNullValueSshKeyType; set { _explicitNullValueSshKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_type"); else _explicitNullProperties?.Remove("ssh_key_type"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsSshKeyTypeItem?> SshKeyType { get => _explicitNullValueSshKeyType; set { _explicitNullValueSshKeyType = value; AdditionalData?.Remove("ssh_key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_key_type"); else _explicitNullProperties?.Remove("ssh_key_type"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsSshKeyTypeItem?> _explicitNullValueSshKeyType = default!;
 #endif
         /// <summary>Defines when physical touch is required to use the SSH key. Valid values: `never` (no touch required), `always` (touch required for each use), `cached` (touch cached for 15 seconds).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsTouchPolicy? TouchPolicy { get => _explicitNullValueTouchPolicy; set { _explicitNullValueTouchPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("touch_policy"); else _explicitNullProperties?.Remove("touch_policy"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsTouchPolicy? TouchPolicy { get => _explicitNullValueTouchPolicy; set { _explicitNullValueTouchPolicy = value; AdditionalData?.Remove("touch_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("touch_policy"); else _explicitNullProperties?.Remove("touch_policy"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsTouchPolicy? _explicitNullValueTouchPolicy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirements"/> and sets the default values.
@@ -81,11 +86,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pin_policy", n => { PinPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsPinPolicy>(); } },
+                { "pin_policy", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsPinPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePinPolicy = default; _explicitNullProperties?.Remove("pin_policy"); AdditionalData["pin_policy"] = unknown; } else { PinPolicy = parsed; AdditionalData.Remove("pin_policy"); } } },
                 { "require_fips_device", n => { RequireFipsDevice = n.GetBoolValue(); } },
                 { "ssh_key_size", n => { SshKeySize = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "ssh_key_type", n => { SshKeyType = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsSshKeyTypeItem>()?.AsList(); } },
-                { "touch_policy", n => { TouchPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsTouchPolicy>(); } },
+                { "touch_policy", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirementsTouchPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTouchPolicy = default; _explicitNullProperties?.Remove("touch_policy"); AdditionalData["touch_policy"] = unknown; } else { TouchPolicy = parsed; AdditionalData.Remove("touch_policy"); } } },
             };
         }
         /// <summary>

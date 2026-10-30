@@ -17,13 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("_40_MINS_TO_1_HOUR") is { } nullNodeFourZeroMINSTO1HOUR && nullNodeFourZeroMINSTO1HOUR.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FourZeroMINSTO1HOUR = null;
-            if (parseNode.GetChildNode("_1_HOUR_TO_3_HOURS") is { } nullNodeOneHOURTO3HOURS && nullNodeOneHOURTO3HOURS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneHOURTO3HOURS = null;
-            if (parseNode.GetChildNode("_10_MINS_TO_20_MINS") is { } nullNodeOneZeroMINSTO20MINS && nullNodeOneZeroMINSTO20MINS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroMINSTO20MINS = null;
-            if (parseNode.GetChildNode("OVER_3_HOURS") is { } nullNodeOVER3HOURS && nullNodeOVER3HOURS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OVER3HOURS = null;
-            if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
-            if (parseNode.GetChildNode("_20_MINS_TO_40_MINS") is { } nullNodeTwoZeroMINSTO40MINS && nullNodeTwoZeroMINSTO40MINS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoZeroMINSTO40MINS = null;
-            if (parseNode.GetChildNode("UNDER_10_MINS") is { } nullNodeUNDER10MINS && nullNodeUNDER10MINS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UNDER10MINS = null;
+            if (parseNode.GetChildNode("_40_MINS_TO_1_HOUR") is null) { _explicitNullValueFourZeroMINSTO1HOUR = default!; _explicitNullProperties?.Remove("_40_MINS_TO_1_HOUR"); }
+            else if (parseNode.GetChildNode("_40_MINS_TO_1_HOUR") is { } nullNodeFourZeroMINSTO1HOUR && nullNodeFourZeroMINSTO1HOUR.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FourZeroMINSTO1HOUR = null;
+            if (parseNode.GetChildNode("_1_HOUR_TO_3_HOURS") is null) { _explicitNullValueOneHOURTO3HOURS = default!; _explicitNullProperties?.Remove("_1_HOUR_TO_3_HOURS"); }
+            else if (parseNode.GetChildNode("_1_HOUR_TO_3_HOURS") is { } nullNodeOneHOURTO3HOURS && nullNodeOneHOURTO3HOURS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneHOURTO3HOURS = null;
+            if (parseNode.GetChildNode("_10_MINS_TO_20_MINS") is null) { _explicitNullValueOneZeroMINSTO20MINS = default!; _explicitNullProperties?.Remove("_10_MINS_TO_20_MINS"); }
+            else if (parseNode.GetChildNode("_10_MINS_TO_20_MINS") is { } nullNodeOneZeroMINSTO20MINS && nullNodeOneZeroMINSTO20MINS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroMINSTO20MINS = null;
+            if (parseNode.GetChildNode("OVER_3_HOURS") is null) { _explicitNullValueOVER3HOURS = default!; _explicitNullProperties?.Remove("OVER_3_HOURS"); }
+            else if (parseNode.GetChildNode("OVER_3_HOURS") is { } nullNodeOVER3HOURS && nullNodeOVER3HOURS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OVER3HOURS = null;
+            if (parseNode.GetChildNode("timestamps") is null) { _explicitNullValueTimestamps = default!; _explicitNullProperties?.Remove("timestamps"); }
+            else if (parseNode.GetChildNode("timestamps") is { } nullNodeTimestamps && nullNodeTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamps = null;
+            if (parseNode.GetChildNode("_20_MINS_TO_40_MINS") is null) { _explicitNullValueTwoZeroMINSTO40MINS = default!; _explicitNullProperties?.Remove("_20_MINS_TO_40_MINS"); }
+            else if (parseNode.GetChildNode("_20_MINS_TO_40_MINS") is { } nullNodeTwoZeroMINSTO40MINS && nullNodeTwoZeroMINSTO40MINS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoZeroMINSTO40MINS = null;
+            if (parseNode.GetChildNode("UNDER_10_MINS") is null) { _explicitNullValueUNDER10MINS = default!; _explicitNullProperties?.Remove("UNDER_10_MINS"); }
+            else if (parseNode.GetChildNode("UNDER_10_MINS") is { } nullNodeUNDER10MINS && nullNodeUNDER10MINS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UNDER10MINS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The FourZero_MINS_TO_1_HOUR property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FourZeroMINSTO1HOUR { get => _explicitNullValueFourZeroMINSTO1HOUR; set { _explicitNullValueFourZeroMINSTO1HOUR = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_40_MINS_TO_1_HOUR"); else _explicitNullProperties?.Remove("_40_MINS_TO_1_HOUR"); } }
+        public List<string>? FourZeroMINSTO1HOUR { get => _explicitNullValueFourZeroMINSTO1HOUR; set { _explicitNullValueFourZeroMINSTO1HOUR = value; AdditionalData?.Remove("_40_MINS_TO_1_HOUR"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_40_MINS_TO_1_HOUR"); else _explicitNullProperties?.Remove("_40_MINS_TO_1_HOUR"); } }
         private List<string>? _explicitNullValueFourZeroMINSTO1HOUR = default!;
 #nullable restore
 #else
-        public List<string> FourZeroMINSTO1HOUR { get => _explicitNullValueFourZeroMINSTO1HOUR; set { _explicitNullValueFourZeroMINSTO1HOUR = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_40_MINS_TO_1_HOUR"); else _explicitNullProperties?.Remove("_40_MINS_TO_1_HOUR"); } }
+        public List<string> FourZeroMINSTO1HOUR { get => _explicitNullValueFourZeroMINSTO1HOUR; set { _explicitNullValueFourZeroMINSTO1HOUR = value; AdditionalData?.Remove("_40_MINS_TO_1_HOUR"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_40_MINS_TO_1_HOUR"); else _explicitNullProperties?.Remove("_40_MINS_TO_1_HOUR"); } }
         private List<string> _explicitNullValueFourZeroMINSTO1HOUR = default!;
 #endif
         /// <summary>The One_HOUR_TO_3_HOURS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OneHOURTO3HOURS { get => _explicitNullValueOneHOURTO3HOURS; set { _explicitNullValueOneHOURTO3HOURS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_HOUR_TO_3_HOURS"); else _explicitNullProperties?.Remove("_1_HOUR_TO_3_HOURS"); } }
+        public List<string>? OneHOURTO3HOURS { get => _explicitNullValueOneHOURTO3HOURS; set { _explicitNullValueOneHOURTO3HOURS = value; AdditionalData?.Remove("_1_HOUR_TO_3_HOURS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_HOUR_TO_3_HOURS"); else _explicitNullProperties?.Remove("_1_HOUR_TO_3_HOURS"); } }
         private List<string>? _explicitNullValueOneHOURTO3HOURS = default!;
 #nullable restore
 #else
-        public List<string> OneHOURTO3HOURS { get => _explicitNullValueOneHOURTO3HOURS; set { _explicitNullValueOneHOURTO3HOURS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_HOUR_TO_3_HOURS"); else _explicitNullProperties?.Remove("_1_HOUR_TO_3_HOURS"); } }
+        public List<string> OneHOURTO3HOURS { get => _explicitNullValueOneHOURTO3HOURS; set { _explicitNullValueOneHOURTO3HOURS = value; AdditionalData?.Remove("_1_HOUR_TO_3_HOURS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_1_HOUR_TO_3_HOURS"); else _explicitNullProperties?.Remove("_1_HOUR_TO_3_HOURS"); } }
         private List<string> _explicitNullValueOneHOURTO3HOURS = default!;
 #endif
         /// <summary>The OneZero_MINS_TO_20_MINS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OneZeroMINSTO20MINS { get => _explicitNullValueOneZeroMINSTO20MINS; set { _explicitNullValueOneZeroMINSTO20MINS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_MINS_TO_20_MINS"); else _explicitNullProperties?.Remove("_10_MINS_TO_20_MINS"); } }
+        public List<string>? OneZeroMINSTO20MINS { get => _explicitNullValueOneZeroMINSTO20MINS; set { _explicitNullValueOneZeroMINSTO20MINS = value; AdditionalData?.Remove("_10_MINS_TO_20_MINS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_MINS_TO_20_MINS"); else _explicitNullProperties?.Remove("_10_MINS_TO_20_MINS"); } }
         private List<string>? _explicitNullValueOneZeroMINSTO20MINS = default!;
 #nullable restore
 #else
-        public List<string> OneZeroMINSTO20MINS { get => _explicitNullValueOneZeroMINSTO20MINS; set { _explicitNullValueOneZeroMINSTO20MINS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_MINS_TO_20_MINS"); else _explicitNullProperties?.Remove("_10_MINS_TO_20_MINS"); } }
+        public List<string> OneZeroMINSTO20MINS { get => _explicitNullValueOneZeroMINSTO20MINS; set { _explicitNullValueOneZeroMINSTO20MINS = value; AdditionalData?.Remove("_10_MINS_TO_20_MINS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_10_MINS_TO_20_MINS"); else _explicitNullProperties?.Remove("_10_MINS_TO_20_MINS"); } }
         private List<string> _explicitNullValueOneZeroMINSTO20MINS = default!;
 #endif
         /// <summary>The OVER_3_HOURS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OVER3HOURS { get => _explicitNullValueOVER3HOURS; set { _explicitNullValueOVER3HOURS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_3_HOURS"); else _explicitNullProperties?.Remove("OVER_3_HOURS"); } }
+        public List<string>? OVER3HOURS { get => _explicitNullValueOVER3HOURS; set { _explicitNullValueOVER3HOURS = value; AdditionalData?.Remove("OVER_3_HOURS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_3_HOURS"); else _explicitNullProperties?.Remove("OVER_3_HOURS"); } }
         private List<string>? _explicitNullValueOVER3HOURS = default!;
 #nullable restore
 #else
-        public List<string> OVER3HOURS { get => _explicitNullValueOVER3HOURS; set { _explicitNullValueOVER3HOURS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_3_HOURS"); else _explicitNullProperties?.Remove("OVER_3_HOURS"); } }
+        public List<string> OVER3HOURS { get => _explicitNullValueOVER3HOURS; set { _explicitNullValueOVER3HOURS = value; AdditionalData?.Remove("OVER_3_HOURS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OVER_3_HOURS"); else _explicitNullProperties?.Remove("OVER_3_HOURS"); } }
         private List<string> _explicitNullValueOVER3HOURS = default!;
 #endif
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?>? Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?>? _explicitNullValueTimestamps = default!;
 #nullable restore
 #else
-        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
+        public List<DateTimeOffset?> Timestamps { get => _explicitNullValueTimestamps; set { _explicitNullValueTimestamps = value; AdditionalData?.Remove("timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamps"); else _explicitNullProperties?.Remove("timestamps"); } }
         private List<DateTimeOffset?> _explicitNullValueTimestamps = default!;
 #endif
         /// <summary>The TwoZero_MINS_TO_40_MINS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TwoZeroMINSTO40MINS { get => _explicitNullValueTwoZeroMINSTO40MINS; set { _explicitNullValueTwoZeroMINSTO40MINS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_20_MINS_TO_40_MINS"); else _explicitNullProperties?.Remove("_20_MINS_TO_40_MINS"); } }
+        public List<string>? TwoZeroMINSTO40MINS { get => _explicitNullValueTwoZeroMINSTO40MINS; set { _explicitNullValueTwoZeroMINSTO40MINS = value; AdditionalData?.Remove("_20_MINS_TO_40_MINS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_20_MINS_TO_40_MINS"); else _explicitNullProperties?.Remove("_20_MINS_TO_40_MINS"); } }
         private List<string>? _explicitNullValueTwoZeroMINSTO40MINS = default!;
 #nullable restore
 #else
-        public List<string> TwoZeroMINSTO40MINS { get => _explicitNullValueTwoZeroMINSTO40MINS; set { _explicitNullValueTwoZeroMINSTO40MINS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_20_MINS_TO_40_MINS"); else _explicitNullProperties?.Remove("_20_MINS_TO_40_MINS"); } }
+        public List<string> TwoZeroMINSTO40MINS { get => _explicitNullValueTwoZeroMINSTO40MINS; set { _explicitNullValueTwoZeroMINSTO40MINS = value; AdditionalData?.Remove("_20_MINS_TO_40_MINS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_20_MINS_TO_40_MINS"); else _explicitNullProperties?.Remove("_20_MINS_TO_40_MINS"); } }
         private List<string> _explicitNullValueTwoZeroMINSTO40MINS = default!;
 #endif
         /// <summary>The UNDER_10_MINS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UNDER10MINS { get => _explicitNullValueUNDER10MINS; set { _explicitNullValueUNDER10MINS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_10_MINS"); else _explicitNullProperties?.Remove("UNDER_10_MINS"); } }
+        public List<string>? UNDER10MINS { get => _explicitNullValueUNDER10MINS; set { _explicitNullValueUNDER10MINS = value; AdditionalData?.Remove("UNDER_10_MINS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_10_MINS"); else _explicitNullProperties?.Remove("UNDER_10_MINS"); } }
         private List<string>? _explicitNullValueUNDER10MINS = default!;
 #nullable restore
 #else
-        public List<string> UNDER10MINS { get => _explicitNullValueUNDER10MINS; set { _explicitNullValueUNDER10MINS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_10_MINS"); else _explicitNullProperties?.Remove("UNDER_10_MINS"); } }
+        public List<string> UNDER10MINS { get => _explicitNullValueUNDER10MINS; set { _explicitNullValueUNDER10MINS = value; AdditionalData?.Remove("UNDER_10_MINS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UNDER_10_MINS"); else _explicitNullProperties?.Remove("UNDER_10_MINS"); } }
         private List<string> _explicitNullValueUNDER10MINS = default!;
 #endif
         /// <summary>

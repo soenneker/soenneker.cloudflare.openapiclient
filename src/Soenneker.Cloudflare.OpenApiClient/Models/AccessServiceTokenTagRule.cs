@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("service_token_tag") is { } nullNodeServiceTokenTag && nullNodeServiceTokenTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTokenTag = null;
+            if (parseNode.GetChildNode("service_token_tag") is null) { _explicitNullValueServiceTokenTag = default!; _explicitNullProperties?.Remove("service_token_tag"); }
+            else if (parseNode.GetChildNode("service_token_tag") is { } nullNodeServiceTokenTag && nullNodeServiceTokenTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTokenTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The service_token_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenTagRuleServiceTokenTag? ServiceTokenTag { get => _explicitNullValueServiceTokenTag; set { _explicitNullValueServiceTokenTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_tag"); else _explicitNullProperties?.Remove("service_token_tag"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenTagRuleServiceTokenTag? ServiceTokenTag { get => _explicitNullValueServiceTokenTag; set { _explicitNullValueServiceTokenTag = value; AdditionalData?.Remove("service_token_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_tag"); else _explicitNullProperties?.Remove("service_token_tag"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenTagRuleServiceTokenTag? _explicitNullValueServiceTokenTag = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenTagRuleServiceTokenTag ServiceTokenTag { get => _explicitNullValueServiceTokenTag; set { _explicitNullValueServiceTokenTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_tag"); else _explicitNullProperties?.Remove("service_token_tag"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenTagRuleServiceTokenTag ServiceTokenTag { get => _explicitNullValueServiceTokenTag; set { _explicitNullValueServiceTokenTag = value; AdditionalData?.Remove("service_token_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_tag"); else _explicitNullProperties?.Remove("service_token_tag"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenTagRuleServiceTokenTag _explicitNullValueServiceTokenTag = default!;
 #endif
         /// <summary>

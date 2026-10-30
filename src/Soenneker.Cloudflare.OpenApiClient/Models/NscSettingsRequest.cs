@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_asn") is { } nullNodeDefaultAsn && nullNodeDefaultAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAsn = null;
+            if (parseNode.GetChildNode("default_asn") is null) { _explicitNullValueDefaultAsn = default!; _explicitNullProperties?.Remove("default_asn"); }
+            else if (parseNode.GetChildNode("default_asn") is { } nullNodeDefaultAsn && nullNodeDefaultAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAsn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default_asn property</summary>
-        public int? DefaultAsn { get => _explicitNullValueDefaultAsn; set { _explicitNullValueDefaultAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_asn"); else _explicitNullProperties?.Remove("default_asn"); } }
+        public int? DefaultAsn { get => _explicitNullValueDefaultAsn; set { _explicitNullValueDefaultAsn = value; AdditionalData?.Remove("default_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_asn"); else _explicitNullProperties?.Remove("default_asn"); } }
         private int? _explicitNullValueDefaultAsn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscSettingsRequest"/> and sets the default values.

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("datasetId") is { } nullNodeDatasetId && nullNodeDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetId = null;
-            if (parseNode.GetChildNode("shardId") is { } nullNodeShardId && nullNodeShardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardId = null;
+            if (parseNode.GetChildNode("datasetId") is null) { _explicitNullValueDatasetId = default!; _explicitNullProperties?.Remove("datasetId"); }
+            else if (parseNode.GetChildNode("datasetId") is { } nullNodeDatasetId && nullNodeDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetId = null;
+            if (parseNode.GetChildNode("shardId") is null) { _explicitNullValueShardId = default!; _explicitNullProperties?.Remove("shardId"); }
+            else if (parseNode.GetChildNode("shardId") is { } nullNodeShardId && nullNodeShardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The datasetId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesDatasetId? DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesDatasetId? DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; AdditionalData?.Remove("datasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesDatasetId? _explicitNullValueDatasetId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesDatasetId DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesDatasetId DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; AdditionalData?.Remove("datasetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetId"); else _explicitNullProperties?.Remove("datasetId"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesDatasetId _explicitNullValueDatasetId = default!;
 #endif
         /// <summary>The shardId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesShardId? ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesShardId? ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; AdditionalData?.Remove("shardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesShardId? _explicitNullValueShardId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesShardId ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesShardId ShardId { get => _explicitNullValueShardId; set { _explicitNullValueShardId = value; AdditionalData?.Remove("shardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shardId"); else _explicitNullProperties?.Remove("shardId"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200ResponsePropertiesCompletenessPropertiesFailedShardsItemsPropertiesShardId _explicitNullValueShardId = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("doh_jwt_duration") is { } nullNodeDohJwtDuration && nullNodeDohJwtDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DohJwtDuration = null;
-            if (parseNode.GetChildNode("service_token_id") is { } nullNodeServiceTokenId && nullNodeServiceTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTokenId = null;
+            if (parseNode.GetChildNode("doh_jwt_duration") is null) { _explicitNullValueDohJwtDuration = default!; _explicitNullProperties?.Remove("doh_jwt_duration"); }
+            else if (parseNode.GetChildNode("doh_jwt_duration") is { } nullNodeDohJwtDuration && nullNodeDohJwtDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DohJwtDuration = null;
+            if (parseNode.GetChildNode("service_token_id") is null) { _explicitNullValueServiceTokenId = default!; _explicitNullProperties?.Remove("service_token_id"); }
+            else if (parseNode.GetChildNode("service_token_id") is { } nullNodeServiceTokenId && nullNodeServiceTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTokenId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The duration the DoH JWT is valid for. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.  Note that the maximum duration for this setting is the same as the key rotation period on the account. Default expiration is 24h</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DohJwtDuration { get => _explicitNullValueDohJwtDuration; set { _explicitNullValueDohJwtDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doh_jwt_duration"); else _explicitNullProperties?.Remove("doh_jwt_duration"); } }
+        public string? DohJwtDuration { get => _explicitNullValueDohJwtDuration; set { _explicitNullValueDohJwtDuration = value; AdditionalData?.Remove("doh_jwt_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doh_jwt_duration"); else _explicitNullProperties?.Remove("doh_jwt_duration"); } }
         private string? _explicitNullValueDohJwtDuration = default!;
 #nullable restore
 #else
-        public string DohJwtDuration { get => _explicitNullValueDohJwtDuration; set { _explicitNullValueDohJwtDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doh_jwt_duration"); else _explicitNullProperties?.Remove("doh_jwt_duration"); } }
+        public string DohJwtDuration { get => _explicitNullValueDohJwtDuration; set { _explicitNullValueDohJwtDuration = value; AdditionalData?.Remove("doh_jwt_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doh_jwt_duration"); else _explicitNullProperties?.Remove("doh_jwt_duration"); } }
         private string _explicitNullValueDohJwtDuration = default!;
 #endif
         /// <summary>The uuid of the service token you want to use for DoH authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceTokenId { get => _explicitNullValueServiceTokenId; set { _explicitNullValueServiceTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_id"); else _explicitNullProperties?.Remove("service_token_id"); } }
+        public string? ServiceTokenId { get => _explicitNullValueServiceTokenId; set { _explicitNullValueServiceTokenId = value; AdditionalData?.Remove("service_token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_id"); else _explicitNullProperties?.Remove("service_token_id"); } }
         private string? _explicitNullValueServiceTokenId = default!;
 #nullable restore
 #else
-        public string ServiceTokenId { get => _explicitNullValueServiceTokenId; set { _explicitNullValueServiceTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_id"); else _explicitNullProperties?.Remove("service_token_id"); } }
+        public string ServiceTokenId { get => _explicitNullValueServiceTokenId; set { _explicitNullValueServiceTokenId = value; AdditionalData?.Remove("service_token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_id"); else _explicitNullProperties?.Remove("service_token_id"); } }
         private string _explicitNullValueServiceTokenId = default!;
 #endif
         /// <summary>

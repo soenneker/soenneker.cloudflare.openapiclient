@@ -18,19 +18,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("identity_update_behavior") is { } nullNodeIdentityUpdateBehavior && nullNodeIdentityUpdateBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityUpdateBehavior = null;
-            if (parseNode.GetChildNode("seat_deprovision") is { } nullNodeSeatDeprovision && nullNodeSeatDeprovision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatDeprovision = null;
-            if (parseNode.GetChildNode("user_deprovision") is { } nullNodeUserDeprovision && nullNodeUserDeprovision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDeprovision = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("identity_update_behavior") is null) { _explicitNullValueIdentityUpdateBehavior = default!; _explicitNullProperties?.Remove("identity_update_behavior"); }
+            else if (parseNode.GetChildNode("identity_update_behavior") is { } nullNodeIdentityUpdateBehavior && nullNodeIdentityUpdateBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityUpdateBehavior = null;
+            if (parseNode.GetChildNode("seat_deprovision") is null) { _explicitNullValueSeatDeprovision = default!; _explicitNullProperties?.Remove("seat_deprovision"); }
+            else if (parseNode.GetChildNode("seat_deprovision") is { } nullNodeSeatDeprovision && nullNodeSeatDeprovision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatDeprovision = null;
+            if (parseNode.GetChildNode("user_deprovision") is null) { _explicitNullValueUserDeprovision = default!; _explicitNullProperties?.Remove("user_deprovision"); }
+            else if (parseNode.GetChildNode("user_deprovision") is { } nullNodeUserDeprovision && nullNodeUserDeprovision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDeprovision = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A flag to enable or disable SCIM for the identity provider.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Indicates how a SCIM event updates a user identity used for policy evaluation. Use &quot;automatic&quot; to automatically update a user&apos;s identity and augment it with fields from the SCIM user resource. Use &quot;reauth&quot; to force re-authentication on group membership updates, user identity update will only occur after successful re-authentication. With &quot;reauth&quot; identities will not contain fields from the SCIM user resource. With &quot;no_action&quot; identities will not be changed by SCIM updates in any way and users will not be prompted to reauthenticate.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProvider2ScimConfigIdentityUpdateBehavior? IdentityUpdateBehavior { get => _explicitNullValueIdentityUpdateBehavior; set { _explicitNullValueIdentityUpdateBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_update_behavior"); else _explicitNullProperties?.Remove("identity_update_behavior"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProvider2ScimConfigIdentityUpdateBehavior? IdentityUpdateBehavior { get => _explicitNullValueIdentityUpdateBehavior; set { _explicitNullValueIdentityUpdateBehavior = value; AdditionalData?.Remove("identity_update_behavior"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_update_behavior"); else _explicitNullProperties?.Remove("identity_update_behavior"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProvider2ScimConfigIdentityUpdateBehavior? _explicitNullValueIdentityUpdateBehavior = default!;
         /// <summary>The base URL of Cloudflare&apos;s SCIM V2.0 API endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ScimBaseUrl { get; private set; }
 #endif
         /// <summary>A flag to remove a user&apos;s seat in Zero Trust when they have been deprovisioned in the Identity Provider.  This cannot be enabled unless user_deprovision is also enabled.</summary>
-        public bool? SeatDeprovision { get => _explicitNullValueSeatDeprovision; set { _explicitNullValueSeatDeprovision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_deprovision"); else _explicitNullProperties?.Remove("seat_deprovision"); } }
+        public bool? SeatDeprovision { get => _explicitNullValueSeatDeprovision; set { _explicitNullValueSeatDeprovision = value; AdditionalData?.Remove("seat_deprovision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_deprovision"); else _explicitNullProperties?.Remove("seat_deprovision"); } }
         private bool? _explicitNullValueSeatDeprovision = default!;
         /// <summary>A read-only token generated when the SCIM integration is enabled for the first time.  It is redacted on subsequent requests. If you lose this you will need to refresh it at /access/identity_providers/:idpID/refresh_scim_secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Secret { get; private set; }
 #endif
         /// <summary>A flag to enable revoking a user&apos;s session in Access and Gateway when they have been deprovisioned in the Identity Provider.</summary>
-        public bool? UserDeprovision { get => _explicitNullValueUserDeprovision; set { _explicitNullValueUserDeprovision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_deprovision"); else _explicitNullProperties?.Remove("user_deprovision"); } }
+        public bool? UserDeprovision { get => _explicitNullValueUserDeprovision; set { _explicitNullValueUserDeprovision = value; AdditionalData?.Remove("user_deprovision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_deprovision"); else _explicitNullProperties?.Remove("user_deprovision"); } }
         private bool? _explicitNullValueUserDeprovision = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProvider2ScimConfig"/> and sets the default values.
@@ -83,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "identity_update_behavior", n => { IdentityUpdateBehavior = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProvider2ScimConfigIdentityUpdateBehavior>(); } },
+                { "identity_update_behavior", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProvider2ScimConfigIdentityUpdateBehavior>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIdentityUpdateBehavior = default; _explicitNullProperties?.Remove("identity_update_behavior"); AdditionalData["identity_update_behavior"] = unknown; } else { IdentityUpdateBehavior = parsed; AdditionalData.Remove("identity_update_behavior"); } } },
                 { "scim_base_url", n => { ScimBaseUrl = n.GetStringValue(); } },
                 { "seat_deprovision", n => { SeatDeprovision = n.GetBoolValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },

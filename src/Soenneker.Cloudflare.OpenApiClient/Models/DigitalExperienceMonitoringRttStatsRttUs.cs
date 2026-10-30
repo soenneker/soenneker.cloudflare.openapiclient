@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("downstream") is { } nullNodeDownstream && nullNodeDownstream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Downstream = null;
-            if (parseNode.GetChildNode("upstream") is { } nullNodeUpstream && nullNodeUpstream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upstream = null;
+            if (parseNode.GetChildNode("downstream") is null) { _explicitNullValueDownstream = default!; _explicitNullProperties?.Remove("downstream"); }
+            else if (parseNode.GetChildNode("downstream") is { } nullNodeDownstream && nullNodeDownstream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Downstream = null;
+            if (parseNode.GetChildNode("upstream") is null) { _explicitNullValueUpstream = default!; _explicitNullProperties?.Remove("upstream"); }
+            else if (parseNode.GetChildNode("upstream") is { } nullNodeUpstream && nullNodeUpstream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upstream = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The downstream property</summary>
-        public int? Downstream { get => _explicitNullValueDownstream; set { _explicitNullValueDownstream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downstream"); else _explicitNullProperties?.Remove("downstream"); } }
+        public int? Downstream { get => _explicitNullValueDownstream; set { _explicitNullValueDownstream = value; AdditionalData?.Remove("downstream"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downstream"); else _explicitNullProperties?.Remove("downstream"); } }
         private int? _explicitNullValueDownstream = default!;
         /// <summary>The upstream property</summary>
-        public int? Upstream { get => _explicitNullValueUpstream; set { _explicitNullValueUpstream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstream"); else _explicitNullProperties?.Remove("upstream"); } }
+        public int? Upstream { get => _explicitNullValueUpstream; set { _explicitNullValueUpstream = value; AdditionalData?.Remove("upstream"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upstream"); else _explicitNullProperties?.Remove("upstream"); } }
         private int? _explicitNullValueUpstream = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringRttStatsRttUs"/> and sets the default values.

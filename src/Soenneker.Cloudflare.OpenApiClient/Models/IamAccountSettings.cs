@@ -18,24 +18,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("abuse_contact_email") is { } nullNodeAbuseContactEmail && nullNodeAbuseContactEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbuseContactEmail = null;
-            if (parseNode.GetChildNode("enforce_twofactor") is { } nullNodeEnforceTwofactor && nullNodeEnforceTwofactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnforceTwofactor = null;
+            if (parseNode.GetChildNode("abuse_contact_email") is null) { _explicitNullValueAbuseContactEmail = default!; _explicitNullProperties?.Remove("abuse_contact_email"); }
+            else if (parseNode.GetChildNode("abuse_contact_email") is { } nullNodeAbuseContactEmail && nullNodeAbuseContactEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbuseContactEmail = null;
+            if (parseNode.GetChildNode("enforce_twofactor") is null) { _explicitNullValueEnforceTwofactor = default!; _explicitNullProperties?.Remove("enforce_twofactor"); }
+            else if (parseNode.GetChildNode("enforce_twofactor") is { } nullNodeEnforceTwofactor && nullNodeEnforceTwofactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnforceTwofactor = null;
         }
 
         /// <summary>Sets an abuse contact email to notify for abuse reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AbuseContactEmail { get => _explicitNullValueAbuseContactEmail; set { _explicitNullValueAbuseContactEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abuse_contact_email"); else _explicitNullProperties?.Remove("abuse_contact_email"); } }
+        public string? AbuseContactEmail { get => _explicitNullValueAbuseContactEmail; set { _explicitNullValueAbuseContactEmail = value; AdditionalData?.Remove("abuse_contact_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abuse_contact_email"); else _explicitNullProperties?.Remove("abuse_contact_email"); } }
         private string? _explicitNullValueAbuseContactEmail = default!;
 #nullable restore
 #else
-        public string AbuseContactEmail { get => _explicitNullValueAbuseContactEmail; set { _explicitNullValueAbuseContactEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abuse_contact_email"); else _explicitNullProperties?.Remove("abuse_contact_email"); } }
+        public string AbuseContactEmail { get => _explicitNullValueAbuseContactEmail; set { _explicitNullValueAbuseContactEmail = value; AdditionalData?.Remove("abuse_contact_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abuse_contact_email"); else _explicitNullProperties?.Remove("abuse_contact_email"); } }
         private string _explicitNullValueAbuseContactEmail = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether membership in this account requires thatTwo-Factor Authentication is enabled</summary>
-        public bool? EnforceTwofactor { get => _explicitNullValueEnforceTwofactor; set { _explicitNullValueEnforceTwofactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforce_twofactor"); else _explicitNullProperties?.Remove("enforce_twofactor"); } }
+        public bool? EnforceTwofactor { get => _explicitNullValueEnforceTwofactor; set { _explicitNullValueEnforceTwofactor = value; AdditionalData?.Remove("enforce_twofactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforce_twofactor"); else _explicitNullProperties?.Remove("enforce_twofactor"); } }
         private bool? _explicitNullValueEnforceTwofactor = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountSettings"/> and sets the default values.

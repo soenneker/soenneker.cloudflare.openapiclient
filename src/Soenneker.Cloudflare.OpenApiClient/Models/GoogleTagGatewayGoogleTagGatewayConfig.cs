@@ -18,43 +18,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
-            if (parseNode.GetChildNode("hideOriginalIp") is { } nullNodeHideOriginalIp && nullNodeHideOriginalIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideOriginalIp = null;
-            if (parseNode.GetChildNode("measurementId") is { } nullNodeMeasurementId && nullNodeMeasurementId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeasurementId = null;
-            if (parseNode.GetChildNode("setUpTag") is { } nullNodeSetUpTag && nullNodeSetUpTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetUpTag = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("endpoint") is null) { _explicitNullValueEndpoint = default!; _explicitNullProperties?.Remove("endpoint"); }
+            else if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("hideOriginalIp") is null) { _explicitNullValueHideOriginalIp = default!; _explicitNullProperties?.Remove("hideOriginalIp"); }
+            else if (parseNode.GetChildNode("hideOriginalIp") is { } nullNodeHideOriginalIp && nullNodeHideOriginalIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideOriginalIp = null;
+            if (parseNode.GetChildNode("measurementId") is null) { _explicitNullValueMeasurementId = default!; _explicitNullProperties?.Remove("measurementId"); }
+            else if (parseNode.GetChildNode("measurementId") is { } nullNodeMeasurementId && nullNodeMeasurementId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeasurementId = null;
+            if (parseNode.GetChildNode("setUpTag") is null) { _explicitNullValueSetUpTag = default!; _explicitNullProperties?.Remove("setUpTag"); }
+            else if (parseNode.GetChildNode("setUpTag") is { } nullNodeSetUpTag && nullNodeSetUpTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetUpTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enables or disables Google Tag Gateway for this zone.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Specifies the endpoint path for proxying Google Tag Manager requests. Use an absolute path starting with &apos;/&apos;, with no nested paths and alphanumeric characters only (e.g. /metrics).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        public string? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
         private string? _explicitNullValueEndpoint = default!;
 #nullable restore
 #else
-        public string Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        public string Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
         private string _explicitNullValueEndpoint = default!;
 #endif
         /// <summary>Hides the original client IP address from Google when enabled.</summary>
-        public bool? HideOriginalIp { get => _explicitNullValueHideOriginalIp; set { _explicitNullValueHideOriginalIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideOriginalIp"); else _explicitNullProperties?.Remove("hideOriginalIp"); } }
+        public bool? HideOriginalIp { get => _explicitNullValueHideOriginalIp; set { _explicitNullValueHideOriginalIp = value; AdditionalData?.Remove("hideOriginalIp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideOriginalIp"); else _explicitNullProperties?.Remove("hideOriginalIp"); } }
         private bool? _explicitNullValueHideOriginalIp = default!;
         /// <summary>Specify the Google Tag Manager container or measurement ID (e.g. GTM-XXXXXXX or G-XXXXXXXXXX).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MeasurementId { get => _explicitNullValueMeasurementId; set { _explicitNullValueMeasurementId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurementId"); else _explicitNullProperties?.Remove("measurementId"); } }
+        public string? MeasurementId { get => _explicitNullValueMeasurementId; set { _explicitNullValueMeasurementId = value; AdditionalData?.Remove("measurementId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurementId"); else _explicitNullProperties?.Remove("measurementId"); } }
         private string? _explicitNullValueMeasurementId = default!;
 #nullable restore
 #else
-        public string MeasurementId { get => _explicitNullValueMeasurementId; set { _explicitNullValueMeasurementId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurementId"); else _explicitNullProperties?.Remove("measurementId"); } }
+        public string MeasurementId { get => _explicitNullValueMeasurementId; set { _explicitNullValueMeasurementId = value; AdditionalData?.Remove("measurementId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurementId"); else _explicitNullProperties?.Remove("measurementId"); } }
         private string _explicitNullValueMeasurementId = default!;
 #endif
         /// <summary>Set up the associated Google Tag on the zone automatically when enabled.</summary>
-        public bool? SetUpTag { get => _explicitNullValueSetUpTag; set { _explicitNullValueSetUpTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setUpTag"); else _explicitNullProperties?.Remove("setUpTag"); } }
+        public bool? SetUpTag { get => _explicitNullValueSetUpTag; set { _explicitNullValueSetUpTag = value; AdditionalData?.Remove("setUpTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setUpTag"); else _explicitNullProperties?.Remove("setUpTag"); } }
         private bool? _explicitNullValueSetUpTag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GoogleTagGatewayGoogleTagGatewayConfig"/> and sets the default values.

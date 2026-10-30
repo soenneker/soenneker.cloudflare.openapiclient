@@ -17,46 +17,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clientToAppRttMs") is { } nullNodeClientToAppRttMs && nullNodeClientToAppRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToAppRttMs = null;
-            if (parseNode.GetChildNode("clientToCfEgressRttMs") is { } nullNodeClientToCfEgressRttMs && nullNodeClientToCfEgressRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToCfEgressRttMs = null;
-            if (parseNode.GetChildNode("clientToCfIngressRttMs") is { } nullNodeClientToCfIngressRttMs && nullNodeClientToCfIngressRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToCfIngressRttMs = null;
-            if (parseNode.GetChildNode("clientToIspRttMs") is { } nullNodeClientToIspRttMs && nullNodeClientToIspRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToIspRttMs = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("clientToAppRttMs") is null) { _explicitNullValueClientToAppRttMs = default!; _explicitNullProperties?.Remove("clientToAppRttMs"); }
+            else if (parseNode.GetChildNode("clientToAppRttMs") is { } nullNodeClientToAppRttMs && nullNodeClientToAppRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToAppRttMs = null;
+            if (parseNode.GetChildNode("clientToCfEgressRttMs") is null) { _explicitNullValueClientToCfEgressRttMs = default!; _explicitNullProperties?.Remove("clientToCfEgressRttMs"); }
+            else if (parseNode.GetChildNode("clientToCfEgressRttMs") is { } nullNodeClientToCfEgressRttMs && nullNodeClientToCfEgressRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToCfEgressRttMs = null;
+            if (parseNode.GetChildNode("clientToCfIngressRttMs") is null) { _explicitNullValueClientToCfIngressRttMs = default!; _explicitNullProperties?.Remove("clientToCfIngressRttMs"); }
+            else if (parseNode.GetChildNode("clientToCfIngressRttMs") is { } nullNodeClientToCfIngressRttMs && nullNodeClientToCfIngressRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToCfIngressRttMs = null;
+            if (parseNode.GetChildNode("clientToIspRttMs") is null) { _explicitNullValueClientToIspRttMs = default!; _explicitNullProperties?.Remove("clientToIspRttMs"); }
+            else if (parseNode.GetChildNode("clientToIspRttMs") is { } nullNodeClientToIspRttMs && nullNodeClientToIspRttMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientToIspRttMs = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Round trip time in ms of the client to app mile</summary>
-        public int? ClientToAppRttMs { get => _explicitNullValueClientToAppRttMs; set { _explicitNullValueClientToAppRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToAppRttMs"); else _explicitNullProperties?.Remove("clientToAppRttMs"); } }
+        public int? ClientToAppRttMs { get => _explicitNullValueClientToAppRttMs; set { _explicitNullValueClientToAppRttMs = value; AdditionalData?.Remove("clientToAppRttMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToAppRttMs"); else _explicitNullProperties?.Remove("clientToAppRttMs"); } }
         private int? _explicitNullValueClientToAppRttMs = default!;
         /// <summary>Round trip time in ms of the client to Cloudflare egress mile</summary>
-        public int? ClientToCfEgressRttMs { get => _explicitNullValueClientToCfEgressRttMs; set { _explicitNullValueClientToCfEgressRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToCfEgressRttMs"); else _explicitNullProperties?.Remove("clientToCfEgressRttMs"); } }
+        public int? ClientToCfEgressRttMs { get => _explicitNullValueClientToCfEgressRttMs; set { _explicitNullValueClientToCfEgressRttMs = value; AdditionalData?.Remove("clientToCfEgressRttMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToCfEgressRttMs"); else _explicitNullProperties?.Remove("clientToCfEgressRttMs"); } }
         private int? _explicitNullValueClientToCfEgressRttMs = default!;
         /// <summary>Round trip time in ms of the client to Cloudflare ingress mile</summary>
-        public int? ClientToCfIngressRttMs { get => _explicitNullValueClientToCfIngressRttMs; set { _explicitNullValueClientToCfIngressRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToCfIngressRttMs"); else _explicitNullProperties?.Remove("clientToCfIngressRttMs"); } }
+        public int? ClientToCfIngressRttMs { get => _explicitNullValueClientToCfIngressRttMs; set { _explicitNullValueClientToCfIngressRttMs = value; AdditionalData?.Remove("clientToCfIngressRttMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToCfIngressRttMs"); else _explicitNullProperties?.Remove("clientToCfIngressRttMs"); } }
         private int? _explicitNullValueClientToCfIngressRttMs = default!;
         /// <summary>Round trip time in ms of the client to ISP mile</summary>
-        public int? ClientToIspRttMs { get => _explicitNullValueClientToIspRttMs; set { _explicitNullValueClientToIspRttMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToIspRttMs"); else _explicitNullProperties?.Remove("clientToIspRttMs"); } }
+        public int? ClientToIspRttMs { get => _explicitNullValueClientToIspRttMs; set { _explicitNullValueClientToIspRttMs = value; AdditionalData?.Remove("clientToIspRttMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientToIspRttMs"); else _explicitNullProperties?.Remove("clientToIspRttMs"); } }
         private int? _explicitNullValueClientToIspRttMs = default!;
         /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>

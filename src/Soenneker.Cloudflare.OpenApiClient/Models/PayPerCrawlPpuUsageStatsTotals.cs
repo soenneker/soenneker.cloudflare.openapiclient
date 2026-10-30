@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("total_price_usd_microcents") is { } nullNodeTotalPriceUsdMicrocents && nullNodeTotalPriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPriceUsdMicrocents = null;
-            if (parseNode.GetChildNode("usage_count") is { } nullNodeUsageCount && nullNodeUsageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCount = null;
+            if (parseNode.GetChildNode("total_price_usd_microcents") is null) { _explicitNullValueTotalPriceUsdMicrocents = default!; _explicitNullProperties?.Remove("total_price_usd_microcents"); }
+            else if (parseNode.GetChildNode("total_price_usd_microcents") is { } nullNodeTotalPriceUsdMicrocents && nullNodeTotalPriceUsdMicrocents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPriceUsdMicrocents = null;
+            if (parseNode.GetChildNode("usage_count") is null) { _explicitNullValueUsageCount = default!; _explicitNullProperties?.Remove("usage_count"); }
+            else if (parseNode.GetChildNode("usage_count") is { } nullNodeUsageCount && nullNodeUsageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Full gross value of reported usage in USD microcents before the publisher revenue share. 1 USD = 100,000,000 microcents.</summary>
-        public long? TotalPriceUsdMicrocents { get => _explicitNullValueTotalPriceUsdMicrocents; set { _explicitNullValueTotalPriceUsdMicrocents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_price_usd_microcents"); else _explicitNullProperties?.Remove("total_price_usd_microcents"); } }
+        public long? TotalPriceUsdMicrocents { get => _explicitNullValueTotalPriceUsdMicrocents; set { _explicitNullValueTotalPriceUsdMicrocents = value; AdditionalData?.Remove("total_price_usd_microcents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_price_usd_microcents"); else _explicitNullProperties?.Remove("total_price_usd_microcents"); } }
         private long? _explicitNullValueTotalPriceUsdMicrocents = default!;
         /// <summary>Number of reported usage events in the selected window.</summary>
-        public long? UsageCount { get => _explicitNullValueUsageCount; set { _explicitNullValueUsageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_count"); else _explicitNullProperties?.Remove("usage_count"); } }
+        public long? UsageCount { get => _explicitNullValueUsageCount; set { _explicitNullValueUsageCount = value; AdditionalData?.Remove("usage_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_count"); else _explicitNullProperties?.Remove("usage_count"); } }
         private long? _explicitNullValueUsageCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuUsageStatsTotals"/> and sets the default values.

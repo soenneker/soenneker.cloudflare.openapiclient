@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cf_api_id") is { } nullNodeCfApiId && nullNodeCfApiId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfApiId = null;
-            if (parseNode.GetChildNode("cf_api_key") is { } nullNodeCfApiKey && nullNodeCfApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfApiKey = null;
-            if (parseNode.GetChildNode("legacy") is { } nullNodeLegacy && nullNodeLegacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legacy = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("cf_api_id") is null) { _explicitNullValueCfApiId = default!; _explicitNullProperties?.Remove("cf_api_id"); }
+            else if (parseNode.GetChildNode("cf_api_id") is { } nullNodeCfApiId && nullNodeCfApiId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfApiId = null;
+            if (parseNode.GetChildNode("cf_api_key") is null) { _explicitNullValueCfApiKey = default!; _explicitNullProperties?.Remove("cf_api_key"); }
+            else if (parseNode.GetChildNode("cf_api_key") is { } nullNodeCfApiKey && nullNodeCfApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfApiKey = null;
+            if (parseNode.GetChildNode("legacy") is null) { _explicitNullValueLegacy = default!; _explicitNullProperties?.Remove("legacy"); }
+            else if (parseNode.GetChildNode("legacy") is { } nullNodeLegacy && nullNodeLegacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legacy = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cf_api_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CfApiId { get => _explicitNullValueCfApiId; set { _explicitNullValueCfApiId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_id"); else _explicitNullProperties?.Remove("cf_api_id"); } }
+        public string? CfApiId { get => _explicitNullValueCfApiId; set { _explicitNullValueCfApiId = value; AdditionalData?.Remove("cf_api_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_id"); else _explicitNullProperties?.Remove("cf_api_id"); } }
         private string? _explicitNullValueCfApiId = default!;
 #nullable restore
 #else
-        public string CfApiId { get => _explicitNullValueCfApiId; set { _explicitNullValueCfApiId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_id"); else _explicitNullProperties?.Remove("cf_api_id"); } }
+        public string CfApiId { get => _explicitNullValueCfApiId; set { _explicitNullValueCfApiId = value; AdditionalData?.Remove("cf_api_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_id"); else _explicitNullProperties?.Remove("cf_api_id"); } }
         private string _explicitNullValueCfApiId = default!;
 #endif
         /// <summary>The cf_api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CfApiKey { get => _explicitNullValueCfApiKey; set { _explicitNullValueCfApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_key"); else _explicitNullProperties?.Remove("cf_api_key"); } }
+        public string? CfApiKey { get => _explicitNullValueCfApiKey; set { _explicitNullValueCfApiKey = value; AdditionalData?.Remove("cf_api_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_key"); else _explicitNullProperties?.Remove("cf_api_key"); } }
         private string? _explicitNullValueCfApiKey = default!;
 #nullable restore
 #else
-        public string CfApiKey { get => _explicitNullValueCfApiKey; set { _explicitNullValueCfApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_key"); else _explicitNullProperties?.Remove("cf_api_key"); } }
+        public string CfApiKey { get => _explicitNullValueCfApiKey; set { _explicitNullValueCfApiKey = value; AdditionalData?.Remove("cf_api_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf_api_key"); else _explicitNullProperties?.Remove("cf_api_key"); } }
         private string _explicitNullValueCfApiKey = default!;
 #endif
         /// <summary>The legacy property</summary>
-        public bool? Legacy { get => _explicitNullValueLegacy; set { _explicitNullValueLegacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy"); else _explicitNullProperties?.Remove("legacy"); } }
+        public bool? Legacy { get => _explicitNullValueLegacy; set { _explicitNullValueLegacy = value; AdditionalData?.Remove("legacy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy"); else _explicitNullProperties?.Remove("legacy"); } }
         private bool? _explicitNullValueLegacy = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("CLEAN") is { } nullNodeCLEAN && nullNodeCLEAN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CLEAN = null;
-            if (parseNode.GetChildNode("COMPROMISED") is { } nullNodeCOMPROMISED && nullNodeCOMPROMISED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) COMPROMISED = null;
+            if (parseNode.GetChildNode("CLEAN") is null) { _explicitNullValueCLEAN = default!; _explicitNullProperties?.Remove("CLEAN"); }
+            else if (parseNode.GetChildNode("CLEAN") is { } nullNodeCLEAN && nullNodeCLEAN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CLEAN = null;
+            if (parseNode.GetChildNode("COMPROMISED") is null) { _explicitNullValueCOMPROMISED = default!; _explicitNullProperties?.Remove("COMPROMISED"); }
+            else if (parseNode.GetChildNode("COMPROMISED") is { } nullNodeCOMPROMISED && nullNodeCOMPROMISED.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) COMPROMISED = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
+        public string? CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; AdditionalData?.Remove("CLEAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
         private string? _explicitNullValueCLEAN = default!;
 #nullable restore
 #else
-        public string CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
+        public string CLEAN { get => _explicitNullValueCLEAN; set { _explicitNullValueCLEAN = value; AdditionalData?.Remove("CLEAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLEAN"); else _explicitNullProperties?.Remove("CLEAN"); } }
         private string _explicitNullValueCLEAN = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
+        public string? COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; AdditionalData?.Remove("COMPROMISED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
         private string? _explicitNullValueCOMPROMISED = default!;
 #nullable restore
 #else
-        public string COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
+        public string COMPROMISED { get => _explicitNullValueCOMPROMISED; set { _explicitNullValueCOMPROMISED = value; AdditionalData?.Remove("COMPROMISED"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("COMPROMISED"); else _explicitNullProperties?.Remove("COMPROMISED"); } }
         private string _explicitNullValueCOMPROMISED = default!;
 #endif
         /// <summary>

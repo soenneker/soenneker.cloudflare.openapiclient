@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("markdownNegotiation") is { } nullNodeMarkdownNegotiation && nullNodeMarkdownNegotiation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarkdownNegotiation = null;
+            if (parseNode.GetChildNode("markdownNegotiation") is null) { _explicitNullValueMarkdownNegotiation = default!; _explicitNullProperties?.Remove("markdownNegotiation"); }
+            else if (parseNode.GetChildNode("markdownNegotiation") is { } nullNodeMarkdownNegotiation && nullNodeMarkdownNegotiation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarkdownNegotiation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The markdownNegotiation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksContentAccessibilityMarkdownNegotiation? MarkdownNegotiation { get => _explicitNullValueMarkdownNegotiation; set { _explicitNullValueMarkdownNegotiation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdownNegotiation"); else _explicitNullProperties?.Remove("markdownNegotiation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksContentAccessibilityMarkdownNegotiation? MarkdownNegotiation { get => _explicitNullValueMarkdownNegotiation; set { _explicitNullValueMarkdownNegotiation = value; AdditionalData?.Remove("markdownNegotiation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdownNegotiation"); else _explicitNullProperties?.Remove("markdownNegotiation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksContentAccessibilityMarkdownNegotiation? _explicitNullValueMarkdownNegotiation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksContentAccessibilityMarkdownNegotiation MarkdownNegotiation { get => _explicitNullValueMarkdownNegotiation; set { _explicitNullValueMarkdownNegotiation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdownNegotiation"); else _explicitNullProperties?.Remove("markdownNegotiation"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksContentAccessibilityMarkdownNegotiation MarkdownNegotiation { get => _explicitNullValueMarkdownNegotiation; set { _explicitNullValueMarkdownNegotiation = value; AdditionalData?.Remove("markdownNegotiation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdownNegotiation"); else _explicitNullProperties?.Remove("markdownNegotiation"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanV2200ResponseMetaProcessorsAgentReadinessChecksContentAccessibilityMarkdownNegotiation _explicitNullValueMarkdownNegotiation = default!;
 #endif
         /// <summary>

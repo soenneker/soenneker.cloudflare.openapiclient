@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("consuming_transport") is { } nullNodeConsumingTransport && nullNodeConsumingTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumingTransport = null;
-            if (parseNode.GetChildNode("producing_transport") is { } nullNodeProducingTransport && nullNodeProducingTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProducingTransport = null;
+            if (parseNode.GetChildNode("consuming_transport") is null) { _explicitNullValueConsumingTransport = default!; _explicitNullProperties?.Remove("consuming_transport"); }
+            else if (parseNode.GetChildNode("consuming_transport") is { } nullNodeConsumingTransport && nullNodeConsumingTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumingTransport = null;
+            if (parseNode.GetChildNode("producing_transport") is null) { _explicitNullValueProducingTransport = default!; _explicitNullProperties?.Remove("producing_transport"); }
+            else if (parseNode.GetChildNode("producing_transport") is { } nullNodeProducingTransport && nullNodeProducingTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProducingTransport = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The consuming_transport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats>? ConsumingTransport { get => _explicitNullValueConsumingTransport; set { _explicitNullValueConsumingTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consuming_transport"); else _explicitNullProperties?.Remove("consuming_transport"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats>? ConsumingTransport { get => _explicitNullValueConsumingTransport; set { _explicitNullValueConsumingTransport = value; AdditionalData?.Remove("consuming_transport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consuming_transport"); else _explicitNullProperties?.Remove("consuming_transport"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats>? _explicitNullValueConsumingTransport = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats> ConsumingTransport { get => _explicitNullValueConsumingTransport; set { _explicitNullValueConsumingTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consuming_transport"); else _explicitNullProperties?.Remove("consuming_transport"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats> ConsumingTransport { get => _explicitNullValueConsumingTransport; set { _explicitNullValueConsumingTransport = value; AdditionalData?.Remove("consuming_transport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consuming_transport"); else _explicitNullProperties?.Remove("consuming_transport"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats> _explicitNullValueConsumingTransport = default!;
 #endif
         /// <summary>The producing_transport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats>? ProducingTransport { get => _explicitNullValueProducingTransport; set { _explicitNullValueProducingTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("producing_transport"); else _explicitNullProperties?.Remove("producing_transport"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats>? ProducingTransport { get => _explicitNullValueProducingTransport; set { _explicitNullValueProducingTransport = value; AdditionalData?.Remove("producing_transport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("producing_transport"); else _explicitNullProperties?.Remove("producing_transport"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats>? _explicitNullValueProducingTransport = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats> ProducingTransport { get => _explicitNullValueProducingTransport; set { _explicitNullValueProducingTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("producing_transport"); else _explicitNullProperties?.Remove("producing_transport"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats> ProducingTransport { get => _explicitNullValueProducingTransport; set { _explicitNullValueProducingTransport = value; AdditionalData?.Remove("producing_transport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("producing_transport"); else _explicitNullProperties?.Remove("producing_transport"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitCandidatePairStats> _explicitNullValueProducingTransport = default!;
 #endif
         /// <summary>

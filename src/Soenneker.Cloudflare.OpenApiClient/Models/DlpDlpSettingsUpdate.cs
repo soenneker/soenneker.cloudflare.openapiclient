@@ -18,27 +18,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ai_context_analysis") is { } nullNodeAiContextAnalysis && nullNodeAiContextAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiContextAnalysis = null;
-            if (parseNode.GetChildNode("ocr") is { } nullNodeOcr && nullNodeOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ocr = null;
-            if (parseNode.GetChildNode("payload_logging") is { } nullNodePayloadLogging && nullNodePayloadLogging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadLogging = null;
+            if (parseNode.GetChildNode("ai_context_analysis") is null) { _explicitNullValueAiContextAnalysis = default!; _explicitNullProperties?.Remove("ai_context_analysis"); }
+            else if (parseNode.GetChildNode("ai_context_analysis") is { } nullNodeAiContextAnalysis && nullNodeAiContextAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiContextAnalysis = null;
+            if (parseNode.GetChildNode("ocr") is null) { _explicitNullValueOcr = default!; _explicitNullProperties?.Remove("ocr"); }
+            else if (parseNode.GetChildNode("ocr") is { } nullNodeOcr && nullNodeOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ocr = null;
+            if (parseNode.GetChildNode("payload_logging") is null) { _explicitNullValuePayloadLogging = default!; _explicitNullProperties?.Remove("payload_logging"); }
+            else if (parseNode.GetChildNode("payload_logging") is { } nullNodePayloadLogging && nullNodePayloadLogging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadLogging = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether AI context analysis is enabled at the account level.</summary>
-        public bool? AiContextAnalysis { get => _explicitNullValueAiContextAnalysis; set { _explicitNullValueAiContextAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_context_analysis"); else _explicitNullProperties?.Remove("ai_context_analysis"); } }
+        public bool? AiContextAnalysis { get => _explicitNullValueAiContextAnalysis; set { _explicitNullValueAiContextAnalysis = value; AdditionalData?.Remove("ai_context_analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_context_analysis"); else _explicitNullProperties?.Remove("ai_context_analysis"); } }
         private bool? _explicitNullValueAiContextAnalysis = default!;
         /// <summary>Whether OCR is enabled at the account level.</summary>
-        public bool? Ocr { get => _explicitNullValueOcr; set { _explicitNullValueOcr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr"); else _explicitNullProperties?.Remove("ocr"); } }
+        public bool? Ocr { get => _explicitNullValueOcr; set { _explicitNullValueOcr = value; AdditionalData?.Remove("ocr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr"); else _explicitNullProperties?.Remove("ocr"); } }
         private bool? _explicitNullValueOcr = default!;
         /// <summary>The payload_logging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging? PayloadLogging { get => _explicitNullValuePayloadLogging; set { _explicitNullValuePayloadLogging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_logging"); else _explicitNullProperties?.Remove("payload_logging"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging? PayloadLogging { get => _explicitNullValuePayloadLogging; set { _explicitNullValuePayloadLogging = value; AdditionalData?.Remove("payload_logging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_logging"); else _explicitNullProperties?.Remove("payload_logging"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging? _explicitNullValuePayloadLogging = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging PayloadLogging { get => _explicitNullValuePayloadLogging; set { _explicitNullValuePayloadLogging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_logging"); else _explicitNullProperties?.Remove("payload_logging"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging PayloadLogging { get => _explicitNullValuePayloadLogging; set { _explicitNullValuePayloadLogging = value; AdditionalData?.Remove("payload_logging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload_logging"); else _explicitNullProperties?.Remove("payload_logging"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging _explicitNullValuePayloadLogging = default!;
 #endif
         /// <summary>

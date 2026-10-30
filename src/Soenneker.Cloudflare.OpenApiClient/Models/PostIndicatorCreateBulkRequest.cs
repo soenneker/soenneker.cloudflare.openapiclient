@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoCreateType") is { } nullNodeAutoCreateType && nullNodeAutoCreateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCreateType = null;
-            if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
+            if (parseNode.GetChildNode("autoCreateType") is null) { _explicitNullValueAutoCreateType = default!; _explicitNullProperties?.Remove("autoCreateType"); }
+            else if (parseNode.GetChildNode("autoCreateType") is { } nullNodeAutoCreateType && nullNodeAutoCreateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCreateType = null;
+            if (parseNode.GetChildNode("indicators") is null) { _explicitNullValueIndicators = default!; _explicitNullProperties?.Remove("indicators"); }
+            else if (parseNode.GetChildNode("indicators") is { } nullNodeIndicators && nullNodeIndicators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicators = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Global flag to automatically create indicator types if they don&apos;t exist. Individual indicators can override this with their own autoCreateType flag.</summary>
-        public bool? AutoCreateType { get => _explicitNullValueAutoCreateType; set { _explicitNullValueAutoCreateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCreateType"); else _explicitNullProperties?.Remove("autoCreateType"); } }
+        public bool? AutoCreateType { get => _explicitNullValueAutoCreateType; set { _explicitNullValueAutoCreateType = value; AdditionalData?.Remove("autoCreateType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCreateType"); else _explicitNullProperties?.Remove("autoCreateType"); } }
         private bool? _explicitNullValueAutoCreateType = default!;
         /// <summary>The indicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateBulkRequestIndicatorsItem>? Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateBulkRequestIndicatorsItem>? Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; AdditionalData?.Remove("indicators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateBulkRequestIndicatorsItem>? _explicitNullValueIndicators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateBulkRequestIndicatorsItem> Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateBulkRequestIndicatorsItem> Indicators { get => _explicitNullValueIndicators; set { _explicitNullValueIndicators = value; AdditionalData?.Remove("indicators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicators"); else _explicitNullProperties?.Remove("indicators"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateBulkRequestIndicatorsItem> _explicitNullValueIndicators = default!;
 #endif
         /// <summary>

@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("indexType") is { } nullNodeIndexType && nullNodeIndexType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexType = null;
-            if (parseNode.GetChildNode("propertyName") is { } nullNodePropertyName && nullNodePropertyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyName = null;
+            if (parseNode.GetChildNode("indexType") is null) { _explicitNullValueIndexType = default!; _explicitNullProperties?.Remove("indexType"); }
+            else if (parseNode.GetChildNode("indexType") is { } nullNodeIndexType && nullNodeIndexType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexType = null;
+            if (parseNode.GetChildNode("propertyName") is null) { _explicitNullValuePropertyName = default!; _explicitNullProperties?.Remove("propertyName"); }
+            else if (parseNode.GetChildNode("propertyName") is { } nullNodePropertyName && nullNodePropertyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the type of metadata property to index.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType? IndexType { get => _explicitNullValueIndexType; set { _explicitNullValueIndexType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexType"); else _explicitNullProperties?.Remove("indexType"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType? IndexType { get => _explicitNullValueIndexType; set { _explicitNullValueIndexType = value; AdditionalData?.Remove("indexType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexType"); else _explicitNullProperties?.Remove("indexType"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType? _explicitNullValueIndexType = default!;
         /// <summary>Specifies the metadata property to index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyName { get => _explicitNullValuePropertyName; set { _explicitNullValuePropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("propertyName"); else _explicitNullProperties?.Remove("propertyName"); } }
+        public string? PropertyName { get => _explicitNullValuePropertyName; set { _explicitNullValuePropertyName = value; AdditionalData?.Remove("propertyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("propertyName"); else _explicitNullProperties?.Remove("propertyName"); } }
         private string? _explicitNullValuePropertyName = default!;
 #nullable restore
 #else
-        public string PropertyName { get => _explicitNullValuePropertyName; set { _explicitNullValuePropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("propertyName"); else _explicitNullProperties?.Remove("propertyName"); } }
+        public string PropertyName { get => _explicitNullValuePropertyName; set { _explicitNullValuePropertyName = value; AdditionalData?.Remove("propertyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("propertyName"); else _explicitNullProperties?.Remove("propertyName"); } }
         private string _explicitNullValuePropertyName = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "indexType", n => { IndexType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType>(); } },
+                { "indexType", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIndexType = default; _explicitNullProperties?.Remove("indexType"); AdditionalData["indexType"] = unknown; } else { IndexType = parsed; AdditionalData.Remove("indexType"); } } },
                 { "propertyName", n => { PropertyName = n.GetStringValue(); } },
             };
         }

@@ -18,13 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("frame_per_second") is { } nullNodeFramePerSecond && nullNodeFramePerSecond.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FramePerSecond = null;
-            if (parseNode.GetChildNode("frame_width") is { } nullNodeFrameWidth && nullNodeFrameWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrameWidth = null;
-            if (parseNode.GetChildNode("issues") is { } nullNodeIssues && nullNodeIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issues = null;
-            if (parseNode.GetChildNode("jitter_buffer_delay") is { } nullNodeJitterBufferDelay && nullNodeJitterBufferDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterBufferDelay = null;
-            if (parseNode.GetChildNode("key_frames_decoded_fraction") is { } nullNodeKeyFramesDecodedFraction && nullNodeKeyFramesDecodedFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyFramesDecodedFraction = null;
-            if (parseNode.GetChildNode("packet_loss") is { } nullNodePacketLoss && nullNodePacketLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLoss = null;
-            if (parseNode.GetChildNode("quality_mos") is { } nullNodeQualityMos && nullNodeQualityMos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualityMos = null;
+            if (parseNode.GetChildNode("frame_per_second") is null) { _explicitNullValueFramePerSecond = default!; _explicitNullProperties?.Remove("frame_per_second"); }
+            else if (parseNode.GetChildNode("frame_per_second") is { } nullNodeFramePerSecond && nullNodeFramePerSecond.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FramePerSecond = null;
+            if (parseNode.GetChildNode("frame_width") is null) { _explicitNullValueFrameWidth = default!; _explicitNullProperties?.Remove("frame_width"); }
+            else if (parseNode.GetChildNode("frame_width") is { } nullNodeFrameWidth && nullNodeFrameWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrameWidth = null;
+            if (parseNode.GetChildNode("issues") is null) { _explicitNullValueIssues = default!; _explicitNullProperties?.Remove("issues"); }
+            else if (parseNode.GetChildNode("issues") is { } nullNodeIssues && nullNodeIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issues = null;
+            if (parseNode.GetChildNode("jitter_buffer_delay") is null) { _explicitNullValueJitterBufferDelay = default!; _explicitNullProperties?.Remove("jitter_buffer_delay"); }
+            else if (parseNode.GetChildNode("jitter_buffer_delay") is { } nullNodeJitterBufferDelay && nullNodeJitterBufferDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JitterBufferDelay = null;
+            if (parseNode.GetChildNode("key_frames_decoded_fraction") is null) { _explicitNullValueKeyFramesDecodedFraction = default!; _explicitNullProperties?.Remove("key_frames_decoded_fraction"); }
+            else if (parseNode.GetChildNode("key_frames_decoded_fraction") is { } nullNodeKeyFramesDecodedFraction && nullNodeKeyFramesDecodedFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyFramesDecodedFraction = null;
+            if (parseNode.GetChildNode("packet_loss") is null) { _explicitNullValuePacketLoss = default!; _explicitNullProperties?.Remove("packet_loss"); }
+            else if (parseNode.GetChildNode("packet_loss") is { } nullNodePacketLoss && nullNodePacketLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketLoss = null;
+            if (parseNode.GetChildNode("quality_mos") is null) { _explicitNullValueQualityMos = default!; _explicitNullProperties?.Remove("quality_mos"); }
+            else if (parseNode.GetChildNode("quality_mos") is { } nullNodeQualityMos && nullNodeQualityMos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualityMos = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,64 +39,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Distribution summary with average and percentiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? FramePerSecond { get => _explicitNullValueFramePerSecond; set { _explicitNullValueFramePerSecond = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_per_second"); else _explicitNullProperties?.Remove("frame_per_second"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? FramePerSecond { get => _explicitNullValueFramePerSecond; set { _explicitNullValueFramePerSecond = value; AdditionalData?.Remove("frame_per_second"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_per_second"); else _explicitNullProperties?.Remove("frame_per_second"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? _explicitNullValueFramePerSecond = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats FramePerSecond { get => _explicitNullValueFramePerSecond; set { _explicitNullValueFramePerSecond = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_per_second"); else _explicitNullProperties?.Remove("frame_per_second"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats FramePerSecond { get => _explicitNullValueFramePerSecond; set { _explicitNullValueFramePerSecond = value; AdditionalData?.Remove("frame_per_second"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_per_second"); else _explicitNullProperties?.Remove("frame_per_second"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats _explicitNullValueFramePerSecond = default!;
 #endif
         /// <summary>Distribution summary with average and percentiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? FrameWidth { get => _explicitNullValueFrameWidth; set { _explicitNullValueFrameWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_width"); else _explicitNullProperties?.Remove("frame_width"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? FrameWidth { get => _explicitNullValueFrameWidth; set { _explicitNullValueFrameWidth = value; AdditionalData?.Remove("frame_width"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_width"); else _explicitNullProperties?.Remove("frame_width"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? _explicitNullValueFrameWidth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats FrameWidth { get => _explicitNullValueFrameWidth; set { _explicitNullValueFrameWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_width"); else _explicitNullProperties?.Remove("frame_width"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats FrameWidth { get => _explicitNullValueFrameWidth; set { _explicitNullValueFrameWidth = value; AdditionalData?.Remove("frame_width"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frame_width"); else _explicitNullProperties?.Remove("frame_width"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats _explicitNullValueFrameWidth = default!;
 #endif
         /// <summary>The issues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulativeIssues? Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulativeIssues? Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; AdditionalData?.Remove("issues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulativeIssues? _explicitNullValueIssues = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulativeIssues Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulativeIssues Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; AdditionalData?.Remove("issues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConsumerStatsCumulativeIssues _explicitNullValueIssues = default!;
 #endif
         /// <summary>Cumulative latency distribution (milliseconds-based thresholds).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative? JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative? JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; AdditionalData?.Remove("jitter_buffer_delay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative? _explicitNullValueJitterBufferDelay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative JitterBufferDelay { get => _explicitNullValueJitterBufferDelay; set { _explicitNullValueJitterBufferDelay = value; AdditionalData?.Remove("jitter_buffer_delay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter_buffer_delay"); else _explicitNullProperties?.Remove("jitter_buffer_delay"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLatencyCumulative _explicitNullValueJitterBufferDelay = default!;
 #endif
         /// <summary>The key_frames_decoded_fraction property</summary>
-        public double? KeyFramesDecodedFraction { get => _explicitNullValueKeyFramesDecodedFraction; set { _explicitNullValueKeyFramesDecodedFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_frames_decoded_fraction"); else _explicitNullProperties?.Remove("key_frames_decoded_fraction"); } }
+        public double? KeyFramesDecodedFraction { get => _explicitNullValueKeyFramesDecodedFraction; set { _explicitNullValueKeyFramesDecodedFraction = value; AdditionalData?.Remove("key_frames_decoded_fraction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_frames_decoded_fraction"); else _explicitNullProperties?.Remove("key_frames_decoded_fraction"); } }
         private double? _explicitNullValueKeyFramesDecodedFraction = default!;
         /// <summary>Cumulative packet loss distribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative? PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative? PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; AdditionalData?.Remove("packet_loss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative? _explicitNullValuePacketLoss = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative PacketLoss { get => _explicitNullValuePacketLoss; set { _explicitNullValuePacketLoss = value; AdditionalData?.Remove("packet_loss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_loss"); else _explicitNullProperties?.Remove("packet_loss"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPacketLossCumulative _explicitNullValuePacketLoss = default!;
 #endif
         /// <summary>Distribution summary with average and percentiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; AdditionalData?.Remove("quality_mos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats? _explicitNullValueQualityMos = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats QualityMos { get => _explicitNullValueQualityMos; set { _explicitNullValueQualityMos = value; AdditionalData?.Remove("quality_mos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_mos"); else _explicitNullProperties?.Remove("quality_mos"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPercentileStats _explicitNullValueQualityMos = default!;
 #endif
         /// <summary>

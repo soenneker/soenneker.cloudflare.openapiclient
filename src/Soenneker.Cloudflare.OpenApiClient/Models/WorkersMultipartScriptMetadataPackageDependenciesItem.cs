@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("installedVersion") is { } nullNodeInstalledVersion && nullNodeInstalledVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstalledVersion = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("packageJsonVersion") is { } nullNodePackageJsonVersion && nullNodePackageJsonVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageJsonVersion = null;
+            if (parseNode.GetChildNode("installedVersion") is null) { _explicitNullValueInstalledVersion = default!; _explicitNullProperties?.Remove("installedVersion"); }
+            else if (parseNode.GetChildNode("installedVersion") is { } nullNodeInstalledVersion && nullNodeInstalledVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstalledVersion = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("packageJsonVersion") is null) { _explicitNullValuePackageJsonVersion = default!; _explicitNullProperties?.Remove("packageJsonVersion"); }
+            else if (parseNode.GetChildNode("packageJsonVersion") is { } nullNodePackageJsonVersion && nullNodePackageJsonVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageJsonVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The exact version that was resolved and installed by the package manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstalledVersion { get => _explicitNullValueInstalledVersion; set { _explicitNullValueInstalledVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedVersion"); else _explicitNullProperties?.Remove("installedVersion"); } }
+        public string? InstalledVersion { get => _explicitNullValueInstalledVersion; set { _explicitNullValueInstalledVersion = value; AdditionalData?.Remove("installedVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedVersion"); else _explicitNullProperties?.Remove("installedVersion"); } }
         private string? _explicitNullValueInstalledVersion = default!;
 #nullable restore
 #else
-        public string InstalledVersion { get => _explicitNullValueInstalledVersion; set { _explicitNullValueInstalledVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedVersion"); else _explicitNullProperties?.Remove("installedVersion"); } }
+        public string InstalledVersion { get => _explicitNullValueInstalledVersion; set { _explicitNullValueInstalledVersion = value; AdditionalData?.Remove("installedVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedVersion"); else _explicitNullProperties?.Remove("installedVersion"); } }
         private string _explicitNullValueInstalledVersion = default!;
 #endif
         /// <summary>The npm package name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The version constraint as written in package.json.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageJsonVersion { get => _explicitNullValuePackageJsonVersion; set { _explicitNullValuePackageJsonVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageJsonVersion"); else _explicitNullProperties?.Remove("packageJsonVersion"); } }
+        public string? PackageJsonVersion { get => _explicitNullValuePackageJsonVersion; set { _explicitNullValuePackageJsonVersion = value; AdditionalData?.Remove("packageJsonVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageJsonVersion"); else _explicitNullProperties?.Remove("packageJsonVersion"); } }
         private string? _explicitNullValuePackageJsonVersion = default!;
 #nullable restore
 #else
-        public string PackageJsonVersion { get => _explicitNullValuePackageJsonVersion; set { _explicitNullValuePackageJsonVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageJsonVersion"); else _explicitNullProperties?.Remove("packageJsonVersion"); } }
+        public string PackageJsonVersion { get => _explicitNullValuePackageJsonVersion; set { _explicitNullValuePackageJsonVersion = value; AdditionalData?.Remove("packageJsonVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageJsonVersion"); else _explicitNullProperties?.Remove("packageJsonVersion"); } }
         private string _explicitNullValuePackageJsonVersion = default!;
 #endif
         /// <summary>

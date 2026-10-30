@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
-            if (parseNode.GetChildNode("network") is { } nullNodeNetwork && nullNodeNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Network = null;
-            if (parseNode.GetChildNode("tunnel_name") is { } nullNodeTunnelName && nullNodeTunnelName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelName = null;
-            if (parseNode.GetChildNode("tun_type") is { } nullNodeTunType && nullNodeTunType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunType = null;
-            if (parseNode.GetChildNode("virtual_network_id") is { } nullNodeVirtualNetworkId && nullNodeVirtualNetworkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualNetworkId = null;
-            if (parseNode.GetChildNode("virtual_network_name") is { } nullNodeVirtualNetworkName && nullNodeVirtualNetworkName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualNetworkName = null;
+            if (parseNode.GetChildNode("comment") is null) { _explicitNullValueComment = default!; _explicitNullProperties?.Remove("comment"); }
+            else if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("network") is null) { _explicitNullValueNetwork = default!; _explicitNullProperties?.Remove("network"); }
+            else if (parseNode.GetChildNode("network") is { } nullNodeNetwork && nullNodeNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Network = null;
+            if (parseNode.GetChildNode("tunnel_name") is null) { _explicitNullValueTunnelName = default!; _explicitNullProperties?.Remove("tunnel_name"); }
+            else if (parseNode.GetChildNode("tunnel_name") is { } nullNodeTunnelName && nullNodeTunnelName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelName = null;
+            if (parseNode.GetChildNode("tun_type") is null) { _explicitNullValueTunType = default!; _explicitNullProperties?.Remove("tun_type"); }
+            else if (parseNode.GetChildNode("tun_type") is { } nullNodeTunType && nullNodeTunType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunType = null;
+            if (parseNode.GetChildNode("virtual_network_id") is null) { _explicitNullValueVirtualNetworkId = default!; _explicitNullProperties?.Remove("virtual_network_id"); }
+            else if (parseNode.GetChildNode("virtual_network_id") is { } nullNodeVirtualNetworkId && nullNodeVirtualNetworkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualNetworkId = null;
+            if (parseNode.GetChildNode("virtual_network_name") is null) { _explicitNullValueVirtualNetworkName = default!; _explicitNullProperties?.Remove("virtual_network_name"); }
+            else if (parseNode.GetChildNode("virtual_network_name") is { } nullNodeVirtualNetworkName && nullNodeVirtualNetworkName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualNetworkName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,11 +36,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Optional remark describing the route.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; AdditionalData?.Remove("comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
         private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; AdditionalData?.Remove("comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
         private string _explicitNullValueComment = default!;
 #endif
         /// <summary>Timestamp of when the resource was created.</summary>
@@ -52,11 +58,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The private IPv4 or IPv6 range connected by the route, in CIDR notation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
+        public string? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
         private string? _explicitNullValueNetwork = default!;
 #nullable restore
 #else
-        public string Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
+        public string Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
         private string _explicitNullValueNetwork = default!;
 #endif
         /// <summary>UUID of the tunnel.</summary>
@@ -64,27 +70,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user-friendly name for a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TunnelName { get => _explicitNullValueTunnelName; set { _explicitNullValueTunnelName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_name"); else _explicitNullProperties?.Remove("tunnel_name"); } }
+        public string? TunnelName { get => _explicitNullValueTunnelName; set { _explicitNullValueTunnelName = value; AdditionalData?.Remove("tunnel_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_name"); else _explicitNullProperties?.Remove("tunnel_name"); } }
         private string? _explicitNullValueTunnelName = default!;
 #nullable restore
 #else
-        public string TunnelName { get => _explicitNullValueTunnelName; set { _explicitNullValueTunnelName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_name"); else _explicitNullProperties?.Remove("tunnel_name"); } }
+        public string TunnelName { get => _explicitNullValueTunnelName; set { _explicitNullValueTunnelName = value; AdditionalData?.Remove("tunnel_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_name"); else _explicitNullProperties?.Remove("tunnel_name"); } }
         private string _explicitNullValueTunnelName = default!;
 #endif
         /// <summary>The type of tunnel.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType? TunType { get => _explicitNullValueTunType; set { _explicitNullValueTunType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tun_type"); else _explicitNullProperties?.Remove("tun_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType? TunType { get => _explicitNullValueTunType; set { _explicitNullValueTunType = value; AdditionalData?.Remove("tun_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tun_type"); else _explicitNullProperties?.Remove("tun_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType? _explicitNullValueTunType = default!;
         /// <summary>UUID of the virtual network.</summary>
-        public Guid? VirtualNetworkId { get => _explicitNullValueVirtualNetworkId; set { _explicitNullValueVirtualNetworkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_id"); else _explicitNullProperties?.Remove("virtual_network_id"); } }
+        public Guid? VirtualNetworkId { get => _explicitNullValueVirtualNetworkId; set { _explicitNullValueVirtualNetworkId = value; AdditionalData?.Remove("virtual_network_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_id"); else _explicitNullProperties?.Remove("virtual_network_id"); } }
         private Guid? _explicitNullValueVirtualNetworkId = default!;
         /// <summary>A user-friendly name for the virtual network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VirtualNetworkName { get => _explicitNullValueVirtualNetworkName; set { _explicitNullValueVirtualNetworkName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_name"); else _explicitNullProperties?.Remove("virtual_network_name"); } }
+        public string? VirtualNetworkName { get => _explicitNullValueVirtualNetworkName; set { _explicitNullValueVirtualNetworkName = value; AdditionalData?.Remove("virtual_network_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_name"); else _explicitNullProperties?.Remove("virtual_network_name"); } }
         private string? _explicitNullValueVirtualNetworkName = default!;
 #nullable restore
 #else
-        public string VirtualNetworkName { get => _explicitNullValueVirtualNetworkName; set { _explicitNullValueVirtualNetworkName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_name"); else _explicitNullProperties?.Remove("virtual_network_name"); } }
+        public string VirtualNetworkName { get => _explicitNullValueVirtualNetworkName; set { _explicitNullValueVirtualNetworkName = value; AdditionalData?.Remove("virtual_network_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_network_name"); else _explicitNullProperties?.Remove("virtual_network_name"); } }
         private string _explicitNullValueVirtualNetworkName = default!;
 #endif
         /// <summary>
@@ -117,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
-                { "tun_type", n => { TunType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType>(); } },
+                { "tun_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTunType = default; _explicitNullProperties?.Remove("tun_type"); AdditionalData["tun_type"] = unknown; } else { TunType = parsed; AdditionalData.Remove("tun_type"); } } },
                 { "tunnel_id", n => { TunnelId = n.GetGuidValue(); } },
                 { "tunnel_name", n => { TunnelName = n.GetStringValue(); } },
                 { "virtual_network_id", n => { VirtualNetworkId = n.GetGuidValue(); } },

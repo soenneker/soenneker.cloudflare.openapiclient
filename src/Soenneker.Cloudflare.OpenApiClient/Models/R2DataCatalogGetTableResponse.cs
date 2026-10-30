@@ -18,12 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
-            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("metadata_location") is { } nullNodeMetadataLocation && nullNodeMetadataLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataLocation = null;
-            if (parseNode.GetChildNode("returned_snapshots") is { } nullNodeReturnedSnapshots && nullNodeReturnedSnapshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnedSnapshots = null;
-            if (parseNode.GetChildNode("table_uuid") is { } nullNodeTableUuid && nullNodeTableUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableUuid = null;
-            if (parseNode.GetChildNode("total_snapshots") is { } nullNodeTotalSnapshots && nullNodeTotalSnapshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSnapshots = null;
+            if (parseNode.GetChildNode("identifier") is null) { _explicitNullValueIdentifier = default!; _explicitNullProperties?.Remove("identifier"); }
+            else if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("metadata_location") is null) { _explicitNullValueMetadataLocation = default!; _explicitNullProperties?.Remove("metadata_location"); }
+            else if (parseNode.GetChildNode("metadata_location") is { } nullNodeMetadataLocation && nullNodeMetadataLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataLocation = null;
+            if (parseNode.GetChildNode("returned_snapshots") is null) { _explicitNullValueReturnedSnapshots = default!; _explicitNullProperties?.Remove("returned_snapshots"); }
+            else if (parseNode.GetChildNode("returned_snapshots") is { } nullNodeReturnedSnapshots && nullNodeReturnedSnapshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnedSnapshots = null;
+            if (parseNode.GetChildNode("table_uuid") is null) { _explicitNullValueTableUuid = default!; _explicitNullProperties?.Remove("table_uuid"); }
+            else if (parseNode.GetChildNode("table_uuid") is { } nullNodeTableUuid && nullNodeTableUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableUuid = null;
+            if (parseNode.GetChildNode("total_snapshots") is null) { _explicitNullValueTotalSnapshots = default!; _explicitNullProperties?.Remove("total_snapshots"); }
+            else if (parseNode.GetChildNode("total_snapshots") is { } nullNodeTotalSnapshots && nullNodeTotalSnapshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSnapshots = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,41 +37,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies a unique table identifier within a catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier? _explicitNullValueIdentifier = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableIdentifier _explicitNullValueIdentifier = default!;
 #endif
         /// <summary>Contains standard Apache Iceberg table metadata (format version 1 or 2).See https://iceberg.apache.org/spec/#table-metadata-fields for the fullfield reference. Uses the `s3://` URI scheme for S3 compatibility,regardless of the underlying R2 backend.Limits the `snapshots`, `snapshot-log`, and `metadata-log` arrays to themost recent 10 entries (by `timestamp-ms`). Always keeps the currentsnapshot (via `current-snapshot-id`) even when it falls outside thatwindow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogGetTableResponseMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogGetTableResponseMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogGetTableResponseMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogGetTableResponseMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogGetTableResponseMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogGetTableResponseMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Specifies the S3-compatible URI to the current Iceberg metadata filein R2. Omitted for staged tables that have not yet been committed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetadataLocation { get => _explicitNullValueMetadataLocation; set { _explicitNullValueMetadataLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_location"); else _explicitNullProperties?.Remove("metadata_location"); } }
+        public string? MetadataLocation { get => _explicitNullValueMetadataLocation; set { _explicitNullValueMetadataLocation = value; AdditionalData?.Remove("metadata_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_location"); else _explicitNullProperties?.Remove("metadata_location"); } }
         private string? _explicitNullValueMetadataLocation = default!;
 #nullable restore
 #else
-        public string MetadataLocation { get => _explicitNullValueMetadataLocation; set { _explicitNullValueMetadataLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_location"); else _explicitNullProperties?.Remove("metadata_location"); } }
+        public string MetadataLocation { get => _explicitNullValueMetadataLocation; set { _explicitNullValueMetadataLocation = value; AdditionalData?.Remove("metadata_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_location"); else _explicitNullProperties?.Remove("metadata_location"); } }
         private string _explicitNullValueMetadataLocation = default!;
 #endif
         /// <summary>Describes the number of snapshots that appear in `metadata.snapshots`. Caps thelist at 10 (the most recent by `timestamp-ms`), but if the currentsnapshot falls outside the recent window, the result includes it in theset, leading to a possible total of 11.</summary>
-        public int? ReturnedSnapshots { get => _explicitNullValueReturnedSnapshots; set { _explicitNullValueReturnedSnapshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returned_snapshots"); else _explicitNullProperties?.Remove("returned_snapshots"); } }
+        public int? ReturnedSnapshots { get => _explicitNullValueReturnedSnapshots; set { _explicitNullValueReturnedSnapshots = value; AdditionalData?.Remove("returned_snapshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returned_snapshots"); else _explicitNullProperties?.Remove("returned_snapshots"); } }
         private int? _explicitNullValueReturnedSnapshots = default!;
         /// <summary>Contains the Iceberg table UUID, stable across renames.</summary>
-        public Guid? TableUuid { get => _explicitNullValueTableUuid; set { _explicitNullValueTableUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_uuid"); else _explicitNullProperties?.Remove("table_uuid"); } }
+        public Guid? TableUuid { get => _explicitNullValueTableUuid; set { _explicitNullValueTableUuid = value; AdditionalData?.Remove("table_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_uuid"); else _explicitNullProperties?.Remove("table_uuid"); } }
         private Guid? _explicitNullValueTableUuid = default!;
         /// <summary>Indicates the total number of snapshots stored for the table, before pruning.</summary>
-        public int? TotalSnapshots { get => _explicitNullValueTotalSnapshots; set { _explicitNullValueTotalSnapshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_snapshots"); else _explicitNullProperties?.Remove("total_snapshots"); } }
+        public int? TotalSnapshots { get => _explicitNullValueTotalSnapshots; set { _explicitNullValueTotalSnapshots = value; AdditionalData?.Remove("total_snapshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_snapshots"); else _explicitNullProperties?.Remove("total_snapshots"); } }
         private int? _explicitNullValueTotalSnapshots = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogGetTableResponse"/> and sets the default values.

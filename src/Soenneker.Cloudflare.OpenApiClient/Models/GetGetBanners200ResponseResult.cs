@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("1.1.1.1") is { } nullNodeOneOneOneOne && nullNodeOneOneOneOne.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneOneOneOne = null;
+            if (parseNode.GetChildNode("1.1.1.1") is null) { _explicitNullValueOneOneOneOne = default!; _explicitNullProperties?.Remove("1.1.1.1"); }
+            else if (parseNode.GetChildNode("1.1.1.1") is { } nullNodeOneOneOneOne && nullNodeOneOneOneOne.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneOneOneOne = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The OneOneOneOne property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApiPort>? OneOneOneOne { get => _explicitNullValueOneOneOneOne; set { _explicitNullValueOneOneOneOne = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1.1.1.1"); else _explicitNullProperties?.Remove("1.1.1.1"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApiPort>? OneOneOneOne { get => _explicitNullValueOneOneOneOne; set { _explicitNullValueOneOneOneOne = value; AdditionalData?.Remove("1.1.1.1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1.1.1.1"); else _explicitNullProperties?.Remove("1.1.1.1"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApiPort>? _explicitNullValueOneOneOneOne = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApiPort> OneOneOneOne { get => _explicitNullValueOneOneOneOne; set { _explicitNullValueOneOneOneOne = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1.1.1.1"); else _explicitNullProperties?.Remove("1.1.1.1"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApiPort> OneOneOneOne { get => _explicitNullValueOneOneOneOne; set { _explicitNullValueOneOneOneOne = value; AdditionalData?.Remove("1.1.1.1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1.1.1.1"); else _explicitNullProperties?.Remove("1.1.1.1"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApiPort> _explicitNullValueOneOneOneOne = default!;
 #endif
         /// <summary>

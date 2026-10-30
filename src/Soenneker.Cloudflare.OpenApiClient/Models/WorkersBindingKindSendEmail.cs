@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_destination_addresses") is { } nullNodeAllowedDestinationAddresses && nullNodeAllowedDestinationAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDestinationAddresses = null;
-            if (parseNode.GetChildNode("allowed_sender_addresses") is { } nullNodeAllowedSenderAddresses && nullNodeAllowedSenderAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedSenderAddresses = null;
-            if (parseNode.GetChildNode("destination_address") is { } nullNodeDestinationAddress && nullNodeDestinationAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAddress = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("allowed_destination_addresses") is null) { _explicitNullValueAllowedDestinationAddresses = default!; _explicitNullProperties?.Remove("allowed_destination_addresses"); }
+            else if (parseNode.GetChildNode("allowed_destination_addresses") is { } nullNodeAllowedDestinationAddresses && nullNodeAllowedDestinationAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDestinationAddresses = null;
+            if (parseNode.GetChildNode("allowed_sender_addresses") is null) { _explicitNullValueAllowedSenderAddresses = default!; _explicitNullProperties?.Remove("allowed_sender_addresses"); }
+            else if (parseNode.GetChildNode("allowed_sender_addresses") is { } nullNodeAllowedSenderAddresses && nullNodeAllowedSenderAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedSenderAddresses = null;
+            if (parseNode.GetChildNode("destination_address") is null) { _explicitNullValueDestinationAddress = default!; _explicitNullProperties?.Remove("destination_address"); }
+            else if (parseNode.GetChildNode("destination_address") is { } nullNodeDestinationAddress && nullNodeDestinationAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAddress = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of allowed destination addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedDestinationAddresses { get => _explicitNullValueAllowedDestinationAddresses; set { _explicitNullValueAllowedDestinationAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_destination_addresses"); else _explicitNullProperties?.Remove("allowed_destination_addresses"); } }
+        public List<string>? AllowedDestinationAddresses { get => _explicitNullValueAllowedDestinationAddresses; set { _explicitNullValueAllowedDestinationAddresses = value; AdditionalData?.Remove("allowed_destination_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_destination_addresses"); else _explicitNullProperties?.Remove("allowed_destination_addresses"); } }
         private List<string>? _explicitNullValueAllowedDestinationAddresses = default!;
 #nullable restore
 #else
-        public List<string> AllowedDestinationAddresses { get => _explicitNullValueAllowedDestinationAddresses; set { _explicitNullValueAllowedDestinationAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_destination_addresses"); else _explicitNullProperties?.Remove("allowed_destination_addresses"); } }
+        public List<string> AllowedDestinationAddresses { get => _explicitNullValueAllowedDestinationAddresses; set { _explicitNullValueAllowedDestinationAddresses = value; AdditionalData?.Remove("allowed_destination_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_destination_addresses"); else _explicitNullProperties?.Remove("allowed_destination_addresses"); } }
         private List<string> _explicitNullValueAllowedDestinationAddresses = default!;
 #endif
         /// <summary>List of allowed sender addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedSenderAddresses { get => _explicitNullValueAllowedSenderAddresses; set { _explicitNullValueAllowedSenderAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_sender_addresses"); else _explicitNullProperties?.Remove("allowed_sender_addresses"); } }
+        public List<string>? AllowedSenderAddresses { get => _explicitNullValueAllowedSenderAddresses; set { _explicitNullValueAllowedSenderAddresses = value; AdditionalData?.Remove("allowed_sender_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_sender_addresses"); else _explicitNullProperties?.Remove("allowed_sender_addresses"); } }
         private List<string>? _explicitNullValueAllowedSenderAddresses = default!;
 #nullable restore
 #else
-        public List<string> AllowedSenderAddresses { get => _explicitNullValueAllowedSenderAddresses; set { _explicitNullValueAllowedSenderAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_sender_addresses"); else _explicitNullProperties?.Remove("allowed_sender_addresses"); } }
+        public List<string> AllowedSenderAddresses { get => _explicitNullValueAllowedSenderAddresses; set { _explicitNullValueAllowedSenderAddresses = value; AdditionalData?.Remove("allowed_sender_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_sender_addresses"); else _explicitNullProperties?.Remove("allowed_sender_addresses"); } }
         private List<string> _explicitNullValueAllowedSenderAddresses = default!;
 #endif
         /// <summary>Destination address for the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationAddress { get => _explicitNullValueDestinationAddress; set { _explicitNullValueDestinationAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_address"); else _explicitNullProperties?.Remove("destination_address"); } }
+        public string? DestinationAddress { get => _explicitNullValueDestinationAddress; set { _explicitNullValueDestinationAddress = value; AdditionalData?.Remove("destination_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_address"); else _explicitNullProperties?.Remove("destination_address"); } }
         private string? _explicitNullValueDestinationAddress = default!;
 #nullable restore
 #else
-        public string DestinationAddress { get => _explicitNullValueDestinationAddress; set { _explicitNullValueDestinationAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_address"); else _explicitNullProperties?.Remove("destination_address"); } }
+        public string DestinationAddress { get => _explicitNullValueDestinationAddress; set { _explicitNullValueDestinationAddress = value; AdditionalData?.Remove("destination_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_address"); else _explicitNullProperties?.Remove("destination_address"); } }
         private string _explicitNullValueDestinationAddress = default!;
 #endif
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSendEmail"/> and sets the default values.
@@ -98,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowed_sender_addresses", n => { AllowedSenderAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "destination_address", n => { DestinationAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

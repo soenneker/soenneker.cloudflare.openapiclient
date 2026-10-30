@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("categories_0") is { } nullNodeCategories0 && nullNodeCategories0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories0 = null;
+            if (parseNode.GetChildNode("categories_0") is null) { _explicitNullValueCategories0 = default!; _explicitNullProperties?.Remove("categories_0"); }
+            else if (parseNode.GetChildNode("categories_0") is { } nullNodeCategories0 && nullNodeCategories0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories0 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The categories_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item>? Categories0 { get => _explicitNullValueCategories0; set { _explicitNullValueCategories0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories_0"); else _explicitNullProperties?.Remove("categories_0"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item>? Categories0 { get => _explicitNullValueCategories0; set { _explicitNullValueCategories0 = value; AdditionalData?.Remove("categories_0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories_0"); else _explicitNullProperties?.Remove("categories_0"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item>? _explicitNullValueCategories0 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item> Categories0 { get => _explicitNullValueCategories0; set { _explicitNullValueCategories0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories_0"); else _explicitNullProperties?.Remove("categories_0"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item> Categories0 { get => _explicitNullValueCategories0; set { _explicitNullValueCategories0 = value; AdditionalData?.Remove("categories_0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories_0"); else _explicitNullProperties?.Remove("categories_0"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingInternetServicesCategories200ResponseResultCategories0Item> _explicitNullValueCategories0 = default!;
 #endif
         /// <summary>

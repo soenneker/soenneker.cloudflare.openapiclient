@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("monitor_id") is { } nullNodeMonitorId && nullNodeMonitorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorId = null;
-            if (parseNode.GetChildNode("monitoring_only") is { } nullNodeMonitoringOnly && nullNodeMonitoringOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringOnly = null;
-            if (parseNode.GetChildNode("must_be_healthy") is { } nullNodeMustBeHealthy && nullNodeMustBeHealthy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MustBeHealthy = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("monitor_id") is null) { _explicitNullValueMonitorId = default!; _explicitNullProperties?.Remove("monitor_id"); }
+            else if (parseNode.GetChildNode("monitor_id") is { } nullNodeMonitorId && nullNodeMonitorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorId = null;
+            if (parseNode.GetChildNode("monitoring_only") is null) { _explicitNullValueMonitoringOnly = default!; _explicitNullProperties?.Remove("monitoring_only"); }
+            else if (parseNode.GetChildNode("monitoring_only") is { } nullNodeMonitoringOnly && nullNodeMonitoringOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringOnly = null;
+            if (parseNode.GetChildNode("must_be_healthy") is null) { _explicitNullValueMustBeHealthy = default!; _explicitNullProperties?.Remove("must_be_healthy"); }
+            else if (parseNode.GetChildNode("must_be_healthy") is { } nullNodeMustBeHealthy && nullNodeMustBeHealthy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MustBeHealthy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,23 +32,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamp of when the monitor was added to the group</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Whether this monitor is enabled in the group</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The ID of the Monitor to use for checking the health of origins within this pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonitorId { get => _explicitNullValueMonitorId; set { _explicitNullValueMonitorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_id"); else _explicitNullProperties?.Remove("monitor_id"); } }
+        public string? MonitorId { get => _explicitNullValueMonitorId; set { _explicitNullValueMonitorId = value; AdditionalData?.Remove("monitor_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_id"); else _explicitNullProperties?.Remove("monitor_id"); } }
         private string? _explicitNullValueMonitorId = default!;
 #nullable restore
 #else
-        public string MonitorId { get => _explicitNullValueMonitorId; set { _explicitNullValueMonitorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_id"); else _explicitNullProperties?.Remove("monitor_id"); } }
+        public string MonitorId { get => _explicitNullValueMonitorId; set { _explicitNullValueMonitorId = value; AdditionalData?.Remove("monitor_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_id"); else _explicitNullProperties?.Remove("monitor_id"); } }
         private string _explicitNullValueMonitorId = default!;
 #endif
         /// <summary>Whether this monitor is used for monitoring only (does not affect pool health)</summary>
-        public bool? MonitoringOnly { get => _explicitNullValueMonitoringOnly; set { _explicitNullValueMonitoringOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoring_only"); else _explicitNullProperties?.Remove("monitoring_only"); } }
+        public bool? MonitoringOnly { get => _explicitNullValueMonitoringOnly; set { _explicitNullValueMonitoringOnly = value; AdditionalData?.Remove("monitoring_only"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoring_only"); else _explicitNullProperties?.Remove("monitoring_only"); } }
         private bool? _explicitNullValueMonitoringOnly = default!;
         /// <summary>Whether this monitor must be healthy for the pool to be considered healthy</summary>
-        public bool? MustBeHealthy { get => _explicitNullValueMustBeHealthy; set { _explicitNullValueMustBeHealthy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must_be_healthy"); else _explicitNullProperties?.Remove("must_be_healthy"); } }
+        public bool? MustBeHealthy { get => _explicitNullValueMustBeHealthy; set { _explicitNullValueMustBeHealthy = value; AdditionalData?.Remove("must_be_healthy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("must_be_healthy"); else _explicitNullProperties?.Remove("must_be_healthy"); } }
         private bool? _explicitNullValueMustBeHealthy = default!;
         /// <summary>The timestamp of when the monitor group member was last updated</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }

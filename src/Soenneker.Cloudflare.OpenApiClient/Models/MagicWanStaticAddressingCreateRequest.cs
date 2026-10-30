@@ -18,10 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("gateway_address") is { } nullNodeGatewayAddress && nullNodeGatewayAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayAddress = null;
-            if (parseNode.GetChildNode("secondary_address") is { } nullNodeSecondaryAddress && nullNodeSecondaryAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryAddress = null;
-            if (parseNode.GetChildNode("secondary_gateway_address") is { } nullNodeSecondaryGatewayAddress && nullNodeSecondaryGatewayAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryGatewayAddress = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("gateway_address") is null) { _explicitNullValueGatewayAddress = default!; _explicitNullProperties?.Remove("gateway_address"); }
+            else if (parseNode.GetChildNode("gateway_address") is { } nullNodeGatewayAddress && nullNodeGatewayAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayAddress = null;
+            if (parseNode.GetChildNode("secondary_address") is null) { _explicitNullValueSecondaryAddress = default!; _explicitNullProperties?.Remove("secondary_address"); }
+            else if (parseNode.GetChildNode("secondary_address") is { } nullNodeSecondaryAddress && nullNodeSecondaryAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryAddress = null;
+            if (parseNode.GetChildNode("secondary_gateway_address") is null) { _explicitNullValueSecondaryGatewayAddress = default!; _explicitNullProperties?.Remove("secondary_gateway_address"); }
+            else if (parseNode.GetChildNode("secondary_gateway_address") is { } nullNodeSecondaryGatewayAddress && nullNodeSecondaryGatewayAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryGatewayAddress = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private string? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private string _explicitNullValueAddress = default!;
 #endif
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GatewayAddress { get => _explicitNullValueGatewayAddress; set { _explicitNullValueGatewayAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_address"); else _explicitNullProperties?.Remove("gateway_address"); } }
+        public string? GatewayAddress { get => _explicitNullValueGatewayAddress; set { _explicitNullValueGatewayAddress = value; AdditionalData?.Remove("gateway_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_address"); else _explicitNullProperties?.Remove("gateway_address"); } }
         private string? _explicitNullValueGatewayAddress = default!;
 #nullable restore
 #else
-        public string GatewayAddress { get => _explicitNullValueGatewayAddress; set { _explicitNullValueGatewayAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_address"); else _explicitNullProperties?.Remove("gateway_address"); } }
+        public string GatewayAddress { get => _explicitNullValueGatewayAddress; set { _explicitNullValueGatewayAddress = value; AdditionalData?.Remove("gateway_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_address"); else _explicitNullProperties?.Remove("gateway_address"); } }
         private string _explicitNullValueGatewayAddress = default!;
 #endif
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
+        public string? SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; AdditionalData?.Remove("secondary_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
         private string? _explicitNullValueSecondaryAddress = default!;
 #nullable restore
 #else
-        public string SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
+        public string SecondaryAddress { get => _explicitNullValueSecondaryAddress; set { _explicitNullValueSecondaryAddress = value; AdditionalData?.Remove("secondary_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_address"); else _explicitNullProperties?.Remove("secondary_address"); } }
         private string _explicitNullValueSecondaryAddress = default!;
 #endif
         /// <summary>Gateway address for the secondary connector of a high availability site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryGatewayAddress { get => _explicitNullValueSecondaryGatewayAddress; set { _explicitNullValueSecondaryGatewayAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_gateway_address"); else _explicitNullProperties?.Remove("secondary_gateway_address"); } }
+        public string? SecondaryGatewayAddress { get => _explicitNullValueSecondaryGatewayAddress; set { _explicitNullValueSecondaryGatewayAddress = value; AdditionalData?.Remove("secondary_gateway_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_gateway_address"); else _explicitNullProperties?.Remove("secondary_gateway_address"); } }
         private string? _explicitNullValueSecondaryGatewayAddress = default!;
 #nullable restore
 #else
-        public string SecondaryGatewayAddress { get => _explicitNullValueSecondaryGatewayAddress; set { _explicitNullValueSecondaryGatewayAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_gateway_address"); else _explicitNullProperties?.Remove("secondary_gateway_address"); } }
+        public string SecondaryGatewayAddress { get => _explicitNullValueSecondaryGatewayAddress; set { _explicitNullValueSecondaryGatewayAddress = value; AdditionalData?.Remove("secondary_gateway_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_gateway_address"); else _explicitNullProperties?.Remove("secondary_gateway_address"); } }
         private string _explicitNullValueSecondaryGatewayAddress = default!;
 #endif
         /// <summary>

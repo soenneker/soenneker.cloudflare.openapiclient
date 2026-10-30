@@ -18,11 +18,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ciphers") is { } nullNodeCiphers && nullNodeCiphers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ciphers = null;
-            if (parseNode.GetChildNode("early_hints") is { } nullNodeEarlyHints && nullNodeEarlyHints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EarlyHints = null;
-            if (parseNode.GetChildNode("http2") is { } nullNodeHttp2 && nullNodeHttp2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Http2 = null;
-            if (parseNode.GetChildNode("min_tls_version") is { } nullNodeMinTlsVersion && nullNodeMinTlsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTlsVersion = null;
-            if (parseNode.GetChildNode("tls_1_3") is { } nullNodeTls13 && nullNodeTls13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tls13 = null;
+            if (parseNode.GetChildNode("ciphers") is null) { _explicitNullValueCiphers = default!; _explicitNullProperties?.Remove("ciphers"); }
+            else if (parseNode.GetChildNode("ciphers") is { } nullNodeCiphers && nullNodeCiphers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ciphers = null;
+            if (parseNode.GetChildNode("early_hints") is null) { _explicitNullValueEarlyHints = default!; _explicitNullProperties?.Remove("early_hints"); }
+            else if (parseNode.GetChildNode("early_hints") is { } nullNodeEarlyHints && nullNodeEarlyHints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EarlyHints = null;
+            if (parseNode.GetChildNode("http2") is null) { _explicitNullValueHttp2 = default!; _explicitNullProperties?.Remove("http2"); }
+            else if (parseNode.GetChildNode("http2") is { } nullNodeHttp2 && nullNodeHttp2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Http2 = null;
+            if (parseNode.GetChildNode("min_tls_version") is null) { _explicitNullValueMinTlsVersion = default!; _explicitNullProperties?.Remove("min_tls_version"); }
+            else if (parseNode.GetChildNode("min_tls_version") is { } nullNodeMinTlsVersion && nullNodeMinTlsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTlsVersion = null;
+            if (parseNode.GetChildNode("tls_1_3") is null) { _explicitNullValueTls13 = default!; _explicitNullProperties?.Remove("tls_1_3"); }
+            else if (parseNode.GetChildNode("tls_1_3") is { } nullNodeTls13 && nullNodeTls13.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tls13 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,24 +35,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
+        public List<string>? Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; AdditionalData?.Remove("ciphers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
         private List<string>? _explicitNullValueCiphers = default!;
 #nullable restore
 #else
-        public List<string> Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
+        public List<string> Ciphers { get => _explicitNullValueCiphers; set { _explicitNullValueCiphers = value; AdditionalData?.Remove("ciphers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphers"); else _explicitNullProperties?.Remove("ciphers"); } }
         private List<string> _explicitNullValueCiphers = default!;
 #endif
         /// <summary>Whether or not Early Hints is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints? EarlyHints { get => _explicitNullValueEarlyHints; set { _explicitNullValueEarlyHints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("early_hints"); else _explicitNullProperties?.Remove("early_hints"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints? EarlyHints { get => _explicitNullValueEarlyHints; set { _explicitNullValueEarlyHints = value; AdditionalData?.Remove("early_hints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("early_hints"); else _explicitNullProperties?.Remove("early_hints"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints? _explicitNullValueEarlyHints = default!;
         /// <summary>Whether or not HTTP2 is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2? Http2 { get => _explicitNullValueHttp2; set { _explicitNullValueHttp2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http2"); else _explicitNullProperties?.Remove("http2"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2? Http2 { get => _explicitNullValueHttp2; set { _explicitNullValueHttp2 = value; AdditionalData?.Remove("http2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http2"); else _explicitNullProperties?.Remove("http2"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2? _explicitNullValueHttp2 = default!;
         /// <summary>The minimum TLS version supported.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion? MinTlsVersion { get => _explicitNullValueMinTlsVersion; set { _explicitNullValueMinTlsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_tls_version"); else _explicitNullProperties?.Remove("min_tls_version"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion? MinTlsVersion { get => _explicitNullValueMinTlsVersion; set { _explicitNullValueMinTlsVersion = value; AdditionalData?.Remove("min_tls_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_tls_version"); else _explicitNullProperties?.Remove("min_tls_version"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion? _explicitNullValueMinTlsVersion = default!;
         /// <summary>Whether or not TLS 1.3 is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13? Tls13 { get => _explicitNullValueTls13; set { _explicitNullValueTls13 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_1_3"); else _explicitNullProperties?.Remove("tls_1_3"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13? Tls13 { get => _explicitNullValueTls13; set { _explicitNullValueTls13 = value; AdditionalData?.Remove("tls_1_3"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_1_3"); else _explicitNullProperties?.Remove("tls_1_3"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13? _explicitNullValueTls13 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings"/> and sets the default values.
@@ -75,10 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ciphers", n => { Ciphers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "early_hints", n => { EarlyHints = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints>(); } },
-                { "http2", n => { Http2 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2>(); } },
-                { "min_tls_version", n => { MinTlsVersion = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion>(); } },
-                { "tls_1_3", n => { Tls13 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13>(); } },
+                { "early_hints", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEarlyHints = default; _explicitNullProperties?.Remove("early_hints"); AdditionalData["early_hints"] = unknown; } else { EarlyHints = parsed; AdditionalData.Remove("early_hints"); } } },
+                { "http2", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHttp2 = default; _explicitNullProperties?.Remove("http2"); AdditionalData["http2"] = unknown; } else { Http2 = parsed; AdditionalData.Remove("http2"); } } },
+                { "min_tls_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMinTlsVersion = default; _explicitNullProperties?.Remove("min_tls_version"); AdditionalData["min_tls_version"] = unknown; } else { MinTlsVersion = parsed; AdditionalData.Remove("min_tls_version"); } } },
+                { "tls_1_3", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTls13 = default; _explicitNullProperties?.Remove("tls_1_3"); AdditionalData["tls_1_3"] = unknown; } else { Tls13 = parsed; AdditionalData.Remove("tls_1_3"); } } },
             };
         }
         /// <summary>

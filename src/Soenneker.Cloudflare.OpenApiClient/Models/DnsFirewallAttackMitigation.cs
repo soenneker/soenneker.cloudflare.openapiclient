@@ -18,17 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("only_when_upstream_unhealthy") is { } nullNodeOnlyWhenUpstreamUnhealthy && nullNodeOnlyWhenUpstreamUnhealthy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyWhenUpstreamUnhealthy = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("only_when_upstream_unhealthy") is null) { _explicitNullValueOnlyWhenUpstreamUnhealthy = default!; _explicitNullProperties?.Remove("only_when_upstream_unhealthy"); }
+            else if (parseNode.GetChildNode("only_when_upstream_unhealthy") is { } nullNodeOnlyWhenUpstreamUnhealthy && nullNodeOnlyWhenUpstreamUnhealthy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyWhenUpstreamUnhealthy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When enabled, automatically mitigate random-prefix attacks to protect upstream DNS servers</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Only mitigate attacks when upstream servers seem unhealthy</summary>
-        public bool? OnlyWhenUpstreamUnhealthy { get => _explicitNullValueOnlyWhenUpstreamUnhealthy; set { _explicitNullValueOnlyWhenUpstreamUnhealthy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("only_when_upstream_unhealthy"); else _explicitNullProperties?.Remove("only_when_upstream_unhealthy"); } }
+        public bool? OnlyWhenUpstreamUnhealthy { get => _explicitNullValueOnlyWhenUpstreamUnhealthy; set { _explicitNullValueOnlyWhenUpstreamUnhealthy = value; AdditionalData?.Remove("only_when_upstream_unhealthy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("only_when_upstream_unhealthy"); else _explicitNullProperties?.Remove("only_when_upstream_unhealthy"); } }
         private bool? _explicitNullValueOnlyWhenUpstreamUnhealthy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation"/> and sets the default values.

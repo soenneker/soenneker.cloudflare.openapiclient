@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("report") is { } nullNodeReport && nullNodeReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Report = null;
-            if (parseNode.GetChildNode("report_schema_version") is { } nullNodeReportSchemaVersion && nullNodeReportSchemaVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportSchemaVersion = null;
+            if (parseNode.GetChildNode("report") is null) { _explicitNullValueReport = default!; _explicitNullProperties?.Remove("report"); }
+            else if (parseNode.GetChildNode("report") is { } nullNodeReport && nullNodeReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Report = null;
+            if (parseNode.GetChildNode("report_schema_version") is null) { _explicitNullValueReportSchemaVersion = default!; _explicitNullProperties?.Remove("report_schema_version"); }
+            else if (parseNode.GetChildNode("report_schema_version") is { } nullNodeReportSchemaVersion && nullNodeReportSchemaVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportSchemaVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The report property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport? Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport? Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; AdditionalData?.Remove("report"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport? _explicitNullValueReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport Report { get => _explicitNullValueReport; set { _explicitNullValueReport = value; AdditionalData?.Remove("report"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report"); else _explicitNullProperties?.Remove("report"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport _explicitNullValueReport = default!;
 #endif
         /// <summary>Version of the report schema.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.V1ReportSchemaVersion? ReportSchemaVersion { get => _explicitNullValueReportSchemaVersion; set { _explicitNullValueReportSchemaVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_schema_version"); else _explicitNullProperties?.Remove("report_schema_version"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.V1ReportSchemaVersion? ReportSchemaVersion { get => _explicitNullValueReportSchemaVersion; set { _explicitNullValueReportSchemaVersion = value; AdditionalData?.Remove("report_schema_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_schema_version"); else _explicitNullProperties?.Remove("report_schema_version"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.V1ReportSchemaVersion? _explicitNullValueReportSchemaVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "report", n => { Report = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaReportReport.CreateFromDiscriminatorValue); } },
-                { "report_schema_version", n => { ReportSchemaVersion = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.V1ReportSchemaVersion>(); } },
+                { "report_schema_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.V1ReportSchemaVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReportSchemaVersion = default; _explicitNullProperties?.Remove("report_schema_version"); AdditionalData["report_schema_version"] = unknown; } else { ReportSchemaVersion = parsed; AdditionalData.Remove("report_schema_version"); } } },
             };
         }
         /// <summary>

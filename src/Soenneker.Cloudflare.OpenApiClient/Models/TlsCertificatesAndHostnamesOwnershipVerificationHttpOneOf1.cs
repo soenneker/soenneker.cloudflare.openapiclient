@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("http_body") is { } nullNodeHttpBody && nullNodeHttpBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpBody = null;
-            if (parseNode.GetChildNode("http_url") is { } nullNodeHttpUrl && nullNodeHttpUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpUrl = null;
+            if (parseNode.GetChildNode("http_body") is null) { _explicitNullValueHttpBody = default!; _explicitNullProperties?.Remove("http_body"); }
+            else if (parseNode.GetChildNode("http_body") is { } nullNodeHttpBody && nullNodeHttpBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpBody = null;
+            if (parseNode.GetChildNode("http_url") is null) { _explicitNullValueHttpUrl = default!; _explicitNullProperties?.Remove("http_url"); }
+            else if (parseNode.GetChildNode("http_url") is { } nullNodeHttpUrl && nullNodeHttpUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Token to be served.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HttpBody { get => _explicitNullValueHttpBody; set { _explicitNullValueHttpBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_body"); else _explicitNullProperties?.Remove("http_body"); } }
+        public string? HttpBody { get => _explicitNullValueHttpBody; set { _explicitNullValueHttpBody = value; AdditionalData?.Remove("http_body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_body"); else _explicitNullProperties?.Remove("http_body"); } }
         private string? _explicitNullValueHttpBody = default!;
 #nullable restore
 #else
-        public string HttpBody { get => _explicitNullValueHttpBody; set { _explicitNullValueHttpBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_body"); else _explicitNullProperties?.Remove("http_body"); } }
+        public string HttpBody { get => _explicitNullValueHttpBody; set { _explicitNullValueHttpBody = value; AdditionalData?.Remove("http_body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_body"); else _explicitNullProperties?.Remove("http_body"); } }
         private string _explicitNullValueHttpBody = default!;
 #endif
         /// <summary>The HTTP URL that will be checked during custom hostname verification and where the customer should host the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HttpUrl { get => _explicitNullValueHttpUrl; set { _explicitNullValueHttpUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_url"); else _explicitNullProperties?.Remove("http_url"); } }
+        public string? HttpUrl { get => _explicitNullValueHttpUrl; set { _explicitNullValueHttpUrl = value; AdditionalData?.Remove("http_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_url"); else _explicitNullProperties?.Remove("http_url"); } }
         private string? _explicitNullValueHttpUrl = default!;
 #nullable restore
 #else
-        public string HttpUrl { get => _explicitNullValueHttpUrl; set { _explicitNullValueHttpUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_url"); else _explicitNullProperties?.Remove("http_url"); } }
+        public string HttpUrl { get => _explicitNullValueHttpUrl; set { _explicitNullValueHttpUrl = value; AdditionalData?.Remove("http_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_url"); else _explicitNullProperties?.Remove("http_url"); } }
         private string _explicitNullValueHttpUrl = default!;
 #endif
         /// <summary>

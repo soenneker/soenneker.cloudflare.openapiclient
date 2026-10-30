@@ -17,21 +17,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("health_check_rate") is { } nullNodeHealthCheckRate && nullNodeHealthCheckRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheckRate = null;
-            if (parseNode.GetChildNode("load_balance_inner_flows") is { } nullNodeLoadBalanceInnerFlows && nullNodeLoadBalanceInnerFlows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadBalanceInnerFlows = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("physport") is { } nullNodePhysport && nullNodePhysport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Physport = null;
-            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
-            if (parseNode.GetChildNode("provisioned_download_kbps") is { } nullNodeProvisionedDownloadKbps && nullNodeProvisionedDownloadKbps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionedDownloadKbps = null;
-            if (parseNode.GetChildNode("provisioned_upload_kbps") is { } nullNodeProvisionedUploadKbps && nullNodeProvisionedUploadKbps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionedUploadKbps = null;
-            if (parseNode.GetChildNode("static_addressing") is { } nullNodeStaticAddressing && nullNodeStaticAddressing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticAddressing = null;
-            if (parseNode.GetChildNode("vlan_tag") is { } nullNodeVlanTag && nullNodeVlanTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VlanTag = null;
+            if (parseNode.GetChildNode("health_check_rate") is null) { _explicitNullValueHealthCheckRate = default!; _explicitNullProperties?.Remove("health_check_rate"); }
+            else if (parseNode.GetChildNode("health_check_rate") is { } nullNodeHealthCheckRate && nullNodeHealthCheckRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheckRate = null;
+            if (parseNode.GetChildNode("load_balance_inner_flows") is null) { _explicitNullValueLoadBalanceInnerFlows = default!; _explicitNullProperties?.Remove("load_balance_inner_flows"); }
+            else if (parseNode.GetChildNode("load_balance_inner_flows") is { } nullNodeLoadBalanceInnerFlows && nullNodeLoadBalanceInnerFlows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoadBalanceInnerFlows = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("physport") is null) { _explicitNullValuePhysport = default!; _explicitNullProperties?.Remove("physport"); }
+            else if (parseNode.GetChildNode("physport") is { } nullNodePhysport && nullNodePhysport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Physport = null;
+            if (parseNode.GetChildNode("priority") is null) { _explicitNullValuePriority = default!; _explicitNullProperties?.Remove("priority"); }
+            else if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("provisioned_download_kbps") is null) { _explicitNullValueProvisionedDownloadKbps = default!; _explicitNullProperties?.Remove("provisioned_download_kbps"); }
+            else if (parseNode.GetChildNode("provisioned_download_kbps") is { } nullNodeProvisionedDownloadKbps && nullNodeProvisionedDownloadKbps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionedDownloadKbps = null;
+            if (parseNode.GetChildNode("provisioned_upload_kbps") is null) { _explicitNullValueProvisionedUploadKbps = default!; _explicitNullProperties?.Remove("provisioned_upload_kbps"); }
+            else if (parseNode.GetChildNode("provisioned_upload_kbps") is { } nullNodeProvisionedUploadKbps && nullNodeProvisionedUploadKbps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionedUploadKbps = null;
+            if (parseNode.GetChildNode("static_addressing") is null) { _explicitNullValueStaticAddressing = default!; _explicitNullProperties?.Remove("static_addressing"); }
+            else if (parseNode.GetChildNode("static_addressing") is { } nullNodeStaticAddressing && nullNodeStaticAddressing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticAddressing = null;
+            if (parseNode.GetChildNode("vlan_tag") is null) { _explicitNullValueVlanTag = default!; _explicitNullProperties?.Remove("vlan_tag"); }
+            else if (parseNode.GetChildNode("vlan_tag") is { } nullNodeVlanTag && nullNodeVlanTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VlanTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Magic WAN health check rate for tunnels created on this link. The default value is `mid`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanHealthCheckRate? HealthCheckRate { get => _explicitNullValueHealthCheckRate; set { _explicitNullValueHealthCheckRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check_rate"); else _explicitNullProperties?.Remove("health_check_rate"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanHealthCheckRate? HealthCheckRate { get => _explicitNullValueHealthCheckRate; set { _explicitNullValueHealthCheckRate = value; AdditionalData?.Remove("health_check_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_check_rate"); else _explicitNullProperties?.Remove("health_check_rate"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanHealthCheckRate? _explicitNullValueHealthCheckRate = default!;
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,29 +51,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>The load_balance_inner_flows property</summary>
-        public bool? LoadBalanceInnerFlows { get => _explicitNullValueLoadBalanceInnerFlows; set { _explicitNullValueLoadBalanceInnerFlows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_balance_inner_flows"); else _explicitNullProperties?.Remove("load_balance_inner_flows"); } }
+        public bool? LoadBalanceInnerFlows { get => _explicitNullValueLoadBalanceInnerFlows; set { _explicitNullValueLoadBalanceInnerFlows = value; AdditionalData?.Remove("load_balance_inner_flows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("load_balance_inner_flows"); else _explicitNullProperties?.Remove("load_balance_inner_flows"); } }
         private bool? _explicitNullValueLoadBalanceInnerFlows = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The physport property</summary>
-        public int? Physport { get => _explicitNullValuePhysport; set { _explicitNullValuePhysport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("physport"); else _explicitNullProperties?.Remove("physport"); } }
+        public int? Physport { get => _explicitNullValuePhysport; set { _explicitNullValuePhysport = value; AdditionalData?.Remove("physport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("physport"); else _explicitNullProperties?.Remove("physport"); } }
         private int? _explicitNullValuePhysport = default!;
         /// <summary>Priority of WAN for traffic loadbalancing.</summary>
-        public int? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        public int? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private int? _explicitNullValuePriority = default!;
         /// <summary>Provisioned download rate of the WAN circuit in kilobits per second.</summary>
-        public int? ProvisionedDownloadKbps { get => _explicitNullValueProvisionedDownloadKbps; set { _explicitNullValueProvisionedDownloadKbps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned_download_kbps"); else _explicitNullProperties?.Remove("provisioned_download_kbps"); } }
+        public int? ProvisionedDownloadKbps { get => _explicitNullValueProvisionedDownloadKbps; set { _explicitNullValueProvisionedDownloadKbps = value; AdditionalData?.Remove("provisioned_download_kbps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned_download_kbps"); else _explicitNullProperties?.Remove("provisioned_download_kbps"); } }
         private int? _explicitNullValueProvisionedDownloadKbps = default!;
         /// <summary>Provisioned upload rate of the WAN circuit in kilobits per second.</summary>
-        public int? ProvisionedUploadKbps { get => _explicitNullValueProvisionedUploadKbps; set { _explicitNullValueProvisionedUploadKbps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned_upload_kbps"); else _explicitNullProperties?.Remove("provisioned_upload_kbps"); } }
+        public int? ProvisionedUploadKbps { get => _explicitNullValueProvisionedUploadKbps; set { _explicitNullValueProvisionedUploadKbps = value; AdditionalData?.Remove("provisioned_upload_kbps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned_upload_kbps"); else _explicitNullProperties?.Remove("provisioned_upload_kbps"); } }
         private int? _explicitNullValueProvisionedUploadKbps = default!;
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,15 +86,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>(optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing? StaticAddressing { get => _explicitNullValueStaticAddressing; set { _explicitNullValueStaticAddressing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_addressing"); else _explicitNullProperties?.Remove("static_addressing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing? StaticAddressing { get => _explicitNullValueStaticAddressing; set { _explicitNullValueStaticAddressing = value; AdditionalData?.Remove("static_addressing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_addressing"); else _explicitNullProperties?.Remove("static_addressing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing? _explicitNullValueStaticAddressing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing StaticAddressing { get => _explicitNullValueStaticAddressing; set { _explicitNullValueStaticAddressing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_addressing"); else _explicitNullProperties?.Remove("static_addressing"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing StaticAddressing { get => _explicitNullValueStaticAddressing; set { _explicitNullValueStaticAddressing = value; AdditionalData?.Remove("static_addressing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_addressing"); else _explicitNullProperties?.Remove("static_addressing"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing _explicitNullValueStaticAddressing = default!;
 #endif
         /// <summary>VLAN ID. Use zero for untagged.</summary>
-        public int? VlanTag { get => _explicitNullValueVlanTag; set { _explicitNullValueVlanTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vlan_tag"); else _explicitNullProperties?.Remove("vlan_tag"); } }
+        public int? VlanTag { get => _explicitNullValueVlanTag; set { _explicitNullValueVlanTag = value; AdditionalData?.Remove("vlan_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vlan_tag"); else _explicitNullProperties?.Remove("vlan_tag"); } }
         private int? _explicitNullValueVlanTag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanDeletedResponseResult"/> and sets the default values.
@@ -112,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "health_check_rate", n => { HealthCheckRate = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanHealthCheckRate>(); } },
+                { "health_check_rate", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanHealthCheckRate>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHealthCheckRate = default; _explicitNullProperties?.Remove("health_check_rate"); AdditionalData["health_check_rate"] = unknown; } else { HealthCheckRate = parsed; AdditionalData.Remove("health_check_rate"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "load_balance_inner_flows", n => { LoadBalanceInnerFlows = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },

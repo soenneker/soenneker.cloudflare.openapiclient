@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("parameter_schemas") is { } nullNodeParameterSchemas && nullNodeParameterSchemas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParameterSchemas = null;
+            if (parseNode.GetChildNode("parameter_schemas") is null) { _explicitNullValueParameterSchemas = default!; _explicitNullProperties?.Remove("parameter_schemas"); }
+            else if (parseNode.GetChildNode("parameter_schemas") is { } nullNodeParameterSchemas && nullNodeParameterSchemas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParameterSchemas = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The parameter_schemas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterSchemasParameterSchemas? ParameterSchemas { get => _explicitNullValueParameterSchemas; set { _explicitNullValueParameterSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter_schemas"); else _explicitNullProperties?.Remove("parameter_schemas"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterSchemasParameterSchemas? ParameterSchemas { get => _explicitNullValueParameterSchemas; set { _explicitNullValueParameterSchemas = value; AdditionalData?.Remove("parameter_schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter_schemas"); else _explicitNullProperties?.Remove("parameter_schemas"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterSchemasParameterSchemas? _explicitNullValueParameterSchemas = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterSchemasParameterSchemas ParameterSchemas { get => _explicitNullValueParameterSchemas; set { _explicitNullValueParameterSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter_schemas"); else _explicitNullProperties?.Remove("parameter_schemas"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterSchemasParameterSchemas ParameterSchemas { get => _explicitNullValueParameterSchemas; set { _explicitNullValueParameterSchemas = value; AdditionalData?.Remove("parameter_schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter_schemas"); else _explicitNullProperties?.Remove("parameter_schemas"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterSchemasParameterSchemas _explicitNullValueParameterSchemas = default!;
 #endif
         /// <summary>

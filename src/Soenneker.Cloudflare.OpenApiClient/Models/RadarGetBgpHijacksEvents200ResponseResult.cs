@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asn_info") is { } nullNodeAsnInfo && nullNodeAsnInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnInfo = null;
-            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
-            if (parseNode.GetChildNode("total_monitors") is { } nullNodeTotalMonitors && nullNodeTotalMonitors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalMonitors = null;
+            if (parseNode.GetChildNode("asn_info") is null) { _explicitNullValueAsnInfo = default!; _explicitNullProperties?.Remove("asn_info"); }
+            else if (parseNode.GetChildNode("asn_info") is { } nullNodeAsnInfo && nullNodeAsnInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsnInfo = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("total_monitors") is null) { _explicitNullValueTotalMonitors = default!; _explicitNullProperties?.Remove("total_monitors"); }
+            else if (parseNode.GetChildNode("total_monitors") is { } nullNodeTotalMonitors && nullNodeTotalMonitors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalMonitors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The asn_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultAsnInfoItem>? AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_info"); else _explicitNullProperties?.Remove("asn_info"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultAsnInfoItem>? AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; AdditionalData?.Remove("asn_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_info"); else _explicitNullProperties?.Remove("asn_info"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultAsnInfoItem>? _explicitNullValueAsnInfo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultAsnInfoItem> AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_info"); else _explicitNullProperties?.Remove("asn_info"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultAsnInfoItem> AsnInfo { get => _explicitNullValueAsnInfo; set { _explicitNullValueAsnInfo = value; AdditionalData?.Remove("asn_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn_info"); else _explicitNullProperties?.Remove("asn_info"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultAsnInfoItem> _explicitNullValueAsnInfo = default!;
 #endif
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItem>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItem>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItem>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItem> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItem> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResultEventsItem> _explicitNullValueEvents = default!;
 #endif
         /// <summary>The total_monitors property</summary>
-        public int? TotalMonitors { get => _explicitNullValueTotalMonitors; set { _explicitNullValueTotalMonitors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_monitors"); else _explicitNullProperties?.Remove("total_monitors"); } }
+        public int? TotalMonitors { get => _explicitNullValueTotalMonitors; set { _explicitNullValueTotalMonitors = value; AdditionalData?.Remove("total_monitors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_monitors"); else _explicitNullProperties?.Remove("total_monitors"); } }
         private int? _explicitNullValueTotalMonitors = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpHijacksEvents200ResponseResult"/> and sets the default values.

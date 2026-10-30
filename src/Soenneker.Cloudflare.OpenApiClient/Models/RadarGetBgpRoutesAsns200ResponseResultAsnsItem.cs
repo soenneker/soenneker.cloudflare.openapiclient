@@ -17,70 +17,80 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
-            if (parseNode.GetChildNode("coneSize") is { } nullNodeConeSize && nullNodeConeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConeSize = null;
-            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
-            if (parseNode.GetChildNode("ipv4Count") is { } nullNodeIpv4Count && nullNodeIpv4Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4Count = null;
-            if (parseNode.GetChildNode("ipv6Count") is { } nullNodeIpv6Count && nullNodeIpv6Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6Count = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("pfxsCount") is { } nullNodePfxsCount && nullNodePfxsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PfxsCount = null;
-            if (parseNode.GetChildNode("rpkiInvalid") is { } nullNodeRpkiInvalid && nullNodeRpkiInvalid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RpkiInvalid = null;
-            if (parseNode.GetChildNode("rpkiUnknown") is { } nullNodeRpkiUnknown && nullNodeRpkiUnknown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RpkiUnknown = null;
-            if (parseNode.GetChildNode("rpkiValid") is { } nullNodeRpkiValid && nullNodeRpkiValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RpkiValid = null;
+            if (parseNode.GetChildNode("asn") is null) { _explicitNullValueAsn = default!; _explicitNullProperties?.Remove("asn"); }
+            else if (parseNode.GetChildNode("asn") is { } nullNodeAsn && nullNodeAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asn = null;
+            if (parseNode.GetChildNode("coneSize") is null) { _explicitNullValueConeSize = default!; _explicitNullProperties?.Remove("coneSize"); }
+            else if (parseNode.GetChildNode("coneSize") is { } nullNodeConeSize && nullNodeConeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConeSize = null;
+            if (parseNode.GetChildNode("country") is null) { _explicitNullValueCountry = default!; _explicitNullProperties?.Remove("country"); }
+            else if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("ipv4Count") is null) { _explicitNullValueIpv4Count = default!; _explicitNullProperties?.Remove("ipv4Count"); }
+            else if (parseNode.GetChildNode("ipv4Count") is { } nullNodeIpv4Count && nullNodeIpv4Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4Count = null;
+            if (parseNode.GetChildNode("ipv6Count") is null) { _explicitNullValueIpv6Count = default!; _explicitNullProperties?.Remove("ipv6Count"); }
+            else if (parseNode.GetChildNode("ipv6Count") is { } nullNodeIpv6Count && nullNodeIpv6Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6Count = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pfxsCount") is null) { _explicitNullValuePfxsCount = default!; _explicitNullProperties?.Remove("pfxsCount"); }
+            else if (parseNode.GetChildNode("pfxsCount") is { } nullNodePfxsCount && nullNodePfxsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PfxsCount = null;
+            if (parseNode.GetChildNode("rpkiInvalid") is null) { _explicitNullValueRpkiInvalid = default!; _explicitNullProperties?.Remove("rpkiInvalid"); }
+            else if (parseNode.GetChildNode("rpkiInvalid") is { } nullNodeRpkiInvalid && nullNodeRpkiInvalid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RpkiInvalid = null;
+            if (parseNode.GetChildNode("rpkiUnknown") is null) { _explicitNullValueRpkiUnknown = default!; _explicitNullProperties?.Remove("rpkiUnknown"); }
+            else if (parseNode.GetChildNode("rpkiUnknown") is { } nullNodeRpkiUnknown && nullNodeRpkiUnknown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RpkiUnknown = null;
+            if (parseNode.GetChildNode("rpkiValid") is null) { _explicitNullValueRpkiValid = default!; _explicitNullProperties?.Remove("rpkiValid"); }
+            else if (parseNode.GetChildNode("rpkiValid") is { } nullNodeRpkiValid && nullNodeRpkiValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RpkiValid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn property</summary>
-        public int? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
+        public int? Asn { get => _explicitNullValueAsn; set { _explicitNullValueAsn = value; AdditionalData?.Remove("asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asn"); else _explicitNullProperties?.Remove("asn"); } }
         private int? _explicitNullValueAsn = default!;
         /// <summary>AS&apos;s customer cone size.</summary>
-        public int? ConeSize { get => _explicitNullValueConeSize; set { _explicitNullValueConeSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coneSize"); else _explicitNullProperties?.Remove("coneSize"); } }
+        public int? ConeSize { get => _explicitNullValueConeSize; set { _explicitNullValueConeSize = value; AdditionalData?.Remove("coneSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coneSize"); else _explicitNullProperties?.Remove("coneSize"); } }
         private int? _explicitNullValueConeSize = default!;
         /// <summary>Alpha-2 code for the AS&apos;s registration country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; AdditionalData?.Remove("country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
         private string? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; AdditionalData?.Remove("country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
         private string _explicitNullValueCountry = default!;
 #endif
         /// <summary>Number of IPv4 addresses originated by the AS.</summary>
-        public int? Ipv4Count { get => _explicitNullValueIpv4Count; set { _explicitNullValueIpv4Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4Count"); else _explicitNullProperties?.Remove("ipv4Count"); } }
+        public int? Ipv4Count { get => _explicitNullValueIpv4Count; set { _explicitNullValueIpv4Count = value; AdditionalData?.Remove("ipv4Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4Count"); else _explicitNullProperties?.Remove("ipv4Count"); } }
         private int? _explicitNullValueIpv4Count = default!;
         /// <summary>Number of IPv6 addresses originated by the AS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ipv6Count { get => _explicitNullValueIpv6Count; set { _explicitNullValueIpv6Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6Count"); else _explicitNullProperties?.Remove("ipv6Count"); } }
+        public string? Ipv6Count { get => _explicitNullValueIpv6Count; set { _explicitNullValueIpv6Count = value; AdditionalData?.Remove("ipv6Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6Count"); else _explicitNullProperties?.Remove("ipv6Count"); } }
         private string? _explicitNullValueIpv6Count = default!;
 #nullable restore
 #else
-        public string Ipv6Count { get => _explicitNullValueIpv6Count; set { _explicitNullValueIpv6Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6Count"); else _explicitNullProperties?.Remove("ipv6Count"); } }
+        public string Ipv6Count { get => _explicitNullValueIpv6Count; set { _explicitNullValueIpv6Count = value; AdditionalData?.Remove("ipv6Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6Count"); else _explicitNullProperties?.Remove("ipv6Count"); } }
         private string _explicitNullValueIpv6Count = default!;
 #endif
         /// <summary>Name of the AS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Number of total IP prefixes originated by the AS.</summary>
-        public int? PfxsCount { get => _explicitNullValuePfxsCount; set { _explicitNullValuePfxsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfxsCount"); else _explicitNullProperties?.Remove("pfxsCount"); } }
+        public int? PfxsCount { get => _explicitNullValuePfxsCount; set { _explicitNullValuePfxsCount = value; AdditionalData?.Remove("pfxsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfxsCount"); else _explicitNullProperties?.Remove("pfxsCount"); } }
         private int? _explicitNullValuePfxsCount = default!;
         /// <summary>Number of RPKI invalid prefixes originated by the AS.</summary>
-        public int? RpkiInvalid { get => _explicitNullValueRpkiInvalid; set { _explicitNullValueRpkiInvalid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpkiInvalid"); else _explicitNullProperties?.Remove("rpkiInvalid"); } }
+        public int? RpkiInvalid { get => _explicitNullValueRpkiInvalid; set { _explicitNullValueRpkiInvalid = value; AdditionalData?.Remove("rpkiInvalid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpkiInvalid"); else _explicitNullProperties?.Remove("rpkiInvalid"); } }
         private int? _explicitNullValueRpkiInvalid = default!;
         /// <summary>Number of RPKI unknown prefixes originated by the AS.</summary>
-        public int? RpkiUnknown { get => _explicitNullValueRpkiUnknown; set { _explicitNullValueRpkiUnknown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpkiUnknown"); else _explicitNullProperties?.Remove("rpkiUnknown"); } }
+        public int? RpkiUnknown { get => _explicitNullValueRpkiUnknown; set { _explicitNullValueRpkiUnknown = value; AdditionalData?.Remove("rpkiUnknown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpkiUnknown"); else _explicitNullProperties?.Remove("rpkiUnknown"); } }
         private int? _explicitNullValueRpkiUnknown = default!;
         /// <summary>Number of RPKI valid prefixes originated by the AS.</summary>
-        public int? RpkiValid { get => _explicitNullValueRpkiValid; set { _explicitNullValueRpkiValid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpkiValid"); else _explicitNullProperties?.Remove("rpkiValid"); } }
+        public int? RpkiValid { get => _explicitNullValueRpkiValid; set { _explicitNullValueRpkiValid = value; AdditionalData?.Remove("rpkiValid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rpkiValid"); else _explicitNullProperties?.Remove("rpkiValid"); } }
         private int? _explicitNullValueRpkiValid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200ResponseResultAsnsItem"/> and sets the default values.

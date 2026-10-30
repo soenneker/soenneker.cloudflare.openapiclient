@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("link_maze") is { } nullNodeLinkMaze && nullNodeLinkMaze.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkMaze = null;
+            if (parseNode.GetChildNode("link_maze") is null) { _explicitNullValueLinkMaze = default!; _explicitNullProperties?.Remove("link_maze"); }
+            else if (parseNode.GetChildNode("link_maze") is { } nullNodeLinkMaze && nullNodeLinkMaze.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkMaze = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Enables the link maze transformation on the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRuleTransformResponseHtmlRuleActionParametersLinkMazeProperty? LinkMaze { get => _explicitNullValueLinkMaze; set { _explicitNullValueLinkMaze = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_maze"); else _explicitNullProperties?.Remove("link_maze"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRuleTransformResponseHtmlRuleActionParametersLinkMazeProperty? LinkMaze { get => _explicitNullValueLinkMaze; set { _explicitNullValueLinkMaze = value; AdditionalData?.Remove("link_maze"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_maze"); else _explicitNullProperties?.Remove("link_maze"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRuleTransformResponseHtmlRuleActionParametersLinkMazeProperty? _explicitNullValueLinkMaze = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRuleTransformResponseHtmlRuleActionParametersLinkMazeProperty LinkMaze { get => _explicitNullValueLinkMaze; set { _explicitNullValueLinkMaze = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_maze"); else _explicitNullProperties?.Remove("link_maze"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRuleTransformResponseHtmlRuleActionParametersLinkMazeProperty LinkMaze { get => _explicitNullValueLinkMaze; set { _explicitNullValueLinkMaze = value; AdditionalData?.Remove("link_maze"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_maze"); else _explicitNullProperties?.Remove("link_maze"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRuleTransformResponseHtmlRuleActionParametersLinkMazeProperty _explicitNullValueLinkMaze = default!;
 #endif
         /// <summary>

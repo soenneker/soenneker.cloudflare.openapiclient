@@ -17,40 +17,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cache_by_device_type") is { } nullNodeCacheByDeviceType && nullNodeCacheByDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheByDeviceType = null;
-            if (parseNode.GetChildNode("cf") is { } nullNodeCf && nullNodeCf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cf = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
-            if (parseNode.GetChildNode("wordpress") is { } nullNodeWordpress && nullNodeWordpress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wordpress = null;
-            if (parseNode.GetChildNode("wp_plugin") is { } nullNodeWpPlugin && nullNodeWpPlugin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WpPlugin = null;
+            if (parseNode.GetChildNode("cache_by_device_type") is null) { _explicitNullValueCacheByDeviceType = default!; _explicitNullProperties?.Remove("cache_by_device_type"); }
+            else if (parseNode.GetChildNode("cache_by_device_type") is { } nullNodeCacheByDeviceType && nullNodeCacheByDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheByDeviceType = null;
+            if (parseNode.GetChildNode("cf") is null) { _explicitNullValueCf = default!; _explicitNullProperties?.Remove("cf"); }
+            else if (parseNode.GetChildNode("cf") is { } nullNodeCf && nullNodeCf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cf = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("hostnames") is null) { _explicitNullValueHostnames = default!; _explicitNullProperties?.Remove("hostnames"); }
+            else if (parseNode.GetChildNode("hostnames") is { } nullNodeHostnames && nullNodeHostnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostnames = null;
+            if (parseNode.GetChildNode("wordpress") is null) { _explicitNullValueWordpress = default!; _explicitNullProperties?.Remove("wordpress"); }
+            else if (parseNode.GetChildNode("wordpress") is { } nullNodeWordpress && nullNodeWordpress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wordpress = null;
+            if (parseNode.GetChildNode("wp_plugin") is null) { _explicitNullValueWpPlugin = default!; _explicitNullProperties?.Remove("wp_plugin"); }
+            else if (parseNode.GetChildNode("wp_plugin") is { } nullNodeWpPlugin && nullNodeWpPlugin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WpPlugin = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether or not [cache by device type](https://developers.cloudflare.com/automatic-platform-optimization/reference/cache-device-type/) is enabled.</summary>
-        public bool? CacheByDeviceType { get => _explicitNullValueCacheByDeviceType; set { _explicitNullValueCacheByDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_by_device_type"); else _explicitNullProperties?.Remove("cache_by_device_type"); } }
+        public bool? CacheByDeviceType { get => _explicitNullValueCacheByDeviceType; set { _explicitNullValueCacheByDeviceType = value; AdditionalData?.Remove("cache_by_device_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_by_device_type"); else _explicitNullProperties?.Remove("cache_by_device_type"); } }
         private bool? _explicitNullValueCacheByDeviceType = default!;
         /// <summary>Indicates whether or not Cloudflare proxy is enabled.</summary>
-        public bool? Cf { get => _explicitNullValueCf; set { _explicitNullValueCf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf"); else _explicitNullProperties?.Remove("cf"); } }
+        public bool? Cf { get => _explicitNullValueCf; set { _explicitNullValueCf = value; AdditionalData?.Remove("cf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cf"); else _explicitNullProperties?.Remove("cf"); } }
         private bool? _explicitNullValueCf = default!;
         /// <summary>Indicates whether or not Automatic Platform Optimization is enabled.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>An array of hostnames where Automatic Platform Optimization for WordPress is activated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        public List<string>? Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; AdditionalData?.Remove("hostnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
         private List<string>? _explicitNullValueHostnames = default!;
 #nullable restore
 #else
-        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
+        public List<string> Hostnames { get => _explicitNullValueHostnames; set { _explicitNullValueHostnames = value; AdditionalData?.Remove("hostnames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnames"); else _explicitNullProperties?.Remove("hostnames"); } }
         private List<string> _explicitNullValueHostnames = default!;
 #endif
         /// <summary>Indicates whether or not site is powered by WordPress.</summary>
-        public bool? Wordpress { get => _explicitNullValueWordpress; set { _explicitNullValueWordpress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wordpress"); else _explicitNullProperties?.Remove("wordpress"); } }
+        public bool? Wordpress { get => _explicitNullValueWordpress; set { _explicitNullValueWordpress = value; AdditionalData?.Remove("wordpress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wordpress"); else _explicitNullProperties?.Remove("wordpress"); } }
         private bool? _explicitNullValueWordpress = default!;
         /// <summary>Indicates whether or not [Cloudflare for WordPress plugin](https://wordpress.org/plugins/cloudflare/) is installed.</summary>
-        public bool? WpPlugin { get => _explicitNullValueWpPlugin; set { _explicitNullValueWpPlugin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wp_plugin"); else _explicitNullProperties?.Remove("wp_plugin"); } }
+        public bool? WpPlugin { get => _explicitNullValueWpPlugin; set { _explicitNullValueWpPlugin = value; AdditionalData?.Remove("wp_plugin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wp_plugin"); else _explicitNullProperties?.Remove("wp_plugin"); } }
         private bool? _explicitNullValueWpPlugin = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSchemasAutomaticPlatformOptimizationValue"/> and sets the default values.

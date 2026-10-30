@@ -18,15 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agents") is { } nullNodeAgents && nullNodeAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agents = null;
-            if (parseNode.GetChildNode("calculations") is { } nullNodeCalculations && nullNodeCalculations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calculations = null;
-            if (parseNode.GetChildNode("compare") is { } nullNodeCompare && nullNodeCompare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compare = null;
-            if (parseNode.GetChildNode("distribution") is { } nullNodeDistribution && nullNodeDistribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distribution = null;
-            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
-            if (parseNode.GetChildNode("invocations") is { } nullNodeInvocations && nullNodeInvocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invocations = null;
-            if (parseNode.GetChildNode("run") is { } nullNodeRun && nullNodeRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Run = null;
-            if (parseNode.GetChildNode("statistics") is { } nullNodeStatistics && nullNodeStatistics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statistics = null;
-            if (parseNode.GetChildNode("traces") is { } nullNodeTraces && nullNodeTraces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Traces = null;
+            if (parseNode.GetChildNode("agents") is null) { _explicitNullValueAgents = default!; _explicitNullProperties?.Remove("agents"); }
+            else if (parseNode.GetChildNode("agents") is { } nullNodeAgents && nullNodeAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agents = null;
+            if (parseNode.GetChildNode("calculations") is null) { _explicitNullValueCalculations = default!; _explicitNullProperties?.Remove("calculations"); }
+            else if (parseNode.GetChildNode("calculations") is { } nullNodeCalculations && nullNodeCalculations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calculations = null;
+            if (parseNode.GetChildNode("compare") is null) { _explicitNullValueCompare = default!; _explicitNullProperties?.Remove("compare"); }
+            else if (parseNode.GetChildNode("compare") is { } nullNodeCompare && nullNodeCompare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compare = null;
+            if (parseNode.GetChildNode("distribution") is null) { _explicitNullValueDistribution = default!; _explicitNullProperties?.Remove("distribution"); }
+            else if (parseNode.GetChildNode("distribution") is { } nullNodeDistribution && nullNodeDistribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distribution = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("invocations") is null) { _explicitNullValueInvocations = default!; _explicitNullProperties?.Remove("invocations"); }
+            else if (parseNode.GetChildNode("invocations") is { } nullNodeInvocations && nullNodeInvocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invocations = null;
+            if (parseNode.GetChildNode("run") is null) { _explicitNullValueRun = default!; _explicitNullProperties?.Remove("run"); }
+            else if (parseNode.GetChildNode("run") is { } nullNodeRun && nullNodeRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Run = null;
+            if (parseNode.GetChildNode("statistics") is null) { _explicitNullValueStatistics = default!; _explicitNullProperties?.Remove("statistics"); }
+            else if (parseNode.GetChildNode("statistics") is { } nullNodeStatistics && nullNodeStatistics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statistics = null;
+            if (parseNode.GetChildNode("traces") is null) { _explicitNullValueTraces = default!; _explicitNullProperties?.Remove("traces"); }
+            else if (parseNode.GetChildNode("traces") is { } nullNodeTraces && nullNodeTraces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Traces = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,91 +43,91 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Agent run summaries. Present when the query view is &apos;agents&apos;. Each entry represents one trace containing at least one agent invocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem>? Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem>? Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; AdditionalData?.Remove("agents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem>? _explicitNullValueAgents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem> Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem> Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; AdditionalData?.Remove("agents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem> _explicitNullValueAgents = default!;
 #endif
         /// <summary>Aggregated calculation results. Present when the query view is &apos;calculations&apos;. Contains computed metrics (count, avg, p99, etc.) with optional group-by breakdowns and time-series data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem>? Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem>? Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; AdditionalData?.Remove("calculations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem>? _explicitNullValueCalculations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem> Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem> Calculations { get => _explicitNullValueCalculations; set { _explicitNullValueCalculations = value; AdditionalData?.Remove("calculations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculations"); else _explicitNullProperties?.Remove("calculations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem> _explicitNullValueCalculations = default!;
 #endif
         /// <summary>Comparison calculation results from the previous time period. Present when the compare option is enabled. Same structure as calculations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem>? Compare { get => _explicitNullValueCompare; set { _explicitNullValueCompare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compare"); else _explicitNullProperties?.Remove("compare"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem>? Compare { get => _explicitNullValueCompare; set { _explicitNullValueCompare = value; AdditionalData?.Remove("compare"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compare"); else _explicitNullProperties?.Remove("compare"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem>? _explicitNullValueCompare = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem> Compare { get => _explicitNullValueCompare; set { _explicitNullValueCompare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compare"); else _explicitNullProperties?.Remove("compare"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem> Compare { get => _explicitNullValueCompare; set { _explicitNullValueCompare = value; AdditionalData?.Remove("compare"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compare"); else _explicitNullProperties?.Remove("compare"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem> _explicitNullValueCompare = default!;
 #endif
         /// <summary>Bucketed 2D histogram of a numeric field over time. Present when chartType is &apos;distribution&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult? Distribution { get => _explicitNullValueDistribution; set { _explicitNullValueDistribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution"); else _explicitNullProperties?.Remove("distribution"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult? Distribution { get => _explicitNullValueDistribution; set { _explicitNullValueDistribution = value; AdditionalData?.Remove("distribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution"); else _explicitNullProperties?.Remove("distribution"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult? _explicitNullValueDistribution = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult Distribution { get => _explicitNullValueDistribution; set { _explicitNullValueDistribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution"); else _explicitNullProperties?.Remove("distribution"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult Distribution { get => _explicitNullValueDistribution; set { _explicitNullValueDistribution = value; AdditionalData?.Remove("distribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution"); else _explicitNullProperties?.Remove("distribution"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult _explicitNullValueDistribution = default!;
 #endif
         /// <summary>Individual event results. Present when the query view is &apos;events&apos;. Contains the matching log lines and their metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents _explicitNullValueEvents = default!;
 #endif
         /// <summary>Events grouped by invocation (request ID). Present when the query view is &apos;invocations&apos;. Each key is a request ID mapping to all events from that invocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty? Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty? Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; AdditionalData?.Remove("invocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty? _explicitNullValueInvocations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; AdditionalData?.Remove("invocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty _explicitNullValueInvocations = default!;
 #endif
         /// <summary>Represents a single execution of a query against Workers Observability data, including the query definition, execution status, and performance statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun? Run { get => _explicitNullValueRun; set { _explicitNullValueRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run"); else _explicitNullProperties?.Remove("run"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun? Run { get => _explicitNullValueRun; set { _explicitNullValueRun = value; AdditionalData?.Remove("run"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run"); else _explicitNullProperties?.Remove("run"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun? _explicitNullValueRun = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun Run { get => _explicitNullValueRun; set { _explicitNullValueRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run"); else _explicitNullProperties?.Remove("run"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun Run { get => _explicitNullValueRun; set { _explicitNullValueRun = value; AdditionalData?.Remove("run"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run"); else _explicitNullProperties?.Remove("run"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun _explicitNullValueRun = default!;
 #endif
         /// <summary>Query performance statistics from the database. Includes execution time, rows scanned, and bytes read. Does not include network latency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation? Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation? Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; AdditionalData?.Remove("statistics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation? _explicitNullValueStatistics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; AdditionalData?.Remove("statistics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation _explicitNullValueStatistics = default!;
 #endif
         /// <summary>Trace summaries matching the query. Present when the query view is &apos;traces&apos;. Each entry represents a distributed trace with its spans, duration, and services involved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem>? Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem>? Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; AdditionalData?.Remove("traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem>? _explicitNullValueTraces = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem> Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem> Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; AdditionalData?.Remove("traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem> _explicitNullValueTraces = default!;
 #endif
         /// <summary>

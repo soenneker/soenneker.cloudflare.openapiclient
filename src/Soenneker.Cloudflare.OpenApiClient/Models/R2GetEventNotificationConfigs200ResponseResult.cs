@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bucketName") is { } nullNodeBucketName && nullNodeBucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketName = null;
-            if (parseNode.GetChildNode("queues") is { } nullNodeQueues && nullNodeQueues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queues = null;
+            if (parseNode.GetChildNode("bucketName") is null) { _explicitNullValueBucketName = default!; _explicitNullProperties?.Remove("bucketName"); }
+            else if (parseNode.GetChildNode("bucketName") is { } nullNodeBucketName && nullNodeBucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BucketName = null;
+            if (parseNode.GetChildNode("queues") is null) { _explicitNullValueQueues = default!; _explicitNullProperties?.Remove("queues"); }
+            else if (parseNode.GetChildNode("queues") is { } nullNodeQueues && nullNodeQueues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queues = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Name of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BucketName { get => _explicitNullValueBucketName; set { _explicitNullValueBucketName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketName"); else _explicitNullProperties?.Remove("bucketName"); } }
+        public string? BucketName { get => _explicitNullValueBucketName; set { _explicitNullValueBucketName = value; AdditionalData?.Remove("bucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketName"); else _explicitNullProperties?.Remove("bucketName"); } }
         private string? _explicitNullValueBucketName = default!;
 #nullable restore
 #else
-        public string BucketName { get => _explicitNullValueBucketName; set { _explicitNullValueBucketName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketName"); else _explicitNullProperties?.Remove("bucketName"); } }
+        public string BucketName { get => _explicitNullValueBucketName; set { _explicitNullValueBucketName = value; AdditionalData?.Remove("bucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bucketName"); else _explicitNullProperties?.Remove("bucketName"); } }
         private string _explicitNullValueBucketName = default!;
 #endif
         /// <summary>List of queues associated with the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfig>? Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfig>? Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; AdditionalData?.Remove("queues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfig>? _explicitNullValueQueues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfig> Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfig> Queues { get => _explicitNullValueQueues; set { _explicitNullValueQueues = value; AdditionalData?.Remove("queues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queues"); else _explicitNullProperties?.Remove("queues"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfig> _explicitNullValueQueues = default!;
 #endif
         /// <summary>

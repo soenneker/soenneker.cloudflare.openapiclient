@@ -17,34 +17,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("integration_type") is { } nullNodeIntegrationType && nullNodeIntegrationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationType = null;
-            if (parseNode.GetChildNode("reference_id") is { } nullNodeReferenceId && nullNodeReferenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceId = null;
-            if (parseNode.GetChildNode("tenant_url") is { } nullNodeTenantUrl && nullNodeTenantUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantUrl = null;
+            if (parseNode.GetChildNode("integration_type") is null) { _explicitNullValueIntegrationType = default!; _explicitNullProperties?.Remove("integration_type"); }
+            else if (parseNode.GetChildNode("integration_type") is { } nullNodeIntegrationType && nullNodeIntegrationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationType = null;
+            if (parseNode.GetChildNode("reference_id") is null) { _explicitNullValueReferenceId = default!; _explicitNullProperties?.Remove("reference_id"); }
+            else if (parseNode.GetChildNode("reference_id") is { } nullNodeReferenceId && nullNodeReferenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceId = null;
+            if (parseNode.GetChildNode("tenant_url") is null) { _explicitNullValueTenantUrl = default!; _explicitNullProperties?.Remove("tenant_url"); }
+            else if (parseNode.GetChildNode("tenant_url") is { } nullNodeTenantUrl && nullNodeTenantUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The integration_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType? IntegrationType { get => _explicitNullValueIntegrationType; set { _explicitNullValueIntegrationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_type"); else _explicitNullProperties?.Remove("integration_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType? IntegrationType { get => _explicitNullValueIntegrationType; set { _explicitNullValueIntegrationType = value; AdditionalData?.Remove("integration_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_type"); else _explicitNullProperties?.Remove("integration_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType? _explicitNullValueIntegrationType = default!;
         /// <summary>A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4).https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
+        public string? ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; AdditionalData?.Remove("reference_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
         private string? _explicitNullValueReferenceId = default!;
 #nullable restore
 #else
-        public string ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
+        public string ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; AdditionalData?.Remove("reference_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
         private string _explicitNullValueReferenceId = default!;
 #endif
         /// <summary>The base url of the tenant, e.g. &quot;https://tenant.okta.com&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantUrl { get => _explicitNullValueTenantUrl; set { _explicitNullValueTenantUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_url"); else _explicitNullProperties?.Remove("tenant_url"); } }
+        public string? TenantUrl { get => _explicitNullValueTenantUrl; set { _explicitNullValueTenantUrl = value; AdditionalData?.Remove("tenant_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_url"); else _explicitNullProperties?.Remove("tenant_url"); } }
         private string? _explicitNullValueTenantUrl = default!;
 #nullable restore
 #else
-        public string TenantUrl { get => _explicitNullValueTenantUrl; set { _explicitNullValueTenantUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_url"); else _explicitNullProperties?.Remove("tenant_url"); } }
+        public string TenantUrl { get => _explicitNullValueTenantUrl; set { _explicitNullValueTenantUrl = value; AdditionalData?.Remove("tenant_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_url"); else _explicitNullProperties?.Remove("tenant_url"); } }
         private string _explicitNullValueTenantUrl = default!;
 #endif
         /// <summary>
@@ -72,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "integration_type", n => { IntegrationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType>(); } },
+                { "integration_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskScoreIntegrationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIntegrationType = default; _explicitNullProperties?.Remove("integration_type"); AdditionalData["integration_type"] = unknown; } else { IntegrationType = parsed; AdditionalData.Remove("integration_type"); } } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
                 { "tenant_url", n => { TenantUrl = n.GetStringValue(); } },
             };

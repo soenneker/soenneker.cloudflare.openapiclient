@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("graph") is { } nullNodeGraph && nullNodeGraph.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Graph = null;
-            if (parseNode.GetChildNode("tables") is { } nullNodeTables && nullNodeTables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tables = null;
+            if (parseNode.GetChildNode("graph") is null) { _explicitNullValueGraph = default!; _explicitNullProperties?.Remove("graph"); }
+            else if (parseNode.GetChildNode("graph") is { } nullNodeGraph && nullNodeGraph.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Graph = null;
+            if (parseNode.GetChildNode("tables") is null) { _explicitNullValueTables = default!; _explicitNullProperties?.Remove("tables"); }
+            else if (parseNode.GetChildNode("tables") is { } nullNodeTables && nullNodeTables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tables = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicates the processing flow to implement the SQL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineGraph? Graph { get => _explicitNullValueGraph; set { _explicitNullValueGraph = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("graph"); else _explicitNullProperties?.Remove("graph"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineGraph? Graph { get => _explicitNullValueGraph; set { _explicitNullValueGraph = value; AdditionalData?.Remove("graph"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("graph"); else _explicitNullProperties?.Remove("graph"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineGraph? _explicitNullValueGraph = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineGraph Graph { get => _explicitNullValueGraph; set { _explicitNullValueGraph = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("graph"); else _explicitNullProperties?.Remove("graph"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineGraph Graph { get => _explicitNullValueGraph; set { _explicitNullValueGraph = value; AdditionalData?.Remove("graph"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("graph"); else _explicitNullProperties?.Remove("graph"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesPipelineGraph _explicitNullValueGraph = default!;
 #endif
         /// <summary>Indicates tables involved in the processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTables? Tables { get => _explicitNullValueTables; set { _explicitNullValueTables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tables"); else _explicitNullProperties?.Remove("tables"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTables? Tables { get => _explicitNullValueTables; set { _explicitNullValueTables = value; AdditionalData?.Remove("tables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tables"); else _explicitNullProperties?.Remove("tables"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTables? _explicitNullValueTables = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTables Tables { get => _explicitNullValueTables; set { _explicitNullValueTables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tables"); else _explicitNullProperties?.Remove("tables"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTables Tables { get => _explicitNullValueTables; set { _explicitNullValueTables = value; AdditionalData?.Remove("tables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tables"); else _explicitNullProperties?.Remove("tables"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTables _explicitNullValueTables = default!;
 #endif
         /// <summary>

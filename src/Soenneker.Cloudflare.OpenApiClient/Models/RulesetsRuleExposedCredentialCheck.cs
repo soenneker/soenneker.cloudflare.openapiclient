@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("password_expression") is { } nullNodePasswordExpression && nullNodePasswordExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordExpression = null;
-            if (parseNode.GetChildNode("username_expression") is { } nullNodeUsernameExpression && nullNodeUsernameExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsernameExpression = null;
+            if (parseNode.GetChildNode("password_expression") is null) { _explicitNullValuePasswordExpression = default!; _explicitNullProperties?.Remove("password_expression"); }
+            else if (parseNode.GetChildNode("password_expression") is { } nullNodePasswordExpression && nullNodePasswordExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordExpression = null;
+            if (parseNode.GetChildNode("username_expression") is null) { _explicitNullValueUsernameExpression = default!; _explicitNullProperties?.Remove("username_expression"); }
+            else if (parseNode.GetChildNode("username_expression") is { } nullNodeUsernameExpression && nullNodeUsernameExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsernameExpression = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An expression that selects the password used in the credentials check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PasswordExpression { get => _explicitNullValuePasswordExpression; set { _explicitNullValuePasswordExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password_expression"); else _explicitNullProperties?.Remove("password_expression"); } }
+        public string? PasswordExpression { get => _explicitNullValuePasswordExpression; set { _explicitNullValuePasswordExpression = value; AdditionalData?.Remove("password_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password_expression"); else _explicitNullProperties?.Remove("password_expression"); } }
         private string? _explicitNullValuePasswordExpression = default!;
 #nullable restore
 #else
-        public string PasswordExpression { get => _explicitNullValuePasswordExpression; set { _explicitNullValuePasswordExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password_expression"); else _explicitNullProperties?.Remove("password_expression"); } }
+        public string PasswordExpression { get => _explicitNullValuePasswordExpression; set { _explicitNullValuePasswordExpression = value; AdditionalData?.Remove("password_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password_expression"); else _explicitNullProperties?.Remove("password_expression"); } }
         private string _explicitNullValuePasswordExpression = default!;
 #endif
         /// <summary>An expression that selects the user ID used in the credentials check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UsernameExpression { get => _explicitNullValueUsernameExpression; set { _explicitNullValueUsernameExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username_expression"); else _explicitNullProperties?.Remove("username_expression"); } }
+        public string? UsernameExpression { get => _explicitNullValueUsernameExpression; set { _explicitNullValueUsernameExpression = value; AdditionalData?.Remove("username_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username_expression"); else _explicitNullProperties?.Remove("username_expression"); } }
         private string? _explicitNullValueUsernameExpression = default!;
 #nullable restore
 #else
-        public string UsernameExpression { get => _explicitNullValueUsernameExpression; set { _explicitNullValueUsernameExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username_expression"); else _explicitNullProperties?.Remove("username_expression"); } }
+        public string UsernameExpression { get => _explicitNullValueUsernameExpression; set { _explicitNullValueUsernameExpression = value; AdditionalData?.Remove("username_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username_expression"); else _explicitNullProperties?.Remove("username_expression"); } }
         private string _explicitNullValueUsernameExpression = default!;
 #endif
         /// <summary>

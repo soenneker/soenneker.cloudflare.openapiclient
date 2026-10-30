@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("purge_everything") is { } nullNodePurgeEverything && nullNodePurgeEverything.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurgeEverything = null;
+            if (parseNode.GetChildNode("purge_everything") is null) { _explicitNullValuePurgeEverything = default!; _explicitNullProperties?.Remove("purge_everything"); }
+            else if (parseNode.GetChildNode("purge_everything") is { } nullNodePurgeEverything && nullNodePurgeEverything.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurgeEverything = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to `true` to target all cached content in the zone, or in the environment for the environment endpoints. Must be the only field in the request. See [Purge everything](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-everything/).</summary>
-        public bool? PurgeEverything { get => _explicitNullValuePurgeEverything; set { _explicitNullValuePurgeEverything = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purge_everything"); else _explicitNullProperties?.Remove("purge_everything"); } }
+        public bool? PurgeEverything { get => _explicitNullValuePurgeEverything; set { _explicitNullValuePurgeEverything = value; AdditionalData?.Remove("purge_everything"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purge_everything"); else _explicitNullProperties?.Remove("purge_everything"); } }
         private bool? _explicitNullValuePurgeEverything = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeEverything"/> and sets the default values.

@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("keyword_tokenizer") is { } nullNodeKeywordTokenizer && nullNodeKeywordTokenizer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordTokenizer = null;
-            if (parseNode.GetChildNode("use_ocr") is { } nullNodeUseOcr && nullNodeUseOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseOcr = null;
+            if (parseNode.GetChildNode("keyword_tokenizer") is null) { _explicitNullValueKeywordTokenizer = default!; _explicitNullProperties?.Remove("keyword_tokenizer"); }
+            else if (parseNode.GetChildNode("keyword_tokenizer") is { } nullNodeKeywordTokenizer && nullNodeKeywordTokenizer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordTokenizer = null;
+            if (parseNode.GetChildNode("use_ocr") is null) { _explicitNullValueUseOcr = default!; _explicitNullProperties?.Remove("use_ocr"); }
+            else if (parseNode.GetChildNode("use_ocr") is { } nullNodeUseOcr && nullNodeUseOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseOcr = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestIndexingOptionsKeywordTokenizer? KeywordTokenizer { get => _explicitNullValueKeywordTokenizer; set { _explicitNullValueKeywordTokenizer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_tokenizer"); else _explicitNullProperties?.Remove("keyword_tokenizer"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestIndexingOptionsKeywordTokenizer? KeywordTokenizer { get => _explicitNullValueKeywordTokenizer; set { _explicitNullValueKeywordTokenizer = value; AdditionalData?.Remove("keyword_tokenizer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword_tokenizer"); else _explicitNullProperties?.Remove("keyword_tokenizer"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestIndexingOptionsKeywordTokenizer? _explicitNullValueKeywordTokenizer = default!;
         /// <summary>Enables OCR ingestion for PDFs and images. Changing this triggers a full re-index. Defaults to false.</summary>
-        public bool? UseOcr { get => _explicitNullValueUseOcr; set { _explicitNullValueUseOcr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_ocr"); else _explicitNullProperties?.Remove("use_ocr"); } }
+        public bool? UseOcr { get => _explicitNullValueUseOcr; set { _explicitNullValueUseOcr = value; AdditionalData?.Remove("use_ocr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_ocr"); else _explicitNullProperties?.Remove("use_ocr"); } }
         private bool? _explicitNullValueUseOcr = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestIndexingOptions"/> and sets the default values.
@@ -57,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keyword_tokenizer", n => { KeywordTokenizer = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestIndexingOptionsKeywordTokenizer>(); } },
+                { "keyword_tokenizer", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchUpdateInstanceRequestIndexingOptionsKeywordTokenizer>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKeywordTokenizer = default; _explicitNullProperties?.Remove("keyword_tokenizer"); AdditionalData["keyword_tokenizer"] = unknown; } else { KeywordTokenizer = parsed; AdditionalData.Remove("keyword_tokenizer"); } } },
                 { "use_ocr", n => { UseOcr = n.GetBoolValue(); } },
             };
         }

@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("summarization") is { } nullNodeSummarization && nullNodeSummarization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summarization = null;
-            if (parseNode.GetChildNode("transcription") is { } nullNodeTranscription && nullNodeTranscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcription = null;
+            if (parseNode.GetChildNode("summarization") is null) { _explicitNullValueSummarization = default!; _explicitNullProperties?.Remove("summarization"); }
+            else if (parseNode.GetChildNode("summarization") is { } nullNodeSummarization && nullNodeSummarization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summarization = null;
+            if (parseNode.GetChildNode("transcription") is null) { _explicitNullValueTranscription = default!; _explicitNullProperties?.Remove("transcription"); }
+            else if (parseNode.GetChildNode("transcription") is { } nullNodeTranscription && nullNodeTranscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Summary Config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig? Summarization { get => _explicitNullValueSummarization; set { _explicitNullValueSummarization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarization"); else _explicitNullProperties?.Remove("summarization"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig? Summarization { get => _explicitNullValueSummarization; set { _explicitNullValueSummarization = value; AdditionalData?.Remove("summarization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarization"); else _explicitNullProperties?.Remove("summarization"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig? _explicitNullValueSummarization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig Summarization { get => _explicitNullValueSummarization; set { _explicitNullValueSummarization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarization"); else _explicitNullProperties?.Remove("summarization"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig Summarization { get => _explicitNullValueSummarization; set { _explicitNullValueSummarization = value; AdditionalData?.Remove("summarization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summarization"); else _explicitNullProperties?.Remove("summarization"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig _explicitNullValueSummarization = default!;
 #endif
         /// <summary>Transcription Configurations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig? _explicitNullValueTranscription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig _explicitNullValueTranscription = default!;
 #endif
         /// <summary>

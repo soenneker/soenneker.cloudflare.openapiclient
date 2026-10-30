@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("icmp_proxy_enabled") is { } nullNodeIcmpProxyEnabled && nullNodeIcmpProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IcmpProxyEnabled = null;
-            if (parseNode.GetChildNode("offramp_warp_enabled") is { } nullNodeOfframpWarpEnabled && nullNodeOfframpWarpEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OfframpWarpEnabled = null;
+            if (parseNode.GetChildNode("icmp_proxy_enabled") is null) { _explicitNullValueIcmpProxyEnabled = default!; _explicitNullProperties?.Remove("icmp_proxy_enabled"); }
+            else if (parseNode.GetChildNode("icmp_proxy_enabled") is { } nullNodeIcmpProxyEnabled && nullNodeIcmpProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IcmpProxyEnabled = null;
+            if (parseNode.GetChildNode("offramp_warp_enabled") is null) { _explicitNullValueOfframpWarpEnabled = default!; _explicitNullProperties?.Remove("offramp_warp_enabled"); }
+            else if (parseNode.GetChildNode("offramp_warp_enabled") is { } nullNodeOfframpWarpEnabled && nullNodeOfframpWarpEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OfframpWarpEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A flag to enable the ICMP proxy for the account network.</summary>
-        public bool? IcmpProxyEnabled { get => _explicitNullValueIcmpProxyEnabled; set { _explicitNullValueIcmpProxyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icmp_proxy_enabled"); else _explicitNullProperties?.Remove("icmp_proxy_enabled"); } }
+        public bool? IcmpProxyEnabled { get => _explicitNullValueIcmpProxyEnabled; set { _explicitNullValueIcmpProxyEnabled = value; AdditionalData?.Remove("icmp_proxy_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icmp_proxy_enabled"); else _explicitNullProperties?.Remove("icmp_proxy_enabled"); } }
         private bool? _explicitNullValueIcmpProxyEnabled = default!;
         /// <summary>A flag to enable WARP to WARP traffic.</summary>
-        public bool? OfframpWarpEnabled { get => _explicitNullValueOfframpWarpEnabled; set { _explicitNullValueOfframpWarpEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offramp_warp_enabled"); else _explicitNullProperties?.Remove("offramp_warp_enabled"); } }
+        public bool? OfframpWarpEnabled { get => _explicitNullValueOfframpWarpEnabled; set { _explicitNullValueOfframpWarpEnabled = value; AdditionalData?.Remove("offramp_warp_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offramp_warp_enabled"); else _explicitNullProperties?.Remove("offramp_warp_enabled"); } }
         private bool? _explicitNullValueOfframpWarpEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsPatchConnectivitySettingsRequest"/> and sets the default values.

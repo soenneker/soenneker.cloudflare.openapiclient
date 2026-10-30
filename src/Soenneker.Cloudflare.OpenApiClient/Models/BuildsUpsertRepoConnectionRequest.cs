@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("provider_account_id") is { } nullNodeProviderAccountId && nullNodeProviderAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderAccountId = null;
-            if (parseNode.GetChildNode("provider_account_name") is { } nullNodeProviderAccountName && nullNodeProviderAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderAccountName = null;
-            if (parseNode.GetChildNode("provider_type") is { } nullNodeProviderType && nullNodeProviderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderType = null;
-            if (parseNode.GetChildNode("repo_id") is { } nullNodeRepoId && nullNodeRepoId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoId = null;
-            if (parseNode.GetChildNode("repo_name") is { } nullNodeRepoName && nullNodeRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoName = null;
+            if (parseNode.GetChildNode("provider_account_id") is null) { _explicitNullValueProviderAccountId = default!; _explicitNullProperties?.Remove("provider_account_id"); }
+            else if (parseNode.GetChildNode("provider_account_id") is { } nullNodeProviderAccountId && nullNodeProviderAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderAccountId = null;
+            if (parseNode.GetChildNode("provider_account_name") is null) { _explicitNullValueProviderAccountName = default!; _explicitNullProperties?.Remove("provider_account_name"); }
+            else if (parseNode.GetChildNode("provider_account_name") is { } nullNodeProviderAccountName && nullNodeProviderAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderAccountName = null;
+            if (parseNode.GetChildNode("provider_type") is null) { _explicitNullValueProviderType = default!; _explicitNullProperties?.Remove("provider_type"); }
+            else if (parseNode.GetChildNode("provider_type") is { } nullNodeProviderType && nullNodeProviderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderType = null;
+            if (parseNode.GetChildNode("repo_id") is null) { _explicitNullValueRepoId = default!; _explicitNullProperties?.Remove("repo_id"); }
+            else if (parseNode.GetChildNode("repo_id") is { } nullNodeRepoId && nullNodeRepoId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoId = null;
+            if (parseNode.GetChildNode("repo_name") is null) { _explicitNullValueRepoName = default!; _explicitNullProperties?.Remove("repo_name"); }
+            else if (parseNode.GetChildNode("repo_name") is { } nullNodeRepoName && nullNodeRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Provider-specific identifier of the account or namespace that owns the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderAccountId { get => _explicitNullValueProviderAccountId; set { _explicitNullValueProviderAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_id"); else _explicitNullProperties?.Remove("provider_account_id"); } }
+        public string? ProviderAccountId { get => _explicitNullValueProviderAccountId; set { _explicitNullValueProviderAccountId = value; AdditionalData?.Remove("provider_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_id"); else _explicitNullProperties?.Remove("provider_account_id"); } }
         private string? _explicitNullValueProviderAccountId = default!;
 #nullable restore
 #else
-        public string ProviderAccountId { get => _explicitNullValueProviderAccountId; set { _explicitNullValueProviderAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_id"); else _explicitNullProperties?.Remove("provider_account_id"); } }
+        public string ProviderAccountId { get => _explicitNullValueProviderAccountId; set { _explicitNullValueProviderAccountId = value; AdditionalData?.Remove("provider_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_id"); else _explicitNullProperties?.Remove("provider_account_id"); } }
         private string _explicitNullValueProviderAccountId = default!;
 #endif
         /// <summary>Human-readable name of the account or namespace that owns the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
+        public string? ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; AdditionalData?.Remove("provider_account_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
         private string? _explicitNullValueProviderAccountName = default!;
 #nullable restore
 #else
-        public string ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
+        public string ProviderAccountName { get => _explicitNullValueProviderAccountName; set { _explicitNullValueProviderAccountName = value; AdditionalData?.Remove("provider_account_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_account_name"); else _explicitNullProperties?.Remove("provider_account_name"); } }
         private string _explicitNullValueProviderAccountName = default!;
 #endif
         /// <summary>Source control provider.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType? ProviderType { get => _explicitNullValueProviderType; set { _explicitNullValueProviderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_type"); else _explicitNullProperties?.Remove("provider_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType? ProviderType { get => _explicitNullValueProviderType; set { _explicitNullValueProviderType = value; AdditionalData?.Remove("provider_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_type"); else _explicitNullProperties?.Remove("provider_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType? _explicitNullValueProviderType = default!;
         /// <summary>Provider-specific repository identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoId { get => _explicitNullValueRepoId; set { _explicitNullValueRepoId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_id"); else _explicitNullProperties?.Remove("repo_id"); } }
+        public string? RepoId { get => _explicitNullValueRepoId; set { _explicitNullValueRepoId = value; AdditionalData?.Remove("repo_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_id"); else _explicitNullProperties?.Remove("repo_id"); } }
         private string? _explicitNullValueRepoId = default!;
 #nullable restore
 #else
-        public string RepoId { get => _explicitNullValueRepoId; set { _explicitNullValueRepoId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_id"); else _explicitNullProperties?.Remove("repo_id"); } }
+        public string RepoId { get => _explicitNullValueRepoId; set { _explicitNullValueRepoId = value; AdditionalData?.Remove("repo_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_id"); else _explicitNullProperties?.Remove("repo_id"); } }
         private string _explicitNullValueRepoId = default!;
 #endif
         /// <summary>Human-readable repository name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
+        public string? RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; AdditionalData?.Remove("repo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
         private string? _explicitNullValueRepoName = default!;
 #nullable restore
 #else
-        public string RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
+        public string RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; AdditionalData?.Remove("repo_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
         private string _explicitNullValueRepoName = default!;
 #endif
         /// <summary>
@@ -96,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "provider_account_id", n => { ProviderAccountId = n.GetStringValue(); } },
                 { "provider_account_name", n => { ProviderAccountName = n.GetStringValue(); } },
-                { "provider_type", n => { ProviderType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType>(); } },
+                { "provider_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProviderType = default; _explicitNullProperties?.Remove("provider_type"); AdditionalData["provider_type"] = unknown; } else { ProviderType = parsed; AdditionalData.Remove("provider_type"); } } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
                 { "repo_name", n => { RepoName = n.GetStringValue(); } },
             };

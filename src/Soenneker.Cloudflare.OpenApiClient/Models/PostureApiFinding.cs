@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("finding") is { } nullNodeFinding && nullNodeFinding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Finding = null;
-            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
-            if (parseNode.GetChildNode("severity_override") is { } nullNodeSeverityOverride && nullNodeSeverityOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeverityOverride = null;
+            if (parseNode.GetChildNode("finding") is null) { _explicitNullValueFinding = default!; _explicitNullProperties?.Remove("finding"); }
+            else if (parseNode.GetChildNode("finding") is { } nullNodeFinding && nullNodeFinding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Finding = null;
+            if (parseNode.GetChildNode("integration") is null) { _explicitNullValueIntegration = default!; _explicitNullProperties?.Remove("integration"); }
+            else if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("severity_override") is null) { _explicitNullValueSeverityOverride = default!; _explicitNullProperties?.Remove("severity_override"); }
+            else if (parseNode.GetChildNode("severity_override") is { } nullNodeSeverityOverride && nullNodeSeverityOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeverityOverride = null;
         }
 
         /// <summary>Number of active problematic instances identified in the security finding.</summary>
@@ -32,11 +35,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The finding property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType? Finding { get => _explicitNullValueFinding; set { _explicitNullValueFinding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding"); else _explicitNullProperties?.Remove("finding"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType? Finding { get => _explicitNullValueFinding; set { _explicitNullValueFinding = value; AdditionalData?.Remove("finding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding"); else _explicitNullProperties?.Remove("finding"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType? _explicitNullValueFinding = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType Finding { get => _explicitNullValueFinding; set { _explicitNullValueFinding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding"); else _explicitNullProperties?.Remove("finding"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType Finding { get => _explicitNullValueFinding; set { _explicitNullValueFinding = value; AdditionalData?.Remove("finding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finding"); else _explicitNullProperties?.Remove("finding"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingType _explicitNullValueFinding = default!;
 #endif
         /// <summary>Base64 encoded identifier of the security finding.</summary>
@@ -54,11 +57,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Summary information about an integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiIntegrationSummary _explicitNullValueIntegration = default!;
 #endif
         /// <summary>Timestamp of the latest affliction date of an active finding.</summary>
@@ -66,11 +69,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Override information for finding severity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingSeverityOverride? SeverityOverride { get => _explicitNullValueSeverityOverride; set { _explicitNullValueSeverityOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity_override"); else _explicitNullProperties?.Remove("severity_override"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingSeverityOverride? SeverityOverride { get => _explicitNullValueSeverityOverride; set { _explicitNullValueSeverityOverride = value; AdditionalData?.Remove("severity_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity_override"); else _explicitNullProperties?.Remove("severity_override"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingSeverityOverride? _explicitNullValueSeverityOverride = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingSeverityOverride SeverityOverride { get => _explicitNullValueSeverityOverride; set { _explicitNullValueSeverityOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity_override"); else _explicitNullProperties?.Remove("severity_override"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingSeverityOverride SeverityOverride { get => _explicitNullValueSeverityOverride; set { _explicitNullValueSeverityOverride = value; AdditionalData?.Remove("severity_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity_override"); else _explicitNullProperties?.Remove("severity_override"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingSeverityOverride _explicitNullValueSeverityOverride = default!;
 #endif
         /// <summary>

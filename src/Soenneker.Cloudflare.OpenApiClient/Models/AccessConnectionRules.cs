@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rdp") is { } nullNodeRdp && nullNodeRdp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rdp = null;
+            if (parseNode.GetChildNode("rdp") is null) { _explicitNullValueRdp = default!; _explicitNullProperties?.Remove("rdp"); }
+            else if (parseNode.GetChildNode("rdp") is { } nullNodeRdp && nullNodeRdp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rdp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The RDP-specific rules that define clipboard behavior for RDP connections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp? Rdp { get => _explicitNullValueRdp; set { _explicitNullValueRdp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rdp"); else _explicitNullProperties?.Remove("rdp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp? Rdp { get => _explicitNullValueRdp; set { _explicitNullValueRdp = value; AdditionalData?.Remove("rdp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rdp"); else _explicitNullProperties?.Remove("rdp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp? _explicitNullValueRdp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp Rdp { get => _explicitNullValueRdp; set { _explicitNullValueRdp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rdp"); else _explicitNullProperties?.Remove("rdp"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp Rdp { get => _explicitNullValueRdp; set { _explicitNullValueRdp = value; AdditionalData?.Remove("rdp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rdp"); else _explicitNullProperties?.Remove("rdp"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRulesRdp _explicitNullValueRdp = default!;
 #endif
         /// <summary>

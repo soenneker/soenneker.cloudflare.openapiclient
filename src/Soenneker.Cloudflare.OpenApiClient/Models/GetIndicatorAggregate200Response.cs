@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aggregateBy") is { } nullNodeAggregateBy && nullNodeAggregateBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregateBy = null;
-            if (parseNode.GetChildNode("aggregations") is { } nullNodeAggregations && nullNodeAggregations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregations = null;
-            if (parseNode.GetChildNode("failedDatasets") is { } nullNodeFailedDatasets && nullNodeFailedDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedDatasets = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("aggregateBy") is null) { _explicitNullValueAggregateBy = default!; _explicitNullProperties?.Remove("aggregateBy"); }
+            else if (parseNode.GetChildNode("aggregateBy") is { } nullNodeAggregateBy && nullNodeAggregateBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregateBy = null;
+            if (parseNode.GetChildNode("aggregations") is null) { _explicitNullValueAggregations = default!; _explicitNullProperties?.Remove("aggregations"); }
+            else if (parseNode.GetChildNode("aggregations") is { } nullNodeAggregations && nullNodeAggregations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregations = null;
+            if (parseNode.GetChildNode("failedDatasets") is null) { _explicitNullValueFailedDatasets = default!; _explicitNullProperties?.Remove("failedDatasets"); }
+            else if (parseNode.GetChildNode("failedDatasets") is { } nullNodeFailedDatasets && nullNodeFailedDatasets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedDatasets = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Column(s) that were aggregated by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AggregateBy { get => _explicitNullValueAggregateBy; set { _explicitNullValueAggregateBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateBy"); else _explicitNullProperties?.Remove("aggregateBy"); } }
+        public string? AggregateBy { get => _explicitNullValueAggregateBy; set { _explicitNullValueAggregateBy = value; AdditionalData?.Remove("aggregateBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateBy"); else _explicitNullProperties?.Remove("aggregateBy"); } }
         private string? _explicitNullValueAggregateBy = default!;
 #nullable restore
 #else
-        public string AggregateBy { get => _explicitNullValueAggregateBy; set { _explicitNullValueAggregateBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateBy"); else _explicitNullProperties?.Remove("aggregateBy"); } }
+        public string AggregateBy { get => _explicitNullValueAggregateBy; set { _explicitNullValueAggregateBy = value; AdditionalData?.Remove("aggregateBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateBy"); else _explicitNullProperties?.Remove("aggregateBy"); } }
         private string _explicitNullValueAggregateBy = default!;
 #endif
         /// <summary>Array of aggregation results with dynamic fields based on aggregateBy columns</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem>? Aggregations { get => _explicitNullValueAggregations; set { _explicitNullValueAggregations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregations"); else _explicitNullProperties?.Remove("aggregations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem>? Aggregations { get => _explicitNullValueAggregations; set { _explicitNullValueAggregations = value; AdditionalData?.Remove("aggregations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregations"); else _explicitNullProperties?.Remove("aggregations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem>? _explicitNullValueAggregations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem> Aggregations { get => _explicitNullValueAggregations; set { _explicitNullValueAggregations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregations"); else _explicitNullProperties?.Remove("aggregations"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem> Aggregations { get => _explicitNullValueAggregations; set { _explicitNullValueAggregations = value; AdditionalData?.Remove("aggregations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregations"); else _explicitNullProperties?.Remove("aggregations"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200ResponseAggregationsItem> _explicitNullValueAggregations = default!;
 #endif
         /// <summary>Number of datasets whose aggregation failed and were excluded from the result</summary>
-        public double? FailedDatasets { get => _explicitNullValueFailedDatasets; set { _explicitNullValueFailedDatasets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedDatasets"); else _explicitNullProperties?.Remove("failedDatasets"); } }
+        public double? FailedDatasets { get => _explicitNullValueFailedDatasets; set { _explicitNullValueFailedDatasets = value; AdditionalData?.Remove("failedDatasets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedDatasets"); else _explicitNullProperties?.Remove("failedDatasets"); } }
         private double? _explicitNullValueFailedDatasets = default!;
         /// <summary>Total count in the aggregation: indicator rows when measure=indicators, or linked-event rows when measure=relationships</summary>
-        public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private double? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorAggregate200Response"/> and sets the default values.

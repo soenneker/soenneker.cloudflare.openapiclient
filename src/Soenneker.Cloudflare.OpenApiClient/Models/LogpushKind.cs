@@ -7,6 +7,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LogpushKind
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "edge")]
         #pragma warning disable CS1591
         Edge,

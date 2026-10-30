@@ -17,13 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("previous_client_secret_expires_at") is { } nullNodePreviousClientSecretExpiresAt && nullNodePreviousClientSecretExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousClientSecretExpiresAt = null;
+            if (parseNode.GetChildNode("previous_client_secret_expires_at") is null) { _explicitNullValuePreviousClientSecretExpiresAt = default!; _explicitNullProperties?.Remove("previous_client_secret_expires_at"); }
+            else if (parseNode.GetChildNode("previous_client_secret_expires_at") is { } nullNodePreviousClientSecretExpiresAt && nullNodePreviousClientSecretExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousClientSecretExpiresAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expiration of the previous `client_secret`. If not provided, it defaults to the current timestamp in order to immediately expire the previous secret. If the service token was reported as leaked, this must not be in the future; the leaked secret is discarded immediately.</summary>
-        public DateTimeOffset? PreviousClientSecretExpiresAt { get => _explicitNullValuePreviousClientSecretExpiresAt; set { _explicitNullValuePreviousClientSecretExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_client_secret_expires_at"); else _explicitNullProperties?.Remove("previous_client_secret_expires_at"); } }
+        public DateTimeOffset? PreviousClientSecretExpiresAt { get => _explicitNullValuePreviousClientSecretExpiresAt; set { _explicitNullValuePreviousClientSecretExpiresAt = value; AdditionalData?.Remove("previous_client_secret_expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_client_secret_expires_at"); else _explicitNullProperties?.Remove("previous_client_secret_expires_at"); } }
         private DateTimeOffset? _explicitNullValuePreviousClientSecretExpiresAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokensRotateAServiceTokenRequest"/> and sets the default values.

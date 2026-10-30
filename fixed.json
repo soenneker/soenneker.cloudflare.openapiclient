@@ -582,7 +582,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -751,7 +751,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -833,7 +833,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -934,7 +934,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -1016,7 +1016,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -1138,7 +1138,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -1296,7 +1296,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -1402,7 +1402,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -1498,7 +1498,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -1604,7 +1604,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+                  "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponseError"
                 }
               }
             }
@@ -37703,7 +37703,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuditLogsGetAccountAuditLogs4XxResponse"
+                  "$ref": "#/components/schemas/AuditLogsGetAccountAuditLogs4XxResponseError"
                 }
               }
             }
@@ -68919,7 +68919,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudforceOneUpdateEmailRuleSuccessResponse"
+                  "$ref": "#/components/schemas/CloudforceOneCreateEmailRuleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CloudforceOneRulePreview"
@@ -68932,7 +68932,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudforceOneUpdateEmailRuleSuccessResponse"
+                  "$ref": "#/components/schemas/CloudforceOneCreateEmailRuleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CloudforceOneApprovalPendingResponse"
@@ -69250,7 +69250,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudforceOneDeleteRuleSuccessResponse"
+                  "$ref": "#/components/schemas/CloudforceOneDeleteEmailRuleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CloudforceOneSuccessResponse"
@@ -69263,7 +69263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudforceOneDeleteRuleSuccessResponse"
+                  "$ref": "#/components/schemas/CloudforceOneDeleteEmailRuleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CloudforceOneApprovalPendingResponse"
@@ -69447,7 +69447,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudforceOneUpdateRuleSuccessResponse"
+                  "$ref": "#/components/schemas/CloudforceOneCreateEmailRuleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CloudforceOneRulePreview"
@@ -69460,7 +69460,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudforceOneUpdateRuleSuccessResponse"
+                  "$ref": "#/components/schemas/CloudforceOneCreateEmailRuleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CloudforceOneApprovalPendingResponse"
@@ -78184,17 +78184,8 @@
             "name": "max_results",
             "in": "query",
             "schema": {
-              "anyOf": [
-                {
-                  "enum": [
-                    ""
-                  ],
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
-              ],
+              "type": "string",
+              "x-client-inline-scalar": true,
               "description": "Maximum search matches to request, an integer from 1 to 50. Defaults to 20 when omitted or empty; multiple matches from one article can produce fewer returned articles."
             }
           },
@@ -130585,7 +130576,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesListImages4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesListImages4XxResponseError"
                 }
               }
             }
@@ -130658,7 +130649,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesUploadAnImageViaUrl4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesUploadAnImageViaUrl4XxResponseError"
                 }
               }
             }
@@ -130729,7 +130720,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesCreateAuthenticatedDirectUploadUrlV14XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesCreateAuthenticatedDirectUploadUrlV14XxResponseError"
                 }
               }
             }
@@ -130793,7 +130784,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesKeysListSigningKeys4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesKeysListSigningKeys4XxResponseError"
                 }
               }
             }
@@ -130868,7 +130859,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesKeysDeleteSigningKey4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesKeysDeleteSigningKey4XxResponseError"
                 }
               }
             }
@@ -130938,7 +130929,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesKeysAddSigningKey4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesKeysAddSigningKey4XxResponseError"
                 }
               }
             }
@@ -130997,7 +130988,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesImagesUsageStatistics4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesImagesUsageStatistics4XxResponseError"
                 }
               }
             }
@@ -131060,7 +131051,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesVariantsListVariants4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesVariantsListVariants4XxResponseError"
                 }
               }
             }
@@ -131131,7 +131122,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesVariantsCreateAVariant4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesVariantsCreateAVariant4XxResponseError"
                 }
               }
             }
@@ -131205,7 +131196,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesVariantsDeleteAVariant4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesVariantsDeleteAVariant4XxResponseError"
                 }
               }
             }
@@ -131278,7 +131269,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesVariantsVariantDetails4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesVariantsVariantDetails4XxResponseError"
                 }
               }
             }
@@ -131361,7 +131352,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesVariantsUpdateAVariant4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesVariantsUpdateAVariant4XxResponseError"
                 }
               }
             }
@@ -131435,7 +131426,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesVariantsVariantDetailsFlat4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesVariantsVariantDetailsFlat4XxResponseError"
                 }
               }
             }
@@ -131513,7 +131504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesDeleteImage4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesDeleteImage4XxResponseError"
                 }
               }
             }
@@ -131587,7 +131578,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesImageDetails4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesImageDetails4XxResponseError"
                 }
               }
             }
@@ -131671,7 +131662,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesUpdateImage4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesUpdateImage4XxResponseError"
                 }
               }
             }
@@ -131964,7 +131955,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesCreateAuthenticatedDirectUploadUrlV24XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesCreateAuthenticatedDirectUploadUrlV24XxResponseError"
                 }
               }
             }
@@ -132111,7 +132102,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitListMigrations4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitListMigrations4XxResponseError"
                 }
               }
             }
@@ -132182,7 +132173,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitCreateMigration4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitCreateMigration4XxResponseError"
                 }
               }
             }
@@ -132255,7 +132246,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitDeleteMigration4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitDeleteMigration4XxResponseError"
                 }
               }
             }
@@ -132327,7 +132318,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetMigration4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetMigration4XxResponseError"
                 }
               }
             }
@@ -132401,7 +132392,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetMigrationProgress4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetMigrationProgress4XxResponseError"
                 }
               }
             }
@@ -132642,7 +132633,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitListMigrationLogs4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitListMigrationLogs4XxResponseError"
                 }
               }
             }
@@ -132734,7 +132725,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitListSources4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitListSources4XxResponseError"
                 }
               }
             }
@@ -132805,7 +132796,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitCreateSource4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitCreateSource4XxResponseError"
                 }
               }
             }
@@ -132877,7 +132868,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitPrecheckSourceConnectivity4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitPrecheckSourceConnectivity4XxResponseError"
                 }
               }
             }
@@ -132950,7 +132941,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitDeleteSource4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitDeleteSource4XxResponseError"
                 }
               }
             }
@@ -133022,7 +133013,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetSource4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetSource4XxResponseError"
                 }
               }
             }
@@ -133104,7 +133095,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitUpdateSource4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitUpdateSource4XxResponseError"
                 }
               }
             }
@@ -133177,7 +133168,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetSourceConnectivity4XxResponse"
+                  "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetSourceConnectivity4XxResponseError"
                 }
               }
             }
@@ -202227,7 +202218,10 @@
             "content": {
               "application/octet-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkersKvValue"
+                  "type": "string",
+                  "x-client-inline-scalar": true,
+                  "description": "A byte sequence to be stored, up to 25 MiB in length.",
+                  "example": "Some Value"
                 }
               }
             }
@@ -202329,7 +202323,10 @@
           "content": {
             "application/octet-stream": {
               "schema": {
-                "$ref": "#/components/schemas/WorkersKvValue"
+                "type": "string",
+                "x-client-inline-scalar": true,
+                "description": "A byte sequence to be stored, up to 25 MiB in length.",
+                "example": "Some Value"
               },
               "x-stainless-only": [
                 "http"
@@ -216968,7 +216965,14 @@
             "$ref": "#/components/responses/workers_200"
           },
           "4XX": {
-            "$ref": "#/components/responses/workers_4XX"
+            "description": "Upload Worker Module response failure. When the upload uses the\ndeclarative \u0060exports\u0060 field and one or more entries fail\nreconciliation, the response is the exports reconciliation\nerror envelope (error code 100402) with per-class detail in\n\u0060errors[].meta.details\u0060.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workers4XxResponseError"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -218059,7 +218063,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/NamespaceWorkerPatchScriptSettings4XxResponse"
+                  "$ref": "#/components/schemas/NamespaceWorkerPatchScriptSettings4XxResponseError"
                 }
               }
             }
@@ -223572,7 +223576,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkerScriptUploadWorkerModule4XxResponse"
+                  "$ref": "#/components/schemas/WorkerScriptUploadWorkerModule4XxResponseError"
                 }
               }
             }
@@ -224595,7 +224599,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkerScriptSettingsPatchSettings4XxResponse"
+                  "$ref": "#/components/schemas/WorkerScriptSettingsPatchSettings4XxResponseError"
                 }
               }
             }
@@ -225259,7 +225263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkerScriptPatchSettings4XxResponse"
+                  "$ref": "#/components/schemas/WorkerScriptPatchSettings4XxResponseError"
                 }
               }
             }
@@ -226143,7 +226147,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkerVersionsUploadVersion4XxResponse"
+                  "$ref": "#/components/schemas/WorkerVersionsUploadVersion4XxResponseError"
                 }
               }
             }
@@ -226641,7 +226645,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkerScriptEnvironmentPatchSettings4XxResponse"
+                  "$ref": "#/components/schemas/WorkerScriptEnvironmentPatchSettings4XxResponseError"
                 }
               }
             }
@@ -228262,7 +228266,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkersPreviewsDeploymentsCreate4XxResponse"
+                  "$ref": "#/components/schemas/WorkersPreviewsDeploymentsCreate4XxResponseError"
                 }
               }
             }
@@ -228364,7 +228368,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorkersPreviewsDeploymentsPatchLatest4XxResponse"
+                  "$ref": "#/components/schemas/WorkersPreviewsDeploymentsPatchLatest4XxResponseError"
                 }
               }
             }
@@ -228742,7 +228746,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateWorkerVersion4XxResponse"
+                  "$ref": "#/components/schemas/CreateWorkerVersion4XxResponseError"
                 }
               }
             }
@@ -228920,7 +228924,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchLatestWorkerVersion4XxResponse"
+                  "$ref": "#/components/schemas/PatchLatestWorkerVersion4XxResponseError"
                 }
               }
             }
@@ -294184,7 +294188,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuditLogsGetUserAuditLogs4XxResponse"
+                  "$ref": "#/components/schemas/AuditLogsGetUserAuditLogs4XxResponseError"
                 }
               }
             }
@@ -307410,7 +307414,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BotManagementConfigSingle"
+                "$ref": "#/components/schemas/BotManagementBotManagementResponseBodyAllOf2Result"
               }
             }
           },
@@ -314971,7 +314975,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DnsRecordsDnsRecordPost"
+                "$ref": "#/components/schemas/DnsRecordsDnsRecordBatchPost"
               }
             }
           },
@@ -315850,7 +315854,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DnsRecordsDnsRecordPatch"
+                "$ref": "#/components/schemas/DnsRecordsDnsRecordBatchPost"
               }
             }
           },
@@ -315945,7 +315949,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DnsRecordsDnsRecordPost"
+                "$ref": "#/components/schemas/DnsRecordsDnsRecordBatchPost"
               }
             }
           },
@@ -319980,7 +319984,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ZoneEnvironmentPurgeRequest"
+                "$ref": "#/components/schemas/ZoneEnvironmentInvalidateRequest"
               },
               "examples": {
                 "Cache tags": {
@@ -326490,7 +326494,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ZoneInvalidateRequest"
+                "$ref": "#/components/schemas/ZoneEnvironmentInvalidateRequest"
               },
               "examples": {
                 "Cache tags": {
@@ -336327,7 +336331,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ZonePurgeRequest"
+                "$ref": "#/components/schemas/ZoneEnvironmentInvalidateRequest"
               },
               "examples": {
                 "Cache tags": {
@@ -348918,7 +348922,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SpectrumConfigUpdateAppConfig"
+                "$ref": "#/components/schemas/SpectrumConfigAppConfigSingleAllOf2Result"
               }
             }
           },
@@ -349150,7 +349154,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SpectrumConfigUpdateAppConfig"
+                "$ref": "#/components/schemas/SpectrumConfigAppConfigSingleAllOf2Result"
               }
             }
           },
@@ -369968,7 +369972,7 @@
           "result": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AccessResponseCollectionAllOf2ResultItem"
+              "$ref": "#/components/schemas/AccessIdentityProviders"
             }
           }
         }
@@ -384313,7 +384317,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ArgoAnalyticsResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/ArgoAnalyticsApiResponseCommonSuccess"
@@ -384816,9 +384820,6 @@
               "anyOf": [
                 {
                   "type": "boolean"
-                },
-                {
-                  "type": "integer"
                 },
                 {
                   "type": "number"
@@ -385723,7 +385724,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/BillSubsApiApiResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/BillSubsApiApiResponseCollectionSuccess"
@@ -387367,7 +387368,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/BillSubsApiUserSubscriptionResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/BillSubsApiApiResponseCollectionSuccess"
@@ -414692,7 +414693,7 @@
             "x-stainless-terraform-configurability": "computed"
           },
           "default": {
-            "$ref": "#/components/schemas/DlpWorkerValidatorDefault"
+            "$ref": "#/components/schemas/DlpWorkerDefault"
           },
           "id": {
             "type": "string",
@@ -414745,7 +414746,7 @@
         "type": "object",
         "properties": {
           "default": {
-            "$ref": "#/components/schemas/DlpWorkerValidatorWriteDefault"
+            "$ref": "#/components/schemas/DlpWorkerDefault"
           },
           "name": {
             "type": "string",
@@ -419074,7 +419075,7 @@
           "accepts": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DnsRecordsDnsRecordScanBatchAccept"
+              "$ref": "#/components/schemas/DnsRecordsDnsRecordBatchPost"
             }
           },
           "rejects": {
@@ -431334,7 +431335,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/FirewallApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/FirewallApiResponseCollectionSuccess"
@@ -431413,7 +431414,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/FirewallApiResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/FirewallApiResponseCollectionSuccess"
@@ -432532,7 +432533,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/FirewallPackageResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/FirewallApiResponseCollectionSuccess"
@@ -434432,7 +434433,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/HealthchecksApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/HealthchecksApiResponseCollectionSuccess"
@@ -434499,7 +434500,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/HealthchecksApiResponseSingleResult"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/HealthchecksApiResponseCollectionSuccess"
@@ -441612,7 +441613,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ImagesApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
@@ -441679,7 +441680,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ImagesApiResponseSingleResult"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
@@ -441710,7 +441711,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ImagesDeletedResponseResult"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
@@ -447322,7 +447323,7 @@
             "$ref": "#/components/schemas/LoadBalancingApiPaginatedResponseCollectionSuccess"
           },
           "result": {
-            "$ref": "#/components/schemas/LoadBalancingApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -448945,7 +448946,17 @@
         ],
         "type": "string",
         "description": "The email address to send health status notifications to. This field is now deprecated in favor of Cloudflare Notifications for Load Balancing, so only resetting this field with an empty string \u0060\u0022\u0022\u0060 is accepted.",
-        "example": ""
+        "example": "",
+        "x-ms-enum": {
+          "name": "LoadBalancingPatchPoolsNotificationEmail",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "LoadBalancingPath": {
         "type": "string",
@@ -449513,7 +449524,7 @@
             "$ref": "#/components/schemas/LoadBalancingApiPaginatedResponseCollectionSuccess"
           },
           "result": {
-            "$ref": "#/components/schemas/LoadBalancingRegionComponentsSchemasResponseCollectionResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -450010,6 +450021,10 @@
             {
               "value": "least_connections",
               "name": "LeastConnections"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -450955,6 +450970,10 @@
           "name": "LogpushKind",
           "modelAsString": false,
           "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            },
             {
               "value": "edge",
               "name": "Edge"
@@ -452213,6 +452232,10 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "",
+              "name": "EnumValue"
+            },
+            {
               "value": "Could not gather traceroute data: Code 1",
               "name": "CouldNotGatherTracerouteDataColonCode1"
             },
@@ -452630,7 +452653,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/MagicVisibilityMnmApiResponseCommonResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/MagicVisibilityMnmApiResponseCollectionSuccess"
@@ -452693,7 +452716,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/MagicVisibilityMnmApiResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/MagicVisibilityMnmApiResponseCollectionSuccess"
@@ -453409,7 +453432,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/MagicVisibilityPcapsApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/MagicVisibilityPcapsApiResponseCollectionSuccess"
@@ -453475,7 +453498,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/MagicVisibilityPcapsApiResponseSingleResult"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/MagicVisibilityPcapsApiResponseCollectionSuccess"
@@ -454632,7 +454655,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/MagicApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/MagicApiResponseCommonSuccess"
@@ -454699,7 +454722,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/MagicApiResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/MagicApiResponseCommonSuccess"
@@ -455589,7 +455612,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/MagicCf1SiteRampSingleResponseResult"
+            "$ref": "#/components/schemas/MagicCf1SiteRamp"
           },
           "success": {
             "$ref": "#/components/schemas/MagicApiResponseCommonSuccess"
@@ -469585,7 +469608,7 @@
       "PagesEnvVars": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PagesEnvVarsAdditionalProperties"
+          "$ref": "#/components/schemas/PagesDeploymentConfigValuesRequestEnvVarsAdditionalProperties"
         },
         "description": "Environment variables used for builds and Pages Functions.",
         "nullable": true
@@ -478981,7 +479004,7 @@
         "type": "object",
         "properties": {
           "condition": {
-            "$ref": "#/components/schemas/R2LifecycleStorageTransitionCondition"
+            "$ref": "#/components/schemas/R2LifecycleRuleDeleteObjectsTransitionCondition"
           },
           "storageClass": {
             "$ref": "#/components/schemas/InfrequentAccessStorageClass"
@@ -479280,7 +479303,7 @@
           "jobs": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/R2R2BucketJob"
+              "$ref": "#/components/schemas/R2CreateBucketJob200ResponseResult"
             },
             "description": "Bucket jobs in the current page."
           },
@@ -481884,7 +481907,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/RegistrarApiSandboxApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/RegistrarApiSandboxApiResponseCommonSuccess"
@@ -482652,7 +482675,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/RegistrarApiApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/RegistrarApiApiResponseCommonSuccess"
@@ -497116,7 +497139,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/SmartshieldApiResponseResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/SmartshieldApiResponseCollectionSuccess"
@@ -499121,6 +499144,10 @@
           "name": "SpectrumConfigOriginDnsType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            },
             {
               "value": "AAAA",
               "name": "Aaaa"
@@ -503133,7 +503160,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/TeamsDevicesApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/TeamsDevicesApiResponseCollectionSuccess"
@@ -503200,7 +503227,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/TeamsDevicesApiResponseSingleResult"
+            "$ref": "#/components/schemas/TeamsDevicesApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/TeamsDevicesApiResponseCollectionSuccess"
@@ -507006,7 +507033,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/TeamsDevicesSchemasIdResponseResult"
+            "$ref": "#/components/schemas/TeamsDevicesApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/TeamsDevicesApiResponseCollectionSuccess"
@@ -514213,7 +514240,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/TunnelApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/TunnelApiResponseCollectionSuccess"
@@ -517531,7 +517558,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/VectorizeApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/VectorizeApiResponseCommonSuccess"
@@ -517598,7 +517625,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/VectorizeApiResponseSingleResult"
+            "$ref": "#/components/schemas/TeamsDevicesApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/VectorizeApiResponseCommonSuccess"
@@ -520057,7 +520084,7 @@
             "$ref": "#/components/schemas/WafManagedRulesApiResponseCollectionSuccess"
           },
           "result": {
-            "$ref": "#/components/schemas/WafManagedRulesRuleGroupResponseSingleResult"
+            "$ref": "#/components/schemas/WafManagedRulesApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -520125,7 +520152,7 @@
             "$ref": "#/components/schemas/WafManagedRulesApiResponseCollectionSuccess"
           },
           "result": {
-            "$ref": "#/components/schemas/WafManagedRulesRuleResponseSingleResult"
+            "$ref": "#/components/schemas/WafManagedRulesApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -520478,7 +520505,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/WafProductApiBundleApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/WafProductApiBundleApiResponseCollectionSuccess"
@@ -520644,7 +520671,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/WafProductApiBundleApiResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/WafProductApiBundleApiResponseCollectionSuccess"
@@ -520675,7 +520702,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/WafProductApiBundleApiResponseSingle2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/WafProductApiBundleApiResponseCollection2Success"
@@ -521215,7 +521242,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/WaitingroomApiResponseSingleResult"
+            "$ref": "#/components/schemas/WaitingroomApiResponseSingleAllOf2Result"
           },
           "success": {
             "type": "boolean"
@@ -523737,9 +523764,6 @@
             "type": "number"
           },
           {
-            "type": "integer"
-          },
-          {
             "type": "boolean"
           },
           {
@@ -524195,15 +524219,8 @@
         }
       },
       "WorkersKvValue": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "string",
-            "format": "binary"
-          }
-        ],
+        "type": "string",
+        "x-client-inline-scalar": true,
         "description": "A byte sequence to be stored, up to 25 MiB in length.",
         "example": "Some Value"
       },
@@ -525314,7 +525331,7 @@
             "$ref": "#/components/schemas/WorkersPreviewDeploymentConfigMigrations"
           },
           "placement": {
-            "$ref": "#/components/schemas/WorkersPlacementInfoNoStatus"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemPlacement"
           },
           "usage_model": {
             "$ref": "#/components/schemas/WorkersPreviewDeploymentConfigUsageModel"
@@ -525408,7 +525425,7 @@
             "$ref": "#/components/schemas/WorkersPreviewDeploymentConfigMigrations"
           },
           "placement": {
-            "$ref": "#/components/schemas/WorkersPlacementInfoNoStatus"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemPlacement"
           },
           "usage_model": {
             "$ref": "#/components/schemas/WorkersPreviewDeploymentConfigUsageModel"
@@ -525495,7 +525512,7 @@
             "$ref": "#/components/schemas/WorkersPreviewDeploymentConfigMigrations"
           },
           "placement": {
-            "$ref": "#/components/schemas/WorkersPlacementInfoNoStatus"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemPlacement"
           },
           "usage_model": {
             "$ref": "#/components/schemas/WorkersPreviewDeploymentConfigUsageModel"
@@ -525686,7 +525703,7 @@
             "x-auditable": true
           },
           "placement": {
-            "$ref": "#/components/schemas/WorkersPlacementInfoNoStatus"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemPlacement"
           },
           "source": {
             "type": "string",
@@ -529198,13 +529215,13 @@
             "x-auditable": true
           },
           "migrations": {
-            "$ref": "#/components/schemas/WorkersScriptAndVersionSettingsItemMigrations"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemMigrations"
           },
           "observability": {
             "$ref": "#/components/schemas/WorkersObservability2"
           },
           "placement": {
-            "$ref": "#/components/schemas/WorkersScriptAndVersionSettingsItemPlacement"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemPlacement"
           },
           "tags": {
             "$ref": "#/components/schemas/WorkersScriptAndVersionSettingsItemTags"
@@ -535083,7 +535100,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ZoneAnalyticsApiApiResponseCommonResult"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/ZoneAnalyticsApiApiResponseCommonSuccess"
@@ -535150,7 +535167,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ZoneAnalyticsApiApiResponseSingleResult"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleResult"
           },
           "success": {
             "$ref": "#/components/schemas/ZoneAnalyticsApiApiResponseCommonSuccess"
@@ -535927,7 +535944,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ZonesApiResponseCommon3Result"
+            "$ref": "#/components/schemas/BillSubsApiApiResponseCommonResult"
           },
           "success": {
             "$ref": "#/components/schemas/ZonesApiResponseCommon3Success"
@@ -536116,7 +536133,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/ZonesApiResponseSingle2Result"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/ZonesApiResponseCommon3Success"
@@ -541328,7 +541345,10 @@
             "$ref": "#/components/schemas/WorkersKvMetadata"
           },
           "value": {
-            "$ref": "#/components/schemas/WorkersKvValue"
+            "type": "string",
+            "x-client-inline-scalar": true,
+            "description": "A byte sequence to be stored, up to 25 MiB in length.",
+            "example": "Some Value"
           }
         }
       },
@@ -541943,7 +541963,7 @@
             "x-auditable": true
           },
           "placement": {
-            "$ref": "#/components/schemas/WorkersPlacementInfoNoStatus"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemPlacement"
           },
           "source": {
             "type": "string",
@@ -542118,7 +542138,7 @@
             "x-auditable": true
           },
           "placement": {
-            "$ref": "#/components/schemas/WorkersPlacementInfoNoStatus"
+            "$ref": "#/components/schemas/WorkersNamespaceScriptAndVersionSettingsItemPlacement"
           },
           "source": {
             "type": "string",
@@ -546893,7 +546913,7 @@
           "result": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ApiShieldSchemasExtractOperationsGetSuccessResponseAllOf2ResultItem"
+              "$ref": "#/components/schemas/ApiShieldSchemaValidationExtractOperationsFromSchema200ResponseResultItem"
             }
           }
         }
@@ -550214,7 +550234,7 @@
           "result": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AccessResponseCollectionAllOf2ResultItem"
+              "$ref": "#/components/schemas/AccessIdentityProviders"
             }
           }
         }
@@ -552532,7 +552552,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/BillSubsApiApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -559680,7 +559700,7 @@
           {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/EmailSendingEmailBuilderCcOneOf3Item"
+              "$ref": "#/components/schemas/EmailSendingEmailBuilderBccOneOf3Item"
             }
           }
         ],
@@ -559730,7 +559750,7 @@
           {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/EmailSendingEmailBuilderToOneOf3Item"
+              "$ref": "#/components/schemas/EmailSendingEmailBuilderBccOneOf3Item"
             }
           }
         ],
@@ -560582,7 +560602,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/FirewallApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -562142,7 +562162,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/ImagesApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -562507,7 +562527,7 @@
           "result": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IntelApiResponseCollectionAllOf2ResultItem"
+              "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
             },
             "nullable": true
           },
@@ -562827,7 +562847,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/LoadBalancingApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -563401,7 +563421,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/MagicVisibilityMnmApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -563506,7 +563526,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/MagicVisibilityPcapsApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -563545,7 +563565,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/MagicVisibilityPcapsPcapsSingleResponseAllOf2Result"
+            "$ref": "#/components/schemas/MagicVisibilityPcapsPcapsCollectionResponseAllOf2ResultItem"
           }
         }
       },
@@ -563623,7 +563643,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/MagicApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -567562,7 +567582,7 @@
         "type": "object",
         "properties": {
           "condition": {
-            "$ref": "#/components/schemas/R2LifecycleStorageTransitionCondition"
+            "$ref": "#/components/schemas/R2LifecycleRuleDeleteObjectsTransitionCondition"
           },
           "storageClass": {
             "$ref": "#/components/schemas/InfrequentAccessStorageClass"
@@ -574978,7 +574998,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/VectorizeApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/TeamsDevicesApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -575676,7 +575696,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/WafProductApiBundleApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -575684,7 +575704,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/WafProductApiBundleApiResponseSingle2AllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -578778,7 +578798,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/ZoneAnalyticsApiApiResponseSingleAllOf2Result"
+            "$ref": "#/components/schemas/ArgoAnalyticsApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -579090,7 +579110,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "$ref": "#/components/schemas/ZonesApiResponseSingle2AllOf2Result"
+            "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
           }
         }
       },
@@ -580867,7 +580887,7 @@
           "result": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ApiShieldSchemasExtractOperationsGetSuccessResponseAllOf2ResultItem"
+              "$ref": "#/components/schemas/ApiShieldSchemaValidationExtractOperationsFromSchema200ResponseResultItem"
             }
           }
         }
@@ -586041,10 +586061,12 @@
         "type": "object",
         "properties": {
           "created": {
-            "$ref": "#/components/schemas/WorkersObservabilityQueryRunQueryAllOf2Created"
+            "type": "string",
+            "x-client-inline-scalar": true
           },
           "updated": {
-            "$ref": "#/components/schemas/WorkersObservabilityQueryRunQueryAllOf2Updated"
+            "type": "string",
+            "x-client-inline-scalar": true
           }
         }
       },
@@ -588103,26 +588125,12 @@
         "description": "Set cache tags using an expression."
       },
       "WorkersObservabilityQueryRunQueryAllOf2Created": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "string",
-            "format": "date-time"
-          }
-        ]
+        "type": "string",
+        "x-client-inline-scalar": true
       },
       "WorkersObservabilityQueryRunQueryAllOf2Updated": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "string",
-            "format": "date-time"
-          }
-        ]
+        "type": "string",
+        "x-client-inline-scalar": true
       },
       "WorkersScriptResponseCollectionAllOf2ResultItemAllOf2": {
         "type": "object",
@@ -588628,7 +588636,7 @@
             "$ref": "#/components/schemas/AaaAuditLogsV2ResourceResponseProperty"
           },
           "scope": {
-            "$ref": "#/components/schemas/AaaAuditLogsV2ResourceScopeProperty"
+            "$ref": "#/components/schemas/AaaAuditLogsV2ResourceScope"
           },
           "type": {
             "type": "string",
@@ -588686,7 +588694,7 @@
             "$ref": "#/components/schemas/AaaAuditLogsV2OrgResourceResponseProperty"
           },
           "scope": {
-            "$ref": "#/components/schemas/AaaAuditLogsV2OrgResourceScopeProperty"
+            "$ref": "#/components/schemas/AaaAuditLogsV2OrgResourceScope"
           },
           "type": {
             "type": "string",
@@ -600520,7 +600528,7 @@
       "WorkersSecretPatchRequestSecrets": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorkersSecretPatchRequestSecretsAdditionalProperties"
+          "$ref": "#/components/schemas/WorkersSecret"
         },
         "description": "Map of secret names to secret values:\n- Set to a secret object to create or update.\n- Set to \u0060null\u0060 to delete.\n- Omit to leave unchanged.\n"
       },
@@ -609075,7 +609083,7 @@
       "ZarazZarazConfigReturnAllOf2Tools": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/ZarazZarazConfigReturnAllOf2ToolsAdditionalProperties"
+          "$ref": "#/components/schemas/ZarazZarazConfigBodyAllOf2ToolsAdditionalProperties"
         },
         "description": "Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object."
       },
@@ -611676,7 +611684,7 @@
             "$ref": "#/components/schemas/WorkersVersionAssetsConfigNotFoundHandling"
           },
           "run_worker_first": {
-            "$ref": "#/components/schemas/WorkersVersionAssetsConfigRunWorkerFirst"
+            "$ref": "#/components/schemas/WorkersAssetsConfigRunWorkerFirst"
           }
         },
         "description": "Configuration for assets within a Worker."
@@ -612081,7 +612089,7 @@
           "loadRules": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ZarazZarazConfigBaseTriggersAdditionalPropertiesLoadRulesItem"
+              "$ref": "#/components/schemas/ZarazZarazConfigBaseTriggersAdditionalPropertiesExcludeRulesItem"
             },
             "description": "Rules defining when the trigger is fired."
           },
@@ -656016,7 +656024,7 @@
         "type": "object",
         "properties": {
           "config": {
-            "$ref": "#/components/schemas/DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig"
+            "$ref": "#/components/schemas/DevicePostureIntegrationsCreateDevicePostureIntegrationRequestConfig"
           },
           "interval": {
             "type": "string",
@@ -665290,7 +665298,11 @@
             "$ref": "#/components/schemas/IpAccessRulesForAnAccountCreateAnIpAccessRuleRequestMode"
           },
           "notes": {
-            "$ref": "#/components/schemas/IpAccessRulesForAnAccountCreateAnIpAccessRuleRequestNotes"
+            "type": "string",
+            "description": "An informative summary of the rule, typically used as a reminder or explanation.",
+            "example": "This rule is enabled because of an event that occurred on date X.",
+            "x-auditable": true,
+            "x-client-inline-scalar": true
           }
         }
       },
@@ -668408,12 +668420,13 @@
       "CloudflareImagesBaseImage4XxResponse": {
         "anyOf": [
           {
-            "$ref": "#/components/schemas/ImagesImageResponseBlob"
+            "type": "string"
           },
           {
-            "$ref": "#/components/schemas/ImagesApiResponseCommonFailure"
+            "type": "object"
           }
-        ]
+        ],
+        "example": "\u003Cimage blob data\u003E"
       },
       "CloudflareImagesCreateAuthenticatedDirectUploadUrlV24XxResponse": {
         "anyOf": [
@@ -674196,7 +674209,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PostV4AccountsByAccountIdPipelinesDeprecatedRequestSourceItem"
+              "$ref": "#/components/schemas/CloudflarePipelinesWorkersPipelinesPipelineSourceItem"
             }
           }
         }
@@ -674673,7 +674686,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceItem"
+              "$ref": "#/components/schemas/CloudflarePipelinesWorkersPipelinesPipelineSourceItem"
             }
           }
         }
@@ -676572,7 +676585,7 @@
             }
           },
           "result": {
-            "$ref": "#/components/schemas/R2GetBucketJob200ResponseResult"
+            "$ref": "#/components/schemas/R2CreateBucketJob200ResponseResult"
           },
           "success": {
             "$ref": "#/components/schemas/R2V4ResponseSuccess"
@@ -683470,7 +683483,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/VectorizeDeprecatedDeleteVectorizeIndex200ResponseResult"
+            "$ref": "#/components/schemas/TeamsDevicesApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/VectorizeApiResponseCommonSuccess"
@@ -683792,7 +683805,7 @@
             "example": []
           },
           "result": {
-            "$ref": "#/components/schemas/VectorizeDeleteVectorizeIndex200ResponseResult"
+            "$ref": "#/components/schemas/TeamsDevicesApiResponseSingleAllOf2Result"
           },
           "success": {
             "$ref": "#/components/schemas/VectorizeApiResponseCommonSuccess"
@@ -710104,7 +710117,11 @@
             "$ref": "#/components/schemas/IpAccessRulesForAUserCreateAnIpAccessRuleRequestMode"
           },
           "notes": {
-            "$ref": "#/components/schemas/IpAccessRulesForAUserCreateAnIpAccessRuleRequestNotes"
+            "type": "string",
+            "description": "An informative summary of the rule, typically used as a reminder or explanation.",
+            "example": "This rule is enabled because of an event that occurred on date X.",
+            "x-auditable": true,
+            "x-client-inline-scalar": true
           }
         }
       },
@@ -716970,7 +716987,11 @@
             "$ref": "#/components/schemas/IpAccessRulesForAZoneCreateAnIpAccessRuleRequestMode"
           },
           "notes": {
-            "$ref": "#/components/schemas/IpAccessRulesForAZoneCreateAnIpAccessRuleRequestNotes"
+            "type": "string",
+            "description": "An informative summary of the rule, typically used as a reminder or explanation.",
+            "example": "This rule is enabled because of an event that occurred on date X.",
+            "x-auditable": true,
+            "x-client-inline-scalar": true
           }
         }
       },
@@ -736698,7 +736719,7 @@
             "x-stainless-terraform-configurability": "computed"
           },
           "default": {
-            "$ref": "#/components/schemas/DlpWorkerValidatorDefault"
+            "$ref": "#/components/schemas/DlpWorkerDefault"
           },
           "id": {
             "type": "string",
@@ -738400,7 +738421,7 @@
       "IntelApiResponseCollectionResult": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/IntelApiResponseCollectionAllOf2ResultItem"
+          "$ref": "#/components/schemas/HealthchecksApiResponseSingleAllOf2Result"
         }
       },
       "IntelCollectionResponseResult": {
@@ -753170,6 +753191,10 @@
             {
               "value": "openai/gpt-5-nano",
               "name": "OpenaiGpt5Nano"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -753187,6 +753212,10 @@
             {
               "value": "@cf/baai/bge-reranker-base",
               "name": "AtCfBaaiBgeRerankerBase"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -753214,6 +753243,10 @@
             {
               "value": "@cf/baai/bge-reranker-base",
               "name": "AtCfBaaiBgeRerankerBase"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -758509,9 +758542,6 @@
       "RssArticleSkillOutputGet200ResponseResultCustomOutput": {
         "anyOf": [
           {
-            "type": "string"
-          },
-          {
             "type": "number"
           },
           {
@@ -760174,7 +760204,8 @@
         "type": "string",
         "description": "An informative summary of the rule, typically used as a reminder or explanation.",
         "example": "This rule is enabled because of an event that occurred on date X.",
-        "x-auditable": true
+        "x-auditable": true,
+        "x-client-inline-scalar": true
       },
       "ZeroTrustAccountsGetZeroTrustAccountInformation4XxResponseErrors": {
         "type": "array",
@@ -767594,7 +767625,7 @@
           "jobs": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/R2R2BucketJob"
+              "$ref": "#/components/schemas/R2CreateBucketJob200ResponseResult"
             },
             "description": "Bucket jobs in the current page."
           },
@@ -775326,7 +775357,8 @@
         "type": "string",
         "description": "An informative summary of the rule, typically used as a reminder or explanation.",
         "example": "This rule is enabled because of an event that occurred on date X.",
-        "x-auditable": true
+        "x-auditable": true,
+        "x-client-inline-scalar": true
       },
       "TriggerDeployHook200ResponseResult": {
         "type": "object",
@@ -780140,7 +780172,8 @@
         "type": "string",
         "description": "An informative summary of the rule, typically used as a reminder or explanation.",
         "example": "This rule is enabled because of an event that occurred on date X.",
-        "x-auditable": true
+        "x-auditable": true,
+        "x-client-inline-scalar": true
       },
       "UserAgentBlockingRulesDeleteAUserAgentBlockingRule200ResponseResult": {
         "type": "object",
@@ -793726,7 +793759,7 @@
             "$ref": "#/components/schemas/PostEventListRequestSearchItemAnyOf3Op"
           },
           "value": {
-            "$ref": "#/components/schemas/PostEventListRequestSearchItemAnyOf3Value"
+            "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
           }
         },
         "additionalProperties": false
@@ -793750,7 +793783,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PostEventListRequestSearchItemAnyOf4ValueItem"
+              "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
             }
           }
         },
@@ -793889,7 +793922,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf4ValueItem"
+              "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
             }
           }
         },
@@ -794473,7 +794506,7 @@
             "$ref": "#/components/schemas/PostPirCreateRequestQueryBranchesItemItemAnyOf3Op"
           },
           "value": {
-            "$ref": "#/components/schemas/PostPirCreateRequestQueryBranchesItemItemAnyOf3Value"
+            "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
           }
         },
         "additionalProperties": false
@@ -794497,7 +794530,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PostPirCreateRequestQueryBranchesItemItemAnyOf4ValueItem"
+              "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
             }
           }
         },
@@ -794612,7 +794645,7 @@
             "$ref": "#/components/schemas/PostPirFilterGenerate200ResponseResultBranchesItemItemAnyOf3Op"
           },
           "value": {
-            "$ref": "#/components/schemas/PostPirFilterGenerate200ResponseResultBranchesItemItemAnyOf3Value"
+            "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
           }
         },
         "additionalProperties": false
@@ -794636,7 +794669,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PostPirFilterGenerate200ResponseResultBranchesItemItemAnyOf4ValueItem"
+              "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
             }
           }
         },
@@ -794785,7 +794818,7 @@
             "$ref": "#/components/schemas/PutPirUpdateRequestQueryBranchesItemItemAnyOf3Op"
           },
           "value": {
-            "$ref": "#/components/schemas/PutPirUpdateRequestQueryBranchesItemItemAnyOf3Value"
+            "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
           }
         },
         "additionalProperties": false
@@ -794809,7 +794842,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PutPirUpdateRequestQueryBranchesItemItemAnyOf4ValueItem"
+              "$ref": "#/components/schemas/PostEventListRequestSearchBranchesItemItemAnyOf3Value"
             }
           }
         },
@@ -795009,9 +795042,6 @@
       },
       "RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item": {
         "anyOf": [
-          {
-            "type": "string"
-          },
           {
             "type": "number"
           },
@@ -798325,9 +798355,6 @@
       "RssArticleSkillRun200ResponseResultAnyOf2CustomOutput": {
         "anyOf": [
           {
-            "type": "string"
-          },
-          {
             "type": "number"
           },
           {
@@ -798343,7 +798370,7 @@
           {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item"
+              "$ref": "#/components/schemas/RssArticleSkillOutputGet200ResponseResultCustomOutputAnyOf6Item"
             }
           }
         ],
@@ -798474,9 +798501,6 @@
       },
       "RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item": {
         "anyOf": [
-          {
-            "type": "string"
-          },
           {
             "type": "number"
           },
@@ -800416,7 +800440,7 @@
       "PagesDeploymentEnvVars": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PagesEnvVarsAdditionalProperties"
+          "$ref": "#/components/schemas/PagesDeploymentConfigValuesRequestEnvVarsAdditionalProperties"
         },
         "description": "Environment variables used for builds and Pages Functions.",
         "nullable": true
@@ -800482,7 +800506,7 @@
       "PagesDeploymentConfigValuesEnvVars": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PagesEnvVarsAdditionalProperties"
+          "$ref": "#/components/schemas/PagesDeploymentConfigValuesRequestEnvVarsAdditionalProperties"
         },
         "description": "Environment variables used for builds and Pages Functions.",
         "nullable": true
@@ -802099,7 +802123,7 @@
       "WorkersSecretPatchRequestSecretsProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorkersSecretPatchRequestSecretsAdditionalProperties"
+          "$ref": "#/components/schemas/WorkersSecret"
         },
         "description": "Map of secret names to secret values:\n- Set to a secret object to create or update.\n- Set to \u0060null\u0060 to delete.\n- Omit to leave unchanged.\n"
       },
@@ -802384,7 +802408,7 @@
       "ZarazZarazConfigReturnTools": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/ZarazZarazConfigReturnAllOf2ToolsAdditionalProperties"
+          "$ref": "#/components/schemas/ZarazZarazConfigBodyAllOf2ToolsAdditionalProperties"
         },
         "description": "Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object."
       },
@@ -803036,7 +803060,7 @@
       "PagesProjectCanonicalDeploymentEnvVars": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PagesEnvVarsAdditionalProperties"
+          "$ref": "#/components/schemas/PagesDeploymentConfigValuesRequestEnvVarsAdditionalProperties"
         },
         "description": "Environment variables used for builds and Pages Functions.",
         "nullable": true
@@ -803102,7 +803126,7 @@
       "PagesProjectDeploymentConfigsPreviewEnvVars": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PagesEnvVarsAdditionalProperties"
+          "$ref": "#/components/schemas/PagesDeploymentConfigValuesRequestEnvVarsAdditionalProperties"
         },
         "description": "Environment variables used for builds and Pages Functions.",
         "nullable": true
@@ -803254,7 +803278,7 @@
       "PagesProjectDeploymentConfigsProductionEnvVars": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PagesEnvVarsAdditionalProperties"
+          "$ref": "#/components/schemas/PagesDeploymentConfigValuesRequestEnvVarsAdditionalProperties"
         },
         "description": "Environment variables used for builds and Pages Functions.",
         "nullable": true
@@ -803348,7 +803372,7 @@
       "PagesProjectLatestDeploymentEnvVars": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PagesEnvVarsAdditionalProperties"
+          "$ref": "#/components/schemas/PagesDeploymentConfigValuesRequestEnvVarsAdditionalProperties"
         },
         "description": "Environment variables used for builds and Pages Functions.",
         "nullable": true
@@ -803591,7 +803615,7 @@
       "ZarazZarazConfigReturnAllOf2ToolsProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/ZarazZarazConfigReturnAllOf2ToolsAdditionalProperties"
+          "$ref": "#/components/schemas/ZarazZarazConfigBodyAllOf2ToolsAdditionalProperties"
         },
         "description": "Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object."
       },
@@ -846511,7 +846535,7 @@
         "type": "object",
         "properties": {
           "config": {
-            "$ref": "#/components/schemas/GetV4AccountsByAccountIdPipelinesV1SinksBySinkId200ResponseResultConfig"
+            "$ref": "#/components/schemas/GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultItemConfig"
           },
           "created_at": {
             "type": "string",
@@ -856742,10 +856766,10 @@
         "type": "object",
         "properties": {
           "error_retention": {
-            "$ref": "#/components/schemas/WorUpdateWorkflowSettingsRequestDefaultRetentionErrorRetention"
+            "$ref": "#/components/schemas/WorCreateOrModifyWorkflowRequestDefaultRetentionErrorRetention"
           },
           "success_retention": {
-            "$ref": "#/components/schemas/WorUpdateWorkflowSettingsRequestDefaultRetentionSuccessRetention"
+            "$ref": "#/components/schemas/WorCreateOrModifyWorkflowRequestDefaultRetentionErrorRetention"
           }
         },
         "description": "Default retention applied to instances of this version when they do not set their own retention."
@@ -857101,7 +857125,7 @@
             "$ref": "#/components/schemas/WorCreateOrModifyWorkflowRequestDefaultRetentionErrorRetention"
           },
           "success_retention": {
-            "$ref": "#/components/schemas/WorCreateOrModifyWorkflowRequestDefaultRetentionSuccessRetention"
+            "$ref": "#/components/schemas/WorCreateOrModifyWorkflowRequestDefaultRetentionErrorRetention"
           }
         },
         "description": "Default retention applied to instances of this version when they do not set their own retention."
@@ -857425,10 +857449,10 @@
         "type": "object",
         "properties": {
           "error_retention": {
-            "$ref": "#/components/schemas/WorCreateNewWorkflowInstanceRequestInstanceRetentionErrorRetention"
+            "$ref": "#/components/schemas/WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionErrorRetention"
           },
           "success_retention": {
-            "$ref": "#/components/schemas/WorCreateNewWorkflowInstanceRequestInstanceRetentionSuccessRetention"
+            "$ref": "#/components/schemas/WorBatchCreateWorkflowInstanceRequestItemInstanceRetentionSuccessRetention"
           }
         }
       },
@@ -887545,7 +887569,7 @@
       "WorAddScriptTriggersRequestItemFilter": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorAddScriptTriggersRequestItemFilterAdditionalProperties"
+          "$ref": "#/components/schemas/WorAddScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
         }
       },
       "WorAddScriptTriggersRequestItemTargetsItem": {
@@ -887598,7 +887622,7 @@
       "WorReplaceScriptTriggersRequestItemFilter": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorReplaceScriptTriggersRequestItemFilterAdditionalProperties"
+          "$ref": "#/components/schemas/WorAddScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
         }
       },
       "WorReplaceScriptTriggersRequestItemTargetsItem": {
@@ -907094,7 +907118,7 @@
         "additionalProperties": {
           "type": "array",
           "items": {
-            "$ref": "#/components/schemas/RadarGetRankingInternetServicesTimeseries200ResponseResultSerie0AdditionalPropertiesItem"
+            "$ref": "#/components/schemas/RadarGetRankingDomainTimeseries200ResponseResultSerie0AdditionalPropertiesItem"
           }
         },
         "example": {
@@ -908188,13 +908212,13 @@
       "WorAddScriptTriggersRequestRequestBodyItemFilter": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorAddScriptTriggersRequestItemFilterAdditionalProperties"
+          "$ref": "#/components/schemas/WorAddScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
         }
       },
       "WorReplaceScriptTriggersRequestRequestBodyItemFilter": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorReplaceScriptTriggersRequestItemFilterAdditionalProperties"
+          "$ref": "#/components/schemas/WorAddScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
         }
       },
       "UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders": {
@@ -914289,7 +914313,7 @@
       "GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhen": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/GetDashboardMetadataFieldList200ResponseDataItemValidationVisibleWhenAdditionalProperties"
+          "$ref": "#/components/schemas/GetDashboardMetadataFieldList200ResponseDataItemValidationRequiredWhenAdditionalProperties"
         },
         "description": "Show this field only when the predicate matches sibling values."
       },
@@ -915217,7 +915241,7 @@
       "WorGetScriptTriggers200ResponseResultTriggersItemFilter": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorGetScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
+          "$ref": "#/components/schemas/WorAddScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
         }
       },
       "WorGetScriptTriggers200ResponseResultTriggersItemTargetsItem": {
@@ -915275,7 +915299,7 @@
       "WorReplaceScriptTriggers200ResponseResultTriggersItemFilter": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/WorReplaceScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
+          "$ref": "#/components/schemas/WorAddScriptTriggers200ResponseResultTriggersItemFilterAdditionalProperties"
         }
       },
       "WorReplaceScriptTriggers200ResponseResultTriggersItemTargetsItem": {
@@ -972270,6 +972294,10 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "",
+              "name": "EnumValue"
+            },
+            {
               "value": "customized_block_page",
               "name": "CustomizedBlockPage"
             },
@@ -1000791,7 +1000819,17 @@
         "enum": [
           ""
         ],
-        "type": "string"
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AutoragConfigAiSearchRequestModelAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "AutoragConfigAiSearchRequestRerankingModelAnyOf1": {
         "enum": [
@@ -1000813,7 +1000851,17 @@
         "enum": [
           ""
         ],
-        "type": "string"
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AutoragConfigAiSearchRequestRerankingModelAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "AutoragConfigSearchRequestRerankingModelAnyOf1": {
         "enum": [
@@ -1000835,7 +1000883,17 @@
         "enum": [
           ""
         ],
-        "type": "string"
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AutoragConfigSearchRequestRerankingModelAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "BrapiPostAccessibilityTreeRequestAllowResourceTypesItemAnyOf1": {
         "enum": [
@@ -1103043,7 +1103101,17 @@
         "enum": [
           ""
         ],
-        "type": "string"
+        "type": "string",
+        "x-ms-enum": {
+          "name": "SearchThreatSignalsMaxResultsParameterAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "ListContainerInstancesStateParameter": {
         "enum": [
@@ -1105676,6 +1105744,10 @@
           "name": "AccountLoadBalancerSearchSearchResourcesReferencesParameter",
           "modelAsString": false,
           "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            },
             {
               "value": "*",
               "name": "Asterisk"
@@ -1188622,6 +1188694,76 @@
           "Internet Security Research Group": "63.40249"
         }
       },
+      "AbuseReportsUnauthorizedErrorResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AbuseReportsErrorMessage"
+            },
+            "description": "Cloudflare API error details.",
+            "example": [
+              {
+                "code": 10000,
+                "message": "Authentication error"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AbuseReportsMessage"
+            },
+            "description": "Informational messages.",
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/AbuseReportsCloudflareApiErrorResponseResultProperty"
+              },
+              {
+                "type": "string",
+                "description": "The result is \u0027error\u0027 for an error response.",
+                "example": "error"
+              }
+            ]
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Whether the request succeeded.",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          },
+          "err_code": {
+            "type": "string",
+            "description": "Machine-readable error code.",
+            "example": "unknown_err"
+          },
+          "error_code": {
+            "type": "string",
+            "description": "Legacy alias for err_code.",
+            "example": "unknown_err"
+          },
+          "msg": {
+            "type": "string",
+            "description": "Human-readable description of the authorization error. Submission entitlement failures return \u0022Not entitled to use feature: Abuse Report API\u0022.",
+            "example": "Not entitled to use feature: Abuse Report API"
+          }
+        },
+        "description": "For HTTP 401 responses, use one of these error shapes. Cloudflare\u0027s API layer rejects requests with missing or invalid credentials before they reach the Abuse Reports API and returns the standard Cloudflare API error envelope. The Abuse Reports API returns its authorization error shape when valid credentials fail the Trust and Safety permission check or the submission entitlement check.",
+        "required": [
+          "result"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/AbuseReportsUnauthorizedErrorResponse"
+        }
+      },
       "WorkersAiAiGatewayWebSearch400ResponseError": {
         "type": "object",
         "properties": {
@@ -1188652,6 +1188794,2712 @@
         },
         "x-client-original-error-schema": {
           "$ref": "#/components/schemas/WorkersAiAiGatewayWebSearch400Response"
+        }
+      },
+      "AuditLogsGetAccountAuditLogs4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "allOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AaaMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/AaaApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AaaMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AaaAuditLogs"
+            }
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "enum": [
+                  false
+                ],
+                "type": "boolean",
+                "description": "Whether the API call was successful",
+                "example": false
+              },
+              {
+                "type": "boolean",
+                "description": "Whether the API call was successful",
+                "example": true,
+                "not": {}
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/AuditLogsGetAccountAuditLogs4XxResponse"
+        }
+      },
+      "CloudflareImagesUploadAnImageViaUrl4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageResponseSingleResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesUploadAnImageViaUrl4XxResponse"
+        }
+      },
+      "CloudflareImagesListImages4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImagesListResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesListImages4XxResponse"
+        }
+      },
+      "CloudflareImagesCreateAuthenticatedDirectUploadUrlV14XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageDirectUploadResponseV1Result"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesCreateAuthenticatedDirectUploadUrlV14XxResponse"
+        }
+      },
+      "CloudflareImagesKeysListSigningKeys4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageKeyResponseCollectionResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesKeysListSigningKeys4XxResponse"
+        }
+      },
+      "CloudflareImagesKeysAddSigningKey4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageKeyResponseCollectionResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesKeysAddSigningKey4XxResponse"
+        }
+      },
+      "CloudflareImagesKeysDeleteSigningKey4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageKeyResponseCollectionResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesKeysDeleteSigningKey4XxResponse"
+        }
+      },
+      "CloudflareImagesImagesUsageStatistics4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImagesStatsResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesImagesUsageStatistics4XxResponse"
+        }
+      },
+      "CloudflareImagesVariantsCreateAVariant4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageVariantSimpleResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesVariantsCreateAVariant4XxResponse"
+        }
+      },
+      "CloudflareImagesVariantsListVariants4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageVariantListResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesVariantsListVariants4XxResponse"
+        }
+      },
+      "CloudflareImagesVariantsUpdateAVariant4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageVariantSimpleResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesVariantsUpdateAVariant4XxResponse"
+        }
+      },
+      "CloudflareImagesVariantsVariantDetails4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageVariantSimpleResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesVariantsVariantDetails4XxResponse"
+        }
+      },
+      "CloudflareImagesVariantsDeleteAVariant4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesDeletedResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesVariantsDeleteAVariant4XxResponse"
+        }
+      },
+      "CloudflareImagesVariantsVariantDetailsFlat4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageVariantFlatResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesVariantsVariantDetailsFlat4XxResponse"
+        }
+      },
+      "CloudflareImagesUpdateImage4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageResponseSingleResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesUpdateImage4XxResponse"
+        }
+      },
+      "CloudflareImagesImageDetails4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageResponseSingleResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesImageDetails4XxResponse"
+        }
+      },
+      "CloudflareImagesDeleteImage4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesDeletedResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesDeleteImage4XxResponse"
+        }
+      },
+      "CloudflareImagesCreateAuthenticatedDirectUploadUrlV24XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesImageDirectUploadResponseV2Result"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesCreateAuthenticatedDirectUploadUrlV24XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitCreateMigration4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitMigrationCreateResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitCreateMigration4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitListMigrations4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitMigrationListResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitListMigrations4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitGetMigration4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitMigrationSingleResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetMigration4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitDeleteMigration4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesDeletedResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitDeleteMigration4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitGetMigrationProgress4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitMigrationProgressResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetMigrationProgress4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitListMigrationLogs4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitMigrationLogListResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitListMigrationLogs4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitCreateSource4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitSourceCreateResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitCreateSource4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitListSources4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitSourceListResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitListSources4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitPrecheckSourceConnectivity4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitConnectivityCheckResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitPrecheckSourceConnectivity4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitUpdateSource4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitSourceUpdateResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitUpdateSource4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitGetSource4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitSourceSingleResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetSource4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitDeleteSource4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesDeletedResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitDeleteSource4XxResponse"
+        }
+      },
+      "CloudflareImagesSourcingkitGetSourceConnectivity4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImagesMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImagesMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesSourcingkitConnectivityCheckResponseResult"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCollectionV2Success"
+              },
+              {
+                "$ref": "#/components/schemas/ImagesApiResponseCommonFailureSuccess"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CloudflareImagesSourcingkitGetSourceConnectivity4XxResponse"
+        }
+      },
+      "Workers4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/Workers4XxResponse"
+        }
+      },
+      "NamespaceWorkerPatchScriptSettings4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/NamespaceWorkerPatchScriptSettings4XxResponse"
+        }
+      },
+      "WorkerScriptUploadWorkerModule4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/WorkerScriptUploadWorkerModule4XxResponse"
+        }
+      },
+      "WorkerScriptSettingsPatchSettings4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/WorkerScriptSettingsPatchSettings4XxResponse"
+        }
+      },
+      "WorkerScriptPatchSettings4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/WorkerScriptPatchSettings4XxResponse"
+        }
+      },
+      "WorkerVersionsUploadVersion4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkerVersionsUploadVersion4XxResponseAnyOf1Errors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkerVersionsUploadVersion4XxResponseAnyOf1Messages"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersMessagesItem"
+                },
+                "example": []
+              }
+            ]
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkerVersionsUploadVersion4XxResponseAnyOf1Success"
+              },
+              {
+                "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseSuccess"
+              }
+            ]
+          },
+          "result": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkerVersionsUploadVersion4XxResponseAnyOf1Result"
+              },
+              {
+                "enum": [
+                  null
+                ],
+                "type": "object",
+                "additionalProperties": false,
+                "nullable": true
+              }
+            ]
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/WorkerVersionsUploadVersion4XxResponse"
+        }
+      },
+      "WorkerScriptEnvironmentPatchSettings4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/WorkerScriptEnvironmentPatchSettings4XxResponse"
+        }
+      },
+      "WorkersPreviewsDeploymentsCreate4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/WorkersPreviewsDeploymentsCreate4XxResponse"
+        }
+      },
+      "WorkersPreviewsDeploymentsPatchLatest4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/WorkersPreviewsDeploymentsPatchLatest4XxResponse"
+        }
+      },
+      "CreateWorkerVersion4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/CreateWorkerVersion4XxResponse"
+        }
+      },
+      "PatchLatestWorkerVersion4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "$ref": "#/components/schemas/WorkersApiResponseCommonFailureErrors"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WorkersExportsReconciliationErrorResponseErrorsItem"
+                }
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkersMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "enum": [
+              null
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "success": {
+            "$ref": "#/components/schemas/WorkersApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "result",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/PatchLatestWorkerVersion4XxResponse"
+        }
+      },
+      "AuditLogsGetUserAuditLogs4XxResponseError": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "allOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AaaMessagesItem"
+                },
+                "example": []
+              },
+              {
+                "$ref": "#/components/schemas/AaaApiResponseCommonFailureErrors"
+              }
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AaaMessagesItem"
+            },
+            "example": []
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AaaAuditLogs"
+            }
+          },
+          "success": {
+            "x-client-untyped-value": true,
+            "x-client-original-field-schemas": [
+              {
+                "enum": [
+                  false
+                ],
+                "type": "boolean",
+                "description": "Whether the API call was successful",
+                "example": false
+              },
+              {
+                "type": "boolean",
+                "description": "Whether the API call was successful",
+                "example": true,
+                "not": {}
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
+          }
+        },
+        "required": [
+          "errors",
+          "messages",
+          "success"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/AuditLogsGetUserAuditLogs4XxResponse"
         }
       },
       "CloudforceOneCreateRuleSuccessResponse": {
@@ -1190603,7 +1193451,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Workers4XxResponse"
+              "$ref": "#/components/schemas/CreateWorkerVersion4XxResponse"
             }
           }
         }

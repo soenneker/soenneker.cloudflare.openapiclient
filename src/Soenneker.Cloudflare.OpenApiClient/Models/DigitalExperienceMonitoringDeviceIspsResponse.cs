@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("isps") is { } nullNodeIsps && nullNodeIsps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Isps = null;
+            if (parseNode.GetChildNode("isps") is null) { _explicitNullValueIsps = default!; _explicitNullProperties?.Remove("isps"); }
+            else if (parseNode.GetChildNode("isps") is { } nullNodeIsps && nullNodeIsps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Isps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The isps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceIsp>? Isps { get => _explicitNullValueIsps; set { _explicitNullValueIsps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isps"); else _explicitNullProperties?.Remove("isps"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceIsp>? Isps { get => _explicitNullValueIsps; set { _explicitNullValueIsps = value; AdditionalData?.Remove("isps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isps"); else _explicitNullProperties?.Remove("isps"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceIsp>? _explicitNullValueIsps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceIsp> Isps { get => _explicitNullValueIsps; set { _explicitNullValueIsps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isps"); else _explicitNullProperties?.Remove("isps"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceIsp> Isps { get => _explicitNullValueIsps; set { _explicitNullValueIsps = value; AdditionalData?.Remove("isps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isps"); else _explicitNullProperties?.Remove("isps"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceIsp> _explicitNullValueIsps = default!;
 #endif
         /// <summary>

@@ -18,53 +18,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("head_sampling_rate") is { } nullNodeHeadSamplingRate && nullNodeHeadSamplingRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadSamplingRate = null;
-            if (parseNode.GetChildNode("issues") is { } nullNodeIssues && nullNodeIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issues = null;
-            if (parseNode.GetChildNode("logs") is { } nullNodeLogs && nullNodeLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logs = null;
-            if (parseNode.GetChildNode("redact_query_string") is { } nullNodeRedactQueryString && nullNodeRedactQueryString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactQueryString = null;
-            if (parseNode.GetChildNode("traces") is { } nullNodeTraces && nullNodeTraces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Traces = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("head_sampling_rate") is null) { _explicitNullValueHeadSamplingRate = default!; _explicitNullProperties?.Remove("head_sampling_rate"); }
+            else if (parseNode.GetChildNode("head_sampling_rate") is { } nullNodeHeadSamplingRate && nullNodeHeadSamplingRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadSamplingRate = null;
+            if (parseNode.GetChildNode("issues") is null) { _explicitNullValueIssues = default!; _explicitNullProperties?.Remove("issues"); }
+            else if (parseNode.GetChildNode("issues") is { } nullNodeIssues && nullNodeIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issues = null;
+            if (parseNode.GetChildNode("logs") is null) { _explicitNullValueLogs = default!; _explicitNullProperties?.Remove("logs"); }
+            else if (parseNode.GetChildNode("logs") is { } nullNodeLogs && nullNodeLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logs = null;
+            if (parseNode.GetChildNode("redact_query_string") is null) { _explicitNullValueRedactQueryString = default!; _explicitNullProperties?.Remove("redact_query_string"); }
+            else if (parseNode.GetChildNode("redact_query_string") is { } nullNodeRedactQueryString && nullNodeRedactQueryString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactQueryString = null;
+            if (parseNode.GetChildNode("traces") is null) { _explicitNullValueTraces = default!; _explicitNullProperties?.Remove("traces"); }
+            else if (parseNode.GetChildNode("traces") is { } nullNodeTraces && nullNodeTraces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Traces = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether observability is enabled for the Preview.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The sampling rate for observability. From 0 to 1 (1 = 100%, 0.1 = 10%).</summary>
-        public double? HeadSamplingRate { get => _explicitNullValueHeadSamplingRate; set { _explicitNullValueHeadSamplingRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_sampling_rate"); else _explicitNullProperties?.Remove("head_sampling_rate"); } }
+        public double? HeadSamplingRate { get => _explicitNullValueHeadSamplingRate; set { _explicitNullValueHeadSamplingRate = value; AdditionalData?.Remove("head_sampling_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_sampling_rate"); else _explicitNullProperties?.Remove("head_sampling_rate"); } }
         private double? _explicitNullValueHeadSamplingRate = default!;
         /// <summary>Real-time Issues settings for the Preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityIssues? Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityIssues? Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; AdditionalData?.Remove("issues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityIssues? _explicitNullValueIssues = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityIssues Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityIssues Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; AdditionalData?.Remove("issues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityIssues _explicitNullValueIssues = default!;
 #endif
         /// <summary>Log settings for the Preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityLogs? Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityLogs? Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; AdditionalData?.Remove("logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityLogs? _explicitNullValueLogs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityLogs Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityLogs Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; AdditionalData?.Remove("logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityLogs _explicitNullValueLogs = default!;
 #endif
         /// <summary>Whether query strings are removed from request URLs in logs and traces.</summary>
-        public bool? RedactQueryString { get => _explicitNullValueRedactQueryString; set { _explicitNullValueRedactQueryString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redact_query_string"); else _explicitNullProperties?.Remove("redact_query_string"); } }
+        public bool? RedactQueryString { get => _explicitNullValueRedactQueryString; set { _explicitNullValueRedactQueryString = value; AdditionalData?.Remove("redact_query_string"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redact_query_string"); else _explicitNullProperties?.Remove("redact_query_string"); } }
         private bool? _explicitNullValueRedactQueryString = default!;
         /// <summary>Trace settings for the Preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityTraces? Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityTraces? Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; AdditionalData?.Remove("traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityTraces? _explicitNullValueTraces = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityTraces Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityTraces Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; AdditionalData?.Remove("traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPreviewObservabilityTraces _explicitNullValueTraces = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("metadataSize") is { } nullNodeMetadataSize && nullNodeMetadataSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataSize = null;
-            if (parseNode.GetChildNode("objects") is { } nullNodeObjects && nullNodeObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Objects = null;
-            if (parseNode.GetChildNode("payloadSize") is { } nullNodePayloadSize && nullNodePayloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadSize = null;
+            if (parseNode.GetChildNode("metadataSize") is null) { _explicitNullValueMetadataSize = default!; _explicitNullProperties?.Remove("metadataSize"); }
+            else if (parseNode.GetChildNode("metadataSize") is { } nullNodeMetadataSize && nullNodeMetadataSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataSize = null;
+            if (parseNode.GetChildNode("objects") is null) { _explicitNullValueObjects = default!; _explicitNullProperties?.Remove("objects"); }
+            else if (parseNode.GetChildNode("objects") is { } nullNodeObjects && nullNodeObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Objects = null;
+            if (parseNode.GetChildNode("payloadSize") is null) { _explicitNullValuePayloadSize = default!; _explicitNullProperties?.Remove("payloadSize"); }
+            else if (parseNode.GetChildNode("payloadSize") is { } nullNodePayloadSize && nullNodePayloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayloadSize = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount of.</summary>
-        public double? MetadataSize { get => _explicitNullValueMetadataSize; set { _explicitNullValueMetadataSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataSize"); else _explicitNullProperties?.Remove("metadataSize"); } }
+        public double? MetadataSize { get => _explicitNullValueMetadataSize; set { _explicitNullValueMetadataSize = value; AdditionalData?.Remove("metadataSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataSize"); else _explicitNullProperties?.Remove("metadataSize"); } }
         private double? _explicitNullValueMetadataSize = default!;
         /// <summary>Number of objects stored.</summary>
-        public double? Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
+        public double? Objects { get => _explicitNullValueObjects; set { _explicitNullValueObjects = value; AdditionalData?.Remove("objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objects"); else _explicitNullProperties?.Remove("objects"); } }
         private double? _explicitNullValueObjects = default!;
         /// <summary>Amount of storage used by object data.</summary>
-        public double? PayloadSize { get => _explicitNullValuePayloadSize; set { _explicitNullValuePayloadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payloadSize"); else _explicitNullProperties?.Remove("payloadSize"); } }
+        public double? PayloadSize { get => _explicitNullValuePayloadSize; set { _explicitNullValuePayloadSize = value; AdditionalData?.Remove("payloadSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payloadSize"); else _explicitNullProperties?.Remove("payloadSize"); } }
         private double? _explicitNullValuePayloadSize = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2ObjectSizeMetrics"/> and sets the default values.

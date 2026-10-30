@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("example.com") is { } nullNodeExampleCom && nullNodeExampleCom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExampleCom = null;
+            if (parseNode.GetChildNode("example.com") is null) { _explicitNullValueExampleCom = default!; _explicitNullProperties?.Remove("example.com"); }
+            else if (parseNode.GetChildNode("example.com") is { } nullNodeExampleCom && nullNodeExampleCom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExampleCom = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The exampleCom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanDomainsExampleCom? ExampleCom { get => _explicitNullValueExampleCom; set { _explicitNullValueExampleCom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("example.com"); else _explicitNullProperties?.Remove("example.com"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanDomainsExampleCom? ExampleCom { get => _explicitNullValueExampleCom; set { _explicitNullValueExampleCom = value; AdditionalData?.Remove("example.com"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("example.com"); else _explicitNullProperties?.Remove("example.com"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanDomainsExampleCom? _explicitNullValueExampleCom = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanDomainsExampleCom ExampleCom { get => _explicitNullValueExampleCom; set { _explicitNullValueExampleCom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("example.com"); else _explicitNullProperties?.Remove("example.com"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanDomainsExampleCom ExampleCom { get => _explicitNullValueExampleCom; set { _explicitNullValueExampleCom = value; AdditionalData?.Remove("example.com"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("example.com"); else _explicitNullProperties?.Remove("example.com"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScan200ResponseResultScanDomainsExampleCom _explicitNullValueExampleCom = default!;
 #endif
         /// <summary>

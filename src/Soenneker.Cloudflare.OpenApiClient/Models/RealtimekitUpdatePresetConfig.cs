@@ -17,11 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("livestream_viewer_qualities") is { } nullNodeLivestreamViewerQualities && nullNodeLivestreamViewerQualities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LivestreamViewerQualities = null;
-            if (parseNode.GetChildNode("max_screenshare_count") is { } nullNodeMaxScreenshareCount && nullNodeMaxScreenshareCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxScreenshareCount = null;
-            if (parseNode.GetChildNode("max_video_streams") is { } nullNodeMaxVideoStreams && nullNodeMaxVideoStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxVideoStreams = null;
-            if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
-            if (parseNode.GetChildNode("view_type") is { } nullNodeViewType && nullNodeViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewType = null;
+            if (parseNode.GetChildNode("livestream_viewer_qualities") is null) { _explicitNullValueLivestreamViewerQualities = default!; _explicitNullProperties?.Remove("livestream_viewer_qualities"); }
+            else if (parseNode.GetChildNode("livestream_viewer_qualities") is { } nullNodeLivestreamViewerQualities && nullNodeLivestreamViewerQualities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LivestreamViewerQualities = null;
+            if (parseNode.GetChildNode("max_screenshare_count") is null) { _explicitNullValueMaxScreenshareCount = default!; _explicitNullProperties?.Remove("max_screenshare_count"); }
+            else if (parseNode.GetChildNode("max_screenshare_count") is { } nullNodeMaxScreenshareCount && nullNodeMaxScreenshareCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxScreenshareCount = null;
+            if (parseNode.GetChildNode("max_video_streams") is null) { _explicitNullValueMaxVideoStreams = default!; _explicitNullProperties?.Remove("max_video_streams"); }
+            else if (parseNode.GetChildNode("max_video_streams") is { } nullNodeMaxVideoStreams && nullNodeMaxVideoStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxVideoStreams = null;
+            if (parseNode.GetChildNode("media") is null) { _explicitNullValueMedia = default!; _explicitNullProperties?.Remove("media"); }
+            else if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("view_type") is null) { _explicitNullValueViewType = default!; _explicitNullProperties?.Remove("view_type"); }
+            else if (parseNode.GetChildNode("view_type") is { } nullNodeViewType && nullNodeViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Livestream viewer quality levels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? LivestreamViewerQualities { get => _explicitNullValueLivestreamViewerQualities; set { _explicitNullValueLivestreamViewerQualities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream_viewer_qualities"); else _explicitNullProperties?.Remove("livestream_viewer_qualities"); } }
+        public List<int?>? LivestreamViewerQualities { get => _explicitNullValueLivestreamViewerQualities; set { _explicitNullValueLivestreamViewerQualities = value; AdditionalData?.Remove("livestream_viewer_qualities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream_viewer_qualities"); else _explicitNullProperties?.Remove("livestream_viewer_qualities"); } }
         private List<int?>? _explicitNullValueLivestreamViewerQualities = default!;
 #nullable restore
 #else
-        public List<int?> LivestreamViewerQualities { get => _explicitNullValueLivestreamViewerQualities; set { _explicitNullValueLivestreamViewerQualities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream_viewer_qualities"); else _explicitNullProperties?.Remove("livestream_viewer_qualities"); } }
+        public List<int?> LivestreamViewerQualities { get => _explicitNullValueLivestreamViewerQualities; set { _explicitNullValueLivestreamViewerQualities = value; AdditionalData?.Remove("livestream_viewer_qualities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livestream_viewer_qualities"); else _explicitNullProperties?.Remove("livestream_viewer_qualities"); } }
         private List<int?> _explicitNullValueLivestreamViewerQualities = default!;
 #endif
         /// <summary>Maximum number of screen shares that can be active at a given time</summary>
-        public double? MaxScreenshareCount { get => _explicitNullValueMaxScreenshareCount; set { _explicitNullValueMaxScreenshareCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_screenshare_count"); else _explicitNullProperties?.Remove("max_screenshare_count"); } }
+        public double? MaxScreenshareCount { get => _explicitNullValueMaxScreenshareCount; set { _explicitNullValueMaxScreenshareCount = value; AdditionalData?.Remove("max_screenshare_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_screenshare_count"); else _explicitNullProperties?.Remove("max_screenshare_count"); } }
         private double? _explicitNullValueMaxScreenshareCount = default!;
         /// <summary>Maximum number of streams that are visible on a device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams? MaxVideoStreams { get => _explicitNullValueMaxVideoStreams; set { _explicitNullValueMaxVideoStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_video_streams"); else _explicitNullProperties?.Remove("max_video_streams"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams? MaxVideoStreams { get => _explicitNullValueMaxVideoStreams; set { _explicitNullValueMaxVideoStreams = value; AdditionalData?.Remove("max_video_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_video_streams"); else _explicitNullProperties?.Remove("max_video_streams"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams? _explicitNullValueMaxVideoStreams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams MaxVideoStreams { get => _explicitNullValueMaxVideoStreams; set { _explicitNullValueMaxVideoStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_video_streams"); else _explicitNullProperties?.Remove("max_video_streams"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams MaxVideoStreams { get => _explicitNullValueMaxVideoStreams; set { _explicitNullValueMaxVideoStreams = value; AdditionalData?.Remove("max_video_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_video_streams"); else _explicitNullProperties?.Remove("max_video_streams"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams _explicitNullValueMaxVideoStreams = default!;
 #endif
         /// <summary>Media configuration options. eg: Video quality</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia _explicitNullValueMedia = default!;
 #endif
         /// <summary>Type of the meeting</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType? ViewType { get => _explicitNullValueViewType; set { _explicitNullValueViewType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_type"); else _explicitNullProperties?.Remove("view_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType? ViewType { get => _explicitNullValueViewType; set { _explicitNullValueViewType = value; AdditionalData?.Remove("view_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_type"); else _explicitNullProperties?.Remove("view_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType? _explicitNullValueViewType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfig"/> and sets the default values.
@@ -91,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "max_screenshare_count", n => { MaxScreenshareCount = n.GetDoubleValue(); } },
                 { "max_video_streams", n => { MaxVideoStreams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia.CreateFromDiscriminatorValue); } },
-                { "view_type", n => { ViewType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType>(); } },
+                { "view_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueViewType = default; _explicitNullProperties?.Remove("view_type"); AdditionalData["view_type"] = unknown; } else { ViewType = parsed; AdditionalData.Remove("view_type"); } } },
             };
         }
         /// <summary>

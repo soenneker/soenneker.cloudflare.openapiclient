@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category_uuids") is { } nullNodeCategoryUuids && nullNodeCategoryUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryUuids = null;
-            if (parseNode.GetChildNode("skill_id") is { } nullNodeSkillId && nullNodeSkillId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkillId = null;
+            if (parseNode.GetChildNode("category_uuids") is null) { _explicitNullValueCategoryUuids = default!; _explicitNullProperties?.Remove("category_uuids"); }
+            else if (parseNode.GetChildNode("category_uuids") is { } nullNodeCategoryUuids && nullNodeCategoryUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryUuids = null;
+            if (parseNode.GetChildNode("skill_id") is null) { _explicitNullValueSkillId = default!; _explicitNullProperties?.Remove("skill_id"); }
+            else if (parseNode.GetChildNode("skill_id") is { } nullNodeSkillId && nullNodeSkillId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkillId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The category_uuids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
+        public List<Guid?>? CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; AdditionalData?.Remove("category_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
         private List<Guid?>? _explicitNullValueCategoryUuids = default!;
 #nullable restore
 #else
-        public List<Guid?> CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
+        public List<Guid?> CategoryUuids { get => _explicitNullValueCategoryUuids; set { _explicitNullValueCategoryUuids = value; AdditionalData?.Remove("category_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_uuids"); else _explicitNullProperties?.Remove("category_uuids"); } }
         private List<Guid?> _explicitNullValueCategoryUuids = default!;
 #endif
         /// <summary>The skill_id property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DefaultTaggingSkillSkillId? SkillId { get => _explicitNullValueSkillId; set { _explicitNullValueSkillId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skill_id"); else _explicitNullProperties?.Remove("skill_id"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DefaultTaggingSkillSkillId? SkillId { get => _explicitNullValueSkillId; set { _explicitNullValueSkillId = value; AdditionalData?.Remove("skill_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skill_id"); else _explicitNullProperties?.Remove("skill_id"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DefaultTaggingSkillSkillId? _explicitNullValueSkillId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssSkillTagCategoriesReplace200ResponseResult"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "category_uuids", n => { CategoryUuids = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "skill_id", n => { SkillId = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DefaultTaggingSkillSkillId>(); } },
+                { "skill_id", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DefaultTaggingSkillSkillId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSkillId = default; _explicitNullProperties?.Remove("skill_id"); AdditionalData["skill_id"] = unknown; } else { SkillId = parsed; AdditionalData.Remove("skill_id"); } } },
             };
         }
         /// <summary>

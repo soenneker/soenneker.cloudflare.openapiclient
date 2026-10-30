@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("onContentLoad") is { } nullNodeOnContentLoad && nullNodeOnContentLoad.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnContentLoad = null;
-            if (parseNode.GetChildNode("onLoad") is { } nullNodeOnLoad && nullNodeOnLoad.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnLoad = null;
+            if (parseNode.GetChildNode("onContentLoad") is null) { _explicitNullValueOnContentLoad = default!; _explicitNullProperties?.Remove("onContentLoad"); }
+            else if (parseNode.GetChildNode("onContentLoad") is { } nullNodeOnContentLoad && nullNodeOnContentLoad.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnContentLoad = null;
+            if (parseNode.GetChildNode("onLoad") is null) { _explicitNullValueOnLoad = default!; _explicitNullProperties?.Remove("onLoad"); }
+            else if (parseNode.GetChildNode("onLoad") is { } nullNodeOnLoad && nullNodeOnLoad.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnLoad = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The onContentLoad property</summary>
-        public double? OnContentLoad { get => _explicitNullValueOnContentLoad; set { _explicitNullValueOnContentLoad = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onContentLoad"); else _explicitNullProperties?.Remove("onContentLoad"); } }
+        public double? OnContentLoad { get => _explicitNullValueOnContentLoad; set { _explicitNullValueOnContentLoad = value; AdditionalData?.Remove("onContentLoad"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onContentLoad"); else _explicitNullProperties?.Remove("onContentLoad"); } }
         private double? _explicitNullValueOnContentLoad = default!;
         /// <summary>The onLoad property</summary>
-        public double? OnLoad { get => _explicitNullValueOnLoad; set { _explicitNullValueOnLoad = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onLoad"); else _explicitNullProperties?.Remove("onLoad"); } }
+        public double? OnLoad { get => _explicitNullValueOnLoad; set { _explicitNullValueOnLoad = value; AdditionalData?.Remove("onLoad"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onLoad"); else _explicitNullProperties?.Remove("onLoad"); } }
         private double? _explicitNullValueOnLoad = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerGetScanHarV2200ResponseLogPagesItemPageTimings"/> and sets the default values.

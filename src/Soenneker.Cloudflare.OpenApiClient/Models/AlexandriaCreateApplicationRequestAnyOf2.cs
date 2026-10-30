@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ip_subnets") is { } nullNodeIpSubnets && nullNodeIpSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSubnets = null;
+            if (parseNode.GetChildNode("ip_subnets") is null) { _explicitNullValueIpSubnets = default!; _explicitNullProperties?.Remove("ip_subnets"); }
+            else if (parseNode.GetChildNode("ip_subnets") is { } nullNodeIpSubnets && nullNodeIpSubnets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSubnets = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ip_subnets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        public List<string>? IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; AdditionalData?.Remove("ip_subnets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
         private List<string>? _explicitNullValueIpSubnets = default!;
 #nullable restore
 #else
-        public List<string> IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
+        public List<string> IpSubnets { get => _explicitNullValueIpSubnets; set { _explicitNullValueIpSubnets = value; AdditionalData?.Remove("ip_subnets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_subnets"); else _explicitNullProperties?.Remove("ip_subnets"); } }
         private List<string> _explicitNullValueIpSubnets = default!;
 #endif
         /// <summary>

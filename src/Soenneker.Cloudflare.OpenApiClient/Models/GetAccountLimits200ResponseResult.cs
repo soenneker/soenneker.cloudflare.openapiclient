@@ -17,17 +17,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("build_minutes_refresh_on") is { } nullNodeBuildMinutesRefreshOn && nullNodeBuildMinutesRefreshOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMinutesRefreshOn = null;
-            if (parseNode.GetChildNode("has_reached_build_minutes_limit") is { } nullNodeHasReachedBuildMinutesLimit && nullNodeHasReachedBuildMinutesLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasReachedBuildMinutesLimit = null;
+            if (parseNode.GetChildNode("build_minutes_refresh_on") is null) { _explicitNullValueBuildMinutesRefreshOn = default!; _explicitNullProperties?.Remove("build_minutes_refresh_on"); }
+            else if (parseNode.GetChildNode("build_minutes_refresh_on") is { } nullNodeBuildMinutesRefreshOn && nullNodeBuildMinutesRefreshOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMinutesRefreshOn = null;
+            if (parseNode.GetChildNode("has_reached_build_minutes_limit") is null) { _explicitNullValueHasReachedBuildMinutesLimit = default!; _explicitNullProperties?.Remove("has_reached_build_minutes_limit"); }
+            else if (parseNode.GetChildNode("has_reached_build_minutes_limit") is { } nullNodeHasReachedBuildMinutesLimit && nullNodeHasReachedBuildMinutesLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasReachedBuildMinutesLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When build minutes will refresh (only for non-paid plans)</summary>
-        public DateTimeOffset? BuildMinutesRefreshOn { get => _explicitNullValueBuildMinutesRefreshOn; set { _explicitNullValueBuildMinutesRefreshOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_minutes_refresh_on"); else _explicitNullProperties?.Remove("build_minutes_refresh_on"); } }
+        public DateTimeOffset? BuildMinutesRefreshOn { get => _explicitNullValueBuildMinutesRefreshOn; set { _explicitNullValueBuildMinutesRefreshOn = value; AdditionalData?.Remove("build_minutes_refresh_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_minutes_refresh_on"); else _explicitNullProperties?.Remove("build_minutes_refresh_on"); } }
         private DateTimeOffset? _explicitNullValueBuildMinutesRefreshOn = default!;
         /// <summary>Whether build minutes limit has been reached (only for non-paid plans)</summary>
-        public bool? HasReachedBuildMinutesLimit { get => _explicitNullValueHasReachedBuildMinutesLimit; set { _explicitNullValueHasReachedBuildMinutesLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_reached_build_minutes_limit"); else _explicitNullProperties?.Remove("has_reached_build_minutes_limit"); } }
+        public bool? HasReachedBuildMinutesLimit { get => _explicitNullValueHasReachedBuildMinutesLimit; set { _explicitNullValueHasReachedBuildMinutesLimit = value; AdditionalData?.Remove("has_reached_build_minutes_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_reached_build_minutes_limit"); else _explicitNullProperties?.Remove("has_reached_build_minutes_limit"); } }
         private bool? _explicitNullValueHasReachedBuildMinutesLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountLimits200ResponseResult"/> and sets the default values.

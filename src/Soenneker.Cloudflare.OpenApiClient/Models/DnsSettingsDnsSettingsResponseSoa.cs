@@ -17,51 +17,58 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expire") is { } nullNodeExpire && nullNodeExpire.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expire = null;
-            if (parseNode.GetChildNode("min_ttl") is { } nullNodeMinTtl && nullNodeMinTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTtl = null;
-            if (parseNode.GetChildNode("mname") is { } nullNodeMname && nullNodeMname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mname = null;
-            if (parseNode.GetChildNode("refresh") is { } nullNodeRefresh && nullNodeRefresh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refresh = null;
-            if (parseNode.GetChildNode("retry") is { } nullNodeRetry && nullNodeRetry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retry = null;
-            if (parseNode.GetChildNode("rname") is { } nullNodeRname && nullNodeRname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rname = null;
-            if (parseNode.GetChildNode("ttl") is { } nullNodeTtl && nullNodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttl = null;
+            if (parseNode.GetChildNode("expire") is null) { _explicitNullValueExpire = default!; _explicitNullProperties?.Remove("expire"); }
+            else if (parseNode.GetChildNode("expire") is { } nullNodeExpire && nullNodeExpire.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expire = null;
+            if (parseNode.GetChildNode("min_ttl") is null) { _explicitNullValueMinTtl = default!; _explicitNullProperties?.Remove("min_ttl"); }
+            else if (parseNode.GetChildNode("min_ttl") is { } nullNodeMinTtl && nullNodeMinTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTtl = null;
+            if (parseNode.GetChildNode("mname") is null) { _explicitNullValueMname = default!; _explicitNullProperties?.Remove("mname"); }
+            else if (parseNode.GetChildNode("mname") is { } nullNodeMname && nullNodeMname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mname = null;
+            if (parseNode.GetChildNode("refresh") is null) { _explicitNullValueRefresh = default!; _explicitNullProperties?.Remove("refresh"); }
+            else if (parseNode.GetChildNode("refresh") is { } nullNodeRefresh && nullNodeRefresh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refresh = null;
+            if (parseNode.GetChildNode("retry") is null) { _explicitNullValueRetry = default!; _explicitNullProperties?.Remove("retry"); }
+            else if (parseNode.GetChildNode("retry") is { } nullNodeRetry && nullNodeRetry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retry = null;
+            if (parseNode.GetChildNode("rname") is null) { _explicitNullValueRname = default!; _explicitNullProperties?.Remove("rname"); }
+            else if (parseNode.GetChildNode("rname") is { } nullNodeRname && nullNodeRname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rname = null;
+            if (parseNode.GetChildNode("ttl") is null) { _explicitNullValueTtl = default!; _explicitNullProperties?.Remove("ttl"); }
+            else if (parseNode.GetChildNode("ttl") is { } nullNodeTtl && nullNodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time in seconds of being unable to query the primary server after which secondary servers should stop serving the zone.</summary>
-        public double? Expire { get => _explicitNullValueExpire; set { _explicitNullValueExpire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expire"); else _explicitNullProperties?.Remove("expire"); } }
+        public double? Expire { get => _explicitNullValueExpire; set { _explicitNullValueExpire = value; AdditionalData?.Remove("expire"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expire"); else _explicitNullProperties?.Remove("expire"); } }
         private double? _explicitNullValueExpire = default!;
         /// <summary>The time to live (TTL) for negative caching of records within the zone.</summary>
-        public double? MinTtl { get => _explicitNullValueMinTtl; set { _explicitNullValueMinTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_ttl"); else _explicitNullProperties?.Remove("min_ttl"); } }
+        public double? MinTtl { get => _explicitNullValueMinTtl; set { _explicitNullValueMinTtl = value; AdditionalData?.Remove("min_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_ttl"); else _explicitNullProperties?.Remove("min_ttl"); } }
         private double? _explicitNullValueMinTtl = default!;
         /// <summary>The primary nameserver, which may be used for outbound zone transfers. If null, a Cloudflare-assigned value will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mname { get => _explicitNullValueMname; set { _explicitNullValueMname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mname"); else _explicitNullProperties?.Remove("mname"); } }
+        public string? Mname { get => _explicitNullValueMname; set { _explicitNullValueMname = value; AdditionalData?.Remove("mname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mname"); else _explicitNullProperties?.Remove("mname"); } }
         private string? _explicitNullValueMname = default!;
 #nullable restore
 #else
-        public string Mname { get => _explicitNullValueMname; set { _explicitNullValueMname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mname"); else _explicitNullProperties?.Remove("mname"); } }
+        public string Mname { get => _explicitNullValueMname; set { _explicitNullValueMname = value; AdditionalData?.Remove("mname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mname"); else _explicitNullProperties?.Remove("mname"); } }
         private string _explicitNullValueMname = default!;
 #endif
         /// <summary>Time in seconds after which secondary servers should re-check the SOA record to see if the zone has been updated.</summary>
-        public double? Refresh { get => _explicitNullValueRefresh; set { _explicitNullValueRefresh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh"); else _explicitNullProperties?.Remove("refresh"); } }
+        public double? Refresh { get => _explicitNullValueRefresh; set { _explicitNullValueRefresh = value; AdditionalData?.Remove("refresh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh"); else _explicitNullProperties?.Remove("refresh"); } }
         private double? _explicitNullValueRefresh = default!;
         /// <summary>Time in seconds after which secondary servers should retry queries after the primary server was unresponsive.</summary>
-        public double? Retry { get => _explicitNullValueRetry; set { _explicitNullValueRetry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry"); else _explicitNullProperties?.Remove("retry"); } }
+        public double? Retry { get => _explicitNullValueRetry; set { _explicitNullValueRetry = value; AdditionalData?.Remove("retry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry"); else _explicitNullProperties?.Remove("retry"); } }
         private double? _explicitNullValueRetry = default!;
         /// <summary>The email address of the zone administrator, with the first label representing the local part of the email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rname { get => _explicitNullValueRname; set { _explicitNullValueRname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rname"); else _explicitNullProperties?.Remove("rname"); } }
+        public string? Rname { get => _explicitNullValueRname; set { _explicitNullValueRname = value; AdditionalData?.Remove("rname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rname"); else _explicitNullProperties?.Remove("rname"); } }
         private string? _explicitNullValueRname = default!;
 #nullable restore
 #else
-        public string Rname { get => _explicitNullValueRname; set { _explicitNullValueRname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rname"); else _explicitNullProperties?.Remove("rname"); } }
+        public string Rname { get => _explicitNullValueRname; set { _explicitNullValueRname = value; AdditionalData?.Remove("rname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rname"); else _explicitNullProperties?.Remove("rname"); } }
         private string _explicitNullValueRname = default!;
 #endif
         /// <summary>The time to live (TTL) of the SOA record itself.</summary>
-        public double? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
+        public double? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; AdditionalData?.Remove("ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
         private double? _explicitNullValueTtl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa"/> and sets the default values.

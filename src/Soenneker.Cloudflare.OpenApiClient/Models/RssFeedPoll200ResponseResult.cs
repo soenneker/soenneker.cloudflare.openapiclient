@@ -17,28 +17,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
-            if (parseNode.GetChildNode("feeds") is { } nullNodeFeeds && nullNodeFeeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feeds = null;
-            if (parseNode.GetChildNode("triggered") is { } nullNodeTriggered && nullNodeTriggered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggered = null;
+            if (parseNode.GetChildNode("errors") is null) { _explicitNullValueErrors = default!; _explicitNullProperties?.Remove("errors"); }
+            else if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("feeds") is null) { _explicitNullValueFeeds = default!; _explicitNullProperties?.Remove("feeds"); }
+            else if (parseNode.GetChildNode("feeds") is { } nullNodeFeeds && nullNodeFeeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feeds = null;
+            if (parseNode.GetChildNode("triggered") is null) { _explicitNullValueTriggered = default!; _explicitNullProperties?.Remove("triggered"); }
+            else if (parseNode.GetChildNode("triggered") is { } nullNodeTriggered && nullNodeTriggered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggered = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The errors property</summary>
-        public double? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public double? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private double? _explicitNullValueErrors = default!;
         /// <summary>The feeds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedPoll200ResponseResultFeedsItem>? Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedPoll200ResponseResultFeedsItem>? Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedPoll200ResponseResultFeedsItem>? _explicitNullValueFeeds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedPoll200ResponseResultFeedsItem> Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedPoll200ResponseResultFeedsItem> Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedPoll200ResponseResultFeedsItem> _explicitNullValueFeeds = default!;
 #endif
         /// <summary>The triggered property</summary>
-        public double? Triggered { get => _explicitNullValueTriggered; set { _explicitNullValueTriggered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered"); else _explicitNullProperties?.Remove("triggered"); } }
+        public double? Triggered { get => _explicitNullValueTriggered; set { _explicitNullValueTriggered = value; AdditionalData?.Remove("triggered"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered"); else _explicitNullProperties?.Remove("triggered"); } }
         private double? _explicitNullValueTriggered = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedPoll200ResponseResult"/> and sets the default values.

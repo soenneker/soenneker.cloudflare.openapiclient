@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("total_emails_processed") is { } nullNodeTotalEmailsProcessed && nullNodeTotalEmailsProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalEmailsProcessed = null;
-            if (parseNode.GetChildNode("total_emails_processed_previous") is { } nullNodeTotalEmailsProcessedPrevious && nullNodeTotalEmailsProcessedPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalEmailsProcessedPrevious = null;
+            if (parseNode.GetChildNode("total_emails_processed") is null) { _explicitNullValueTotalEmailsProcessed = default!; _explicitNullProperties?.Remove("total_emails_processed"); }
+            else if (parseNode.GetChildNode("total_emails_processed") is { } nullNodeTotalEmailsProcessed && nullNodeTotalEmailsProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalEmailsProcessed = null;
+            if (parseNode.GetChildNode("total_emails_processed_previous") is null) { _explicitNullValueTotalEmailsProcessedPrevious = default!; _explicitNullProperties?.Remove("total_emails_processed_previous"); }
+            else if (parseNode.GetChildNode("total_emails_processed_previous") is { } nullNodeTotalEmailsProcessedPrevious && nullNodeTotalEmailsProcessedPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalEmailsProcessedPrevious = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,10 +28,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamp property</summary>
         public DateTimeOffset? Timestamp { get; private set; }
         /// <summary>The total_emails_processed property</summary>
-        public int? TotalEmailsProcessed { get => _explicitNullValueTotalEmailsProcessed; set { _explicitNullValueTotalEmailsProcessed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_emails_processed"); else _explicitNullProperties?.Remove("total_emails_processed"); } }
+        public int? TotalEmailsProcessed { get => _explicitNullValueTotalEmailsProcessed; set { _explicitNullValueTotalEmailsProcessed = value; AdditionalData?.Remove("total_emails_processed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_emails_processed"); else _explicitNullProperties?.Remove("total_emails_processed"); } }
         private int? _explicitNullValueTotalEmailsProcessed = default!;
         /// <summary>The total_emails_processed_previous property</summary>
-        public int? TotalEmailsProcessedPrevious { get => _explicitNullValueTotalEmailsProcessedPrevious; set { _explicitNullValueTotalEmailsProcessedPrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_emails_processed_previous"); else _explicitNullProperties?.Remove("total_emails_processed_previous"); } }
+        public int? TotalEmailsProcessedPrevious { get => _explicitNullValueTotalEmailsProcessedPrevious; set { _explicitNullValueTotalEmailsProcessedPrevious = value; AdditionalData?.Remove("total_emails_processed_previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_emails_processed_previous"); else _explicitNullProperties?.Remove("total_emails_processed_previous"); } }
         private int? _explicitNullValueTotalEmailsProcessedPrevious = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed"/> and sets the default values.

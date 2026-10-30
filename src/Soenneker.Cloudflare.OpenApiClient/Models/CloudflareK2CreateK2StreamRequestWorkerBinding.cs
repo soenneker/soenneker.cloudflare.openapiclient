@@ -54,10 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("enabled") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("enabled") != null))();
-            if (result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 == null && result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1(), parseNode);
-            if (result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 == null && result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("enabled") && (!shapeMembers1.ContainsKey("enabled") || (((shapeMembers1["enabled"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)) && ((shapeMembers1["enabled"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean literal2 && literal2.GetValue() == false)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "enabled"))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("enabled") && (!shapeMembers1.ContainsKey("enabled") || (((shapeMembers1["enabled"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)) && ((shapeMembers1["enabled"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean literal2 && literal2.GetValue() == true)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "enabled"))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 == null && result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2(), parseNode);
             if (result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 == null && result.CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 != null)
             {
                 return CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 == null && CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 != null && CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 == null) { if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1); return; }
-            if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 != null && CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 == null) { if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2); return; }
+            int selectedUnionBranches = 0;
+            if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 != null) selectedUnionBranches++;
+            if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 != null) selectedUnionBranches++;
+            if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 != null && selectedUnionBranches == 1) { if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1); return; }
+            if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 != null && selectedUnionBranches == 1) { if (CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CloudflareK2CreateK2StreamRequestWorkerBindingOneOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CloudflareK2CreateK2StreamRequestWorkerBindingOneOf1 != null)

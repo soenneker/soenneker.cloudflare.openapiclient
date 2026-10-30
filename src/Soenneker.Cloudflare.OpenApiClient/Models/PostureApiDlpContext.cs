@@ -18,13 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
-            if (parseNode.GetChildNode("entry_ids") is { } nullNodeEntryIds && nullNodeEntryIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryIds = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("match_context_max_extent") is { } nullNodeMatchContextMaxExtent && nullNodeMatchContextMaxExtent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextMaxExtent = null;
-            if (parseNode.GetChildNode("match_context_min_extent") is { } nullNodeMatchContextMinExtent && nullNodeMatchContextMinExtent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextMinExtent = null;
-            if (parseNode.GetChildNode("match_context_payload") is { } nullNodeMatchContextPayload && nullNodeMatchContextPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextPayload = null;
-            if (parseNode.GetChildNode("profile_id") is { } nullNodeProfileId && nullNodeProfileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileId = null;
+            if (parseNode.GetChildNode("deleted") is null) { _explicitNullValueDeleted = default!; _explicitNullProperties?.Remove("deleted"); }
+            else if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("entry_ids") is null) { _explicitNullValueEntryIds = default!; _explicitNullProperties?.Remove("entry_ids"); }
+            else if (parseNode.GetChildNode("entry_ids") is { } nullNodeEntryIds && nullNodeEntryIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryIds = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("match_context_max_extent") is null) { _explicitNullValueMatchContextMaxExtent = default!; _explicitNullProperties?.Remove("match_context_max_extent"); }
+            else if (parseNode.GetChildNode("match_context_max_extent") is { } nullNodeMatchContextMaxExtent && nullNodeMatchContextMaxExtent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextMaxExtent = null;
+            if (parseNode.GetChildNode("match_context_min_extent") is null) { _explicitNullValueMatchContextMinExtent = default!; _explicitNullProperties?.Remove("match_context_min_extent"); }
+            else if (parseNode.GetChildNode("match_context_min_extent") is { } nullNodeMatchContextMinExtent && nullNodeMatchContextMinExtent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextMinExtent = null;
+            if (parseNode.GetChildNode("match_context_payload") is null) { _explicitNullValueMatchContextPayload = default!; _explicitNullProperties?.Remove("match_context_payload"); }
+            else if (parseNode.GetChildNode("match_context_payload") is { } nullNodeMatchContextPayload && nullNodeMatchContextPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchContextPayload = null;
+            if (parseNode.GetChildNode("profile_id") is null) { _explicitNullValueProfileId = default!; _explicitNullProperties?.Remove("profile_id"); }
+            else if (parseNode.GetChildNode("profile_id") is { } nullNodeProfileId && nullNodeProfileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,39 +39,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the DLP context was created.</summary>
         public DateTimeOffset? Created { get; private set; }
         /// <summary>When the DLP context was deleted.</summary>
-        public DateTimeOffset? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        public DateTimeOffset? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
         private DateTimeOffset? _explicitNullValueDeleted = default!;
         /// <summary>DLP Entry IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? EntryIds { get => _explicitNullValueEntryIds; set { _explicitNullValueEntryIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_ids"); else _explicitNullProperties?.Remove("entry_ids"); } }
+        public List<Guid?>? EntryIds { get => _explicitNullValueEntryIds; set { _explicitNullValueEntryIds = value; AdditionalData?.Remove("entry_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_ids"); else _explicitNullProperties?.Remove("entry_ids"); } }
         private List<Guid?>? _explicitNullValueEntryIds = default!;
 #nullable restore
 #else
-        public List<Guid?> EntryIds { get => _explicitNullValueEntryIds; set { _explicitNullValueEntryIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_ids"); else _explicitNullProperties?.Remove("entry_ids"); } }
+        public List<Guid?> EntryIds { get => _explicitNullValueEntryIds; set { _explicitNullValueEntryIds = value; AdditionalData?.Remove("entry_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entry_ids"); else _explicitNullProperties?.Remove("entry_ids"); } }
         private List<Guid?> _explicitNullValueEntryIds = default!;
 #endif
         /// <summary>Unique identifier for the DLP context.</summary>
-        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>DLP Right Boundary of match context.</summary>
-        public int? MatchContextMaxExtent { get => _explicitNullValueMatchContextMaxExtent; set { _explicitNullValueMatchContextMaxExtent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_max_extent"); else _explicitNullProperties?.Remove("match_context_max_extent"); } }
+        public int? MatchContextMaxExtent { get => _explicitNullValueMatchContextMaxExtent; set { _explicitNullValueMatchContextMaxExtent = value; AdditionalData?.Remove("match_context_max_extent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_max_extent"); else _explicitNullProperties?.Remove("match_context_max_extent"); } }
         private int? _explicitNullValueMatchContextMaxExtent = default!;
         /// <summary>DLP Left Boundary of match context.</summary>
-        public int? MatchContextMinExtent { get => _explicitNullValueMatchContextMinExtent; set { _explicitNullValueMatchContextMinExtent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_min_extent"); else _explicitNullProperties?.Remove("match_context_min_extent"); } }
+        public int? MatchContextMinExtent { get => _explicitNullValueMatchContextMinExtent; set { _explicitNullValueMatchContextMinExtent = value; AdditionalData?.Remove("match_context_min_extent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_min_extent"); else _explicitNullProperties?.Remove("match_context_min_extent"); } }
         private int? _explicitNullValueMatchContextMinExtent = default!;
         /// <summary>DLP Match context payload that matched the profile in question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty? MatchContextPayload { get => _explicitNullValueMatchContextPayload; set { _explicitNullValueMatchContextPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_payload"); else _explicitNullProperties?.Remove("match_context_payload"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty? MatchContextPayload { get => _explicitNullValueMatchContextPayload; set { _explicitNullValueMatchContextPayload = value; AdditionalData?.Remove("match_context_payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_payload"); else _explicitNullProperties?.Remove("match_context_payload"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty? _explicitNullValueMatchContextPayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty MatchContextPayload { get => _explicitNullValueMatchContextPayload; set { _explicitNullValueMatchContextPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_payload"); else _explicitNullProperties?.Remove("match_context_payload"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty MatchContextPayload { get => _explicitNullValueMatchContextPayload; set { _explicitNullValueMatchContextPayload = value; AdditionalData?.Remove("match_context_payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_context_payload"); else _explicitNullProperties?.Remove("match_context_payload"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDlpContextMatchContextPayloadProperty _explicitNullValueMatchContextPayload = default!;
 #endif
         /// <summary>DLP Profile ID.</summary>
-        public Guid? ProfileId { get => _explicitNullValueProfileId; set { _explicitNullValueProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_id"); else _explicitNullProperties?.Remove("profile_id"); } }
+        public Guid? ProfileId { get => _explicitNullValueProfileId; set { _explicitNullValueProfileId = value; AdditionalData?.Remove("profile_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_id"); else _explicitNullProperties?.Remove("profile_id"); } }
         private Guid? _explicitNullValueProfileId = default!;
         /// <summary>When the DLP context was last updated.</summary>
         public DateTimeOffset? Updated { get; private set; }

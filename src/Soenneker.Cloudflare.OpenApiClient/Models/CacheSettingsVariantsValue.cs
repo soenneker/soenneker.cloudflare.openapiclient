@@ -18,17 +18,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("avif") is { } nullNodeAvif && nullNodeAvif.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avif = null;
-            if (parseNode.GetChildNode("bmp") is { } nullNodeBmp && nullNodeBmp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bmp = null;
-            if (parseNode.GetChildNode("gif") is { } nullNodeGif && nullNodeGif.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gif = null;
-            if (parseNode.GetChildNode("jp2") is { } nullNodeJp2 && nullNodeJp2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jp2 = null;
-            if (parseNode.GetChildNode("jpeg") is { } nullNodeJpeg && nullNodeJpeg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jpeg = null;
-            if (parseNode.GetChildNode("jpg") is { } nullNodeJpg && nullNodeJpg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jpg = null;
-            if (parseNode.GetChildNode("jpg2") is { } nullNodeJpg2 && nullNodeJpg2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jpg2 = null;
-            if (parseNode.GetChildNode("png") is { } nullNodePng && nullNodePng.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Png = null;
-            if (parseNode.GetChildNode("tif") is { } nullNodeTif && nullNodeTif.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tif = null;
-            if (parseNode.GetChildNode("tiff") is { } nullNodeTiff && nullNodeTiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tiff = null;
-            if (parseNode.GetChildNode("webp") is { } nullNodeWebp && nullNodeWebp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webp = null;
+            if (parseNode.GetChildNode("avif") is null) { _explicitNullValueAvif = default!; _explicitNullProperties?.Remove("avif"); }
+            else if (parseNode.GetChildNode("avif") is { } nullNodeAvif && nullNodeAvif.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avif = null;
+            if (parseNode.GetChildNode("bmp") is null) { _explicitNullValueBmp = default!; _explicitNullProperties?.Remove("bmp"); }
+            else if (parseNode.GetChildNode("bmp") is { } nullNodeBmp && nullNodeBmp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bmp = null;
+            if (parseNode.GetChildNode("gif") is null) { _explicitNullValueGif = default!; _explicitNullProperties?.Remove("gif"); }
+            else if (parseNode.GetChildNode("gif") is { } nullNodeGif && nullNodeGif.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gif = null;
+            if (parseNode.GetChildNode("jp2") is null) { _explicitNullValueJp2 = default!; _explicitNullProperties?.Remove("jp2"); }
+            else if (parseNode.GetChildNode("jp2") is { } nullNodeJp2 && nullNodeJp2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jp2 = null;
+            if (parseNode.GetChildNode("jpeg") is null) { _explicitNullValueJpeg = default!; _explicitNullProperties?.Remove("jpeg"); }
+            else if (parseNode.GetChildNode("jpeg") is { } nullNodeJpeg && nullNodeJpeg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jpeg = null;
+            if (parseNode.GetChildNode("jpg") is null) { _explicitNullValueJpg = default!; _explicitNullProperties?.Remove("jpg"); }
+            else if (parseNode.GetChildNode("jpg") is { } nullNodeJpg && nullNodeJpg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jpg = null;
+            if (parseNode.GetChildNode("jpg2") is null) { _explicitNullValueJpg2 = default!; _explicitNullProperties?.Remove("jpg2"); }
+            else if (parseNode.GetChildNode("jpg2") is { } nullNodeJpg2 && nullNodeJpg2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jpg2 = null;
+            if (parseNode.GetChildNode("png") is null) { _explicitNullValuePng = default!; _explicitNullProperties?.Remove("png"); }
+            else if (parseNode.GetChildNode("png") is { } nullNodePng && nullNodePng.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Png = null;
+            if (parseNode.GetChildNode("tif") is null) { _explicitNullValueTif = default!; _explicitNullProperties?.Remove("tif"); }
+            else if (parseNode.GetChildNode("tif") is { } nullNodeTif && nullNodeTif.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tif = null;
+            if (parseNode.GetChildNode("tiff") is null) { _explicitNullValueTiff = default!; _explicitNullProperties?.Remove("tiff"); }
+            else if (parseNode.GetChildNode("tiff") is { } nullNodeTiff && nullNodeTiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tiff = null;
+            if (parseNode.GetChildNode("webp") is null) { _explicitNullValueWebp = default!; _explicitNullProperties?.Remove("webp"); }
+            else if (parseNode.GetChildNode("webp") is { } nullNodeWebp && nullNodeWebp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,111 +47,111 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of strings with the MIME types of all the variants that should be served for avif.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Avif { get => _explicitNullValueAvif; set { _explicitNullValueAvif = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avif"); else _explicitNullProperties?.Remove("avif"); } }
+        public List<string>? Avif { get => _explicitNullValueAvif; set { _explicitNullValueAvif = value; AdditionalData?.Remove("avif"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avif"); else _explicitNullProperties?.Remove("avif"); } }
         private List<string>? _explicitNullValueAvif = default!;
 #nullable restore
 #else
-        public List<string> Avif { get => _explicitNullValueAvif; set { _explicitNullValueAvif = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avif"); else _explicitNullProperties?.Remove("avif"); } }
+        public List<string> Avif { get => _explicitNullValueAvif; set { _explicitNullValueAvif = value; AdditionalData?.Remove("avif"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avif"); else _explicitNullProperties?.Remove("avif"); } }
         private List<string> _explicitNullValueAvif = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for bmp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Bmp { get => _explicitNullValueBmp; set { _explicitNullValueBmp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bmp"); else _explicitNullProperties?.Remove("bmp"); } }
+        public List<string>? Bmp { get => _explicitNullValueBmp; set { _explicitNullValueBmp = value; AdditionalData?.Remove("bmp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bmp"); else _explicitNullProperties?.Remove("bmp"); } }
         private List<string>? _explicitNullValueBmp = default!;
 #nullable restore
 #else
-        public List<string> Bmp { get => _explicitNullValueBmp; set { _explicitNullValueBmp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bmp"); else _explicitNullProperties?.Remove("bmp"); } }
+        public List<string> Bmp { get => _explicitNullValueBmp; set { _explicitNullValueBmp = value; AdditionalData?.Remove("bmp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bmp"); else _explicitNullProperties?.Remove("bmp"); } }
         private List<string> _explicitNullValueBmp = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for gif.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gif { get => _explicitNullValueGif; set { _explicitNullValueGif = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gif"); else _explicitNullProperties?.Remove("gif"); } }
+        public List<string>? Gif { get => _explicitNullValueGif; set { _explicitNullValueGif = value; AdditionalData?.Remove("gif"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gif"); else _explicitNullProperties?.Remove("gif"); } }
         private List<string>? _explicitNullValueGif = default!;
 #nullable restore
 #else
-        public List<string> Gif { get => _explicitNullValueGif; set { _explicitNullValueGif = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gif"); else _explicitNullProperties?.Remove("gif"); } }
+        public List<string> Gif { get => _explicitNullValueGif; set { _explicitNullValueGif = value; AdditionalData?.Remove("gif"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gif"); else _explicitNullProperties?.Remove("gif"); } }
         private List<string> _explicitNullValueGif = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for jp2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Jp2 { get => _explicitNullValueJp2; set { _explicitNullValueJp2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jp2"); else _explicitNullProperties?.Remove("jp2"); } }
+        public List<string>? Jp2 { get => _explicitNullValueJp2; set { _explicitNullValueJp2 = value; AdditionalData?.Remove("jp2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jp2"); else _explicitNullProperties?.Remove("jp2"); } }
         private List<string>? _explicitNullValueJp2 = default!;
 #nullable restore
 #else
-        public List<string> Jp2 { get => _explicitNullValueJp2; set { _explicitNullValueJp2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jp2"); else _explicitNullProperties?.Remove("jp2"); } }
+        public List<string> Jp2 { get => _explicitNullValueJp2; set { _explicitNullValueJp2 = value; AdditionalData?.Remove("jp2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jp2"); else _explicitNullProperties?.Remove("jp2"); } }
         private List<string> _explicitNullValueJp2 = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for jpeg.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Jpeg { get => _explicitNullValueJpeg; set { _explicitNullValueJpeg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg"); else _explicitNullProperties?.Remove("jpeg"); } }
+        public List<string>? Jpeg { get => _explicitNullValueJpeg; set { _explicitNullValueJpeg = value; AdditionalData?.Remove("jpeg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg"); else _explicitNullProperties?.Remove("jpeg"); } }
         private List<string>? _explicitNullValueJpeg = default!;
 #nullable restore
 #else
-        public List<string> Jpeg { get => _explicitNullValueJpeg; set { _explicitNullValueJpeg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg"); else _explicitNullProperties?.Remove("jpeg"); } }
+        public List<string> Jpeg { get => _explicitNullValueJpeg; set { _explicitNullValueJpeg = value; AdditionalData?.Remove("jpeg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg"); else _explicitNullProperties?.Remove("jpeg"); } }
         private List<string> _explicitNullValueJpeg = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for jpg.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Jpg { get => _explicitNullValueJpg; set { _explicitNullValueJpg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg"); else _explicitNullProperties?.Remove("jpg"); } }
+        public List<string>? Jpg { get => _explicitNullValueJpg; set { _explicitNullValueJpg = value; AdditionalData?.Remove("jpg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg"); else _explicitNullProperties?.Remove("jpg"); } }
         private List<string>? _explicitNullValueJpg = default!;
 #nullable restore
 #else
-        public List<string> Jpg { get => _explicitNullValueJpg; set { _explicitNullValueJpg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg"); else _explicitNullProperties?.Remove("jpg"); } }
+        public List<string> Jpg { get => _explicitNullValueJpg; set { _explicitNullValueJpg = value; AdditionalData?.Remove("jpg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg"); else _explicitNullProperties?.Remove("jpg"); } }
         private List<string> _explicitNullValueJpg = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for jpg2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Jpg2 { get => _explicitNullValueJpg2; set { _explicitNullValueJpg2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg2"); else _explicitNullProperties?.Remove("jpg2"); } }
+        public List<string>? Jpg2 { get => _explicitNullValueJpg2; set { _explicitNullValueJpg2 = value; AdditionalData?.Remove("jpg2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg2"); else _explicitNullProperties?.Remove("jpg2"); } }
         private List<string>? _explicitNullValueJpg2 = default!;
 #nullable restore
 #else
-        public List<string> Jpg2 { get => _explicitNullValueJpg2; set { _explicitNullValueJpg2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg2"); else _explicitNullProperties?.Remove("jpg2"); } }
+        public List<string> Jpg2 { get => _explicitNullValueJpg2; set { _explicitNullValueJpg2 = value; AdditionalData?.Remove("jpg2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpg2"); else _explicitNullProperties?.Remove("jpg2"); } }
         private List<string> _explicitNullValueJpg2 = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for png.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Png { get => _explicitNullValuePng; set { _explicitNullValuePng = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("png"); else _explicitNullProperties?.Remove("png"); } }
+        public List<string>? Png { get => _explicitNullValuePng; set { _explicitNullValuePng = value; AdditionalData?.Remove("png"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("png"); else _explicitNullProperties?.Remove("png"); } }
         private List<string>? _explicitNullValuePng = default!;
 #nullable restore
 #else
-        public List<string> Png { get => _explicitNullValuePng; set { _explicitNullValuePng = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("png"); else _explicitNullProperties?.Remove("png"); } }
+        public List<string> Png { get => _explicitNullValuePng; set { _explicitNullValuePng = value; AdditionalData?.Remove("png"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("png"); else _explicitNullProperties?.Remove("png"); } }
         private List<string> _explicitNullValuePng = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for tif.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tif { get => _explicitNullValueTif; set { _explicitNullValueTif = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tif"); else _explicitNullProperties?.Remove("tif"); } }
+        public List<string>? Tif { get => _explicitNullValueTif; set { _explicitNullValueTif = value; AdditionalData?.Remove("tif"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tif"); else _explicitNullProperties?.Remove("tif"); } }
         private List<string>? _explicitNullValueTif = default!;
 #nullable restore
 #else
-        public List<string> Tif { get => _explicitNullValueTif; set { _explicitNullValueTif = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tif"); else _explicitNullProperties?.Remove("tif"); } }
+        public List<string> Tif { get => _explicitNullValueTif; set { _explicitNullValueTif = value; AdditionalData?.Remove("tif"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tif"); else _explicitNullProperties?.Remove("tif"); } }
         private List<string> _explicitNullValueTif = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for tiff.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tiff { get => _explicitNullValueTiff; set { _explicitNullValueTiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiff"); else _explicitNullProperties?.Remove("tiff"); } }
+        public List<string>? Tiff { get => _explicitNullValueTiff; set { _explicitNullValueTiff = value; AdditionalData?.Remove("tiff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiff"); else _explicitNullProperties?.Remove("tiff"); } }
         private List<string>? _explicitNullValueTiff = default!;
 #nullable restore
 #else
-        public List<string> Tiff { get => _explicitNullValueTiff; set { _explicitNullValueTiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiff"); else _explicitNullProperties?.Remove("tiff"); } }
+        public List<string> Tiff { get => _explicitNullValueTiff; set { _explicitNullValueTiff = value; AdditionalData?.Remove("tiff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiff"); else _explicitNullProperties?.Remove("tiff"); } }
         private List<string> _explicitNullValueTiff = default!;
 #endif
         /// <summary>List of strings with the MIME types of all the variants that should be served for webp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Webp { get => _explicitNullValueWebp; set { _explicitNullValueWebp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp"); else _explicitNullProperties?.Remove("webp"); } }
+        public List<string>? Webp { get => _explicitNullValueWebp; set { _explicitNullValueWebp = value; AdditionalData?.Remove("webp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp"); else _explicitNullProperties?.Remove("webp"); } }
         private List<string>? _explicitNullValueWebp = default!;
 #nullable restore
 #else
-        public List<string> Webp { get => _explicitNullValueWebp; set { _explicitNullValueWebp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp"); else _explicitNullProperties?.Remove("webp"); } }
+        public List<string> Webp { get => _explicitNullValueWebp; set { _explicitNullValueWebp = value; AdditionalData?.Remove("webp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp"); else _explicitNullProperties?.Remove("webp"); } }
         private List<string> _explicitNullValueWebp = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("member_metadata") is { } nullNodeMemberMetadata && nullNodeMemberMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberMetadata = null;
-            if (parseNode.GetChildNode("member_status") is { } nullNodeMemberStatus && nullNodeMemberStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberStatus = null;
-            if (parseNode.GetChildNode("member_tag") is { } nullNodeMemberTag && nullNodeMemberTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberTag = null;
+            if (parseNode.GetChildNode("member_metadata") is null) { _explicitNullValueMemberMetadata = default!; _explicitNullProperties?.Remove("member_metadata"); }
+            else if (parseNode.GetChildNode("member_metadata") is { } nullNodeMemberMetadata && nullNodeMemberMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberMetadata = null;
+            if (parseNode.GetChildNode("member_status") is null) { _explicitNullValueMemberStatus = default!; _explicitNullProperties?.Remove("member_status"); }
+            else if (parseNode.GetChildNode("member_status") is { } nullNodeMemberStatus && nullNodeMemberStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberStatus = null;
+            if (parseNode.GetChildNode("member_tag") is null) { _explicitNullValueMemberTag = default!; _explicitNullProperties?.Remove("member_tag"); }
+            else if (parseNode.GetChildNode("member_tag") is { } nullNodeMemberTag && nullNodeMemberTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The member_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembershipMemberMetadataProperty? MemberMetadata { get => _explicitNullValueMemberMetadata; set { _explicitNullValueMemberMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_metadata"); else _explicitNullProperties?.Remove("member_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembershipMemberMetadataProperty? MemberMetadata { get => _explicitNullValueMemberMetadata; set { _explicitNullValueMemberMetadata = value; AdditionalData?.Remove("member_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_metadata"); else _explicitNullProperties?.Remove("member_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembershipMemberMetadataProperty? _explicitNullValueMemberMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembershipMemberMetadataProperty MemberMetadata { get => _explicitNullValueMemberMetadata; set { _explicitNullValueMemberMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_metadata"); else _explicitNullProperties?.Remove("member_metadata"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembershipMemberMetadataProperty MemberMetadata { get => _explicitNullValueMemberMetadata; set { _explicitNullValueMemberMetadata = value; AdditionalData?.Remove("member_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_metadata"); else _explicitNullProperties?.Remove("member_metadata"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitMembershipMemberMetadataProperty _explicitNullValueMemberMetadata = default!;
 #endif
         /// <summary>The member_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberStatus { get => _explicitNullValueMemberStatus; set { _explicitNullValueMemberStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_status"); else _explicitNullProperties?.Remove("member_status"); } }
+        public string? MemberStatus { get => _explicitNullValueMemberStatus; set { _explicitNullValueMemberStatus = value; AdditionalData?.Remove("member_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_status"); else _explicitNullProperties?.Remove("member_status"); } }
         private string? _explicitNullValueMemberStatus = default!;
 #nullable restore
 #else
-        public string MemberStatus { get => _explicitNullValueMemberStatus; set { _explicitNullValueMemberStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_status"); else _explicitNullProperties?.Remove("member_status"); } }
+        public string MemberStatus { get => _explicitNullValueMemberStatus; set { _explicitNullValueMemberStatus = value; AdditionalData?.Remove("member_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_status"); else _explicitNullProperties?.Remove("member_status"); } }
         private string _explicitNullValueMemberStatus = default!;
 #endif
         /// <summary>The member_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberTag { get => _explicitNullValueMemberTag; set { _explicitNullValueMemberTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_tag"); else _explicitNullProperties?.Remove("member_tag"); } }
+        public string? MemberTag { get => _explicitNullValueMemberTag; set { _explicitNullValueMemberTag = value; AdditionalData?.Remove("member_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_tag"); else _explicitNullProperties?.Remove("member_tag"); } }
         private string? _explicitNullValueMemberTag = default!;
 #nullable restore
 #else
-        public string MemberTag { get => _explicitNullValueMemberTag; set { _explicitNullValueMemberTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_tag"); else _explicitNullProperties?.Remove("member_tag"); } }
+        public string MemberTag { get => _explicitNullValueMemberTag; set { _explicitNullValueMemberTag = value; AdditionalData?.Remove("member_tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_tag"); else _explicitNullProperties?.Remove("member_tag"); } }
         private string _explicitNullValueMemberTag = default!;
 #endif
         /// <summary>

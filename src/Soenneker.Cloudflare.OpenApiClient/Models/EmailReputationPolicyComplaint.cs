@@ -18,9 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("at_risk_at") is { } nullNodeAtRiskAt && nullNodeAtRiskAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AtRiskAt = null;
-            if (parseNode.GetChildNode("minimum_denominator") is { } nullNodeMinimumDenominator && nullNodeMinimumDenominator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumDenominator = null;
-            if (parseNode.GetChildNode("warning_at") is { } nullNodeWarningAt && nullNodeWarningAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningAt = null;
+            if (parseNode.GetChildNode("at_risk_at") is null) { _explicitNullValueAtRiskAt = default!; _explicitNullProperties?.Remove("at_risk_at"); }
+            else if (parseNode.GetChildNode("at_risk_at") is { } nullNodeAtRiskAt && nullNodeAtRiskAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AtRiskAt = null;
+            if (parseNode.GetChildNode("minimum_denominator") is null) { _explicitNullValueMinimumDenominator = default!; _explicitNullProperties?.Remove("minimum_denominator"); }
+            else if (parseNode.GetChildNode("minimum_denominator") is { } nullNodeMinimumDenominator && nullNodeMinimumDenominator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumDenominator = null;
+            if (parseNode.GetChildNode("warning_at") is null) { _explicitNullValueWarningAt = default!; _explicitNullProperties?.Remove("warning_at"); }
+            else if (parseNode.GetChildNode("warning_at") is { } nullNodeWarningAt && nullNodeWarningAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningAt = null;
         }
 
         /// <summary>The rate at or above which the metric enters the at-risk band. A fraction between 0 and 1.</summary>

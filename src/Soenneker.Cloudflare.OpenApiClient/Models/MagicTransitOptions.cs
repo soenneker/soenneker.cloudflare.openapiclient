@@ -17,29 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_ttl") is { } nullNodeMaxTtl && nullNodeMaxTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtl = null;
-            if (parseNode.GetChildNode("packets_per_ttl") is { } nullNodePacketsPerTtl && nullNodePacketsPerTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsPerTtl = null;
-            if (parseNode.GetChildNode("packet_type") is { } nullNodePacketType && nullNodePacketType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketType = null;
-            if (parseNode.GetChildNode("port") is { } nullNodePort && nullNodePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Port = null;
-            if (parseNode.GetChildNode("wait_time") is { } nullNodeWaitTime && nullNodeWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitTime = null;
+            if (parseNode.GetChildNode("max_ttl") is null) { _explicitNullValueMaxTtl = default!; _explicitNullProperties?.Remove("max_ttl"); }
+            else if (parseNode.GetChildNode("max_ttl") is { } nullNodeMaxTtl && nullNodeMaxTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTtl = null;
+            if (parseNode.GetChildNode("packets_per_ttl") is null) { _explicitNullValuePacketsPerTtl = default!; _explicitNullProperties?.Remove("packets_per_ttl"); }
+            else if (parseNode.GetChildNode("packets_per_ttl") is { } nullNodePacketsPerTtl && nullNodePacketsPerTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketsPerTtl = null;
+            if (parseNode.GetChildNode("packet_type") is null) { _explicitNullValuePacketType = default!; _explicitNullProperties?.Remove("packet_type"); }
+            else if (parseNode.GetChildNode("packet_type") is { } nullNodePacketType && nullNodePacketType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacketType = null;
+            if (parseNode.GetChildNode("port") is null) { _explicitNullValuePort = default!; _explicitNullProperties?.Remove("port"); }
+            else if (parseNode.GetChildNode("port") is { } nullNodePort && nullNodePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Port = null;
+            if (parseNode.GetChildNode("wait_time") is null) { _explicitNullValueWaitTime = default!; _explicitNullProperties?.Remove("wait_time"); }
+            else if (parseNode.GetChildNode("wait_time") is { } nullNodeWaitTime && nullNodeWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Max TTL.</summary>
-        public int? MaxTtl { get => _explicitNullValueMaxTtl; set { _explicitNullValueMaxTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl"); else _explicitNullProperties?.Remove("max_ttl"); } }
+        public int? MaxTtl { get => _explicitNullValueMaxTtl; set { _explicitNullValueMaxTtl = value; AdditionalData?.Remove("max_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ttl"); else _explicitNullProperties?.Remove("max_ttl"); } }
         private int? _explicitNullValueMaxTtl = default!;
         /// <summary>Number of packets sent at each TTL.</summary>
-        public int? PacketsPerTtl { get => _explicitNullValuePacketsPerTtl; set { _explicitNullValuePacketsPerTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_per_ttl"); else _explicitNullProperties?.Remove("packets_per_ttl"); } }
+        public int? PacketsPerTtl { get => _explicitNullValuePacketsPerTtl; set { _explicitNullValuePacketsPerTtl = value; AdditionalData?.Remove("packets_per_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packets_per_ttl"); else _explicitNullProperties?.Remove("packets_per_ttl"); } }
         private int? _explicitNullValuePacketsPerTtl = default!;
         /// <summary>Type of packet sent.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType? PacketType { get => _explicitNullValuePacketType; set { _explicitNullValuePacketType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_type"); else _explicitNullProperties?.Remove("packet_type"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType? PacketType { get => _explicitNullValuePacketType; set { _explicitNullValuePacketType = value; AdditionalData?.Remove("packet_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packet_type"); else _explicitNullProperties?.Remove("packet_type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType? _explicitNullValuePacketType = default!;
         /// <summary>For UDP and TCP, specifies the destination port. For ICMP, specifies the initial ICMP sequence value. Default value 0 will choose the best value to use for each protocol.</summary>
-        public int? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
+        public int? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; AdditionalData?.Remove("port"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
         private int? _explicitNullValuePort = default!;
         /// <summary>Set the time (in seconds) to wait for a response to a probe.</summary>
-        public int? WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wait_time"); else _explicitNullProperties?.Remove("wait_time"); } }
+        public int? WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; AdditionalData?.Remove("wait_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wait_time"); else _explicitNullProperties?.Remove("wait_time"); } }
         private int? _explicitNullValueWaitTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitOptions"/> and sets the default values.
@@ -71,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "max_ttl", n => { MaxTtl = n.GetIntValue(); } },
-                { "packet_type", n => { PacketType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType>(); } },
+                { "packet_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePacketType = default; _explicitNullProperties?.Remove("packet_type"); AdditionalData["packet_type"] = unknown; } else { PacketType = parsed; AdditionalData.Remove("packet_type"); } } },
                 { "packets_per_ttl", n => { PacketsPerTtl = n.GetIntValue(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
                 { "wait_time", n => { WaitTime = n.GetIntValue(); } },

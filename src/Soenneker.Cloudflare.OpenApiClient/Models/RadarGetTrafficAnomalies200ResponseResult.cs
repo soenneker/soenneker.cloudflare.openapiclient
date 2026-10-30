@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("trafficAnomalies") is { } nullNodeTrafficAnomalies && nullNodeTrafficAnomalies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficAnomalies = null;
+            if (parseNode.GetChildNode("trafficAnomalies") is null) { _explicitNullValueTrafficAnomalies = default!; _explicitNullProperties?.Remove("trafficAnomalies"); }
+            else if (parseNode.GetChildNode("trafficAnomalies") is { } nullNodeTrafficAnomalies && nullNodeTrafficAnomalies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficAnomalies = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The trafficAnomalies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesItem>? TrafficAnomalies { get => _explicitNullValueTrafficAnomalies; set { _explicitNullValueTrafficAnomalies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trafficAnomalies"); else _explicitNullProperties?.Remove("trafficAnomalies"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesItem>? TrafficAnomalies { get => _explicitNullValueTrafficAnomalies; set { _explicitNullValueTrafficAnomalies = value; AdditionalData?.Remove("trafficAnomalies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trafficAnomalies"); else _explicitNullProperties?.Remove("trafficAnomalies"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesItem>? _explicitNullValueTrafficAnomalies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesItem> TrafficAnomalies { get => _explicitNullValueTrafficAnomalies; set { _explicitNullValueTrafficAnomalies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trafficAnomalies"); else _explicitNullProperties?.Remove("trafficAnomalies"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesItem> TrafficAnomalies { get => _explicitNullValueTrafficAnomalies; set { _explicitNullValueTrafficAnomalies = value; AdditionalData?.Remove("trafficAnomalies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trafficAnomalies"); else _explicitNullProperties?.Remove("trafficAnomalies"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesItem> _explicitNullValueTrafficAnomalies = default!;
 #endif
         /// <summary>

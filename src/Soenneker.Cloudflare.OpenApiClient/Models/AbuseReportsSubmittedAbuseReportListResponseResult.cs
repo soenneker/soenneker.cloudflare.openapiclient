@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("reports") is { } nullNodeReports && nullNodeReports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reports = null;
+            if (parseNode.GetChildNode("reports") is null) { _explicitNullValueReports = default!; _explicitNullProperties?.Remove("reports"); }
+            else if (parseNode.GetChildNode("reports") is { } nullNodeReports && nullNodeReports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reports = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The reports property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmittedAbuseReportListItem>? Reports { get => _explicitNullValueReports; set { _explicitNullValueReports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports"); else _explicitNullProperties?.Remove("reports"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmittedAbuseReportListItem>? Reports { get => _explicitNullValueReports; set { _explicitNullValueReports = value; AdditionalData?.Remove("reports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports"); else _explicitNullProperties?.Remove("reports"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmittedAbuseReportListItem>? _explicitNullValueReports = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmittedAbuseReportListItem> Reports { get => _explicitNullValueReports; set { _explicitNullValueReports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports"); else _explicitNullProperties?.Remove("reports"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmittedAbuseReportListItem> Reports { get => _explicitNullValueReports; set { _explicitNullValueReports = value; AdditionalData?.Remove("reports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports"); else _explicitNullProperties?.Remove("reports"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmittedAbuseReportListItem> _explicitNullValueReports = default!;
 #endif
         /// <summary>

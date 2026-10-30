@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notification_url") is { } nullNodeNotification_url && nullNodeNotification_url.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notification_url = null;
-            if (parseNode.GetChildNode("notificationUrl") is { } nullNodeNotificationUrl && nullNodeNotificationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationUrl = null;
+            if (parseNode.GetChildNode("notification_url") is null) { _explicitNullValueNotification_url = default!; _explicitNullProperties?.Remove("notification_url"); }
+            else if (parseNode.GetChildNode("notification_url") is { } nullNodeNotification_url && nullNodeNotification_url.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notification_url = null;
+            if (parseNode.GetChildNode("notificationUrl") is null) { _explicitNullValueNotificationUrl = default!; _explicitNullProperties?.Remove("notificationUrl"); }
+            else if (parseNode.GetChildNode("notificationUrl") is { } nullNodeNotificationUrl && nullNodeNotificationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The URL where webhooks will be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notification_url { get => _explicitNullValueNotification_url; set { _explicitNullValueNotification_url = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_url"); else _explicitNullProperties?.Remove("notification_url"); } }
+        public string? Notification_url { get => _explicitNullValueNotification_url; set { _explicitNullValueNotification_url = value; AdditionalData?.Remove("notification_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_url"); else _explicitNullProperties?.Remove("notification_url"); } }
         private string? _explicitNullValueNotification_url = default!;
 #nullable restore
 #else
-        public string Notification_url { get => _explicitNullValueNotification_url; set { _explicitNullValueNotification_url = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_url"); else _explicitNullProperties?.Remove("notification_url"); } }
+        public string Notification_url { get => _explicitNullValueNotification_url; set { _explicitNullValueNotification_url = value; AdditionalData?.Remove("notification_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_url"); else _explicitNullProperties?.Remove("notification_url"); } }
         private string _explicitNullValueNotification_url = default!;
 #endif
         /// <summary>The URL where webhooks will be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationUrl { get => _explicitNullValueNotificationUrl; set { _explicitNullValueNotificationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationUrl"); else _explicitNullProperties?.Remove("notificationUrl"); } }
+        public string? NotificationUrl { get => _explicitNullValueNotificationUrl; set { _explicitNullValueNotificationUrl = value; AdditionalData?.Remove("notificationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationUrl"); else _explicitNullProperties?.Remove("notificationUrl"); } }
         private string? _explicitNullValueNotificationUrl = default!;
 #nullable restore
 #else
-        public string NotificationUrl { get => _explicitNullValueNotificationUrl; set { _explicitNullValueNotificationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationUrl"); else _explicitNullProperties?.Remove("notificationUrl"); } }
+        public string NotificationUrl { get => _explicitNullValueNotificationUrl; set { _explicitNullValueNotificationUrl = value; AdditionalData?.Remove("notificationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationUrl"); else _explicitNullProperties?.Remove("notificationUrl"); } }
         private string _explicitNullValueNotificationUrl = default!;
 #endif
         /// <summary>

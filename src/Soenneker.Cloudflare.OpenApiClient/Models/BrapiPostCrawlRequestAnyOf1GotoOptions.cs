@@ -18,10 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("referer") is { } nullNodeReferer && nullNodeReferer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referer = null;
-            if (parseNode.GetChildNode("referrerPolicy") is { } nullNodeReferrerPolicy && nullNodeReferrerPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferrerPolicy = null;
-            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
-            if (parseNode.GetChildNode("waitUntil") is { } nullNodeWaitUntil && nullNodeWaitUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitUntil = null;
+            if (parseNode.GetChildNode("referer") is null) { _explicitNullValueReferer = default!; _explicitNullProperties?.Remove("referer"); }
+            else if (parseNode.GetChildNode("referer") is { } nullNodeReferer && nullNodeReferer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referer = null;
+            if (parseNode.GetChildNode("referrerPolicy") is null) { _explicitNullValueReferrerPolicy = default!; _explicitNullProperties?.Remove("referrerPolicy"); }
+            else if (parseNode.GetChildNode("referrerPolicy") is { } nullNodeReferrerPolicy && nullNodeReferrerPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferrerPolicy = null;
+            if (parseNode.GetChildNode("timeout") is null) { _explicitNullValueTimeout = default!; _explicitNullProperties?.Remove("timeout"); }
+            else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+            if (parseNode.GetChildNode("waitUntil") is null) { _explicitNullValueWaitUntil = default!; _explicitNullProperties?.Remove("waitUntil"); }
+            else if (parseNode.GetChildNode("waitUntil") is { } nullNodeWaitUntil && nullNodeWaitUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitUntil = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The referer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
+        public string? Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; AdditionalData?.Remove("referer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
         private string? _explicitNullValueReferer = default!;
 #nullable restore
 #else
-        public string Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
+        public string Referer { get => _explicitNullValueReferer; set { _explicitNullValueReferer = value; AdditionalData?.Remove("referer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referer"); else _explicitNullProperties?.Remove("referer"); } }
         private string _explicitNullValueReferer = default!;
 #endif
         /// <summary>The referrerPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferrerPolicy { get => _explicitNullValueReferrerPolicy; set { _explicitNullValueReferrerPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrerPolicy"); else _explicitNullProperties?.Remove("referrerPolicy"); } }
+        public string? ReferrerPolicy { get => _explicitNullValueReferrerPolicy; set { _explicitNullValueReferrerPolicy = value; AdditionalData?.Remove("referrerPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrerPolicy"); else _explicitNullProperties?.Remove("referrerPolicy"); } }
         private string? _explicitNullValueReferrerPolicy = default!;
 #nullable restore
 #else
-        public string ReferrerPolicy { get => _explicitNullValueReferrerPolicy; set { _explicitNullValueReferrerPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrerPolicy"); else _explicitNullProperties?.Remove("referrerPolicy"); } }
+        public string ReferrerPolicy { get => _explicitNullValueReferrerPolicy; set { _explicitNullValueReferrerPolicy = value; AdditionalData?.Remove("referrerPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrerPolicy"); else _explicitNullProperties?.Remove("referrerPolicy"); } }
         private string _explicitNullValueReferrerPolicy = default!;
 #endif
         /// <summary>The timeout property</summary>
-        public double? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        public double? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private double? _explicitNullValueTimeout = default!;
         /// <summary>The waitUntil property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptionsWaitUntil? WaitUntil { get => _explicitNullValueWaitUntil; set { _explicitNullValueWaitUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitUntil"); else _explicitNullProperties?.Remove("waitUntil"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptionsWaitUntil? WaitUntil { get => _explicitNullValueWaitUntil; set { _explicitNullValueWaitUntil = value; AdditionalData?.Remove("waitUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitUntil"); else _explicitNullProperties?.Remove("waitUntil"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptionsWaitUntil? _explicitNullValueWaitUntil = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptionsWaitUntil WaitUntil { get => _explicitNullValueWaitUntil; set { _explicitNullValueWaitUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitUntil"); else _explicitNullProperties?.Remove("waitUntil"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptionsWaitUntil WaitUntil { get => _explicitNullValueWaitUntil; set { _explicitNullValueWaitUntil = value; AdditionalData?.Remove("waitUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitUntil"); else _explicitNullProperties?.Remove("waitUntil"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf1GotoOptionsWaitUntil _explicitNullValueWaitUntil = default!;
 #endif
         /// <summary>

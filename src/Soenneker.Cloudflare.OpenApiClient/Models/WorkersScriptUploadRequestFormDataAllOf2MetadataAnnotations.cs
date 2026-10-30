@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("workers/message") is { } nullNodeWorkersMessage && nullNodeWorkersMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersMessage = null;
-            if (parseNode.GetChildNode("workers/tag") is { } nullNodeWorkersTag && nullNodeWorkersTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersTag = null;
+            if (parseNode.GetChildNode("workers/message") is null) { _explicitNullValueWorkersMessage = default!; _explicitNullProperties?.Remove("workers/message"); }
+            else if (parseNode.GetChildNode("workers/message") is { } nullNodeWorkersMessage && nullNodeWorkersMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersMessage = null;
+            if (parseNode.GetChildNode("workers/tag") is null) { _explicitNullValueWorkersTag = default!; _explicitNullProperties?.Remove("workers/tag"); }
+            else if (parseNode.GetChildNode("workers/tag") is { } nullNodeWorkersTag && nullNodeWorkersTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Human-readable message about the version. Truncated to 1000 bytes if longer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
+        public string? WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; AdditionalData?.Remove("workers/message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
         private string? _explicitNullValueWorkersMessage = default!;
 #nullable restore
 #else
-        public string WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
+        public string WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; AdditionalData?.Remove("workers/message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
         private string _explicitNullValueWorkersMessage = default!;
 #endif
         /// <summary>User-provided identifier for the version. Maximum 100 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
+        public string? WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; AdditionalData?.Remove("workers/tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
         private string? _explicitNullValueWorkersTag = default!;
 #nullable restore
 #else
-        public string WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
+        public string WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; AdditionalData?.Remove("workers/tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
         private string _explicitNullValueWorkersTag = default!;
 #endif
         /// <summary>

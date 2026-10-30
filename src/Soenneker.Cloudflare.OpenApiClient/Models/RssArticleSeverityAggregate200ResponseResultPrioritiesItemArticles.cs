@@ -18,29 +18,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("critical") is { } nullNodeCritical && nullNodeCritical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Critical = null;
-            if (parseNode.GetChildNode("high") is { } nullNodeHigh && nullNodeHigh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) High = null;
-            if (parseNode.GetChildNode("informational") is { } nullNodeInformational && nullNodeInformational.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Informational = null;
-            if (parseNode.GetChildNode("low") is { } nullNodeLow && nullNodeLow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Low = null;
-            if (parseNode.GetChildNode("medium") is { } nullNodeMedium && nullNodeMedium.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Medium = null;
+            if (parseNode.GetChildNode("critical") is null) { _explicitNullValueCritical = default!; _explicitNullProperties?.Remove("critical"); }
+            else if (parseNode.GetChildNode("critical") is { } nullNodeCritical && nullNodeCritical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Critical = null;
+            if (parseNode.GetChildNode("high") is null) { _explicitNullValueHigh = default!; _explicitNullProperties?.Remove("high"); }
+            else if (parseNode.GetChildNode("high") is { } nullNodeHigh && nullNodeHigh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) High = null;
+            if (parseNode.GetChildNode("informational") is null) { _explicitNullValueInformational = default!; _explicitNullProperties?.Remove("informational"); }
+            else if (parseNode.GetChildNode("informational") is { } nullNodeInformational && nullNodeInformational.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Informational = null;
+            if (parseNode.GetChildNode("low") is null) { _explicitNullValueLow = default!; _explicitNullProperties?.Remove("low"); }
+            else if (parseNode.GetChildNode("low") is { } nullNodeLow && nullNodeLow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Low = null;
+            if (parseNode.GetChildNode("medium") is null) { _explicitNullValueMedium = default!; _explicitNullProperties?.Remove("medium"); }
+            else if (parseNode.GetChildNode("medium") is { } nullNodeMedium && nullNodeMedium.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Medium = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The critical property</summary>
-        public int? Critical { get => _explicitNullValueCritical; set { _explicitNullValueCritical = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical"); else _explicitNullProperties?.Remove("critical"); } }
+        public int? Critical { get => _explicitNullValueCritical; set { _explicitNullValueCritical = value; AdditionalData?.Remove("critical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical"); else _explicitNullProperties?.Remove("critical"); } }
         private int? _explicitNullValueCritical = default!;
         /// <summary>The high property</summary>
-        public int? High { get => _explicitNullValueHigh; set { _explicitNullValueHigh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("high"); else _explicitNullProperties?.Remove("high"); } }
+        public int? High { get => _explicitNullValueHigh; set { _explicitNullValueHigh = value; AdditionalData?.Remove("high"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("high"); else _explicitNullProperties?.Remove("high"); } }
         private int? _explicitNullValueHigh = default!;
         /// <summary>The informational property</summary>
-        public int? Informational { get => _explicitNullValueInformational; set { _explicitNullValueInformational = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("informational"); else _explicitNullProperties?.Remove("informational"); } }
+        public int? Informational { get => _explicitNullValueInformational; set { _explicitNullValueInformational = value; AdditionalData?.Remove("informational"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("informational"); else _explicitNullProperties?.Remove("informational"); } }
         private int? _explicitNullValueInformational = default!;
         /// <summary>The low property</summary>
-        public int? Low { get => _explicitNullValueLow; set { _explicitNullValueLow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("low"); else _explicitNullProperties?.Remove("low"); } }
+        public int? Low { get => _explicitNullValueLow; set { _explicitNullValueLow = value; AdditionalData?.Remove("low"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("low"); else _explicitNullProperties?.Remove("low"); } }
         private int? _explicitNullValueLow = default!;
         /// <summary>The medium property</summary>
-        public int? Medium { get => _explicitNullValueMedium; set { _explicitNullValueMedium = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medium"); else _explicitNullProperties?.Remove("medium"); } }
+        public int? Medium { get => _explicitNullValueMedium; set { _explicitNullValueMedium = value; AdditionalData?.Remove("medium"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medium"); else _explicitNullProperties?.Remove("medium"); } }
         private int? _explicitNullValueMedium = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSeverityAggregate200ResponseResultPrioritiesItemArticles"/> and sets the default values.

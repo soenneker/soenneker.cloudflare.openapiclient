@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("logpull_options") is { } nullNodeLogpullOptions && nullNodeLogpullOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogpullOptions = null;
+            if (parseNode.GetChildNode("logpull_options") is null) { _explicitNullValueLogpullOptions = default!; _explicitNullProperties?.Remove("logpull_options"); }
+            else if (parseNode.GetChildNode("logpull_options") is { } nullNodeLogpullOptions && nullNodeLogpullOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogpullOptions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogpullOptions { get => _explicitNullValueLogpullOptions; set { _explicitNullValueLogpullOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpull_options"); else _explicitNullProperties?.Remove("logpull_options"); } }
+        public string? LogpullOptions { get => _explicitNullValueLogpullOptions; set { _explicitNullValueLogpullOptions = value; AdditionalData?.Remove("logpull_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpull_options"); else _explicitNullProperties?.Remove("logpull_options"); } }
         private string? _explicitNullValueLogpullOptions = default!;
 #nullable restore
 #else
-        public string LogpullOptions { get => _explicitNullValueLogpullOptions; set { _explicitNullValueLogpullOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpull_options"); else _explicitNullProperties?.Remove("logpull_options"); } }
+        public string LogpullOptions { get => _explicitNullValueLogpullOptions; set { _explicitNullValueLogpullOptions = value; AdditionalData?.Remove("logpull_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logpull_options"); else _explicitNullProperties?.Remove("logpull_options"); } }
         private string _explicitNullValueLogpullOptions = default!;
 #endif
         /// <summary>

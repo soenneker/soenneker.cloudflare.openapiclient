@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("evaluate_url") is { } nullNodeEvaluateUrl && nullNodeEvaluateUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluateUrl = null;
-            if (parseNode.GetChildNode("keys_url") is { } nullNodeKeysUrl && nullNodeKeysUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeysUrl = null;
+            if (parseNode.GetChildNode("evaluate_url") is null) { _explicitNullValueEvaluateUrl = default!; _explicitNullProperties?.Remove("evaluate_url"); }
+            else if (parseNode.GetChildNode("evaluate_url") is { } nullNodeEvaluateUrl && nullNodeEvaluateUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluateUrl = null;
+            if (parseNode.GetChildNode("keys_url") is null) { _explicitNullValueKeysUrl = default!; _explicitNullProperties?.Remove("keys_url"); }
+            else if (parseNode.GetChildNode("keys_url") is { } nullNodeKeysUrl && nullNodeKeysUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeysUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The API endpoint containing your business logic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluateUrl { get => _explicitNullValueEvaluateUrl; set { _explicitNullValueEvaluateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluate_url"); else _explicitNullProperties?.Remove("evaluate_url"); } }
+        public string? EvaluateUrl { get => _explicitNullValueEvaluateUrl; set { _explicitNullValueEvaluateUrl = value; AdditionalData?.Remove("evaluate_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluate_url"); else _explicitNullProperties?.Remove("evaluate_url"); } }
         private string? _explicitNullValueEvaluateUrl = default!;
 #nullable restore
 #else
-        public string EvaluateUrl { get => _explicitNullValueEvaluateUrl; set { _explicitNullValueEvaluateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluate_url"); else _explicitNullProperties?.Remove("evaluate_url"); } }
+        public string EvaluateUrl { get => _explicitNullValueEvaluateUrl; set { _explicitNullValueEvaluateUrl = value; AdditionalData?.Remove("evaluate_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluate_url"); else _explicitNullProperties?.Remove("evaluate_url"); } }
         private string _explicitNullValueEvaluateUrl = default!;
 #endif
         /// <summary>The API endpoint containing the key that Access uses to verify that the response came from your API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeysUrl { get => _explicitNullValueKeysUrl; set { _explicitNullValueKeysUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys_url"); else _explicitNullProperties?.Remove("keys_url"); } }
+        public string? KeysUrl { get => _explicitNullValueKeysUrl; set { _explicitNullValueKeysUrl = value; AdditionalData?.Remove("keys_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys_url"); else _explicitNullProperties?.Remove("keys_url"); } }
         private string? _explicitNullValueKeysUrl = default!;
 #nullable restore
 #else
-        public string KeysUrl { get => _explicitNullValueKeysUrl; set { _explicitNullValueKeysUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys_url"); else _explicitNullProperties?.Remove("keys_url"); } }
+        public string KeysUrl { get => _explicitNullValueKeysUrl; set { _explicitNullValueKeysUrl = value; AdditionalData?.Remove("keys_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys_url"); else _explicitNullProperties?.Remove("keys_url"); } }
         private string _explicitNullValueKeysUrl = default!;
 #endif
         /// <summary>

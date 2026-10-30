@@ -17,10 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("GRE") is { } nullNodeGRE && nullNodeGRE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GRE = null;
-            if (parseNode.GetChildNode("ICMP") is { } nullNodeICMP && nullNodeICMP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ICMP = null;
-            if (parseNode.GetChildNode("TCP") is { } nullNodeTCP && nullNodeTCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TCP = null;
-            if (parseNode.GetChildNode("UDP") is { } nullNodeUDP && nullNodeUDP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UDP = null;
+            if (parseNode.GetChildNode("GRE") is null) { _explicitNullValueGRE = default!; _explicitNullProperties?.Remove("GRE"); }
+            else if (parseNode.GetChildNode("GRE") is { } nullNodeGRE && nullNodeGRE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GRE = null;
+            if (parseNode.GetChildNode("ICMP") is null) { _explicitNullValueICMP = default!; _explicitNullProperties?.Remove("ICMP"); }
+            else if (parseNode.GetChildNode("ICMP") is { } nullNodeICMP && nullNodeICMP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ICMP = null;
+            if (parseNode.GetChildNode("TCP") is null) { _explicitNullValueTCP = default!; _explicitNullProperties?.Remove("TCP"); }
+            else if (parseNode.GetChildNode("TCP") is { } nullNodeTCP && nullNodeTCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TCP = null;
+            if (parseNode.GetChildNode("UDP") is null) { _explicitNullValueUDP = default!; _explicitNullProperties?.Remove("UDP"); }
+            else if (parseNode.GetChildNode("UDP") is { } nullNodeUDP && nullNodeUDP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UDP = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GRE { get => _explicitNullValueGRE; set { _explicitNullValueGRE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GRE"); else _explicitNullProperties?.Remove("GRE"); } }
+        public string? GRE { get => _explicitNullValueGRE; set { _explicitNullValueGRE = value; AdditionalData?.Remove("GRE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GRE"); else _explicitNullProperties?.Remove("GRE"); } }
         private string? _explicitNullValueGRE = default!;
 #nullable restore
 #else
-        public string GRE { get => _explicitNullValueGRE; set { _explicitNullValueGRE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GRE"); else _explicitNullProperties?.Remove("GRE"); } }
+        public string GRE { get => _explicitNullValueGRE; set { _explicitNullValueGRE = value; AdditionalData?.Remove("GRE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GRE"); else _explicitNullProperties?.Remove("GRE"); } }
         private string _explicitNullValueGRE = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ICMP { get => _explicitNullValueICMP; set { _explicitNullValueICMP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ICMP"); else _explicitNullProperties?.Remove("ICMP"); } }
+        public string? ICMP { get => _explicitNullValueICMP; set { _explicitNullValueICMP = value; AdditionalData?.Remove("ICMP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ICMP"); else _explicitNullProperties?.Remove("ICMP"); } }
         private string? _explicitNullValueICMP = default!;
 #nullable restore
 #else
-        public string ICMP { get => _explicitNullValueICMP; set { _explicitNullValueICMP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ICMP"); else _explicitNullProperties?.Remove("ICMP"); } }
+        public string ICMP { get => _explicitNullValueICMP; set { _explicitNullValueICMP = value; AdditionalData?.Remove("ICMP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ICMP"); else _explicitNullProperties?.Remove("ICMP"); } }
         private string _explicitNullValueICMP = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        public string? TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; AdditionalData?.Remove("TCP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
         private string? _explicitNullValueTCP = default!;
 #nullable restore
 #else
-        public string TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
+        public string TCP { get => _explicitNullValueTCP; set { _explicitNullValueTCP = value; AdditionalData?.Remove("TCP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TCP"); else _explicitNullProperties?.Remove("TCP"); } }
         private string _explicitNullValueTCP = default!;
 #endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        public string? UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; AdditionalData?.Remove("UDP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
         private string? _explicitNullValueUDP = default!;
 #nullable restore
 #else
-        public string UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
+        public string UDP { get => _explicitNullValueUDP; set { _explicitNullValueUDP = value; AdditionalData?.Remove("UDP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UDP"); else _explicitNullProperties?.Remove("UDP"); } }
         private string _explicitNullValueUDP = default!;
 #endif
         /// <summary>

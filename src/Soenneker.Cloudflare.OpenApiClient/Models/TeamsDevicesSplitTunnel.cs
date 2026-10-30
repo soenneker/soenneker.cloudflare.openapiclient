@@ -54,10 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("address") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("host") != null))();
-            if (result.TeamsDevicesExcludeSplitTunnelWithAddress == null && result.TeamsDevicesExcludeSplitTunnelWithHost == null && matchesUnionBranch0 && !matchesUnionBranch1) result.TeamsDevicesExcludeSplitTunnelWithAddress = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExcludeSplitTunnelWithAddress(), parseNode);
-            if (result.TeamsDevicesExcludeSplitTunnelWithAddress == null && result.TeamsDevicesExcludeSplitTunnelWithHost == null && matchesUnionBranch1 && !matchesUnionBranch0) result.TeamsDevicesExcludeSplitTunnelWithHost = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExcludeSplitTunnelWithHost(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("address") && (!shapeMembers1.ContainsKey("address") || (((shapeMembers1["address"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("host") && (!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("host") || (((shapeMembers1["host"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.TeamsDevicesExcludeSplitTunnelWithAddress == null && result.TeamsDevicesExcludeSplitTunnelWithHost == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.TeamsDevicesExcludeSplitTunnelWithAddress = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExcludeSplitTunnelWithAddress(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.TeamsDevicesExcludeSplitTunnelWithHost = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExcludeSplitTunnelWithHost(), parseNode);
             if (result.TeamsDevicesExcludeSplitTunnelWithAddress == null && result.TeamsDevicesExcludeSplitTunnelWithHost == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(TeamsDevicesExcludeSplitTunnelWithAddress != null)
             {
                 return TeamsDevicesExcludeSplitTunnelWithAddress.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (TeamsDevicesExcludeSplitTunnelWithAddress == null && TeamsDevicesExcludeSplitTunnelWithHost == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (TeamsDevicesExcludeSplitTunnelWithAddress != null && TeamsDevicesExcludeSplitTunnelWithHost == null) { if (TeamsDevicesExcludeSplitTunnelWithAddress is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesExcludeSplitTunnelWithAddress); return; }
-            if (TeamsDevicesExcludeSplitTunnelWithHost != null && TeamsDevicesExcludeSplitTunnelWithAddress == null) { if (TeamsDevicesExcludeSplitTunnelWithHost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesExcludeSplitTunnelWithHost); return; }
+            int selectedUnionBranches = 0;
+            if (TeamsDevicesExcludeSplitTunnelWithAddress != null) selectedUnionBranches++;
+            if (TeamsDevicesExcludeSplitTunnelWithHost != null) selectedUnionBranches++;
+            if (TeamsDevicesExcludeSplitTunnelWithAddress != null && selectedUnionBranches == 1) { if (TeamsDevicesExcludeSplitTunnelWithAddress is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesExcludeSplitTunnelWithAddress); return; }
+            if (TeamsDevicesExcludeSplitTunnelWithHost != null && selectedUnionBranches == 1) { if (TeamsDevicesExcludeSplitTunnelWithHost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamsDevicesExcludeSplitTunnelWithHost); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TeamsDevicesExcludeSplitTunnelWithAddress != null)

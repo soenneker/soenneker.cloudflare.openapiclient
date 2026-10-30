@@ -17,12 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("arch") is { } nullNodeArch && nullNodeArch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Arch = null;
-            if (parseNode.GetChildNode("conns") is { } nullNodeConns && nullNodeConns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conns = null;
-            if (parseNode.GetChildNode("features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
-            if (parseNode.GetChildNode("ha_status") is { } nullNodeHaStatus && nullNodeHaStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HaStatus = null;
-            if (parseNode.GetChildNode("run_at") is { } nullNodeRunAt && nullNodeRunAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunAt = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("arch") is null) { _explicitNullValueArch = default!; _explicitNullProperties?.Remove("arch"); }
+            else if (parseNode.GetChildNode("arch") is { } nullNodeArch && nullNodeArch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Arch = null;
+            if (parseNode.GetChildNode("conns") is null) { _explicitNullValueConns = default!; _explicitNullProperties?.Remove("conns"); }
+            else if (parseNode.GetChildNode("conns") is { } nullNodeConns && nullNodeConns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conns = null;
+            if (parseNode.GetChildNode("features") is null) { _explicitNullValueFeatures = default!; _explicitNullProperties?.Remove("features"); }
+            else if (parseNode.GetChildNode("features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
+            if (parseNode.GetChildNode("ha_status") is null) { _explicitNullValueHaStatus = default!; _explicitNullProperties?.Remove("ha_status"); }
+            else if (parseNode.GetChildNode("ha_status") is { } nullNodeHaStatus && nullNodeHaStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HaStatus = null;
+            if (parseNode.GetChildNode("run_at") is null) { _explicitNullValueRunAt = default!; _explicitNullProperties?.Remove("run_at"); }
+            else if (parseNode.GetChildNode("run_at") is { } nullNodeRunAt && nullNodeRunAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunAt = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,49 +36,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cloudflared OS architecture used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Arch { get => _explicitNullValueArch; set { _explicitNullValueArch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arch"); else _explicitNullProperties?.Remove("arch"); } }
+        public string? Arch { get => _explicitNullValueArch; set { _explicitNullValueArch = value; AdditionalData?.Remove("arch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arch"); else _explicitNullProperties?.Remove("arch"); } }
         private string? _explicitNullValueArch = default!;
 #nullable restore
 #else
-        public string Arch { get => _explicitNullValueArch; set { _explicitNullValueArch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arch"); else _explicitNullProperties?.Remove("arch"); } }
+        public string Arch { get => _explicitNullValueArch; set { _explicitNullValueArch = value; AdditionalData?.Remove("arch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arch"); else _explicitNullProperties?.Remove("arch"); } }
         private string _explicitNullValueArch = default!;
 #endif
         /// <summary>The Mesh node connections between your origin and Cloudflare&apos;s edge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection>? Conns { get => _explicitNullValueConns; set { _explicitNullValueConns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conns"); else _explicitNullProperties?.Remove("conns"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection>? Conns { get => _explicitNullValueConns; set { _explicitNullValueConns = value; AdditionalData?.Remove("conns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conns"); else _explicitNullProperties?.Remove("conns"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection>? _explicitNullValueConns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection> Conns { get => _explicitNullValueConns; set { _explicitNullValueConns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conns"); else _explicitNullProperties?.Remove("conns"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection> Conns { get => _explicitNullValueConns; set { _explicitNullValueConns = value; AdditionalData?.Remove("conns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conns"); else _explicitNullProperties?.Remove("conns"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection> _explicitNullValueConns = default!;
 #endif
         /// <summary>Features enabled for the Cloudflare Tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        public List<string>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private List<string>? _explicitNullValueFeatures = default!;
 #nullable restore
 #else
-        public List<string> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        public List<string> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private List<string> _explicitNullValueFeatures = default!;
 #endif
         /// <summary>The HA status of a Mesh node connector.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHaStatus? HaStatus { get => _explicitNullValueHaStatus; set { _explicitNullValueHaStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_status"); else _explicitNullProperties?.Remove("ha_status"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHaStatus? HaStatus { get => _explicitNullValueHaStatus; set { _explicitNullValueHaStatus = value; AdditionalData?.Remove("ha_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ha_status"); else _explicitNullProperties?.Remove("ha_status"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHaStatus? _explicitNullValueHaStatus = default!;
         /// <summary>UUID of the Cloudflare Tunnel connector.</summary>
         public Guid? Id { get; private set; }
         /// <summary>Timestamp of when the tunnel connection was started.</summary>
-        public DateTimeOffset? RunAt { get => _explicitNullValueRunAt; set { _explicitNullValueRunAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_at"); else _explicitNullProperties?.Remove("run_at"); } }
+        public DateTimeOffset? RunAt { get => _explicitNullValueRunAt; set { _explicitNullValueRunAt = value; AdditionalData?.Remove("run_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_at"); else _explicitNullProperties?.Remove("run_at"); } }
         private DateTimeOffset? _explicitNullValueRunAt = default!;
         /// <summary>The cloudflared version used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
@@ -103,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "arch", n => { Arch = n.GetStringValue(); } },
                 { "conns", n => { Conns = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSchemasWarpConnectorConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ha_status", n => { HaStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHaStatus>(); } },
+                { "ha_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHaStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHaStatus = default; _explicitNullProperties?.Remove("ha_status"); AdditionalData["ha_status"] = unknown; } else { HaStatus = parsed; AdditionalData.Remove("ha_status"); } } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "run_at", n => { RunAt = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },

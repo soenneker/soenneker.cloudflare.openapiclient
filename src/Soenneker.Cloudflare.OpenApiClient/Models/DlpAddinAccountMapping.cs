@@ -17,23 +17,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("addin_identifier_token") is { } nullNodeAddinIdentifierToken && nullNodeAddinIdentifierToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddinIdentifierToken = null;
-            if (parseNode.GetChildNode("auth_requirements") is { } nullNodeAuthRequirements && nullNodeAuthRequirements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthRequirements = null;
+            if (parseNode.GetChildNode("addin_identifier_token") is null) { _explicitNullValueAddinIdentifierToken = default!; _explicitNullProperties?.Remove("addin_identifier_token"); }
+            else if (parseNode.GetChildNode("addin_identifier_token") is { } nullNodeAddinIdentifierToken && nullNodeAddinIdentifierToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddinIdentifierToken = null;
+            if (parseNode.GetChildNode("auth_requirements") is null) { _explicitNullValueAuthRequirements = default!; _explicitNullProperties?.Remove("auth_requirements"); }
+            else if (parseNode.GetChildNode("auth_requirements") is { } nullNodeAuthRequirements && nullNodeAuthRequirements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthRequirements = null;
         }
 
         /// <summary>The addin_identifier_token property</summary>
-        public Guid? AddinIdentifierToken { get => _explicitNullValueAddinIdentifierToken; set { _explicitNullValueAddinIdentifierToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addin_identifier_token"); else _explicitNullProperties?.Remove("addin_identifier_token"); } }
+        public Guid? AddinIdentifierToken { get => _explicitNullValueAddinIdentifierToken; set { _explicitNullValueAddinIdentifierToken = value; AdditionalData?.Remove("addin_identifier_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addin_identifier_token"); else _explicitNullProperties?.Remove("addin_identifier_token"); } }
         private Guid? _explicitNullValueAddinIdentifierToken = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auth_requirements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth? AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth? AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; AdditionalData?.Remove("auth_requirements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth? _explicitNullValueAuthRequirements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth AuthRequirements { get => _explicitNullValueAuthRequirements; set { _explicitNullValueAuthRequirements = value; AdditionalData?.Remove("auth_requirements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_requirements"); else _explicitNullProperties?.Remove("auth_requirements"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth _explicitNullValueAuthRequirements = default!;
 #endif
         /// <summary>

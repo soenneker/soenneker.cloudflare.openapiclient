@@ -18,10 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("excludePatterns") is { } nullNodeExcludePatterns && nullNodeExcludePatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludePatterns = null;
-            if (parseNode.GetChildNode("includeExternalLinks") is { } nullNodeIncludeExternalLinks && nullNodeIncludeExternalLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeExternalLinks = null;
-            if (parseNode.GetChildNode("includePatterns") is { } nullNodeIncludePatterns && nullNodeIncludePatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePatterns = null;
-            if (parseNode.GetChildNode("includeSubdomains") is { } nullNodeIncludeSubdomains && nullNodeIncludeSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSubdomains = null;
+            if (parseNode.GetChildNode("excludePatterns") is null) { _explicitNullValueExcludePatterns = default!; _explicitNullProperties?.Remove("excludePatterns"); }
+            else if (parseNode.GetChildNode("excludePatterns") is { } nullNodeExcludePatterns && nullNodeExcludePatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludePatterns = null;
+            if (parseNode.GetChildNode("includeExternalLinks") is null) { _explicitNullValueIncludeExternalLinks = default!; _explicitNullProperties?.Remove("includeExternalLinks"); }
+            else if (parseNode.GetChildNode("includeExternalLinks") is { } nullNodeIncludeExternalLinks && nullNodeIncludeExternalLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeExternalLinks = null;
+            if (parseNode.GetChildNode("includePatterns") is null) { _explicitNullValueIncludePatterns = default!; _explicitNullProperties?.Remove("includePatterns"); }
+            else if (parseNode.GetChildNode("includePatterns") is { } nullNodeIncludePatterns && nullNodeIncludePatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePatterns = null;
+            if (parseNode.GetChildNode("includeSubdomains") is null) { _explicitNullValueIncludeSubdomains = default!; _explicitNullProperties?.Remove("includeSubdomains"); }
+            else if (parseNode.GetChildNode("includeSubdomains") is { } nullNodeIncludeSubdomains && nullNodeIncludeSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSubdomains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Exclude links matching the provided wildcard patterns in the crawl job. Example: &apos;https://example.com/privacy/**&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludePatterns { get => _explicitNullValueExcludePatterns; set { _explicitNullValueExcludePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePatterns"); else _explicitNullProperties?.Remove("excludePatterns"); } }
+        public List<string>? ExcludePatterns { get => _explicitNullValueExcludePatterns; set { _explicitNullValueExcludePatterns = value; AdditionalData?.Remove("excludePatterns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePatterns"); else _explicitNullProperties?.Remove("excludePatterns"); } }
         private List<string>? _explicitNullValueExcludePatterns = default!;
 #nullable restore
 #else
-        public List<string> ExcludePatterns { get => _explicitNullValueExcludePatterns; set { _explicitNullValueExcludePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePatterns"); else _explicitNullProperties?.Remove("excludePatterns"); } }
+        public List<string> ExcludePatterns { get => _explicitNullValueExcludePatterns; set { _explicitNullValueExcludePatterns = value; AdditionalData?.Remove("excludePatterns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePatterns"); else _explicitNullProperties?.Remove("excludePatterns"); } }
         private List<string> _explicitNullValueExcludePatterns = default!;
 #endif
         /// <summary>Include external links in the crawl job. If set to true, includeSubdomains is ignored.</summary>
-        public bool? IncludeExternalLinks { get => _explicitNullValueIncludeExternalLinks; set { _explicitNullValueIncludeExternalLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeExternalLinks"); else _explicitNullProperties?.Remove("includeExternalLinks"); } }
+        public bool? IncludeExternalLinks { get => _explicitNullValueIncludeExternalLinks; set { _explicitNullValueIncludeExternalLinks = value; AdditionalData?.Remove("includeExternalLinks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeExternalLinks"); else _explicitNullProperties?.Remove("includeExternalLinks"); } }
         private bool? _explicitNullValueIncludeExternalLinks = default!;
         /// <summary>Include only links matching the provided wildcard patterns in the crawl job. Include patterns are evaluated before exclude patterns. URLs that match any of the specified include patterns will be included in the crawl job. Example: &apos;https://example.com/blog/**&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludePatterns { get => _explicitNullValueIncludePatterns; set { _explicitNullValueIncludePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includePatterns"); else _explicitNullProperties?.Remove("includePatterns"); } }
+        public List<string>? IncludePatterns { get => _explicitNullValueIncludePatterns; set { _explicitNullValueIncludePatterns = value; AdditionalData?.Remove("includePatterns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includePatterns"); else _explicitNullProperties?.Remove("includePatterns"); } }
         private List<string>? _explicitNullValueIncludePatterns = default!;
 #nullable restore
 #else
-        public List<string> IncludePatterns { get => _explicitNullValueIncludePatterns; set { _explicitNullValueIncludePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includePatterns"); else _explicitNullProperties?.Remove("includePatterns"); } }
+        public List<string> IncludePatterns { get => _explicitNullValueIncludePatterns; set { _explicitNullValueIncludePatterns = value; AdditionalData?.Remove("includePatterns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includePatterns"); else _explicitNullProperties?.Remove("includePatterns"); } }
         private List<string> _explicitNullValueIncludePatterns = default!;
 #endif
         /// <summary>Include links to subdomains in the crawl job. This option is ignored if includeExternalLinks is true.</summary>
-        public bool? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeSubdomains"); else _explicitNullProperties?.Remove("includeSubdomains"); } }
+        public bool? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; AdditionalData?.Remove("includeSubdomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeSubdomains"); else _explicitNullProperties?.Remove("includeSubdomains"); } }
         private bool? _explicitNullValueIncludeSubdomains = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostCrawlRequestAnyOf2Options"/> and sets the default values.

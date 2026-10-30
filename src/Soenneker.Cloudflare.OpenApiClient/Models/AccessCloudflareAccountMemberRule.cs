@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cloudflare_account_member") is { } nullNodeCloudflareAccountMember && nullNodeCloudflareAccountMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareAccountMember = null;
+            if (parseNode.GetChildNode("cloudflare_account_member") is null) { _explicitNullValueCloudflareAccountMember = default!; _explicitNullProperties?.Remove("cloudflare_account_member"); }
+            else if (parseNode.GetChildNode("cloudflare_account_member") is { } nullNodeCloudflareAccountMember && nullNodeCloudflareAccountMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudflareAccountMember = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cloudflare_account_member property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRuleCloudflareAccountMember? CloudflareAccountMember { get => _explicitNullValueCloudflareAccountMember; set { _explicitNullValueCloudflareAccountMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_account_member"); else _explicitNullProperties?.Remove("cloudflare_account_member"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRuleCloudflareAccountMember? CloudflareAccountMember { get => _explicitNullValueCloudflareAccountMember; set { _explicitNullValueCloudflareAccountMember = value; AdditionalData?.Remove("cloudflare_account_member"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_account_member"); else _explicitNullProperties?.Remove("cloudflare_account_member"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRuleCloudflareAccountMember? _explicitNullValueCloudflareAccountMember = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRuleCloudflareAccountMember CloudflareAccountMember { get => _explicitNullValueCloudflareAccountMember; set { _explicitNullValueCloudflareAccountMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_account_member"); else _explicitNullProperties?.Remove("cloudflare_account_member"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRuleCloudflareAccountMember CloudflareAccountMember { get => _explicitNullValueCloudflareAccountMember; set { _explicitNullValueCloudflareAccountMember = value; AdditionalData?.Remove("cloudflare_account_member"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudflare_account_member"); else _explicitNullProperties?.Remove("cloudflare_account_member"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRuleCloudflareAccountMember _explicitNullValueCloudflareAccountMember = default!;
 #endif
         /// <summary>

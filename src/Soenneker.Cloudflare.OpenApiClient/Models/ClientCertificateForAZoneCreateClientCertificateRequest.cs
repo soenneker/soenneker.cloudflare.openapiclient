@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("csr") is { } nullNodeCsr && nullNodeCsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Csr = null;
-            if (parseNode.GetChildNode("validity_days") is { } nullNodeValidityDays && nullNodeValidityDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityDays = null;
+            if (parseNode.GetChildNode("csr") is null) { _explicitNullValueCsr = default!; _explicitNullProperties?.Remove("csr"); }
+            else if (parseNode.GetChildNode("csr") is { } nullNodeCsr && nullNodeCsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Csr = null;
+            if (parseNode.GetChildNode("validity_days") is null) { _explicitNullValueValidityDays = default!; _explicitNullProperties?.Remove("validity_days"); }
+            else if (parseNode.GetChildNode("validity_days") is { } nullNodeValidityDays && nullNodeValidityDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityDays = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Certificate Signing Request (CSR). Must be newline-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Csr { get => _explicitNullValueCsr; set { _explicitNullValueCsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csr"); else _explicitNullProperties?.Remove("csr"); } }
+        public string? Csr { get => _explicitNullValueCsr; set { _explicitNullValueCsr = value; AdditionalData?.Remove("csr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csr"); else _explicitNullProperties?.Remove("csr"); } }
         private string? _explicitNullValueCsr = default!;
 #nullable restore
 #else
-        public string Csr { get => _explicitNullValueCsr; set { _explicitNullValueCsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csr"); else _explicitNullProperties?.Remove("csr"); } }
+        public string Csr { get => _explicitNullValueCsr; set { _explicitNullValueCsr = value; AdditionalData?.Remove("csr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csr"); else _explicitNullProperties?.Remove("csr"); } }
         private string _explicitNullValueCsr = default!;
 #endif
         /// <summary>The number of days the Client Certificate will be valid after the issued_on date.</summary>
-        public int? ValidityDays { get => _explicitNullValueValidityDays; set { _explicitNullValueValidityDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_days"); else _explicitNullProperties?.Remove("validity_days"); } }
+        public int? ValidityDays { get => _explicitNullValueValidityDays; set { _explicitNullValueValidityDays = value; AdditionalData?.Remove("validity_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_days"); else _explicitNullProperties?.Remove("validity_days"); } }
         private int? _explicitNullValueValidityDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificateRequest"/> and sets the default values.

@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("FAIL") is { } nullNodeFAIL && nullNodeFAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FAIL = null;
-            if (parseNode.GetChildNode("NONE") is { } nullNodeNONE && nullNodeNONE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NONE = null;
-            if (parseNode.GetChildNode("PASS") is { } nullNodePASS && nullNodePASS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PASS = null;
+            if (parseNode.GetChildNode("FAIL") is null) { _explicitNullValueFAIL = default!; _explicitNullProperties?.Remove("FAIL"); }
+            else if (parseNode.GetChildNode("FAIL") is { } nullNodeFAIL && nullNodeFAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FAIL = null;
+            if (parseNode.GetChildNode("NONE") is null) { _explicitNullValueNONE = default!; _explicitNullProperties?.Remove("NONE"); }
+            else if (parseNode.GetChildNode("NONE") is { } nullNodeNONE && nullNodeNONE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NONE = null;
+            if (parseNode.GetChildNode("PASS") is null) { _explicitNullValuePASS = default!; _explicitNullProperties?.Remove("PASS"); }
+            else if (parseNode.GetChildNode("PASS") is { } nullNodePASS && nullNodePASS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PASS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The FAIL property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FAIL { get => _explicitNullValueFAIL; set { _explicitNullValueFAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FAIL"); else _explicitNullProperties?.Remove("FAIL"); } }
+        public List<string>? FAIL { get => _explicitNullValueFAIL; set { _explicitNullValueFAIL = value; AdditionalData?.Remove("FAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FAIL"); else _explicitNullProperties?.Remove("FAIL"); } }
         private List<string>? _explicitNullValueFAIL = default!;
 #nullable restore
 #else
-        public List<string> FAIL { get => _explicitNullValueFAIL; set { _explicitNullValueFAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FAIL"); else _explicitNullProperties?.Remove("FAIL"); } }
+        public List<string> FAIL { get => _explicitNullValueFAIL; set { _explicitNullValueFAIL = value; AdditionalData?.Remove("FAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FAIL"); else _explicitNullProperties?.Remove("FAIL"); } }
         private List<string> _explicitNullValueFAIL = default!;
 #endif
         /// <summary>The NONE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NONE { get => _explicitNullValueNONE; set { _explicitNullValueNONE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NONE"); else _explicitNullProperties?.Remove("NONE"); } }
+        public List<string>? NONE { get => _explicitNullValueNONE; set { _explicitNullValueNONE = value; AdditionalData?.Remove("NONE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NONE"); else _explicitNullProperties?.Remove("NONE"); } }
         private List<string>? _explicitNullValueNONE = default!;
 #nullable restore
 #else
-        public List<string> NONE { get => _explicitNullValueNONE; set { _explicitNullValueNONE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NONE"); else _explicitNullProperties?.Remove("NONE"); } }
+        public List<string> NONE { get => _explicitNullValueNONE; set { _explicitNullValueNONE = value; AdditionalData?.Remove("NONE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NONE"); else _explicitNullProperties?.Remove("NONE"); } }
         private List<string> _explicitNullValueNONE = default!;
 #endif
         /// <summary>The PASS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PASS { get => _explicitNullValuePASS; set { _explicitNullValuePASS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PASS"); else _explicitNullProperties?.Remove("PASS"); } }
+        public List<string>? PASS { get => _explicitNullValuePASS; set { _explicitNullValuePASS = value; AdditionalData?.Remove("PASS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PASS"); else _explicitNullProperties?.Remove("PASS"); } }
         private List<string>? _explicitNullValuePASS = default!;
 #nullable restore
 #else
-        public List<string> PASS { get => _explicitNullValuePASS; set { _explicitNullValuePASS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PASS"); else _explicitNullProperties?.Remove("PASS"); } }
+        public List<string> PASS { get => _explicitNullValuePASS; set { _explicitNullValuePASS = value; AdditionalData?.Remove("PASS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PASS"); else _explicitNullProperties?.Remove("PASS"); } }
         private List<string> _explicitNullValuePASS = default!;
 #endif
         /// <summary>

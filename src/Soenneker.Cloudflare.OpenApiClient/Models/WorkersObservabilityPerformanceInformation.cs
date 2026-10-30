@@ -18,25 +18,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("abr_level") is { } nullNodeAbrLevel && nullNodeAbrLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbrLevel = null;
-            if (parseNode.GetChildNode("bytes_read") is { } nullNodeBytesRead && nullNodeBytesRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesRead = null;
-            if (parseNode.GetChildNode("elapsed") is { } nullNodeElapsed && nullNodeElapsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Elapsed = null;
-            if (parseNode.GetChildNode("rows_read") is { } nullNodeRowsRead && nullNodeRowsRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsRead = null;
+            if (parseNode.GetChildNode("abr_level") is null) { _explicitNullValueAbrLevel = default!; _explicitNullProperties?.Remove("abr_level"); }
+            else if (parseNode.GetChildNode("abr_level") is { } nullNodeAbrLevel && nullNodeAbrLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbrLevel = null;
+            if (parseNode.GetChildNode("bytes_read") is null) { _explicitNullValueBytesRead = default!; _explicitNullProperties?.Remove("bytes_read"); }
+            else if (parseNode.GetChildNode("bytes_read") is { } nullNodeBytesRead && nullNodeBytesRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesRead = null;
+            if (parseNode.GetChildNode("elapsed") is null) { _explicitNullValueElapsed = default!; _explicitNullProperties?.Remove("elapsed"); }
+            else if (parseNode.GetChildNode("elapsed") is { } nullNodeElapsed && nullNodeElapsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Elapsed = null;
+            if (parseNode.GetChildNode("rows_read") is null) { _explicitNullValueRowsRead = default!; _explicitNullProperties?.Remove("rows_read"); }
+            else if (parseNode.GetChildNode("rows_read") is { } nullNodeRowsRead && nullNodeRowsRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsRead = null;
         }
 
         /// <summary>The level of Adaptive Bit Rate (ABR) sampling used for the query. If empty the ABR level is 1</summary>
-        public double? AbrLevel { get => _explicitNullValueAbrLevel; set { _explicitNullValueAbrLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abr_level"); else _explicitNullProperties?.Remove("abr_level"); } }
+        public double? AbrLevel { get => _explicitNullValueAbrLevel; set { _explicitNullValueAbrLevel = value; AdditionalData?.Remove("abr_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abr_level"); else _explicitNullProperties?.Remove("abr_level"); } }
         private double? _explicitNullValueAbrLevel = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of uncompressed bytes read from the table.</summary>
-        public double? BytesRead { get => _explicitNullValueBytesRead; set { _explicitNullValueBytesRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytes_read"); else _explicitNullProperties?.Remove("bytes_read"); } }
+        public double? BytesRead { get => _explicitNullValueBytesRead; set { _explicitNullValueBytesRead = value; AdditionalData?.Remove("bytes_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytes_read"); else _explicitNullProperties?.Remove("bytes_read"); } }
         private double? _explicitNullValueBytesRead = default!;
         /// <summary>Time in seconds for the query to run.</summary>
-        public double? Elapsed { get => _explicitNullValueElapsed; set { _explicitNullValueElapsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elapsed"); else _explicitNullProperties?.Remove("elapsed"); } }
+        public double? Elapsed { get => _explicitNullValueElapsed; set { _explicitNullValueElapsed = value; AdditionalData?.Remove("elapsed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elapsed"); else _explicitNullProperties?.Remove("elapsed"); } }
         private double? _explicitNullValueElapsed = default!;
         /// <summary>Number of rows scanned from the table.</summary>
-        public double? RowsRead { get => _explicitNullValueRowsRead; set { _explicitNullValueRowsRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_read"); else _explicitNullProperties?.Remove("rows_read"); } }
+        public double? RowsRead { get => _explicitNullValueRowsRead; set { _explicitNullValueRowsRead = value; AdditionalData?.Remove("rows_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_read"); else _explicitNullProperties?.Remove("rows_read"); } }
         private double? _explicitNullValueRowsRead = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation"/> and sets the default values.

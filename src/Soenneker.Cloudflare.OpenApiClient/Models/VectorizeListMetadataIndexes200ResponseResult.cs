@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("metadataIndexes") is { } nullNodeMetadataIndexes && nullNodeMetadataIndexes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataIndexes = null;
+            if (parseNode.GetChildNode("metadataIndexes") is null) { _explicitNullValueMetadataIndexes = default!; _explicitNullProperties?.Remove("metadataIndexes"); }
+            else if (parseNode.GetChildNode("metadataIndexes") is { } nullNodeMetadataIndexes && nullNodeMetadataIndexes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataIndexes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of indexed metadata properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeListMetadataIndexResponseMetadataIndexesItem>? MetadataIndexes { get => _explicitNullValueMetadataIndexes; set { _explicitNullValueMetadataIndexes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataIndexes"); else _explicitNullProperties?.Remove("metadataIndexes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeListMetadataIndexResponseMetadataIndexesItem>? MetadataIndexes { get => _explicitNullValueMetadataIndexes; set { _explicitNullValueMetadataIndexes = value; AdditionalData?.Remove("metadataIndexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataIndexes"); else _explicitNullProperties?.Remove("metadataIndexes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeListMetadataIndexResponseMetadataIndexesItem>? _explicitNullValueMetadataIndexes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeListMetadataIndexResponseMetadataIndexesItem> MetadataIndexes { get => _explicitNullValueMetadataIndexes; set { _explicitNullValueMetadataIndexes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataIndexes"); else _explicitNullProperties?.Remove("metadataIndexes"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeListMetadataIndexResponseMetadataIndexesItem> MetadataIndexes { get => _explicitNullValueMetadataIndexes; set { _explicitNullValueMetadataIndexes = value; AdditionalData?.Remove("metadataIndexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataIndexes"); else _explicitNullProperties?.Remove("metadataIndexes"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeListMetadataIndexResponseMetadataIndexesItem> _explicitNullValueMetadataIndexes = default!;
 #endif
         /// <summary>

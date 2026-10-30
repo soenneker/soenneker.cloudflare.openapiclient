@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("article_ids") is { } nullNodeArticleIds && nullNodeArticleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticleIds = null;
-            if (parseNode.GetChildNode("read") is { } nullNodeRead && nullNodeRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Read = null;
+            if (parseNode.GetChildNode("article_ids") is null) { _explicitNullValueArticleIds = default!; _explicitNullProperties?.Remove("article_ids"); }
+            else if (parseNode.GetChildNode("article_ids") is { } nullNodeArticleIds && nullNodeArticleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticleIds = null;
+            if (parseNode.GetChildNode("read") is null) { _explicitNullValueRead = default!; _explicitNullProperties?.Remove("read"); }
+            else if (parseNode.GetChildNode("read") is { } nullNodeRead && nullNodeRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Read = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of article UUIDs to mark (1-50).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ArticleIds { get => _explicitNullValueArticleIds; set { _explicitNullValueArticleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article_ids"); else _explicitNullProperties?.Remove("article_ids"); } }
+        public List<Guid?>? ArticleIds { get => _explicitNullValueArticleIds; set { _explicitNullValueArticleIds = value; AdditionalData?.Remove("article_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article_ids"); else _explicitNullProperties?.Remove("article_ids"); } }
         private List<Guid?>? _explicitNullValueArticleIds = default!;
 #nullable restore
 #else
-        public List<Guid?> ArticleIds { get => _explicitNullValueArticleIds; set { _explicitNullValueArticleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article_ids"); else _explicitNullProperties?.Remove("article_ids"); } }
+        public List<Guid?> ArticleIds { get => _explicitNullValueArticleIds; set { _explicitNullValueArticleIds = value; AdditionalData?.Remove("article_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article_ids"); else _explicitNullProperties?.Remove("article_ids"); } }
         private List<Guid?> _explicitNullValueArticleIds = default!;
 #endif
         /// <summary>True to mark read, false to mark unread.</summary>
-        public bool? Read { get => _explicitNullValueRead; set { _explicitNullValueRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read"); else _explicitNullProperties?.Remove("read"); } }
+        public bool? Read { get => _explicitNullValueRead; set { _explicitNullValueRead = value; AdditionalData?.Remove("read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read"); else _explicitNullProperties?.Remove("read"); } }
         private bool? _explicitNullValueRead = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleBulkMarkReadRequest"/> and sets the default values.

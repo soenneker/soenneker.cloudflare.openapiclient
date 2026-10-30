@@ -17,14 +17,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("workers/alias") is { } nullNodeWorkersAlias && nullNodeWorkersAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersAlias = null;
-            if (parseNode.GetChildNode("workers/commit_sha") is { } nullNodeWorkersCommitSha && nullNodeWorkersCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersCommitSha = null;
-            if (parseNode.GetChildNode("workers/message") is { } nullNodeWorkersMessage && nullNodeWorkersMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersMessage = null;
-            if (parseNode.GetChildNode("workers/pull_request_number") is { } nullNodeWorkersPullRequestNumber && nullNodeWorkersPullRequestNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersPullRequestNumber = null;
-            if (parseNode.GetChildNode("workers/pull_request_title") is { } nullNodeWorkersPullRequestTitle && nullNodeWorkersPullRequestTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersPullRequestTitle = null;
-            if (parseNode.GetChildNode("workers/pull_request_url") is { } nullNodeWorkersPullRequestUrl && nullNodeWorkersPullRequestUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersPullRequestUrl = null;
-            if (parseNode.GetChildNode("workers/repository_url") is { } nullNodeWorkersRepositoryUrl && nullNodeWorkersRepositoryUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersRepositoryUrl = null;
-            if (parseNode.GetChildNode("workers/tag") is { } nullNodeWorkersTag && nullNodeWorkersTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersTag = null;
+            if (parseNode.GetChildNode("workers/alias") is null) { _explicitNullValueWorkersAlias = default!; _explicitNullProperties?.Remove("workers/alias"); }
+            else if (parseNode.GetChildNode("workers/alias") is { } nullNodeWorkersAlias && nullNodeWorkersAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersAlias = null;
+            if (parseNode.GetChildNode("workers/commit_sha") is null) { _explicitNullValueWorkersCommitSha = default!; _explicitNullProperties?.Remove("workers/commit_sha"); }
+            else if (parseNode.GetChildNode("workers/commit_sha") is { } nullNodeWorkersCommitSha && nullNodeWorkersCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersCommitSha = null;
+            if (parseNode.GetChildNode("workers/message") is null) { _explicitNullValueWorkersMessage = default!; _explicitNullProperties?.Remove("workers/message"); }
+            else if (parseNode.GetChildNode("workers/message") is { } nullNodeWorkersMessage && nullNodeWorkersMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersMessage = null;
+            if (parseNode.GetChildNode("workers/pull_request_number") is null) { _explicitNullValueWorkersPullRequestNumber = default!; _explicitNullProperties?.Remove("workers/pull_request_number"); }
+            else if (parseNode.GetChildNode("workers/pull_request_number") is { } nullNodeWorkersPullRequestNumber && nullNodeWorkersPullRequestNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersPullRequestNumber = null;
+            if (parseNode.GetChildNode("workers/pull_request_title") is null) { _explicitNullValueWorkersPullRequestTitle = default!; _explicitNullProperties?.Remove("workers/pull_request_title"); }
+            else if (parseNode.GetChildNode("workers/pull_request_title") is { } nullNodeWorkersPullRequestTitle && nullNodeWorkersPullRequestTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersPullRequestTitle = null;
+            if (parseNode.GetChildNode("workers/pull_request_url") is null) { _explicitNullValueWorkersPullRequestUrl = default!; _explicitNullProperties?.Remove("workers/pull_request_url"); }
+            else if (parseNode.GetChildNode("workers/pull_request_url") is { } nullNodeWorkersPullRequestUrl && nullNodeWorkersPullRequestUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersPullRequestUrl = null;
+            if (parseNode.GetChildNode("workers/repository_url") is null) { _explicitNullValueWorkersRepositoryUrl = default!; _explicitNullProperties?.Remove("workers/repository_url"); }
+            else if (parseNode.GetChildNode("workers/repository_url") is { } nullNodeWorkersRepositoryUrl && nullNodeWorkersRepositoryUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersRepositoryUrl = null;
+            if (parseNode.GetChildNode("workers/tag") is null) { _explicitNullValueWorkersTag = default!; _explicitNullProperties?.Remove("workers/tag"); }
+            else if (parseNode.GetChildNode("workers/tag") is { } nullNodeWorkersTag && nullNodeWorkersTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkersTag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,81 +40,81 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Associated alias for a version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersAlias { get => _explicitNullValueWorkersAlias; set { _explicitNullValueWorkersAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/alias"); else _explicitNullProperties?.Remove("workers/alias"); } }
+        public string? WorkersAlias { get => _explicitNullValueWorkersAlias; set { _explicitNullValueWorkersAlias = value; AdditionalData?.Remove("workers/alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/alias"); else _explicitNullProperties?.Remove("workers/alias"); } }
         private string? _explicitNullValueWorkersAlias = default!;
 #nullable restore
 #else
-        public string WorkersAlias { get => _explicitNullValueWorkersAlias; set { _explicitNullValueWorkersAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/alias"); else _explicitNullProperties?.Remove("workers/alias"); } }
+        public string WorkersAlias { get => _explicitNullValueWorkersAlias; set { _explicitNullValueWorkersAlias = value; AdditionalData?.Remove("workers/alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/alias"); else _explicitNullProperties?.Remove("workers/alias"); } }
         private string _explicitNullValueWorkersAlias = default!;
 #endif
         /// <summary>Full commit SHA associated with the version, detected from the CI environment. Maximum 64 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersCommitSha { get => _explicitNullValueWorkersCommitSha; set { _explicitNullValueWorkersCommitSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/commit_sha"); else _explicitNullProperties?.Remove("workers/commit_sha"); } }
+        public string? WorkersCommitSha { get => _explicitNullValueWorkersCommitSha; set { _explicitNullValueWorkersCommitSha = value; AdditionalData?.Remove("workers/commit_sha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/commit_sha"); else _explicitNullProperties?.Remove("workers/commit_sha"); } }
         private string? _explicitNullValueWorkersCommitSha = default!;
 #nullable restore
 #else
-        public string WorkersCommitSha { get => _explicitNullValueWorkersCommitSha; set { _explicitNullValueWorkersCommitSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/commit_sha"); else _explicitNullProperties?.Remove("workers/commit_sha"); } }
+        public string WorkersCommitSha { get => _explicitNullValueWorkersCommitSha; set { _explicitNullValueWorkersCommitSha = value; AdditionalData?.Remove("workers/commit_sha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/commit_sha"); else _explicitNullProperties?.Remove("workers/commit_sha"); } }
         private string _explicitNullValueWorkersCommitSha = default!;
 #endif
         /// <summary>Human-readable message about the version. Truncated to 1000 bytes if longer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
+        public string? WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; AdditionalData?.Remove("workers/message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
         private string? _explicitNullValueWorkersMessage = default!;
 #nullable restore
 #else
-        public string WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
+        public string WorkersMessage { get => _explicitNullValueWorkersMessage; set { _explicitNullValueWorkersMessage = value; AdditionalData?.Remove("workers/message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/message"); else _explicitNullProperties?.Remove("workers/message"); } }
         private string _explicitNullValueWorkersMessage = default!;
 #endif
         /// <summary>Number of the pull or merge request associated with the version, detected from the CI environment. Maximum 20 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersPullRequestNumber { get => _explicitNullValueWorkersPullRequestNumber; set { _explicitNullValueWorkersPullRequestNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_number"); else _explicitNullProperties?.Remove("workers/pull_request_number"); } }
+        public string? WorkersPullRequestNumber { get => _explicitNullValueWorkersPullRequestNumber; set { _explicitNullValueWorkersPullRequestNumber = value; AdditionalData?.Remove("workers/pull_request_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_number"); else _explicitNullProperties?.Remove("workers/pull_request_number"); } }
         private string? _explicitNullValueWorkersPullRequestNumber = default!;
 #nullable restore
 #else
-        public string WorkersPullRequestNumber { get => _explicitNullValueWorkersPullRequestNumber; set { _explicitNullValueWorkersPullRequestNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_number"); else _explicitNullProperties?.Remove("workers/pull_request_number"); } }
+        public string WorkersPullRequestNumber { get => _explicitNullValueWorkersPullRequestNumber; set { _explicitNullValueWorkersPullRequestNumber = value; AdditionalData?.Remove("workers/pull_request_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_number"); else _explicitNullProperties?.Remove("workers/pull_request_number"); } }
         private string _explicitNullValueWorkersPullRequestNumber = default!;
 #endif
         /// <summary>Title of the pull or merge request associated with the version, detected from the CI environment. Maximum 512 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersPullRequestTitle { get => _explicitNullValueWorkersPullRequestTitle; set { _explicitNullValueWorkersPullRequestTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_title"); else _explicitNullProperties?.Remove("workers/pull_request_title"); } }
+        public string? WorkersPullRequestTitle { get => _explicitNullValueWorkersPullRequestTitle; set { _explicitNullValueWorkersPullRequestTitle = value; AdditionalData?.Remove("workers/pull_request_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_title"); else _explicitNullProperties?.Remove("workers/pull_request_title"); } }
         private string? _explicitNullValueWorkersPullRequestTitle = default!;
 #nullable restore
 #else
-        public string WorkersPullRequestTitle { get => _explicitNullValueWorkersPullRequestTitle; set { _explicitNullValueWorkersPullRequestTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_title"); else _explicitNullProperties?.Remove("workers/pull_request_title"); } }
+        public string WorkersPullRequestTitle { get => _explicitNullValueWorkersPullRequestTitle; set { _explicitNullValueWorkersPullRequestTitle = value; AdditionalData?.Remove("workers/pull_request_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_title"); else _explicitNullProperties?.Remove("workers/pull_request_title"); } }
         private string _explicitNullValueWorkersPullRequestTitle = default!;
 #endif
         /// <summary>URL of the pull or merge request associated with the version, detected from the CI environment. Maximum 512 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersPullRequestUrl { get => _explicitNullValueWorkersPullRequestUrl; set { _explicitNullValueWorkersPullRequestUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_url"); else _explicitNullProperties?.Remove("workers/pull_request_url"); } }
+        public string? WorkersPullRequestUrl { get => _explicitNullValueWorkersPullRequestUrl; set { _explicitNullValueWorkersPullRequestUrl = value; AdditionalData?.Remove("workers/pull_request_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_url"); else _explicitNullProperties?.Remove("workers/pull_request_url"); } }
         private string? _explicitNullValueWorkersPullRequestUrl = default!;
 #nullable restore
 #else
-        public string WorkersPullRequestUrl { get => _explicitNullValueWorkersPullRequestUrl; set { _explicitNullValueWorkersPullRequestUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_url"); else _explicitNullProperties?.Remove("workers/pull_request_url"); } }
+        public string WorkersPullRequestUrl { get => _explicitNullValueWorkersPullRequestUrl; set { _explicitNullValueWorkersPullRequestUrl = value; AdditionalData?.Remove("workers/pull_request_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/pull_request_url"); else _explicitNullProperties?.Remove("workers/pull_request_url"); } }
         private string _explicitNullValueWorkersPullRequestUrl = default!;
 #endif
         /// <summary>URL of the source repository the version was built from, detected from the CI environment. Maximum 512 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersRepositoryUrl { get => _explicitNullValueWorkersRepositoryUrl; set { _explicitNullValueWorkersRepositoryUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/repository_url"); else _explicitNullProperties?.Remove("workers/repository_url"); } }
+        public string? WorkersRepositoryUrl { get => _explicitNullValueWorkersRepositoryUrl; set { _explicitNullValueWorkersRepositoryUrl = value; AdditionalData?.Remove("workers/repository_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/repository_url"); else _explicitNullProperties?.Remove("workers/repository_url"); } }
         private string? _explicitNullValueWorkersRepositoryUrl = default!;
 #nullable restore
 #else
-        public string WorkersRepositoryUrl { get => _explicitNullValueWorkersRepositoryUrl; set { _explicitNullValueWorkersRepositoryUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/repository_url"); else _explicitNullProperties?.Remove("workers/repository_url"); } }
+        public string WorkersRepositoryUrl { get => _explicitNullValueWorkersRepositoryUrl; set { _explicitNullValueWorkersRepositoryUrl = value; AdditionalData?.Remove("workers/repository_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/repository_url"); else _explicitNullProperties?.Remove("workers/repository_url"); } }
         private string _explicitNullValueWorkersRepositoryUrl = default!;
 #endif
         /// <summary>User-provided identifier for the version. Maximum 100 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
+        public string? WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; AdditionalData?.Remove("workers/tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
         private string? _explicitNullValueWorkersTag = default!;
 #nullable restore
 #else
-        public string WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
+        public string WorkersTag { get => _explicitNullValueWorkersTag; set { _explicitNullValueWorkersTag = value; AdditionalData?.Remove("workers/tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workers/tag"); else _explicitNullProperties?.Remove("workers/tag"); } }
         private string _explicitNullValueWorkersTag = default!;
 #endif
         /// <summary>

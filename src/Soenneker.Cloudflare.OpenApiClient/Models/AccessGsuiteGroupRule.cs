@@ -18,7 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gsuite") is { } nullNodeGsuite && nullNodeGsuite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gsuite = null;
+            if (parseNode.GetChildNode("gsuite") is null) { _explicitNullValueGsuite = default!; _explicitNullProperties?.Remove("gsuite"); }
+            else if (parseNode.GetChildNode("gsuite") is { } nullNodeGsuite && nullNodeGsuite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gsuite = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The gsuite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRuleGsuite? Gsuite { get => _explicitNullValueGsuite; set { _explicitNullValueGsuite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gsuite"); else _explicitNullProperties?.Remove("gsuite"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRuleGsuite? Gsuite { get => _explicitNullValueGsuite; set { _explicitNullValueGsuite = value; AdditionalData?.Remove("gsuite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gsuite"); else _explicitNullProperties?.Remove("gsuite"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRuleGsuite? _explicitNullValueGsuite = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRuleGsuite Gsuite { get => _explicitNullValueGsuite; set { _explicitNullValueGsuite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gsuite"); else _explicitNullProperties?.Remove("gsuite"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRuleGsuite Gsuite { get => _explicitNullValueGsuite; set { _explicitNullValueGsuite = value; AdditionalData?.Remove("gsuite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gsuite"); else _explicitNullProperties?.Remove("gsuite"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRuleGsuite _explicitNullValueGsuite = default!;
 #endif
         /// <summary>

@@ -17,27 +17,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_seat") is { } nullNodeAccessSeatProp && nullNodeAccessSeatProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessSeatProp = null;
-            if (parseNode.GetChildNode("gateway_seat") is { } nullNodeGatewaySeat && nullNodeGatewaySeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewaySeat = null;
-            if (parseNode.GetChildNode("seat_uid") is { } nullNodeSeatUid && nullNodeSeatUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatUid = null;
+            if (parseNode.GetChildNode("access_seat") is null) { _explicitNullValueAccessSeatProp = default!; _explicitNullProperties?.Remove("access_seat"); }
+            else if (parseNode.GetChildNode("access_seat") is { } nullNodeAccessSeatProp && nullNodeAccessSeatProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessSeatProp = null;
+            if (parseNode.GetChildNode("gateway_seat") is null) { _explicitNullValueGatewaySeat = default!; _explicitNullProperties?.Remove("gateway_seat"); }
+            else if (parseNode.GetChildNode("gateway_seat") is { } nullNodeGatewaySeat && nullNodeGatewaySeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewaySeat = null;
+            if (parseNode.GetChildNode("seat_uid") is null) { _explicitNullValueSeatUid = default!; _explicitNullProperties?.Remove("seat_uid"); }
+            else if (parseNode.GetChildNode("seat_uid") is { } nullNodeSeatUid && nullNodeSeatUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatUid = null;
         }
 
         /// <summary>True if the seat is part of Access.</summary>
-        public bool? AccessSeatProp { get => _explicitNullValueAccessSeatProp; set { _explicitNullValueAccessSeatProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_seat"); else _explicitNullProperties?.Remove("access_seat"); } }
+        public bool? AccessSeatProp { get => _explicitNullValueAccessSeatProp; set { _explicitNullValueAccessSeatProp = value; AdditionalData?.Remove("access_seat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_seat"); else _explicitNullProperties?.Remove("access_seat"); } }
         private bool? _explicitNullValueAccessSeatProp = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if the seat is part of Gateway.</summary>
-        public bool? GatewaySeat { get => _explicitNullValueGatewaySeat; set { _explicitNullValueGatewaySeat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_seat"); else _explicitNullProperties?.Remove("gateway_seat"); } }
+        public bool? GatewaySeat { get => _explicitNullValueGatewaySeat; set { _explicitNullValueGatewaySeat = value; AdditionalData?.Remove("gateway_seat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_seat"); else _explicitNullProperties?.Remove("gateway_seat"); } }
         private bool? _explicitNullValueGatewaySeat = default!;
         /// <summary>The unique API identifier for the Zero Trust seat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SeatUid { get => _explicitNullValueSeatUid; set { _explicitNullValueSeatUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_uid"); else _explicitNullProperties?.Remove("seat_uid"); } }
+        public string? SeatUid { get => _explicitNullValueSeatUid; set { _explicitNullValueSeatUid = value; AdditionalData?.Remove("seat_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_uid"); else _explicitNullProperties?.Remove("seat_uid"); } }
         private string? _explicitNullValueSeatUid = default!;
 #nullable restore
 #else
-        public string SeatUid { get => _explicitNullValueSeatUid; set { _explicitNullValueSeatUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_uid"); else _explicitNullProperties?.Remove("seat_uid"); } }
+        public string SeatUid { get => _explicitNullValueSeatUid; set { _explicitNullValueSeatUid = value; AdditionalData?.Remove("seat_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_uid"); else _explicitNullProperties?.Remove("seat_uid"); } }
         private string _explicitNullValueSeatUid = default!;
 #endif
         /// <summary>

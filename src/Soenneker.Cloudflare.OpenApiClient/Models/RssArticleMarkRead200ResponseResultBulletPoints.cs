@@ -17,9 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("impact") is { } nullNodeImpact && nullNodeImpact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impact = null;
-            if (parseNode.GetChildNode("what_happened") is { } nullNodeWhatHappened && nullNodeWhatHappened.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatHappened = null;
-            if (parseNode.GetChildNode("who_affected") is { } nullNodeWhoAffected && nullNodeWhoAffected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoAffected = null;
+            if (parseNode.GetChildNode("impact") is null) { _explicitNullValueImpact = default!; _explicitNullProperties?.Remove("impact"); }
+            else if (parseNode.GetChildNode("impact") is { } nullNodeImpact && nullNodeImpact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impact = null;
+            if (parseNode.GetChildNode("what_happened") is null) { _explicitNullValueWhatHappened = default!; _explicitNullProperties?.Remove("what_happened"); }
+            else if (parseNode.GetChildNode("what_happened") is { } nullNodeWhatHappened && nullNodeWhatHappened.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatHappened = null;
+            if (parseNode.GetChildNode("who_affected") is null) { _explicitNullValueWhoAffected = default!; _explicitNullProperties?.Remove("who_affected"); }
+            else if (parseNode.GetChildNode("who_affected") is { } nullNodeWhoAffected && nullNodeWhoAffected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoAffected = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The impact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        public string? Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; AdditionalData?.Remove("impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
         private string? _explicitNullValueImpact = default!;
 #nullable restore
 #else
-        public string Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        public string Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; AdditionalData?.Remove("impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
         private string _explicitNullValueImpact = default!;
 #endif
         /// <summary>The what_happened property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhatHappened { get => _explicitNullValueWhatHappened; set { _explicitNullValueWhatHappened = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("what_happened"); else _explicitNullProperties?.Remove("what_happened"); } }
+        public string? WhatHappened { get => _explicitNullValueWhatHappened; set { _explicitNullValueWhatHappened = value; AdditionalData?.Remove("what_happened"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("what_happened"); else _explicitNullProperties?.Remove("what_happened"); } }
         private string? _explicitNullValueWhatHappened = default!;
 #nullable restore
 #else
-        public string WhatHappened { get => _explicitNullValueWhatHappened; set { _explicitNullValueWhatHappened = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("what_happened"); else _explicitNullProperties?.Remove("what_happened"); } }
+        public string WhatHappened { get => _explicitNullValueWhatHappened; set { _explicitNullValueWhatHappened = value; AdditionalData?.Remove("what_happened"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("what_happened"); else _explicitNullProperties?.Remove("what_happened"); } }
         private string _explicitNullValueWhatHappened = default!;
 #endif
         /// <summary>The who_affected property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhoAffected { get => _explicitNullValueWhoAffected; set { _explicitNullValueWhoAffected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("who_affected"); else _explicitNullProperties?.Remove("who_affected"); } }
+        public string? WhoAffected { get => _explicitNullValueWhoAffected; set { _explicitNullValueWhoAffected = value; AdditionalData?.Remove("who_affected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("who_affected"); else _explicitNullProperties?.Remove("who_affected"); } }
         private string? _explicitNullValueWhoAffected = default!;
 #nullable restore
 #else
-        public string WhoAffected { get => _explicitNullValueWhoAffected; set { _explicitNullValueWhoAffected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("who_affected"); else _explicitNullProperties?.Remove("who_affected"); } }
+        public string WhoAffected { get => _explicitNullValueWhoAffected; set { _explicitNullValueWhoAffected = value; AdditionalData?.Remove("who_affected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("who_affected"); else _explicitNullProperties?.Remove("who_affected"); } }
         private string _explicitNullValueWhoAffected = default!;
 #endif
         /// <summary>

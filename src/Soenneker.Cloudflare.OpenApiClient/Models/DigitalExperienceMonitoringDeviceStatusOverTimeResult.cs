@@ -17,8 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("over_time") is { } nullNodeOverTime && nullNodeOverTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverTime = null;
-            if (parseNode.GetChildNode("top_networks") is { } nullNodeTopNetworks && nullNodeTopNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopNetworks = null;
+            if (parseNode.GetChildNode("over_time") is null) { _explicitNullValueOverTime = default!; _explicitNullProperties?.Remove("over_time"); }
+            else if (parseNode.GetChildNode("over_time") is { } nullNodeOverTime && nullNodeOverTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverTime = null;
+            if (parseNode.GetChildNode("top_networks") is null) { _explicitNullValueTopNetworks = default!; _explicitNullProperties?.Remove("top_networks"); }
+            else if (parseNode.GetChildNode("top_networks") is { } nullNodeTopNetworks && nullNodeTopNetworks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopNetworks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Time-bucketed device metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime? OverTime { get => _explicitNullValueOverTime; set { _explicitNullValueOverTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_time"); else _explicitNullProperties?.Remove("over_time"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime? OverTime { get => _explicitNullValueOverTime; set { _explicitNullValueOverTime = value; AdditionalData?.Remove("over_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_time"); else _explicitNullProperties?.Remove("over_time"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime? _explicitNullValueOverTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime OverTime { get => _explicitNullValueOverTime; set { _explicitNullValueOverTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_time"); else _explicitNullProperties?.Remove("over_time"); } }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime OverTime { get => _explicitNullValueOverTime; set { _explicitNullValueOverTime = value; AdditionalData?.Remove("over_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_time"); else _explicitNullProperties?.Remove("over_time"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateOverTime _explicitNullValueOverTime = default!;
 #endif
         /// <summary>Top networks observed for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateTopNetworksSummary>? TopNetworks { get => _explicitNullValueTopNetworks; set { _explicitNullValueTopNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_networks"); else _explicitNullProperties?.Remove("top_networks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateTopNetworksSummary>? TopNetworks { get => _explicitNullValueTopNetworks; set { _explicitNullValueTopNetworks = value; AdditionalData?.Remove("top_networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_networks"); else _explicitNullProperties?.Remove("top_networks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateTopNetworksSummary>? _explicitNullValueTopNetworks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateTopNetworksSummary> TopNetworks { get => _explicitNullValueTopNetworks; set { _explicitNullValueTopNetworks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_networks"); else _explicitNullProperties?.Remove("top_networks"); } }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateTopNetworksSummary> TopNetworks { get => _explicitNullValueTopNetworks; set { _explicitNullValueTopNetworks = value; AdditionalData?.Remove("top_networks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_networks"); else _explicitNullProperties?.Remove("top_networks"); } }
         private List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceStateTopNetworksSummary> _explicitNullValueTopNetworks = default!;
 #endif
         /// <summary>

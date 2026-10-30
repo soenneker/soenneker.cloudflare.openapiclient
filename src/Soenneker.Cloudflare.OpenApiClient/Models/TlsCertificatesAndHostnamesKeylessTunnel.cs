@@ -18,8 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("private_ip") is { } nullNodePrivateIp && nullNodePrivateIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateIp = null;
-            if (parseNode.GetChildNode("vnet_id") is { } nullNodeVnetId && nullNodeVnetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VnetId = null;
+            if (parseNode.GetChildNode("private_ip") is null) { _explicitNullValuePrivateIp = default!; _explicitNullProperties?.Remove("private_ip"); }
+            else if (parseNode.GetChildNode("private_ip") is { } nullNodePrivateIp && nullNodePrivateIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateIp = null;
+            if (parseNode.GetChildNode("vnet_id") is null) { _explicitNullValueVnetId = default!; _explicitNullProperties?.Remove("vnet_id"); }
+            else if (parseNode.GetChildNode("vnet_id") is { } nullNodeVnetId && nullNodeVnetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VnetId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Private IP of the Key Server Host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateIp { get => _explicitNullValuePrivateIp; set { _explicitNullValuePrivateIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_ip"); else _explicitNullProperties?.Remove("private_ip"); } }
+        public string? PrivateIp { get => _explicitNullValuePrivateIp; set { _explicitNullValuePrivateIp = value; AdditionalData?.Remove("private_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_ip"); else _explicitNullProperties?.Remove("private_ip"); } }
         private string? _explicitNullValuePrivateIp = default!;
 #nullable restore
 #else
-        public string PrivateIp { get => _explicitNullValuePrivateIp; set { _explicitNullValuePrivateIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_ip"); else _explicitNullProperties?.Remove("private_ip"); } }
+        public string PrivateIp { get => _explicitNullValuePrivateIp; set { _explicitNullValuePrivateIp = value; AdditionalData?.Remove("private_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_ip"); else _explicitNullProperties?.Remove("private_ip"); } }
         private string _explicitNullValuePrivateIp = default!;
 #endif
         /// <summary>Cloudflare Tunnel Virtual Network ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
+        public string? VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; AdditionalData?.Remove("vnet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
         private string? _explicitNullValueVnetId = default!;
 #nullable restore
 #else
-        public string VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
+        public string VnetId { get => _explicitNullValueVnetId; set { _explicitNullValueVnetId = value; AdditionalData?.Remove("vnet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vnet_id"); else _explicitNullProperties?.Remove("vnet_id"); } }
         private string _explicitNullValueVnetId = default!;
 #endif
         /// <summary>

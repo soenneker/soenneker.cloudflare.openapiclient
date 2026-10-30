@@ -17,7 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fnr_id") is { } nullNodeFnrId && nullNodeFnrId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FnrId = null;
+            if (parseNode.GetChildNode("fnr_id") is null) { _explicitNullValueFnrId = default!; _explicitNullProperties?.Remove("fnr_id"); }
+            else if (parseNode.GetChildNode("fnr_id") is { } nullNodeFnrId && nullNodeFnrId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FnrId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Floating Network Resource ID — the secondary ENI that is moved between nodes on failover.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FnrId { get => _explicitNullValueFnrId; set { _explicitNullValueFnrId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnr_id"); else _explicitNullProperties?.Remove("fnr_id"); } }
+        public string? FnrId { get => _explicitNullValueFnrId; set { _explicitNullValueFnrId = value; AdditionalData?.Remove("fnr_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnr_id"); else _explicitNullProperties?.Remove("fnr_id"); } }
         private string? _explicitNullValueFnrId = default!;
 #nullable restore
 #else
-        public string FnrId { get => _explicitNullValueFnrId; set { _explicitNullValueFnrId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnr_id"); else _explicitNullProperties?.Remove("fnr_id"); } }
+        public string FnrId { get => _explicitNullValueFnrId; set { _explicitNullValueFnrId = value; AdditionalData?.Remove("fnr_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnr_id"); else _explicitNullProperties?.Remove("fnr_id"); } }
         private string _explicitNullValueFnrId = default!;
 #endif
         /// <summary>
